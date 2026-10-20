@@ -1090,7 +1090,7 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
 
 <section class="station" id="shortcuts" data-label="Shortcuts" data-yr="Auf einen Blick" data-title="Shortcuts bei der Textverarbeitung" data-sub="Windows und macOS" hidden>
   <div class="section-head">
-    <p class="eyebrow">Station 1 · Auf einen Blick (S. 102)</p>
+    <p class="eyebrow">Station 1 · Auf einen Blick</p>
     <h2>Shortcuts unter Windows und macOS</h2>
     <p class="lead">Tastenkombinationen sind Befehle, die man mit der Tastatur ausführt, statt mit der Maus zu klicken. Wähle einen Befehl – die Tasten leuchten auf.</p>
   </div>
@@ -1122,7 +1122,7 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
 
 <section class="station" id="symbolleiste" data-label="Symbolleiste" data-yr="Auf einen Blick" data-title="Übersicht über die Symbolleiste" data-sub="Zehn Funktionen" hidden>
   <div class="section-head">
-    <p class="eyebrow">Station 3 · Auf einen Blick (S. 103)</p>
+    <p class="eyebrow">Station 3 · Auf einen Blick</p>
     <h2>Die Symbolleiste</h2>
     <p class="lead">Tippe die Symbole an. Im Modus „Finden“ wird eine Funktion genannt.</p>
   </div>
@@ -1510,7 +1510,7 @@ function timeline(root, detail, ev, cats, o = {}) {
     $$('[data-f]', fl).forEach(x => x.setAttribute('aria-pressed', x.dataset.f === filt));
     ev.forEach(x => x.el.classList.toggle('dim', !!filt && x.cat !== filt));
   });
-  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse wie im Buch'], ['true', 'maßstabsgetreu']], v => {
+  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse gestaucht'], ['true', 'maßstabsgetreu']], v => {
     mode = v; zl.classList.toggle('true', v === 'true'); zl.style.minWidth = v === 'true' ? '100%' : '';
     layout();
     const sc = $('.zl-scroll', root); if (v === 'true') sc.scrollLeft = 0; else if (ev[sel]) sc.scrollLeft = ev[sel].el.offsetLeft - sc.clientWidth / 2;
@@ -1976,7 +1976,7 @@ function flowBuilder(root, o = {}) {
   draw();
 }
 
-/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß wie im Buch), palette: [Farben] für Farbbilder,
+/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß), palette: [Farben] für Farbbilder,
    code: Element für den Binärcode, onChange(data)} */
 function pixelGrid(root, o = {}) {
   const W = o.w || 8, H = o.h || 8;

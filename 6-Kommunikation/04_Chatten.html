@@ -1500,7 +1500,7 @@ function timeline(root, detail, ev, cats, o = {}) {
     $$('[data-f]', fl).forEach(x => x.setAttribute('aria-pressed', x.dataset.f === filt));
     ev.forEach(x => x.el.classList.toggle('dim', !!filt && x.cat !== filt));
   });
-  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse wie im Buch'], ['true', 'maßstabsgetreu']], v => {
+  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse gestaucht'], ['true', 'maßstabsgetreu']], v => {
     mode = v; zl.classList.toggle('true', v === 'true'); zl.style.minWidth = v === 'true' ? '100%' : '';
     layout();
     const sc = $('.zl-scroll', root); if (v === 'true') sc.scrollLeft = 0; else if (ev[sel]) sc.scrollLeft = ev[sel].el.offsetLeft - sc.clientWidth / 2;
@@ -1966,7 +1966,7 @@ function flowBuilder(root, o = {}) {
   draw();
 }
 
-/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß wie im Buch), palette: [Farben] für Farbbilder,
+/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß), palette: [Farben] für Farbbilder,
    code: Element für den Binärcode, onChange(data)} */
 function pixelGrid(root, o = {}) {
   const W = o.w || 8, H = o.h || 8;
@@ -2065,7 +2065,7 @@ flipCards($('#rules'), [
   $('#em-bar').addEventListener('click', e => { const b = e.target.closest('[data-e]'); if (!b) return; const s = sel || $$('.slot').find(x => !x.textContent); if (s) { s.textContent = b.dataset.e; s.classList.remove('sel'); sel = null; } });
   $('#em-check').onclick = () => {
     let ok = 0, n = 0; $$('.slot').forEach(s => { n++; const g = s.textContent === M[+s.dataset.i][3]; s.style.borderColor = s.textContent ? (g ? '#16A34A' : '#F59E0B') : ''; if (g) ok++; });
-    $('#em-fb').innerHTML = `<b>${ok}</b> von ${n} wie im Buch-Vorschlag. Andere Emojis können auch passen – begründe deine Wahl!`;
+    $('#em-fb').innerHTML = `<b>${ok}</b> von ${n} wie im Vorschlag. Andere Emojis können auch passen – begründe deine Wahl!`;
   };
   $('#em-reset').onclick = build; build();
   const MO = [['😊', 'freundlich – kein Problem'], ['😒', 'genervt'], ['😂', 'lustig gemeint'], ['😡', 'richtig wütend'], ['🥺', 'traurig, enttäuscht']];

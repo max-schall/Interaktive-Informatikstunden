@@ -44,7 +44,7 @@ WS = {
     heft_hint='Schreibe die Merksätze ab und schreibe eine kurze formelle E-Mail an deine Lehrkraft.',
     sections=[
     ('adresse', [
-        GL('Zerlege die E-Mail-Adresse max.mustermann@westermann.de.', ['Benutzername: [[max.mustermann]]', 'Zeichen: [[@]]', 'Domain: [[westermann.de]]']),
+        GL('Zerlege die E-Mail-Adresse max.mustermann@beispielverlag.de.', ['Benutzername: [[max.mustermann]]', 'Zeichen: [[@]]', 'Domain: [[beispielverlag.de]]']),
     ]),
     ('aufbau', [
         ZU('**M1** Ordne die Teile einer E-Mail zu.', ['Betreff', 'Anrede', 'Hauptteil', 'Schlussformel'],
@@ -168,7 +168,7 @@ WS = {
             [['Hinterfrage die Nachricht!', '[[Woher kommt sie? Welche Absicht?]]'], ['Überprüfe den Ursprung!', '[[Gibt es eine Quelle? Bestätigen andere?]]'], ['Überprüfe das Bild!', '[[Wer hat es wann und wo aufgenommen?]]'], ['Leite nicht einfach weiter!', '[[Kann es anderen schaden? Melden!]]']], h=7, widths=[36, 64]),
     ]),
     ('verstoerend', [
-        A('**M1 (S. 133):** Leander bekommt das Video nicht mehr aus dem Kopf. Was kann er tun?', 2, 'mit Eltern oder einer Vertrauensperson sprechen, das Video melden, bei klicksafe.de oder jugend.support Hilfe suchen; nächstes Mal „Nein“ sagen'),
+        A('**M1:** Leander bekommt das Video nicht mehr aus dem Kopf. Was kann er tun?', 2, 'mit Eltern oder einer Vertrauensperson sprechen, das Video melden, bei klicksafe.de oder jugend.support Hilfe suchen; nächstes Mal „Nein“ sagen'),
     ]),
 ]),
 
@@ -239,7 +239,7 @@ WS = {
         A('Vergleiche direkte und verzögerte Kommunikation an je einem Beispiel.', 1, 'Direkt in Echtzeit, z. B. Videoanruf; verzögert zeitversetzt, z. B. E-Mail.'),
     ]),
     ('t2', [
-        A('Beschreibe den Aufbau einer E-Mail-Adresse.', 1, 'Benutzername @ Domain, z. B. max.mustermann@westermann.de'),
+        A('Beschreibe den Aufbau einer E-Mail-Adresse.', 1, 'Benutzername @ Domain, z. B. max.mustermann@beispielverlag.de'),
     ]),
     ('t3', [
         A('Nenne die zwei Schichten des Internets mit je zwei Beispielen.', 1, 'Technische Schicht: Router, Server, Kabel. Internetdienste: E-Mail, Webseiten, Streaming.'),

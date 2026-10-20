@@ -1110,7 +1110,7 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
       <tbody>
         <tr><th class="mono">„…“</th><td>Suche nach genauen Wörtern</td><td><button class="btn ex" data-q="&quot;Weltbevölkerung im Jahr 2040&quot;">„Weltbevölkerung im Jahr 2040“</button></td></tr>
         <tr><th class="mono">-</th><td>schließt Seiten aus, die das Wort enthalten</td><td><button class="btn ex" data-q="Jaguar -Auto">Jaguar -Auto</button></td></tr>
-        <tr><th class="mono">site:</th><td>Suche auf bestimmten Webseiten</td><td><button class="btn ex" data-q="Lernhilfen Mathematik site:westermann.de">Lernhilfen Mathematik site:westermann.de</button></td></tr>
+        <tr><th class="mono">site:</th><td>Suche auf bestimmten Webseiten</td><td><button class="btn ex" data-q="Lernhilfen Mathematik site:beispielverlag.de">Lernhilfen Mathematik site:beispielverlag.de</button></td></tr>
         <tr><th class="mono">OR</th><td>Suche nach einem Begriff oder einem anderen</td><td><button class="btn ex" data-q="Hund OR Katze">Hund OR Katze</button></td></tr>
         <tr><th class="mono">filetype:</th><td>nur bestimmte Dateitypen</td><td><button class="btn ex" data-q="Artgerechte Haltung Zwergkaninchen filetype:pdf">… Zwergkaninchen filetype:pdf</button></td></tr>
         <tr><th class="mono">*</th><td>Platzhalter, den die Suchmaschine ergänzt</td><td><button class="btn ex" data-q="&quot;Was lange *, wird endlich gut&quot;">„Was lange *, wird endlich gut“</button></td></tr>
@@ -1506,7 +1506,7 @@ function timeline(root, detail, ev, cats, o = {}) {
     $$('[data-f]', fl).forEach(x => x.setAttribute('aria-pressed', x.dataset.f === filt));
     ev.forEach(x => x.el.classList.toggle('dim', !!filt && x.cat !== filt));
   });
-  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse wie im Buch'], ['true', 'maßstabsgetreu']], v => {
+  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse gestaucht'], ['true', 'maßstabsgetreu']], v => {
     mode = v; zl.classList.toggle('true', v === 'true'); zl.style.minWidth = v === 'true' ? '100%' : '';
     layout();
     const sc = $('.zl-scroll', root); if (v === 'true') sc.scrollLeft = 0; else if (ev[sel]) sc.scrollLeft = ev[sel].el.offsetLeft - sc.clientWidth / 2;
@@ -1972,7 +1972,7 @@ function flowBuilder(root, o = {}) {
   draw();
 }
 
-/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß wie im Buch), palette: [Farben] für Farbbilder,
+/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß), palette: [Farben] für Farbbilder,
    code: Element für den Binärcode, onChange(data)} */
 function pixelGrid(root, o = {}) {
   const W = o.w || 8, H = o.h || 8;
@@ -2037,7 +2037,7 @@ const DOCS = [
   ['Jaguar Auto gebraucht kaufen', 'autoboerse.de', 'html', '2025-03-01', 'Gebrauchte Jaguar Autos zu fairen Preisen.'],
   ['Weltbevölkerung im Jahr 2040', 'statistik-wissen.de', 'pdf', '2024-06-30', 'Prognose: Die Weltbevölkerung im Jahr 2040 liegt bei etwa 9 Milliarden Menschen.'],
   ['Wie wächst die Weltbevölkerung?', 'kindernachrichten.de', 'html', '2023-02-14', 'Im Jahr 2023 lebten 8 Milliarden Menschen; 2040 werden es mehr sein.'],
-  ['Lernhilfen Mathematik – Klasse 5', 'westermann.de', 'html', '2025-04-04', 'Lernhilfen Mathematik mit Übungen und Lösungen.'],
+  ['Lernhilfen Mathematik – Klasse 5', 'beispielverlag.de', 'html', '2025-04-04', 'Lernhilfen Mathematik mit Übungen und Lösungen.'],
   ['Lernhilfen Mathematik kostenlos', 'mathe-hilfe-online.de', 'html', '2024-10-10', 'Kostenlose Lernhilfen Mathematik zum Ausdrucken.'],
   ['Hund als Haustier', 'haustier-ratgeber.de', 'html', '2024-01-12', 'Was ein Hund braucht: Auslauf, Futter, Zeit.'],
   ['Katze als Haustier', 'haustier-ratgeber.de', 'html', '2024-01-13', 'Die Katze ist unabhängig, braucht aber Zuwendung.'],
@@ -2051,7 +2051,7 @@ const DOCS = [
   ['Tiere im Wald: Diese Wildtiere leben in deutschen Wäldern', 'petra.de', 'html', '2023-10-10', 'Rotwild, Reh, Damwild, Wildschwein, Baummarder.'],
   ['Folgen des Klimawandels', 'umwelt-infos.de', 'html', '2022-03-03', 'Der Klimawandel verändert Wetter und Natur.'],
   ['Klimawandel: Neue Studie 2024', 'forschung-aktuell.de', 'pdf', '2024-09-09', 'Aktuelle Daten zum Klimawandel und seinen Auswirkungen.'],
-  ['Englisch Klassenarbeitstrainer', 'westermann.de', 'html', '2024-07-07', 'Klassenarbeitstrainer Englisch für die Klassen 5 und 6.'],
+  ['Englisch Klassenarbeitstrainer', 'beispielverlag.de', 'html', '2024-07-07', 'Klassenarbeitstrainer Englisch für die Klassen 5 und 6.'],
   ['Schwimmkurs Anmeldung', 'stadtbad-mannheim.de', 'html', '2025-02-02', 'Anmeldung zum Schwimmkurs für Kinder online.'],
   ['Die Planeten unseres Sonnensystems', 'weltall-fuer-kinder.de', 'html', '2023-12-12', 'Weltall Planeten Infos: Merkur, Venus, Erde, Mars …'],
   ['Erdbeeren – Obst oder Nuss?', 'garten-tipps.de', 'html', '2024-06-01', 'Erdbeeren sind botanisch Sammelnussfrüchte – aber wir essen sie als Obst.'],
@@ -2116,7 +2116,7 @@ sorter($('#m4-sort'), [{id: 'w', name: 'Werbung'}, {id: 'h', name: 'hilfreich'},
 
 /* ================= M5 ================= */
 (() => {
-  const M = [['Klassenarbeitstrainer Englisch Westermann', 'Klassenarbeitstrainer Englisch site:westermann.de'], ['Anmeldung Schwimmkurs', '"Anmeldung Schwimmkurs" Mannheim'], ['Weltall Planeten Infos', 'Planeten Sonnensystem Kinder'], ['Dokument Auswirkungen Klimawandel', 'Auswirkungen Klimawandel filetype:pdf'], ['Erdbeeren Obst Gemüse', 'Erdbeeren Obst OR Nuss'], ['Geschichte Mittelalter', '"Geschichte Mittelalter" Kinder']];
+  const M = [['Klassenarbeitstrainer Englisch Beispielverlag', 'Klassenarbeitstrainer Englisch site:beispielverlag.de'], ['Anmeldung Schwimmkurs', '"Anmeldung Schwimmkurs" Mannheim'], ['Weltall Planeten Infos', 'Planeten Sonnensystem Kinder'], ['Dokument Auswirkungen Klimawandel', 'Auswirkungen Klimawandel filetype:pdf'], ['Erdbeeren Obst Gemüse', 'Erdbeeren Obst OR Nuss'], ['Geschichte Mittelalter', '"Geschichte Mittelalter" Kinder']];
   $('#m5-list').innerHTML = M.map(([a, b], i) => `<div class="m5-row"><span class="mono q-old">🔍 ${a}</span><button class="btn" data-m5="${i}">Vorschlag</button><span class="mono q-new" hidden>${b}</span><button class="btn" data-try="${i}" hidden>Testen</button></div>`).join('');
   $('#m5-list').addEventListener('click', e => {
     const b = e.target.closest('[data-m5]'); if (b) { const r = b.closest('.m5-row'); $('.q-new', r).hidden = false; $('[data-try]', r).hidden = false; b.remove(); return; }
@@ -2126,7 +2126,7 @@ sorter($('#m4-sort'), [{id: 'w', name: 'Werbung'}, {id: 'h', name: 'hilfreich'},
 
 mcQuiz($('#quiz'), [
   {q: 'Du suchst Infos über das Tier Jaguar, nicht über das Auto.', a: ['Jaguar -Auto', 'Jaguar OR Auto', '"Jaguar Auto"', 'Jaguar filetype:pdf'], ok: 0, why: 'Das Minus schließt Seiten mit „Auto“ aus.'},
-  {q: 'Du willst nur auf westermann.de suchen.', a: ['site:westermann.de', 'filetype:westermann', '-westermann', '"westermann"'], ok: 0, why: 'site: beschränkt die Suche auf eine Webseite.'},
+  {q: 'Du willst nur auf beispielverlag.de suchen.', a: ['site:beispielverlag.de', 'filetype:beispielverlag', '-beispielverlag', '"beispielverlag"'], ok: 0, why: 'site: beschränkt die Suche auf eine Webseite.'},
   {q: 'Du suchst ein Merkblatt als PDF.', a: ['filetype:pdf', 'site:pdf', '-pdf', 'pdf*'], ok: 0, why: 'filetype: filtert nach Dateityp.'},
   {q: 'Du suchst die genaue Wortgruppe „Ritter im Mittelalter“.', a: ['Anführungszeichen „…“', 'Minuszeichen', 'OR', 'Sternchen'], ok: 0, why: 'Dann kommen die Wörter genau so vor.'},
   {q: 'Du weißt ein Wort im Sprichwort nicht mehr.', a: ['Sternchen * als Platzhalter', 'OR', 'site:', 'after:'], ok: 0, why: 'Die Suchmaschine ergänzt das Wort.'},

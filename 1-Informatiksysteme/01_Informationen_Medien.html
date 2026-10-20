@@ -1082,7 +1082,7 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
       <div class="controls"><button class="btn primary" data-go="auftakt">Los geht's →</button></div>
     </div>
     <ol class="preview" aria-label="Stationen dieser Stunde">
-      <li><button data-go="auftakt"><span class="num">01</span><span class="y">Einstieg</span><span class="n"><b>Informatik im Alltag</b><span>Kapitelauftakt S. 6–7</span></span></button></li>
+      <li><button data-go="auftakt"><span class="num">01</span><span class="y">Einstieg</span><span class="n"><b>Informatik im Alltag</b><span>Kapitelauftakt</span></span></button></li>
       <li><button data-go="information"><span class="num">02</span><span class="y">Erarbeitung</span><span class="n"><b>Information und Repräsentation</b><span>„Mir ist kalt!“ in fünf Formen</span></span></button></li>
       <li><button data-go="sprache"><span class="num">03</span><span class="y">Erarbeitung</span><span class="n"><b>Gemeinsame Sprache</b><span>Sender, Empfänger, Interpretation</span></span></button></li>
       <li><button data-go="daten"><span class="num">04</span><span class="y">Erarbeitung</span><span class="n"><b>Daten und Medium</b><span>Der Schäfer und seine Kerben</span></span></button></li>
@@ -1092,11 +1092,11 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
   </div>
 </section>
 
-<section class="station" id="auftakt" data-label="Kapitelauftakt" data-yr="Einstieg" data-title="Informatik im Alltag" data-sub="Kapitelauftakt S. 6–7" hidden>
+<section class="station" id="auftakt" data-label="Kapitelauftakt" data-yr="Einstieg" data-title="Informatik im Alltag" data-sub="Kapitelauftakt" hidden>
   <div class="section-head">
     <p class="eyebrow">Station 1 · Kapitelauftakt</p>
     <h2>Informatiksysteme nutzen</h2>
-    <p class="lead">Smartphones, Tablets, Computer: Informatik begegnet uns überall. Ordne die Begriffe der Mindmap aus dem Buch den vier Ästen zu.</p>
+    <p class="lead">Smartphones, Tablets, Computer: Informatik begegnet uns überall. Ordne die Begriffe der Mindmap den vier Ästen zu.</p>
   </div>
   <div id="mind-sort"></div>
   <div class="cols-3 mt">
@@ -1585,7 +1585,7 @@ function timeline(root, detail, ev, cats, o = {}) {
     $$('[data-f]', fl).forEach(x => x.setAttribute('aria-pressed', x.dataset.f === filt));
     ev.forEach(x => x.el.classList.toggle('dim', !!filt && x.cat !== filt));
   });
-  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse wie im Buch'], ['true', 'maßstabsgetreu']], v => {
+  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse gestaucht'], ['true', 'maßstabsgetreu']], v => {
     mode = v; zl.classList.toggle('true', v === 'true'); zl.style.minWidth = v === 'true' ? '100%' : '';
     layout();
     const sc = $('.zl-scroll', root); if (v === 'true') sc.scrollLeft = 0; else if (ev[sel]) sc.scrollLeft = ev[sel].el.offsetLeft - sc.clientWidth / 2;
@@ -2051,7 +2051,7 @@ function flowBuilder(root, o = {}) {
   draw();
 }
 
-/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß wie im Buch), palette: [Farben] für Farbbilder,
+/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß), palette: [Farben] für Farbbilder,
    code: Element für den Binärcode, onChange(data)} */
 function pixelGrid(root, o = {}) {
   const W = o.w || 8, H = o.h || 8;
@@ -2190,7 +2190,7 @@ trueFalse($('#tf'), [
   {t: 'Eine Information kann direkt von Kopf zu Kopf übertragen werden.', ok: false, why: 'Sie muss erst dargestellt (repräsentiert) werden.'},
   {t: 'Ein Emoji ist eine Form der Repräsentation.', ok: true, why: 'Es stellt die Information als Bild dar.'},
   {t: 'Das Datum 09.04.27 bedeutet überall auf der Welt dasselbe.', ok: false, why: 'In den USA steht der Monat vorne.'},
-  {t: 'Beim Schäfer sind die Kerben die Daten und der Ast ist das Medium.', ok: true, why: 'Genau so steht es im Buch.'},
+  {t: 'Beim Schäfer sind die Kerben die Daten und der Ast ist das Medium.', ok: true, why: 'Genau: Die Kerben stellen die Information dar, der Ast trägt sie.'},
   {t: 'Medien zeigen immer alle Details einer Nachricht.', ok: false, why: 'Manchmal werden wichtige Details weggelassen.'},
   {t: 'Sprache wird als Schallwellen durch die Luft übertragen.', ok: true, why: 'Die Luft ist dann das Trägermedium.'}
 ], {pick: 6});

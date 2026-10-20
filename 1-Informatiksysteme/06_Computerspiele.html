@@ -1087,7 +1087,7 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
       <li><button data-go="m1"><span class="num">02</span><span class="y">M1</span><span class="n"><b>Technische Entwicklung</b><span>Bilder den Jahrzehnten zuordnen</span></span></button></li>
       <li><button data-go="fps"><span class="num">03</span><span class="y">M2</span><span class="n"><b>Auflösung und FPS</b><span>Frames per Second</span></span></button></li>
       <li><button data-go="cloud"><span class="num">04</span><span class="y">Erarbeitung</span><span class="n"><b>Cloud Gaming und KI</b><span>Spielen per Stream</span></span></button></li>
-      <li><button data-go="entwickeln"><span class="num">05</span><span class="y">Experte</span><span class="n"><b>Computerspiele entwickeln</b><span>Expertenwissen S. 23</span></span></button></li>
+      <li><button data-go="entwickeln"><span class="num">05</span><span class="y">Experte</span><span class="n"><b>Computerspiele entwickeln</b><span>Expertenwissen</span></span></button></li>
       <li><button data-go="faehigkeiten"><span class="num">06</span><span class="y">Erarbeitung</span><span class="n"><b>Gaming fördert Fähigkeiten</b><span>Und: nicht nur zocken!</span></span></button></li>
       <li><button data-go="fussball"><span class="num">07</span><span class="y">M1</span><span class="n"><b>Analog oder digital?</b><span>Fußball im Vergleich</span></span></button></li>
     </ol>
@@ -1170,7 +1170,7 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
   <div class="box mt"><span class="tag">Künstliche Intelligenz</span><p>Mit <b>KI</b> werden Licht- und Schatteneffekte präzise berechnet. In Zukunft könnte auch das Verhalten von <b>NPC</b> (<b>N</b>on-<b>P</b>layer-<b>C</b>haracter, also Figuren, die nicht von Menschen gesteuert werden) mit KI programmiert werden.</p></div>
 </section>
 
-<section class="station" id="entwickeln" data-label="Spiele entwickeln" data-yr="Experte" data-title="Computerspiele entwickeln" data-sub="Expertenwissen S. 23" hidden>
+<section class="station" id="entwickeln" data-label="Spiele entwickeln" data-yr="Experte" data-title="Computerspiele entwickeln" data-sub="Expertenwissen" hidden>
   <div class="section-head">
     <p class="eyebrow">Station 5 · Expertenwissen</p>
     <h2>Von der Idee zum Spiel</h2>
@@ -1215,7 +1215,7 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
 
 <section class="station" id="fussball" data-label="M1 Fußball" data-yr="M1" data-title="Analog oder digital?" data-sub="Fußball im Vergleich" hidden>
   <div class="section-head">
-    <p class="eyebrow">Station 7 · Material M1 (S. 25)</p>
+    <p class="eyebrow">Station 7 · Material M1</p>
     <h2>Fußball: analog und digital</h2>
     <p class="lead">Fußball ist als Sport ein beliebtes, analoges Spiel. Fußball-Computerspiele zählen zu den beliebtesten digitalen Spielen.</p>
   </div>
@@ -1589,7 +1589,7 @@ function timeline(root, detail, ev, cats, o = {}) {
     $$('[data-f]', fl).forEach(x => x.setAttribute('aria-pressed', x.dataset.f === filt));
     ev.forEach(x => x.el.classList.toggle('dim', !!filt && x.cat !== filt));
   });
-  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse wie im Buch'], ['true', 'maßstabsgetreu']], v => {
+  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse gestaucht'], ['true', 'maßstabsgetreu']], v => {
     mode = v; zl.classList.toggle('true', v === 'true'); zl.style.minWidth = v === 'true' ? '100%' : '';
     layout();
     const sc = $('.zl-scroll', root); if (v === 'true') sc.scrollLeft = 0; else if (ev[sel]) sc.scrollLeft = ev[sel].el.offsetLeft - sc.clientWidth / 2;
@@ -2055,7 +2055,7 @@ function flowBuilder(root, o = {}) {
   draw();
 }
 
-/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß wie im Buch), palette: [Farben] für Farbbilder,
+/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß), palette: [Farben] für Farbbilder,
    code: Element für den Binärcode, onChange(data)} */
 function pixelGrid(root, o = {}) {
   const W = o.w || 8, H = o.h || 8;

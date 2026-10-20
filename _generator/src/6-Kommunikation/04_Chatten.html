@@ -151,7 +151,7 @@ flipCards($('#rules'), [
   $('#em-bar').addEventListener('click', e => { const b = e.target.closest('[data-e]'); if (!b) return; const s = sel || $$('.slot').find(x => !x.textContent); if (s) { s.textContent = b.dataset.e; s.classList.remove('sel'); sel = null; } });
   $('#em-check').onclick = () => {
     let ok = 0, n = 0; $$('.slot').forEach(s => { n++; const g = s.textContent === M[+s.dataset.i][3]; s.style.borderColor = s.textContent ? (g ? '#16A34A' : '#F59E0B') : ''; if (g) ok++; });
-    $('#em-fb').innerHTML = `<b>${ok}</b> von ${n} wie im Buch-Vorschlag. Andere Emojis können auch passen – begründe deine Wahl!`;
+    $('#em-fb').innerHTML = `<b>${ok}</b> von ${n} wie im Vorschlag. Andere Emojis können auch passen – begründe deine Wahl!`;
   };
   $('#em-reset').onclick = build; build();
   const MO = [['😊', 'freundlich – kein Problem'], ['😒', 'genervt'], ['😂', 'lustig gemeint'], ['😡', 'richtig wütend'], ['🥺', 'traurig, enttäuscht']];

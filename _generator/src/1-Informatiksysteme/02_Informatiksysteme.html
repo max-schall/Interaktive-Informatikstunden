@@ -60,7 +60,7 @@ inter: EVA-Fließband mit Beispielen · klickbares Smartphone mit Quiz · Gerät
   </div>
 </section>
 
-<section class="station" id="smartphone" data-label="Smartphone" data-yr="Material" data-title="EVA am Smartphone" data-sub="Abb. 2 im Buch zum Anklicken">
+<section class="station" id="smartphone" data-label="Smartphone" data-yr="Material" data-title="EVA am Smartphone" data-sub="Smartphone zum Anklicken">
   <div class="section-head">
     <p class="eyebrow">Station 3 · Abb. 2</p>
     <h2>EVA-Prinzip am Beispiel eines Smartphones</h2>
@@ -155,7 +155,7 @@ inter: EVA-Fließband mit Beispielen · klickbares Smartphone mit Quiz · Gerät
   </div>
   <div id="zl"></div>
   <div id="zl-detail"></div>
-  <p class="status" id="zl-status">Wie im Buch ist die Zeitachse gestaucht: Die ersten 38 000 Jahre nehmen nur einen kleinen Teil ein.</p>
+  <p class="status" id="zl-status">Die Zeitachse ist gestaucht: Die ersten 38 000 Jahre nehmen nur einen kleinen Teil ein.</p>
 </section>
 
 <section class="station" id="zl-aufgaben" data-label="Zeitleiste üben" data-yr="Zeitleiste" data-title="Aufgaben zur Zeitleiste" data-sub="Puzzle, Sortieren, Was war zuerst?">
@@ -390,7 +390,7 @@ const ZL = [
   {y: 2003, t: '2003', lab: 'Skype', ic: '💬', cat: 'tele', txt: 'Mit Skype konnte man kostenlos über das Internet telefonieren und per Video chatten.'},
   {y: 2007, t: '2007', lab: 'Modernes Smartphone', ic: '📱', cat: 'digital', txt: 'Smartphones mit großem Touchscreen verbreiteten sich. Man kann damit telefonieren, Fotos machen, Nachrichten schicken, spielen und ins Internet gehen. Heute nutzen viele Menschen auch soziale Netzwerke.', eva: '<span class="E">Eingabe:</span> Touchscreen, Kamera, Mikrofon, Sensoren · <span class="V">Verarbeitung:</span> Prozessor · <span class="A">Ausgabe:</span> Touchscreen, Lautsprecher, LED.'},
   {y: 2010, t: '2010', lab: 'Videotelefonie mit Smartphone', ic: '🤳', cat: 'tele', txt: 'Videotelefonie wurde immer beliebter. 2010 kamen auch die ersten Tablets. Mit Programmen wie Zoom oder Teams kann heute sogar die ganze Schulklasse von zu Hause aus miteinander sprechen.'},
-  {y: 2011, t: '2011', lab: 'Chatbox', ic: '🗣️', cat: 'digital', txt: 'Sprachassistenten (im Buch „Chatbox“) verstehen gesprochene Fragen und antworten mit einer Computerstimme.', eva: 'Mikrofon (<span class="E">Eingabe</span>) → Programm versteht die Frage (<span class="V">Verarbeitung</span>) → Lautsprecher (<span class="A">Ausgabe</span>).'},
+  {y: 2011, t: '2011', lab: 'Sprachassistent', ic: '🗣️', cat: 'digital', txt: 'Sprachassistenten verstehen gesprochene Fragen und antworten mit einer Computerstimme.', eva: 'Mikrofon (<span class="E">Eingabe</span>) → Programm versteht die Frage (<span class="V">Verarbeitung</span>) → Lautsprecher (<span class="A">Ausgabe</span>).'},
   {y: 2019, t: '2019', lab: '5G-Internet', ic: '📶', cat: 'digital', txt: '5G ermöglicht superschnelles Internet für unterwegs.'},
   {y: 2022, t: '2022', lab: 'ChatGPT', ic: '🤖', cat: 'digital', txt: 'Künstliche Intelligenz bezeichnet Computerprogramme, die aus Daten lernen und uns beim Kommunizieren oder Schreiben helfen. ChatGPT ist ein bekanntes Beispiel.', eva: 'Du tippst eine Frage (<span class="E">Eingabe</span>), das Programm erzeugt eine Antwort (<span class="V">Verarbeitung</span>), die Antwort erscheint auf dem Bildschirm (<span class="A">Ausgabe</span>).'}
 ];
@@ -400,7 +400,7 @@ timeline($('#zl'), $('#zl-detail'), ZL, ZL_CATS, {
   segs: [[-37975, 0], [-7975, .035], [-3275, .065], [-2975, .09], [25, .12], [1400, .15], [1800, .29], [1900, .4], [1950, .5], [2030, 1]],
   ticks: [[1400, '1400'], [1500, '1500'], [1600, '1600'], [1700, '1700'], [1800, '1800'], [1900, '1900'], [1950, '1950'], [2000, '2000']],
   onMode: v => $('#zl-status').innerHTML = v === 'book'
-    ? 'Wie im Buch ist die Zeitachse gestaucht: Die ersten 38 000 Jahre nehmen nur einen kleinen Teil ein.'
+    ? 'Die Zeitachse ist gestaucht: Die ersten 38 000 Jahre nehmen nur einen kleinen Teil ein.'
     : 'Maßstabsgetreu: Fast alle Erfindungen drängen sich in den letzten <b>600 Jahren</b> ganz rechts zusammen. Die Kommunikation hat sich zuletzt <b>immer schneller</b> verändert.'
 });
 

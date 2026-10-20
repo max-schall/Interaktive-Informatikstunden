@@ -223,7 +223,7 @@ WS = {
           'Reaktionsgeschwindigkeit, Problemlösefähigkeit, Teamarbeit/Kommunikation, Konzentration, Sprache. // Altersgerechte Spiele wählen, Bildschirmzeit im Blick behalten, Pausen machen.'),
     ]),
     ('fussball', [
-        TAB('**M1 S. 25:** Vergib Punkte von 1 (sehr schwach) bis 5 (sehr stark).', ['Fähigkeit', 'analoges Fußballspiel', 'digitales Fußballspiel'],
+        TAB('**M1:** Vergib Punkte von 1 (sehr schwach) bis 5 (sehr stark).', ['Fähigkeit', 'analoges Fußballspiel', 'digitales Fußballspiel'],
             [['Teamfähigkeit', '', ''], ['körperliche Fitness', '', ''], ['Geschicklichkeit', '', ''], ['strategisches Denken', '', ''], ['Kommunikation', '', '']], h=5.5, widths=[36, 32, 32]),
     ]),
 ]),

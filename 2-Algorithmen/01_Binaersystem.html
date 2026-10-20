@@ -1081,7 +1081,7 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
       <div class="controls"><button class="btn primary" data-go="auftakt">Los geht's →</button></div>
     </div>
     <ol class="preview" aria-label="Stationen dieser Stunde">
-      <li><button data-go="auftakt"><span class="num">01</span><span class="y">Einstieg</span><span class="n"><b>Algorithmen und Problemlösen</b><span>Kapitelauftakt S. 28–29</span></span></button></li>
+      <li><button data-go="auftakt"><span class="num">01</span><span class="y">Einstieg</span><span class="n"><b>Algorithmen und Problemlösen</b><span>Kapitelauftakt</span></span></button></li>
       <li><button data-go="binaer"><span class="num">02</span><span class="y">Erarbeitung</span><span class="n"><b>Nur 0 und 1</b><span>Bit und Stellenwerttafeln</span></span></button></li>
       <li><button data-go="umrechnen"><span class="num">03</span><span class="y">Erarbeitung</span><span class="n"><b>Umrechnen</b><span>In beide Richtungen</span></span></button></li>
       <li><button data-go="m1"><span class="num">04</span><span class="y">M1</span><span class="n"><b>Dualzahlen und Dezimalzahlen</b><span>Lampenreihen lesen und schalten</span></span></button></li>
@@ -1090,7 +1090,7 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
   </div>
 </section>
 
-<section class="station" id="auftakt" data-label="Kapitelauftakt" data-yr="Einstieg" data-title="Algorithmen und Problemlösen" data-sub="Kapitelauftakt S. 28–29" hidden>
+<section class="station" id="auftakt" data-label="Kapitelauftakt" data-yr="Einstieg" data-title="Algorithmen und Problemlösen" data-sub="Kapitelauftakt" hidden>
   <div class="section-head">
     <p class="eyebrow">Station 1 · Kapitelauftakt</p>
     <h2>Algorithmen und Problemlösen</h2>
@@ -1124,7 +1124,7 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
       <div class="vis-head"><h3>Binäre Stellenwerttafel</h3><span class="note">Stellen antippen</span></div>
       <div class="pv" id="pv"></div>
       <p class="status" id="pv-status"></p>
-      <div class="controls"><button class="btn" id="pv-ex">Beispiel aus dem Buch: 110010001₂</button><button class="btn" id="pv-0">Alles auf 0</button></div>
+      <div class="controls"><button class="btn" id="pv-ex">Beispiel: 110010001₂</button><button class="btn" id="pv-0">Alles auf 0</button></div>
     </div>
   </div>
 </section>
@@ -1551,7 +1551,7 @@ function timeline(root, detail, ev, cats, o = {}) {
     $$('[data-f]', fl).forEach(x => x.setAttribute('aria-pressed', x.dataset.f === filt));
     ev.forEach(x => x.el.classList.toggle('dim', !!filt && x.cat !== filt));
   });
-  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse wie im Buch'], ['true', 'maßstabsgetreu']], v => {
+  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse gestaucht'], ['true', 'maßstabsgetreu']], v => {
     mode = v; zl.classList.toggle('true', v === 'true'); zl.style.minWidth = v === 'true' ? '100%' : '';
     layout();
     const sc = $('.zl-scroll', root); if (v === 'true') sc.scrollLeft = 0; else if (ev[sel]) sc.scrollLeft = ev[sel].el.offsetLeft - sc.clientWidth / 2;
@@ -2017,7 +2017,7 @@ function flowBuilder(root, o = {}) {
   draw();
 }
 
-/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß wie im Buch), palette: [Farben] für Farbbilder,
+/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß), palette: [Farben] für Farbbilder,
    code: Element für den Binärcode, onChange(data)} */
 function pixelGrid(root, o = {}) {
   const W = o.w || 8, H = o.h || 8;

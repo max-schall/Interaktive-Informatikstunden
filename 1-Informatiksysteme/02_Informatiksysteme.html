@@ -1086,7 +1086,7 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
     <ol class="preview" aria-label="Stationen dieser Stunde">
       <li><button data-go="systeme"><span class="num">01</span><span class="y">Einstieg</span><span class="n"><b>Informatiksysteme</b><span>Hardware, Software, Netzwerk</span></span></button></li>
       <li><button data-go="eva"><span class="num">02</span><span class="y">Erarbeitung</span><span class="n"><b>Eingabe – Verarbeitung – Ausgabe</b><span>Das zentrale Prinzip der Datenverarbeitung</span></span></button></li>
-      <li><button data-go="smartphone"><span class="num">03</span><span class="y">Material</span><span class="n"><b>EVA am Smartphone</b><span>Abb. 2 im Buch zum Anklicken</span></span></button></li>
+      <li><button data-go="smartphone"><span class="num">03</span><span class="y">Material</span><span class="n"><b>EVA am Smartphone</b><span>Smartphone zum Anklicken</span></span></button></li>
       <li><button data-go="m1"><span class="num">04</span><span class="y">M1</span><span class="n"><b>Geräte zuordnen</b><span>Aufgaben 1 und 2</span></span></button></li>
       <li><button data-go="karte"><span class="num">05</span><span class="y">M1</span><span class="n"><b>Karten-App</b><span>Aufgabe 3: EVA beschreiben</span></span></button></li>
       <li><button data-go="headset"><span class="num">06</span><span class="y">M1</span><span class="n"><b>Das Headset</b><span>Aufgabe 4: nicht immer eindeutig</span></span></button></li>
@@ -1136,7 +1136,7 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
   </div>
 </section>
 
-<section class="station" id="smartphone" data-label="Smartphone" data-yr="Material" data-title="EVA am Smartphone" data-sub="Abb. 2 im Buch zum Anklicken" hidden>
+<section class="station" id="smartphone" data-label="Smartphone" data-yr="Material" data-title="EVA am Smartphone" data-sub="Smartphone zum Anklicken" hidden>
   <div class="section-head">
     <p class="eyebrow">Station 3 · Abb. 2</p>
     <h2>EVA-Prinzip am Beispiel eines Smartphones</h2>
@@ -1231,7 +1231,7 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
   </div>
   <div id="zl"></div>
   <div id="zl-detail"></div>
-  <p class="status" id="zl-status">Wie im Buch ist die Zeitachse gestaucht: Die ersten 38 000 Jahre nehmen nur einen kleinen Teil ein.</p>
+  <p class="status" id="zl-status">Die Zeitachse ist gestaucht: Die ersten 38 000 Jahre nehmen nur einen kleinen Teil ein.</p>
 </section>
 
 <section class="station" id="zl-aufgaben" data-label="Zeitleiste üben" data-yr="Zeitleiste" data-title="Aufgaben zur Zeitleiste" data-sub="Puzzle, Sortieren, Was war zuerst?" hidden>
@@ -1620,7 +1620,7 @@ function timeline(root, detail, ev, cats, o = {}) {
     $$('[data-f]', fl).forEach(x => x.setAttribute('aria-pressed', x.dataset.f === filt));
     ev.forEach(x => x.el.classList.toggle('dim', !!filt && x.cat !== filt));
   });
-  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse wie im Buch'], ['true', 'maßstabsgetreu']], v => {
+  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse gestaucht'], ['true', 'maßstabsgetreu']], v => {
     mode = v; zl.classList.toggle('true', v === 'true'); zl.style.minWidth = v === 'true' ? '100%' : '';
     layout();
     const sc = $('.zl-scroll', root); if (v === 'true') sc.scrollLeft = 0; else if (ev[sel]) sc.scrollLeft = ev[sel].el.offsetLeft - sc.clientWidth / 2;
@@ -2086,7 +2086,7 @@ function flowBuilder(root, o = {}) {
   draw();
 }
 
-/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß wie im Buch), palette: [Farben] für Farbbilder,
+/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß), palette: [Farben] für Farbbilder,
    code: Element für den Binärcode, onChange(data)} */
 function pixelGrid(root, o = {}) {
   const W = o.w || 8, H = o.h || 8;
@@ -2312,7 +2312,7 @@ const ZL = [
   {y: 2003, t: '2003', lab: 'Skype', ic: '💬', cat: 'tele', txt: 'Mit Skype konnte man kostenlos über das Internet telefonieren und per Video chatten.'},
   {y: 2007, t: '2007', lab: 'Modernes Smartphone', ic: '📱', cat: 'digital', txt: 'Smartphones mit großem Touchscreen verbreiteten sich. Man kann damit telefonieren, Fotos machen, Nachrichten schicken, spielen und ins Internet gehen. Heute nutzen viele Menschen auch soziale Netzwerke.', eva: '<span class="E">Eingabe:</span> Touchscreen, Kamera, Mikrofon, Sensoren · <span class="V">Verarbeitung:</span> Prozessor · <span class="A">Ausgabe:</span> Touchscreen, Lautsprecher, LED.'},
   {y: 2010, t: '2010', lab: 'Videotelefonie mit Smartphone', ic: '🤳', cat: 'tele', txt: 'Videotelefonie wurde immer beliebter. 2010 kamen auch die ersten Tablets. Mit Programmen wie Zoom oder Teams kann heute sogar die ganze Schulklasse von zu Hause aus miteinander sprechen.'},
-  {y: 2011, t: '2011', lab: 'Chatbox', ic: '🗣️', cat: 'digital', txt: 'Sprachassistenten (im Buch „Chatbox“) verstehen gesprochene Fragen und antworten mit einer Computerstimme.', eva: 'Mikrofon (<span class="E">Eingabe</span>) → Programm versteht die Frage (<span class="V">Verarbeitung</span>) → Lautsprecher (<span class="A">Ausgabe</span>).'},
+  {y: 2011, t: '2011', lab: 'Sprachassistent', ic: '🗣️', cat: 'digital', txt: 'Sprachassistenten verstehen gesprochene Fragen und antworten mit einer Computerstimme.', eva: 'Mikrofon (<span class="E">Eingabe</span>) → Programm versteht die Frage (<span class="V">Verarbeitung</span>) → Lautsprecher (<span class="A">Ausgabe</span>).'},
   {y: 2019, t: '2019', lab: '5G-Internet', ic: '📶', cat: 'digital', txt: '5G ermöglicht superschnelles Internet für unterwegs.'},
   {y: 2022, t: '2022', lab: 'ChatGPT', ic: '🤖', cat: 'digital', txt: 'Künstliche Intelligenz bezeichnet Computerprogramme, die aus Daten lernen und uns beim Kommunizieren oder Schreiben helfen. ChatGPT ist ein bekanntes Beispiel.', eva: 'Du tippst eine Frage (<span class="E">Eingabe</span>), das Programm erzeugt eine Antwort (<span class="V">Verarbeitung</span>), die Antwort erscheint auf dem Bildschirm (<span class="A">Ausgabe</span>).'}
 ];
@@ -2322,7 +2322,7 @@ timeline($('#zl'), $('#zl-detail'), ZL, ZL_CATS, {
   segs: [[-37975, 0], [-7975, .035], [-3275, .065], [-2975, .09], [25, .12], [1400, .15], [1800, .29], [1900, .4], [1950, .5], [2030, 1]],
   ticks: [[1400, '1400'], [1500, '1500'], [1600, '1600'], [1700, '1700'], [1800, '1800'], [1900, '1900'], [1950, '1950'], [2000, '2000']],
   onMode: v => $('#zl-status').innerHTML = v === 'book'
-    ? 'Wie im Buch ist die Zeitachse gestaucht: Die ersten 38 000 Jahre nehmen nur einen kleinen Teil ein.'
+    ? 'Die Zeitachse ist gestaucht: Die ersten 38 000 Jahre nehmen nur einen kleinen Teil ein.'
     : 'Maßstabsgetreu: Fast alle Erfindungen drängen sich in den letzten <b>600 Jahren</b> ganz rechts zusammen. Die Kommunikation hat sich zuletzt <b>immer schneller</b> verändert.'
 });
 

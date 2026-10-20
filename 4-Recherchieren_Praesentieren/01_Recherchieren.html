@@ -1080,7 +1080,7 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
       <div class="controls"><button class="btn primary" data-go="auftakt">Los geht's →</button></div>
     </div>
     <ol class="preview" aria-label="Stationen dieser Stunde">
-      <li><button data-go="auftakt"><span class="num">01</span><span class="y">Einstieg</span><span class="n"><b>Recherchieren und Präsentieren</b><span>Kapitelauftakt S. 74–75</span></span></button></li>
+      <li><button data-go="auftakt"><span class="num">01</span><span class="y">Einstieg</span><span class="n"><b>Recherchieren und Präsentieren</b><span>Kapitelauftakt</span></span></button></li>
       <li><button data-go="suchmaschine"><span class="num">02</span><span class="y">Erarbeitung</span><span class="n"><b>So arbeitet eine Suchmaschine</b><span>Funktionsweise</span></span></button></li>
       <li><button data-go="begriffe"><span class="num">03</span><span class="y">M2</span><span class="n"><b>Fachbegriffe der Recherche</b><span>Die Ergebnisseite erkunden</span></span></button></li>
       <li><button data-go="m1"><span class="num">04</span><span class="y">M1</span><span class="n"><b>Warum suchen Menschen?</b><span>Gründe für Suchanfragen</span></span></button></li>
@@ -1088,7 +1088,7 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
   </div>
 </section>
 
-<section class="station" id="auftakt" data-label="Kapitelauftakt" data-yr="Einstieg" data-title="Recherchieren und Präsentieren" data-sub="Kapitelauftakt S. 74–75" hidden>
+<section class="station" id="auftakt" data-label="Kapitelauftakt" data-yr="Einstieg" data-title="Recherchieren und Präsentieren" data-sub="Kapitelauftakt" hidden>
   <div class="section-head">
     <p class="eyebrow">Station 1 · Kapitelauftakt</p>
     <h2>Recherchieren und Präsentieren</h2>
@@ -1523,7 +1523,7 @@ function timeline(root, detail, ev, cats, o = {}) {
     $$('[data-f]', fl).forEach(x => x.setAttribute('aria-pressed', x.dataset.f === filt));
     ev.forEach(x => x.el.classList.toggle('dim', !!filt && x.cat !== filt));
   });
-  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse wie im Buch'], ['true', 'maßstabsgetreu']], v => {
+  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse gestaucht'], ['true', 'maßstabsgetreu']], v => {
     mode = v; zl.classList.toggle('true', v === 'true'); zl.style.minWidth = v === 'true' ? '100%' : '';
     layout();
     const sc = $('.zl-scroll', root); if (v === 'true') sc.scrollLeft = 0; else if (ev[sel]) sc.scrollLeft = ev[sel].el.offsetLeft - sc.clientWidth / 2;
@@ -1989,7 +1989,7 @@ function flowBuilder(root, o = {}) {
   draw();
 }
 
-/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß wie im Buch), palette: [Farben] für Farbbilder,
+/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß), palette: [Farben] für Farbbilder,
    code: Element für den Binärcode, onChange(data)} */
 function pixelGrid(root, o = {}) {
   const W = o.w || 8, H = o.h || 8;
@@ -2066,7 +2066,7 @@ matcher($('#match'), [['Suchmaschine', 'findet mit Suchbegriffen andere Webseite
 mcQuiz($('#quiz'), [
   {q: 'Was ist eine Suchmaschine?', a: ['ein Programm, das Informationen im Internet findet', 'ein Browser', 'ein Lexikon aus Papier', 'eine Datenbank im Klassenzimmer'], ok: 0, why: 'Sie durchsucht ihre Datenbank.'},
   {q: 'Was macht eine Suchmaschine auch ohne Suchanfrage?', a: ['Sie durchsucht das Internet und speichert Inhalte', 'nichts', 'Sie löscht Webseiten', 'Sie schreibt Webseiten'], ok: 0, why: 'Ständig.'},
-  {q: 'Was ist eine URL?', a: ['die Internetadresse einer Webseite', 'ein Suchbegriff', 'ein Bild', 'ein Programm'], ok: 0, why: 'z. B. https://www.westermann.de'},
+  {q: 'Was ist eine URL?', a: ['die Internetadresse einer Webseite', 'ein Suchbegriff', 'ein Bild', 'ein Programm'], ok: 0, why: 'z. B. https://www.beispielverlag.de'},
   {q: 'Welcher Suchbegriff ist besser für Infos zum Schwarzbären?', a: ['Schwarzbär', 'Bär', 'Tier', 'schwarz'], ok: 0, why: 'Präzise Suchbegriffe!'},
   {q: 'Was beeinflusst, welche Seiten oben stehen?', a: ['Suchbegriffe, Aktualität, Beliebtheit', 'nur die Farbe der Seite', 'der Zufall', 'die Länge der URL'], ok: 0, why: 'Hochwertige, oft besuchte Seiten stehen weiter oben.'}
 ]);

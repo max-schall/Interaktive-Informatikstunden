@@ -1090,7 +1090,7 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
 </section>
 
 <section class="station" id="begriffe" data-label="Begriffe" data-yr="Wiederholen" data-title="Zusammenfassung" data-sub="Fachbegriffe" hidden>
-  <div class="section-head"><p class="eyebrow">Station 1 · Zusammenfassung (S. 92)</p><h2>Fachbegriffe</h2></div>
+  <div class="section-head"><p class="eyebrow">Station 1 · Zusammenfassung</p><h2>Fachbegriffe</h2></div>
   <div id="flip"></div>
   <h3 class="mt">Paare finden</h3>
   <div id="match"></div>
@@ -1492,7 +1492,7 @@ function timeline(root, detail, ev, cats, o = {}) {
     $$('[data-f]', fl).forEach(x => x.setAttribute('aria-pressed', x.dataset.f === filt));
     ev.forEach(x => x.el.classList.toggle('dim', !!filt && x.cat !== filt));
   });
-  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse wie im Buch'], ['true', 'maßstabsgetreu']], v => {
+  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse gestaucht'], ['true', 'maßstabsgetreu']], v => {
     mode = v; zl.classList.toggle('true', v === 'true'); zl.style.minWidth = v === 'true' ? '100%' : '';
     layout();
     const sc = $('.zl-scroll', root); if (v === 'true') sc.scrollLeft = 0; else if (ev[sel]) sc.scrollLeft = ev[sel].el.offsetLeft - sc.clientWidth / 2;
@@ -1958,7 +1958,7 @@ function flowBuilder(root, o = {}) {
   draw();
 }
 
-/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß wie im Buch), palette: [Farben] für Farbbilder,
+/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß), palette: [Farben] für Farbbilder,
    code: Element für den Binärcode, onChange(data)} */
 function pixelGrid(root, o = {}) {
   const W = o.w || 8, H = o.h || 8;
@@ -2038,7 +2038,7 @@ mcQuiz($('#quiz'), [
   {q: 'Was bedeutet „Gesponsert“ über einem Treffer?', a: ['Es ist Werbung', 'Es ist der beste Treffer', 'Es ist ein Lexikon', 'Es ist neu'], ok: 0, why: 'Dafür wurde bezahlt.'},
   {q: 'Was gehört auf die Titelfolie?', a: ['Thema, Name, Datum', 'alle Quellen', 'die Zusammenfassung', 'Fragen ans Publikum'], ok: 0, why: 'Der erste Eindruck.'},
   {q: 'Wie viele Zeilen Text sollte eine Folie höchstens haben?', a: ['7', '15', '2', '20'], ok: 0, why: 'Und höchstens 6 Wörter pro Zeile.'},
-  {q: 'Welche Schriftgröße empfiehlt das Buch für Folientexte?', a: ['18–24 Pt', '8–10 Pt', '40–60 Pt', '12 Pt'], ok: 0, why: 'Gut lesbar auch von hinten.'},
+  {q: 'Welche Schriftgröße ist für Folientexte empfehlenswert?', a: ['18–24 Pt', '8–10 Pt', '40–60 Pt', '12 Pt'], ok: 0, why: 'Gut lesbar auch von hinten.'},
   {q: 'Wozu dient ein Alternativtext?', a: ['Er beschreibt ein Bild für Screenreader', 'Er ersetzt die Überschrift', 'Er ist ein Untertitel für Videos', 'Er ändert die Schrift'], ok: 0, why: 'Barrierefreiheit.'},
   {q: 'Welches Präsentationsmittel braucht keinen Strom?', a: ['Plakat', 'Präsentationssoftware', 'Video', 'Beamer'], ok: 0, why: 'Auch Tafelbild und Anschauungsobjekt.'},
   {q: 'Welches Diagramm zeigt Anteile an einem Ganzen?', a: ['Kreisdiagramm', 'Säulendiagramm', 'Balkendiagramm', 'Liniendiagramm'], ok: 0, why: 'Wie Tortenstücke.'},

@@ -1090,7 +1090,7 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
 </section>
 
 <section class="station" id="begriffe" data-label="Begriffe" data-yr="Wiederholen" data-title="Zusammenfassung" data-sub="Fachbegriffe" hidden>
-  <div class="section-head"><p class="eyebrow">Station 1 · Zusammenfassung (S. 144)</p><h2>Fachbegriffe</h2></div>
+  <div class="section-head"><p class="eyebrow">Station 1 · Zusammenfassung</p><h2>Fachbegriffe</h2></div>
   <div id="flip"></div>
   <h3 class="mt">Paare finden</h3>
   <div id="match"></div>
@@ -1112,7 +1112,7 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
   <div class="section-head"><p class="eyebrow">Station 3 · Trainer</p><h2>E-Mails schreiben</h2></div>
   <div class="grid-2">
     <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Aufbau einer Adresse</h3></header><p>Beschreibe den Aufbau einer E-Mail-Adresse und nenne Beispiele.</p>
-      <div class="controls"><button class="btn" data-reveal="e1" aria-expanded="false">Lösung</button></div><p class="solution" id="e1" hidden>Benutzername – @ – Domain, z. B. <span class="mono">max.mustermann@westermann.de</span> oder <span class="mono">lina.becker@schule-musterstadt.de</span>.</p></div>
+      <div class="controls"><button class="btn" data-reveal="e1" aria-expanded="false">Lösung</button></div><p class="solution" id="e1" hidden>Benutzername – @ – Domain, z. B. <span class="mono">max.mustermann@beispielverlag.de</span> oder <span class="mono">lina.becker@schule-musterstadt.de</span>.</p></div>
     <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Zwei E-Mails</h3></header><p>Formuliere zwei E-Mails: einmal an die Schulleitung, einmal an einen Freund. Worin unterscheiden sie sich?</p>
       <div class="controls"><button class="btn" data-reveal="e2" aria-expanded="false">Lösung</button></div><p class="solution" id="e2" hidden>Schulleitung: Betreff, „Sehr geehrte Frau …,“, sachlich, Sie-Form, „Mit freundlichen Grüßen“ und voller Name. Freund: lockere Anrede („Hey Tim,“), Du-Form, Emojis möglich, „Bis bald“.</p></div>
   </div>
@@ -1484,7 +1484,7 @@ function timeline(root, detail, ev, cats, o = {}) {
     $$('[data-f]', fl).forEach(x => x.setAttribute('aria-pressed', x.dataset.f === filt));
     ev.forEach(x => x.el.classList.toggle('dim', !!filt && x.cat !== filt));
   });
-  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse wie im Buch'], ['true', 'maßstabsgetreu']], v => {
+  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse gestaucht'], ['true', 'maßstabsgetreu']], v => {
     mode = v; zl.classList.toggle('true', v === 'true'); zl.style.minWidth = v === 'true' ? '100%' : '';
     layout();
     const sc = $('.zl-scroll', root); if (v === 'true') sc.scrollLeft = 0; else if (ev[sel]) sc.scrollLeft = ev[sel].el.offsetLeft - sc.clientWidth / 2;
@@ -1950,7 +1950,7 @@ function flowBuilder(root, o = {}) {
   draw();
 }
 
-/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß wie im Buch), palette: [Farben] für Farbbilder,
+/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß), palette: [Farben] für Farbbilder,
    code: Element für den Binärcode, onChange(data)} */
 function pixelGrid(root, o = {}) {
   const W = o.w || 8, H = o.h || 8;

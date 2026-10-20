@@ -137,7 +137,7 @@ sorter($('#layer'), [{id: 'd', name: 'Schicht der Internetdienste'}, {id: 't', n
   {t: '✉️ E-Mail', c: 'd'}, {t: '🌐 Website', c: 'd'}, {t: '💬 Messenger', c: 'd'}, {t: '▶️ Streaming', c: 'd'}, {t: '💻 Computer', c: 't'}, {t: '🔌 Netzwerk- und Stromkabel', c: 't'}, {t: '🗄️ Server', c: 't'}, {t: '🛜 Router', c: 't'}
 ]);
 (() => {
-  const DB = {'www.schule-musterstadt.de': '203.0.113.42', 'www.westermann.de': '198.51.100.17', 'www.klicksafe.de': '192.0.2.88', 'www.kinderbuch-shop.de': '203.0.113.7', 'www.fragfinn.de': '198.51.100.230'};
+  const DB = {'www.schule-musterstadt.de': '203.0.113.42', 'www.beispielverlag.de': '198.51.100.17', 'www.klicksafe.de': '192.0.2.88', 'www.kinderbuch-shop.de': '203.0.113.7', 'www.fragfinn.de': '198.51.100.230'};
   $('#dns-ex').innerHTML = Object.keys(DB).map(d => `<button class="chip mono" data-d="${d}">${d}</button>`).join('');
   const go = () => { const d = $('#dns-in').value.trim().toLowerCase().replace(/^https?:\/\//, ''), ip = DB[d] || DB['www.' + d]; $('#dns-out').innerHTML = ip ? `${d} → <b>${ip}</b>` : `<span class="bad">Nicht im Telefonbuch gefunden.</span>`; };
   $('#dns-go').onclick = go; $('#dns-in').onkeydown = e => { if (e.key === 'Enter') go(); };

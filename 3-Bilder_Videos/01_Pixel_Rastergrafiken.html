@@ -1117,7 +1117,7 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
     <div><p class="eyebrow">Abb. 1: Rastergrafik</p><div id="pg1"></div></div>
     <div><p class="eyebrow">Pixelraster (Code)</p><div class="pxcode" id="pc1"></div></div>
     <div class="stack" style="flex:1;min-width:14rem">
-      <div class="controls" style="margin-top:0"><button class="btn" id="pg1-smile">Smiley aus dem Buch</button><button class="btn" id="pg1-clear">Leeren</button></div>
+      <div class="controls" style="margin-top:0"><button class="btn" id="pg1-smile">Smiley</button><button class="btn" id="pg1-clear">Leeren</button></div>
       <div class="task-card"><header><span class="no">A</span><h3>Dein Muster</h3></header><p>Zeichne zwei Quadrate mit 10 · 10 Kästchen. Zeichne in das erste ein Schwarz-Weiß-Muster und erstelle im zweiten die passende Binärcodierung. Probiere es unten aus!</p></div>
     </div>
   </div>
@@ -1527,7 +1527,7 @@ function timeline(root, detail, ev, cats, o = {}) {
     $$('[data-f]', fl).forEach(x => x.setAttribute('aria-pressed', x.dataset.f === filt));
     ev.forEach(x => x.el.classList.toggle('dim', !!filt && x.cat !== filt));
   });
-  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse wie im Buch'], ['true', 'maßstabsgetreu']], v => {
+  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse gestaucht'], ['true', 'maßstabsgetreu']], v => {
     mode = v; zl.classList.toggle('true', v === 'true'); zl.style.minWidth = v === 'true' ? '100%' : '';
     layout();
     const sc = $('.zl-scroll', root); if (v === 'true') sc.scrollLeft = 0; else if (ev[sel]) sc.scrollLeft = ev[sel].el.offsetLeft - sc.clientWidth / 2;
@@ -1993,7 +1993,7 @@ function flowBuilder(root, o = {}) {
   draw();
 }
 
-/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß wie im Buch), palette: [Farben] für Farbbilder,
+/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß), palette: [Farben] für Farbbilder,
    code: Element für den Binärcode, onChange(data)} */
 function pixelGrid(root, o = {}) {
   const W = o.w || 8, H = o.h || 8;
@@ -2108,7 +2108,7 @@ sorter($('#fmt-sort'), [{id: 'v', name: 'Informationen gehen verloren'}, {id: 'o
 })();
 mcQuiz($('#quiz'), [
   {q: 'Was ist ein Pixel?', a: ['der kleinste Bildpunkt eines digitalen Bildes', 'ein Dateiformat', 'eine Kamera', 'ein Bildbearbeitungsprogramm'], ok: 0, why: 'Mit Farbe und Position.'},
-  {q: 'Wie wird ein schwarzes Pixel im Buch codiert?', a: ['0', '1', '255', 'S'], ok: 0, why: 'Schwarz = 0, Weiß = 1.'},
+  {q: 'Wie wird ein schwarzes Pixel in einem Schwarz-Weiß-Bild codiert?', a: ['0', '1', '255', 'S'], ok: 0, why: 'Schwarz = 0, Weiß = 1.'},
   {q: 'Was gibt die Farbtiefe an?', a: ['wie viele Bits pro Pixel verwendet werden', 'wie groß das Bild ist', 'wie hell das Bild ist', 'wie viele Bilder es gibt'], ok: 0, why: 'z. B. 1 Bit für Schwarz-Weiß.'},
   {q: 'Welches Format eignet sich für Animationen?', a: ['GIF', 'JPEG', 'TIFF', 'PNG'], ok: 0, why: 'Mehrere Einzelbilder.'},
   {q: 'Bei welchem Format gehen Informationen verloren?', a: ['JPEG', 'PNG', 'TIFF', 'GIF'], ok: 0, why: 'Dafür spart es Platz.'},

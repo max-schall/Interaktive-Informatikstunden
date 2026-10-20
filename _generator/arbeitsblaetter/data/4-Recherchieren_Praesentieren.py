@@ -27,7 +27,7 @@ WS = {
     ]),
     ('operatoren', [
         TAB('Ergänze die Tabelle der Operatoren.', ['Operator', 'Funktion', 'Beispiel'],
-            [['„…“', '[[genaue Wortgruppe]]', '„Weltbevölkerung im Jahr 2040“'], ['-', '[[Wort ausschließen]]', '[[Jaguar -Auto]]'], ['site:', '[[nur auf einer Webseite suchen]]', '[[Mathematik site:westermann.de]]'],
+            [['„…“', '[[genaue Wortgruppe]]', '„Weltbevölkerung im Jahr 2040“'], ['-', '[[Wort ausschließen]]', '[[Jaguar -Auto]]'], ['site:', '[[nur auf einer Webseite suchen]]', '[[Mathematik site:beispielverlag.de]]'],
              ['OR', '[[das eine oder das andere]]', '[[Hund OR Katze]]'], ['filetype:', '[[nur bestimmte Dateitypen]]', '[[Zwergkaninchen filetype:pdf]]']], h=6.5, widths=[16, 40, 44]),
     ]),
     ('m4', [

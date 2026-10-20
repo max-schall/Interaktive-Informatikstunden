@@ -1513,7 +1513,7 @@ function timeline(root, detail, ev, cats, o = {}) {
     $$('[data-f]', fl).forEach(x => x.setAttribute('aria-pressed', x.dataset.f === filt));
     ev.forEach(x => x.el.classList.toggle('dim', !!filt && x.cat !== filt));
   });
-  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse wie im Buch'], ['true', 'maßstabsgetreu']], v => {
+  if (o.noScale) brace.remove(); else seg($('.zl-scale', root), [['book', 'Zeitachse gestaucht'], ['true', 'maßstabsgetreu']], v => {
     mode = v; zl.classList.toggle('true', v === 'true'); zl.style.minWidth = v === 'true' ? '100%' : '';
     layout();
     const sc = $('.zl-scroll', root); if (v === 'true') sc.scrollLeft = 0; else if (ev[sel]) sc.scrollLeft = ev[sel].el.offsetLeft - sc.clientWidth / 2;
@@ -1979,7 +1979,7 @@ function flowBuilder(root, o = {}) {
   draw();
 }
 
-/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß wie im Buch), palette: [Farben] für Farbbilder,
+/* Pixelraster zum Anklicken. o: {w, h, data: ['0101…', …] (0 = schwarz, 1 = weiß), palette: [Farben] für Farbbilder,
    code: Element für den Binärcode, onChange(data)} */
 function pixelGrid(root, o = {}) {
   const W = o.w || 8, H = o.h || 8;
@@ -2051,7 +2051,7 @@ sorter($('#layer'), [{id: 'd', name: 'Schicht der Internetdienste'}, {id: 't', n
   {t: '✉️ E-Mail', c: 'd'}, {t: '🌐 Website', c: 'd'}, {t: '💬 Messenger', c: 'd'}, {t: '▶️ Streaming', c: 'd'}, {t: '💻 Computer', c: 't'}, {t: '🔌 Netzwerk- und Stromkabel', c: 't'}, {t: '🗄️ Server', c: 't'}, {t: '🛜 Router', c: 't'}
 ]);
 (() => {
-  const DB = {'www.schule-musterstadt.de': '203.0.113.42', 'www.westermann.de': '198.51.100.17', 'www.klicksafe.de': '192.0.2.88', 'www.kinderbuch-shop.de': '203.0.113.7', 'www.fragfinn.de': '198.51.100.230'};
+  const DB = {'www.schule-musterstadt.de': '203.0.113.42', 'www.beispielverlag.de': '198.51.100.17', 'www.klicksafe.de': '192.0.2.88', 'www.kinderbuch-shop.de': '203.0.113.7', 'www.fragfinn.de': '198.51.100.230'};
   $('#dns-ex').innerHTML = Object.keys(DB).map(d => `<button class="chip mono" data-d="${d}">${d}</button>`).join('');
   const go = () => { const d = $('#dns-in').value.trim().toLowerCase().replace(/^https?:\/\//, ''), ip = DB[d] || DB['www.' + d]; $('#dns-out').innerHTML = ip ? `${d} → <b>${ip}</b>` : `<span class="bad">Nicht im Telefonbuch gefunden.</span>`; };
   $('#dns-go').onclick = go; $('#dns-in').onkeydown = e => { if (e.key === 'Enter') go(); };
