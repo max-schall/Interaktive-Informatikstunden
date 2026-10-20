@@ -204,7 +204,7 @@ def build_overview(series, lessons, outdir, css):
     <div class="ov-facts">
       <div class="meter"><span>Stunden</span><b>{len(lessons)}</b><small>Präsentation{"en" if len(lessons) != 1 else ""}</small></div>
       <div class="meter"><span>Umfang</span><b>≈ {series["ue"]}</b><small>Unterrichtsstunden</small></div>
-      <div class="meter"><span>Thema</span><b>{series["bp"]}</b><small>im Schulbuch</small></div>
+      <div class="meter"><span>Thema</span><b>{series["bp"]}</b></div>
     </div>
   </div>
   <ol class="lessons">
@@ -215,7 +215,7 @@ def build_overview(series, lessons, outdir, css):
     <div class="box"><span class="tag info">Bedienung</span>
       <p>Blättern mit den Pfeiltasten, Bild↑/Bild↓ oder einem Presenter. <b>F</b> schaltet den Vollbildmodus. Über die Leiste oben springt man direkt zu jeder Station. Stationen lassen sich direkt verlinken, z. B. <code>{lessons[0][0].name}#merke</code>.</p></div>
     <div class="box"><span class="tag info">Aufbau jeder Stunde</span>
-      <p>Start mit Leitfrage → nummerierte Stationen (Einstieg, Erarbeitung, Buchaufgaben) → <b>Hefteintrag</b>, der Punkt für Punkt aufgedeckt wird → <b>Übungen</b> mit Prüfen-Knopf und Lösung. Zu jeder Stunde gibt es ein Arbeitsblatt (PDF) mit Platz für den Hefteintrag und ein Lösungsblatt.</p></div>
+      <p>Start mit Leitfrage → nummerierte Stationen (Einstieg, Erarbeitung, Aufgaben) → <b>Hefteintrag</b>, der Punkt für Punkt aufgedeckt wird → <b>Übungen</b> mit Prüfen-Knopf und Lösung. Zu jeder Stunde gibt es ein Arbeitsblatt (PDF) mit Platz für den Hefteintrag und ein Lösungsblatt.</p></div>
 {notes}
     <div class="box"><span class="tag info">Technik</span>
       <p>Jede Datei ist eigenständig und funktioniert offline, auch vom USB-Stick. Die Schriften liegen im Ordner <code>fonts</code> neben den Reihen. Hell- und Dunkelmodus folgen der Systemeinstellung.</p></div>
@@ -270,7 +270,7 @@ def build_index(css):
   <p class="eyebrow">Interaktive Präsentationen</p>
   <h1>KITAP</h1>
   <p class="kitap-sub">Klassenfertige Inhalte – Thematisch Aufbereitet und Präsentationsbereit</p>
-  <p class="lead">Präsentationen für Informatik und Medienbildung (Klasse 5/6). Jede Stunde mit Stationen, Buchaufgaben, Hefteintrag, Übungen und Arbeitsblatt.</p>
+  <p class="lead">Präsentationen für Informatik und Medienbildung (Klasse 5/6). Jede Stunde mit Stationen, Aufgaben, Hefteintrag, Übungen und Arbeitsblatt.</p>
   <ol class="lessons">
 {chr(10).join(cards)}
   </ol>

@@ -129,7 +129,7 @@ p{margin:0 0 .7em}
 .stack{display:flex;flex-direction:column;gap:1rem}
 .mt{margin-top:2rem}
 
-/* Aufgabenkarten aus dem Buch */
+/* Aufgabenkarten */
 .task-card{padding:1rem 1.15rem;margin-bottom:1.1rem}
 .task-card header{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:.4rem}
 .task-card header .no{font-family:var(--f-mono);font-weight:600;background:var(--ink);color:var(--bg);padding:.1rem .5rem;border-radius:3px}
