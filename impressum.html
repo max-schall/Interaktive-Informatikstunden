@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Impressum – KITAP</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root{
+  --bg:#EEF2F1; --surface:#FFFFFF; --ink:#0E1A1C; --ink-2:#4A5B5E; --line:#C3CFCE; --accent:#0B7A80;
+  --f-body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Consolas,monospace;
+  font-size:clamp(16px, 0.5vw + 12px, 20px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#091113; --surface:#101C1F; --ink:#E2EEEF; --ink-2:#9AB0B3; --line:#294046; --accent:#2DD4BF; color-scheme:dark;}
+}
+:root[data-theme="dark"]{--bg:#091113; --surface:#101C1F; --ink:#E2EEEF; --ink-2:#9AB0B3; --line:#294046; --accent:#2DD4BF; color-scheme:dark;}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);line-height:1.6}
+main{max-width:720px;margin:0 auto;padding:clamp(28px,6vw,64px) 16px 72px}
+.back{font-family:var(--f-mono);font-size:.85rem;color:var(--accent);text-decoration:none}
+.back:hover{text-decoration:underline}
+h1{font-family:var(--f-mono);font-weight:600;font-size:clamp(2rem,6vw,3rem);line-height:1.05;letter-spacing:-.01em;margin:.6em 0 .8em}
+h2{font-family:var(--f-mono);font-weight:600;font-size:1.1rem;margin:2em 0 .5em}
+.card{background:var(--surface);border:1.5px solid var(--line);border-radius:6px;padding:20px 24px}
+.card p{margin:0}
+.card p + p{margin-top:1em}
+.label{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+main > p{margin:0 0 1em}
+footer{margin-top:3em;color:var(--ink-2);font-size:.82rem}
+footer a{color:inherit}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="index.html">← Startseite</a>
+  <h1>Impressum</h1>
+  <div class="card">
+    <p class="label">Angaben gemäß § 5 DDG und § 18 Abs. 1 MStV</p>
+    <p>Max Schall<br>
+       c/o Gemeinschaftsschule Weil im Schönbuch<br>
+       In der Röte 92<br>
+       71093 Weil im Schönbuch</p>
+    <p>E-Mail: <a href="mailto:schall@schule-weil.de">schall@schule-weil.de</a></p>
+  </div>
+  <footer><a href="datenschutz.html">Datenschutz</a></footer>
+</main>
+</body>
+</html>

@@ -204,7 +204,7 @@ def build_overview(series, lessons, outdir, css):
     <div class="ov-facts">
       <div class="meter"><span>Stunden</span><b>{len(lessons)}</b><small>Präsentation{"en" if len(lessons) != 1 else ""}</small></div>
       <div class="meter"><span>Umfang</span><b>≈ {series["ue"]}</b><small>Unterrichtsstunden</small></div>
-      <div class="meter"><span>Thema</span><b>{series["bp"]}</b><small>{series["bpsub"]}</small></div>
+      <div class="meter"><span>Thema</span><b>{series["bp"]}</b><small>im Schulbuch</small></div>
     </div>
   </div>
   <ol class="lessons">
@@ -238,7 +238,7 @@ def build_index(css):
             continue
         cards.append(f'''    <li class="lesson k{s["chapter"]}">
       <div class="l-num">{s["chapter"]}</div>
-      <div class="l-body"><p class="eyebrow">Kapitel {s["chapter"]} · Klasse {s["grade"]} · {n} Stunde{"n" if n != 1 else ""} · Buch S. {s["pages"]}</p><h2>{s["name"]}</h2><p class="l-q">{s["lead"]}</p></div>
+      <div class="l-body"><p class="eyebrow">Kapitel {s["chapter"]} · Klasse {s["grade"]} · {n} Stunde{"n" if n != 1 else ""}</p><h2>{s["name"]}</h2><p class="l-q">{s["lead"]}</p></div>
       <div class="l-go"><a class="btn primary" href="{s["folder"]}/00_Uebersicht.html">Zur Reihe →</a></div>
     </li>''')
     # jede Kapitelkarte in ihrer Kapitelfarbe (hell / dunkel)
@@ -252,23 +252,29 @@ def build_index(css):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Interaktive IT-Stunden</title>
+<title>KITAP – Informatik</title>
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
 {palette_css()}{css}
-{kcss}</style>
+{kcss}.kitap-sub{{font-style:italic;font-size:clamp(1rem,1.6vw,1.3rem);color:var(--ink-2);margin:-.2em 0 1.2rem}}
+.site-foot{{margin-top:3rem;color:var(--ink-2);font-size:.82rem}}
+.site-foot a{{color:inherit}}
+.site-foot a:hover{{color:var(--accent)}}
+</style>
 </head>
 <body>
 <div class="app">
-<header class="top"><div class="brand"><b>IT-Stunden</b><span>Informatik · interaktiv</span></div><span style="flex:1"></span></header>
+<header class="top"><div class="brand"><b>KITAP</b><span>Informatik · interaktiv</span></div><span style="flex:1"></span></header>
 <main>
 <section class="ov">
   <p class="eyebrow">Interaktive Präsentationen</p>
-  <h1>Interaktive IT-Stunden</h1>
-  <p class="lead">Präsentationen für Informatik und Medienbildung (Klasse 5/6) nach dem Schulbuch <i>blickpunkt. Informatik und Medienbildung 5/6</i> (Westermann). Jede Stunde mit Stationen, Buchaufgaben, Hefteintrag, Übungen und Arbeitsblatt.</p>
+  <h1>KITAP</h1>
+  <p class="kitap-sub">Klassenfertige Inhalte – Thematisch Aufbereitet und Präsentationsbereit</p>
+  <p class="lead">Präsentationen für Informatik und Medienbildung (Klasse 5/6). Jede Stunde mit Stationen, Buchaufgaben, Hefteintrag, Übungen und Arbeitsblatt.</p>
   <ol class="lessons">
 {chr(10).join(cards)}
   </ol>
+  <footer class="site-foot">KITAP · freie Unterrichtsmaterialien · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></footer>
 </section>
 </main>
 </div>
