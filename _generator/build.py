@@ -30,8 +30,9 @@ def palette_css(series=None):
     if series and 'accent' in series:
         # Kapitelfarbe: (hell, dunkel)
         la, da = series['accent']
-        light += f" --accent:{la};"
-        dark = dark.replace('color-scheme:dark;', f'--accent:{da}; color-scheme:dark;')
+        # Leisten sind immer dunkel: Leuchtfarbe (Stationen, Weiter-Button) ist die helle Kapitelfarbe
+        light += f" --accent:{la}; --led:{da};"
+        dark = dark.replace('color-scheme:dark;', f'--accent:{da}; --led:{da}; color-scheme:dark;')
     return (":root{\n  " + light + "\n" + fonts + "}\n"
             "@media (prefers-color-scheme: dark){\n  :root:not([data-theme=\"light\"]){\n    " + dark + "\n  }\n}\n"
             ":root[data-theme=\"dark\"]{\n    " + dark + "\n}\n")
