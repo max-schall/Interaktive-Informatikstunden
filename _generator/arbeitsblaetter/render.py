@@ -278,10 +278,10 @@ h1 { font-family: "IBM Plex Mono", "DejaVu Sans Mono", monospace; font-weight: 6
 .sec .h { font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 11pt; color: #0E1A1C }
 .sec .h::before { content: "// "; color: var(--ac) }
 .sec .s { font-size: 8.4pt; color: #666; margin-left: auto }
-.task { display: grid; grid-template-columns: 7mm 1fr; margin: 1.6mm 0 0 }
+.task { display: grid; grid-template-columns: 8.5mm 1fr; margin: 1.6mm 0 0 }
 .task .no { font-weight: 700; color: var(--ac) }
 .task .q > p:first-child { margin: 0 }
-.info { margin: 1.4mm 0 0 7mm; padding: 1.2mm 2.5mm; background: #f4f4f4; border-radius: 1mm; font-size: 9.3pt }
+.info { margin: 1.4mm 0 0 8.5mm; padding: 1.2mm 2.5mm; background: #f4f4f4; border-radius: 1mm; font-size: 9.3pt }
 .ln { height: 8mm; border-bottom: .5pt solid #8a8a8a }
 .hl .ln { border-color: #b0b0b0 }
 .gap { display: inline-block; border-bottom: .7pt solid #333; height: 1.05em; vertical-align: -0.25em; margin: 0 .5mm }
@@ -375,10 +375,11 @@ JS = r'''
 
 
 def task_blocks(ws, info, sol):
-    blocks, no, secno = [], 0, 0
+    blocks, secno = [], 0
     for sid, tasks in ws['sections']:
         st = info['stations'][sid]
         secno += 1
+        no = 0
         head = st['h2']
         if sid == 'uebungen' and 'Ich kann' not in head:
             head = 'Üben: ' + head
@@ -389,7 +390,7 @@ def task_blocks(ws, info, sol):
                 blocks.append(f'<div class="info">{gaps(text)}</div>')
                 continue
             no += 1
-            blocks.append(f'<div class="task"><span class="no">{no}</span><div class="q"><p>{gaps(text)}</p>{body_sol if sol else body}</div></div>')
+            blocks.append(f'<div class="task"><span class="no">{secno}.{no}</span><div class="q"><p>{gaps(text)}</p>{body_sol if sol else body}</div></div>')
     return blocks, secno
 
 
