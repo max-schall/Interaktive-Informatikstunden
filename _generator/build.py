@@ -236,11 +236,17 @@ def build_index(css):
         n = len(list(src.glob('[0-9][0-9]_*.html')))
         if not n:
             continue
-        cards.append(f'''    <li class="lesson">
-      <div class="l-num" style="color:{s["accent"][0]}">{s["chapter"]}</div>
+        cards.append(f'''    <li class="lesson k{s["chapter"]}">
+      <div class="l-num">{s["chapter"]}</div>
       <div class="l-body"><p class="eyebrow">Kapitel {s["chapter"]} · Klasse {s["grade"]} · {n} Stunde{"n" if n != 1 else ""} · Buch S. {s["pages"]}</p><h2>{s["name"]}</h2><p class="l-q">{s["lead"]}</p></div>
       <div class="l-go"><a class="btn primary" href="{s["folder"]}/00_Uebersicht.html">Zur Reihe →</a></div>
     </li>''')
+    # jede Kapitelkarte in ihrer Kapitelfarbe (hell / dunkel)
+    lt = ''.join(f'.lesson.k{s["chapter"]}{{--accent:{s["accent"][0]}}}' for s in SERIES)
+    dk = ''.join(f'.lesson.k{s["chapter"]}{{--accent:{s["accent"][1]}}}' for s in SERIES)
+    kcss = (lt + '\n.lesson .l-num{color:var(--accent)}\n'
+            + '@media (prefers-color-scheme: dark){' + dk.replace('.lesson', ':root:not([data-theme="light"]) .lesson') + '}\n'
+            + dk.replace('.lesson', ':root[data-theme="dark"] .lesson') + '\n')
     page = f'''<!doctype html>
 <html lang="de">
 <head>
@@ -250,7 +256,7 @@ def build_index(css):
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
 {palette_css()}{css}
-</style>
+{kcss}</style>
 </head>
 <body>
 <div class="app">
