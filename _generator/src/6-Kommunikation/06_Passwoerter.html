@@ -1,0 +1,212 @@
+<!--
+title: Sichere Passwörter nutzen
+short: Passwörter
+time: 2 Unterrichtsstunden
+q: Wie schützt man seine Daten am besten?
+facts: Datenklau im Internet: Datendiebe, Betrug als Straftat, Phishing und Schadsoftware | Was ist Phishing? Gefälschte Nachrichten und Webseiten; Links und Absender prüfen | Sichere Passwörter: mindestens 12 Zeichen, Groß-/Kleinbuchstaben, Zahlen, Sonderzeichen, für jede Webseite einzigartig (M1) | Zwei-Faktor-Authentifizierung; M2 Phishing
+inter: Passwort-Tester mit Live-Prüfung · M1-Passwörter bewerten · Passwort mit der Satzmethode bauen · Zwei-Faktor-Anmeldung durchspielen · Phishing-Mail untersuchen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Kommunikation in der vernetzten Welt</p>
+      <h1>Sichere Passwörter nutzen<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Es ist wichtig, die eigenen Daten zu schützen – wie einen Brief mit Siegel oder eine Tür mit Schloss.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Für wie viele Apps und Webseiten brauchst du ein Passwort?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie schützt man seine Daten am besten?</p></div>
+      <div class="controls"><button class="btn primary" data-go="datenklau">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="datenklau" data-label="Datenklau" data-yr="Erarbeitung" data-title="Datenklau und Phishing" data-sub="Wie Betrüger angeln">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Datenklau im Internet</p>
+      <h2>Phishing – Angeln nach Passwörtern</h2>
+      <ul class="facts">
+        <li>Datendiebe wollen <b>Geld verdienen</b>, <b>Macht erlangen</b> oder <b>Schaden anrichten</b>. Sie stehlen Passwörter, Kreditkarteninformationen oder ganze Identitäten. Betrug ist eine schwere <b>Straftat</b>.</li>
+        <li><b>Phishing</b> kommt vom englischen „fishing“ (angeln) und bedeutet „Daten-Angeln“. Kriminelle senden E-Mails oder Nachrichten, die aussehen, als kämen sie von Banken oder Onlineshops.</li>
+        <li>Die Nachricht behauptet, es gebe ein Problem, und enthält einen Link zu einer <b>gefälschten Webseite</b>. Wer dort Daten eingibt, landet direkt bei den Betrügern.</li>
+        <li>Schutz: <b>Links genau prüfen</b>, <b>Absenderadressen kontrollieren</b>, niemals leichtfertig persönliche Daten weitergeben, Software-Updates durchführen.</li>
+      </ul>
+    </div>
+    <div class="stack">
+      <svg viewBox="0 0 420 210" class="net-svg">
+        <g class="node"><rect x="10" y="20" width="90" height="36" rx="6"/><text x="55" y="43" text-anchor="middle">Opfer 👤</text></g>
+        <g class="node"><rect x="290" y="20" width="120" height="36" rx="6"/><text x="350" y="43" text-anchor="middle">gefälschte Website</text></g>
+        <g class="node"><rect x="10" y="130" width="130" height="40" rx="6"/><text x="75" y="148" text-anchor="middle">manipulierte</text><text x="75" y="162" text-anchor="middle">E-Mail mit Link</text></g>
+        <g class="node"><rect x="290" y="134" width="120" height="36" rx="6"/><text x="350" y="157" text-anchor="middle">Angreifer 🦹</text></g>
+        <path class="edge on" d="M290 152 H140"/><text x="215" y="145" text-anchor="middle">1 schickt</text>
+        <path class="edge on" d="M55 130 V56"/><text x="60" y="98">2 klickt</text>
+        <path class="edge on" d="M100 38 H290"/><text x="195" y="30" text-anchor="middle">3 gibt Daten ein</text>
+        <path class="edge on" d="M350 56 V134"/><text x="356" y="98">4 Daten</text>
+      </svg>
+      <div class="task-card"><header><span class="no">A</span><h3>Warum?</h3></header><p>Beschreibe Gründe, warum Datendiebe an Nutzerdaten gelangen möchten.</p>
+        <div class="controls"><button class="btn" data-reveal="da" aria-expanded="false">Lösung</button></div><p class="solution" id="da" hidden>Mit gestohlenen Daten können sie im Namen anderer einkaufen, Geld abbuchen, Accounts übernehmen und erpressen, die Daten weiterverkaufen oder Informationen von Firmen und Regierungen stehlen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="passwort" data-label="Passwort-Tester" data-yr="Ausprobieren" data-title="Sichere Passwörter" data-sub="Tipps und Tester">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Sichere Passwörter nutzen</p>
+      <h2>Ein gutes Passwort …</h2>
+      <ul class="facts">
+        <li>hat <b>mindestens 12 Zeichen</b>,</li>
+        <li>mischt <b>Groß- und Kleinbuchstaben</b>, <b>Zahlen</b> und <b>Sonderzeichen</b> (!, ?, @, §),</li>
+        <li>enthält keine einfachen Wörter, Muster, Namen, Geburtstage, Lieblingsvereine oder nebeneinanderliegende Tasten,</li>
+        <li>ist für <b>jede Webseite einzigartig</b> – so gefährdet ein gestohlenes Passwort nicht mehrere Accounts,</li>
+        <li>wird an einem <b>sicheren Ort</b> aufbewahrt, regelmäßig geändert und <b>niemals weitergegeben</b>.</li>
+      </ul>
+      <p class="note">Gib hier kein echtes Passwort ein!</p>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Passwort-Tester</h3></div>
+      <input class="text-in" id="pw" value="FCSchalke04" aria-label="Passwort zum Testen" autocomplete="off" spellcheck="false">
+      <div class="pw-bar mt"><i id="pw-bar"></i></div>
+      <p class="status" id="pw-st"></p>
+      <ul class="ck-list" id="pw-ck"></ul>
+      <p class="eyebrow">M1 · Diese Passwörter testen</p>
+      <div class="chips" id="pw-m1"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="satz" data-label="Satzmethode" data-yr="Ausprobieren" data-title="Passwörter erstellen" data-sub="Die Satzmethode">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Passwörter erstellen</p>
+      <h2>Die Satzmethode</h2>
+      <p>Lange Passwörter kann man sich mit einem <b>Merksatz</b> gut merken: Von jedem Wort nimmt man den ersten Buchstaben, Zahlen bleiben Zahlen, Satzzeichen bleiben Sonderzeichen.</p>
+      <p class="box"><b>Mein Hund Bello frisst jeden Morgen 2 Brötchen & 1 Ei!</b><br>→ <span class="mono">MHBfjM2B&amp;1E!</span></p>
+      <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Inas Vater</h3></header><p>Der Vater von Ina hat seine Passwörter auf einen Zettel geschrieben und nimmt diesen im Portemonnaie mit. Nimm Stellung.</p>
+        <div class="controls"><button class="btn" data-reveal="s3" aria-expanded="false">Lösung</button></div><p class="solution" id="s3" hidden>Keine gute Idee: Wird das Portemonnaie gestohlen oder verloren, hat der Finder alle Passwörter – womöglich zusammen mit Bankkarte und Ausweis. Besser: ein Passwortmanager oder ein Zettel an einem sicheren Ort zu Hause.</p></div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Passwort-Baukasten</h3></div>
+      <input class="text-in" id="sz-in" value="Ich gehe am 3. Juli mit Oma ins Kino!" aria-label="Merksatz">
+      <p class="big-code mono" id="sz-out" style="font-size:1.6rem;word-break:break-all;margin:.8rem 0"></p>
+      <p class="status" id="sz-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="zwei" data-label="2-Faktor" data-yr="Ausprobieren" data-title="Zwei-Faktor-Authentifizierung" data-sub="Doppelt geschützt">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 4 · Zwei-Faktor-Authentifizierung</p>
+      <h2>Doppelt hält besser</h2>
+      <ul class="facts">
+        <li>Accounts können zusätzlich zum Passwort geschützt werden: Ein <b>zweiter Faktor</b> wird benötigt, z. B. ein Code per SMS, eine Authentifizierungs-App oder ein Fingerabdruck.</li>
+        <li>Diese <b>Zwei-Faktor-Authentifizierung</b> ist eine zusätzliche Sicherheitsschicht.</li>
+        <li>Für Hacker wird es viel schwieriger, ein Konto zu übernehmen – selbst wenn sie das Passwort kennen.</li>
+      </ul>
+      <div class="task-card"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Vorteile</h3></header><p>Begründe die Vorteile einer Zwei-Faktor-Authentifizierung.</p>
+        <div class="controls"><button class="btn" data-reveal="z4" aria-expanded="false">Lösung</button></div><p class="solution" id="z4" hidden>Ein gestohlenes Passwort allein reicht nicht mehr. Der Angreifer bräuchte zusätzlich das Smartphone oder den Fingerabdruck. Außerdem merkt man an einem unerwarteten Code, dass jemand versucht, sich einzuloggen.</p></div>
+    </div>
+    <div class="cols-2" style="align-items:start">
+      <div class="mailform"><div class="mf-bar"><b>🔐 Anmelden</b></div><div class="stack" style="padding:.7rem" id="tf-login"></div></div>
+      <div class="chat" style="max-width:15rem"><div class="chat-head">📱 SMS</div><div class="chat-body" id="tf-sms" style="min-height:8rem"><p class="note">Hier erscheint der Code.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m2" data-label="M2 Phishing" data-yr="M2" data-title="Phishing" data-sub="Eine verdächtige Mail">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M2</p>
+    <h2>Ist das eine Phishing-Mail?</h2>
+    <p class="lead">Tippe auf alle Stellen, die verdächtig sind.</p>
+  </div>
+  <div class="model">
+    <div class="mailform" id="ph">
+      <div class="mf-bar"><span data-ph="from" class="wp-hot"><b>hades-versand.com</b></span><small style="margin-left:auto">gestern um 23:21</small></div>
+      <div class="mf-row"><label>Betreff</label><span style="padding:.4rem .5rem" data-ph="sub" class="wp-hot"><b>Autorisation</b></span></div>
+      <div class="mf-row"><label>An</label><span style="padding:.4rem .5rem">Scheffer, Florina</span></div>
+      <div class="mf-row"><label>Antwort an</label><span style="padding:.4rem .5rem" data-ph="reply" class="wp-hot">hades-versand.com</span></div>
+      <div class="mf-body" style="white-space:normal"><p style="margin:0 0 .5rem" data-ph="greet" class="wp-hot"><b>Sehr geehrter Kunde,</b></p><p style="margin:0 0 .5rem"><span data-ph="urgent" class="wp-hot">Sie haben (1) Paket, das auf Lieferung wartet.</span> <span data-ph="code" class="wp-hot">Verwenden Sie den folgenden Code, um das Paket zu verfolgen und ihn zu erhalten. ID#0014</span></p><p style="margin:0 0 .6rem">Nutzen Sie den Link, um zu Ihrem Paket zu gelangen.</p><span data-ph="link" class="wp-hot" style="display:inline-block;background:#F59E0B;color:#fff;padding:.3rem .8rem;border-radius:4px;font-weight:700" title="http://hades-versand.com.paket-info.ru/login">Zur Verfolgung</span></div>
+    </div>
+    <div class="stack"><p class="score">Gefunden: <b id="ph-n">0</b> / 7</p><div id="ph-list" class="stack" style="gap:.4rem"></div>
+      <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Schutzmaßnahmen</h3></header><p>Beschreibe, wie Kriminelle mit Phishing an Daten gelangen, und nenne Maßnahmen, um dich zu schützen.</p>
+        <div class="controls"><button class="btn" data-reveal="p12" aria-expanded="false">Lösung</button></div><p class="solution" id="p12" hidden>(1) Der Angreifer schickt eine manipulierte E-Mail mit Link. (2) Das Opfer klickt darauf und (3) gibt auf der gefälschten Webseite seine Daten ein. (4) Diese landen beim Angreifer. Schutz: Absender und Links prüfen (mit der Maus darüberfahren), nie Passwörter über Links eingeben, im Zweifel direkt beim Anbieter nachfragen, Spam melden und löschen.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Passwörter</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Sichere Passwörter nutzen</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Ein sicheres Passwort hat <b>mindestens 12 Zeichen</b> mit <b>Groß- und Kleinbuchstaben, Zahlen und Sonderzeichen</b> – keine Namen, Wörter oder Tastaturmuster.</li>
+        <li data-step>Für <b>jede Webseite ein anderes</b> Passwort; sicher aufbewahren und <b>nie weitergeben</b>.</li>
+        <li data-step><b>Zwei-Faktor-Authentifizierung:</b> Neben dem Passwort braucht man einen zweiten Faktor (Code, App, Fingerabdruck).</li>
+        <li data-step><b>Phishing</b>: Betrüger locken mit gefälschten Nachrichten auf gefälschte Webseiten. Absender und Links prüfen!</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Merksatz-Methode</span><p>Denke dir einen eigenen Merksatz aus und schreibe nur das Prinzip auf – nicht dein echtes Passwort!</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Passwörter und Phishing</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+(() => {
+  const WORDS = /(passwort|password|qwert|asdf|yxcv|1234|abc|hallo|schalke|bayern|dortmund|fussball|fußball|ichliebe|admin|letmein)/i;
+  const C = [['mindestens 12 Zeichen', p => p.length >= 12], ['Großbuchstaben', p => /[A-ZÄÖÜ]/.test(p)], ['Kleinbuchstaben', p => /[a-zäöüß]/.test(p)], ['Zahlen', p => /\d/.test(p)], ['Sonderzeichen', p => /[^A-Za-z0-9äöüÄÖÜß]/.test(p)], ['kein einfaches Wort, Verein oder Tastaturmuster', p => !WORDS.test(p)], ['keine Wiederholungen wie „aaa“', p => !/(.)\1\1/.test(p)]];
+  function test() {
+    const p = $('#pw').value, r = C.map(([t, f]) => [t, f(p)]), n = r.filter(x => x[1]).length + (p.length >= 16 ? 1 : 0);
+    const lvl = !p ? 0 : !r[5][1] || p.length < 8 ? 1 : n <= 4 ? 1 : n <= 6 ? 2 : 3;
+    const L = [['', '#9CA3AF', ''], ['sehr unsicher', '#DC2626', 'in Sekunden geknackt'], ['mittel', '#F59E0B', 'mit etwas Rechenzeit knackbar'], ['sicher', '#16A34A', 'sehr schwer zu knacken']][lvl];
+    $('#pw-bar').style.width = [0, 30, 65, 100][lvl] + '%'; $('#pw-bar').style.background = L[1];
+    $('#pw-st').innerHTML = p ? `<b style="color:${L[1]}">${L[0]}</b> – ${L[2]}` : '';
+    $('#pw-ck').innerHTML = r.map(([t, ok]) => `<li class="${ok ? 'ok' : 'err'}">${ok ? '✅' : '❌'} ${t}</li>`).join('');
+  }
+  $('#pw').oninput = test;
+  $('#pw-m1').innerHTML = ['qwertzuiop', '#lbFdBBs1024!', 'FCSchalke04', '29smjMdoSj_#1asS', 'passwort'].map(p => `<button class="chip mono" data-p="${p}">${p}</button>`).join('');
+  $('#pw-m1').onclick = e => { const b = e.target.closest('[data-p]'); if (b) { $('#pw').value = b.dataset.p; test(); } };
+  test();
+})();
+(() => {
+  function make() {
+    const s = $('#sz-in').value.trim(), out = s.split(/\s+/).map(w => { const m = w.match(/^(\d+)(.*)$/); if (m) return m[1] + m[2].replace(/[A-Za-zÄÖÜäöüß]/g, ''); const c = w.replace(/^[^A-Za-zÄÖÜäöüß]+/, ''); return (c[0] || '') + w.replace(/[A-Za-zÄÖÜäöüß0-9]/g, ''); }).join('');
+    $('#sz-out').textContent = out || '…';
+    const ok = out.length >= 12 && /[A-Z]/.test(out) && /[a-z]/.test(out) && /\d/.test(out) && /[^A-Za-z0-9]/.test(out);
+    $('#sz-st').innerHTML = `${out.length} Zeichen – ${ok ? '<b class="good">sicher!</b>' : '<b class="bad">noch zu schwach:</b> längerer Satz, Zahlen und Satzzeichen helfen.'}`;
+  }
+  $('#sz-in').oninput = make; make();
+})();
+(() => {
+  const L = $('#tf-login'), S = $('#tf-sms'); let code = '';
+  function step1() { L.innerHTML = `<label class="mono" style="font-size:.8rem">Benutzername<input class="text-in" value="lena.k" style="font-size:1rem"></label><label class="mono" style="font-size:.8rem">Passwort<input class="text-in" type="password" value="MHBfjM2B&1E!" style="font-size:1rem"></label><button class="btn primary" id="tf-go">Anmelden</button><button class="btn" id="tf-hack">🦹 Hacker mit gestohlenem Passwort</button>`;
+    $('#tf-go').onclick = () => step2(false); $('#tf-hack').onclick = () => step2(true); S.innerHTML = '<p class="note">Hier erscheint der Code.</p>'; }
+  function step2(hack) {
+    code = String(randInt(100000, 999999));
+    S.innerHTML = `<div class="msg"><b>MeinKonto</b>Dein Anmeldecode lautet <b>${code}</b>. Gib ihn niemals weiter.<time>jetzt</time></div>`;
+    L.innerHTML = hack ? `<p><b>Passwort richtig!</b> Schritt 2: Code eingeben.</p><p class="status">🦹 Der Hacker kennt das Passwort – aber das Handy liegt bei dir. Er kommt nicht weiter!</p><button class="btn" id="tf-back">Von vorn</button>` : `<p><b>Passwort richtig!</b> Schritt 2: Gib den Code aus der SMS ein.</p><input class="text-in" id="tf-code" inputmode="numeric" maxlength="6" style="font-size:1.2rem;letter-spacing:.3em"><button class="btn primary" id="tf-ok">Bestätigen</button><p class="status" id="tf-fb"></p>`;
+    if (hack) { $('#tf-back').onclick = step1; return; }
+    $('#tf-ok').onclick = () => { const ok = $('#tf-code').value.trim() === code; $('#tf-fb').innerHTML = ok ? '<b class="good">Angemeldet!</b> Zwei Faktoren: Wissen (Passwort) + Besitz (Handy).' : '<b class="bad">Falscher Code.</b>'; if (ok) setTimeout(step1, 2500); };
+  }
+  step1();
+})();
+(() => {
+  const P = {from: ['Unbekannter Absender', 'Den Versanddienst „hades-versand“ kennt Florina nicht.'], sub: ['Seltsamer Betreff', '„Autorisation“ passt nicht zu einer Paketnachricht.'], reply: ['„Antwort an“', 'Antworten landen direkt beim Absender der Fälschung.'], greet: ['Unpersönliche Anrede', '„Sehr geehrter Kunde“ – echte Firmen kennen deinen Namen.'], urgent: ['Druck und Neugier', 'Ein Paket, das wartet, soll zum schnellen Klicken verleiten.'], code: ['Fehlerhafte Sprache', '„… zu verfolgen und ihn zu erhalten“ – grammatisch falsch.'], link: ['Verdächtiger Link', 'Mit der Maus darüberfahren: Er führt zu einer fremden Adresse (…paket-info.ru).']};
+  const found = new Set();
+  $$('[data-ph]').forEach(el => el.onclick = () => { found.add(el.dataset.ph); el.classList.add('on'); $('#ph-list').innerHTML = [...found].map(k => `<div class="box" style="padding:.45rem .7rem"><b>${P[k][0]}</b><br><small>${P[k][1]}</small></div>`).join(''); $('#ph-n').textContent = found.size; });
+})();
+mcQuiz($('#quiz'), [
+  {q: 'Welches Passwort ist am sichersten?', a: ['29smjMdoSj_#1asS', 'FCSchalke04', 'qwertzuiop', 'passwort'], ok: 0, why: 'Lang, gemischt, ohne Wörter.'},
+  {q: 'Wie viele Zeichen sollte ein sicheres Passwort mindestens haben?', a: ['12', '4', '6', '8'], ok: 0, why: 'Je länger, desto besser.'},
+  {q: 'Was bedeutet Phishing?', a: ['Daten-Angeln mit gefälschten Nachrichten', 'ein Computerspiel', 'Passwort speichern', 'eine Angel-App'], ok: 0, why: 'Vom englischen „fishing“.'},
+  {q: 'Warum sollte man für jede Webseite ein anderes Passwort nutzen?', a: ['Damit ein gestohlenes Passwort nicht mehrere Accounts gefährdet', 'Weil es Pflicht ist', 'Damit man es leichter vergisst', 'Es ist egal'], ok: 0, why: 'Sonst fallen alle Konten auf einmal.'},
+  {q: 'Was ist ein zweiter Faktor?', a: ['ein Code per SMS oder App', 'ein zweites Passwort auf einem Zettel', 'der Benutzername', 'die E-Mail-Adresse'], ok: 0, why: 'Oder ein Fingerabdruck.'},
+  {q: 'Woran erkennt man eine Phishing-Mail oft?', a: ['unpersönliche Anrede und verdächtiger Link', 'korrekte Rechtschreibung', 'der eigene Name im Betreff', 'eine bekannte Absenderadresse'], ok: 0, why: 'Und Zeitdruck.'},
+  {q: 'Darf man sein Passwort der besten Freundin geben?', a: ['Nein, niemals weitergeben', 'Ja, wenn sie verspricht, es geheim zu halten', 'Ja, per Chat', 'Nur am Wochenende'], ok: 0, why: 'Passwörter bleiben geheim.'}
+]);
+</script>

@@ -1,0 +1,223 @@
+<!--
+title: Daten komprimieren
+short: Kompression
+time: 2 Unterrichtsstunden
+q: Wie kann man Daten verkleinern?
+facts: Datenkompression: geringerer Speicherbedarf, schnellere Übertragung | verlustbehaftete und verlustfreie Kompression | Lauflängencodierung (AAAAABBCCCD → 5A2B3C1D) | M1 Bilder komprimieren, M2 Lauflängencodierung, M3 Binärbild komprimieren
+inter: 16·16 gegen 8·8 · Kompressions-Regler mit Dateigröße · Lauflängen-Rechner · Bitfolgen als Bild malen · Herz komprimieren und prüfen · RLE-Training
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Bilder und Videos</p>
+      <h1>Daten komprimieren<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Viele Menschen machen täglich Fotos mit ihrem Smartphone. Damit Dateien weniger Speicher verbrauchen, werden sie verkleinert. Wie geht das?</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Diktiere jemandem die Zeile „0000000000111“. Wie sagst du das am schnellsten?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie kann man Daten verkleinern?</p></div>
+      <div class="controls"><button class="btn primary" data-go="kompression">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="kompression" data-label="Kompression" data-yr="Erarbeitung" data-title="Datenmenge verkleinern" data-sub="Datenkompression">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Datenmenge verkleinern</p>
+    <h2>Datenkompression</h2>
+    <p class="lead">Damit viele Fotos in den Speicher passen, werden Datenmengen mit bestimmten Verfahren verkleinert: <b>Datenkompression</b>. Komprimierte Daten brauchen weniger Speicher und lassen sich schneller übertragen – aber die <b>Qualität</b> kann sinken.</p>
+  </div>
+  <div class="px-pair">
+    <div><p class="eyebrow">A: 16 · 16 Pixel = 256 Bit</p><div id="a16" class="pxg-small"></div></div>
+    <div><p class="eyebrow">B: 8 · 8 Pixel = 64 Bit</p><div id="b8" class="pxg-small"></div></div>
+    <div class="box" style="flex:1;min-width:14rem"><span class="tag">Abb. 1</span><p>Eine Rastergrafik wird komprimiert: Bild B braucht nur ein Viertel des Speichers. Dafür ist der Smiley gröber – Details gehen verloren.</p></div>
+  </div>
+</section>
+
+<section class="station" id="verlust" data-label="M1 Verlust" data-yr="M1" data-title="Mit oder ohne Verlust?" data-sub="Bilder komprimieren">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Verluste bei der Datenkompression</p>
+      <h2>Mit oder ohne Verlust?</h2>
+      <ul class="facts">
+        <li><b>Verlustbehaftete</b> Datenkompression: Informationen gehen verloren und lassen sich nicht vollständig wiederherstellen. Vor allem bei Bildern, Videos und Audio werden unwichtige Details weggelassen.</li>
+        <li>Je stärker komprimiert wird, desto schlechter wird die Bild- oder Tonqualität.</li>
+        <li><b>Verlustfreie</b> Datenkompression: Es geht nichts verloren. Wichtig z. B. bei Texten in einer E-Mail.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>M1 Bilder komprimieren</h3><output id="cmp-o" class="mono"></output></div>
+      <div class="two-cv"><figure><canvas id="cv-a" class="pix-cv"></canvas><figcaption>A</figcaption></figure><figure><canvas id="cv-b" class="pix-cv"></canvas><figcaption>B</figcaption></figure></div>
+      <label class="slider-row">Kompression <input id="cmp" type="range" min="0" max="6" value="3"></label>
+    </div>
+  </div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Vergleichen</h3></header><p>Gib an, welches Bild komprimiert wurde. Vergleiche die Bilder und benenne Unterschiede.</p>
+      <div class="controls"><button class="btn" data-reveal="v2" aria-expanded="false">Lösung</button></div><p class="solution" id="v2" hidden>Bild B ist komprimiert: Es wirkt blockig und unscharf, feine Details und Farbübergänge fehlen, Kanten sind treppenförmig.</p></div>
+    <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Ungeeignete Bilder?</h3></header><p>Stelle Vermutungen an, ob es Bilder gibt, die nicht für die Datenkompression geeignet sind. Begründe.</p>
+      <div class="controls"><button class="btn" data-reveal="v3" aria-expanded="false">Lösungsidee</button></div><p class="solution" id="v3" hidden>Ja: Röntgenbilder, Pläne, Beweisfotos oder Bilder mit feinen Details und Text. Hier dürfen keine Informationen verloren gehen. Auch Bilder mit sehr vielen unterschiedlichen Pixeln (Rauschen) lassen sich verlustfrei kaum verkleinern.</p></div>
+  </div>
+</section>
+
+<section class="station" id="rle" data-label="Lauflängen" data-yr="Erarbeitung" data-title="Lauflängencodierung" data-sub="Zeichen und Wiederholungen">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Lauflängencodierung</p>
+      <h2>Lauflängencodierung</h2>
+      <ul class="facts">
+        <li>Ein <b>verlustfreies</b> Verfahren ist die <b>Lauflängencodierung</b>.</li>
+        <li>Man codiert nicht jedes Zeichen einzeln, sondern das Zeichen und <b>wie oft es sich wiederholt</b>: „AAAAABBCCCD“ → „5A2B3C1D“.</li>
+        <li>Die Zahl der Wiederholungen heißt <b>Lauflänge</b>.</li>
+        <li>Computer codieren binär: Die <b>Bitfolge</b> „1111 1100 0011 1111 1000 0000“ wird zu <b>61 40 71 70</b>.</li>
+      </ul>
+      <div class="task-card"><header><span class="no">A</span><h3>Wie funktioniert's?</h3></header><p>Beschreibe, wie die Lauflängencodierung funktioniert.</p></div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Lauflängen-Rechner</h3></div>
+      <input id="rle-in" class="text-in mono" value="AAAAABBCCCD" aria-label="Zeichenkette">
+      <div class="rle-runs" id="rle-runs"></div>
+      <p class="status" id="rle-out"></p>
+      <div class="controls"><button class="btn" data-ex="AAAAABBCCCD">Buchbeispiel Buchstaben</button><button class="btn" data-ex="111111000011111110000000">Buchbeispiel Bitfolge</button><button class="btn" data-ex="ABCDEFG">ABCDEFG</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m2" data-label="M2 Bitfolgen" data-yr="M2" data-title="Lauflängencodierung" data-sub="Bitfolgen komprimieren und malen">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M2</p>
+    <h2>Bitfolgen komprimieren</h2>
+  </div>
+  <div class="px-pair">
+    <div><p class="eyebrow">Bitfolgen</p><div class="pxcode" id="m2-code"></div></div>
+    <div><p class="eyebrow">Aufgabe 2: Male die Rastergrafik (0 = schwarz)</p><div id="m2-grid"></div><div class="controls"><button class="btn primary" id="m2-check">Prüfen</button><span class="fb" id="m2-fb"></span></div></div>
+    <div class="stack" style="flex:1;min-width:15rem">
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Komprimieren</h3></header><p>Nutze die Lauflängencodierung und komprimiere die Bitfolgen.</p>
+        <div class="controls"><button class="btn" data-reveal="m2s" aria-expanded="false">Lösung</button></div><div class="solution mono" id="m2s" hidden></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m3" data-label="M3 Herz" data-yr="M3" data-title="Binärbild komprimieren" data-sub="16 · 16 → 8 · 8">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M3</p>
+    <h2>Binärbild komprimieren</h2>
+  </div>
+  <div class="px-pair">
+    <div><p class="eyebrow">Original 16 · 16</p><div id="heart16"></div></div>
+    <div><p class="eyebrow">Aufgabe 3: dein 8 · 8-Raster</p><div id="heart8"></div><div class="controls"><button class="btn primary" id="h8-check">Prüfen</button><button class="btn" id="h8-sol">Lösung</button></div><p class="fb" id="h8-fb"></p></div>
+    <div class="stack" style="flex:1;min-width:15rem">
+      <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Bitfolge und Lauflängen</h3></header><p>Bestimme die Bitfolge für die Rastergrafik und komprimiere sie mit der Lauflängencodierung.</p>
+        <div class="controls"><button class="btn" data-reveal="h12" aria-expanded="false">Lösung</button></div><div class="solution mono" id="h12" hidden style="font-size:.78rem"></div></div>
+      <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>8 · 8 statt 16 · 16</h3></header><p>Komprimiere die Rastergrafik: Fasse je 2 · 2 Pixel zu einem zusammen.</p>
+        <div class="controls"><button class="btn" data-reveal="h3h" aria-expanded="false">HILFE</button></div><p class="hint-box" id="h3h" hidden>Schau dir immer ein Quadrat aus 2 · 2 Pixeln an. Sind die meisten davon schwarz, wird das neue Pixel schwarz.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Daten komprimieren</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Daten komprimieren</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step><b>Datenkompression</b> verkleinert Datenmengen: weniger Speicherbedarf, schnellere Übertragung.</li>
+        <li data-step><b>Verlustbehaftet:</b> Informationen gehen verloren (z. B. Bilddetails). Je stärker komprimiert, desto schlechter die Qualität.</li>
+        <li data-step><b>Verlustfrei:</b> Alle Informationen bleiben erhalten (z. B. Text in einer E-Mail).</li>
+        <li data-step><b>Lauflängencodierung</b> (verlustfrei): Man speichert das Zeichen und die Anzahl seiner Wiederholungen: AAAAABBCCCD → 5A2B3C1D; 111111 0000 → 61 40.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Beispiel</span><p>Codiere deinen eigenen Namen oder „MISSISSIPPI“ mit der Lauflängencodierung. Lohnt es sich?</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Lauflängen-Training</h2></div>
+  <div id="ts"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ================= Smileys 16 und 8 ================= */
+function shapeGrid(n, draw) {
+  const c = document.createElement('canvas'); c.width = c.height = n; const x = c.getContext('2d'); x.fillStyle = '#fff'; x.fillRect(0, 0, n, n); x.strokeStyle = x.fillStyle = '#000'; draw(x, n);
+  const d = x.getImageData(0, 0, n, n).data, rows = [];
+  for (let y = 0; y < n; y++) { let r = ''; for (let i = 0; i < n; i++) r += d[(y * n + i) * 4] < 128 ? '0' : '1'; rows.push(r); }
+  return rows;
+}
+const smile = (x, n) => { x.lineWidth = n / 14; x.beginPath(); x.arc(n / 2, n / 2, n * .42, 0, 7); x.stroke(); x.fillRect(n * .3, n * .3, n * .12, n * .14); x.fillRect(n * .58, n * .3, n * .12, n * .14); x.beginPath(); x.arc(n / 2, n * .52, n * .24, .3, Math.PI - .3); x.stroke(); };
+const S16 = shapeGrid(16, smile);
+/* 8 · 8: je 2 · 2 Pixel zusammenfassen – sobald eines schwarz ist, wird das neue Pixel schwarz */
+const S8 = Array.from({length: 8}, (_, y) => Array.from({length: 8}, (_, x) => [S16[2 * y][2 * x], S16[2 * y][2 * x + 1], S16[2 * y + 1][2 * x], S16[2 * y + 1][2 * x + 1]].includes('0') ? '0' : '1').join(''));
+pixelGrid($('#a16'), {w: 16, h: 16, data: S16, readonly: true});
+pixelGrid($('#b8'), {w: 8, h: 8, data: S8, readonly: true});
+
+/* ================= Verlust ================= */
+function sceneC(w, h) {
+  const c = document.createElement('canvas'); c.width = w; c.height = h; const x = c.getContext('2d');
+  for (let i = 0; i < 400; i++) { const a = i * 2.39996, r = Math.sqrt(i) * w / 46; x.fillStyle = `hsl(${70 + (i % 7) * 4},${70 + (i % 5) * 5}%,${30 + (i % 9) * 4}%)`; x.beginPath(); x.ellipse(w / 2 + Math.cos(a) * r, h / 2 + Math.sin(a) * r, w / 34, w / 40, a, 0, 7); x.fill(); }
+  return c;
+}
+const SUN = sceneC(320, 240);
+(() => {
+  const draw = (cv, block) => {
+    const dpr = Math.min(devicePixelRatio || 1, 2), W = cv.clientWidth, H = W * .75; cv.width = W * dpr; cv.height = H * dpr; const ctx = cv.getContext('2d');
+    if (!block) { ctx.drawImage(SUN, 0, 0, cv.width, cv.height); return; }
+    const t = document.createElement('canvas'); t.width = Math.round(320 / block); t.height = Math.round(240 / block); const tx = t.getContext('2d'); tx.drawImage(SUN, 0, 0, t.width, t.height);
+    const d = tx.getImageData(0, 0, t.width, t.height), q = 8 * block; for (let i = 0; i < d.data.length; i++) if (i % 4 !== 3) d.data[i] = Math.round(d.data[i] / q) * q; tx.putImageData(d, 0, 0);
+    ctx.imageSmoothingEnabled = false; ctx.drawImage(t, 0, 0, cv.width, cv.height);
+  };
+  const up = () => { const k = +$('#cmp').value, block = [1, 2, 3, 4, 6, 8, 12][k]; draw($('#cv-a')); draw($('#cv-b'), block); const kb = Math.round(230 / (block * block) + 4); $('#cmp-o').textContent = `A: 230 KB · B: ca. ${kb} KB`; };
+  $('#cmp').oninput = up; onShow.push(id => id === 'verlust' && requestAnimationFrame(up));
+})();
+
+/* ================= Lauflängen-Rechner ================= */
+(() => {
+  const up = () => {
+    const s = $('#rle-in').value.replace(/\s/g, '');
+    let runs = [], i = 0; while (i < s.length) { let j = i; while (j < s.length && s[j] === s[i]) j++; runs.push([j - i, s[i]]); i = j; }
+    $('#rle-runs').innerHTML = runs.map(([n, c]) => `<span class="run" style="--n:${n}"><b>${c.repeat(n)}</b><small>${n}${c}</small></span>`).join('');
+    const out = runs.map(([n, c]) => n + c).join(/^[01]+$/.test(s) ? ' ' : '');
+    $('#rle-out').innerHTML = `Codiert: <b class="mono">${out}</b> · vorher ${s.length} Zeichen, nachher ${out.replace(/\s/g, '').length} Zeichen ${out.replace(/\s/g, '').length < s.length ? '<b class="good">→ kürzer!</b>' : '<b class="bad">→ lohnt sich nicht!</b>'}`;
+  };
+  $('#rle-in').addEventListener('input', up);
+  $$('[data-ex]').forEach(b => b.onclick = () => { $('#rle-in').value = b.dataset.ex; up(); });
+  up();
+})();
+
+/* ================= M2 ================= */
+(() => {
+  const R = ['1100011', '1000001', '1010101', '1000001', '1001001', '1000001', '0000000', '1010101'];
+  $('#m2-code').innerHTML = R.map(r => `<span>${r.split('').join(' ')}</span>`).join('');
+  $('#m2s').innerHTML = R.map(r => rle(r).replace(/(\d+[01])/g, '$1 ').trim()).join('<br>');
+  const g = pixelGrid($('#m2-grid'), {w: 7, h: 8});
+  $('#m2-check').onclick = () => { const d = g.get(), w = d.reduce((s, r, y) => s + [...r].filter((c, x) => c !== R[y][x]).length, 0); $('#m2-fb').className = 'fb ' + (w ? 'err' : 'ok'); $('#m2-fb').textContent = w ? `${w} Pixel stimmen nicht.` : 'Richtig – ein Gesicht mit Augen und Nase!'; };
+})();
+
+/* ================= M3 Herz ================= */
+(() => {
+  const H = ['1111111111111111', '1100011111100011', '1000001111000001', '0000000110000000', '0000000000000000', '0000000000000000', '0000000000000000', '0000000000000000',
+    '1000000000000001', '1100000000000011', '1110000000000111', '1111000000001111', '1111100000011111', '1111110000111111', '1111111001111111', '1111111111111111'];
+  pixelGrid($('#heart16'), {w: 16, h: 16, data: H, readonly: true});
+  $('#h12').innerHTML = H.map(r => `${r} → ${rle(r).replace(/(\d+[01])/g, '$1 ').trim()}`).join('<br>');
+  const S = []; for (let y = 0; y < 8; y++) { let r = ''; for (let x = 0; x < 8; x++) { const b = [H[2 * y][2 * x], H[2 * y][2 * x + 1], H[2 * y + 1][2 * x], H[2 * y + 1][2 * x + 1]].filter(c => c === '0').length; r += b >= 2 ? '0' : '1'; } S.push(r); }
+  const g = pixelGrid($('#heart8'), {w: 8, h: 8});
+  $('#h8-sol').onclick = () => g.set(S);
+  $('#h8-check').onclick = () => { const d = g.get(), w = d.reduce((s, r, y) => s + [...r].filter((c, x) => c !== S[y][x]).length, 0); $('#h8-fb').className = 'fb ' + (w <= 2 ? 'ok' : 'err'); $('#h8-fb').textContent = w === 0 ? 'Perfekt komprimiert!' : w <= 2 ? `Fast – ${w} Pixel weichen ab (Randfälle sind Ansichtssache).` : `${w} Pixel weichen noch ab.`; };
+})();
+
+/* ================= Übungen ================= */
+taskSet($('#ts'), () => {
+  if (Math.random() < .5) { const L = 'ABC'; let s = ''; for (let i = 0; i < randInt(3, 5); i++) { const c = L[i % 3]; s += c.repeat(randInt(1, 6)); } return {key: s, tag: 'Codieren', q: `<span class="big">${s}</span>`, fields: [{l: 'Lauflängencode', a: [rle(s)]}], hint: 'Zähle, wie oft jedes Zeichen hintereinander vorkommt: 5A2B …'}; }
+  let s = '', b = Math.random() < .5 ? '1' : '0'; for (let i = 0; i < 4; i++) { s += b.repeat(randInt(1, 7)); b = b === '1' ? '0' : '1'; }
+  return {key: 'b' + s, tag: 'Decodieren', q: `<span class="big">${rle(s).replace(/(\d+[01])/g, '$1 ').trim()}</span>`, fields: [{l: 'Bitfolge', a: [s]}], hint: '61 bedeutet: sechsmal die 1.'};
+}, {n: 6});
+mcQuiz($('#quiz'), [
+  {q: 'Was bewirkt Datenkompression?', a: ['weniger Speicherbedarf', 'mehr Speicherbedarf', 'bessere Bildqualität', 'mehr Pixel'], ok: 0, why: 'Daten werden verkleinert.'},
+  {q: 'Bei welcher Kompression geht nichts verloren?', a: ['verlustfreie Kompression', 'verlustbehaftete Kompression', 'JPEG-Kompression', 'bei keiner'], ok: 0, why: 'z. B. Lauflängencodierung.'},
+  {q: 'Wie lautet AAABBC in Lauflängencodierung?', a: ['3A2B1C', 'A3B2C1', '321', 'ABC'], ok: 0, why: 'Erst die Anzahl, dann das Zeichen.'},
+  {q: 'Wofür steht „71“ in einer codierten Bitfolge?', a: ['siebenmal die 1', 'einmal die 7', 'die Zahl 71', 'siebenmal die 0'], ok: 0, why: 'Lauflänge 7, Zeichen 1.'},
+  {q: 'Wann lohnt sich die Lauflängencodierung NICHT?', a: ['wenn sich Zeichen kaum wiederholen', 'bei langen gleichen Folgen', 'bei Schwarz-Weiß-Bildern', 'bei 0000001111'], ok: 0, why: '„ABCD“ würde zu „1A1B1C1D“ – länger!'},
+  {q: 'Warum braucht eine E-Mail verlustfreie Kompression?', a: ['damit kein Buchstabe verloren geht', 'damit sie bunter wird', 'damit sie größer wird', 'damit sie schneller gelöscht wird'], ok: 0, why: 'Der Text muss vollständig ankommen.'}
+]);
+</script>

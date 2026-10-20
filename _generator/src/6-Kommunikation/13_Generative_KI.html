@@ -1,0 +1,234 @@
+<!--
+title: Generative KI-Anwendungen nutzen
+short: Generative KI
+time: 2–3 Unterrichtsstunden
+q: Wie nutzt man generative KI-Anwendungen richtig?
+facts: Generative KI erzeugt Texte, Bilder, Musik, Videos, Programmcode; Möglichkeiten und Risiken (Abb. 1) | Large Language Model (LLM): wahrscheinliche Fortsetzungen (Abb. 2) | Richtig prompten: Rolle, klare Anweisung, Beispiele, Antwortlänge (M1) | Chancen und Risiken von KI-Texten; KI-Bilder durch Pixelveränderung, KI-Bilder erkennen (M2) | Expertenwissen Deepfakes: Gründe, Betrug und Manipulation (M1 Wahljahr 2024)
+inter: Möglichkeit oder Risiko? · Mini-Sprachmodell: Wort für Wort · Prompt-Checker · KI-Bild aus Rauschen · Merkmale von KI-Bildern · Deepfakes im Wahljahr
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Kommunikation in der vernetzten Welt</p>
+      <h1>Generative KI-Anwendungen nutzen<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Chatbots schreiben Texte, Programme malen Bilder auf Zuruf. Doch wie funktioniert das – und worauf muss man achten?</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Hast du schon einmal einen KI-Chatbot benutzt? Wofür?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie nutzt man generative KI-Anwendungen richtig?</p></div>
+      <div class="controls"><button class="btn primary" data-go="generativ">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="generativ" data-label="Generative KI" data-yr="Erarbeitung" data-title="Generative KI-Anwendungen" data-sub="Möglichkeiten und Risiken">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Generative KI-Anwendungen</p>
+      <h2>KI, die Neues erzeugt</h2>
+      <ul class="facts">
+        <li>Viele KI-Anwendungen erzeugen Bilder oder Musik, erstellen Videos, produzieren Texte oder sogar kleine Programmcodes. Weil sie Ergebnisse <b>erzeugen</b>, spricht man von <b>generativen</b> KI-Anwendungen (generativ = erzeugend).</li>
+        <li>Für Texte nutzt man häufig Chatbots wie ChatGPT. Dabei wird ein Sprachmodell genutzt: ein <b>Large Language Model (LLM)</b>.</li>
+        <li>Es wurde mit sehr vielen Texten aus Büchern, Zeitungen und dem Internet trainiert und wird mit der Zeit immer besser.</li>
+      </ul>
+    </div>
+    <div class="stack"><p class="eyebrow">Möglichkeit oder Risiko?</p><div id="mr"></div></div>
+  </div>
+</section>
+
+<section class="station" id="llm" data-label="So arbeitet ein LLM" data-yr="Ausprobieren" data-title="LLM nutzen" data-sub="Wort für Wort">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · LLM nutzen</p>
+      <h2>Das wahrscheinlichste nächste Wort</h2>
+      <ul class="facts">
+        <li>Das Sprachmodell hat gelernt, wie Sätze und Texte aufgebaut sind.</li>
+        <li>Man gibt etwas in ein Textfeld ein – die Eingabe heißt <b>Prompt</b>. Sie wird aufbereitet, damit das Modell sie versteht.</li>
+        <li>Dann berechnet es, welche Wörter am besten zum Prompt passen: In der <b>Eingabeschicht</b> steht der bisherige Text, das <b>Netzwerk</b> nutzt gelernte Zusammenhänge, die <b>Ausgabeschicht</b> liefert wahrscheinliche Fortsetzungen.</li>
+        <li>Die KI <b>versteht</b> den Inhalt dabei nicht wirklich – sie rechnet mit Wahrscheinlichkeiten.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Mini-Sprachmodell</h3></div>
+      <p class="wp-page" id="lm-text" style="white-space:normal;border:1.5px solid var(--edge);border-radius:4px;min-height:4rem;font-size:1.2rem"></p>
+      <div id="lm-probs"></div>
+      <div class="controls"><button class="btn primary" id="lm-next">Nächstes Wort 🎲</button><button class="btn" id="lm-top">Wahrscheinlichstes Wort</button><button class="btn" id="lm-reset">Neu</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="prompt" data-label="M1 Prompten" data-yr="M1" data-title="Richtig prompten" data-sub="Prompt-Checker">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Richtig prompten · Material M1</p>
+    <h2>Je klarer der Prompt, desto besser die Antwort</h2>
+  </div>
+  <div class="model">
+    <div class="stack">
+      <div class="cols-2">
+        <div class="box"><span class="tag">Prompt A</span><p>„Mache den Text, den ich dir gleich schicke, besser. Mache ihn außerdem spannender. Es sollen ein paar coole Sachen vorkommen.“</p></div>
+        <div class="box"><span class="tag">Prompt B</span><p>„Schreibe mir einen Text (100 Wörter) zum Thema Energiesparen. Der Text soll für Schülerinnen und Schüler klar verständlich formuliert sein.“</p></div>
+      </div>
+      <div class="box"><span class="tag info">Checkliste für gute Prompts</span><ul class="facts"><li><b>LLM eine Rolle geben</b>: „Du bist eine Schülerin …“</li><li><b>Klare Anweisung</b>: „Schreibe …“, „Nenne mir …“</li><li><b>Beispiele vorgeben</b></li><li><b>Antwortlänge begrenzen</b></li></ul></div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Gut oder schlecht?</h3></header><p>Begründe, welcher Prompt gut formuliert ist.</p>
+        <div class="controls"><button class="btn" data-reveal="p1" aria-expanded="false">Lösung</button></div><p class="solution" id="p1" hidden><b>B</b> ist gut: klare Anweisung („Schreibe“), Thema, Länge (100 Wörter) und Zielgruppe. A ist ungenau: „besser“, „spannender“ und „coole Sachen“ kann die KI nur raten.</p></div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Prompt-Checker</h3></div>
+      <p>Aufgabe 2: Verbessere den Prompt „Schreibe etwas über Sport!“. Überlege: Sportart, Art des Wettbewerbs, Zielgruppe, Textlänge, Textart.</p>
+      <textarea class="text-in" id="pr" rows="5" style="font-size:1rem">Schreibe etwas über Sport!</textarea>
+      <ul class="ck-list" id="pr-ck"></ul>
+      <div class="controls"><button class="btn" id="pr-ex">Beispiel zeigen</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="chancen" data-label="Chancen & Risiken" data-yr="Erarbeitung" data-title="Chancen und Risiken von KI-Texten" data-sub="Selbst denken!">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Chancen und Risiken von KI-Texten</p>
+    <h2>Hilfreich – aber nicht immer richtig</h2>
+  </div>
+  <div class="grid-2">
+    <div class="box"><span class="tag info">Chancen</span><p>KI hilft beim Schreiben und Lernen: Sie erklärt schwierige Sachverhalte einfacher, kürzt Texte, schlägt Ideen für Geschichten vor, antwortet in vielen Sprachen und hilft beim Übersetzen.</p></div>
+    <div class="box"><span class="tag lim">Risiken</span><p>KI schreibt oft Sachverhalte, die zwar richtig klingen, aber <b>nicht korrekt</b> sind. Sie kann <b>Fake News</b> erzeugen. Für den eigenen Lernfortschritt ist es wichtig, <b>selbst zu denken</b> und nicht alles von der KI machen zu lassen. KI-Texte darf man nicht einfach als eigene Texte ausgeben.</p></div>
+  </div>
+  <h3 class="mt">Stimmt das?</h3>
+  <div id="ch-tf"></div>
+</section>
+
+<section class="station" id="bilder" data-label="M2 KI-Bilder" data-yr="M2" data-title="KI kann Bilder erzeugen" data-sub="Aus Rauschen wird ein Bild">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 5 · KI-Bilder · Material M2</p>
+      <h2>Pixelveränderung</h2>
+      <ul class="facts">
+        <li>Mit KI können Bilder <b>generiert</b> werden. Die KI wurde mit Millionen von Bildern und Textbeschreibungen trainiert.</li>
+        <li>Man gibt eine Beschreibung ein, z. B. „Eine Motorrad fahrende Katze, die durch New York fährt“. Die KI startet mit einem Bild aus <b>zufällig verteilten Pixeln</b>.</li>
+        <li>Schritt für Schritt verändert sie Farbe, Helligkeit und Position der Pixel, bis ein sinnvolles Bild entsteht. Bei der Feinabstimmung achtet sie auf Licht, Schatten und Perspektive.</li>
+        <li><b>KI-Bilder erkennen:</b> verzerrte Hände, fehlerhafte Schrift, ungleichmäßige Merkmale, unlogische Objekte. Auch kleine Fehler trotz hoher Auflösung können ein Hinweis sein.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>„Ein Haus mit Sonne“</h3></div>
+      <canvas id="gen" width="320" height="240" style="width:100%;image-rendering:pixelated;border:1.5px solid var(--edge);border-radius:4px"></canvas>
+      <label class="slider-row">Durchlauf <input type="range" id="gen-s" min="0" max="10" value="0"><output class="mono" id="gen-o">0 / 10</output></label>
+      <div class="controls"><button class="btn primary" id="gen-play">▶ Bild generieren</button></div>
+      <div class="task-card"><header><span class="no">1–4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>KI-Bild oder nicht?</h3></header><p>Bild A zeigt eine Frau am Laptop – im Hintergrund schweben Bücher, der Bildschirm zeigt ein verzerrtes Gesicht, eine Hand hat sechs Finger. Bild B zeigt eine ähnliche Szene ohne Auffälligkeiten. Vergleiche, nenne Merkmale und beschreibe Chancen und Risiken immer besserer KI.</p>
+        <div class="controls"><button class="btn" data-reveal="b14" aria-expanded="false">Lösung</button></div><p class="solution" id="b14" hidden>Hinweise auf ein KI-Bild: unlogische Objekte (schwebende Bücher), Fehler bei Händen und Gesichtern, unleserliche Schrift, zu glatte Haut, merkwürdige Spiegelungen. Chancen: Illustrationen, kreative Ideen, Lernmaterial. Risiken: Fälschungen werden kaum noch erkennbar, Deepfakes, Betrug, Urheberrechtsfragen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="deepfakes" data-label="Deepfakes" data-yr="Expertenwissen" data-title="Deepfakes" data-sub="Betrug und Manipulation">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 6 · Expertenwissen · Material M1</p>
+      <h2>Deepfakes</h2>
+      <ul class="facts">
+        <li>Mit KI können Bilder, Videos oder Tonaufnahmen so verändert werden, dass sie täuschend echt wirken. Personen sagen in Videos etwas, was sie nie gesagt haben: <b>Deepfakes</b>.</li>
+        <li><b>Gründe:</b> lustige oder begeisternde Inhalte in Filmen und sozialen Medien, Werbung – aber auch, um zu täuschen, zu schaden oder falsche Nachrichten zu verbreiten.</li>
+        <li><b>Falsche Nachrichten bekannter Personen:</b> Politiker sagen Dinge, die nicht der Wahrheit entsprechen.</li>
+        <li><b>Mobbing und Erpressung:</b> peinliche oder beleidigende Videos von echten Menschen.</li>
+        <li><b>Falsche Identitäten:</b> Betrüger geben sich am Telefon oder im Video als jemand anderes aus.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Wachstum der Deepfakes im Wahljahr 2024</h3></div>
+      <p class="note">× so viele wie 2023 (nach Buch-Grafik)</p>
+      <div id="df"></div>
+      <div class="task-card"><header><span class="no">1–3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Auswerten</h3></header><p>In vielen Ländern wurden 2024 neue Präsidenten oder Regierungen gewählt. Beschreibe die Kernaussagen. Warum kommen Deepfakes gerade bei Wahlen häufig vor? Diskutiert, welchen Einfluss sie auf Personengruppen haben.</p>
+        <div class="controls"><button class="btn" data-reveal="d13" aria-expanded="false">Lösung</button></div><p class="solution" id="d13" hidden>In fast allen Ländern mit Wahlen stieg die Zahl der Deepfakes, besonders stark in Bulgarien (30-mal) und China (28-mal), in Deutschland 1,4-mal. Bei Wahlen wollen manche die Meinung der Wähler beeinflussen: Ein gefälschtes Video kann Kandidaten schaden, bevor die Fälschung aufgedeckt ist. Betroffen sind vor allem Menschen, die Nachrichten nur aus sozialen Medien beziehen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Generative KI</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Generative KI-Anwendungen nutzen</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step><b>Generative KI</b> erzeugt Texte, Bilder, Musik, Videos und Programmcode.</li>
+        <li data-step>Ein <b>Large Language Model (LLM)</b> wurde mit sehr vielen Texten trainiert und berechnet das <b>wahrscheinlichste</b> nächste Wort. Die Eingabe heißt <b>Prompt</b>.</li>
+        <li data-step>Gute Prompts: <b>Rolle</b> geben, <b>klare Anweisung</b>, <b>Beispiele</b>, <b>Antwortlänge</b> begrenzen.</li>
+        <li data-step>KI macht Fehler und kann Fake News erzeugen. Selbst denken, prüfen und KI-Texte nicht als eigene ausgeben. <b>Deepfakes</b> sind KI-Fälschungen von Bildern, Videos oder Stimmen.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Aufgabe 3–4</span><p>Lass eine KI eine Fantasiegeschichte erfinden (Ort, Figuren, Handlung, Stimmung, Länge). Schreibe zum Thema Erdbeben zwei Prompts: für ältere Schüler und für Grundschüler. Vergleiche.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Generative KI</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+sorter($('#mr'), [{id: 'm', name: '✅ Möglichkeiten'}, {id: 'r', name: '⚠️ Risiken'}], [
+  {t: 'Forschung und Wissenschaft', c: 'm'}, {t: 'Recherche', c: 'm'}, {t: 'Medienherstellung', c: 'm'}, {t: 'Auswertung', c: 'm'}, {t: 'Dokumentation', c: 'm'},
+  {t: 'Waffentechnologie', c: 'r'}, {t: 'Betrug und Desinformation', c: 'r'}, {t: 'Überwachung', c: 'r'}, {t: 'Manipulation', c: 'r'}
+]);
+(() => {
+  const M = {
+    '': [['Es', 60], ['Im', 25], ['Vor', 15]],
+    'Es': [['war', 80], ['ist', 15], ['regnet', 5]], 'Es war': [['einmal', 85], ['kalt', 10], ['spät', 5]], 'Es war einmal': [['eine', 60], ['ein', 35], ['vor', 5]],
+    'Es war einmal eine': [['Prinzessin', 50], ['Königstochter', 35], ['Bundeskanzlerin', 10], ['Prinz', 5]],
+    'Es war einmal ein': [['König', 50], ['Drache', 30], ['Junge', 20]],
+    'Im': [['Wald', 55], ['Sommer', 30], ['Keller', 15]], 'Vor': [['langer', 70], ['dem', 30]], 'Vor langer': [['Zeit', 95], ['Weile', 5]]
+  };
+  const END = [['.', 1]];
+  let words = [];
+  const cur = () => M[words.join(' ')] || END;
+  function draw() {
+    $('#lm-text').innerHTML = (words.join(' ') || '<span class="note">Drücke „Nächstes Wort“.</span>').replace(/ \.$/, '.');
+    const p = cur();
+    $('#lm-probs').innerHTML = p === END ? '<p class="note">Das Mini-Modell kennt hier keine Fortsetzung mehr. Ein echtes LLM kennt Milliarden Zusammenhänge.</p>' : p.map(([w, v]) => `<div class="prob"><span>${w}</span><span class="bar"><i style="width:${v}%"></i></span><span class="mono">${v} %</span></div>`).join('');
+  }
+  const add = w => { if (cur() === END) return; words.push(w); draw(); };
+  $('#lm-next').onclick = () => { const p = cur(); let r = Math.random() * 100; for (const [w, v] of p) { if ((r -= v) <= 0) return add(w); } add(p[0][0]); };
+  $('#lm-top').onclick = () => add(cur()[0][0]);
+  $('#lm-reset').onclick = () => { words = []; draw(); };
+  draw();
+})();
+(() => {
+  const C = [['Klare Anweisung (z. B. „Schreibe“, „Erkläre“, „Nenne“)', p => /\b(schreib|erklär|nenn|erstell|beschreib|fass)/i.test(p)], ['Genaues Thema (Sportart, Wettbewerb …)', p => /(fußball|handball|basketball|schwimm|tennis|turnier|olympi|bundesjugendspiele|wm|em|lauf|leichtathletik|volleyball|turnen)/i.test(p)],
+    ['Zielgruppe (für wen?)', p => /(für|schüler|kinder|klasse|grundschul|eltern|jugendliche)/i.test(p)], ['Länge begrenzt (Wörter, Sätze)', p => /\d+\s*(wörter|sätze|zeilen)|kurz/i.test(p)], ['Textart (Bericht, Gedicht, Steckbrief …)', p => /(bericht|gedicht|steckbrief|zeitungsartikel|geschichte|artikel|anleitung|interview)/i.test(p)], ['Rolle (z. B. „Du bist …“)', p => /du bist|als (ein|eine)/i.test(p)]];
+  const up = () => { const p = $('#pr').value; $('#pr-ck').innerHTML = C.map(([t, f]) => { const ok = f(p); return `<li class="${ok ? 'ok' : 'err'}">${ok ? '✅' : '⬜'} ${t}</li>`; }).join(''); };
+  $('#pr').oninput = up;
+  $('#pr-ex').onclick = () => { $('#pr').value = 'Du bist Sportreporterin einer Schülerzeitung. Schreibe einen kurzen Bericht (80 Wörter) über das Fußballturnier unserer Schule für Schülerinnen und Schüler der Klasse 5.'; up(); };
+  up();
+})();
+trueFalse($('#ch-tf'), [
+  {t: 'Was eine KI schreibt, ist immer richtig.', ok: false, why: 'Es klingt oft richtig, ist es aber nicht immer.'},
+  {t: 'KI kann helfen, schwierige Sachverhalte einfacher zu erklären.', ok: true, why: 'Das ist eine Chance.'},
+  {t: 'Einen KI-Text darf ich als meine eigene Hausaufgabe abgeben.', ok: false, why: 'KI-Texte nicht als eigene ausgeben.'},
+  {t: 'KI kann auch Fake News erzeugen.', ok: true, why: 'Deshalb Fakten prüfen.'},
+  {t: 'Für den eigenen Lernfortschritt ist selbst denken wichtig.', ok: true, why: 'Sonst lernt nur die KI.'}
+]);
+(() => {
+  const cv = $('#gen'), ctx = cv.getContext('2d'), W = 32, H = 24, S = 10;
+  const target = (x, y) => { if (y > 17) return [74, 160, 64]; if ((x - 25) ** 2 + (y - 5) ** 2 < 10) return [250, 204, 21]; if (x >= 8 && x <= 18 && y >= 11 && y <= 17) return (x >= 12 && x <= 14 && y >= 14) ? [120, 53, 15] : [239, 68, 68]; if (y >= 5 && y <= 10 && Math.abs(x - 13) <= y - 4) return [127, 29, 29]; return [147, 197, 253]; };
+  const noise = Array.from({length: W * H}, () => [Math.random() * 255, Math.random() * 255, Math.random() * 255]);
+  function draw(step) {
+    const t = step / 10;
+    for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) { const n = noise[y * W + x], g = target(x, y), c = n.map((v, i) => Math.round(v * (1 - t) + g[i] * t)); ctx.fillStyle = `rgb(${c})`; ctx.fillRect(x * S, y * S, S, S); }
+    $('#gen-o').textContent = step + ' / 10';
+  }
+  $('#gen-s').oninput = () => draw(+$('#gen-s').value);
+  $('#gen-play').onclick = () => { let s = 0; const tick = () => { $('#gen-s').value = s; draw(s); if (s++ < 10) setTimeout(tick, RM.matches ? 0 : 280); }; tick(); };
+  draw(0);
+})();
+(() => {
+  const D = [['Bulgarien', 30], ['China', 28], ['Indonesien', 15.5], ['Brasilien', 8.2], ['Mexiko', 5], ['Südafrika', 5], ['USA', 3], ['Indien', 2.8], ['Deutschland', 1.4], ['Südkorea', 0.3]];
+  $('#df').innerHTML = D.map(([n, v]) => `<div class="prob"><span>${n}</span><span class="bar"><i style="width:${v / 30 * 100}%;background:#EA580C"></i></span><span class="mono">${numDE(v, 1)}×</span></div>`).join('');
+})();
+mcQuiz($('#quiz'), [
+  {q: 'Was bedeutet „generativ“?', a: ['erzeugend, Neues hervorbringend', 'gefährlich', 'alt', 'langsam'], ok: 0, why: 'Generative KI erzeugt Texte, Bilder, Musik …'},
+  {q: 'Wofür steht LLM?', a: ['Large Language Model', 'Little Learning Machine', 'Long Line Memory', 'Lern-Lese-Modus'], ok: 0, why: 'Ein großes Sprachmodell.'},
+  {q: 'Wie nennt man die Eingabe in einen Chatbot?', a: ['Prompt', 'Pixel', 'Provider', 'Router'], ok: 0, why: 'Je klarer, desto besser die Antwort.'},
+  {q: 'Wie wählt ein LLM das nächste Wort?', a: ['nach Wahrscheinlichkeit aus gelernten Zusammenhängen', 'es versteht den Inhalt wie ein Mensch', 'es würfelt völlig zufällig', 'es fragt einen Menschen'], ok: 0, why: 'Es rechnet mit Wahrscheinlichkeiten.'},
+  {q: 'Was gehört in einen guten Prompt?', a: ['Rolle, klare Anweisung, Beispiele, Länge', 'möglichst wenige Wörter', 'viele Emojis', 'nur das Wort „besser“'], ok: 0, why: 'Checkliste in Bild 3.'},
+  {q: 'Womit beginnt eine KI beim Erzeugen eines Bildes?', a: ['mit zufällig verteilten Pixeln', 'mit einem fertigen Foto', 'mit einem weißen Blatt', 'mit einer Zeichnung'], ok: 0, why: 'Dann verändert sie die Pixel Schritt für Schritt.'},
+  {q: 'Woran erkennt man KI-Bilder oft?', a: ['verzerrte Hände und fehlerhafte Schrift', 'gar nicht', 'an der Dateigröße', 'an den Farben Rot und Blau'], ok: 0, why: 'Und an unlogischen Objekten.'},
+  {q: 'Was ist ein Deepfake?', a: ['eine täuschend echte KI-Fälschung', 'ein tiefes Foto', 'ein Virenschutz', 'ein Chatbot'], ok: 0, why: 'Personen sagen Dinge, die sie nie gesagt haben.'}
+]);
+</script>

@@ -1,0 +1,141 @@
+<!--
+title: Fake News und verstörende Inhalte
+short: Fake News
+time: 2 Unterrichtsstunden (Methode)
+q: Wie erkennt man Fake News – und was tut man, wenn einen Inhalte verstören?
+facts: Methode S. 132: Fake News – absichtlich falsche Nachrichten, Bilder oder Videos; Verbreitung über Aufmerksamkeit, Werbung, Kettenbriefe | Wie erkennt man Fake News? Quelle, Alter der Information, Absicht; nicht verbreiten, melden (M1 Checkliste) | Methode S. 133: Mit verstörenden Inhalten umgehen – darüber sprechen, melden und blockieren, seriöse Hilfe (klicksafe.de, jugend.support) | M1 Unangenehme Videos (Leander und Charles)
+inter: Manipuliertes Foto: Unterschiede finden · News-Check mit Checkliste · Leanders Situation: Was hilft? · Hilfsangebote
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Kommunikation in der vernetzten Welt · Methode</p>
+      <h1>Fake News und verstörende Inhalte<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Nicht alles, was im Internet steht, ist wahr – und manches, was man sieht, möchte man lieber nicht gesehen haben.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Hast du schon einmal eine Nachricht geglaubt, die sich später als falsch herausgestellt hat?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie erkennt man Fake News – und was tut man, wenn einen Inhalte verstören?</p></div>
+      <div class="controls"><button class="btn primary" data-go="fake">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="fake" data-label="Fake News" data-yr="Methode" data-title="Fake News erkennen" data-sub="Ein manipuliertes Foto">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Fake News</p>
+      <h2>Absichtlich falsch</h2>
+      <ul class="facts">
+        <li><b>Fake News</b> sind Nachrichten, die bewusst falsch gemacht wurden. Sie sehen oft echt aus – stimmen aber nicht. Auch falsche Geschichten, Bilder oder Videos werden absichtlich verbreitet, um Menschen zu beeinflussen oder zu täuschen.</li>
+        <li>Manche wollen erreichen, dass andere etwas Bestimmtes glauben oder tun. Andere wollen <b>Aufmerksamkeit</b> oder <b>Geld</b> durch Werbung.</li>
+        <li>Fake News sind oft sehr <b>aufregend oder schockierend</b>, damit möglichst viele sie teilen – manchmal unbemerkt über Kettenbriefe oder Links.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Original oder manipuliert?</h3><div id="ph-seg"></div></div>
+      <svg viewBox="0 0 320 200" id="rk" class="net-svg" style="background:linear-gradient(#BFDBFE,#FDE68A);border-radius:6px"></svg>
+      <p class="status" id="rk-fb">Vergleiche beide Fotos. Was wurde verändert?</p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="check" data-label="M1 News-Check" data-yr="M1" data-title="Gib Fake News keine Chance!" data-sub="Checkliste anwenden">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Wie erkennt man Fake News? · Material M1</p>
+    <h2>Gib Fake News keine Chance!</h2>
+  </div>
+  <div class="cols-2">
+    <div class="box"><span class="tag info">🔎 Hinterfrage die Nachricht!</span><p>Woher kommt die Nachricht? Welche Absicht hat die Verbreitung?</p></div>
+    <div class="box"><span class="tag info">🧭 Überprüfe den Ursprung!</span><p>Wird eine Quelle angegeben? Bestätigen andere Quellen die Fakten? Wie alt ist die Information?</p></div>
+    <div class="box"><span class="tag info">🖼️ Überprüfe das Bild!</span><p>Wer hat es wann und wo aufgenommen? Wer verbreitet das Bild?</p></div>
+    <div class="box"><span class="tag info">✋ Leite nicht einfach weiter!</span><p>Kann die Nachricht anderen schaden? Melde Fake News!</p></div>
+  </div>
+  <h3 class="mt">News-Check: echt oder fake?</h3>
+  <div id="news"></div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Absichten und Grenzen</h3></header><p>Nenne Absichten von Menschen, die Fake News verbreiten. Erkläre, warum manche Punkte der Checkliste schwer zu überprüfen sind.</p>
+      <div class="controls"><button class="btn" data-reveal="f12" aria-expanded="false">Lösung</button></div><p class="solution" id="f12" hidden>Absichten: Meinung beeinflussen, Angst oder Wut schüren, Aufmerksamkeit (Klicks, Follower), Geld durch Werbung, jemandem schaden. Schwer zu prüfen: Wer ein Bild wann und wo aufgenommen hat oder wer hinter einem anonymen Account steckt – dafür braucht man oft Hilfsmittel wie eine Bilder-Rückwärtssuche.</p></div>
+    <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Schnelle Verbreitung</h3></header><p>Begründe, warum sich Fake News vor allem in sozialen Netzwerken sehr schnell verbreiten.</p>
+      <div class="controls"><button class="btn" data-reveal="f3" aria-expanded="false">Lösung</button></div><p class="solution" id="f3" hidden>Teilen geht mit einem Klick, und schockierende Beiträge bekommen viele Reaktionen. Die Plattformen zeigen solche Beiträge dann noch mehr Menschen. Viele leiten weiter, ohne zu prüfen – oft an Freunde, die dem Absender vertrauen.</p></div>
+  </div>
+</section>
+
+<section class="station" id="verstoerend" data-label="Verstörende Inhalte" data-yr="Methode" data-title="Mit verstörenden Inhalten umgehen" data-sub="Was kann ich tun?">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Mit verstörenden Inhalten umgehen</p>
+      <h2>Du bist nicht allein</h2>
+      <ul class="facts">
+        <li>Im Internet stoßen Kinder und Jugendliche manchmal auf Inhalte, die <b>Angst machen</b>, verwirren oder verstören: gewaltvolle Videos, pornografische Inhalte, gefährliche Online-Challenges.</li>
+        <li>Diese Dinge sind nicht für junge Menschen gemacht – sie gelangen oft ungewollt oder durch Neugier auf den Bildschirm.</li>
+        <li>Wer so etwas sieht, ist nicht allein. Es ist <b>völlig normal</b>, sich unwohl zu fühlen oder Fragen zu haben.</li>
+      </ul>
+      <div class="box"><span class="tag lim">Was kann ich tun?</span><ul class="facts"><li>Mit einer <b>vertrauten Person</b> sprechen: Eltern, Freunde, Lehrkraft.</li><li>Die <b>Melde- oder Blockierfunktion</b> der App nutzen.</li><li>Auf seriösen Seiten Hilfe suchen: <b>klicksafe.de</b>, <b>jugend.support</b>, Nummer gegen Kummer <b>116 111</b>.</li></ul></div>
+    </div>
+    <div class="stack">
+      <div class="cols-2">
+        <div class="post"><div class="post-img" style="font-size:2.2rem">🧒📱🧒</div><div class="post-cap"><b>Charles:</b> „Schau mal, ich will dir ein Video zeigen.“<br><b>Leander:</b> „Nein, nicht schon wieder, Charles.“</div></div>
+        <div class="post"><div class="post-img" style="font-size:2.2rem">🚴‍♂️🕳️😬</div><div class="post-cap"><b>Charles:</b> „Lustig, oder?“<br><b>Leander:</b> „Ähm, ja. Haha! Total lustig …“</div></div>
+      </div>
+      <div class="task-card"><header><span class="no">1–4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Leander und Charles</h3></header><p>Beschreibe die Situation. Warum hat Leander das Video angeschaut, obwohl er nicht wollte? Später bekommt er das Video nicht mehr aus dem Kopf – was kann er tun? Wie kann er so etwas beim nächsten Mal verhindern?</p>
+        <div class="controls"><button class="btn" data-reveal="l14" aria-expanded="false">Lösung</button></div><p class="solution" id="l14" hidden>Charles zeigt Leander ein Video, in dem ein Radfahrer schwer stürzt. Leander will es nicht sehen, schaut aber hin, weil er nicht als Spielverderber dastehen will und Gruppendruck spürt; er lacht mit, obwohl er sich unwohl fühlt. Später sollte er mit seinen Eltern oder einer Vertrauensperson darüber sprechen. Beim nächsten Mal kann er klar „Nein“ sagen, weggehen und Charles erklären, dass er solche Videos nicht sehen will.</p></div>
+    </div>
+  </div>
+  <h3 class="mt">Was hilft Leander?</h3>
+  <div id="help"></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Fake News und verstörende Inhalte</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Fake News und verstörende Inhalte</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step><b>Fake News</b> sind absichtlich falsche Nachrichten, Bilder oder Videos, die Menschen beeinflussen oder täuschen sollen.</li>
+        <li data-step>Prüfen: <b>Wer</b> ist die Quelle? <b>Wie alt</b> ist die Information? <b>Warum</b> wurde sie veröffentlicht? Bestätigen andere, neutrale Quellen die Fakten?</li>
+        <li data-step>Fake News <b>nicht weiterleiten</b>, sondern melden und mit Erwachsenen besprechen.</li>
+        <li data-step>Bei <b>verstörenden Inhalten</b>: mit einer vertrauten Person sprechen, melden und blockieren, Hilfe suchen (klicksafe.de, jugend.support, 116 111).</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Merkwort</span><p><b>Stopp – Prüfen – Erst dann teilen.</b></p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Stimmt das?</h2></div>
+  <div id="tf"></div>
+</section>
+
+<script>
+(() => {
+  const rocket = (x, h, cls = '') => `<g class="${cls}"><path d="M${x} ${180 - h} l6 -14 l6 14 v${h - 20} h-12z" fill="#E5E7EB" stroke="#374151"/><path d="M${x - 2} 160 q8 30 16 0" fill="#F97316"/><ellipse cx="${x + 6}" cy="190" rx="22" ry="9" fill="#D1D5DB"/></g>`;
+  const BASE = rocket(60, 90) + rocket(150, 110) + rocket(240, 80);
+  const ORIG = BASE + '<g><rect x="262" y="150" width="46" height="34" fill="#4B5563"/><path d="M262 150 l-8 -20 M308 150 l8 -20" stroke="#4B5563" stroke-width="4"/><text x="285" y="172" text-anchor="middle" style="fill:#fff;font-size:9px">Rampe</text></g>';
+  const FAKE = BASE + rocket(105, 100, 'cp') + rocket(195, 95, 'cp') + '<rect class="cp2" x="250" y="126" width="70" height="60" fill="transparent"/>';
+  let found = 0;
+  seg($('#ph-seg'), [['o', 'A Original'], ['f', 'B manipuliert']], v => {
+    $('#rk').innerHTML = v === 'o' ? ORIG : FAKE; found = 0;
+    $('#rk-fb').innerHTML = v === 'o' ? 'Original: <b>drei</b> Raketen starten, rechts steht eine Abschussrampe.' : 'Tippe auf die Stellen, die verändert wurden.';
+    $$('#rk .cp, #rk .cp2').forEach(el => { el.style.cursor = 'pointer'; el.onclick = () => { if (el.dataset.f) return; el.dataset.f = 1; found++; el.style.outline = '2px solid #DC2626'; el.style.opacity = .6; $('#rk-fb').innerHTML = found >= 3 ? '<b class="good">Alles gefunden!</b> Zwei Raketen wurden <b>kopiert</b> und eingefügt, die Abschussvorrichtung am Boden wurde <b>entfernt</b>. So wirkt der Start viel bedrohlicher.' : `Gefunden: <b>${found}</b> / 3`; }; });
+  });
+})();
+trueFalse($('#news'), [
+  {t: '📱 Kettenbrief: „ACHTUNG!!! Ab morgen kostet WhatsApp 5 € im Monat! Sofort an 10 Freunde schicken, sonst wird dein Konto gelöscht!!!“ – Ist das echt?', ok: false, why: 'Keine Quelle, Druck („sofort“), viele Ausrufezeichen – ein typischer Kettenbrief.'},
+  {t: '📰 tagesschau.de, heute: „Bundestag beschließt neues Gesetz zum Jugendschutz.“ Andere Nachrichtenseiten berichten ebenfalls. – Ist das echt?', ok: true, why: 'Seriöse Quelle, aktuelles Datum, von anderen bestätigt.'},
+  {t: '🖼️ Foto eines Hais auf einer überfluteten Autobahn, geteilt von „@crazyfacts_now“ – ohne Datum und Ort. – Ist das echt?', ok: false, why: 'Dieses Bild taucht bei fast jedem Sturm wieder auf – es ist eine Fotomontage.'},
+  {t: '🧪 „Forscher beweisen: Wer jeden Tag Schokolade isst, wird schlauer!“ – Quelle: Werbeseite eines Schokoladenherstellers. – Ist das echt?', ok: false, why: 'Die Quelle verdient am Verkauf – nicht unabhängig.'},
+  {t: '🏫 Die Schulhomepage kündigt einen Elternabend am 12. März an. – Ist das echt?', ok: true, why: 'Bekannte, verlässliche Quelle.'}
+]);
+sorter($('#help'), [{id: 'g', name: '✅ hilft'}, {id: 'b', name: '❌ hilft nicht'}], [
+  {t: 'mit Mama oder Papa darüber reden', c: 'g'}, {t: 'beim nächsten Mal „Nein“ sagen und weggehen', c: 'g'}, {t: 'das Video melden', c: 'g'}, {t: 'bei klicksafe.de nachlesen', c: 'g'},
+  {t: 'das Video noch mehrmals ansehen', c: 'b'}, {t: 'so tun, als wäre nichts', c: 'b'}, {t: 'das Video an andere weiterschicken', c: 'b'}
+]);
+trueFalse($('#tf'), [
+  {t: 'Fake News sind absichtlich falsch.', ok: true, why: 'Sie sollen täuschen oder beeinflussen.'},
+  {t: 'Wenn viele Leute eine Nachricht teilen, ist sie wahr.', ok: false, why: 'Gerade schockierende Fake News werden oft geteilt.'},
+  {t: 'Auch Fotos können manipuliert sein.', ok: true, why: 'Teile können kopiert oder entfernt werden.'},
+  {t: 'Wer etwas Verstörendes gesehen hat, sollte allein damit klarkommen.', ok: false, why: 'Darüber reden hilft – auch Erwachsenen.'},
+  {t: 'Eine Nachricht ohne Datum und Quelle sollte man besonders kritisch prüfen.', ok: true, why: 'Alter und Herkunft sind wichtig.'}
+]);
+</script>

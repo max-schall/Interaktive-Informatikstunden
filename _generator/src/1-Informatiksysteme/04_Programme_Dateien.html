@@ -1,0 +1,237 @@
+<!--
+title: Programme und Dateien
+short: Dateien
+time: 2 Unterrichtsstunden
+q: Wie startet man ein Programm und speichert den Arbeitsfortschritt?
+facts: Anmeldung mit Benutzername und Kennwort (oder PIN, Fingerabdruck, Gesicht) | Desktop, Taskleiste und Startmenü, Programme starten | Dateien speichern: sinnvolle Namen, Endungen und Dateiformate (M1) | Baumartige Ordnerstrukturen (M2)
+inter: Anmelde-Bildschirm · Desktop erkunden und finden · Programm per Doppelklick öffnen · Datei-Endungen aufdecken · Ordnerbaum aufklappen · Dateien einsortieren
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Informatiksysteme nutzen</p>
+      <h1>Programme und Dateien<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Auf einem Computer sind viele Programme installiert. Und jedes Programm erzeugt Dateien: Texte, Fotos, Präsentationen …</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Du hast lange an einem Referat gearbeitet – und findest die Datei nicht mehr. Was ist schiefgelaufen?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie startet man ein Programm und speichert den Arbeitsfortschritt?</p></div>
+      <div class="controls"><button class="btn primary" data-go="anmelden">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="anmelden" data-label="Anmeldung" data-yr="Einstieg" data-title="Anmelden" data-sub="Benutzername, Kennwort, PIN …">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Anmeldung</p>
+      <h2>Zuerst anmelden</h2>
+      <ul class="facts">
+        <li>Um die Funktionen und Programme eines Computers zu nutzen, muss man sich zuerst <b>anmelden</b>.</li>
+        <li>Die <b>Zugangsdaten</b> bestehen meist aus einem <b>Benutzernamen</b> und einem <b>Kennwort</b>.</li>
+        <li>Den Benutzernamen legt man meist bei der Erstanmeldung fest. Das Kennwort sollte <b>sicher</b> sein – und man muss es sich gut merken.</li>
+        <li>Statt eines Kennworts geht oft auch eine <b>PIN</b>, ein <b>Fingerabdruck</b> oder eine <b>Gesichtserkennung</b>.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Abb. 1: Anmelde-Bildschirm</h3><div id="login-seg"></div></div>
+      <div class="login" id="login"></div>
+      <p class="status" id="login-status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="desktop" data-label="Desktop" data-yr="Erarbeitung" data-title="Der Startbildschirm" data-sub="Desktop, Taskleiste, Startmenü">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Startbildschirm</p>
+    <h2>Desktop, Taskleiste und Startmenü</h2>
+    <p class="lead">Nach der Anmeldung siehst du den <b>Desktop</b>. Unten liegt die <b>Taskleiste</b>, über sie gelangt man ins <b>Startmenü</b>. Programme startest du per <b>Doppelklick</b> auf ihr Symbol.</p>
+  </div>
+  <div class="phone-wrap">
+    <div class="desk" id="desk">
+      <div class="desk-icons">
+        <button class="d-icon" data-part="symbol" data-app="Textverarbeitung"><span>📝</span>Textverarbeitung</button>
+        <button class="d-icon" data-part="symbol" data-app="Bildbetrachter"><span>🖼️</span>Fotos</button>
+        <button class="d-icon" data-part="papierkorb"><span>🗑️</span>Papierkorb</button>
+      </div>
+      <div class="d-start" id="d-start" hidden><b>Startmenü</b><span class="note">Zuletzt verwendet</span><span>📝 Aufsatz_Deutsch.docx</span><span>📊 Referat_Bio.pptx</span><span class="note">Alle Programme</span><span>🌐 Browser · 🎨 Malen · 🧮 Rechner</span></div>
+      <div class="d-win" id="d-win" hidden><div class="d-bar"><b id="d-title">Programm</b><button id="d-close" aria-label="Schließen">✕</button></div><div class="d-body" id="d-body"></div></div>
+      <div class="taskbar" data-part="taskleiste">
+        <button class="tb-start" data-part="startmenue" id="tb-start">⊞</button>
+        <span class="tb-search" data-part="suche">🔍 Suchen</span>
+        <span class="tb-fill"></span>
+        <span class="tb-ic" data-part="netz">📶</span><span class="tb-ic" data-part="laut">🔊</span><span class="tb-ic" data-part="akku">🔋</span>
+        <span class="tb-clock mono" data-part="uhr">10:42<br>20.10.</span>
+      </div>
+    </div>
+    <div class="stack">
+      <div id="desk-mode"></div>
+      <div class="phone-panel xp-panel" id="desk-panel" aria-live="polite"></div>
+      <p class="note">Tipp: Doppelklicke im Modus „Erkunden“ auf ein Programmsymbol.</p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="formate" data-label="M1 Endungen" data-yr="M1" data-title="Dateien speichern" data-sub="Endungen und Dateiformate">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Dateien speichern</p>
+      <h2>Name, Endung, Format</h2>
+      <ul class="facts">
+        <li>Gib deiner Datei einen <b>sinnvollen Namen</b>. Dann weißt du später sofort, was darin steht.</li>
+        <li>Jede Datei hat einen Namen und eine <b>Endung</b>, z. B. <code>Referat.<b>pptx</b></code>. Die Endung zeigt das <b>Dateiformat</b> an.</li>
+        <li>Das Dateiformat bestimmt, <b>welche Programme</b> die Datei öffnen können: „.doc“ → Textverarbeitung, „.pdf“ → PDF-Anzeigeprogramm.</li>
+      </ul>
+      <div class="task-card"><header><span class="no">A</span><h3>Endungen</h3></header><p>Nenne Datei-Endungen, die du kennst, und beschreibe, welche Dateiformate gespeichert werden.</p></div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>M1 Datei-Endungen</h3><span class="note">Felder antippen</span></div>
+      <div class="task-card" style="box-shadow:none;border:0;padding:0"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Tabelle ergänzen</h3></header><p>Ordne den Datei-Endungen die passenden Dateiformate und Programme zu.</p></div>
+      <div class="table-wrap"><table class="cmp" id="fmt">
+        <thead><tr><th>Endung</th><th>Dateiformat</th><th>Programm</th></tr></thead>
+        <tbody>
+          <tr><th><span class="ext doc">DOC</span></th><td>Textdokument</td><td>Textverarbeitung</td></tr>
+          <tr><th><span class="ext mp4">MP4</span></th><td class="q"><span>Video</span></td><td class="q"><span>Videoplayer</span></td></tr>
+          <tr><th><span class="ext ppt">PPT</span></th><td class="q"><span>Präsentation</span></td><td class="q"><span>Präsentationsprogramm</span></td></tr>
+          <tr><th><span class="ext pdf">PDF</span></th><td class="q"><span>PDF-Dokument</span></td><td class="q"><span>PDF-Anzeigeprogramm</span></td></tr>
+          <tr><th><span class="ext jpg">JPG</span></th><td class="q"><span>Foto / Bild</span></td><td class="q"><span>Bildbetrachter, Bildbearbeitung</span></td></tr>
+        </tbody></table></div>
+      <div class="cmp-tools"><button class="btn" id="fmt-q">Wieder verdecken</button><button class="btn" id="fmt-a">Alles aufdecken</button></div>
+    </div>
+  </div>
+  <h3 class="mt">Noch mehr Endungen: Welche gehört wozu?</h3>
+  <div id="ext-sort"></div>
+</section>
+
+<section class="station" id="ordner" data-label="M2 Ordner" data-yr="M2" data-title="Ordnerstrukturen" data-sub="Der Dateibaum">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 4 · Ordnerstrukturen</p>
+      <h2>Ordnung wie ein Baum</h2>
+      <ul class="facts">
+        <li>Dateien werden in einer <b>baumartigen Struktur</b> gespeichert: In <b>Ordnern</b> liegen <b>Unterordner</b> oder Dateien.</li>
+        <li>Den <b>Stamm</b> bildet ein Hauptordner, z. B. „Dieser PC“. Darunter verzweigen sich Unterordner wie „Schule“ oder „Bilder“.</li>
+        <li>Speichere Dateien in passenden Ordnern – dann findest du sie schnell wieder.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Abb. 3: Ordnerbaum</h3><span class="note">Ordner aufklappen</span></div>
+      <div class="tree" id="tree"></div>
+    </div>
+  </div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Aufbau</h3></header><p>Beschreibe den Aufbau von Ordnerstrukturen.</p></div>
+    <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Vor- und Nachteile</h3></header><p>Nenne Vorteile und Nachteile vom Speichern von Dateien in Ordnerstrukturen.</p>
+      <div class="controls"><button class="btn" data-reveal="o2h" aria-expanded="false">HILFE</button><button class="btn" data-reveal="o2" aria-expanded="false">Lösungsidee</button></div>
+      <p class="hint-box" id="o2h" hidden>Denke an ein aufgeräumtes und ein unordentliches Zimmer.</p>
+      <p class="solution" id="o2" hidden><b>Vorteile:</b> Dateien sind schnell wiederzufinden, alles ist übersichtlich, Zusammengehöriges liegt zusammen. <b>Nachteile:</b> Das Anlegen kostet Zeit; bei zu vielen Unterordnern muss man lange klicken; legt man eine Datei falsch ab, findet man sie schwer.</p></div>
+    <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Sinnvolle Namen</h3></header><p>Benenne die Dateien sinnvoll. Wähle jeweils den besseren Namen.</p><div id="names"></div></div>
+    <div class="task-card"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Einsortieren</h3></header><p>Erstelle geeignete Ordner und sortiere die Dateien sinnvoll in die Ordner ein – unten geht es los.</p></div>
+  </div>
+  <div id="file-sort"></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Programme und Dateien</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Programme und Dateien</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Zur <b>Anmeldung</b> braucht man Zugangsdaten: <b>Benutzername</b> und <b>Kennwort</b> (oder PIN, Fingerabdruck, Gesichtserkennung).</li>
+        <li data-step>Danach erscheint der <b>Desktop</b> mit der <b>Taskleiste</b>. Über sie gelangt man ins <b>Startmenü</b>. Programme startet man per <b>Doppelklick</b> auf ihr Symbol.</li>
+        <li data-step>Dateien bekommen einen <b>sinnvollen Namen</b> und eine <b>Endung</b>. Die Endung zeigt das <b>Dateiformat</b>, z. B. .docx (Text), .jpg (Foto), .mp4 (Video), .pdf (PDF-Dokument).</li>
+        <li data-step>Das Dateiformat bestimmt, welche Programme die Datei öffnen können.</li>
+        <li data-step>Dateien werden in einer <b>baumartigen Ordnerstruktur</b> gespeichert: Hauptordner → Unterordner → Dateien.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack">
+      <div class="box"><span class="tag info">Skizze</span><p>Zeichne einen kleinen Ordnerbaum: Dieser PC → Dokumente → Schule → Deutsch_Hausaufgabe_Mai.docx</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Üben und wiederholen</h2></div>
+  <h3>Lückentext</h3>
+  <div id="cloze"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ================= Anmeldung ================= */
+(() => {
+  const L = $('#login'), st = $('#login-status');
+  const V = {
+    pw: '<input type="text" placeholder="Benutzername" aria-label="Benutzername"><input type="password" placeholder="Kennwort" aria-label="Kennwort"><button class="btn primary" data-go-login>Anmelden →</button>',
+    pin: '<input type="password" inputmode="numeric" maxlength="6" placeholder="PIN" aria-label="PIN" class="pin"><button class="btn primary" data-go-login>Anmelden →</button>',
+    finger: '<button class="bio" data-go-login>🫆<small>Finger auflegen</small></button>',
+    face: '<button class="bio" data-go-login>🙂<small>In die Kamera schauen</small></button>'};
+  const T = {pw: 'Benutzername und Kennwort sind die klassischen <b>Zugangsdaten</b>.', pin: 'Eine <b>PIN</b> ist eine kurze Zahlenfolge – schnell, aber leichter zu erraten.', finger: 'Der <b>Fingerabdruck</b> ist einzigartig. Man muss sich nichts merken.', face: 'Bei der <b>Gesichtserkennung</b> prüft die Kamera dein Gesicht.'};
+  let mode = 'pw';
+  seg($('#login-seg'), [['pw', 'Kennwort'], ['pin', 'PIN'], ['finger', 'Fingerabdruck'], ['face', 'Gesicht']], v => { mode = v; L.innerHTML = `<div class="avatar">👤</div><b>Anderer Benutzer</b>${V[v]}`; st.innerHTML = T[v]; });
+  L.addEventListener('click', e => {
+    if (!e.target.closest('[data-go-login]')) return;
+    const ins = $$('input', L);
+    if (ins.some(i => !i.value)) { st.innerHTML = '<b class="bad">Bitte alle Felder ausfüllen.</b>'; return; }
+    st.innerHTML = '<b class="good">Anmeldung erfolgreich!</b> Gleich erscheint der Desktop.';
+    L.classList.add('ok'); setTimeout(() => L.classList.remove('ok'), 1200);
+  });
+})();
+
+/* ================= Desktop ================= */
+explorer($('#desk'), $('#desk-panel'), [
+  {id: 'taskleiste', n: 'Taskleiste', t: 'Die Leiste am unteren Bildschirmrand. Sie zeigt Informationen und führt zum Startmenü.'},
+  {id: 'startmenue', n: 'Startmenü', t: 'Zeigt kürzlich genutzte Programme und Dateien, eine Liste aller Programme und eine Suchfunktion.'},
+  {id: 'suche', n: 'Suchfunktion', t: 'Hier tippst du den Namen eines Programms oder einer Datei ein.'},
+  {id: 'netz', n: 'Netzwerkzustand', t: 'Zeigt, ob der Computer mit dem Internet oder WLAN verbunden ist.'},
+  {id: 'laut', n: 'Lautstärke', t: 'Hier stellst du die Lautstärke ein.'},
+  {id: 'akku', n: 'Akkuzustand', t: 'Zeigt, wie voll der Akku ist (bei Laptops).'},
+  {id: 'uhr', n: 'Datum und Uhrzeit', t: 'Die Taskleiste zeigt Datum und Uhrzeit an.'},
+  {id: 'symbol', n: 'Programmsymbol', t: 'Ein kleines Symbol auf dem Desktop. Per Doppelklick startet das Programm.'},
+  {id: 'papierkorb', n: 'Papierkorb', t: 'Gelöschte Dateien landen zuerst hier und können wiederhergestellt werden.'}
+], {modeRoot: $('#desk-mode'), label: 'Desktop', intro: 'Tippe einen Bereich des Desktops an.'});
+(() => {
+  $('#tb-start').addEventListener('click', () => { $('#d-start').hidden = !$('#d-start').hidden; });
+  $$('.d-icon[data-app]').forEach(b => b.addEventListener('dblclick', () => {
+    $('#d-win').hidden = false; $('#d-title').textContent = b.dataset.app;
+    $('#d-body').innerHTML = b.dataset.app === 'Textverarbeitung' ? '<p contenteditable="true" class="d-paper">Hier kannst du schreiben …</p>' : '<div style="font-size:4rem;text-align:center">🏖️</div>';
+  }));
+  $('#d-close').onclick = () => $('#d-win').hidden = true;
+})();
+
+/* ================= Formate ================= */
+quizTable($('#fmt'), $('#fmt-q'), $('#fmt-a'));
+sorter($('#ext-sort'), [{id: 't', name: '📝 Text'}, {id: 'b', name: '🖼️ Bild'}, {id: 'a', name: '🎵 Audio'}, {id: 'v', name: '🎬 Video'}, {id: 'p', name: '📊 Präsentation'}], [
+  {t: '.docx', c: 't'}, {t: '.txt', c: 't'}, {t: '.jpg', c: 'b'}, {t: '.png', c: 'b'}, {t: '.gif', c: 'b'},
+  {t: '.mp3', c: 'a'}, {t: '.wav', c: 'a'}, {t: '.mp4', c: 'v'}, {t: '.mov', c: 'v'}, {t: '.pptx', c: 'p'}, {t: '.odp', c: 'p'}
+]);
+
+/* ================= Ordner ================= */
+(() => {
+  const T = ['💻 Dieser PC', [['👤 Benutzer', [['📁 Dokumente', [['📁 Schule', ['📄 Biologie_Referat_Fledermaus.pptx', '📄 Deutsch_Hausaufgabe_Mai.docx', '📄 Sport_Basketball_Uebungen.pdf']], ['📁 Bilder', ['🖼️ Kreta_Sonnenuntergang_August_2024.jpg', '🖼️ Tanzgruppe_Fest_März_2025.jpg', '🖼️ Screenshot_2025-04-28_092709.jpg']], ['📁 Videos', ['🎬 Clip_2024-06-12_13658.mp4']]]]]]]];
+  const html = n => Array.isArray(n) ? `<details open><summary>${n[0]}</summary><ul>${n[1].map(c => `<li>${html(c)}</li>`).join('')}</ul></details>` : `<span class="file">${n}</span>`;
+  $('#tree').innerHTML = html(T);
+})();
+(() => {
+  const N = [['Dokument1.docx', 'Deutsch_Gedicht_Herbst.docx'], ['IMG_4711.jpg', 'Klassenfahrt_Bodensee_2025.jpg'], ['neu neu final.pptx', 'Geschichte_Referat_Römer.pptx'], ['asdf.pdf', 'Anmeldung_Sportverein.pdf']];
+  $('#names').innerHTML = N.map(([a, b], i) => { const o = i % 2 ? [b, a] : [a, b]; return `<div class="nm-row" data-g="${b}">${o.map(x => `<button class="btn" data-n="${x}">${x}</button>`).join('<span class="note">oder</span>')}</div>`; }).join('');
+  $('#names').addEventListener('click', e => { const b = e.target.closest('[data-n]'); if (!b) return; const r = b.closest('.nm-row'), ok = b.dataset.n === r.dataset.g; $$('button', r).forEach(x => x.classList.remove('ok', 'err')); b.classList.add(ok ? 'ok' : 'err'); });
+})();
+sorter($('#file-sort'), [{id: 'h', name: '📁 Hausaufgaben'}, {id: 's', name: '📁 Sportverein'}, {id: 'b', name: '📁 Bilder'}], [
+  {t: '📄 Mathe_Hausaufgabe_S45.docx', c: 'h'}, {t: '📄 Englisch_Vokabeln_Unit3.pdf', c: 'h'}, {t: '📄 Deutsch_Aufsatz_Ferien.docx', c: 'h'},
+  {t: '📄 Anmeldung_Verein.pdf', c: 's'}, {t: '📄 Trainingsplan_Fussball.pdf', c: 's'}, {t: '📄 Mitgliedsbeitrag_2025.pdf', c: 's'},
+  {t: '🖼️ Geburtstag_Oma_2025.jpg', c: 'b'}, {t: '🖼️ Klassenfoto_6b.jpg', c: 'b'}
+]);
+
+/* ================= ÜBUNGEN ================= */
+cloze($('#cloze'), 'Zur Anmeldung braucht man einen {Benutzernamen|Ordner|Desktop} und ein {Kennwort|Programm|Format}. Danach erscheint der {Desktop|Papierkorb|Hauptordner}. Unten liegt die {Taskleiste|Endung|Leiterbahn}, über die man ins {Startmenü|Netzteil|Format} gelangt. Programme startet man mit einem {Doppelklick|Rechtsklick|Tastendruck}. Die {Endung|Uhrzeit|Taskleiste} einer Datei zeigt das Dateiformat. Dateien werden in einer {baumartigen|runden|zufälligen} Ordnerstruktur gespeichert.');
+mcQuiz($('#quiz'), [
+  {q: 'Was zeigt die Endung einer Datei an?', a: ['das Dateiformat', 'das Datum', 'den Speicherort', 'den Benutzernamen'], ok: 0, why: 'z. B. .jpg für Fotos.'},
+  {q: 'Welche Endung hat typischerweise ein Foto?', a: ['.jpg', '.docx', '.mp3', '.pptx'], ok: 0, why: 'JPG ist ein Bildformat.'},
+  {q: 'Womit öffnet man eine .pdf-Datei?', a: ['mit einem PDF-Anzeigeprogramm', 'mit einem Videoplayer', 'mit dem Taschenrechner', 'gar nicht'], ok: 0, why: 'Das Dateiformat bestimmt das Programm.'},
+  {q: 'Welcher Dateiname ist am sinnvollsten?', a: ['Bio_Referat_Fledermaus.pptx', 'Dokument1.pptx', 'neu.pptx', 'aaa.pptx'], ok: 0, why: 'Man erkennt sofort den Inhalt.'},
+  {q: 'Was bildet den Stamm des Ordnerbaums?', a: ['ein Hauptordner wie „Dieser PC“', 'eine einzelne Datei', 'die Taskleiste', 'der Papierkorb'], ok: 0, why: 'Darunter verzweigen sich die Unterordner.'},
+  {q: 'Was ist KEINE Möglichkeit zur Anmeldung?', a: ['Doppelklick auf den Papierkorb', 'PIN', 'Fingerabdruck', 'Gesichtserkennung'], ok: 0, why: 'Der Rest sind „Schlüssel“ zur Anmeldung.'}
+]);
+</script>

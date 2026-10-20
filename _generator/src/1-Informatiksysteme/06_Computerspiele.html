@@ -1,0 +1,298 @@
+<!--
+title: Computerspiele – Geschichte, Entwicklung, Fähigkeiten
+short: Computerspiele
+time: 2–3 Unterrichtsstunden
+q: Wie haben sich Computerspiele entwickelt – und was können sie fördern?
+facts: Geschichte der Computerspiele von Pong bis Cloud Gaming (S. 20–22) | Auflösung, FPS, Cloud Gaming und KI | Expertenwissen: Computerspiele entwickeln (S. 23) | Gaming fördert bestimmte Fähigkeiten, bewusster Umgang (S. 24–25)
+inter: Zeitleiste der Spielegeschichte · Bilder Jahrzehnten zuordnen · FPS-Vergleich mit springender Figur · Full HD gegen 4K · Cloud Gaming Schritt für Schritt · Entwicklungsprozess ordnen · Analog-digital-Bewertungstabelle
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Informatiksysteme nutzen</p>
+      <h1>Computerspiele<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Die meisten Menschen haben in ihrem Leben bereits Computerspiele gespielt. Vom weißen Pixel-Ball bis zur Virtual Reality war es ein weiter Weg.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welches Spiel spielst du gern – und auf welchem Gerät?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie haben sich Computerspiele entwickelt – und was können sie fördern?</p></div>
+      <div class="controls"><button class="btn primary" data-go="geschichte">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="geschichte" data-label="Geschichte" data-yr="Erarbeitung" data-title="Geschichte der Computerspiele" data-sub="Von Pong bis Cloud Gaming">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Geschichte der Computerspiele</p>
+    <h2>Von Pong bis Cloud Gaming</h2>
+    <p class="lead">Tippe die Stationen an und lies, was sich verändert hat.</p>
+  </div>
+  <div id="zl"></div>
+  <div id="zl-detail"></div>
+  <div class="cols-2 mt">
+    <div class="task-card"><header><span class="no">A</span><h3>CD-ROM</h3></header><p>Beschreibe die Möglichkeiten, die durch das Speichermedium CD-ROM neu entstanden.</p>
+      <div class="controls"><button class="btn" data-reveal="ga" aria-expanded="false">Lösungsidee</button></div>
+      <p class="solution" id="ga" hidden>Die CD-ROM bot viel mehr Speicherplatz als die alten Spielmodule. So konnten Videosequenzen und Sprachausgaben eingebaut werden, die den Bildschirmtext ersetzten.</p></div>
+    <div class="task-card"><header><span class="no">B</span><h3>Smartphone-Spiele</h3></header><p>Beschreibe deine Erfahrung mit Smartphone-Computerspielen.</p></div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Jahrzehnte" data-yr="M1" data-title="Technische Entwicklung" data-sub="Bilder den Jahrzehnten zuordnen">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Material M1</p>
+    <h2>Technische Entwicklung</h2>
+  </div>
+  <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Abbildungen zuordnen</h3></header><p>Ordne den Abbildungen A–C jeweils die richtigen Jahrzehnte zu: 1970er, 2000er und 2010er.</p></div>
+  <div id="dek-sort"></div>
+  <div class="task-card mt"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Neuerungen</h3></header><p>Beschreibe zu jedem Jahrzehnt eine technische Neuerung, die das Spielen verändert hat.</p>
+    <div class="controls"><button class="btn" data-reveal="g2" aria-expanded="false">Lösungsidee</button></div>
+    <div class="solution" id="g2" hidden><b>1970er:</b> erste Videospiele und Arcade-Automaten in Spielhallen. <b>1980er:</b> Heimkonsolen und der erste Handheld. <b>1990er:</b> 3D-Grafik und CD-ROM. <b>2000er:</b> Online-Spiele, Multiplayer, Bewegungssteuerung. <b>2010er:</b> Virtual Reality, Smartphone-Spiele, Augmented Reality, Raytracing. <b>ab 2020:</b> Cloud Gaming, 4K, KI.</div></div>
+</section>
+
+<section class="station" id="fps" data-label="M2 FPS" data-yr="M2" data-title="Auflösung und FPS" data-sub="Frames per Second">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Auflösung und Frames per Second</p>
+      <h2>Wie flüssig läuft ein Spiel?</h2>
+      <ul class="facts">
+        <li>Die <b>Auflösung</b> gibt an, aus wie vielen Pixeln ein Bild besteht. In den 2010ern war <b>Full HD</b> Standard, ab 2020 kam <b>4K</b> – mit <b>viermal so vielen Pixeln</b>. Spiele wirken schärfer.</li>
+        <li><b>FPS</b> (<b>F</b>rames <b>p</b>er <b>S</b>econd) geben an, wie viele <b>Bilder pro Sekunde</b> angezeigt werden. Je mehr FPS, desto flüssiger läuft das Spiel.</li>
+        <li>Früher waren 30 FPS üblich, heute 60 FPS oder mehr.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Abb. 5: Springende Spielfigur</h3><div id="fps-seg"></div></div>
+      <canvas id="cv-fps" class="game-cv" aria-label="Spielfigur springt mit verschiedenen Bildraten"></canvas>
+      <p class="status" id="fps-status"></p>
+    </div>
+  </div>
+  <div class="cols-2 mt">
+    <div class="vis">
+      <div class="vis-head"><h3>Full HD oder 4K?</h3><div id="res-seg"></div></div>
+      <canvas id="cv-res" class="game-cv" aria-label="Vergleich Full HD und 4K"></canvas>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Einfluss der FPS</h3></header><p>Beschreibe den Einfluss der FPS auf die Darstellung eines Computerspiels.</p></div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Rennspiel oder Puzzle?</h3></header><p>Begründe, bei welchem der Spiele – A: Rennspiel am Bildschirm, B: Puzzle-Spiel auf dem Smartphone – besonders hohe FPS wichtig für ein gutes Spielerlebnis sind.</p>
+        <div class="controls"><button class="btn" data-reveal="f2h" aria-expanded="false">HILFE</button><button class="btn" data-reveal="f2" aria-expanded="false">Lösungsidee</button></div>
+        <p class="hint-box" id="f2h" hidden>Wie schnell bewegt sich etwas auf dem Bildschirm? Wie schnell musst du reagieren?</p>
+        <p class="solution" id="f2" hidden>Beim <b>Rennspiel (A)</b>: Das Auto bewegt sich schnell, man muss in Sekundenbruchteilen reagieren. Mit wenigen FPS würde das Bild ruckeln. Beim Puzzle-Spiel (B) bewegt sich wenig, dort reichen weniger FPS.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="cloud" data-label="Cloud Gaming" data-yr="Erarbeitung" data-title="Cloud Gaming und KI" data-sub="Spielen per Stream">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Cloud Gaming</p>
+    <h2>Spielen aus der Cloud</h2>
+    <p class="lead">Beim <b>Cloud Gaming</b> (seit 2020) läuft das Spiel nicht auf dem eigenen Gerät, sondern auf einem leistungsstarken Server. Es wird als <b>Video</b> übertragen. So laufen anspruchsvolle Spiele auch auf älteren Computern oder Smartphones.</p>
+  </div>
+  <div class="steps4 three" id="cg-steps">
+    <div class="s4"><span class="s4-ic">💻</span><b>Nutzergerät</b><small>sendet Eingaben – empfängt und zeigt Bild und Ton</small></div>
+    <div class="s4"><span class="s4-ic">🖥️</span><b>Cloudserver</b><small>führt das Spiel aus und sendet das fertige Bild</small></div>
+    <div class="s4"><span class="s4-ic">🗄️</span><b>Gameserver</b><small>beinhaltet die Daten des Spiels, verarbeitet alle Eingaben</small></div>
+  </div>
+  <div id="cg-step"></div>
+  <p class="status" id="cg-status"></p>
+  <div class="box mt"><span class="tag">Künstliche Intelligenz</span><p>Mit <b>KI</b> werden Licht- und Schatteneffekte präzise berechnet. In Zukunft könnte auch das Verhalten von <b>NPC</b> (<b>N</b>on-<b>P</b>layer-<b>C</b>haracter, also Figuren, die nicht von Menschen gesteuert werden) mit KI programmiert werden.</p></div>
+</section>
+
+<section class="station" id="entwickeln" data-label="Spiele entwickeln" data-yr="Experte" data-title="Computerspiele entwickeln" data-sub="Expertenwissen S. 23">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Expertenwissen</p>
+    <h2>Von der Idee zum Spiel</h2>
+  </div>
+  <div class="cols-2">
+    <div class="stack">
+      <div class="box"><span class="tag">Idee</span><p>Welche Geschichte soll erzählt werden? Welche Welt entsteht? Erste <b>Skizzen</b>, Spielfiguren und das <b>Grundkonzept</b>.</p></div>
+      <div class="box"><span class="tag">Programmierung</span><p>Mit Programmiersprachen und einer <b>Game Engine</b> wird festgelegt, wie sich Figuren bewegen, wie die Welt funktioniert und wie das Spiel auf Eingaben reagiert.</p></div>
+      <div class="box"><span class="tag">Sound und Design</span><p>Designer, Künstler und Musiker erstellen <b>Grafiken, Animationen und Geräusche</b>. Alles muss zusammenpassen.</p></div>
+      <div class="box"><span class="tag">Testen</span><p>Vor der Veröffentlichung werden <b>Fehler</b> gesucht und behoben. Danach folgen <b>Updates</b> und neue Inhalte.</p></div>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>M1 Entwicklungsprozess</h3></header><p>Beschreibe die Entwicklung eines Computerspiels. Bringe die Stufen der Treppe in die richtige Reihenfolge.</p></div>
+      <div id="dev-order"></div>
+    </div>
+  </div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Testen</h3></header><p>Begründe, warum das Testen eines Computerspiels wichtig ist.</p>
+      <div class="controls"><button class="btn" data-reveal="e2" aria-expanded="false">Lösungsidee</button></div><p class="solution" id="e2" hidden>Fehler (Bugs) können das Spiel abstürzen lassen oder unfair machen. Wird vorher getestet, bleiben die Spielenden zufrieden und der Hersteller muss weniger nachbessern.</p></div>
+    <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Berufe</h3></header><p>Bei der Entwicklung sind viele Berufsgruppen beteiligt. Stelle Vermutungen dazu an.</p><div id="berufe"></div></div>
+    <div class="task-card"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Teure Premiumspiele</h3></header><p>Die Entwicklung von Premiumspielen ist sehr teuer. Begründe das mithilfe der Treppe.</p>
+      <div class="controls"><button class="btn" data-reveal="e4" aria-expanded="false">Lösungsidee</button></div><p class="solution" id="e4" hidden>Die Entwicklung dauert oft mehrere Jahre und viele Fachleute arbeiten mit: Designer, Programmierer, Künstler, Musiker, Tester. Dazu kommen Kosten für Werbung, Herstellung und spätere Updates.</p></div>
+    <div class="task-card"><header><span class="no">5</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>KI in der Entwicklung</h3></header><p>Stelle Vermutungen an, wie künstliche Intelligenz bei der Programmierung die Entwicklung unterstützen kann.</p>
+      <div class="controls"><button class="btn" data-reveal="e5" aria-expanded="false">Lösungsidee</button></div><p class="solution" id="e5" hidden>KI kann Programmcode vorschlagen, Fehler finden, Texturen und Landschaften erzeugen, Licht berechnen oder Figuren (NPC) realistischer handeln lassen. Das spart Zeit.</p></div>
+    <div class="task-card"><header><span class="no">6</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Updates und DLC</h3></header><p>Stelle Vermutungen an, warum die Hersteller Updates und auch DLCs zu den Spielen herausbringen.</p>
+      <div class="controls"><button class="btn" data-reveal="e6" aria-expanded="false">Lösungsidee</button></div><p class="solution" id="e6" hidden>Updates beheben Fehler und verbessern das Spiel. DLCs (Downloadable Content) bringen neue Inhalte. So bleibt das Spiel länger interessant – und der Hersteller verdient weiter Geld.</p></div>
+  </div>
+</section>
+
+<section class="station" id="faehigkeiten" data-label="Fähigkeiten" data-yr="Erarbeitung" data-title="Gaming fördert Fähigkeiten" data-sub="Und: nicht nur zocken!">
+  <div class="section-head">
+    <p class="eyebrow">Station 6 · Gaming fördert bestimmte Fähigkeiten</p>
+    <h2>Was Gaming fördern kann</h2>
+    <p class="lead">Computerspiele sind eine wichtige Freizeitbeschäftigung. Sie können sogar positive Auswirkungen haben – Karten umdrehen.</p>
+  </div>
+  <div id="skills"></div>
+  <div class="cols-2 mt">
+    <div class="box"><span class="tag lim">Auswahl der Spiele</span><p>Sexualisierte oder stark gewaltverherrlichende Spiele wie Ego-Shooter können der geistigen Entwicklung schaden. Wichtig sind <b>altersgerechte</b>, kreative und anspruchsvolle Spiele.</p></div>
+    <div class="box"><span class="tag lim">Nicht nur zocken!</span><p>Behalte deine <b>Bildschirmzeit</b> im Blick. Zu langes Spielen kann zu Ermüdung, Einsamkeit oder Vernachlässigung anderer Aktivitäten führen. Plane <b>Pausen</b>, Bewegung und Treffen mit Freunden ein.</p></div>
+  </div>
+</section>
+
+<section class="station" id="fussball" data-label="M1 Fußball" data-yr="M1" data-title="Analog oder digital?" data-sub="Fußball im Vergleich">
+  <div class="section-head">
+    <p class="eyebrow">Station 7 · Material M1 (S. 25)</p>
+    <h2>Fußball: analog und digital</h2>
+    <p class="lead">Fußball ist als Sport ein beliebtes, analoges Spiel. Fußball-Computerspiele zählen zu den beliebtesten digitalen Spielen.</p>
+  </div>
+  <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Vergleichen</h3></header><p>Vergleiche die beiden Fußballspiele. Vergib Punkte, wie stark die Spiele die Fähigkeiten fördern (1 = sehr schwach, 5 = sehr stark).</p></div>
+  <div id="rate"></div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Welche Spiele fördern was?</h3></header><p>Begründe, welche Arten von digitalen Spielen folgende Fähigkeiten stark fördern: Kommunikation, Problemlösen, Teamfähigkeit, Konzentration und Geschicklichkeit/Reaktion.</p>
+      <div class="controls"><button class="btn" data-reveal="s2" aria-expanded="false">Lösungsidee</button></div>
+      <p class="solution" id="s2" hidden><b>Kommunikation und Teamfähigkeit:</b> Online-Multiplayer-Spiele, in denen man gemeinsam ein Ziel erreicht. <b>Problemlösen:</b> Strategie- und Rätselspiele. <b>Konzentration:</b> Rollenspiele mit langen Spielsitzungen. <b>Geschicklichkeit/Reaktion:</b> Renn-, Sport- und Jump-'n'-Run-Spiele.</p></div>
+    <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Analog und digital</h3></header><p>Nenne weitere Spiele, die es analog und digital gibt. Erstelle für eines einen Vergleich wie in Aufgabe 1.</p>
+      <div class="controls"><button class="btn" data-reveal="s3" aria-expanded="false">Beispiele</button></div>
+      <p class="solution" id="s3" hidden>Schach, Tennis, Kartenspiele (z. B. UNO), Monopoly, Tischtennis, Basketball, Tanzen, Puzzles, Quizspiele …</p></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Computerspiele</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Computerspiele</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step><b>1970er:</b> erste Videospiele (Pong), Arcade-Automaten. <b>1980er:</b> Heimkonsolen und Handhelds. <b>1990er:</b> 3D-Grafik, CD-ROM.</li>
+        <li data-step><b>2000er:</b> Online-Spiele und Multiplayer, Bewegungssteuerung. <b>2010er:</b> Virtual Reality, Smartphone-Spiele, Augmented Reality. <b>ab 2020:</b> Cloud Gaming, 4K, KI.</li>
+        <li data-step><b>FPS</b> = Bilder pro Sekunde: Je mehr FPS, desto flüssiger das Spiel. 4K hat viermal so viele Pixel wie Full HD.</li>
+        <li data-step>Ein Spiel entsteht in Phasen: Idee und Konzept → Programmierung (Game Engine), Sound und Design → Testen → Veröffentlichung → Updates.</li>
+        <li data-step>Gaming kann Reaktion, Problemlösen, Teamarbeit, Konzentration und Sprache fördern. Wichtig: <b>altersgerechte Spiele</b> und die <b>Bildschirmzeit</b> im Blick behalten.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack">
+      <div class="box"><span class="tag info">Zeitstrahl</span><p>Zeichne einen Zeitstrahl von 1970 bis heute und trage pro Jahrzehnt eine Neuerung ein.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Üben und wiederholen</h2></div>
+  <h3>Was war zuerst?</h3>
+  <div id="duel"></div>
+  <h3 class="mt">Begriffe</h3>
+  <div id="match"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ================= Zeitleiste ================= */
+const GAMES = [
+  {y: 1972, t: '1972', lab: 'Pong', ic: '🏓', cat: 'k1', keep: 1, txt: 'Eines der ersten Videospiele: ein virtuelles Tischtennisspiel mit schwarzem Hintergrund und weißen Pixeln – der erste große Videospielerfolg.'},
+  {y: 1978, t: '1970er', lab: 'Arcade-Automaten', ic: '🕹️', cat: 'k1', txt: 'Spielhallen mit Arcade-Automaten wurden immer beliebter. Keine Musik, höchstens Soundeffekte.'},
+  {y: 1986, t: '1980er', lab: 'Heimkonsolen', ic: '📺', cat: 'k1', txt: 'Mit Heimkonsolen konnte man im eigenen Wohnzimmer spielen, ohne Spielhalle oder riesigen Automaten.'},
+  {y: 1989, t: '1989', lab: 'Game Boy', ic: '🎮', cat: 'k1', txt: 'Der erste erfolgreiche Handheld: Videospiele für unterwegs.'},
+  {y: 1994, t: '1990er', lab: 'CD-ROM', ic: '💿', cat: 'k2', txt: 'Viel mehr Speicherplatz als die alten Spielmodule: Videosequenzen und Sprachausgabe wurden möglich.'},
+  {y: 1996, t: '1990er', lab: '3D-Grafik', ic: '🧊', cat: 'k2', txt: 'Leistungsfähigere Konsolen: komplexe Spielwelten und flüssige 3D-Grafiken.'},
+  {y: 2002, t: '2000er', lab: 'Konsolen online', ic: '🌐', cat: 'k3', txt: 'Konsolen konnten mit dem Internet verbunden werden: Multiplayer und Chat.'},
+  {y: 2004, t: '2000er', lab: 'Online-Rollenspiele', ic: '🧙', cat: 'k3', txt: 'Millionen Spieler weltweit treffen sich in einer digitalen Welt.'},
+  {y: 2006, t: '2000er', lab: 'Bewegungssteuerung', ic: '🙌', cat: 'k3', txt: 'Neue Steuerung mit Bewegung oder Kamera – und damit ganz neue Spielergruppen.'},
+  {y: 2009, t: '2010er', lab: 'Smartphone-Spiele', ic: '📱', cat: 'k4', txt: 'Computerspiele wurden auch für Smartphones entwickelt.'},
+  {y: 2014, t: '2010er', lab: 'Raytracing', ic: '💡', cat: 'k2', txt: 'Lichtstrahlen werden realistisch nachgebildet: lebensechte Spiegelungen, Schatten und Lichteffekte.'},
+  {y: 2016, t: '2010er', lab: 'Virtual Reality', ic: '🥽', cat: 'k4', txt: 'Mit einer VR-Brille taucht man fast vollständig in die digitale Welt ein und steuert mit echten Bewegungen.'},
+  {y: 2016.6, t: '2010er', lab: 'Augmented Reality', ic: '🗺️', cat: 'k4', txt: 'Eine virtuell erweiterte Realität: Die echte Welt wird mit der Spielwelt verbunden.'},
+  {y: 2017, t: '2017', lab: 'Hybrid-Konsole', ic: '🔀', cat: 'k1', txt: 'Spielen am Fernseher und unterwegs auf dem eingebauten Bildschirm.'},
+  {y: 2020, t: 'ab 2020', lab: 'Cloud Gaming', ic: '☁️', cat: 'k3', txt: 'Das Spiel läuft auf einem Server und wird als Video übertragen.'},
+  {y: 2021, t: 'ab 2020', lab: '4K-Gaming', ic: '🖼️', cat: 'k2', txt: '4K löst Full HD ab: viermal so viele Pixel.'},
+  {y: 2023, t: 'heute', lab: 'KI in Spielen', ic: '🤖', cat: 'k4', txt: 'KI berechnet Licht und Schatten – und könnte künftig Figuren (NPC) steuern.'}
+];
+timeline($('#zl'), $('#zl-detail'), GAMES, {k1: 'Geräte', k2: 'Grafik & Speicher', k3: 'Online', k4: 'Mobil & neu'}, {
+  station: 'geschichte', end: 2028, noScale: true,
+  segs: [[1972, 0], [2028, 1]],
+  ticks: [[1970, '1970'], [1980, '1980'], [1990, '1990'], [2000, '2000'], [2010, '2010'], [2020, '2020']]
+});
+sorter($('#dek-sort'), [{id: '70', name: '1970er'}, {id: '00', name: '2000er'}, {id: '10', name: '2010er'}], [
+  {t: 'A 🕹️ Ein Spielautomat in einer Spielhalle', c: '70', why: 'Arcade-Automaten wurden in den 1970ern populär.'},
+  {t: 'B 🙌 Senioren spielen Bowling mit einem Bewegungs-Controller', c: '00', why: 'Bewegungssteuerung kam in den 2000ern.'},
+  {t: 'C 📱 Ein Mann spielt draußen mit dem Smartphone (AR)', c: '10', why: 'Augmented Reality auf Smartgeräten: 2010er.'}
+]);
+
+/* ================= FPS ================= */
+(() => {
+  let fps = 60, held = 0, acc = 0, t0 = 0;
+  const cv = $('#cv-fps');
+  const T = {10: '10 FPS: Die Figur springt von Position zu Position – das Spiel <b>ruckelt</b>.', 30: '30 FPS: früher üblich. Schnelle Bewegungen wirken leicht abgehackt.', 60: '60 FPS: heute üblich – die Bewegung wirkt flüssig.', 120: '120 FPS: sehr flüssig. Bei schnellen Online-Spielen ein Vorteil.'};
+  seg($('#fps-seg'), [[10, '10'], [30, '30'], [60, '60'], [120, '120 FPS']], v => { fps = +v; $('#fps-status').innerHTML = T[v]; }, 60);
+  function draw(ctx, w, h, t) {
+    const per = 2.4, ph = (t % per) / per;
+    const step = 1 / fps; if (t - held >= step || t < held) held = t - (t % step);
+    const ph2 = (held % per) / per;
+    const X = p => 30 + p * (w - 60), Y = p => h - 50 - Math.max(0, Math.sin(Math.PI * Math.min(1, Math.max(0, (p - .3) / .4)))) * (h * .45);
+    ctx.fillStyle = '#B45309'; ctx.fillRect(0, h - 34, w, 34);
+    ctx.fillStyle = '#7C2D12'; for (let x = 0; x < w; x += 28) ctx.fillRect(x, h - 34, 2, 34);
+    /* Spur wie in Abb. 5 */
+    const n = Math.round(fps / 6);
+    for (let i = 0; i <= n; i++) { const p = i / n; ctx.globalAlpha = .18; dude(ctx, X(p), Y(p)); }
+    ctx.globalAlpha = 1; dude(ctx, X(ph2), Y(ph2));
+  }
+  function dude(ctx, x, y) { ctx.fillStyle = '#DC2626'; ctx.beginPath(); ctx.arc(x, y - 22, 9, 0, 7); ctx.fill(); ctx.fillStyle = '#2563EB'; ctx.fillRect(x - 8, y - 14, 16, 16); ctx.fillStyle = '#7C2D12'; ctx.fillRect(x - 8, y + 2, 6, 6); ctx.fillRect(x + 2, y + 2, 6, 6); }
+  loopCanvas(cv, 'fps', draw);
+})();
+(() => {
+  let k = 1;
+  seg($('#res-seg'), [[1, 'Full HD'], [2, '4K']], v => k = +v);
+  loopCanvas($('#cv-res'), 'fps', (ctx, w, h) => {
+    const cols = 16 * k, rows = 9 * k, cw = w / cols, ch = h / rows;
+    for (let i = 0; i < cols; i++) for (let j = 0; j < rows; j++) {
+      const x = (i + .5) / cols, y = (j + .5) / rows, d = Math.hypot(x - .5, (y - .55) * 1.6);
+      ctx.fillStyle = d < .22 ? '#F59E0B' : y > .75 ? '#15803D' : '#38BDF8';
+      ctx.fillRect(i * cw, j * ch, cw + .5, ch + .5);
+    }
+    ctx.strokeStyle = 'rgba(0,0,0,.18)'; ctx.lineWidth = 1;
+    for (let i = 1; i < cols; i++) { ctx.beginPath(); ctx.moveTo(i * cw, 0); ctx.lineTo(i * cw, h); ctx.stroke(); }
+    for (let j = 1; j < rows; j++) { ctx.beginPath(); ctx.moveTo(0, j * ch); ctx.lineTo(w, j * ch); ctx.stroke(); }
+    ctx.fillStyle = 'rgba(0,0,0,.6)'; ctx.fillRect(8, 8, 190, 26); ctx.fillStyle = '#fff'; ctx.font = '600 13px ' + getComputedStyle(document.body).getPropertyValue('--f-mono');
+    ctx.fillText(k === 1 ? 'Full HD: 1920 × 1080' : '4K: 3840 × 2160 (4×)', 16, 26);
+  });
+})();
+
+/* ================= Cloud Gaming ================= */
+(() => {
+  const T = ['Du drückst am <b>Nutzergerät</b> eine Taste. Die Eingabe wird an den <b>Cloudserver</b> geschickt.', 'Der Cloudserver sendet die Eingabe an den <b>Gameserver</b>.', 'Der <b>Gameserver</b> verarbeitet die Eingaben aller Spieler und sendet Informationen zurück an den Cloudserver.', 'Der <b>Cloudserver</b> führt das Spiel aus, berechnet das fertige Bild und schickt es als Video zurück.', 'Dein <b>Nutzergerät</b> empfängt und zeigt Bild und Ton. Es muss selbst kaum rechnen – braucht aber gutes Internet!'];
+  const A = [[0], [1], [2], [1], [0]];
+  const s = $$('#cg-steps .s4');
+  stepper($('#cg-step'), 5, k => { s.forEach((x, i) => x.classList.toggle('on', A[k].includes(i))); $('#cg-status').innerHTML = T[k]; });
+})();
+
+/* ================= Entwickeln ================= */
+orderSteps($('#dev-order'), ['💡 Idee + Konzept', '🗺️ Game-Design: Level, Missionen, Story', '💰 Kosten planen (Producer)', '🛠️ Produktion: Figuren, Sound, Oberfläche, KI', '🧪 Testphase und Fehlerbehebung', '📣 Werbung: Screenshots, Entwickler-Videos', '📦 Herstellung und Veröffentlichung', '🔄 Updates, Fehlerbehebungen und DLC'], {label: 'Die Treppe von unten nach oben'});
+flipCards($('#berufe'), [['🎨 Game-Designer', 'erfindet Spielwelt, Regeln und Level'], ['💻 Programmierer', 'setzt alles mit Code und Game Engine um'], ['🎵 Sounddesigner', 'Musik und Geräusche'], ['🧪 Tester', 'sucht Fehler (Bugs)'], ['📋 Producer', 'plant Kosten und Zeit'], ['📣 Marketing', 'macht Werbung']]);
+
+/* ================= Fähigkeiten ================= */
+flipCards($('#skills'), [
+  ['⚡ Reaktionsgeschwindigkeit', 'In Sekundenschnelle auf Reize reagieren: trainiert <b>Hand-Auge-Koordination</b> und Reaktionsfähigkeit.'],
+  ['🧩 Problemlösefähigkeit', 'Strategiespiele verlangen logisches Denken, vorausschauende Planung und kreative Lösungen.'],
+  ['🤝 Teamarbeit und Kommunikation', 'Online-Multiplayer: Kooperation und Konfliktlösung.'],
+  ['🎯 Konzentration', 'Lange Spielsitzungen: konzentriert bleiben, auch unter Druck.'],
+  ['🌍 Sprache und Kultur', 'Oft wird Englisch gesprochen; Spiele wecken Interesse an anderen Kulturen und Epochen.'],
+  ['🖥️ Umgang mit Informatiksystemen', 'Hardware sorgfältig behandeln, Software einstellen, Plattformen nutzen.']
+]);
+rating($('#rate'), ['Teamfähigkeit', 'körperliche Fitness', 'Wetterunempfindlichkeit', 'Geschicklichkeit', 'strategisches Denken', 'Konzentration', 'Kommunikation'], ['⚽ analoges Spiel', '🎮 digitales Spiel']);
+
+/* ================= ÜBUNGEN ================= */
+duel($('#duel'), GAMES.map(g => ({...g})));
+matcher($('#match'), [
+  ['FPS', 'Bilder pro Sekunde'], ['4K', 'viermal so viele Pixel wie Full HD'], ['Cloud Gaming', 'Spiel läuft auf einem Server und wird gestreamt'],
+  ['Game Engine', 'Software, mit der ein Spiel umgesetzt wird'], ['NPC', 'Spielfigur, die nicht von Menschen gesteuert wird'], ['Augmented Reality', 'virtuell erweiterte echte Welt']
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Welches Spiel war der erste große Videospielerfolg?', a: ['Pong', 'Tetris', 'Fortnite', 'Minecraft'], ok: 0, why: 'Ein virtuelles Tischtennisspiel der 1970er.'},
+  {q: 'Was ermöglichte die CD-ROM?', a: ['Videosequenzen und Sprachausgabe', 'Online-Multiplayer', 'Virtual Reality', 'Cloud Gaming'], ok: 0, why: 'Sie bot viel mehr Speicherplatz.'},
+  {q: 'Was bedeutet 60 FPS?', a: ['60 Bilder pro Sekunde', '60 Spieler pro Server', '60 Pixel pro Bild', '60 Level pro Spiel'], ok: 0, why: 'Frames per Second.'},
+  {q: 'Wo läuft das Spiel beim Cloud Gaming?', a: ['auf einem leistungsstarken Server', 'auf dem eigenen Handy', 'auf einer CD', 'im Controller'], ok: 0, why: 'Es wird als Video übertragen.'},
+  {q: 'Was fördern Online-Multiplayer-Spiele besonders?', a: ['Teamarbeit und Kommunikation', 'körperliche Fitness', 'Wetterunempfindlichkeit', 'Handschrift'], ok: 0, why: 'Kooperation und Konfliktlösung.'},
+  {q: 'Was gehört zu einem bewussten Umgang mit Spielen?', a: ['Pausen und altersgerechte Spiele', 'möglichst lange am Stück spielen', 'nur Ego-Shooter spielen', 'Bildschirmzeit ignorieren'], ok: 0, why: 'Gaming als Teil einer ausgewogenen Freizeit.'}
+]);
+</script>

@@ -1,0 +1,155 @@
+<!--
+title: Werbung beeinflusst uns
+short: Werbung
+time: 1–2 Unterrichtsstunden
+q: Welchen Einfluss hat Werbung auf uns?
+facts: Zweck von Werbung: aufmerksam machen, Interesse wecken; visuelle Kommunikation mit Bildern, Farben, Formen, kurzen Texten | Wo gibt es Werbung? draußen, Internet, soziale Netzwerke, Fernsehen, Radio, Zeitungen, Geschäfte, Post und E-Mail (M1) | Beeinflussung des Kaufverhaltens über Gefühle und Wünsche | Werbung bedient Klischees (M2)
+inter: Wimmelbild: Werbung finden · Feed: Welcher Post ist Werbung? · Werbetricks erkennen · Werbeanzeigen analysieren: Botschaft, Zielgruppe, Klischee
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Kommunikation in der vernetzten Welt</p>
+      <h1>Werbung beeinflusst uns<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Werbung begegnet uns täglich fast überall – auf Leuchttafeln, am Bus, beim Streaming und in sozialen Netzwerken.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welche Werbung ist dir heute schon begegnet?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Welchen Einfluss hat Werbung auf uns?</p></div>
+      <div class="controls"><button class="btn primary" data-go="zweck">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="zweck" data-label="Zweck" data-yr="Erarbeitung" data-title="Zweck von Werbung" data-sub="Wo gibt es Werbung?">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Zweck von Werbung</p>
+      <h2>Aufmerksam machen</h2>
+      <ul class="facts">
+        <li><b>Werbung</b> möchte Menschen auf etwas aufmerksam machen: ein Produkt, eine Dienstleistung, eine Mitgliedschaft im Fitnessstudio oder eine Aufforderung zur Blutspende.</li>
+        <li>Sie weckt Interesse, macht neugierig und führt oft dazu, dass man etwas kauft.</li>
+        <li>Werbung ist <b>visuelle Kommunikation</b>: Bilder, Farben, Formen und kurze, einprägsame Texte. Unser Gehirn nimmt visuelle Eindrücke in wenigen Sekunden auf.</li>
+      </ul>
+    </div>
+    <div class="stack">
+      <p class="eyebrow">Wo gibt es Werbung? Ordne zu</p>
+      <div id="wo"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Wo?" data-yr="M1" data-title="Wo ist Werbung?" data-sub="Wimmelbild">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Material M1</p>
+    <h2>Wo ist Werbung?</h2>
+    <p class="lead">Finde mindestens fünf verschiedene Werbemaßnahmen in der Straße. Tippe sie an.</p>
+  </div>
+  <div class="model">
+    <div class="adscene" id="scene">
+      <div class="deco" style="left:0;right:0;bottom:0;height:28%;background:#9CA3AF"></div><div class="deco" style="left:0;right:0;bottom:12%;height:3px;background:#fff;opacity:.7"></div>
+      <div class="deco" style="left:2%;bottom:28%;width:22%;height:50%;background:#FCA5A5;border:2px solid #7F1D1D"></div>
+      <div class="deco" style="left:26%;bottom:28%;width:20%;height:56%;background:#FDE68A;border:2px solid #92400E"></div>
+      <div class="deco" style="left:78%;bottom:28%;width:20%;height:44%;background:#D1FAE5;border:2px solid #065F46"></div>
+      <div class="deco" style="left:52%;bottom:26%;font-size:3.6rem">🌳</div><div class="deco" style="left:12%;bottom:6%;font-size:2.4rem">🚙</div><div class="deco" style="left:48%;bottom:20%;font-size:1.8rem">🚶‍♀️🚶</div>
+      <div class="ad" data-a="1" style="left:4%;top:28%;width:18%;height:11%;background:#DC2626;color:#fff;font-size:.95rem">A&amp;N</div>
+      <div class="ad" data-a="2" style="left:28%;top:22%;width:16%;height:10%;background:#fff;font-size:.95rem;font-family:serif">MANGO</div>
+      <div class="ad" data-a="3" style="left:66%;bottom:28%;width:7%;height:38%;background:#FEF3C7;border-radius:40% 40% 0 0;font-size:.6rem;writing-mode:vertical-rl">Plakat · Preis 2,99</div>
+      <div class="ad" data-a="4" style="left:79%;top:30%;width:18%;height:10%;background:#F97316;color:#fff;font-size:.8rem">DÖNER<br>4,50 €</div>
+      <div class="ad" data-a="5" style="left:70%;bottom:2%;width:28%;height:16%;background:#FACC15;font-size:.9rem;border-radius:10px">🚌 drink ZOOM!</div>
+      <div class="ad" data-a="6" style="left:40%;bottom:28%;width:7%;height:12%;background:#fff;font-size:.55rem;clip-path:polygon(0 100%,15% 0,85% 0,100% 100%)">Aktion<br>−20 %</div>
+      <div class="ad" data-a="7" style="left:28%;top:40%;width:15%;height:12%;background:#BFDBFE;font-size:.62rem">SALE<br>im Fenster</div>
+    </div>
+    <div class="stack">
+      <p class="score">Gefunden: <b id="sc-n">0</b> / 7</p>
+      <ul class="ck-list" id="sc-list"></ul>
+      <div class="task-card"><header><span class="no">2–4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Dein Alltag</h3></header><p>Beschreibe Werbemaßnahmen aus deinem Alltag, die nicht auf dem Bild sind. Welche Werbung im Internet magst du – was stört dich, und wo?</p>
+        <div class="controls"><button class="btn" data-reveal="a24" aria-expanded="false">Beispiele</button></div><p class="solution" id="a24" hidden>Werbespots im Fernsehen und Radio, Werbung vor YouTube-Videos, gesponserte Posts von Influencern, Pop-ups in Spiele-Apps, Prospekte im Briefkasten, Newsletter per E-Mail, Bandenwerbung im Stadion, Trikotwerbung. Störend: Werbung, die man nicht überspringen kann oder die mitten im Spiel aufploppt.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="feed" data-label="Werbung online" data-yr="Ausprobieren" data-title="Werbung im Internet" data-sub="Welcher Post ist Werbung?">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Werbung im Internet</p>
+    <h2>Welcher Post ist Werbung?</h2>
+    <p class="lead">In sozialen Netzwerken ist Werbung oft schwer zu erkennen. Ist der Post Werbung? Tippe „stimmt“ für Werbung und „stimmt nicht“ für keine Werbung.</p>
+  </div>
+  <div id="feed-tf"></div>
+</section>
+
+<section class="station" id="m2" data-label="M2 Klischees" data-yr="M2" data-title="Werbung beeinflusst" data-sub="Gefühle und Klischees">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 4 · Beeinflussung · Material M2</p>
+      <h2>Gefühle und Klischees</h2>
+      <ul class="facts">
+        <li>Werbung will vom Kauf <b>überzeugen</b> – oft merkt man gar nicht, wie stark Gedanken und Wünsche beeinflusst werden.</li>
+        <li>Sie spielt mit <b>Gefühlen und Stimmungen</b>: Mit dem Produkt soll man glücklicher, schöner oder erfolgreicher werden.</li>
+        <li>Werbung nutzt <b>Klischees</b>: feste Vorstellungen über Menschen, die nicht der Wahrheit entsprechen – z. B. Frauen beim Putzen, starke Männer in Autowerbung. Klischees werden schnell verstanden, entsprechen aber nicht der Wirklichkeit.</li>
+      </ul>
+    </div>
+    <div class="stack">
+      <div class="cols-3">
+        <div class="post"><div class="post-img" style="font-size:2.6rem">👱‍♀️🪚</div><div class="post-cap"><b>A</b> Eine Frau in knapper Kleidung präsentiert eine Kettensäge.</div></div>
+        <div class="post"><div class="post-img" style="font-size:2.6rem">💪🧴</div><div class="post-cap"><b>B</b> Ein muskulöser Matrose ohne Hemd hält ein Parfüm.</div></div>
+        <div class="post"><div class="post-img" style="font-size:2.6rem">🍖🔥</div><div class="post-cap"><b>C</b> Ein Grill mit einem großen Steak.</div></div>
+      </div>
+      <div id="m2-quiz"></div>
+    </div>
+  </div>
+  <div class="task-card mt"><header><span class="no">1–4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Analysieren</h3></header><p>Beschreibe Botschaft, Zielgruppe und Klischee der Beispiele. Erkläre, wie sie das Kaufverhalten beeinflussen sollen.</p>
+    <div class="controls"><button class="btn" data-reveal="m2s" aria-expanded="false">Lösung</button></div><p class="solution" id="m2s" hidden><b>A</b>: Zielgruppe Männer; die attraktive Frau hat mit der Kettensäge nichts zu tun – das Gefühl von Anziehung soll auf das Produkt übertragen werden. <b>B</b>: Zielgruppe Männer (und Frauen); Klischee des starken, attraktiven Mannes – wer das Parfüm benutzt, soll auch so wirken. <b>C</b>: Zielgruppe vor allem Männer; Klischee „Grillen ist Männersache“, Fleisch steht für Stärke und Genuss.</p></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Werbung</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Werbung beeinflusst uns</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step><b>Werbung</b> macht auf Produkte oder Dienstleistungen aufmerksam und weckt Interesse. Sie ist <b>visuelle Kommunikation</b>.</li>
+        <li data-step>Werbung gibt es fast überall: draußen, im Internet, in sozialen Netzwerken, im Fernsehen und Radio, in Zeitungen, Geschäften, per Post und E-Mail.</li>
+        <li data-step>Werbung beeinflusst unser <b>Kaufverhalten</b> über <b>Gefühle</b>: Mit dem Produkt soll man glücklicher, schöner oder erfolgreicher werden.</li>
+        <li data-step>Werbung nutzt <b>Klischees</b> – sie werden schnell verstanden, entsprechen aber nicht der Wirklichkeit.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Tipp</span><p>Achte auf Hinweise wie „Anzeige“, „Werbung“, „Gesponsert“ oder „#ad“.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Stimmt das?</h2></div>
+  <div id="tf"></div>
+</section>
+
+<script>
+sorter($('#wo'), [{id: 'd', name: '🏙️ draußen'}, {id: 'i', name: '🌐 Internet'}, {id: 'm', name: '📺 Fernsehen, Radio, Zeitung'}, {id: 'p', name: '📬 Post, Geschäfte'}], [
+  {t: 'Plakat am Bus', c: 'd'}, {t: 'Leuchttafel', c: 'd'}, {t: 'Spot vor einem Video', c: 'i'}, {t: 'gesponserter Post', c: 'i'}, {t: 'Werbespot im Radio', c: 'm'}, {t: 'Anzeige in einer Zeitschrift', c: 'm'}, {t: 'Flyer im Briefkasten', c: 'p'}, {t: 'Aufsteller vor dem Laden', c: 'p'}
+]);
+(() => {
+  const N = {1: 'Ladenschild A&N', 2: 'Ladenschild MANGO', 3: 'Plakat an der Litfaßsäule', 4: 'Leuchtschild Döner', 5: 'Werbung auf dem Bus', 6: 'Aufsteller vor dem Laden', 7: 'Werbung im Schaufenster'};
+  const f = new Set();
+  $$('#scene .ad').forEach(a => a.onclick = () => { f.add(a.dataset.a); a.classList.add('found'); $('#sc-n').textContent = f.size; $('#sc-list').innerHTML = [...f].map(k => `<li class="ok">✅ ${N[k]}</li>`).join(''); });
+})();
+trueFalse($('#feed-tf'), [
+  {t: '📸 <b>@lina_travels</b>: „Mein Lieblingsschuh für jede Tour! 👟 Mit dem Code LINA10 spart ihr 10 %.“ <small>#ad</small>', ok: true, why: 'Werbung: „#ad“ und ein Rabattcode.'},
+  {t: '📸 <b>@opa_heinz</b>: „Endlich die Tomaten geerntet! 🍅“', ok: false, why: 'Ein privates Foto ohne Produkt.'},
+  {t: '🎬 <b>SuperGame</b> <small>Gesponsert</small>: „Jetzt kostenlos spielen – nur heute Bonus-Edelsteine!“', ok: true, why: '„Gesponsert“ und Zeitdruck.'},
+  {t: '📸 <b>@fitmitmax</b>: „Ohne meinen Shake geht nichts 💪 Link in Bio!“ <small>Anzeige</small>', ok: true, why: 'Influencer-Werbung ist mit „Anzeige“ gekennzeichnet.'},
+  {t: '📰 <b>Stadtbibliothek</b>: „Am Samstag bleibt die Bibliothek wegen Umbau geschlossen.“', ok: false, why: 'Eine Information, keine Werbung.'},
+  {t: '📸 <b>@gamer_jo</b>: Unboxing einer neuen Konsole – „Danke an die Firma fürs Zuschicken!“', ok: true, why: 'Auch geschenkte Produkte sind Werbung und müssen gekennzeichnet sein.'}
+]);
+mcQuiz($('#m2-quiz'), [
+  {q: 'Welche Zielgruppe soll Werbung A (Frau mit Kettensäge) vor allem ansprechen?', a: ['Männer', 'Kinder', 'Senioren', 'Tiere'], ok: 0, why: 'Die Frau soll Aufmerksamkeit erzeugen.'},
+  {q: 'Welches Klischee bedient Werbung B?', a: ['Männer müssen muskulös und stark sein', 'Männer kochen gern', 'Matrosen mögen Wasser', 'Parfüm ist nur für Frauen'], ok: 0, why: 'Das Produkt soll stark und attraktiv machen.'},
+  {q: 'Was hat die Frau in Werbung A mit dem Produkt zu tun?', a: ['nichts – sie soll Gefühle wecken', 'Sie hat die Säge erfunden', 'Sie ist Försterin', 'Sie ist die Verkäuferin'], ok: 0, why: 'Ein Gefühl von Anziehung wird auf das Produkt übertragen.'}
+]);
+trueFalse($('#tf'), [
+  {t: 'Werbung möchte nur informieren.', ok: false, why: 'Sie möchte vor allem vom Kauf überzeugen.'},
+  {t: 'Werbung arbeitet mit Bildern, Farben und kurzen Texten.', ok: true, why: 'Visuelle Kommunikation wirkt in Sekunden.'},
+  {t: 'Klischees in der Werbung zeigen die Wirklichkeit.', ok: false, why: 'Sie zeigen feste, oft falsche Vorstellungen.'},
+  {t: 'Auch Influencer machen Werbung.', ok: true, why: 'Sie müssen sie als „Anzeige“ kennzeichnen.'},
+  {t: 'Wir merken immer, wenn Werbung uns beeinflusst.', ok: false, why: 'Oft merkt man es nicht.'}
+]);
+</script>

@@ -1,0 +1,156 @@
+<!--
+title: Wiederholungen in Scratch
+short: Schleifen
+time: 2 Unterrichtsstunden (mit Scratch am Rechner)
+q: Gibt es auch in der Programmierung Wiederholungen – wie bei Liegestützen?
+facts: Wiederholung = Schleife | Zählschleife „wiederhole … mal“ | Endlosschleife „wiederhole fortlaufend“ | Wiederholung mit Bedingung „wiederhole bis …“, Ablaufplan Treppensteigen | M1 Animation, M2 Nagel einschlagen
+inter: Scratch-Simulator mit veränderbaren Werten · Formen zeichnen mit Schleifen · Endlosschleife stoppen · Wiederholen bis Rand · Schleifenarten zuordnen · Ablaufplan Nagel
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Algorithmen und Problemlösen</p>
+      <h1>Wiederholungen in Scratch<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Runter – hoch – runter – hoch! Liegestütze sind ein wichtiger Bestandteil des Sportunterrichts. Gibt es auch in der Programmierung solche Wiederholungen?</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Schreibe einen Ablaufplan für 20 Liegestütze. Wie lang wird er?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Gibt es auch in der Programmierung Wiederholungen?</p></div>
+      <div class="controls"><button class="btn primary" data-go="schleifen">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="schleifen" data-label="Schleifen" data-yr="Einstieg" data-title="Wiederholungen und Schleifen" data-sub="Liegestütze als Ablaufplan">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Wiederholungen und Schleifen</p>
+      <h2>Immer wieder dasselbe</h2>
+      <ul class="facts">
+        <li>Bei Liegestützen werden Handlungsabläufe <b>wiederholt</b>. Oft wird die Anzahl vorher genannt: „Macht 20 Wiederholungen!“</li>
+        <li>Auch in der Informatik lassen sich <b>Sequenzen von Anweisungen wiederholen</b>.</li>
+        <li>Ein anderes Wort für Wiederholung ist <b>Schleife</b>.</li>
+      </ul>
+      <div class="merke">Statt 20-mal „senken, heben“ aufzuschreiben, sagt man: <b>Wiederhole 20-mal:</b> senken, heben.</div>
+    </div>
+    <div class="fc-static">
+      <div class="fc" style="background:#FDE68A">In die Liegestützposition gehen</div><div class="fc-ar">↓</div>
+      <div class="fc">Oberkörper senken</div><div class="fc-ar">↓</div><div class="fc">Oberkörper heben</div><div class="fc-ar">↓</div>
+      <div class="fc">Oberkörper senken</div><div class="fc-ar">↓</div><div class="fc">Oberkörper heben</div><div class="fc-ar">↓</div>
+      <div class="fc" style="opacity:.5">… noch 18-mal …</div>
+      <p class="note">Abb. 1: Programmablaufplan (PAP) mit fester Anzahl</p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="zaehl" data-label="Zählschleife" data-yr="Erarbeitung" data-title="Wiederholung mit fester Zahl" data-sub="wiederhole … mal">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Wiederholungen mit fester Zahl</p>
+    <h2>Die Zählschleife</h2>
+    <p class="lead">Die Anweisungen werden so oft wiederholt, wie es das Programm vorgibt. Die Anzahl ist ein <b>Parameter</b>. In Scratch: <b>„wiederhole … mal“</b>. Alle Anweisungen <i>innerhalb</i> des Blocks werden so oft wiederholt, wie angegeben.</p>
+  </div>
+  <p class="eyebrow">M1 Wiederholungen: Ändere die Zahlen und klicke die grüne Fahne.</p>
+  <div id="s-m1"></div>
+  <h3 class="mt">Formen zeichnen mit Schleifen</h3>
+  <p class="note">Ein Quadrat: 4-mal „gehe 100, drehe 90°“. Schaffst du ein Dreieck (3-mal, 120°) oder ein Sechseck?</p>
+  <div id="s-pen"></div>
+</section>
+
+<section class="station" id="endlos" data-label="Endlosschleife" data-yr="Erarbeitung" data-title="Endlosschleife" data-sub="wiederhole fortlaufend">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Endlosschleife</p>
+    <h2>Die Endlosschleife</h2>
+    <p class="lead">Bei einer <b>Endlosschleife</b> werden die Anweisungen unendlich oft ausgeführt. Manchmal ist das gewollt. Meist entsteht sie aber unbeabsichtigt durch einen <b>Programmierfehler</b> – dann muss man sie unterbrechen (Stoppschild!).</p>
+  </div>
+  <div id="s-endlos"></div>
+  <p class="note mt">Die Katze läuft gegen den Rand und bleibt hängen. Tausche „gehe 10 er Schritt“ gedanklich mit „pralle vom Rand ab“ – hier gleich ausprobieren:</p>
+  <div id="s-bounce"></div>
+</section>
+
+<section class="station" id="bedingung" data-label="Mit Bedingung" data-yr="Erarbeitung" data-title="Wiederholung mit Bedingung" data-sub="wiederhole bis …">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Wiederholungen mit Bedingung</p>
+    <h2>Wiederholen, bis …</h2>
+    <p class="lead">Beim Treppensteigen wiederholt man die Schritte, bis man oben ist – wie viele Stufen es sind, weiß man vorher oft nicht. Das Programm wiederholt, solange die <b>Bedingung falsch</b> ist. Ist sie <b>wahr</b>, bricht es ab.</p>
+  </div>
+  <div class="cols-2">
+    <svg class="fig-svg flow-svg" viewBox="0 0 360 330" aria-label="Ablaufplan Treppensteigen">
+      <rect x="80" y="10" width="200" height="36" rx="5" fill="#FEF3C7" stroke="#0E1A1C" stroke-width="2"/><text x="180" y="33" text-anchor="middle">Stelle dich vor die Treppe.</text>
+      <path d="M180 46 V78" stroke="#C2410C" stroke-width="2" marker-end="url(#ah)"/>
+      <polygon points="180,80 290,120 180,160 70,120" fill="#FED7AA" stroke="#0E1A1C" stroke-width="2"/><text x="180" y="125" text-anchor="middle">Oben angekommen?</text>
+      <path d="M180 160 V196" stroke="#C2410C" stroke-width="2" marker-end="url(#ah)"/><text x="190" y="182" font-size="13" fill="#C2410C">Nein</text>
+      <rect x="60" y="198" width="240" height="36" rx="5" fill="#DBEAFE" stroke="#0E1A1C" stroke-width="2"/><text x="180" y="221" text-anchor="middle">Setze einen Fuß auf die nächste Stufe.</text>
+      <path d="M60 216 H24 V120 H66" fill="none" stroke="#C2410C" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+      <path d="M290 120 H330 V290 H282" fill="none" stroke="#C2410C" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ah)"/><text x="300" y="112" font-size="13" fill="#C2410C">Ja</text>
+      <rect x="80" y="272" width="200" height="36" rx="18" fill="#E5E7EB" stroke="#0E1A1C" stroke-width="2"/><text x="180" y="295" text-anchor="middle">Ende</text>
+      <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8z" fill="#C2410C"/></marker></defs>
+    </svg>
+    <div>
+      <p class="eyebrow">Abb. 4: Wiederholung mit Abbruchbedingung</p>
+      <div id="s-until"></div>
+    </div>
+  </div>
+  <div class="task-card mt"><header><span class="no">A</span><h3>Unterschied</h3></header><p>Nenne den Unterschied zwischen einer Endloswiederholung und einer Wiederholung mit Bedingung.</p>
+    <div class="controls"><button class="btn" data-reveal="wa" aria-expanded="false">Lösung</button></div><p class="solution" id="wa" hidden>Die Endlosschleife hört nie von selbst auf. Die Wiederholung mit Bedingung prüft jedes Mal eine Bedingung und hört auf, sobald diese wahr ist.</p></div>
+</section>
+
+<section class="station" id="m2" data-label="M2 Nagel" data-yr="M2" data-title="Nagel einschlagen" data-sub="Welche Schleife?">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1 und M2</p>
+    <h2>Nagel einschlagen</h2>
+  </div>
+  <div class="cols-2">
+    <div class="box"><span class="tag">🔨 M2</span><p>Möchte man einen Nagel mit einem Hammer in ein Holzbrett schlagen, wird zunächst der Nagel in die eine Hand genommen. Danach wird der Nagel auf dem Holzbrett an der gewünschten Stelle ausgerichtet. Nun wird der Hammer in die andere Hand genommen. Mit ein bis zwei Schlägen wird der Nagel leicht eingeschlagen. Als Nächstes wird die Hand vom Nagel entfernt. Mit wiederholten Schlägen wird der Nagel so lange in das Brett getrieben, bis er vollständig versenkt ist.</p></div>
+    <div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Ablaufplan</h3></header><p>Erstelle einen Ablaufplan zu diesem Beispiel.</p></div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Welche Wiederholung?</h3></header><p>Ordne zu: einfache Wiederholung, Endlosschleife oder Wiederholung mit Bedingung? Begründe.</p>
+        <div class="controls"><button class="btn" data-reveal="n2" aria-expanded="false">Lösung</button></div><p class="solution" id="n2" hidden><b>Wiederholung mit Bedingung:</b> Man schlägt so lange, <i>bis</i> der Nagel vollständig versenkt ist. Wie viele Schläge nötig sind, weiß man vorher nicht.</p></div>
+    </div>
+  </div>
+  <div id="fb-nagel" class="mt"></div>
+  <h3 class="mt">Welche Schleife passt?</h3>
+  <div id="loop-sort"></div>
+  <div class="task-card mt"><header><span class="no">M1</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Am Rechner</h3></header><p>1 Suche die vier Codeblöcke aus M1 im Codebereich in Scratch. 2 Erstelle das Programm und spiele es ab. 3 Erstelle neue Animationen durch Experimentieren mit Skript und Kostümen.</p></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Wiederholungen</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Wiederholungen (Schleifen)</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Eine <b>Wiederholung</b> heißt auch <b>Schleife</b>. Sie wiederholt eine Sequenz von Anweisungen.</li>
+        <li data-step><b>Zählschleife</b> („wiederhole … mal“): Die Anweisungen werden so oft wiederholt, wie angegeben.</li>
+        <li data-step><b>Endlosschleife</b> („wiederhole fortlaufend“): Die Anweisungen werden unendlich oft ausgeführt. Oft ist sie ein Programmierfehler.</li>
+        <li data-step><b>Wiederholung mit Bedingung</b> („wiederhole bis …“): Es wird wiederholt, solange die Bedingung falsch ist. Ist sie wahr, endet die Schleife.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne die drei Schleifenblöcke aus Scratch und schreibe je ein Beispiel aus dem Alltag daneben.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Üben und wiederholen</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+scratch($('#s-m1'), [{op: 'flag'}, {op: 'repeat', n: 20, body: [{op: 'costume'}, {op: 'move', n: 10}]}], {x: -180, y: 0});
+scratch($('#s-pen'), [{op: 'flag'}, {op: 'repeat', n: 4, body: [{op: 'move', n: 100}, {op: 'turn', n: 90}]}], {pen: true, x: -50, y: 60, done: 'Fertig! Ändere die Anzahl und den Winkel: Anzahl · Winkel = 360°.'});
+scratch($('#s-endlos'), [{op: 'flag'}, {op: 'forever', body: [{op: 'costume'}, {op: 'move', n: 10}]}], {x: -150});
+scratch($('#s-bounce'), [{op: 'flag'}, {op: 'forever', body: [{op: 'costume'}, {op: 'move', n: 10}, {op: 'bounce'}]}], {x: -150});
+scratch($('#s-until'), [{op: 'flag'}, {op: 'until', cond: {c: 'edge'}, body: [{op: 'costume'}, {op: 'move', n: 10}]}, {op: 'say', text: 'Rand erreicht!', s: 2}], {x: -150, done: 'Die Bedingung „Rand berührt“ wurde wahr – die Schleife endet.'});
+flowBuilder($('#fb-nagel'), {pool: ['Nimm den Nagel in die eine Hand.', 'Richte den Nagel an der gewünschten Stelle aus.', 'Nimm den Hammer in die andere Hand.', 'Schlage den Nagel mit 1–2 Schlägen leicht ein.', 'Nimm die Hand vom Nagel.', 'Wiederhole: Schlage auf den Nagel – bis er vollständig versenkt ist.'], check: ['Nimm den Nagel in die eine Hand.', 'Richte den Nagel an der gewünschten Stelle aus.', 'Nimm den Hammer in die andere Hand.', 'Schlage den Nagel mit 1–2 Schlägen leicht ein.', 'Nimm die Hand vom Nagel.', 'Wiederhole: Schlage auf den Nagel – bis er vollständig versenkt ist.'], free: false});
+sorter($('#loop-sort'), [{id: 'z', name: 'Zählschleife'}, {id: 'e', name: 'Endlosschleife'}, {id: 'b', name: 'Wiederholung mit Bedingung'}], [
+  {t: '20 Liegestütze machen', c: 'z'}, {t: '5 Runden laufen', c: 'z'}, {t: 'Ein Lied 3-mal singen', c: 'z'},
+  {t: 'Eine Ampel schaltet Tag und Nacht immer weiter', c: 'e'}, {t: 'Hintergrundmusik in einem Spiel läuft immer wieder', c: 'e'},
+  {t: 'Treppe steigen, bis man oben ist', c: 'b'}, {t: 'Nagel einschlagen, bis er versenkt ist', c: 'b'}, {t: 'Würfeln, bis eine 6 kommt', c: 'b'}
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Wie nennt man eine Wiederholung noch?', a: ['Schleife', 'Sequenz', 'Kostüm', 'Bühne'], ok: 0, why: 'Loop auf Englisch.'},
+  {q: 'Welcher Block ist eine Zählschleife?', a: ['wiederhole 10 mal', 'wiederhole fortlaufend', 'wiederhole bis Rand berührt', 'falls … dann'], ok: 0, why: 'Feste Anzahl.'},
+  {q: 'Wann endet „wiederhole bis …“?', a: ['wenn die Bedingung wahr ist', 'nie', 'nach genau 10 Durchläufen', 'wenn die Bedingung falsch ist'], ok: 0, why: 'Dann bricht die Schleife ab.'},
+  {q: 'Wie stoppt man eine Endlosschleife in Scratch?', a: ['mit dem Stoppschild', 'mit der grünen Fahne', 'mit dem Kostüm', 'gar nicht'], ok: 0, why: 'Das rote Achteck.'},
+  {q: 'Wie zeichnet man mit Scratch ein Quadrat?', a: ['wiederhole 4 mal: gehe 100, drehe 90°', 'wiederhole 3 mal: gehe 100, drehe 120°', 'gehe 400', 'drehe 360°'], ok: 0, why: '4 · 90° = 360°.'}
+]);
+</script>

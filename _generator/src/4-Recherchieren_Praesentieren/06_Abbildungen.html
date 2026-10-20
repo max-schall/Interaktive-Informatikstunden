@@ -1,0 +1,178 @@
+<!--
+title: Abbildungen in Präsentationen einfügen
+short: Abbildungen
+time: 2 Unterrichtsstunden (mit Präsentationsprogramm)
+q: Wie lassen sich Bilder und Diagramme in eine Präsentation einfügen?
+facts: Abbildungen veranschaulichen und bleiben im Gedächtnis | Bilder (dieses Gerät, Onlinebilder – Nutzungsrechte!), Screenshots, Illustrationen | Diagrammtypen: Balken-, Säulen-, Kreisdiagramm | Bilder anordnen (Shift, Ausrichten, Vorder-/Hintergrund), M1 Mediennutzung von Jugendlichen darstellen
+inter: Einfügen-Menü erkunden · Diagramm-Baukasten mit den Buchdaten · Welches Diagramm passt? · Bild auf der Folie anordnen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Recherchieren und Präsentieren</p>
+      <h1>Abbildungen einfügen<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Bilder machen einen Text interessanter. Sie übertragen durch Farbe und Motive Emotionen – und Diagramme machen Zahlen auf einen Blick verständlich.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>„Ein Bild sagt mehr als tausend Worte.“ Stimmt das?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie lassen sich Bilder und Diagramme in eine Präsentation einfügen?</p></div>
+      <div class="controls"><button class="btn primary" data-go="bilder">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="bilder" data-label="Einfügen" data-yr="Erarbeitung" data-title="Bilder, Screenshots, Illustrationen" data-sub="Das Menü „Einfügen“">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Abbildungen veranschaulichen</p>
+    <h2>Das Menü „Einfügen“</h2>
+    <p class="lead">Abbildungen ziehen Aufmerksamkeit an, helfen beim Merken und erklären Kompliziertes ohne viele Worte. Tippe die Schaltflächen im Menü an.</p>
+  </div>
+  <div class="phone-wrap" style="grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)">
+    <div class="ribbon" id="ribbon">
+      <div class="rb-tabs"><span>Datei</span><span>Start</span><span class="on">Einfügen</span><span>Entwurf</span><span>Übergänge</span><span>Animationen</span></div>
+      <div class="rb-row">
+        <span class="rb-btn" data-part="folie">➕<small>Neue Folie</small></span>
+        <span class="rb-btn" data-part="bilder">🖼️<small>Bilder</small></span>
+        <span class="rb-btn" data-part="screenshot">📸<small>Screenshot</small></span>
+        <span class="rb-btn" data-part="formen">🔷<small>Formen</small></span>
+        <span class="rb-btn" data-part="symbole">⭐<small>Symbole</small></span>
+        <span class="rb-btn" data-part="diagramm">📊<small>Diagramm</small></span>
+        <span class="rb-btn" data-part="textfeld">🔤<small>Textfeld</small></span>
+        <span class="rb-btn" data-part="medien">🎬<small>Medien</small></span>
+      </div>
+      <div class="rb-menu"><b>Bild einfügen aus</b><span data-part="geraet">💻 Dieses Gerät …</span><span data-part="mobil">📱 Mobiles Gerät …</span><span data-part="archiv">🗂️ Archivbilder …</span><span data-part="online">🌐 Onlinebilder …</span></div>
+    </div>
+    <div class="stack"><div id="rb-mode"></div><div class="phone-panel xp-panel" id="rb-panel" aria-live="polite"></div></div>
+  </div>
+  <div class="task-card mt"><header><span class="no">A</span><h3>Warum Abbildungen?</h3></header><p>Beschreibe, warum es sinnvoll ist, Abbildungen in eine Präsentation einzufügen.</p></div>
+</section>
+
+<section class="station" id="anordnen" data-label="Anordnen" data-yr="Erarbeitung" data-title="Bilder anordnen" data-sub="Größe, Position, Reihenfolge">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Bilder und Illustrationen anordnen</p>
+      <h2>Größe, Position, Reihenfolge</h2>
+      <ul class="facts">
+        <li><b>Größe ändern:</b> an den Eckpunkten ziehen. Mit gedrückter <kbd>Shift</kbd>-Taste bleibt das Bild <b>proportional</b>.</li>
+        <li><b>Verschieben:</b> Bild an die gewünschte Stelle ziehen. „Format“ → „Ausrichten“ setzt es z. B. mittig.</li>
+        <li><b>Reihenfolge:</b> „In den Vordergrund“ oder „In den Hintergrund“.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="controls" style="margin-top:0"><button class="btn" id="ar-big">↗ größer (Shift)</button><button class="btn" id="ar-stretch">↔ ohne Shift ziehen</button><button class="btn" id="ar-center">⊕ mittig ausrichten</button><button class="btn" id="ar-front">⬆ Vordergrund</button><button class="btn" id="ar-reset">Zurück</button></div>
+      <div class="slide" id="ar-slide" style="margin-top:.6rem"><h4>Der Igel</h4><span class="ar-img" id="ar-a" style="left:12%;top:40%;background:#FDE68A">🦔</span><span class="ar-img" id="ar-b" style="left:28%;top:48%;background:#BBF7D0">🍂</span></div>
+      <p class="status" id="ar-status">Probiere die Werkzeuge aus.</p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="diagramm" data-label="M1 Diagramme" data-yr="M1" data-title="Mediennutzung darstellen" data-sub="Diagramm-Baukasten">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Diagrammtypen und Material M1</p>
+    <h2>Mediennutzung von Jugendlichen darstellen</h2>
+    <p class="lead">Nach „Einfügen“ → „Diagramm“ wählt man <b>Balken-</b>, <b>Säulen-</b> oder <b>Kreisdiagramm</b> und gibt die Zahlen in eine Tabelle ein – das Diagramm passt sich automatisch an.</p>
+  </div>
+  <div class="cols-2">
+    <div>
+      <div class="table-wrap"><table class="cmp chart-data"><thead><tr><th>Altersgruppe</th><th>Fernsehen (min/Tag)</th><th>Smartphone/Tablet</th><th>Computer</th></tr></thead><tbody id="cd"></tbody></table></div>
+      <p class="note">Die Zahlen lassen sich ändern – das Diagramm passt sich an.</p>
+      <div class="stack" style="margin-top:.6rem"><div id="ch-type"></div><div id="ch-data"></div></div>
+    </div>
+    <div class="vis"><svg id="chart" class="fig-svg" viewBox="0 0 420 300" aria-label="Diagramm"></svg><p class="status" id="ch-status"></p></div>
+  </div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">1–3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Diagramme erstellen</h3></header><p>Erstelle ein Balkendiagramm zur Nutzungszeit der 10- bis 13-Jährigen und ein Kreisdiagramm zu ihren Nutzungsanteilen. Achte auf gute Lesbarkeit.</p></div>
+    <div class="task-card"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Smartphone im Vergleich</h3></header><p>Erstelle ein Säulendiagramm zur täglichen Smartphone-Nutzung der Altersgruppen im Vergleich.</p></div>
+    <div class="task-card"><header><span class="no">5–7</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Kurze Präsentation</h3></header><p>Erstelle eine kurze Präsentation zum Thema Mediennutzung mit Titelfolie, Diagrammfolien mit kurzen Hinweisen und einer Abschlussfolie mit deinen Erkenntnissen.</p>
+      <div class="controls"><button class="btn" data-reveal="e57" aria-expanded="false">Erkenntnisse</button></div><p class="solution" id="e57" hidden>Mit dem Alter steigt vor allem die Smartphone-Nutzung (37 → 110 → 160 Minuten). Fernsehen bleibt bis 13 Jahre gleich (82) und steigt dann (117). Der Computer wird in allen Gruppen gleich lang genutzt (17 Minuten).</p></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Abbildungen</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Abbildungen in Präsentationen</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Abbildungen <b>veranschaulichen</b>, ziehen Aufmerksamkeit an und helfen beim Merken.</li>
+        <li data-step>„Einfügen“ → <b>Bilder</b> (von diesem Gerät oder online – nur mit Nutzungsrechten!), <b>Screenshot</b> (Bild des Bildschirms), <b>Illustrationen</b> (Formen, Symbole).</li>
+        <li data-step><b>Diagramme</b> stellen Zahlen dar: <b>Balken</b>/<b>Säulen</b> zum Vergleichen, <b>Kreis</b> für Anteile.</li>
+        <li data-step>Anordnen: Ecken ziehen (mit <b>Shift</b> proportional), „Ausrichten“, „In den Vorder-/Hintergrund“.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne ein Säulendiagramm zur Smartphone-Nutzung der drei Altersgruppen.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Welches Diagramm passt?</h2></div>
+  <div id="dsort"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+explorer($('#ribbon'), $('#rb-panel'), [
+  {id: 'folie', n: 'Neue Folie', t: 'Fügt eine neue Folie mit gewähltem Layout ein.'},
+  {id: 'bilder', n: 'Bilder', t: 'Öffnet das Menü „Bild einfügen aus“: dieses Gerät, mobiles Gerät, Archivbilder, Onlinebilder.'},
+  {id: 'screenshot', n: 'Screenshot', t: 'Zeigt alle offenen Fenster; das gewählte Fenster wird als Bild eingefügt – z. B. eine Webseite oder ein Programm.'},
+  {id: 'formen', n: 'Formen', t: 'Illustrationen wie Pfeile, Rechtecke oder Sprechblasen.'},
+  {id: 'symbole', n: 'Symbole', t: 'Kleine Icons als Illustration.'},
+  {id: 'diagramm', n: 'Diagramm', t: 'Balken-, Säulen- oder Kreisdiagramm; die Zahlen trägt man in eine Tabelle ein.'},
+  {id: 'textfeld', n: 'Textfeld', t: 'Ein eigenes Feld für Text aufziehen.'},
+  {id: 'medien', n: 'Medien', t: 'Audio und Video einfügen.'},
+  {id: 'geraet', n: 'Dieses Gerät', t: 'Ein Bild, das auf dem eigenen Computer gespeichert ist.'},
+  {id: 'mobil', n: 'Mobiles Gerät', t: 'Ein Bild vom Smartphone übertragen.'},
+  {id: 'archiv', n: 'Archivbilder', t: 'Bilder aus einer mitgelieferten Sammlung des Programms.'},
+  {id: 'online', n: 'Onlinebilder', t: 'Bilder aus dem Internet – nur verwenden, wenn man die Nutzungsrechte besitzt!'}
+], {modeRoot: $('#rb-mode'), label: 'Schaltfläche', intro: 'Tippe eine Schaltfläche an.'});
+
+(() => {
+  const a = $('#ar-a'), b = $('#ar-b'), st = $('#ar-status');
+  const reset = () => { a.style.cssText = 'left:12%;top:40%;background:#FDE68A'; b.style.cssText = 'left:28%;top:48%;background:#BBF7D0'; st.textContent = 'Probiere die Werkzeuge aus.'; };
+  $('#ar-big').onclick = () => { a.style.transform = 'scale(1.6)'; st.innerHTML = 'Mit <b>Shift</b>: Das Bild wird gleichmäßig größer.'; };
+  $('#ar-stretch').onclick = () => { a.style.transform = 'scale(2,1)'; st.innerHTML = '<b class="bad">Ohne Shift</b>: Der Igel wird verzerrt!'; };
+  $('#ar-center').onclick = () => { a.style.left = '50%'; a.style.top = '50%'; a.style.translate = '-50% -50%'; st.innerHTML = '„Ausrichten“ → „Mittig“'; };
+  $('#ar-front').onclick = () => { a.style.zIndex = a.style.zIndex === '3' ? '1' : '3'; st.innerHTML = a.style.zIndex === '3' ? 'Der Igel liegt jetzt <b>im Vordergrund</b>.' : 'Der Igel liegt jetzt <b>im Hintergrund</b>.'; };
+  $('#ar-reset').onclick = reset;
+})();
+
+(() => {
+  const D = [['6–9 Jahre', 82, 37, 17], ['10–13 Jahre', 82, 110, 17], ['14–17 Jahre', 117, 160, 17]];
+  const M = ['Fernsehen', 'Smartphone/Tablet', 'Computer'], COL = ['#2563EB', '#F59E0B', '#16A34A'];
+  $('#cd').innerHTML = D.map((r, i) => `<tr><th>${r[0]}</th>${[1, 2, 3].map(j => `<td><input class="cd-in" type="number" min="0" max="300" value="${r[j]}" data-i="${i}" data-j="${j}" aria-label="${r[0]} ${M[j - 1]}"></td>`).join('')}</tr>`).join('');
+  let type = 'bar', set = 'age1';
+  function series() {
+    if (set.startsWith('age')) { const r = D[+set.slice(3)]; return {title: `Mediennutzung ${r[0]} (Minuten/Tag)`, items: M.map((m, k) => [m, r[k + 1], COL[k]])}; }
+    return {title: 'Smartphone/Tablet: Minuten pro Tag', items: D.map((r, k) => [r[0], r[2], ['#93C5FD', '#3B82F6', '#1E3A8A'][k]])};
+  }
+  function draw() {
+    const s = series(), max = Math.max(...s.items.map(x => x[1]), 1), svg = $('#chart'); let h = `<text x="210" y="20" text-anchor="middle" font-weight="700" font-size="14">${s.title}</text>`;
+    if (type === 'pie') {
+      const tot = s.items.reduce((a, x) => a + x[1], 0) || 1; let a0 = -Math.PI / 2;
+      s.items.forEach(([n, v, c], i) => { const a1 = a0 + v / tot * 2 * Math.PI, L = a1 - a0 > Math.PI ? 1 : 0, cx = 150, cy = 165, r = 105; h += `<path d="M${cx} ${cy} L${cx + r * Math.cos(a0)} ${cy + r * Math.sin(a0)} A${r} ${r} 0 ${L} 1 ${cx + r * Math.cos(a1)} ${cy + r * Math.sin(a1)}Z" fill="${c}" stroke="#fff" stroke-width="2"/>`; const am = (a0 + a1) / 2; h += `<text x="${cx + 70 * Math.cos(am)}" y="${cy + 70 * Math.sin(am)}" text-anchor="middle" fill="#fff" font-weight="700" font-size="13">${Math.round(v / tot * 100)} %</text>`; h += `<rect x="285" y="${80 + i * 26}" width="14" height="14" fill="${c}"/><text x="305" y="${92 + i * 26}" font-size="12">${n}</text>`; a0 = a1; });
+    } else if (type === 'bar') {
+      s.items.forEach(([n, v, c], i) => { const y = 50 + i * 75, w = v / max * 230; h += `<text x="120" y="${y + 28}" text-anchor="end" font-size="12">${n}</text><rect x="130" y="${y}" width="${w}" height="44" fill="${c}"/><text x="${136 + w}" y="${y + 28}" font-size="13" font-weight="700">${v}</text>`; });
+    } else {
+      s.items.forEach(([n, v, c], i) => { const x = 60 + i * 120, hh = v / max * 200; h += `<rect x="${x}" y="${260 - hh}" width="70" height="${hh}" fill="${c}"/><text x="${x + 35}" y="${252 - hh}" text-anchor="middle" font-size="13" font-weight="700">${v}</text><text x="${x + 35}" y="${280}" text-anchor="middle" font-size="11">${n}</text>`; });
+      h += '<line x1="45" y1="260" x2="410" y2="260" stroke="#555"/>';
+    }
+    svg.innerHTML = h;
+    $('#ch-status').innerHTML = type === 'pie' ? '<b>Kreisdiagramm</b>: zeigt Anteile an einem Ganzen.' : type === 'bar' ? '<b>Balkendiagramm</b>: waagerechte Balken zum Vergleichen.' : '<b>Säulendiagramm</b>: senkrechte Säulen zum Vergleichen.';
+  }
+  $('#cd').addEventListener('input', e => { const t = e.target; if (t.dataset.i) { D[+t.dataset.i][+t.dataset.j] = Math.max(0, +t.value || 0); draw(); } });
+  seg($('#ch-type'), [['bar', 'Balken'], ['col', 'Säulen'], ['pie', 'Kreis']], v => { type = v; draw(); });
+  seg($('#ch-data'), [['age0', '6–9 J.'], ['age1', '10–13 J.'], ['age2', '14–17 J.'], ['phone', 'Smartphone: alle Gruppen']], v => { set = v; draw(); }, 'age1');
+})();
+sorter($('#dsort'), [{id: 'k', name: 'Kreisdiagramm (Anteile)'}, {id: 's', name: 'Säulen-/Balkendiagramm (Vergleich)'}], [
+  {t: 'Wie viel Prozent der Klasse fahren mit dem Rad, Bus, zu Fuß?', c: 'k'}, {t: 'Wie verteilt sich mein Taschengeld?', c: 'k'},
+  {t: 'Wie groß sind fünf Tierarten im Vergleich?', c: 's'}, {t: 'Smartphone-Nutzung in drei Altersgruppen', c: 's'}, {t: 'Tagestemperaturen einer Woche', c: 's'}
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Was ist ein Screenshot?', a: ['ein Bild des Bildschirminhalts', 'ein Diagramm', 'ein Video', 'eine Schriftart'], ok: 0, why: 'Zeigt z. B. eine Webseite.'},
+  {q: 'Worauf muss man bei Onlinebildern achten?', a: ['auf die Nutzungsrechte', 'auf die Uhrzeit', 'auf die Dateigröße allein', 'auf nichts'], ok: 0, why: 'Urheberrecht!'},
+  {q: 'Welches Diagramm zeigt Anteile an einem Ganzen?', a: ['Kreisdiagramm', 'Säulendiagramm', 'Balkendiagramm', 'Liniendiagramm'], ok: 0, why: 'Wie Kuchenstücke.'},
+  {q: 'Wie vergrößert man ein Bild, ohne es zu verzerren?', a: ['an der Ecke ziehen und Shift drücken', 'an der Seite ziehen', 'doppelklicken', 'Strg + Z'], ok: 0, why: 'Proportional.'},
+  {q: 'Wie lange nutzen 14- bis 17-Jährige laut M1 täglich das Smartphone?', a: ['160 Minuten', '37 Minuten', '110 Minuten', '17 Minuten'], ok: 0, why: 'Mehr als 2,5 Stunden.'}
+]);
+</script>

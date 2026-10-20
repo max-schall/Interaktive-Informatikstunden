@@ -1,0 +1,159 @@
+<!--
+title: Im Internet recherchieren
+short: Recherche
+time: 1–2 Unterrichtsstunden
+q: Wie kannst du im Internet nach richtigen Informationen suchen?
+facts: Kapitelauftakt Recherchieren und Präsentieren (S. 74–75) | Funktion von Suchmaschinen: Programme durchsuchen, lesen, speichern, sortieren (M3) | Fachbegriffe: Browser, Suchzeile, Suchbegriff, Trefferliste, URL, Vorschautext, Infotext (M2) | Gründe für Suchanfragen (M1)
+inter: Auftaktfragen · Suchmaschine Schritt für Schritt · Ergebnisseite erkunden und Begriffe finden · Suchanfragen und Gründe zuordnen · Recherche beschreiben
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Recherchieren und Präsentieren</p>
+      <h1>Im Internet recherchieren<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Das Internet steckt voller Informationen – aber nicht alles, was du findest, ist verlässlich. Wie findest du gezielt das Richtige?</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wann hast du zuletzt etwas „gegoogelt“? Hast du gefunden, was du gesucht hast?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie kannst du im Internet nach richtigen Informationen suchen?</p></div>
+      <div class="controls"><button class="btn primary" data-go="auftakt">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="auftakt" data-label="Kapitelauftakt" data-yr="Einstieg" data-title="Recherchieren und Präsentieren" data-sub="Kapitelauftakt S. 74–75">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Kapitelauftakt</p>
+    <h2>Recherchieren und Präsentieren</h2>
+  </div>
+  <div class="cols-3">
+    <div class="task-card"><header><span class="no">A</span><h3>🔎 Suchmaschinen</h3></header><p>Nennt Suchmaschinen, die ihr kennt.</p>
+      <div class="controls"><button class="btn" data-reveal="aa" aria-expanded="false">Beispiele</button></div><p class="solution" id="aa" hidden>Google, Bing, Ecosia, DuckDuckGo, Startpage – und Kindersuchmaschinen wie fragFINN, Blinde Kuh oder Helles Köpfchen.</p></div>
+    <div class="task-card"><header><span class="no">B</span><h3>🏈 Ein Foto vom Spiel</h3></header><p>Ihr habt ein Foto von zwei Football-Mannschaften gemacht und möchtet es ins Internet stellen. Dürft ihr das einfach so? Was spricht dafür, was dagegen?</p>
+      <div class="controls"><button class="btn" data-reveal="ab" aria-expanded="false">Lösungsidee</button></div><p class="solution" id="ab" hidden>Dafür: Es ist ein eigenes Foto; bei einer großen öffentlichen Veranstaltung sind einzelne Personen oft nur Beiwerk. Dagegen: Stehen einzelne Spieler erkennbar im Mittelpunkt, haben sie ein Recht am eigenen Bild – dann braucht man ihre Erlaubnis.</p></div>
+    <div class="task-card"><header><span class="no">C</span><h3>🎂 Video auf dem Geburtstag</h3></header><p>Überlegt, welche Vorbereitungen man trifft, wenn man ein Video auf einer Geburtstagsfeier drehen möchte.</p>
+      <div class="controls"><button class="btn" data-reveal="ac" aria-expanded="false">Lösungsidee</button></div><p class="solution" id="ac" hidden>Gäste fragen, ob sie gefilmt werden dürfen; Akku laden; Licht prüfen; überlegen, was gefilmt werden soll (Storyboard); klären, wer das Video sehen darf.</p></div>
+  </div>
+  <h3 class="mt">Mindmap: Ordne die Begriffe zu</h3>
+  <div id="mind"></div>
+</section>
+
+<section class="station" id="suchmaschine" data-label="M3 Suchmaschine" data-yr="Erarbeitung" data-title="So arbeitet eine Suchmaschine" data-sub="Funktionsweise">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Suchmaschinen</p>
+    <h2>So arbeitet eine Suchmaschine</h2>
+    <p class="lead">Eine <b>Suchmaschine</b> ist ein Programm, das hilft, Informationen im Internet zu finden – Webseiten, Bilder, Videos und mehr.</p>
+  </div>
+  <div class="steps4">
+    <div class="s4"><span class="s4-ic">🌐</span><b>Internet</b><small>Programme durchsuchen ständig das Internet und lesen neue Webseiten.</small></div>
+    <div class="s4"><span class="s4-ic">🗄️</span><b>Datenbank</b><small>Die Inhalte werden in einer riesigen Datenbank gespeichert und sortiert.</small></div>
+    <div class="s4"><span class="s4-ic">🙋</span><b>Nutzer</b><small>stellt eine Anfrage mit Suchbegriffen.</small></div>
+    <div class="s4"><span class="s4-ic">📋</span><b>Suchergebnisse</b><small>Die Suchmaschine durchsucht ihre Datenbank und zeigt die besten Ergebnisse.</small></div>
+  </div>
+  <div id="sm-step"></div>
+  <p class="status" id="sm-status"></p>
+  <div class="cols-2 mt">
+    <div class="box"><span class="tag">Was kommt nach oben?</span><p>Wichtig sind die <b>Suchbegriffe</b>, die <b>Aktualität</b> und die <b>Beliebtheit</b> einer Seite. Hochwertige, oft besuchte Seiten stehen meist weiter oben. Deshalb: <b>klare und präzise Suchbegriffe</b> verwenden!</p></div>
+    <div class="task-card"><header><span class="no">M3</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Immer im Einsatz</h3></header><p>Nenne Abläufe, die durchgehend von der Suchmaschine durchgeführt werden, auch wenn kein Nutzer eine Suchanfrage stellt.</p>
+      <div class="controls"><button class="btn" data-reveal="m32" aria-expanded="false">Lösung</button></div><p class="solution" id="m32" hidden>Das Internet durchsuchen, neue Webseiten lesen, ihre Inhalte in der Datenbank speichern und sortieren.</p></div>
+  </div>
+</section>
+
+<section class="station" id="begriffe" data-label="M2 Fachbegriffe" data-yr="M2" data-title="Fachbegriffe der Recherche" data-sub="Die Ergebnisseite erkunden">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Material M2</p>
+    <h2>Fachbegriffe bei der Internetrecherche</h2>
+  </div>
+  <div class="phone-wrap" style="grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)">
+    <div class="serp" id="serp">
+      <div class="serp-bar" data-part="browser"><span>🔒</span><span class="mono" data-part="url0">https://fantasiesuchmaschine.de/</span></div>
+      <div class="serp-q" data-part="suchzeile"><span data-part="suchbegriff" class="serp-term">Haustier Kaninchen</span><span class="serp-btn">🔍</span></div>
+      <div class="serp-tabs"><span class="on">Alle</span><span>Bilder</span><span>Videos</span><span>News</span><span>Produkte</span></div>
+      <div class="serp-main">
+        <div class="serp-list" data-part="trefferliste">
+          <div class="serp-hit"><small class="mono" data-part="url">https://www.tierchenwelt.de/haustiere/kaninchen/vorteile-nachteile</small><a data-part="link">Haustier Kaninchen: Vorteile und Nachteile</a><p data-part="vorschau">1. Kaninchen müssen nicht Gassi gehen. 2. Kaninchen als Haustiere helfen, Stress zu vergessen. 3. Kaninchen kosten weniger als ein …</p></div>
+          <div class="serp-hit"><small class="mono">https://www.tierheimplus.de/magazin/kleintiere/</small><a>Kaninchen: Haltung, Ernährung &amp; Pflege | tierheimplus Magazin</a></div>
+        </div>
+        <aside class="serp-info" data-part="infotext"><b>Kaninchen</b><small>Tiere</small><p>Kaninchen sind Säugetiere und gehören zur Familie der Hasen. … kürzere Ohren, auch Löffel genannt.</p><p class="mono">Lebenserwartung: bis 10 Jahre<br>Körperlänge: 35–40 cm<br>Gewicht: 1–2,5 kg</p></aside>
+      </div>
+    </div>
+    <div class="stack"><div id="serp-mode"></div><div class="phone-panel xp-panel" id="serp-panel" aria-live="polite"></div></div>
+  </div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Was erfährt man schon?</h3></header><p>Beschreibe, was man anhand der Ergebnisseite bereits zum gesuchten Thema herausfinden kann.</p>
+      <div class="controls"><button class="btn" data-reveal="b2" aria-expanded="false">Lösung</button></div><p class="solution" id="b2" hidden>Der Infotext verrät: Kaninchen sind Säugetiere aus der Familie der Hasen, werden bis 10 Jahre alt, 35–40 cm lang und 1–2,5 kg schwer. Die Vorschautexte zeigen Vor- und Nachteile als Haustier und dass es Infos zu Haltung, Ernährung und Pflege gibt.</p></div>
+    <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Recherche beschreiben</h3></header><p>Beschreibe die Recherche mithilfe einer Suchmaschine. Nutze die richtigen Fachbegriffe.</p>
+      <div class="controls"><button class="btn" data-reveal="b3" aria-expanded="false">Lösung</button></div><p class="solution" id="b3" hidden>Ich öffne den <b>Browser</b> und rufe eine <b>Suchmaschine</b> auf. In die <b>Suchzeile</b> tippe ich den <b>Suchbegriff</b> „Haustier Kaninchen“. Die Suchmaschine zeigt eine <b>Trefferliste</b>. Jedes <b>Suchergebnis</b> hat eine <b>URL</b>, einen <b>Link</b> und einen <b>Vorschautext</b>. Rechts steht ein <b>Infotext</b>. Über den Link öffne ich die passende Webseite.</p></div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Suchanfragen" data-yr="M1" data-title="Warum suchen Menschen?" data-sub="Gründe für Suchanfragen">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Im Internet recherchieren</h2>
+  </div>
+  <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Gründe</h3></header><p>Beschreibe Gründe, warum diese Suchanfragen gestellt worden sind. Beispiel: Man recherchiert, um eine richtige Adresse herauszufinden.</p></div>
+  <div id="m1-match"></div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Meine Quellen</h3></header><p>Nenne Suchmaschinen oder andere Quellen, mit denen du schon recherchiert hast.</p></div>
+    <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Tipps für Anfänger</h3></header><p>Bildet Gruppen und erstellt eine Liste mit Hinweisen für Menschen, die noch nie im Internet recherchiert haben.</p>
+      <div class="controls"><button class="btn" data-reveal="t2" aria-expanded="false">Beispiele</button></div>
+      <ul class="solution" id="t2" hidden><li>Genaue Suchbegriffe verwenden (Kaninchen statt Tier).</li><li>Mehrere Ergebnisse vergleichen, nicht nur das erste.</li><li>Auf Werbung („Gesponsert“) achten.</li><li>Prüfen, wer die Seite gemacht hat und wie aktuell sie ist.</li><li>Kindersuchmaschinen nutzen.</li></ul></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Recherchieren</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Im Internet recherchieren</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Für eine <b>Internetrecherche</b> nutzt man eine <b>Suchmaschine</b>: ein Programm, das Informationen im Internet findet.</li>
+        <li data-step>Suchmaschinen durchsuchen ständig das Internet, lesen neue Webseiten und speichern die Inhalte sortiert in einer <b>Datenbank</b>.</li>
+        <li data-step>Bei einer Anfrage zeigt sie eine <b>Trefferliste</b>. Wichtig für die Reihenfolge: Suchbegriffe, Aktualität und Beliebtheit der Seite.</li>
+        <li data-step>Fachbegriffe: <b>Browser</b>, <b>Suchzeile</b>, <b>Suchbegriff</b>, <b>URL</b> (Internetadresse), <b>Link</b>, <b>Vorschautext</b>, <b>Infotext</b>.</li>
+        <li data-step>Für gute Ergebnisse: <b>klare und präzise Suchbegriffe</b>.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne die Funktionsweise: Internet → Datenbank ← Suchmaschine ↔ Nutzer.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Üben und wiederholen</h2></div>
+  <h3>Fachbegriffe</h3>
+  <div id="match"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+sorter($('#mind'), [{id: 'r', name: 'Recherchieren'}, {id: 'p', name: 'Präsentieren'}, {id: 'v', name: 'Ein Video drehen'}, {id: 'b', name: 'Bilder im Internet'}], [
+  {t: 'Suchmaschinen', c: 'r'}, {t: 'Präsentationsfolien', c: 'p'}, {t: 'Storyboard', c: 'v'}, {t: 'Probleme beim Dreh', c: 'v'}, {t: 'Creative Commons', c: 'b'}
+]);
+(() => {
+  const T = ['Programme der Suchmaschine durchsuchen ständig das <b>Internet</b> und lesen neue Webseiten.', 'Die Inhalte werden in einer riesigen <b>Datenbank</b> gespeichert und sortiert.', 'Ein <b>Nutzer</b> stellt eine Suchanfrage, z. B. „Haustier Kaninchen“.', 'Die Suchmaschine durchsucht ihre Datenbank und zeigt die besten <b>Suchergebnisse</b> – sortiert nach Suchbegriffen, Aktualität und Beliebtheit.'];
+  const s = $$('#suchmaschine .s4');
+  stepper($('#sm-step'), 4, k => { s.forEach((x, i) => { x.classList.toggle('on', i === k); x.classList.toggle('done', i < k); }); $('#sm-status').innerHTML = T[k]; });
+})();
+explorer($('#serp'), $('#serp-panel'), [
+  {id: 'browser', n: 'Browser', t: 'Ein Programm zur Darstellung von Webseiten. Oben steht die Adresszeile.'},
+  {id: 'url0', n: 'URL der Suchmaschine', t: 'Die Internetadresse in der Kopfzeile gibt den Ort der Webseite an.'},
+  {id: 'suchzeile', n: 'Suchzeile', t: 'Das Feld, in das man Suchbegriffe eingibt.'},
+  {id: 'suchbegriff', n: 'Suchbegriff', t: 'Wort, Wörter oder Frage, die man in die Suchzeile eingibt.'},
+  {id: 'trefferliste', n: 'Trefferliste', t: 'Eine Liste aller Ergebnisse einer Suche.'},
+  {id: 'link', n: 'Link (Suchergebnis)', t: 'Verknüpfung zur Webseite, die durch Anklicken aufgerufen wird.'},
+  {id: 'url', n: 'URL', t: 'Die Internetadresse des Suchergebnisses.'},
+  {id: 'vorschau', n: 'Vorschautext', t: 'Eine kurze Vorschau des Inhalts einer Webseite.'},
+  {id: 'infotext', n: 'Infotext', t: 'Ein Auszug aus einem Online-Lexikon zum Thema der Suche.'}
+], {modeRoot: $('#serp-mode'), label: 'Fachbegriff', intro: 'Tippe einen Bereich der Ergebnisseite an.'});
+matcher($('#m1-match'), [['🔍 Öffnungszeiten Minigolf Mannheim', 'Man möchte wissen, wann man hingehen kann.'], ['🔍 Telefonnummer Schäfer Immobilien', 'Man möchte jemanden anrufen.'], ['🔍 Sammelkarten in meiner Nähe', 'Man sucht ein Geschäft in der Umgebung.'], ['🔍 Wo bekomme ich Blöcke her?', 'Man hat eine Frage und sucht einen Rat.']]);
+matcher($('#match'), [['Suchmaschine', 'findet mit Suchbegriffen andere Webseiten'], ['Browser', 'Programm zur Darstellung von Webseiten'], ['URL', 'Internetadresse einer Webseite'], ['Trefferliste', 'Liste aller Ergebnisse einer Suche'], ['Vorschautext', 'kurze Vorschau des Inhalts'], ['Link', 'Verknüpfung zu einer Webseite']]);
+mcQuiz($('#quiz'), [
+  {q: 'Was ist eine Suchmaschine?', a: ['ein Programm, das Informationen im Internet findet', 'ein Browser', 'ein Lexikon aus Papier', 'eine Datenbank im Klassenzimmer'], ok: 0, why: 'Sie durchsucht ihre Datenbank.'},
+  {q: 'Was macht eine Suchmaschine auch ohne Suchanfrage?', a: ['Sie durchsucht das Internet und speichert Inhalte', 'nichts', 'Sie löscht Webseiten', 'Sie schreibt Webseiten'], ok: 0, why: 'Ständig.'},
+  {q: 'Was ist eine URL?', a: ['die Internetadresse einer Webseite', 'ein Suchbegriff', 'ein Bild', 'ein Programm'], ok: 0, why: 'z. B. https://www.westermann.de'},
+  {q: 'Welcher Suchbegriff ist besser für Infos zum Schwarzbären?', a: ['Schwarzbär', 'Bär', 'Tier', 'schwarz'], ok: 0, why: 'Präzise Suchbegriffe!'},
+  {q: 'Was beeinflusst, welche Seiten oben stehen?', a: ['Suchbegriffe, Aktualität, Beliebtheit', 'nur die Farbe der Seite', 'der Zufall', 'die Länge der URL'], ok: 0, why: 'Hochwertige, oft besuchte Seiten stehen weiter oben.'}
+]);
+</script>

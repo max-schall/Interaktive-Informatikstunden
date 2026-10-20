@@ -1,0 +1,250 @@
+<!--
+title: Texte eingeben, kopieren und verschieben
+short: Texte eingeben
+time: 2 Unterrichtsstunden (mit Textverarbeitungsprogramm)
+q: Welche Funktionen helfen dir, Texte wie Spielsteine an andere Stellen zu verschieben?
+facts: Kapitelauftakt Textgestaltung (S. 94–95) | Grundlagen: Zeichen, Wörter, Sätze, Zeilen, Absätze; Leerzeichen, Enter, Rücktaste, Entf | Menüsymbole Öffnen, Speichern, Speichern unter, Neu; Benutzeroberfläche (Menüleiste, Symbolleiste, Schreibbereich, Cursor, Statusleiste, Zoom) | Kopieren, Ausschneiden, Einfügen und Shortcuts (M1 Erste Schritte)
+inter: Mindmap zum Kapitel · Mini-Textverarbeitung mit Statusleiste · Rücktaste und Entf ausprobieren · Benutzeroberfläche erkunden und finden · Kopieren/Ausschneiden mit Zwischenablage · Tastatur M1 · Shortcut-Trainer
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Textgestaltung</p>
+      <h1>Texte eingeben, kopieren und verschieben<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Mit einem Textverarbeitungsprogramm kannst du Texte wie Spielsteine beliebig an andere Stellen verschieben.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wofür hast du schon einmal ein Textverarbeitungsprogramm genutzt?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Welche Funktionen helfen dir, Texte einzugeben, zu kopieren und zu verschieben?</p></div>
+      <div class="controls"><button class="btn primary" data-go="auftakt">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="auftakt" data-label="Kapitelauftakt" data-yr="Einstieg" data-title="Textgestaltung" data-sub="Kapitelauftakt S. 94–95">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Kapitelauftakt</p>
+    <h2>Textgestaltung</h2>
+  </div>
+  <div class="cols-3">
+    <div class="task-card"><header><span class="no">A</span><h3>💻 Nur schreiben?</h3></header><p>Stellt Vermutungen an, ob man ein Textverarbeitungsprogramm nur zum Schreiben von Texten nutzen kann oder ob man noch mehr damit machen kann.</p>
+      <div class="controls"><button class="btn" data-reveal="aa" aria-expanded="false">Lösungsidee</button></div><p class="solution" id="aa" hidden>Man kann viel mehr: Texte formatieren, Bilder und Textfelder einfügen, Tabellen anlegen, Rechtschreibung prüfen, Synonyme suchen, Einladungen, Plakate oder Stundenpläne gestalten und drucken.</p></div>
+    <div class="task-card"><header><span class="no">B</span><h3>🖍️ Auf Papier überarbeiten</h3></header><p>Beschreibt Vor- und Nachteile beim Überarbeiten eines ausgedruckten Textes.</p>
+      <div class="controls"><button class="btn" data-reveal="ab" aria-expanded="false">Lösungsidee</button></div><p class="solution" id="ab" hidden>Vorteile: Man sieht den ganzen Text, kann frei markieren und Notizen an den Rand schreiben; Fehler fallen auf Papier oft besser auf. Nachteile: Die Korrekturen müssen noch einmal abgetippt werden, es wird Papier verbraucht, und man kann nichts einfach verschieben.</p></div>
+    <div class="task-card"><header><span class="no">C</span><h3>⌨️ Eure Erfahrungen</h3></header><p>Beschreibt eure Erfahrungen in der Nutzung eines Textverarbeitungsprogramms. Kennt ihr die Windows-Taste und die Command-Taste?</p>
+      <div class="controls"><button class="btn" data-reveal="ac" aria-expanded="false">Hinweis</button></div><p class="solution" id="ac" hidden>Bekannte Programme: Word, LibreOffice Writer, Google Docs, Pages. Auf Windows-Rechnern nutzt man für Tastenkürzel meist <kbd>Strg</kbd>, auf dem Mac die Command-Taste <kbd>cmd ⌘</kbd>.</p></div>
+  </div>
+  <h3 class="mt">Mindmap: Ordne die Begriffe zu</h3>
+  <div id="mind"></div>
+</section>
+
+<section class="station" id="grundlagen" data-label="Grundlagen" data-yr="Erarbeitung" data-title="Grundlagen der Textverarbeitung" data-sub="Zeichen, Zeilen, Absätze">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Texte eingeben</p>
+      <h2>Grundlagen der Textverarbeitung</h2>
+      <ul class="facts">
+        <li>Ein <b>Textverarbeitungsprogramm</b> wie Word öffnet man über eine Vorlage, eine gespeicherte Datei oder ein <b>leeres Dokument</b> („Neu“).</li>
+        <li>Texte bestehen aus <b>Sätzen</b>, diese aus <b>Wörtern</b> und Satzzeichen. Jeder Buchstabe, jedes Satzzeichen und jedes Leerzeichen ist ein <b>Zeichen</b>.</li>
+        <li>Ist eine <b>Zeile</b> voll, beginnt das Programm von allein eine neue. Mit der <kbd>Enter</kbd>-Taste beginnt ein neuer <b>Absatz</b>.</li>
+        <li>Die <kbd>Leertaste</kbd> erzeugt den Leerraum zwischen den Wörtern – nach jedem Satzzeichen folgt ein Leerzeichen.</li>
+        <li>Löschen: <kbd>⌫</kbd> <b>Rücktaste</b> löscht das Zeichen <b>links</b> vom Cursor, <kbd>Entf</kbd> das Zeichen <b>rechts</b> davon.</li>
+      </ul>
+    </div>
+    <div class="stack">
+      <div class="wp">
+        <div class="wp-title"><span>Dokument1 – Textverarbeitung</span><span>— ▢ ✕</span></div>
+        <div class="wp-bar"><button class="btn" id="g-bs">⌫ Rücktaste</button><button class="btn" id="g-del">Entf</button><button class="btn" id="g-enter">↵ Enter</button><button class="btn" id="g-reset">Zurücksetzen</button></div>
+        <div class="wp-desk"><textarea class="wp-page" id="g-txt" rows="6" aria-label="Schreibbereich" spellcheck="false">Lieber Weihnachtsmann, ich schreibe dir heute. Ich wünsche mir ein Buch.</textarea></div>
+        <div class="wp-status" id="g-stat"></div>
+      </div>
+      <p class="note">Setze den Cursor mitten in ein Wort und probiere <b>Rücktaste</b> und <b>Entf</b> aus. Die Statusleiste zählt mit.</p>
+    </div>
+  </div>
+  <h3 class="mt">Wichtige Menüsymbole</h3>
+  <div class="table-wrap"><table class="cmp quiz" id="sym-tab"><thead><tr><th>Symbol</th><th>Befehl</th><th>Funktion</th></tr></thead><tbody>
+    <tr><th>📂</th><td>Öffnen</td><td class="q">Öffnet eine zuvor erstellte Datei.</td></tr>
+    <tr><th>💾</th><td>Speichern</td><td class="q">Speichert die Datei. Beim ersten Speichern muss ein Name und ein Speicherort vergeben werden.</td></tr>
+    <tr><th>💾✏️</th><td>Speichern unter</td><td class="q">Speichert die Datei unter einem neuen Namen und/oder in einem anderen Ordner.</td></tr>
+    <tr><th>📄</th><td>Neu</td><td class="q">Öffnet eine neue, leere Datei zur Bearbeitung.</td></tr>
+  </tbody></table></div>
+  <div class="controls"><button class="btn" id="sym-q">Abfragen</button><button class="btn" id="sym-all">Alle zeigen</button></div>
+</section>
+
+<section class="station" id="oberflaeche" data-label="Oberfläche" data-yr="Erarbeitung" data-title="Die Benutzeroberfläche" data-sub="Abb. 2 erkunden">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Benutzeroberfläche</p>
+    <h2>Was ist wo im Programm?</h2>
+    <p class="lead">Tippe auf die Bereiche der Benutzeroberfläche. Im Modus „Finden“ wird ein Begriff genannt.</p>
+  </div>
+  <div class="model">
+    <div class="wp" id="ui-fig">
+      <div class="wp-title"><span>Dokument1 – Textverarbeitung</span><span>🔍 Suchen</span></div>
+      <div class="wp-tabs wp-hot" data-part="menue"><span>Datei</span><span class="on">Start</span><span>Einfügen</span><span>Layout</span><span>Überprüfen</span><span>Ansicht</span><span>Hilfe</span></div>
+      <div class="wp-bar wp-hot" data-part="symbol"><span class="btn">📋 Einfügen</span><span class="sep"></span><span class="btn">Calibri ▾</span><span class="btn">11 ▾</span><span class="btn"><b>F</b></span><span class="btn"><i>K</i></span><span class="btn"><u>U</u></span><span class="sep"></span><span class="btn">≡</span><span class="btn">• ≡</span></div>
+      <div class="wp-desk"><div class="wp-page wp-hot" data-part="schreib" style="min-height:9rem">Lieber Weihnachtsmann,
+
+ich schreibe dir<span class="wp-hot" data-part="cursor" style="display:inline-block;width:.7rem;border-left:2px solid #111827;height:1.2em;vertical-align:text-bottom;animation:blink 1s steps(1) infinite"></span></div></div>
+      <div class="wp-status"><span class="wp-hot" data-part="status">Seite 1 von 1 · 7 Wörter · Deutsch</span><span class="wp-hot" data-part="zoom">➖ ━━●━━ ➕ 100 %</span></div>
+    </div>
+    <div class="stack"><div class="seg" id="ui-mode"></div><div class="box" id="ui-panel" aria-live="polite"></div></div>
+  </div>
+</section>
+
+<section class="station" id="kopieren" data-label="Kopieren" data-yr="Erarbeitung" data-title="Kopieren und Ausschneiden" data-sub="Zwischenablage">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Kopieren, ausschneiden, einfügen</p>
+    <h2>Texte wie Spielsteine verschieben</h2>
+  </div>
+  <div class="model">
+    <div class="txt">
+      <ul class="facts">
+        <li><b>Markieren:</b> mit gedrückter linker Maustaste über die Zeichen ziehen.</li>
+        <li><b>Kopieren:</b> rechte Maustaste auf die Markierung → „Kopieren“. Der Text bleibt, eine Kopie liegt in der <b>Zwischenablage</b>.</li>
+        <li><b>Ausschneiden:</b> rechte Maustaste → „Ausschneiden“. Der Text verschwindet und liegt in der Zwischenablage.</li>
+        <li><b>Einfügen:</b> an die gewünschte Stelle klicken, rechte Maustaste → „Einfügen“.</li>
+        <li>Schneller mit <b>Shortcuts</b>: <kbd>Strg</kbd> + <kbd>C</kbd> kopieren, <kbd>Strg</kbd> + <kbd>X</kbd> ausschneiden, <kbd>Strg</kbd> + <kbd>V</kbd> einfügen (Mac: <kbd>cmd ⌘</kbd>).</li>
+      </ul>
+    </div>
+    <div class="stack">
+      <div class="wp">
+        <div class="wp-bar"><button class="btn" data-cb="copy">📄 Kopieren</button><button class="btn" data-cb="cut">✂️ Ausschneiden</button><button class="btn" data-cb="paste">📋 Einfügen</button><span class="sep"></span><button class="btn" data-cb="reset">Zurücksetzen</button></div>
+        <div class="wp-desk"><textarea class="wp-page" id="cb-txt" rows="5" aria-label="Schreibbereich" spellcheck="false">Einkaufsliste: Äpfel, Milch, Brot.
+Nicht vergessen:
+Zum Geburtstag von Oma: Blumen</textarea></div>
+      </div>
+      <p class="eyebrow">Zwischenablage</p>
+      <div class="wp-clip" id="cb-clip">(leer)</div>
+      <p class="note" id="cb-fb">Aufgabe: Verschiebe „Blumen“ hinter „Nicht vergessen:“ und kopiere „Milch“ ans Ende.</p>
+    </div>
+  </div>
+  <h3 class="mt">Bringe die Schritte zum Ausschneiden und Einfügen in die richtige Reihenfolge</h3>
+  <div id="cut-order"></div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Tastatur" data-yr="M1" data-title="Erste Schritte" data-sub="Tasten und Shortcuts">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1</p>
+    <h2>Erste Schritte mit der Tastatur</h2>
+    <p class="lead">Tippe die nummerierten Tasten an. Welche Shortcuts sind mit <kbd>Strg</kbd> möglich?</p>
+  </div>
+  <div id="m1-kb"></div>
+  <p class="status" id="m1-info">Tippe eine Taste an.</p>
+  <div class="grid-2 mt">
+    <div class="stack">
+      <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Tasten und Shortcuts</h3></header><p>Benenne die markierten Tasten und beschreibe, welche Shortcuts mit ihnen und der Strg-Taste möglich sind.</p>
+        <div class="controls"><button class="btn" data-reveal="m12" aria-expanded="false">Lösung</button></div><div class="solution" id="m12" hidden><p>1 <b>C</b>: <kbd>Strg</kbd>+<kbd>C</kbd> kopieren · 2 <b>V</b>: <kbd>Strg</kbd>+<kbd>V</kbd> einfügen · 3 <b>N</b>: <kbd>Strg</kbd>+<kbd>N</kbd> neues Dokument · 4 <b>Pfeil links</b>: <kbd>Strg</kbd>+<kbd>←</kbd> Cursor springt ein Wort nach links · 5 <b>Pfeil oben</b>: <kbd>Strg</kbd>+<kbd>↑</kbd> Cursor springt an den Anfang des Absatzes.</p></div></div>
+      <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Vorteile</h3></header><p>Erkläre die Vorteile der Nutzung von Shortcuts.</p>
+        <div class="controls"><button class="btn" data-reveal="m3" aria-expanded="false">Lösung</button></div><p class="solution" id="m3" hidden>Man spart Zeit, weil man nicht erst mit der Maus ins Menü klicken muss. Die Hände bleiben auf der Tastatur, man arbeitet effizienter.</p></div>
+      <div class="task-card"><header><span class="no">4–6</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Am Rechner: Glossar</h3></header><p>Füge in die Glossar-Vorlage Absätze ein, sortiere das Glossar alphabetisch mit „Ausschneiden“ und ordne es thematisch mit Zwischenüberschriften.</p></div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Shortcut-Trainer</h3><span class="score">Richtig: <b id="tr-ok">0</b> / <span id="tr-n">0</span></span></div>
+      <p>Drücke auf der Bildschirmtastatur oben erst <kbd>Strg</kbd>, dann die passende Taste für:</p>
+      <p class="mc-q" id="tr-q" style="font-size:1.5rem"></p>
+      <p class="status" id="tr-fb"></p>
+      <div class="controls"><button class="btn" id="tr-skip">Andere Aufgabe</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Texte eingeben</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Texte eingeben, kopieren und verschieben</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Texte bestehen aus <b>Sätzen</b>, Sätze aus <b>Wörtern</b> und Satzzeichen. Texte werden in <b>Zeilen</b> angeordnet; <kbd>Enter</kbd> beginnt einen neuen <b>Absatz</b>.</li>
+        <li data-step>Löschen: <b>Rücktaste</b> ⌫ löscht links vom Cursor, <b>Entf</b> rechts vom Cursor.</li>
+        <li data-step><b>Kopieren:</b> markieren → Rechtsklick → „Kopieren“ → Stelle anklicken → „Einfügen“. Beim <b>Ausschneiden</b> verschwindet der Text an der alten Stelle.</li>
+        <li data-step><b>Shortcuts</b> sind Tastenkombinationen, die Zeit sparen: <kbd>Strg</kbd>+<kbd>C</kbd> kopieren, <kbd>Strg</kbd>+<kbd>X</kbd> ausschneiden, <kbd>Strg</kbd>+<kbd>V</kbd> einfügen.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne die Tasten <kbd>Strg</kbd>, <kbd>C</kbd>, <kbd>X</kbd> und <kbd>V</kbd> und beschrifte die Shortcuts.</p></div>
+      <div class="box"><span class="tag">Mac</span><p>Auf dem Mac ersetzt <kbd>cmd ⌘</kbd> meist die Taste <kbd>Strg</kbd>.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Stimmt das?</h2></div>
+  <div id="tf"></div>
+  <h3 class="mt">Begriffe</h3>
+  <div id="match"></div>
+</section>
+
+<script>
+sorter($('#mind'), [{id: 'e', name: 'Texte erstellen'}, {id: 'b', name: 'Texte mit Bildern'}, {id: 't', name: 'Tabellen'}, {id: 'v', name: 'Texte verbessern'}], [
+  {t: 'Texte eingeben', c: 'e'}, {t: 'Texte kopieren', c: 'e'}, {t: 'Bilder zuschneiden', c: 'b'}, {t: 'Textfluss', c: 'b'}, {t: 'Bildformatvorlagen', c: 'b'},
+  {t: 'Zeilen', c: 't'}, {t: 'Spalten', c: 't'}, {t: 'Zellen', c: 't'}, {t: 'Fehlererkennung', c: 'v'}, {t: 'Thesaurus', c: 'v'}, {t: 'Grammatikprüfung', c: 'v'}
+]);
+(() => {
+  const ta = $('#g-txt'), start = ta.value;
+  function stat() {
+    const v = ta.value, w = v.trim() ? v.trim().split(/\s+/).length : 0, abs = v.split('\n').filter(l => l.trim()).length;
+    $('#g-stat').innerHTML = `<span>Zeichen: ${v.replace(/\n/g, '').length}</span><span>Wörter: ${w}</span><span>Absätze: ${abs}</span><span>Cursor bei Zeichen ${ta.selectionStart}</span>`;
+  }
+  function edit(fn) { const s = ta.selectionStart, e = ta.selectionEnd; const r = fn(ta.value, s, e); ta.value = r[0]; ta.focus(); ta.setSelectionRange(r[1], r[1]); stat(); }
+  const keep = b => b.addEventListener('mousedown', e => e.preventDefault());
+  [$('#g-bs'), $('#g-del'), $('#g-enter')].forEach(keep);
+  $('#g-bs').onclick = () => edit((v, s, e) => s !== e ? [v.slice(0, s) + v.slice(e), s] : s ? [v.slice(0, s - 1) + v.slice(s), s - 1] : [v, s]);
+  $('#g-del').onclick = () => edit((v, s, e) => s !== e ? [v.slice(0, s) + v.slice(e), s] : [v.slice(0, s) + v.slice(s + 1), s]);
+  $('#g-enter').onclick = () => edit((v, s, e) => [v.slice(0, s) + '\n' + v.slice(e), s + 1]);
+  $('#g-reset').onclick = () => { ta.value = start; stat(); };
+  ['input', 'click', 'keyup', 'select'].forEach(ev => ta.addEventListener(ev, stat));
+  stat();
+  quizTable($('#sym-tab'), $('#sym-q'), $('#sym-all'));
+})();
+explorer($('#ui-fig'), $('#ui-panel'), [
+  {id: 'menue', n: 'Menüleiste', t: 'Registerkarten wie „Start“, „Einfügen“ oder „Überprüfen“. Jede Karte zeigt andere Befehle.'},
+  {id: 'symbol', n: 'Symbolleiste', t: 'Schaltflächen der gewählten Registerkarte, z. B. Schriftart, Schriftgröße, fett, kursiv, unterstrichen.'},
+  {id: 'schreib', n: 'Schreibbereich', t: 'Die weiße Seite: Hier wird der Text eingegeben.'},
+  {id: 'cursor', n: 'Cursor', t: 'Der blinkende Strich zeigt die aktuelle Position. Hier erscheint das nächste Zeichen.'},
+  {id: 'status', n: 'Statusleiste', t: 'Zeigt Seitenzahl, Wörterzahl und Sprache an.'},
+  {id: 'zoom', n: 'Zoomeinstellungen', t: 'Vergrößern oder verkleinern die Ansicht – die Schriftgröße ändert sich dabei nicht.'}
+], {modeRoot: $('#ui-mode'), label: 'Bereich', intro: 'Tippe einen Bereich der Benutzeroberfläche an.'});
+(() => {
+  const ta = $('#cb-txt'), start = ta.value; let clip = '';
+  const show = () => { $('#cb-clip').textContent = clip || '(leer)'; check(); };
+  function check() { const v = ta.value; if (/Nicht vergessen:\s*Blumen/.test(v) && (v.match(/Milch/g) || []).length >= 2) $('#cb-fb').innerHTML = '<b class="good">Geschafft!</b> Blumen verschoben, Milch kopiert.'; }
+  $$('[data-cb]').forEach(b => { b.addEventListener('mousedown', e => e.preventDefault()); b.onclick = () => {
+    const s = ta.selectionStart, e = ta.selectionEnd, v = ta.value, a = b.dataset.cb;
+    if (a === 'reset') { ta.value = start; clip = ''; $('#cb-fb').textContent = 'Aufgabe: Verschiebe „Blumen“ hinter „Nicht vergessen:“ und kopiere „Milch“ ans Ende.'; return show(); }
+    if ((a === 'copy' || a === 'cut') && s === e) { $('#cb-fb').textContent = 'Markiere zuerst ein Wort mit der Maus.'; return; }
+    if (a === 'copy') clip = v.slice(s, e);
+    if (a === 'cut') { clip = v.slice(s, e); ta.value = v.slice(0, s) + v.slice(e); ta.setSelectionRange(s, s); }
+    if (a === 'paste') { if (!clip) { $('#cb-fb').textContent = 'Die Zwischenablage ist leer.'; return; } ta.value = v.slice(0, s) + clip + v.slice(e); ta.setSelectionRange(s + clip.length, s + clip.length); }
+    ta.focus(); show();
+  }; });
+  ta.addEventListener('copy', () => { clip = ta.value.slice(ta.selectionStart, ta.selectionEnd); setTimeout(show); });
+  ta.addEventListener('cut', () => { clip = ta.value.slice(ta.selectionStart, ta.selectionEnd); setTimeout(show); });
+  ta.addEventListener('input', check);
+})();
+orderSteps($('#cut-order'), ['Wort mit gedrückter linker Maustaste markieren', 'Rechtsklick auf die Markierung', '„Ausschneiden“ wählen', 'an die neue Stelle klicken', 'Rechtsklick → „Einfügen“']);
+(() => {
+  const info = {C: '1 – Taste C: Strg + C kopiert die Markierung.', V: '2 – Taste V: Strg + V fügt den Inhalt der Zwischenablage ein.', N: '3 – Taste N: Strg + N öffnet ein neues Dokument.', '←': '4 – Pfeil nach links: Strg + ← springt ein Wort nach links.', '↑': '5 – Pfeil nach oben: Strg + ↑ springt an den Anfang des Absatzes.', Strg: 'Strg (Steuerung): Zusammen mit einer anderen Taste ergibt sie einen Shortcut.'};
+  const T = [['kopieren', 'C'], ['einfügen', 'V'], ['ausschneiden', 'X'], ['neues Dokument', 'N'], ['speichern', 'S'], ['rückgängig machen', 'Z'], ['alles markieren', 'A'], ['suchen', 'F'], ['drucken', 'P']];
+  let held = false, task = null, ok = 0, n = 0, order = [];
+  const kb = keyboard($('#m1-kb'), {marks: {C: 1, V: 2, N: 3, '←': 4, '↑': 5}, onKey(k, el) {
+    if (info[k]) $('#m1-info').innerHTML = `<b>${info[k]}</b>`;
+    if (k === 'Strg') { held = !held; kb.clear(); if (held) kb.press(['Strg']); return; }
+    if (!held) { $('#tr-fb').textContent = 'Erst Strg drücken!'; return; }
+    n++; const good = k === task[1]; if (good) ok++;
+    kb.press([k], good ? 'hit' : 'miss');
+    $('#tr-fb').innerHTML = good ? `<b class="good">Richtig!</b> Strg + ${task[1]} = ${task[0]}` : `<b class="bad">Nicht ganz.</b> ${task[0]}: Strg + ${task[1]}`;
+    $('#tr-ok').textContent = ok; $('#tr-n').textContent = n; held = false;
+    setTimeout(() => { kb.clear(); next(); }, 1100);
+  }});
+  function next() { if (!order.length) order = shuffle(T.slice()); task = order.pop(); $('#tr-q').textContent = task[0]; }
+  $('#tr-skip').onclick = () => { kb.clear(); held = false; $('#tr-fb').textContent = ''; next(); };
+  next();
+})();
+trueFalse($('#tf'), [
+  {t: 'Mit der Enter-Taste beginnt man einen neuen Absatz.', ok: true, why: 'Eine neue Zeile entsteht von allein, wenn die Zeile voll ist.'},
+  {t: 'Die Rücktaste löscht das Zeichen rechts vom Cursor.', ok: false, why: 'Sie löscht links vom Cursor, Entf rechts.'},
+  {t: 'Beim Ausschneiden bleibt der Text an der alten Stelle stehen.', ok: false, why: 'Das passiert beim Kopieren.'},
+  {t: 'Strg + V fügt den Inhalt der Zwischenablage ein.', ok: true, why: 'V wie „Verbinden“ ist eine Eselsbrücke.'},
+  {t: '„Speichern unter“ speichert die Datei mit neuem Namen oder in einem anderen Ordner.', ok: true, why: 'So bleibt die alte Version erhalten.'},
+  {t: 'Ein Leerzeichen zählt nicht als Zeichen.', ok: false, why: 'Auch Leerzeichen sind Zeichen.'}
+]);
+matcher($('#match'), [['Cursor', 'zeigt die aktuelle Schreibposition'], ['Statusleiste', 'zeigt Seitenzahl und Wörterzahl'], ['Zwischenablage', 'speichert kopierten Text kurz'], ['Shortcut', 'Tastenkombination für einen Befehl'], ['Absatz', 'beginnt mit der Enter-Taste'], ['Symbolleiste', 'Schaltflächen wie fett und kursiv']]);
+</script>

@@ -1,0 +1,203 @@
+<!--
+title: Pixel und Rastergrafiken
+short: Pixel
+time: 2 Unterrichtsstunden
+q: Wie wird ein Bild im Computer gespeichert?
+facts: Pixel als kleinste Einheit eines digitalen Bildes, Auflösung | Schwarz-Weiß-Bilder binär codieren (0 = schwarz, 1 = weiß), Pixelraster | Bildgröße und Farbtiefe einer Rastergrafik | M2 Dateiformate JPEG, PNG, GIF, TIFF (Buchseite 56 und Kapitelauftakt lagen nicht vor)
+inter: In ein Bild hineinzoomen · Auflösung verändern · Smiley-Pixelraster mit Live-Binärcode · eigenes 10·10-Muster · Farbtiefe 1 bis 24 Bit · Dateiformate sortieren
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Bilder und Videos</p>
+      <h1>Pixel und Rastergrafiken<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Ein Foto auf dem Handy sieht glatt und scharf aus. Doch zoomt man ganz nah heran, sieht man kleine Quadrate. Wie wird ein Bild im Computer gespeichert?</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wie viele Fotos und Videos sind auf deinem Handy? Wie viel Speicher brauchen sie?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie wird ein Bild im Computer gespeichert?</p></div>
+      <div class="controls"><button class="btn primary" data-go="pixel">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="pixel" data-label="Pixel" data-yr="Einstieg" data-title="Bilder aus Punkten" data-sub="Pixel und Auflösung">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Pixel</p>
+      <h2>Bilder aus kleinen Punkten</h2>
+      <ul class="facts">
+        <li>Fotos bestehen aus vielen kleinen Bildpunkten, den <b>Pixeln</b>.</li>
+        <li>Pixel sind die <b>kleinsten Einheiten</b> eines digitalen Bildes. Jedes Pixel hat eine eindeutige <b>Farbe</b> und <b>Position</b>.</li>
+        <li>Je mehr Pixel ein Bild enthält, desto höher ist seine <b>Auflösung</b> und desto klarer erscheint es.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Auflösung</h3><output id="res-o" class="mono"></output></div>
+      <canvas id="cv-res" class="pix-cv" aria-label="Bild mit veränderbarer Auflösung"></canvas>
+      <label class="slider-row">Pixel pro Zeile <input id="res" type="range" min="2" max="8" value="4"></label>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="sw" data-label="Schwarz-Weiß" data-yr="Erarbeitung" data-title="Schwarz-Weiß-Bilder codieren" data-sub="0 und 1 im Pixelraster">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Codierung Schwarz-Weiß-Bild</p>
+    <h2>Bilder aus 0 und 1</h2>
+    <p class="lead">Bei einem Schwarz-Weiß-Bild sind alle schwarzen Pixel mit <b>0</b> codiert, die weißen mit <b>1</b>. In einer Bilddatei steckt also ein <b>binärer Code</b>. Wird ein Bild in ein Raster aus Pixeln aufgeteilt, spricht man von einer <b>Rastergrafik</b>. Male mit der Maus!</p>
+  </div>
+  <div class="px-pair">
+    <div><p class="eyebrow">Abb. 1: Rastergrafik</p><div id="pg1"></div></div>
+    <div><p class="eyebrow">Pixelraster (Code)</p><div class="pxcode" id="pc1"></div></div>
+    <div class="stack" style="flex:1;min-width:14rem">
+      <div class="controls" style="margin-top:0"><button class="btn" id="pg1-smile">Smiley aus dem Buch</button><button class="btn" id="pg1-clear">Leeren</button></div>
+      <div class="task-card"><header><span class="no">A</span><h3>Dein Muster</h3></header><p>Zeichne zwei Quadrate mit 10 · 10 Kästchen. Zeichne in das erste ein Schwarz-Weiß-Muster und erstelle im zweiten die passende Binärcodierung. Probiere es unten aus!</p></div>
+    </div>
+  </div>
+  <div class="px-pair mt"><div id="pg2"></div><div class="pxcode" id="pc2"></div></div>
+</section>
+
+<section class="station" id="farbtiefe" data-label="Farbtiefe" data-yr="Erarbeitung" data-title="Bildgröße und Farbtiefe" data-sub="Bits pro Pixel">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Eigenschaften einer Rastergrafik</p>
+      <h2>Bildgröße und Farbtiefe</h2>
+      <ul class="facts">
+        <li>Die <b>Bildgröße</b> ist die Anzahl der Pixel in Breite und Höhe. Der Smiley hat 8 · 8 Pixel.</li>
+        <li>Die <b>Farbtiefe</b> gibt an, wie viele <b>Bits pro Pixel</b> verwendet werden. Schwarz-Weiß braucht nur <b>1 Bit</b> (2 Farben).</li>
+        <li>Mehr Bits pro Pixel → mehr Farben → mehr Speicherplatz.</li>
+      </ul>
+      <p class="status" id="ft-status"></p>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Farbtiefe</h3><div id="ft-seg"></div></div>
+      <canvas id="cv-ft" class="pix-cv" aria-label="Bild mit verschiedener Farbtiefe"></canvas>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m2" data-label="M2 Formate" data-yr="M2" data-title="Dateiformate für Rastergrafiken" data-sub="JPEG, PNG, GIF, TIFF">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M2</p>
+    <h2>Dateiformate für Rastergrafiken</h2>
+    <p class="lead">Damit ein Computer Rastergrafiken anzeigen kann, werden sie in einem passenden <b>Dateiformat</b> gespeichert. Manche bieten hohe Qualität, andere sparen Speicherplatz.</p>
+  </div>
+  <div class="table-wrap"><table class="cmp">
+    <thead><tr><th>Name</th><th>Endung</th><th>Eigenschaften</th></tr></thead>
+    <tbody>
+      <tr><th><span class="ext jpg">JPG</span> JPEG – Joint Photographic Experts Group</th><td class="mono">.jpg .jpeg</td><td>spart Speicherplatz, ein Teil der Bildinformationen geht beim Speichern verloren</td></tr>
+      <tr><th><span class="ext" style="background:#DC2626">PNG</span> PNG – Portable Network Graphics</th><td class="mono">.png</td><td>für Bilder mit Linien und Flächen, eher für Logos und Grafiken; durchsichtige Ebenen; Bildinformationen bleiben erhalten</td></tr>
+      <tr><th><span class="ext" style="background:#CA8A04">GIF</span> GIF – Graphics Interchange Format</th><td class="mono">.gif</td><td>kann aus mehreren Einzelbildern bestehen, die als Animation abgespielt werden; Bildinformationen bleiben erhalten</td></tr>
+      <tr><th><span class="ext" style="background:#0284C7">TIFF</span> TIF – Tagged Image File Format</th><td class="mono">.tif .tiff</td><td>speichert in hoher Qualität, kein Informationsverlust, benötigt viel Speicherplatz</td></tr>
+    </tbody></table></div>
+  <div class="cols-2 mt">
+    <div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Verlust oder nicht?</h3></header><p>Ordne die Dateiformate danach, ob beim Speichern Informationen verloren gehen.</p></div>
+      <div id="fmt-sort"></div>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Urlaubsfotos</h3></header><p>Nenne ein geeignetes Dateiformat für Urlaubsfotos.</p>
+        <div class="controls"><button class="btn" data-reveal="f2" aria-expanded="false">Lösung</button></div><p class="solution" id="f2" hidden><b>JPEG</b>: Fotos brauchen wenig Speicherplatz, der kleine Qualitätsverlust fällt kaum auf.</p></div>
+      <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Ricos Logo</h3></header><p>Rico benötigt ein kleines Logo mit durchsichtigem Hintergrund. Wähle begründet ein Dateiformat aus.</p>
+        <div class="controls"><button class="btn" data-reveal="f3" aria-expanded="false">Lösung</button></div><p class="solution" id="f3" hidden><b>PNG</b>: geeignet für Logos mit Linien und Flächen, unterstützt durchsichtige Ebenen und speichert ohne Verlust.</p></div>
+      <div class="task-card"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Druck im Schulbuch</h3></header><p>Begründe, welches Dateiformat für den Druck farbiger Fotos in hoher Qualität geeignet ist.</p>
+        <div class="controls"><button class="btn" data-reveal="f4" aria-expanded="false">Lösung</button></div><p class="solution" id="f4" hidden><b>TIFF</b>: speichert in hoher Qualität ohne Informationsverlust. Der große Speicherbedarf ist beim Druck nicht so wichtig.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Pixel und Rastergrafiken</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Pixel und Rastergrafiken</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Digitale Bilder bestehen aus <b>Pixeln</b>, den kleinsten Bildpunkten. Jedes Pixel hat eine Farbe und eine Position.</li>
+        <li data-step>Je mehr Pixel, desto höher die <b>Auflösung</b> und desto klarer das Bild.</li>
+        <li data-step>Ein Bild aus einem Raster von Pixeln heißt <b>Rastergrafik</b>. Bei Schwarz-Weiß-Bildern: schwarz = 0, weiß = 1.</li>
+        <li data-step><b>Bildgröße</b> = Anzahl der Pixel in Breite und Höhe. <b>Farbtiefe</b> = Anzahl der Bits pro Pixel.</li>
+        <li data-step>Dateiformate: <b>JPEG</b> (spart Platz, mit Verlust), <b>PNG</b> (Logos, durchsichtig, ohne Verlust), <b>GIF</b> (Animationen), <b>TIFF</b> (hohe Qualität, viel Speicher).</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne ein 8 · 8-Pixelbild und schreibe den Binärcode daneben.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Üben und wiederholen</h2></div>
+  <h3>Code → Bild: Male das Bild nach dem Code</h3>
+  <div class="px-pair"><div class="pxcode" id="target-code"></div><div id="pg3"></div><div class="stack"><button class="btn primary" id="pg3-check">Prüfen</button><button class="btn" id="pg3-new">Neues Bild</button><p class="fb" id="pg3-fb"></p></div></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ================= Bild-Quelle (gezeichnet) ================= */
+function scene(w, h) {
+  const c = document.createElement('canvas'); c.width = w; c.height = h; const x = c.getContext('2d');
+  const g = x.createLinearGradient(0, 0, 0, h); g.addColorStop(0, '#38BDF8'); g.addColorStop(.65, '#BAE6FD'); x.fillStyle = g; x.fillRect(0, 0, w, h);
+  x.fillStyle = '#FACC15'; x.beginPath(); x.arc(w * .75, h * .25, w * .12, 0, 7); x.fill();
+  x.fillStyle = '#65A30D'; x.beginPath(); x.ellipse(w * .3, h * 1.05, w * .6, h * .4, 0, 0, 7); x.fill();
+  x.fillStyle = '#15803D'; x.beginPath(); x.ellipse(w * .85, h * 1.1, w * .5, h * .4, 0, 0, 7); x.fill();
+  x.fillStyle = '#78350F'; x.fillRect(w * .22, h * .45, w * .05, h * .25);
+  x.fillStyle = '#166534'; x.beginPath(); x.arc(w * .245, h * .42, w * .11, 0, 7); x.fill();
+  x.fillStyle = '#DC2626'; x.fillRect(w * .5, h * .58, w * .16, h * .12); x.fillStyle = '#7F1D1D'; x.beginPath(); x.moveTo(w * .48, h * .58); x.lineTo(w * .58, h * .48); x.lineTo(w * .68, h * .58); x.fill();
+  return c;
+}
+const SRC = scene(256, 192);
+function drawPix(cv, n, quant) {
+  const dpr = Math.min(devicePixelRatio || 1, 2), W = cv.clientWidth, H = cv.clientHeight || W * .75;
+  cv.width = W * dpr; cv.height = H * dpr; const ctx = cv.getContext('2d');
+  const t = document.createElement('canvas'); t.width = n; t.height = Math.round(n * .75); const tx = t.getContext('2d'); tx.drawImage(SRC, 0, 0, t.width, t.height);
+  if (quant) { const d = tx.getImageData(0, 0, t.width, t.height); for (let i = 0; i < d.data.length; i += 4) { const q = quant(d.data[i], d.data[i + 1], d.data[i + 2]); d.data[i] = q[0]; d.data[i + 1] = q[1]; d.data[i + 2] = q[2]; } tx.putImageData(d, 0, 0); }
+  ctx.imageSmoothingEnabled = false; ctx.drawImage(t, 0, 0, cv.width, cv.height);
+}
+(() => {
+  const sizes = [4, 8, 16, 32, 64, 128, 256];
+  const up = () => { const n = sizes[+$('#res').value - 2]; drawPix($('#cv-res'), n); $('#res-o').textContent = `${n} · ${Math.round(n * .75)} = ${(n * Math.round(n * .75)).toLocaleString('de-DE')} Pixel`; };
+  $('#res').oninput = up; onShow.push(id => id === 'pixel' && requestAnimationFrame(up)); requestAnimationFrame(up);
+})();
+
+/* ================= Schwarz-Weiß ================= */
+const SMILE = ['11000011', '10000001', '00100100', '00100100', '00000000', '00111100', '10011001', '11000011'];
+const g1 = pixelGrid($('#pg1'), {w: 8, h: 8, data: SMILE, code: $('#pc1')});
+$('#pg1-smile').onclick = () => g1.set(SMILE); $('#pg1-clear').onclick = () => g1.clear();
+pixelGrid($('#pg2'), {w: 10, h: 10, code: $('#pc2')});
+
+/* ================= Farbtiefe ================= */
+(() => {
+  const Q = {
+    1: [(r, g, b) => { const v = (r + g + b) / 3 > 140 ? 255 : 0; return [v, v, v]; }, 2],
+    2: [(r, g, b) => { const v = Math.round((r + g + b) / 3 / 85) * 85; return [v, v, v]; }, 4],
+    8: [(r, g, b) => [Math.round(r / 36.4) * 36.4, Math.round(g / 36.4) * 36.4, Math.round(b / 85) * 85], 256],
+    24: [null, 16777216]
+  };
+  let bits = 1;
+  const up = () => { drawPix($('#cv-ft'), 128, Q[bits][0]); $('#ft-status').innerHTML = `<b>${bits} Bit</b> pro Pixel → <b>${Q[bits][1].toLocaleString('de-DE')}</b> mögliche Farben. Ein Bild mit 8 · 8 Pixeln braucht dann ${64 * bits} Bit = ${64 * bits / 8} Byte.`; };
+  seg($('#ft-seg'), [[1, '1 Bit'], [2, '2 Bit'], [8, '8 Bit'], [24, '24 Bit']], v => { bits = +v; up(); });
+  onShow.push(id => id === 'farbtiefe' && requestAnimationFrame(up));
+})();
+
+sorter($('#fmt-sort'), [{id: 'v', name: 'Informationen gehen verloren'}, {id: 'o', name: 'ohne Verlust'}], [
+  {t: 'JPEG', c: 'v', why: 'spart Speicherplatz'}, {t: 'PNG', c: 'o'}, {t: 'GIF', c: 'o'}, {t: 'TIFF', c: 'o'}
+]);
+
+/* ================= Übung Code → Bild ================= */
+(() => {
+  const P = [SMILE, ['00011000', '00111100', '01111110', '11111111', '11111111', '01111110', '00111100', '00011000'], ['10000001', '01000010', '00100100', '00011000', '00011000', '00100100', '01000010', '10000001'], ['11100111', '11000011', '10000001', '00000000', '00000000', '10000001', '11000011', '11100111'], ['00000000', '01111110', '01000010', '01011010', '01011010', '01000010', '01111110', '00000000']];
+  let k = 0;
+  const g = pixelGrid($('#pg3'), {w: 8, h: 8});
+  const show = () => { $('#target-code').innerHTML = P[k].map(r => `<span>${r.split('').join(' ')}</span>`).join(''); g.clear(); $('#pg3-fb').textContent = ''; };
+  $('#pg3-new').onclick = () => { k = (k + 1) % P.length; show(); };
+  $('#pg3-check').onclick = () => { const d = g.get(), wrong = d.reduce((s, r, y) => s + [...r].filter((c, x) => c !== P[k][y][x]).length, 0); $('#pg3-fb').className = 'fb ' + (wrong ? 'err' : 'ok'); $('#pg3-fb').textContent = wrong ? `${wrong} Pixel stimmen noch nicht.` : 'Perfekt – das Bild passt zum Code!'; };
+  show();
+})();
+mcQuiz($('#quiz'), [
+  {q: 'Was ist ein Pixel?', a: ['der kleinste Bildpunkt eines digitalen Bildes', 'ein Dateiformat', 'eine Kamera', 'ein Bildbearbeitungsprogramm'], ok: 0, why: 'Mit Farbe und Position.'},
+  {q: 'Wie wird ein schwarzes Pixel im Buch codiert?', a: ['0', '1', '255', 'S'], ok: 0, why: 'Schwarz = 0, Weiß = 1.'},
+  {q: 'Was gibt die Farbtiefe an?', a: ['wie viele Bits pro Pixel verwendet werden', 'wie groß das Bild ist', 'wie hell das Bild ist', 'wie viele Bilder es gibt'], ok: 0, why: 'z. B. 1 Bit für Schwarz-Weiß.'},
+  {q: 'Welches Format eignet sich für Animationen?', a: ['GIF', 'JPEG', 'TIFF', 'PNG'], ok: 0, why: 'Mehrere Einzelbilder.'},
+  {q: 'Bei welchem Format gehen Informationen verloren?', a: ['JPEG', 'PNG', 'TIFF', 'GIF'], ok: 0, why: 'Dafür spart es Platz.'},
+  {q: 'Was bedeutet eine höhere Auflösung?', a: ['mehr Pixel, klareres Bild', 'weniger Farben', 'kleinere Datei', 'schwarz-weiß'], ok: 0, why: 'Mehr Bildpunkte.'}
+]);
+</script>

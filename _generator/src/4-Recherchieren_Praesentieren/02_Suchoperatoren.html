@@ -1,0 +1,221 @@
+<!--
+title: Präzise suchen mit Operatoren
+short: Suchoperatoren
+time: 2 Unterrichtsstunden
+q: Wie findet man schneller genau die Informationen, die man braucht?
+facts: Präzise Suchanfragen mit treffenden und mehreren Suchbegriffen | Suchoptionen und Operatoren: „…“, -, site:, OR, filetype:, *, after:, AND, map: | M4 Ergebnisse einer Suchmaschine bewerten (Werbung!) | M5 Suchanfragen mit Operatoren verbessern
+inter: Mini-Suchmaschine mit echten Operatoren · Operator-Tabelle aufdecken · Merles Treffer bewerten · Suchanfragen verbessern und sofort testen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Recherchieren und Präsentieren</p>
+      <h1>Präzise suchen<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Die Suche nach „Jaguar“ liefert Raubkatzen – und Autos. Mit ein paar Tricks findest du genau, was du brauchst.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Du suchst „Tiere im Wald“ und bekommst 2 Millionen Treffer. Was nun?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie findet man schneller genau die Informationen, die man braucht?</p></div>
+      <div class="controls"><button class="btn primary" data-go="praezise">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="praezise" data-label="Präzise suchen" data-yr="Erarbeitung" data-title="Präzise Suchanfragen" data-sub="Treffende Suchbegriffe">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Präzise Suchanfragen stellen</p>
+    <h2>Treffende Suchbegriffe</h2>
+    <p class="lead">Die Suchbegriffe sollten möglichst genau ausdrücken, was man sucht: <b>Schwarzbär</b> statt nur <b>Bär</b>. Mit <b>mehreren</b> Suchbegriffen bekommt man weniger, aber genauere Ergebnisse: <b>Schwarzbär Verbreitungsgebiet</b>.</p>
+  </div>
+  <div class="search" id="s1"></div>
+  <div class="controls"><span class="note">Probiere:</span><button class="btn" data-q1="Bär">Bär</button><button class="btn" data-q1="Schwarzbär">Schwarzbär</button><button class="btn" data-q1="Schwarzbär Verbreitungsgebiet">Schwarzbär Verbreitungsgebiet</button></div>
+</section>
+
+<section class="station" id="operatoren" data-label="Operatoren" data-yr="Erarbeitung" data-title="Suchoptionen nutzen" data-sub="Die Operatoren">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Suchoptionen nutzen</p>
+    <h2>Operatoren</h2>
+    <p class="lead">Tricks für bessere Ergebnisse heißen <b>Suchoptionen</b>. Dafür kombiniert man Suchbegriffe mit Anweisungen, den <b>Operatoren</b>. Klicke ein Beispiel an – es läuft in der Mini-Suchmaschine.</p>
+  </div>
+  <div class="cols-2" style="grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)">
+    <div class="table-wrap"><table class="cmp op-tab">
+      <thead><tr><th>Operator</th><th>Funktion</th><th>Beispiel</th></tr></thead>
+      <tbody>
+        <tr><th class="mono">„…“</th><td>Suche nach genauen Wörtern</td><td><button class="btn ex" data-q="&quot;Weltbevölkerung im Jahr 2040&quot;">„Weltbevölkerung im Jahr 2040“</button></td></tr>
+        <tr><th class="mono">-</th><td>schließt Seiten aus, die das Wort enthalten</td><td><button class="btn ex" data-q="Jaguar -Auto">Jaguar -Auto</button></td></tr>
+        <tr><th class="mono">site:</th><td>Suche auf bestimmten Webseiten</td><td><button class="btn ex" data-q="Lernhilfen Mathematik site:westermann.de">Lernhilfen Mathematik site:westermann.de</button></td></tr>
+        <tr><th class="mono">OR</th><td>Suche nach einem Begriff oder einem anderen</td><td><button class="btn ex" data-q="Hund OR Katze">Hund OR Katze</button></td></tr>
+        <tr><th class="mono">filetype:</th><td>nur bestimmte Dateitypen</td><td><button class="btn ex" data-q="Artgerechte Haltung Zwergkaninchen filetype:pdf">… Zwergkaninchen filetype:pdf</button></td></tr>
+        <tr><th class="mono">*</th><td>Platzhalter, den die Suchmaschine ergänzt</td><td><button class="btn ex" data-q="&quot;Was lange *, wird endlich gut&quot;">„Was lange *, wird endlich gut“</button></td></tr>
+        <tr><th class="mono">after:</th><td>nur Seiten nach einem Datum</td><td><button class="btn ex" data-q="Klimawandel after:2024-01-01">Klimawandel after:2024-01-01</button></td></tr>
+        <tr><th class="mono">AND</th><td>zwei verknüpfte Suchbegriffe</td><td><button class="btn ex" data-q="Schildkröte AND Ernährung">Schildkröte AND Ernährung</button></td></tr>
+        <tr><th class="mono">map:</th><td>Ergebnisse auf der Kartenfunktion</td><td><span class="note">map:Minigolf Mannheim</span></td></tr>
+      </tbody></table></div>
+    <div class="search" id="s2"></div>
+  </div>
+  <div class="task-card mt"><header><span class="no">A</span><h3>Operatoren</h3></header><p>Nenne verschiedene Operatoren und beschreibe, wofür man sie bei einer Internetrecherche einsetzen kann.</p></div>
+</section>
+
+<section class="station" id="m4" data-label="M4 Merle" data-yr="M4" data-title="Ergebnisse bewerten" data-sub="Merle sucht ein Haustier">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Material M4</p>
+    <h2>Ergebnisse einer Suchmaschine</h2>
+    <p class="lead">Merle möchte sich mit Zustimmung ihrer Eltern ein neues Haustier anschaffen und herausfinden, welches am besten geeignet ist.</p>
+  </div>
+  <div class="cols-2">
+    <div class="serp mini">
+      <div class="serp-q"><b class="gaagle">Gaagle</b><span class="serp-term">Welches Haustier ist das Beste?</span><span class="serp-btn">🔍</span></div>
+      <div class="serp-hit"><span class="ad">Gesponsert</span><small class="mono">www.deinbuch.de/bestehaustiere</small><a>Die 5 besten Haustiere</a><p>Finde die 5 besten Haustiere. Finde weitere Bücher, Kalender und mehr …</p></div>
+      <div class="serp-hit"><small class="mono">https://www.tierchenwelt.de › Spiele › Tests</small><a>Welches Haustier passt zu mir?</a><p>Haustier-Steckbriefe zu vielen Hunde-, Katzen-, Hamster-, Meerschweinchen- und Vogelarten sowie nützliche Tipps …</p></div>
+      <div class="serp-hit"><small class="mono">https://www.selbst.de › Wohnen › Haustiere</small><a>Top 10 Tierrassen: Die beliebtesten Haustiere</a><p>Was sind die beliebtesten Haustiere? Katzen – Hunde – Kaninchen – Gecko – Meerschweinchen …</p></div>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Treffer bewerten</h3></header><p>Beschreibe das Suchergebnis von Merle und bewerte die Suchtreffer.</p></div>
+      <div id="m4-sort"></div>
+      <div class="task-card mt"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Zielführend?</h3></header><p>Begründe, ob die Suchanfrage zielführend war, und mache Verbesserungsvorschläge.</p>
+        <div class="controls"><button class="btn" data-reveal="m43" aria-expanded="false">Lösung</button></div><p class="solution" id="m43" hidden>Nicht ganz: „das Beste“ gibt es nicht – es kommt auf Merle an (Platz, Zeit, Allergien, Kosten). Die Frage führt zu Werbung und Ranglisten. Besser: <span class="mono">Haustier passend Familie Wohnung Zeit Pflege</span> oder <span class="mono">„welches Haustier passt zu mir“ -kaufen</span>.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m5" data-label="M5 Verbessern" data-yr="M5" data-title="Operatoren nutzen" data-sub="Suchanfragen verbessern">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M5</p>
+    <h2>Suchanfragen verbessern</h2>
+    <p class="lead">Sechs Suchanfragen sind noch nicht optimal. Verbessere sie mit passenden Operatoren – und teste sie gleich in der Suchmaschine.</p>
+  </div>
+  <div class="m5" id="m5-list"></div>
+  <div class="search mt" id="s3"></div>
+  <div class="task-card mt"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Eigene Suchanfrage</h3></header><p>Erstelle eine eigene Suchanfrage zu einem Thema, das dich interessiert. Nutze mindestens zwei Operatoren und erkläre, warum du sie gewählt hast.</p></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Suchoperatoren</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Präzise suchen</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Treffende, genaue Suchbegriffe verwenden. Mehrere Begriffe → weniger, aber genauere Ergebnisse.</li>
+        <li data-step><b>„…“</b> genaue Wortgruppe · <b>-</b> Wort ausschließen · <b>site:</b> nur auf einer Webseite suchen</li>
+        <li data-step><b>OR</b> das eine oder das andere · <b>filetype:</b> nur bestimmte Dateitypen (z. B. pdf) · <b>*</b> Platzhalter</li>
+        <li data-step>Suchergebnisse kritisch prüfen: <b>„Gesponsert“</b> bedeutet Werbung. Beliebt ist nicht gleich passend.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Beispiele</span><p>Schreibe zu jedem Operator ein eigenes Beispiel in dein Heft.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Welcher Operator passt?</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ================= Mini-Suchmaschine ================= */
+const DOCS = [
+  ['Der Bär – König des Waldes', 'tierlexikon.de', 'html', '2023-05-02', 'Braunbär, Eisbär, Schwarzbär: Alle Bärenarten im Überblick.'],
+  ['Bärenstarke Angebote im Möbelhaus', 'moebel-baer.de', 'html', '2025-01-10', 'Sofas und Tische zum Bärenpreis.'],
+  ['Gummibären selber machen', 'backen-mit-kindern.de', 'html', '2022-11-11', 'Rezept für bunte Gummibären.'],
+  ['Schwarzbär – Steckbrief', 'tierlexikon.de', 'html', '2024-03-15', 'Der Schwarzbär lebt in Nordamerika. Größe, Nahrung und Lebensweise.'],
+  ['Das Verbreitungsgebiet des Schwarzbären', 'wildtiere-welt.de', 'html', '2024-08-01', 'Karte: Schwarzbär Verbreitungsgebiet von Alaska bis Mexiko.'],
+  ['Jaguar – die größte Raubkatze Amerikas', 'tierlexikon.de', 'html', '2023-09-09', 'Der Jaguar lebt im Regenwald und kann gut schwimmen.'],
+  ['Jaguar F-Type im Test', 'auto-test.de', 'html', '2025-02-20', 'Das neue Auto von Jaguar im großen Fahrbericht.'],
+  ['Jaguar Auto gebraucht kaufen', 'autoboerse.de', 'html', '2025-03-01', 'Gebrauchte Jaguar Autos zu fairen Preisen.'],
+  ['Weltbevölkerung im Jahr 2040', 'statistik-wissen.de', 'pdf', '2024-06-30', 'Prognose: Die Weltbevölkerung im Jahr 2040 liegt bei etwa 9 Milliarden Menschen.'],
+  ['Wie wächst die Weltbevölkerung?', 'kindernachrichten.de', 'html', '2023-02-14', 'Im Jahr 2023 lebten 8 Milliarden Menschen; 2040 werden es mehr sein.'],
+  ['Lernhilfen Mathematik – Klasse 5', 'westermann.de', 'html', '2025-04-04', 'Lernhilfen Mathematik mit Übungen und Lösungen.'],
+  ['Lernhilfen Mathematik kostenlos', 'mathe-hilfe-online.de', 'html', '2024-10-10', 'Kostenlose Lernhilfen Mathematik zum Ausdrucken.'],
+  ['Hund als Haustier', 'haustier-ratgeber.de', 'html', '2024-01-12', 'Was ein Hund braucht: Auslauf, Futter, Zeit.'],
+  ['Katze als Haustier', 'haustier-ratgeber.de', 'html', '2024-01-13', 'Die Katze ist unabhängig, braucht aber Zuwendung.'],
+  ['Meerschweinchen halten', 'haustier-ratgeber.de', 'html', '2024-01-14', 'Meerschweinchen leben gern zu zweit.'],
+  ['Artgerechte Haltung von Zwergkaninchen', 'tierschutzbund.de', 'pdf', '2023-04-01', 'Merkblatt: artgerechte Haltung Zwergkaninchen im Gehege.'],
+  ['Zwergkaninchen kaufen', 'zoo-shop.de', 'html', '2025-01-01', 'Zwergkaninchen und Zubehör für die Haltung günstig kaufen.'],
+  ['Sprichwörter und ihre Bedeutung', 'deutsch-lernen.de', 'html', '2022-07-07', '„Was lange währt, wird endlich gut“ bedeutet: Geduld lohnt sich.'],
+  ['Ernährung von Schildkröten', 'wll.de', 'pdf', '2024-05-05', 'Die Ernährungsgewohnheiten von Schildkröten sind vielfältig.'],
+  ['Sushi-Ratgeber 2025', 'wll.de', 'pdf', '2025-01-15', 'Thunfisch und Lockbojen: Fisch mit gutem Gewissen.'],
+  ['Schildkröte im Garten', 'garten-tipps.de', 'html', '2023-06-06', 'So fühlt sich die Schildkröte im Garten wohl.'],
+  ['Tiere im Wald: Diese Wildtiere leben in deutschen Wäldern', 'petra.de', 'html', '2023-10-10', 'Rotwild, Reh, Damwild, Wildschwein, Baummarder.'],
+  ['Folgen des Klimawandels', 'umwelt-infos.de', 'html', '2022-03-03', 'Der Klimawandel verändert Wetter und Natur.'],
+  ['Klimawandel: Neue Studie 2024', 'forschung-aktuell.de', 'pdf', '2024-09-09', 'Aktuelle Daten zum Klimawandel und seinen Auswirkungen.'],
+  ['Englisch Klassenarbeitstrainer', 'westermann.de', 'html', '2024-07-07', 'Klassenarbeitstrainer Englisch für die Klassen 5 und 6.'],
+  ['Schwimmkurs Anmeldung', 'stadtbad-mannheim.de', 'html', '2025-02-02', 'Anmeldung zum Schwimmkurs für Kinder online.'],
+  ['Die Planeten unseres Sonnensystems', 'weltall-fuer-kinder.de', 'html', '2023-12-12', 'Weltall Planeten Infos: Merkur, Venus, Erde, Mars …'],
+  ['Erdbeeren – Obst oder Nuss?', 'garten-tipps.de', 'html', '2024-06-01', 'Erdbeeren sind botanisch Sammelnussfrüchte – aber wir essen sie als Obst.'],
+  ['Mittelalter – Geschichte für Kinder', 'geschichte-kids.de', 'html', '2024-02-02', 'Burgen, Ritter und Bauern: Geschichte Mittelalter einfach erklärt.']
+];
+function runSearch(q) {
+  const toks = [], re = /"([^"]*)"|„([^“"]*)[“"]|(\S+)/g; let m;
+  while ((m = re.exec(q))) toks.push(m[1] != null ? {p: m[1]} : m[2] != null ? {p: m[2]} : {w: m[3]});
+  const must = [], not = [], ors = []; let site, ft, after, group = [];
+  for (let i = 0; i < toks.length; i++) {
+    const t = toks[i];
+    if (t.w === 'AND') continue;
+    if (t.w === 'OR') { if (group.length) { ors.push(group.pop()); } continue; }
+    if (t.w && t.w.startsWith('site:')) { site = t.w.slice(5).toLowerCase(); continue; }
+    if (t.w && t.w.startsWith('filetype:')) { ft = t.w.slice(9).toLowerCase(); continue; }
+    if (t.w && t.w.startsWith('after:')) { after = t.w.slice(6); continue; }
+    if (t.w && t.w.startsWith('-') && t.w.length > 1) { not.push(t.w.slice(1).toLowerCase()); continue; }
+    const item = t.p != null ? {p: t.p} : {w: t.w};
+    if (toks[i - 1] && toks[i - 1].w === 'OR') { ors.push(item); continue; }
+    group.push(item);
+  }
+  must.push(...group);
+  const esc = s => s.replace(/[.+?^${}()|[\]\\]/g, '\\$&');
+  const has = (txt, it) => it.p != null ? new RegExp(esc(it.p.toLowerCase()).replace(/\\\*|\*/g, '[\\wäöüß]+'), 'i').test(txt) : new RegExp('(^|[^a-zäöüß])' + esc(it.w.toLowerCase().replace(/[?!.,]/g, '')), 'i').test(txt);
+  return DOCS.filter(([ti, dom, typ, date, tx]) => {
+    const txt = (ti + ' ' + tx).toLowerCase();
+    if (site && !dom.endsWith(site)) return false;
+    if (ft && typ !== ft) return false;
+    if (after && date < after) return false;
+    if (not.some(n => txt.includes(n))) return false;
+    if (!must.every(it => has(txt, it))) return false;
+    if (ors.length && !ors.some(it => has(txt, it))) return false;
+    return must.length || ors.length || site || ft;
+  });
+}
+function searchBox(root, q0) {
+  root.innerHTML = `<form class="sb-form"><b class="gaagle">Gaagle</b><input class="mono" value="${q0 || ''}" aria-label="Suchanfrage"><button class="btn primary">🔍 Suchen</button></form><p class="sb-count note"></p><div class="sb-res"></div>`;
+  const inp = $('input', root);
+  const go = q => {
+    if (q != null) inp.value = q;
+    const r = runSearch(inp.value);
+    const fake = Math.round((r.length ? r.length * 137000 / (inp.value.split(/\s+/).length ** 2) : 0));
+    $('.sb-count', root).textContent = r.length ? `Ungefähr ${fake.toLocaleString('de-DE')} Ergebnisse – hier die ${r.length} aus unserem Beispielnetz:` : 'Keine Treffer. Prüfe die Schreibweise oder lass einen Operator weg.';
+    $('.sb-res', root).innerHTML = r.map(([ti, dom, typ, date, tx]) => `<div class="serp-hit"><small class="mono">https://www.${dom}${typ === 'pdf' ? ' <span class="pdf">PDF</span>' : ''} · ${date.split('-').reverse().join('.')}</small><a>${ti}</a><p>${tx}</p></div>`).join('');
+  };
+  $('form', root).onsubmit = e => { e.preventDefault(); go(); };
+  go();
+  return go;
+}
+const s1 = searchBox($('#s1'), 'Bär');
+$$('[data-q1]').forEach(b => b.onclick = () => s1(b.dataset.q1));
+const s2 = searchBox($('#s2'), 'Jaguar');
+$$('.op-tab [data-q]').forEach(b => b.onclick = () => s2(b.dataset.q));
+const s3 = searchBox($('#s3'), '');
+
+/* ================= M4 ================= */
+sorter($('#m4-sort'), [{id: 'w', name: 'Werbung'}, {id: 'h', name: 'hilfreich'}, {id: 'n', name: 'beantwortet die Frage kaum'}], [
+  {t: 'deinbuch.de – Die 5 besten Haustiere', c: 'w', why: '„Gesponsert“: Hier will jemand Bücher verkaufen.'},
+  {t: 'tierchenwelt.de – Welches Haustier passt zu mir?', c: 'h', why: 'Steckbriefe und Tipps passend zu Merles Frage.'},
+  {t: 'selbst.de – Die beliebtesten Haustiere', c: 'n', why: 'Beliebt heißt nicht, dass es zu Merle passt.'}
+]);
+
+/* ================= M5 ================= */
+(() => {
+  const M = [['Klassenarbeitstrainer Englisch Westermann', 'Klassenarbeitstrainer Englisch site:westermann.de'], ['Anmeldung Schwimmkurs', '"Anmeldung Schwimmkurs" Mannheim'], ['Weltall Planeten Infos', 'Planeten Sonnensystem Kinder'], ['Dokument Auswirkungen Klimawandel', 'Auswirkungen Klimawandel filetype:pdf'], ['Erdbeeren Obst Gemüse', 'Erdbeeren Obst OR Nuss'], ['Geschichte Mittelalter', '"Geschichte Mittelalter" Kinder']];
+  $('#m5-list').innerHTML = M.map(([a, b], i) => `<div class="m5-row"><span class="mono q-old">🔍 ${a}</span><button class="btn" data-m5="${i}">Vorschlag</button><span class="mono q-new" hidden>${b}</span><button class="btn" data-try="${i}" hidden>Testen</button></div>`).join('');
+  $('#m5-list').addEventListener('click', e => {
+    const b = e.target.closest('[data-m5]'); if (b) { const r = b.closest('.m5-row'); $('.q-new', r).hidden = false; $('[data-try]', r).hidden = false; b.remove(); return; }
+    const t = e.target.closest('[data-try]'); if (t) s3(M[+t.dataset.try][1]);
+  });
+})();
+
+mcQuiz($('#quiz'), [
+  {q: 'Du suchst Infos über das Tier Jaguar, nicht über das Auto.', a: ['Jaguar -Auto', 'Jaguar OR Auto', '"Jaguar Auto"', 'Jaguar filetype:pdf'], ok: 0, why: 'Das Minus schließt Seiten mit „Auto“ aus.'},
+  {q: 'Du willst nur auf westermann.de suchen.', a: ['site:westermann.de', 'filetype:westermann', '-westermann', '"westermann"'], ok: 0, why: 'site: beschränkt die Suche auf eine Webseite.'},
+  {q: 'Du suchst ein Merkblatt als PDF.', a: ['filetype:pdf', 'site:pdf', '-pdf', 'pdf*'], ok: 0, why: 'filetype: filtert nach Dateityp.'},
+  {q: 'Du suchst die genaue Wortgruppe „Ritter im Mittelalter“.', a: ['Anführungszeichen „…“', 'Minuszeichen', 'OR', 'Sternchen'], ok: 0, why: 'Dann kommen die Wörter genau so vor.'},
+  {q: 'Du weißt ein Wort im Sprichwort nicht mehr.', a: ['Sternchen * als Platzhalter', 'OR', 'site:', 'after:'], ok: 0, why: 'Die Suchmaschine ergänzt das Wort.'},
+  {q: 'Was bedeutet „Gesponsert“ über einem Treffer?', a: ['Es ist Werbung', 'Es ist der beste Treffer', 'Es ist ein Lexikon', 'Es ist eine PDF-Datei'], ok: 0, why: 'Jemand hat dafür bezahlt.'}
+]);
+</script>

@@ -1,0 +1,179 @@
+<!--
+title: Texte in Präsentationen einfügen
+short: Folientexte
+time: 1–2 Unterrichtsstunden (mit Präsentationsprogramm)
+q: Wie lassen sich Texte sinnvoll in eine Präsentation einfügen?
+facts: Gute Textgestaltung: Stichpunkte, höchstens 7 Zeilen, höchstens 6 Wörter pro Zeile, 18–24 Pt, gut lesbare Schrift | Texte einfügen und formatieren (Textfeld, Start, Text formatieren) | Barrierefreiheit: Kontrast, keine rein farbliche Unterscheidung, Alternativtexte, Prüfung unter „Überprüfen“ | M1 Texte auf Folien vergleichen
+inter: Gut oder schlecht sortieren · Folien-Check mit Live-Regelprüfung · Formatierungsleiste · Kontrast-Prüfer · Alternativtext schreiben · zwei Folien vergleichen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Recherchieren und Präsentieren</p>
+      <h1>Texte auf Folien<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Gut gestaltete Texte übertragen die Botschaft einer Präsentation. Doch zu viel Text auf einer Folie lenkt vom Vortrag ab.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Was nervt dich an Präsentationen, die du schon gesehen hast?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie lassen sich Texte sinnvoll in eine Präsentation einfügen?</p></div>
+      <div class="controls"><button class="btn primary" data-go="regeln">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="regeln" data-label="Textregeln" data-yr="Erarbeitung" data-title="Gute Textgestaltung" data-sub="Gut oder schlecht?">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Gute Textgestaltung</p>
+    <h2>Der Text unterstützt den Vortrag – er ersetzt ihn nicht</h2>
+    <p class="lead">Präsentationen sind keine ausführlichen Textdokumente. Ordne die Hinweise aus Abb. 2 zu.</p>
+  </div>
+  <div id="rule-sort"></div>
+</section>
+
+<section class="station" id="check" data-label="Folien-Check" data-yr="Ausprobieren" data-title="Der Folien-Check" data-sub="Regeln live prüfen">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Ausprobieren</p>
+    <h2>Der Folien-Check</h2>
+    <p class="lead">Schreibe oder ändere den Text. Der Check prüft die Regeln: höchstens 7 Zeilen, höchstens 6 Wörter pro Zeile, mindestens 18 Pt, gut lesbare Schrift.</p>
+  </div>
+  <div class="cols-2">
+    <div class="stack">
+      <textarea id="ck-txt" class="text-in" rows="8" aria-label="Folientext">Wie leben Fledermäuse?
+schlafen tagsüber in Höhlen
+erwachen in der Dämmerung
+fliegen lautlos
+fressen Insekten</textarea>
+      <label class="slider-row">Schriftgröße <input id="ck-size" type="range" min="8" max="40" value="24"><output id="ck-so" class="mono">24 Pt</output></label>
+      <div id="ck-font"></div>
+      <div class="controls" style="margin-top:0"><button class="btn" id="ck-bad">Beispiel: Fließtext</button><button class="btn" id="ck-good">Beispiel: Stichpunkte</button></div>
+    </div>
+    <div class="stack"><div id="ck-slide"></div><ul class="ck-list" id="ck-list"></ul></div>
+  </div>
+</section>
+
+<section class="station" id="formatieren" data-label="Formatieren" data-yr="Erarbeitung" data-title="Texte einfügen und formatieren" data-sub="Textfeld und Start-Menü">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Texte einfügen und formatieren</p>
+      <h2>Textfeld und Formatierung</h2>
+      <ul class="facts">
+        <li><b>Textfeld einfügen:</b> „Einfügen“ → „Textfeld“, dann mit gedrückter Maustaste ein Rechteck aufziehen. Viele Layouts haben schon <b>Textplatzhalter</b>.</li>
+        <li><b>Formatieren:</b> Text markieren, unter „Start“ Schriftgröße, <b>fett</b>, <i>kursiv</i>, <u>unterstrichen</u>, Schriftfarbe, Aufzählung oder Nummerierung wählen.</li>
+        <li><b>Rechtsklick</b> → „Text formatieren“: Schatten, Leuchteffekte, Farbverläufe, Hintergrund und Rahmen des Textfelds.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Probier's aus: Text markieren, dann formatieren</h3></div>
+      <div class="fmtbar"><button class="btn" data-cmd="bold"><b>F</b></button><button class="btn" data-cmd="italic"><i>K</i></button><button class="btn" data-cmd="underline"><u>U</u></button><button class="btn" data-cmd="insertUnorderedList">• Liste</button><button class="btn" data-cmd="insertOrderedList">1. Liste</button><button class="btn" data-color="#DC2626" style="color:#DC2626">A</button><button class="btn" data-color="#1D4ED8" style="color:#1D4ED8">A</button><button class="btn" data-color="#111827">A</button><button class="btn" data-size="5">groß</button><button class="btn" data-size="3">normal</button></div>
+      <div class="slide" style="margin-top:.6rem"><div contenteditable="true" class="fmt-area" aria-label="Folientext">Fledermäuse<br>Sie schlafen tagsüber in Höhlen. Sie jagen nachts Insekten.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="barriere" data-label="Barrierefreiheit" data-yr="Erarbeitung" data-title="Barrierefreiheit" data-sub="Kontrast und Alternativtext">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Barrierefreiheit</p>
+    <h2>Präsentationen für alle</h2>
+    <p class="lead">Damit Menschen mit Seh- oder Hörbeeinträchtigungen folgen können, sollte eine Präsentation <b>barrierearm</b> oder <b>barrierefrei</b> sein.</p>
+  </div>
+  <div class="cols-2">
+    <div class="vis">
+      <div class="vis-head"><h3>Kontrast-Prüfer</h3></div>
+      <div class="cc-row"><label>Schrift <input type="color" id="cc-fg" value="#9CA3AF"></label><label>Hintergrund <input type="color" id="cc-bg" value="#F3F4F6"></label></div>
+      <div class="cc-demo" id="cc-demo">Wie leben Fledermäuse?</div>
+      <p class="status" id="cc-out"></p>
+      <div class="controls"><button class="btn" data-cc="#111827,#FFFFFF">dunkel auf hell</button><button class="btn" data-cc="#FDE047,#FFFFFF">gelb auf weiß</button><button class="btn" data-cc="#DC2626,#16A34A">rot auf grün</button></div>
+    </div>
+    <div class="stack">
+      <div class="box"><span class="tag">Regeln</span><ul class="facts"><li>Starker <b>Kontrast</b> – am besten dunkle Schrift auf hellem Hintergrund.</li><li>Nicht <b>nur über Farben</b> unterscheiden – Menschen mit Farbsehschwäche sehen es nicht.</li><li><b>Übersichtliche Struktur</b>, klare Lesereihenfolge.</li><li><b>Alternativtexte</b> für Bilder.</li><li>Prüfen über „Überprüfen“ → „Barrierefreiheit überprüfen“.</li></ul></div>
+      <div class="task-card"><header><span class="no">Alt</span><h3>Alternativtext schreiben</h3></header><p>Ein Screenreader liest Bilder nicht vor – nur ihren Alternativtext. Beschreibe das Bild 🦇🌙 in einem Satz:</p><input class="text-in" id="alt" placeholder="z. B. Eine Fledermaus fliegt nachts vor dem Mond." aria-label="Alternativtext"><p class="fb" id="alt-fb"></p></div>
+    </div>
+  </div>
+  <div class="task-card mt"><header><span class="no">A</span><h3>Warum prüfen?</h3></header><p>Beschreibe, warum es sinnvoll ist, Präsentationen auf Barrierefreiheit zu überprüfen.</p>
+    <div class="controls"><button class="btn" data-reveal="ba" aria-expanded="false">Lösung</button></div><p class="solution" id="ba" hidden>So können alle dem Vortrag folgen – auch Menschen mit Seh- oder Hörbeeinträchtigung oder Farbsehschwäche. Die Prüfung zeigt Fehler wie fehlende Alternativtexte oder Folientitel, die man leicht übersieht.</p></div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Vergleich" data-yr="M1" data-title="Texte auf Folien" data-sub="Zwei Folien im Vergleich">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1</p>
+    <h2>Texte auf Folien</h2>
+  </div>
+  <div class="grid-2">
+    <figure style="margin:0"><p class="slide-label">Linke Folie</p><div class="slide"><h4>Wie leben Fledermäuse?</h4><ul><li>schlafen tagsüber in <b>Höhlen</b> oder unter <b>Dächern</b></li><li>erwachen in der <b>Dämmerung</b></li><li><b>fliegen</b> lautlos</li><li>fressen <b>Insekten</b></li></ul></div></figure>
+    <figure style="margin:0"><p class="slide-label">Rechte Folie</p><div class="slide" style="background:#D1D5DB;color:#6B7280"><p style="font-size:2.2cqw;font-weight:700">Wie leben Fledermäuse?</p><p style="font-size:1.8cqw">Die Fledermäuse schlafen tagsüber, meistens hängen sie dabei kopfüber in Höhlen, in alten Gebäuden oder unter Dächern, wo es <span style="background:#16A34A;color:#16A34A">dunkel</span> ist, und erwachen erst, wenn die Dämmerung beginnt, um dann auf die Jagd nach Insekten zu gehen, wobei sie lautlos fliegen und sich mit Ultraschall orientieren, was <span style="background:#DC2626;color:#7F1D1D">für</span> Menschen nicht hörbar ist, da die Rufe zu hoch sind und deshalb …</p></div></figure>
+  </div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Vergleichen</h3></header><p>Vergleiche die Textgestaltung und nenne Unterschiede in der Formatierung.</p>
+      <div class="controls"><button class="btn" data-reveal="v12" aria-expanded="false">Lösung</button></div><p class="solution" id="v12" hidden>Links: kurze Stichpunkte, große Schrift, wichtige Wörter fett, dunkle Schrift auf hellem Grund. Rechts: langer Fließtext, sehr kleine Schrift, grauer Text auf grauem Grund, farbige Markierungen statt Fettdruck.</p></div>
+    <div class="task-card"><header><span class="no">3–4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Bewerten</h3></header><p>Begründe, welche Folie sich besser für einen Vortrag eignet und welche barriereärmer ist.</p>
+      <div class="controls"><button class="btn" data-reveal="v34" aria-expanded="false">Lösung</button></div><p class="solution" id="v34" hidden>Die <b>linke</b> Folie: Sie unterstützt den Vortrag, ist auch hinten lesbar und hat einen starken Kontrast. Die rechte nutzt schwachen Kontrast und rein farbliche Hervorhebungen – das ist für Menschen mit Sehschwäche schwer zu erkennen.</p></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Texte auf Folien</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Texte in Präsentationen</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Folientexte unterstützen den Vortrag: <b>kurze Stichpunkte</b>, kein Fließtext.</li>
+        <li data-step>Höchstens <b>7 Zeilen</b> pro Folie, höchstens <b>6 Wörter</b> pro Zeile, Schriftgröße mindestens <b>18–24 Pt</b>.</li>
+        <li data-step>Wichtige Wörter <b>fett</b> oder größer; <b>einheitliche, gut lesbare Schrift</b> (z. B. Calibri, Arial); keine ablenkenden Animationen.</li>
+        <li data-step><b>Barrierefreiheit:</b> starker Kontrast (dunkel auf hell), nicht nur über Farben unterscheiden, Alternativtexte für Bilder, klare Struktur.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Merkzahl</span><p>7 · 6 · 18: höchstens 7 Zeilen, höchstens 6 Wörter, mindestens 18 Pt.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Stimmt das?</h2></div>
+  <div id="tf"></div>
+</section>
+
+<script>
+sorter($('#rule-sort'), [{id: 'g', name: '✅ gute Gestaltung'}, {id: 'b', name: '❌ schlechte Gestaltung'}], [
+  {t: 'nur kurze Stichpunkte, kein Fließtext', c: 'g'}, {t: 'höchstens 7 Zeilen Text pro Folie', c: 'g'}, {t: 'höchstens 6 Wörter pro Zeile', c: 'g'}, {t: 'wichtige Wörter fett oder größer', c: 'g'}, {t: 'einheitliche, gut lesbare Schriftart', c: 'g'},
+  {t: 'Fließtext über viele Zeilen', c: 'b'}, {t: 'verschachtelte, komplizierte Sätze', c: 'b'}, {t: 'aufwendige Animationen, die ablenken', c: 'b'}, {t: 'Schriftgröße 10 Pt', c: 'b'}
+]);
+(() => {
+  let font = 'Calibri, Arial, sans-serif';
+  seg($('#ck-font'), [['Calibri, Arial, sans-serif', 'Calibri/Arial'], ['"Comic Sans MS", cursive', 'Comic Sans'], ['"Brush Script MT", cursive', 'Schreibschrift']], v => { font = v; up(); });
+  function up() {
+    const lines = $('#ck-txt').value.split('\n').filter(l => l.trim()), size = +$('#ck-size').value; $('#ck-so').textContent = size + ' Pt';
+    const body = lines.slice(1), maxW = Math.max(0, ...body.map(l => l.trim().split(/\s+/).length));
+    $('#ck-slide').innerHTML = `<div class="slide" style="font-family:${font}"><h4 style="font-size:${size * .35}cqw">${lines[0] || ''}</h4><ul>${body.map(l => `<li style="font-size:${size * .2}cqw">${l}</li>`).join('')}</ul></div>`;
+    const R = [[lines.length <= 7, `höchstens 7 Zeilen (jetzt ${lines.length})`], [maxW <= 6, `höchstens 6 Wörter pro Zeile (längste Zeile: ${maxW})`], [size >= 18, `Schrift mindestens 18 Pt (jetzt ${size} Pt)`], [font.startsWith('Calibri'), 'gut lesbare Schriftart']];
+    $('#ck-list').innerHTML = R.map(([ok, t]) => `<li class="${ok ? 'ok' : 'err'}">${ok ? '✅' : '❌'} ${t}</li>`).join('');
+  }
+  $('#ck-txt').addEventListener('input', up); $('#ck-size').addEventListener('input', up);
+  $('#ck-bad').onclick = () => { $('#ck-txt').value = 'Wie leben Fledermäuse?\nDie Fledermäuse schlafen tagsüber, meistens kopfüber in Höhlen oder unter Dächern, und erwachen erst in der Dämmerung, um zu jagen.'; $('#ck-size').value = 12; up(); };
+  $('#ck-good').onclick = () => { $('#ck-txt').value = 'Wie leben Fledermäuse?\nschlafen tagsüber in Höhlen\nerwachen in der Dämmerung\nfliegen lautlos\nfressen Insekten'; $('#ck-size').value = 24; up(); };
+  up();
+})();
+(() => {
+  $$('.fmtbar [data-cmd]').forEach(b => b.onmousedown = e => { e.preventDefault(); document.execCommand(b.dataset.cmd); });
+  $$('.fmtbar [data-color]').forEach(b => b.onmousedown = e => { e.preventDefault(); document.execCommand('foreColor', false, b.dataset.color); });
+  $$('.fmtbar [data-size]').forEach(b => b.onmousedown = e => { e.preventDefault(); document.execCommand('fontSize', false, b.dataset.size); });
+})();
+(() => {
+  const lum = h => { const c = [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16) / 255).map(v => v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4); return .2126 * c[0] + .7152 * c[1] + .0722 * c[2]; };
+  function up() {
+    const f = $('#cc-fg').value, b = $('#cc-bg').value, L1 = lum(f), L2 = lum(b), r = (Math.max(L1, L2) + .05) / (Math.min(L1, L2) + .05);
+    $('#cc-demo').style.color = f; $('#cc-demo').style.background = b;
+    $('#cc-out').innerHTML = `Kontrastverhältnis <b class="mono">${r.toFixed(1)} : 1</b> → ${r >= 7 ? '<b class="good">sehr gut lesbar</b>' : r >= 4.5 ? '<b class="good">gut lesbar</b>' : r >= 3 ? '<b>nur für große Schrift</b>' : '<b class="bad">zu schwach – schwer lesbar!</b>'}`;
+  }
+  $('#cc-fg').oninput = up; $('#cc-bg').oninput = up;
+  $$('[data-cc]').forEach(x => x.onclick = () => { const [f, b] = x.dataset.cc.split(','); $('#cc-fg').value = f; $('#cc-bg').value = b; up(); });
+  up();
+  $('#alt').addEventListener('input', e => { const v = e.target.value.trim(), w = v.split(/\s+/).filter(Boolean).length; $('#alt-fb').className = 'fb ' + (w >= 4 ? 'ok' : ''); $('#alt-fb').textContent = !v ? '' : w < 4 ? 'Etwas genauer: Wer oder was ist zu sehen? Wo?' : 'Gut! Kurz und beschreibend.'; });
+})();
+trueFalse($('#tf'), [
+  {t: 'Auf eine Folie gehört möglichst viel Text, damit nichts fehlt.', ok: false, why: 'Kurze Stichpunkte – der Vortrag erklärt den Rest.'},
+  {t: 'Die Schriftgröße sollte mindestens 18 bis 24 Pt betragen.', ok: true, why: 'Sonst ist es hinten nicht lesbar.'},
+  {t: 'Wichtige Wörter kann man fett hervorheben.', ok: true, why: 'Oder größer schreiben.'},
+  {t: 'Rote und grüne Markierungen reichen, um Unterschiede zu zeigen.', ok: false, why: 'Menschen mit Farbsehschwäche sehen das nicht.'},
+  {t: 'Ein Alternativtext beschreibt ein Bild für Menschen, die es nicht sehen können.', ok: true, why: 'Screenreader lesen ihn vor.'},
+  {t: 'Viele bunte Animationen machen jede Präsentation besser.', ok: false, why: 'Sie lenken eher ab.'}
+]);
+</script>

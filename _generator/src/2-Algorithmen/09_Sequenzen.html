@@ -1,0 +1,137 @@
+<!--
+title: Sequenzen in Scratch
+short: Sequenzen
+time: 1–2 Unterrichtsstunden (mit Scratch am Rechner)
+q: Aus welchen Zutaten besteht eine Sequenz in Scratch?
+facts: Codebereich und Skriptbereich, Skript als kleines Programm | Codeblock-Kategorien und ihre Farben | Sequenz: Startblock aus „Ereignisse“, Blöcke laufen von oben nach unten | M1 Sequenz programmieren
+inter: Blöcke den Kategorien zuordnen · Blocktabelle aufdecken · Sequenz aus M1 im Simulator ausführen und verändern · Ablaufplan und Skript vergleichen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Algorithmen und Problemlösen</p>
+      <h1>Sequenzen in Scratch<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Viele Zutaten ergeben zusammen ein leckeres Gericht. Aus welchen Zutaten besteht eine Sequenz in Scratch?</p>
+      <div class="teaser"><span class="tag info">Wiederholung</span><p>Was ist eine Sequenz? Erinnere dich an das Pfannkuchen-Rezept.</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Aus welchen Zutaten besteht eine Sequenz in Scratch?</p></div>
+      <div class="controls"><button class="btn primary" data-go="bloecke">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="bloecke" data-label="Codeblöcke" data-yr="Erarbeitung" data-title="Codeblöcke und Kategorien" data-sub="Codebereich und Skriptbereich">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Codeblöcke</p>
+    <h2>Codebereich und Skriptbereich</h2>
+  </div>
+  <div class="cols-2">
+    <div class="stack">
+      <div class="box"><span class="tag">Codebereich</span><p>Listet <b>alle verfügbaren Codeblöcke</b> auf, aus denen man auswählen kann. Die Blöcke sind in <b>Kategorien</b> eingeteilt; Blöcke einer Kategorie haben <b>dieselbe Farbe</b>.</p></div>
+      <div class="box"><span class="tag">Skriptbereich</span><p>Rechts daneben: Hier zieht man Blöcke hinein und fügt sie wie <b>Puzzleteile</b> zusammen. Oben rechts sieht man, für welche Figur man gerade programmiert. Ein <b>Skript</b> ist ein kleines Programm.</p></div>
+      <div class="task-card"><header><span class="no">A</span><h3>Rollen</h3></header><p>Beschreibe, welche Rollen Codebereich und Skriptbereich beim Programmieren mit Scratch haben.</p></div>
+    </div>
+    <div class="table-wrap"><table class="cmp cat-tab">
+      <thead><tr><th>Kategorie</th><th>Funktion</th></tr></thead>
+      <tbody>
+        <tr><th><i style="background:#4C97FF"></i>Bewegung</th><td>steuern Bewegung und Bewegungsrichtung einer Figur</td></tr>
+        <tr><th><i style="background:#9966FF"></i>Aussehen</th><td>steuern das Aussehen von Figuren</td></tr>
+        <tr><th><i style="background:#CF63CF"></i>Klang</th><td>steuern Töne, Musik und Klangeffekte</td></tr>
+        <tr><th><i style="background:#FFBF00"></i>Ereignisse</th><td>aktivieren Skripte, sobald eine bestimmte Aktion ausgeführt wird</td></tr>
+        <tr><th><i style="background:#FFAB19"></i>Steuerung</th><td>steuern das Ablaufen von Skripten wie Schleifen oder Verzweigungen</td></tr>
+        <tr><th><i style="background:#5CB1D6"></i>Fühlen</th><td>nehmen Farben und Positionen von Figuren wahr</td></tr>
+        <tr><th><i style="background:#FF8C1A"></i>Variablen</th><td>speichern und ändern eigene Daten, z. B. für Bedingungen</td></tr>
+      </tbody></table></div>
+  </div>
+  <h3 class="mt">M1 Aufgabe 1: Ordne die Codeblöcke den Kategorien zu</h3>
+  <div id="cat-sort"></div>
+</section>
+
+<section class="station" id="sequenz" data-label="Sequenz" data-yr="Erarbeitung" data-title="Die Sequenz" data-sub="Von oben nach unten">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Sequenz</p>
+    <h2>Blöcke untereinander = Sequenz</h2>
+    <p class="lead">Untereinander gesteckte Codeblöcke bilden eine <b>Sequenz</b>. Sie sollte mit einem <b>Startblock</b> aus „Ereignisse“ beginnen – z. B. der grünen Fahne oder einer Taste. Dann laufen die Blöcke <b>nacheinander von oben nach unten</b> ab. Werte in Blöcken kann man verändern. Zum Stoppen gibt es das <b>Stoppschild</b>.</p>
+  </div>
+  <div class="table-wrap"><table class="cmp" id="blk">
+    <thead><tr><th>Codeblock</th><th>Was passiert?</th></tr></thead>
+    <tbody>
+      <tr><th>${0}</th><td class="q"><span>Zum Starten des Programms wird die grüne Fahne angeklickt.</span></td></tr>
+      <tr><th>${1}</th><td class="q"><span>Die Figur bewegt sich einen 10er-Schritt in die eingestellte Richtung.</span></td></tr>
+      <tr><th>${2}</th><td class="q"><span>Die Figur verändert ihr Aussehen und wechselt zu Kostüm 2.</span></td></tr>
+      <tr><th>${3}</th><td class="q"><span>Die Figur wartet eine Sekunde. Dann führt sie die nächste Anweisung aus.</span></td></tr>
+      <tr><th>${4}</th><td class="q"><span>Diese Bedingung prüft, ob die Figur den Mauszeiger berührt.</span></td></tr>
+    </tbody></table></div>
+  <div class="cmp-tools"><button class="btn" id="blk-q">Verdecken</button><button class="btn" id="blk-a">Aufdecken</button></div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Programm" data-yr="M1" data-title="Sequenz programmieren" data-sub="Startblock + vier Anweisungen">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Material M1</p>
+    <h2>Sequenz programmieren</h2>
+    <p class="lead">Das Programm besteht aus dem Startblock und einer Sequenz aus vier Anweisungen. Es setzt den Ablaufplan als Scratch-Skript um.</p>
+  </div>
+  <div class="cols-2" style="grid-template-columns:minmax(0,.6fr) minmax(0,1.4fr)">
+    <div class="fc-static">
+      <div class="fc term">Start</div><div class="fc-ar">↓</div>
+      <div class="fc">gleite in 1 Sekunde zu Zufallsposition</div><div class="fc-ar">↓</div>
+      <div class="fc">warte 1 Sekunde</div><div class="fc-ar">↓</div>
+      <div class="fc">spiele Klang Miau</div><div class="fc-ar">↓</div>
+      <div class="fc">sage Hallo! für 2 Sekunden</div><div class="fc-ar">↓</div>
+      <div class="fc term">Stopp</div>
+    </div>
+    <div id="s-m1"></div>
+  </div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Programm schreiben</h3></header><p>Schreibe für die Scratch-Katze das Programm in Scratch und spiele es ab.</p></div>
+    <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Experimentieren</h3></header><p>Verändere einige Werte und Zahlen und beobachte das veränderte Verhalten der Figur. Dokumentiere deine Versuchsergebnisse in einer Tabelle (Wert vorher – Wert nachher – Beobachtung).</p>
+      <div class="controls"><button class="btn" data-reveal="m3h" aria-expanded="false">HILFE</button></div><p class="hint-box" id="m3h" hidden>Ändere zum Beispiel „gleite in 1 Sekunde“ auf 3 Sekunden oder „sage … für 2 Sekunden“ auf 5. Was passiert? Schreibe auch einen eigenen Text in die Sprechblase.</p></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Sequenzen</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Sequenzen in Scratch</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Der <b>Codebereich</b> enthält alle Codeblöcke, sortiert nach <b>Kategorien</b> mit eigener Farbe (Bewegung, Aussehen, Klang, Ereignisse, Steuerung, Fühlen, Variablen).</li>
+        <li data-step>Im <b>Skriptbereich</b> werden die Blöcke zu einem <b>Skript</b> (kleines Programm) zusammengesteckt.</li>
+        <li data-step>Untereinander gesteckte Blöcke bilden eine <b>Sequenz</b>. Sie beginnt mit einem <b>Startblock</b> aus „Ereignisse“ und läuft von oben nach unten ab.</li>
+        <li data-step>Werte in Blöcken kann man verändern. Gestoppt wird mit dem <b>Stoppschild</b>.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne das Skript aus M1 farbig ab und beschrifte die Kategorien.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Üben und wiederholen</h2></div>
+  <h3>Bringe die Sequenz in die richtige Reihenfolge (wie im Ablaufplan)</h3>
+  <div id="seq-order"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+(() => {
+  const B = [sblock('ev', 'Wenn <span class="flag">⚑</span> angeklickt wird', 1), sblock('mo', 'gehe <i>10</i> er Schritt'), sblock('lo', 'wechsle zu Kostüm <i>Kostüm2</i>'), sblock('ct', 'warte <i>1</i> Sekunden'), sblock('se', 'wird <i>Mauszeiger</i> berührt?')];
+  $$('#blk tbody th').forEach((th, i) => th.innerHTML = B[i]);
+  quizTable($('#blk'), $('#blk-q'), $('#blk-a'));
+})();
+sorter($('#cat-sort'), [{id: 'mo', name: '🔵 Bewegung'}, {id: 'lo', name: '🟣 Aussehen'}, {id: 'so', name: '🩷 Klang'}, {id: 'ev', name: '🟡 Ereignisse'}, {id: 'ct', name: '🟠 Steuerung'}], [
+  {t: sblock('ev', 'Wenn <span class="flag">⚑</span> angeklickt wird', 1), c: 'ev'}, {t: sblock('mo', 'gleite in 1 Sek. zu Zufallsposition'), c: 'mo'}, {t: sblock('ct', 'warte 1 Sekunden'), c: 'ct'},
+  {t: sblock('so', 'spiele Klang Miau'), c: 'so'}, {t: sblock('lo', 'sage Hallo! für 2 Sekunden'), c: 'lo'}, {t: sblock('mo', 'drehe dich ↻ um 15 Grad'), c: 'mo'},
+  {t: sblock('lo', 'wechsle zum nächsten Kostüm'), c: 'lo'}, {t: sblock('ct', 'wiederhole 10 mal'), c: 'ct'}, {t: sblock('ev', 'Wenn Taste Leertaste gedrückt', 1), c: 'ev'}
+]);
+scratch($('#s-m1'), [{op: 'flag'}, {op: 'glide', s: 1}, {op: 'wait', s: 1}, {op: 'sound'}, {op: 'say', text: 'Hallo!', s: 2}]);
+orderSteps($('#seq-order'), [sblock('ev', 'Wenn <span class="flag">⚑</span> angeklickt wird', 1), sblock('mo', 'gleite in 1 Sek. zu Zufallsposition'), sblock('ct', 'warte 1 Sekunden'), sblock('so', 'spiele Klang Miau'), sblock('lo', 'sage Hallo! für 2 Sekunden')], {label: 'Skript'});
+mcQuiz($('#quiz'), [
+  {q: 'Womit sollte eine Sequenz beginnen?', a: ['mit einem Startblock aus „Ereignisse“', 'mit einer Schleife', 'mit dem Stoppschild', 'mit einem Klang'], ok: 0, why: 'z. B. „Wenn ⚑ angeklickt wird“.'},
+  {q: 'In welcher Reihenfolge laufen die Blöcke ab?', a: ['von oben nach unten', 'von unten nach oben', 'zufällig', 'alle gleichzeitig'], ok: 0, why: 'Nacheinander.'},
+  {q: 'Welche Farbe haben Bewegungsblöcke?', a: ['blau', 'lila', 'gelb', 'grün'], ok: 0, why: 'Bewegung ist blau.'},
+  {q: 'Zu welcher Kategorie gehört „warte 1 Sekunden“?', a: ['Steuerung', 'Bewegung', 'Klang', 'Aussehen'], ok: 0, why: 'Steuerung (orange).'},
+  {q: 'Was ist ein Skript?', a: ['ein kleines Programm', 'eine Figur', 'ein Bühnenbild', 'ein Klang'], ok: 0, why: 'Aus zusammengesteckten Blöcken.'}
+]);
+</script>

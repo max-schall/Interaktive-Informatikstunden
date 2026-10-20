@@ -1,0 +1,149 @@
+<!--
+title: Einen Podcast erstellen
+short: Podcast
+time: 2–3 Unterrichtsstunden (Projekt)
+q: Wie entsteht ein Podcast – von der Idee bis zur MP3-Datei?
+facts: Was ist ein Podcast? | Methode in sieben Schritten: Thema, Recherche, Skript, Aufnahme, Schneiden, Musik, Speichern | Skript mit Themenabschnitten, Fragen und Audio (Intro, Geräusche, Outro) | Tier-Podcast als Projekt mit Bewertungsbogen
+inter: Schritte ordnen · Skript-Baukasten für einen Tier-Podcast · Aufnahme direkt im Browser (wenn ein Mikrofon erlaubt ist) · Bewertungsbogen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Bilder und Videos</p>
+      <h1>Einen Podcast erstellen<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Ein Podcast ist eine Hördatei, die man sich wie eine Radiosendung im Internet anhören kann – über den Browser oder eine App. Jetzt nehmt ihr selbst einen auf!</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welche Podcasts hörst du? Worum geht es darin?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie entsteht ein Podcast – von der Idee bis zur MP3-Datei?</p></div>
+      <div class="controls"><button class="btn primary" data-go="schritte">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="schritte" data-label="7 Schritte" data-yr="Methode" data-title="In sieben Schritten zum Podcast" data-sub="Thema bis MP3">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Methode</p>
+    <h2>In sieben Schritten zum Podcast</h2>
+    <p class="lead">In Podcasts geht es oft um Musik, Sport, Tiere oder Alltagstipps – mit einer oder mehreren Sprecherinnen und Sprechern. Bringe die Schritte in die richtige Reihenfolge.</p>
+  </div>
+  <div id="pod-order"></div>
+  <div class="grid-2 mt">
+    <div class="box"><span class="tag">Skript</span><p>Ein Text, in dem steht, was du sagen willst – ausformuliert oder in Stichpunkten. So sprichst du sicher und vergisst nichts.</p></div>
+    <div class="box"><span class="tag lim">Musik</span><p>Nutze nur Musik, für die du eine <b>Erlaubnis</b> hast – z. B. „freie Musik“. Prüfe, ob du den Namen des Musikers nennen musst.</p></div>
+  </div>
+</section>
+
+<section class="station" id="skript" data-label="Skript" data-yr="Planen" data-title="Das Skript" data-sub="Abschnitte, Fragen, Audio">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Aufnahme vorbereiten</p>
+    <h2>Abb. 2: Auszug aus einem Skript</h2>
+  </div>
+  <div class="table-wrap"><table class="cmp">
+    <thead><tr><th>Themenabschnitt</th><th>Fragen</th><th>Audio</th></tr></thead>
+    <tbody>
+      <tr><th>Eröffnung</th><td>Welches Thema wird in dieser Folge behandelt?</td><td>🎵 Intro-Musik</td></tr>
+      <tr><th>Was ist digitaler Stress?</th><td>Wie zeigt sich digitaler Stress im Alltag?</td><td>⏱️ Ticken einer Uhr, 📳 Handyvibration</td></tr>
+      <tr><th>Auswirkungen von digitalem Stress</th><td>Welche Folgen hat die digitale Dauererreichbarkeit?</td><td></td></tr>
+      <tr><th>Strategien gegen digitalen Stress</th><td>Was kann man selbst tun?</td><td>🎶 Xylofon-Geräusche</td></tr>
+      <tr><th>Abschluss</th><td>Was sollten Zuhörer mitnehmen?</td><td>🎵 Outro-Musik</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="station" id="projekt" data-label="Tier-Podcast" data-yr="Projekt" data-title="Projekt: Tier-Podcast" data-sub="Skript, Aufnahme, Bewertung">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Projekt</p>
+    <h2>Ein Podcast über spannende Tiere</h2>
+    <p class="lead">Ihr könnt den Podcast auch zu zweit oder in einer Gruppe aufnehmen.</p>
+  </div>
+  <div class="cols-2">
+    <div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Skript erstellen</h3></header><p>Wähle ein Tier und schreibe einfache Sätze. Der Skript-Baukasten hilft:</p>
+        <div id="tier-seg"></div></div>
+      <div class="script" id="script"></div>
+    </div>
+    <div class="stack">
+      <div class="task-card"><header><span class="no">2–3</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Üben und aufnehmen</h3></header><p>Übt gemeinsam das Vorlesen und verteilt die Rollen. Nehmt den Podcast auf und schneidet ihn. Baut Musik oder Tiergeräusche ein.</p></div>
+      <div class="vis"><div class="vis-head"><h3>🎙️ Aufnahme</h3><span class="mono" id="rec-t">00:00</span></div>
+        <div class="controls" style="margin-top:0"><button class="btn primary" id="rec">● Aufnehmen</button><button class="btn" id="rec-stop" disabled>■ Stopp</button><a class="btn" id="rec-dl" hidden download="podcast.webm">⬇ Speichern</a></div>
+        <audio id="rec-audio" controls hidden style="width:100%;margin-top:.6rem"></audio>
+        <p class="note" id="rec-note">Der Browser fragt nach der Erlaubnis für das Mikrofon. Für MP3-Dateien die Aufnahme danach in einer Schnitt-App exportieren.</p></div>
+      <div class="task-card"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Anhören</h3></header><p>Hört euch die Aufnahme mehrmals an. Wenn ihr zufrieden seid, spielt sie der Klasse vor.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="bewertung" data-label="Bewertungsbogen" data-yr="Bewerten" data-title="Bewertungsbogen" data-sub="Gegenseitig bewerten">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Bewerten</p>
+    <h2>Bewertungsbogen</h2>
+    <p class="lead">Aufgabe 5: Bewertet gegenseitig eure Podcasts. Was wurde gut gemacht, wo gibt es Verbesserungsbedarf?</p>
+  </div>
+  <ol id="bw"></ol>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Podcast</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Einen Podcast erstellen</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Ein <b>Podcast</b> ist eine Hördatei, die man wie eine Radiosendung im Internet anhört.</li>
+        <li data-step>Die sieben Schritte: <b>Thema</b> wählen → <b>recherchieren</b> → <b>Skript</b> schreiben → <b>aufnehmen</b> → <b>schneiden</b> → <b>Musik</b> hinterlegen → als <b>MP3</b> speichern.</li>
+        <li data-step>Ein Skript gliedert den Podcast in Abschnitte (Eröffnung, Hauptteil, Abschluss) mit Fragen und Audio (Intro, Geräusche, Outro).</li>
+        <li data-step>Nur Musik verwenden, die man nutzen darf (Urheberrecht).</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skript</span><p>Schreibe dein Podcast-Skript in Stichpunkten in dein Heft.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+orderSteps($('#pod-order'), ['1 💡 Thema wählen', '2 🔎 Recherchieren: Fragen überlegen, Antworten suchen', '3 📝 Aufnahme vorbereiten: Skript schreiben', '4 🎙️ Ton aufnehmen', '5 ✂️ Hördatei schneiden', '6 🎵 Musik und Geräusche hinterlegen', '7 💾 Als MP3 speichern und vorstellen'].map(s => s.slice(2)), {label: 'Deine Reihenfolge'});
+(() => {
+  const T = {
+    igel: {n: 'Igel', e: '🦔', l: 'Garten, Wälder, Wiesen', b: 'rollt sich bei Gefahr zu einer stacheligen Kugel zusammen', f: 'Insekten, Würmer, Schnecken', a: 'nachtaktiv'},
+    fuchs: {n: 'Fuchs', e: '🦊', l: 'Wälder, Felder, Städte', b: 'schlau und anpassungsfähig', f: 'Mäuse, Vögel, Beeren, Abfälle', a: 'dämmerungs- und nachtaktiv'},
+    eigen: {n: '', e: '🐾', l: '', b: '', f: '', a: ''}
+  };
+  seg($('#tier-seg'), [['igel', '🦔 Igel'], ['fuchs', '🦊 Fuchs'], ['eigen', '🐾 eigenes Tier']], v => {
+    const t = T[v];
+    $('#script').innerHTML = `<div class="sc-row"><b>🎵 Intro</b><span>Musik oder Tiergeräusch</span></div>
+      <label class="sc-row"><b>Wie heißt das Tier?</b><input value="${t.n ? `Heute geht es um den ${t.n}! ${t.e}` : ''}" placeholder="Heute geht es um …"></label>
+      <label class="sc-row"><b>Wo lebt es?</b><input value="${t.l ? `Der ${t.n} lebt in ${t.l}.` : ''}" placeholder="Es lebt …"></label>
+      <label class="sc-row"><b>Was frisst es?</b><input value="${t.f ? `Er frisst ${t.f}.` : ''}" placeholder="Es frisst …"></label>
+      <label class="sc-row"><b>Besonderheit?</b><input value="${t.b ? `Das Besondere: Er ${t.b}.` : ''}" placeholder="Das Besondere …"></label>
+      <label class="sc-row"><b>Wann ist es aktiv?</b><input value="${t.a ? `Der ${t.n} ist ${t.a}.` : ''}" placeholder="Es ist aktiv …"></label>
+      <div class="sc-row"><b>🎵 Outro</b><span>„Das war unser Podcast über …“</span></div>`;
+  });
+})();
+(() => {
+  let rec, chunks = [], t0, tick;
+  const fmt = s => String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(Math.floor(s % 60)).padStart(2, '0');
+  $('#rec').onclick = async () => {
+    try {
+      const st = await navigator.mediaDevices.getUserMedia({audio: true});
+      rec = new MediaRecorder(st); chunks = [];
+      rec.ondataavailable = e => chunks.push(e.data);
+      rec.onstop = () => { const b = new Blob(chunks, {type: rec.mimeType}), u = URL.createObjectURL(b); $('#rec-audio').src = u; $('#rec-audio').hidden = false; $('#rec-dl').href = u; $('#rec-dl').hidden = false; st.getTracks().forEach(t => t.stop()); clearInterval(tick); };
+      rec.start(); t0 = Date.now(); tick = setInterval(() => $('#rec-t').textContent = fmt((Date.now() - t0) / 1000), 250);
+      $('#rec').disabled = true; $('#rec-stop').disabled = false; $('#rec-note').textContent = 'Aufnahme läuft …';
+    } catch (e) { $('#rec-note').innerHTML = '<b class="bad">Kein Mikrofon verfügbar oder Zugriff nicht erlaubt.</b> Nehmt den Podcast mit dem Smartphone auf.'; }
+  };
+  $('#rec-stop').onclick = () => { if (rec && rec.state === 'recording') rec.stop(); $('#rec').disabled = false; $('#rec-stop').disabled = true; $('#rec-note').textContent = 'Fertig! Anhören und speichern.'; };
+})();
+selfCheck($('#bw'), [{t: 'Thema verständlich'}, {t: 'Deutliche Aussprache'}, {t: 'Gute Länge'}, {t: 'Gliederung (Eröffnung, Hauptteil, Abschluss)'}, {t: 'Musik und Geräusche passend eingesetzt'}, {t: 'Urheberrechte beachtet'}]);
+$$('#bw .seg').forEach(s => { const L = ['😊 gut', '😐 geht so', '☹️ verbessern']; $$('button', s).forEach((b, i) => b.textContent = L[i]); });
+mcQuiz($('#quiz'), [
+  {q: 'Was ist ein Podcast?', a: ['eine Hördatei wie eine Radiosendung im Internet', 'ein Video', 'ein Computerspiel', 'eine Bilddatei'], ok: 0, why: 'Online im Browser oder per App.'},
+  {q: 'Wozu dient ein Skript?', a: ['damit man sicher spricht und nichts vergisst', 'um Musik zu speichern', 'um das Mikrofon zu reinigen', 'zum Schneiden'], ok: 0, why: 'Text oder Stichpunkte.'},
+  {q: 'Was ist ein Intro?', a: ['eine kurze Eingangsmusik', 'das Ende', 'ein Versprecher', 'ein Dateiformat'], ok: 0, why: 'Am Ende: Outro.'},
+  {q: 'In welchem Format speichert man den fertigen Podcast?', a: ['MP3', 'JPG', 'DOCX', 'GIF'], ok: 0, why: 'Ein Audioformat.'},
+  {q: 'Welche Musik darf man verwenden?', a: ['Musik, für die man eine Erlaubnis hat', 'jedes Lied aus dem Radio', 'alles aus dem Internet', 'nur Lieder unter 10 Sekunden'], ok: 0, why: 'Z. B. freie Musik.'}
+]);
+</script>

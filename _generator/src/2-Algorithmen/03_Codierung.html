@@ -1,0 +1,292 @@
+<!--
+title: Codierung von Daten
+short: Codierung
+time: 2–3 Unterrichtsstunden
+q: Wie können Daten codiert werden?
+facts: Codes für Menschen und Maschinen: Kyrillisch, Binärcode | Brailleschrift und Morsealphabet (M1) | Codes für Verbraucher: Erzeugercode auf Eiern, Kfz-Kennzeichen (M2) | Codes für Maschinen: Pfandsymbol, Barcode (EAN) und QR-Code (M3)
+inter: „Hallo“ in vier Codes · Braille-Zelle zum Antippen · Morse-Übersetzer mit Ton · Eiercode entschlüsseln · Kennzeichen raten · EAN-Barcode mit Prüfziffer erzeugen · QR-Code-Aufbau erkunden
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Algorithmen und Problemlösen</p>
+      <h1>Codierung von Daten<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Daten sind nicht immer sofort zu erkennen. Manchmal liegen sie in einer anderen Sprache oder in Form von Symbolen vor.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Привіт – kannst du das lesen? Und ⠓⠁⠇⠇⠕?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie können Daten codiert werden?</p></div>
+      <div class="controls"><button class="btn primary" data-go="codieren">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="codieren" data-label="Codes" data-yr="Einstieg" data-title="Ein Wort, viele Codes" data-sub="„Hallo“ codiert">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Daten codieren</p>
+    <h2>Ein Wort – viele Codes</h2>
+    <p class="lead">Beim <b>Codieren</b> werden die Buchstaben eines Wortes anders dargestellt, sodass nur bestimmte Personen oder Maschinen sie verstehen. Die Zeichen sind ein <b>Code</b>.</p>
+  </div>
+  <div class="grid-2">
+    <div class="code-card"><span class="tag">Ukrainisch (Kyrillisch)</span><b style="font-size:2.4rem">Привіт</b><small>„Pryvit“ – nur wer die kyrillischen Zeichen lesen kann, versteht es.</small></div>
+    <div class="code-card"><span class="tag">Binärcode (Computer)</span><b class="mono" style="font-size:1rem">01001000 01100001 01101100 01101100 01101111</b><small>Die Eingabe über die Tastatur übersetzt der Computer in diesen Code.</small></div>
+    <div class="code-card"><span class="tag">Brailleschrift</span><b style="font-size:2.6rem;letter-spacing:.2em">⠓⠁⠇⠇⠕</b><small>Punktmuster zum Ertasten</small></div>
+    <div class="code-card"><span class="tag">Morsealphabet</span><b class="mono" style="font-size:1.4rem">•••• •− •−•• •−•• −−−</b><small>kurze und lange Signale</small></div>
+  </div>
+  <div class="task-card mt"><header><span class="no">A</span><h3>Codes</h3></header><p>Nenne Möglichkeiten, Daten zu codieren, und beschreibe diese kurz.</p></div>
+</section>
+
+<section class="station" id="braille" data-label="Brailleschrift" data-yr="Erarbeitung" data-title="Brailleschrift" data-sub="Punkte zum Ertasten">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Brailleschrift</p>
+      <h2>Lesen mit den Fingerspitzen</h2>
+      <ul class="facts">
+        <li>Der Franzose <b>Louis Braille</b> entwickelte eine <b>Blindenschrift</b>.</li>
+        <li>Jeder Buchstabe besteht aus <b>6 Punkten</b> in einem Rechteck. Bei jedem Buchstaben sind andere Punkte hervorgehoben – ein <b>Punktmuster</b>.</li>
+        <li>Die Punkte stehen leicht aus dem Papier hervor und können ertastet werden.</li>
+        <li>Am Computer helfen <b>Sprachausgabe</b> oder Geräte, die den Bildschirm in Brailleschrift übersetzen (Braillezeile).</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Braille-Zelle</h3><span class="note">Punkte antippen</span></div>
+      <div class="bcell-wrap"><div class="bcell" id="bcell"></div><div class="bres" id="bres"></div></div>
+      <input id="b-in" class="text-in mt" value="Hallo" maxlength="20" aria-label="Text für Brailleschrift">
+      <p class="braille-out" id="b-out"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="morse" data-label="M1 Morse" data-yr="M1" data-title="Morsealphabet" data-sub="Punkt, Strich, Pause">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Morsealphabet</p>
+      <h2>Punkt, Strich, Pause</h2>
+      <ul class="facts">
+        <li>Anfang des 19. Jahrhunderts wurden Nachrichten per Post zugestellt – selbst mit schnellem Pferd dauerte das Stunden oder Tage.</li>
+        <li><b>1837</b> entwickelte <b>Samuel Morse</b> einen Code, mit dem Nachrichten in wenigen Minuten übermittelt werden konnten. Dazu erfand er einen elektromagnetischen <b>Schreibtelegrafen</b>.</li>
+        <li>Mit Alfred Vail entwickelte er die <b>Morsezeichen</b>: Jeder Buchstabe hat eine Kombination aus <b>kurzen</b> (Punkt) und <b>langen</b> Signalen (Strich) und Pausen.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Morse-Übersetzer</h3><button class="btn" id="m-play">🔊 Abspielen</button></div>
+      <input id="m-in" class="text-in" value="Hallo" maxlength="24" aria-label="Text für Morsecode">
+      <p class="morse-out mono" id="m-out"></p>
+      <details class="mt"><summary><b>M1 Morsetabelle</b></summary><div class="mtab mono" id="mtab"></div></details>
+    </div>
+  </div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Übersetzen</h3></header><p>Übersetze folgenden Morsecode: <b class="mono">• • • / − − − / • • •</b></p>
+      <div class="controls"><button class="btn" data-reveal="mo1" aria-expanded="false">Lösung</button></div><p class="solution" id="mo1" hidden><b>SOS</b> – das internationale Notsignal.</p></div>
+    <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Codieren</h3></header><p>Schreibe folgende Wörter im Morsealphabet: Hund, Katze und Informatik. Prüfe mit dem Übersetzer.</p></div>
+    <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Vorteile</h3></header><p>Erkläre, welche Vorteile sich durch die Entwicklung des Morsecodes ergaben.</p>
+      <div class="controls"><button class="btn" data-reveal="mo3h" aria-expanded="false">HILFE</button><button class="btn" data-reveal="mo3" aria-expanded="false">Lösungsidee</button></div>
+      <p class="hint-box" id="mo3h" hidden>Vergleiche mit der Post zu Pferd: Wie lange dauerte eine Nachricht vorher, wie lange danach?</p>
+      <p class="solution" id="mo3" hidden>Nachrichten kamen in Minuten statt in Tagen an. Der Code ist einfach und funktioniert mit allem, was kurz und lang sein kann: Strom, Licht, Ton oder Klopfzeichen – auch über große Entfernungen und in Notfällen (SOS).</p></div>
+    <div class="task-card"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Morse-Profi</h3></header><p>Morst euch gegenseitig ein Wort mit Klopfzeichen oder der Taschenlampe. Wer entschlüsselt es zuerst?</p></div>
+  </div>
+</section>
+
+<section class="station" id="verbraucher" data-label="M2 Verbraucher" data-yr="M2" data-title="Codes für Verbraucher" data-sub="Eiercode und Kfz-Kennzeichen">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Codes für Verbraucher</p>
+    <h2>Codes beim Einkaufen und auf der Straße</h2>
+    <p class="lead">Viele Verpackungen tragen Codes: Sie zeigen, wie man Verpackungen entsorgt oder wie Lebensmittel produziert wurden. Ein Beispiel ist der <b>Erzeugercode</b> für Eier – in der ganzen EU gleich.</p>
+  </div>
+  <div class="cols-2">
+    <div class="vis">
+      <div class="vis-head"><h3>🥚 Eiercode entschlüsseln</h3></div>
+      <div class="egg"><input id="egg-in" class="mono" value="0-DE-1273321" aria-label="Erzeugercode"></div>
+      <div id="egg-out" class="egg-out"></div>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Codierung im Alltag</h3></header><p>Beschreibe, wo dir diese Art von Codierung begegnet.</p></div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Kfz-Kennzeichen</h3></header><p>Beschreibe, was die erste Stelle bei einem Nummernschild codiert.</p>
+        <div class="controls"><button class="btn" data-reveal="k2" aria-expanded="false">Lösung</button></div><p class="solution" id="k2" hidden>Die ersten ein bis drei Buchstaben stehen für den Stadt- oder Landkreis, in dem das Auto zugelassen ist (Unterscheidungszeichen).</p></div>
+      <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Welche Stadt?</h3></header><p>Stelle Vermutungen an: M XY 549 · F GH 4536 · L C 542 – und weitere:</p><div id="kfz"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="maschinen" data-label="Barcode" data-yr="Erarbeitung" data-title="Codes für Maschinen" data-sub="Pfandsymbol und Barcode">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 5 · Codes für Maschinen</p>
+      <h2>Pfandsymbol und Barcode</h2>
+      <ul class="facts">
+        <li>Das <b>Pfandsymbol</b> ist vom Automaten digital lesbar. Er prüft Form, Größe und Kennzeichnung der Flasche und schreibt den Pfandbetrag gut.</li>
+        <li>Ein <b>Barcode</b> (Strichcode) besteht aus parallelen schwarzen und weißen Streifen. An der Kasse wird er in einen <b>Binärcode</b> decodiert; der Computer verbucht Bezeichnung und Preis.</li>
+        <li>In Deutschland nutzt man den <b>EAN-Code</b> (European Article Number). Er enthält die Artikelnummer, Infos zum Hersteller und zur Produktkategorie.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>EAN-Barcode erzeugen</h3></div>
+      <label class="slider-row">12 Ziffern <input id="ean-in" class="mono" value="400638133393" maxlength="12" inputmode="numeric" style="font:inherit;padding:.3rem .5rem;border:1.5px solid var(--edge);border-radius:4px;background:var(--surface);color:var(--ink)"></label>
+      <svg id="ean" class="ean-svg" viewBox="0 0 113 70" aria-label="EAN-13 Barcode"></svg>
+      <p class="status" id="ean-status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="qr" data-label="M3 QR-Code" data-yr="M3" data-title="QR-Codes" data-sub="Aufbau eines QR-Codes">
+  <div class="section-head">
+    <p class="eyebrow">Station 6 · QR-Codes</p>
+    <h2>So ist ein QR-Code aufgebaut</h2>
+    <p class="lead">QR-Codes bestehen aus schwarzen und weißen Zellen. Jede Zelle enthält genau <b>1 Bit</b>. Bis zu 177 · 177 Zellen und <b>4296 Zeichen</b> sind möglich – genug für Internet-Adressen.</p>
+  </div>
+  <div class="phone-wrap">
+    <div class="vis" style="padding:.8rem"><svg class="fig-svg qr-svg" viewBox="0 0 29 29" aria-label="QR-Code" shape-rendering="crispEdges"><g data-part="rand"><rect x="0" y="0" width="29" height="29" fill="#fff"/><rect x="0.15" y="0.15" width="28.7" height="28.7" fill="none" stroke="#F59E0B" stroke-width=".3" stroke-dasharray=".6 .4"/></g><g data-part="daten" class="qr-dat"><rect x="11" y="11" width="7" height="7" fill="transparent"/><path d="M10 2h1v1h-1zM11 2h1v1h-1zM14 2h1v1h-1zM15 2h1v1h-1zM10 3h1v1h-1zM11 3h1v1h-1zM12 3h1v1h-1zM13 3h1v1h-1zM14 3h1v1h-1zM16 3h1v1h-1zM18 3h1v1h-1zM10 4h1v1h-1zM11 4h1v1h-1zM12 4h1v1h-1zM14 4h1v1h-1zM15 4h1v1h-1zM17 4h1v1h-1zM12 5h1v1h-1zM14 5h1v1h-1zM15 5h1v1h-1zM18 5h1v1h-1zM10 6h1v1h-1zM14 6h1v1h-1zM15 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM11 7h1v1h-1zM12 7h1v1h-1zM13 7h1v1h-1zM16 7h1v1h-1zM18 7h1v1h-1zM12 9h1v1h-1zM14 9h1v1h-1zM15 9h1v1h-1zM18 9h1v1h-1zM2 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM9 10h1v1h-1zM10 10h1v1h-1zM13 10h1v1h-1zM16 10h1v1h-1zM17 10h1v1h-1zM19 10h1v1h-1zM22 10h1v1h-1zM24 10h1v1h-1zM25 10h1v1h-1zM26 10h1v1h-1zM4 11h1v1h-1zM5 11h1v1h-1zM7 11h1v1h-1zM11 11h1v1h-1zM13 11h1v1h-1zM16 11h1v1h-1zM17 11h1v1h-1zM19 11h1v1h-1zM21 11h1v1h-1zM22 11h1v1h-1zM23 11h1v1h-1zM24 11h1v1h-1zM25 11h1v1h-1zM3 12h1v1h-1zM5 12h1v1h-1zM6 12h1v1h-1zM7 12h1v1h-1zM9 12h1v1h-1zM11 12h1v1h-1zM12 12h1v1h-1zM13 12h1v1h-1zM14 12h1v1h-1zM16 12h1v1h-1zM17 12h1v1h-1zM18 12h1v1h-1zM20 12h1v1h-1zM21 12h1v1h-1zM23 12h1v1h-1zM26 12h1v1h-1zM9 13h1v1h-1zM10 13h1v1h-1zM11 13h1v1h-1zM13 13h1v1h-1zM16 13h1v1h-1zM17 13h1v1h-1zM18 13h1v1h-1zM21 13h1v1h-1zM23 13h1v1h-1zM24 13h1v1h-1zM25 13h1v1h-1zM26 13h1v1h-1zM3 14h1v1h-1zM4 14h1v1h-1zM6 14h1v1h-1zM10 14h1v1h-1zM12 14h1v1h-1zM13 14h1v1h-1zM14 14h1v1h-1zM17 14h1v1h-1zM20 14h1v1h-1zM26 14h1v1h-1zM2 15h1v1h-1zM12 15h1v1h-1zM14 15h1v1h-1zM16 15h1v1h-1zM17 15h1v1h-1zM18 15h1v1h-1zM19 15h1v1h-1zM22 15h1v1h-1zM25 15h1v1h-1zM2 16h1v1h-1zM3 16h1v1h-1zM4 16h1v1h-1zM6 16h1v1h-1zM9 16h1v1h-1zM14 16h1v1h-1zM16 16h1v1h-1zM17 16h1v1h-1zM19 16h1v1h-1zM20 16h1v1h-1zM22 16h1v1h-1zM23 16h1v1h-1zM24 16h1v1h-1zM25 16h1v1h-1zM26 16h1v1h-1zM2 17h1v1h-1zM6 17h1v1h-1zM10 17h1v1h-1zM12 17h1v1h-1zM14 17h1v1h-1zM16 17h1v1h-1zM19 17h1v1h-1zM21 17h1v1h-1zM23 17h1v1h-1zM24 17h1v1h-1zM26 17h1v1h-1zM2 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM9 18h1v1h-1zM11 18h1v1h-1zM12 18h1v1h-1zM13 18h1v1h-1zM14 18h1v1h-1zM15 18h1v1h-1zM17 18h1v1h-1zM24 18h1v1h-1zM25 18h1v1h-1zM10 19h1v1h-1zM12 19h1v1h-1zM13 19h1v1h-1zM14 19h1v1h-1zM15 19h1v1h-1zM24 19h1v1h-1zM25 19h1v1h-1zM10 20h1v1h-1zM11 20h1v1h-1zM12 20h1v1h-1zM13 20h1v1h-1zM26 20h1v1h-1zM10 21h1v1h-1zM11 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM17 21h1v1h-1zM25 21h1v1h-1zM26 21h1v1h-1zM10 22h1v1h-1zM11 22h1v1h-1zM12 22h1v1h-1zM14 22h1v1h-1zM17 22h1v1h-1zM10 23h1v1h-1zM13 23h1v1h-1zM15 23h1v1h-1zM16 23h1v1h-1zM17 23h1v1h-1zM20 23h1v1h-1zM25 23h1v1h-1zM26 23h1v1h-1zM12 24h1v1h-1zM13 24h1v1h-1zM14 24h1v1h-1zM15 24h1v1h-1zM19 24h1v1h-1zM22 24h1v1h-1zM23 24h1v1h-1zM24 24h1v1h-1zM25 24h1v1h-1zM26 24h1v1h-1zM12 25h1v1h-1zM13 25h1v1h-1zM17 25h1v1h-1zM21 25h1v1h-1zM22 25h1v1h-1zM24 25h1v1h-1zM25 25h1v1h-1zM26 25h1v1h-1zM10 26h1v1h-1zM11 26h1v1h-1zM12 26h1v1h-1zM13 26h1v1h-1zM14 26h1v1h-1zM18 26h1v1h-1zM19 26h1v1h-1zM23 26h1v1h-1zM26 26h1v1h-1z"/></g><g data-part="sync" class="qr-syn"><rect x="10" y="8" width="9" height="1" fill="transparent"/><rect x="8" y="10" width="1" height="9" fill="transparent"/><path d="M10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM16 8h1v1h-1zM18 8h1v1h-1zM8 10h1v1h-1zM8 12h1v1h-1zM8 14h1v1h-1zM8 16h1v1h-1zM8 18h1v1h-1z"/></g><g data-part="ausrichtung" class="qr-ali"><rect x="18" y="18" width="5" height="5" fill="transparent"/><path d="M18 18h1v1h-1zM19 18h1v1h-1zM20 18h1v1h-1zM21 18h1v1h-1zM22 18h1v1h-1zM18 19h1v1h-1zM22 19h1v1h-1zM18 20h1v1h-1zM20 20h1v1h-1zM22 20h1v1h-1zM18 21h1v1h-1zM22 21h1v1h-1zM18 22h1v1h-1zM19 22h1v1h-1zM20 22h1v1h-1zM21 22h1v1h-1zM22 22h1v1h-1z"/></g><g data-part="position" class="qr-pos"><rect x="2" y="2" width="8" height="8" fill="transparent"/><rect x="19" y="2" width="8" height="8" fill="transparent"/><rect x="2" y="19" width="8" height="8" fill="transparent"/><path d="M2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM5 2h1v1h-1zM6 2h1v1h-1zM7 2h1v1h-1zM8 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM22 2h1v1h-1zM23 2h1v1h-1zM24 2h1v1h-1zM25 2h1v1h-1zM26 2h1v1h-1zM2 3h1v1h-1zM8 3h1v1h-1zM20 3h1v1h-1zM26 3h1v1h-1zM2 4h1v1h-1zM4 4h1v1h-1zM5 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM20 4h1v1h-1zM22 4h1v1h-1zM23 4h1v1h-1zM24 4h1v1h-1zM26 4h1v1h-1zM2 5h1v1h-1zM4 5h1v1h-1zM5 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM20 5h1v1h-1zM22 5h1v1h-1zM23 5h1v1h-1zM24 5h1v1h-1zM26 5h1v1h-1zM2 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM23 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM2 7h1v1h-1zM8 7h1v1h-1zM20 7h1v1h-1zM26 7h1v1h-1zM2 8h1v1h-1zM3 8h1v1h-1zM4 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM20 8h1v1h-1zM21 8h1v1h-1zM22 8h1v1h-1zM23 8h1v1h-1zM24 8h1v1h-1zM25 8h1v1h-1zM26 8h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM4 20h1v1h-1zM5 20h1v1h-1zM6 20h1v1h-1zM7 20h1v1h-1zM8 20h1v1h-1zM2 21h1v1h-1zM8 21h1v1h-1zM2 22h1v1h-1zM4 22h1v1h-1zM5 22h1v1h-1zM6 22h1v1h-1zM8 22h1v1h-1zM2 23h1v1h-1zM4 23h1v1h-1zM5 23h1v1h-1zM6 23h1v1h-1zM8 23h1v1h-1zM2 24h1v1h-1zM4 24h1v1h-1zM5 24h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM2 25h1v1h-1zM8 25h1v1h-1zM2 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM6 26h1v1h-1zM7 26h1v1h-1zM8 26h1v1h-1z"/></g></svg></div>
+    <div class="stack">
+      <div id="qr-mode"></div>
+      <div class="phone-panel xp-panel" id="qr-panel" aria-live="polite"></div>
+      <p class="note">Dieser QR-Code (Version 2, 25 · 25 Zellen) führt zu www.westermann.de.</p>
+    </div>
+  </div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Wo und wofür?</h3></header><p>Beschreibe, wo häufig QR-Codes zu finden sind und wofür sie genutzt werden.</p>
+      <div class="controls"><button class="btn" data-reveal="q1" aria-expanded="false">Lösungsidee</button></div><p class="solution" id="q1" hidden>Auf Plakaten, Verpackungen, Speisekarten, Tickets, in Schulbüchern: Sie führen schnell zu Webseiten, Videos oder Zusatzinfos, ohne dass man eine Adresse abtippen muss.</p></div>
+    <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Bereiche</h3></header><p>Beschreibe die Aufgaben der verschiedenen Bereiche und Muster eines QR-Codes (Bilder A–D). Nutze den Modus „Erkunden“.</p></div>
+    <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Daten im Datenfeld</h3></header><p>Erkläre, wie die Daten im Datenfeld des QR-Codes codiert werden.</p>
+      <div class="controls"><button class="btn" data-reveal="q3h" aria-expanded="false">HILFE</button><button class="btn" data-reveal="q3" aria-expanded="false">Lösung</button></div>
+      <p class="hint-box" id="q3h" hidden>Wie viele Zustände hat eine Zelle? Woran erinnert dich das?</p>
+      <p class="solution" id="q3" hidden>Jede Zelle ist schwarz oder weiß – also 1 oder 0, genau 1 Bit. Das Muster aller Zellen ergibt einen Binärcode, der die Zeichen (z. B. eine Webadresse) enthält.</p></div>
+    <div class="task-card"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>QR gegen EAN</h3></header><p>Begründe, warum mit einem QR-Code mehr Daten codiert werden können als mit einem EAN-Barcode.</p>
+      <div class="controls"><button class="btn" data-reveal="q4" aria-expanded="false">Lösung</button></div><p class="solution" id="q4" hidden>Der Barcode ist nur eindimensional: Er besteht aus einer Reihe von Strichen (13 Ziffern). Der QR-Code ist zweidimensional: Er nutzt Zeilen <i>und</i> Spalten, also viel mehr Zellen – bis zu 4296 Zeichen.</p></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Codierung von Daten</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Codierung von Daten</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Beim <b>Codieren</b> werden Zeichen anders dargestellt, sodass bestimmte Personen oder Maschinen sie verstehen. Die Zeichen bilden einen <b>Code</b>.</li>
+        <li data-step><b>Brailleschrift:</b> Jeder Buchstabe ist ein Muster aus 6 Punkten, das man ertasten kann.</li>
+        <li data-step><b>Morsealphabet (1837, Samuel Morse):</b> Buchstaben aus kurzen und langen Signalen – Nachrichten in Minuten statt Tagen.</li>
+        <li data-step><b>Codes für Verbraucher:</b> z. B. Erzeugercode auf Eiern (Haltungsform – Land – Betrieb), Kfz-Kennzeichen.</li>
+        <li data-step><b>Codes für Maschinen:</b> Pfandsymbol, <b>Barcode/EAN</b> (Striche, 13 Ziffern) und <b>QR-Code</b> (Zellen mit je 1 Bit, bis 4296 Zeichen).</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Schreibe deinen Namen in Brailleschrift und im Morsealphabet.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Üben und wiederholen</h2></div>
+  <h3>Morse-Training</h3>
+  <div id="ts"></div>
+  <h3 class="mt">Code und Einsatz</h3>
+  <div id="match"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+const MORSE = {A: '.-', B: '-...', C: '-.-.', D: '-..', E: '.', F: '..-.', G: '--.', H: '....', I: '..', J: '.---', K: '-.-', L: '.-..', M: '--', N: '-.', O: '---', P: '.--.', Q: '--.-', R: '.-.', S: '...', T: '-', U: '..-', V: '...-', W: '.--', X: '-..-', Y: '-.--', Z: '--..',
+  '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.', 'Ä': '.-.-', 'Ö': '---.', 'Ü': '..--'};
+const pretty = s => s.replace(/\./g, '•').replace(/-/g, '−');
+const toMorse = t => [...t.toUpperCase()].map(c => c === ' ' ? '/' : MORSE[c] ? pretty(MORSE[c]) : '').filter(Boolean).join('  ');
+
+/* ================= Braille ================= */
+(() => {
+  /* Punkte 1–6: 1 2 3 links, 4 5 6 rechts */
+  const BR = {a: [1], b: [1, 2], c: [1, 4], d: [1, 4, 5], e: [1, 5], f: [1, 2, 4], g: [1, 2, 4, 5], h: [1, 2, 5], i: [2, 4], j: [2, 4, 5], k: [1, 3], l: [1, 2, 3], m: [1, 3, 4], n: [1, 3, 4, 5], o: [1, 3, 5], p: [1, 2, 3, 4], q: [1, 2, 3, 4, 5], r: [1, 2, 3, 5], s: [2, 3, 4], t: [2, 3, 4, 5], u: [1, 3, 6], v: [1, 2, 3, 6], w: [2, 4, 5, 6], x: [1, 3, 4, 6], y: [1, 3, 4, 5, 6], z: [1, 3, 5, 6], ä: [3, 4, 5], ö: [2, 4, 6], ü: [1, 2, 5, 6]};
+  const uni = dots => String.fromCharCode(0x2800 + dots.reduce((s, d) => s + (1 << (d - 1)), 0));
+  const on = new Set([1, 2, 5]);
+  const cell = $('#bcell');
+  function draw() {
+    cell.innerHTML = [1, 4, 2, 5, 3, 6].map(d => `<button class="bdot ${on.has(d) ? 'on' : ''}" data-d="${d}" aria-label="Punkt ${d}"></button>`).join('');
+    const key = [...on].sort().join(',');
+    const hit = Object.entries(BR).find(([k, v]) => v.join(',') === key);
+    $('#bres').innerHTML = `<span class="bchar">${uni([...on])}</span><b>${hit ? hit[0].toUpperCase() : '?'}</b>`;
+  }
+  cell.addEventListener('click', e => { const b = e.target.closest('.bdot'); if (!b) return; const d = +b.dataset.d; on.has(d) ? on.delete(d) : on.add(d); draw(); });
+  const out = () => $('#b-out').innerHTML = [...$('#b-in').value.toLowerCase()].map(c => c === ' ' ? '<span class="bw"> </span>' : BR[c] ? `<span class="bw"><b>${uni(BR[c])}</b><small>${c}</small></span>` : '').join('');
+  $('#b-in').addEventListener('input', out); out(); draw();
+})();
+
+/* ================= Morse ================= */
+(() => {
+  const draw = () => $('#m-out').textContent = toMorse($('#m-in').value);
+  $('#m-in').addEventListener('input', draw); draw();
+  $('#mtab').innerHTML = Object.entries(MORSE).filter(([k]) => /[A-Z]/.test(k)).map(([k, v]) => `<span><b>${k}</b> ${pretty(v)}</span>`).join('');
+  $('#m-play').onclick = () => {
+    try {
+      const A = new (window.AudioContext || window.webkitAudioContext)(); let t = A.currentTime + .1; const U = .08;
+      for (const c of $('#m-in').value.toUpperCase()) {
+        if (c === ' ') { t += U * 7; continue; }
+        for (const s of (MORSE[c] || '')) { const o = A.createOscillator(), g = A.createGain(); o.frequency.value = 650; o.connect(g); g.connect(A.destination); g.gain.setValueAtTime(.2, t); const d = s === '.' ? U : U * 3; g.gain.setValueAtTime(0, t + d); o.start(t); o.stop(t + d + .01); t += d + U; }
+        t += U * 2;
+      }
+    } catch (e) {}
+  };
+})();
+
+/* ================= Eiercode ================= */
+(() => {
+  const H = {0: '🌱 ökologische Erzeugung (Bio)', 1: '🌳 Freilandhaltung', 2: '🏠 Bodenhaltung', 3: '🔲 Käfighaltung (Kleingruppe)'};
+  const BL = {'01': 'Schleswig-Holstein', '02': 'Hamburg', '03': 'Niedersachsen', '04': 'Bremen', '05': 'Nordrhein-Westfalen', '06': 'Hessen', '07': 'Rheinland-Pfalz', '08': 'Baden-Württemberg', '09': 'Bayern', '10': 'Saarland', '11': 'Berlin', '12': 'Brandenburg', '13': 'Mecklenburg-Vorpommern', '14': 'Sachsen', '15': 'Sachsen-Anhalt', '16': 'Thüringen'};
+  const L = {DE: 'Deutschland', AT: 'Österreich', NL: 'Niederlande', FR: 'Frankreich', PL: 'Polen', IT: 'Italien'};
+  function draw() {
+    const m = $('#egg-in').value.toUpperCase().replace(/\s/g, '').match(/^(\d)-?([A-Z]{2})-?(\d+)$/);
+    $('#egg-out').innerHTML = !m ? '<p class="bad">Format: Ziffer – Land – Betriebsnummer, z. B. 1-DE-0812345</p>' :
+      `<div class="egg-r"><b class="mono">${m[1]}</b><span>Haltungsform: ${H[m[1]] || '?'}</span></div><div class="egg-r"><b class="mono">${m[2]}</b><span>Erzeugerland: ${L[m[2]] || m[2]}</span></div><div class="egg-r"><b class="mono">${m[3]}</b><span>Betriebsnummer${m[2] === 'DE' && BL[m[3].slice(0, 2)] ? ` – Bundesland: <b>${BL[m[3].slice(0, 2)]}</b>` : ''} und Stall</span></div>`;
+  }
+  $('#egg-in').addEventListener('input', draw); draw();
+})();
+mcQuiz($('#kfz'), [
+  {q: '<span class="plate">M XY 549</span>', a: ['München', 'Mainz', 'Magdeburg', 'Mannheim'], ok: 0, why: 'Großstädte haben oft nur einen Buchstaben.'},
+  {q: '<span class="plate">F GH 4536</span>', a: ['Frankfurt am Main', 'Freiburg', 'Fulda', 'Flensburg'], ok: 0, why: 'Freiburg hat FR, Fulda FD, Flensburg FL.'},
+  {q: '<span class="plate">L C 542</span>', a: ['Leipzig', 'Lübeck', 'Ludwigsburg', 'Lörrach'], ok: 0, why: 'Lübeck HL, Ludwigsburg LB, Lörrach LÖ.'},
+  {q: '<span class="plate">S AB 123</span>', a: ['Stuttgart', 'Saarbrücken', 'Schwerin', 'Siegen'], ok: 0, why: 'Saarbrücken SB, Schwerin SN, Siegen SI.'},
+  {q: '<span class="plate">KA IT 56</span>', a: ['Karlsruhe', 'Kassel', 'Kiel', 'Kaiserslautern'], ok: 0, why: 'Kassel KS, Kiel KI, Kaiserslautern KL.'}
+]);
+
+/* ================= EAN-13 ================= */
+(() => {
+  const L = ['0001101', '0011001', '0010011', '0111101', '0100011', '0110001', '0101111', '0111011', '0110111', '0001011'];
+  const G = ['0100111', '0110011', '0011011', '0100001', '0011101', '0111001', '0000101', '0010001', '0001001', '0010111'];
+  const R = L.map(s => [...s].map(c => c === '0' ? '1' : '0').join(''));
+  const P = ['LLLLLL', 'LLGLGG', 'LLGGLG', 'LLGGGL', 'LGLLGG', 'LGGLLG', 'LGGGLL', 'LGLGLG', 'LGLGGL', 'LGGLGL'];
+  function draw() {
+    const d = $('#ean-in').value.replace(/\D/g, '').slice(0, 12);
+    if (d.length < 12) { $('#ean-status').innerHTML = `Noch ${12 - d.length} Ziffer(n) eingeben.`; return; }
+    const ds = [...d].map(Number), sum = ds.reduce((s, x, i) => s + x * (i % 2 ? 3 : 1), 0), chk = (10 - sum % 10) % 10, all = ds.concat(chk);
+    let bits = '101'; for (let i = 1; i <= 6; i++) bits += (P[all[0]][i - 1] === 'L' ? L : G)[all[i]]; bits += '01010'; for (let i = 7; i <= 12; i++) bits += R[all[i]]; bits += '101';
+    const guard = new Set([0, 1, 2, 45, 46, 47, 48, 49, 92, 93, 94]);
+    let s = '<rect width="113" height="70" fill="#fff"/>';
+    [...bits].forEach((b, i) => { if (b === '1') s += `<rect x="${9 + i}" y="4" width="1" height="${guard.has(i) ? 56 : 51}" fill="#000"/>`; });
+    s += `<text x="4" y="66" style="font:7px monospace">${all[0]}</text><text x="15" y="66" style="font:7px monospace;letter-spacing:1.6px">${all.slice(1, 7).join('')}</text><text x="61" y="66" style="font:7px monospace;letter-spacing:1.6px">${all.slice(7).join('')}</text>`;
+    $('#ean').innerHTML = s;
+    $('#ean-status').innerHTML = `Länderpräfix <b>${d.slice(0, 2)}</b>${+d.slice(0, 2) >= 40 && +d.slice(0, 2) <= 44 ? ' (Deutschland)' : ''} · Hersteller und Artikel <b>${d.slice(2)}</b> · <b>Prüfziffer ${chk}</b>: Damit erkennt die Kasse Lesefehler. Die Streifen bilden ${bits.length} Bits.`;
+  }
+  $('#ean-in').addEventListener('input', draw); draw();
+})();
+
+/* ================= QR ================= */
+explorer($('.qr-svg'), $('#qr-panel'), [
+  {id: 'position', n: 'Positionsmarkierungen', t: 'Drei große Quadrate in drei Ecken. Daran erkennt der Scanner, wie der QR-Code ausgerichtet ist – die rechte untere Ecke hat keine.'},
+  {id: 'sync', n: 'Synchronisationslinien', t: 'Zwei abwechselnd gepunktete Linien zwischen den Positionsmarkierungen. Sie zeigen dem Scanner die Größe des Datenfeldes an.'},
+  {id: 'ausrichtung', n: 'Ausrichtungsmarkierung', t: 'Ein kleines Quadrat rechts unten. Es hilft vor allem bei großen QR-Codes als zusätzliche Orientierung.'},
+  {id: 'rand', n: 'Randbereich', t: 'Ein heller Rand um den Code herum, damit der Scanner ihn von der Umgebung unterscheiden kann.'},
+  {id: 'daten', n: 'Datenfeld', t: 'Hier stecken die Daten: Jede schwarze oder weiße Zelle ist 1 Bit. Dazu kommen Bereiche für Datenformat und Version.'}
+], {modeRoot: $('#qr-mode'), label: 'Bereich', intro: 'Tippe einen Bereich des QR-Codes an.'});
+
+/* ================= Übungen ================= */
+taskSet($('#ts'), () => {
+  const W = ['SOS', 'HUND', 'KATZE', 'BIT', 'BYTE', 'CODE', 'HALLO', 'ZEBRA', 'MAUS', 'TEXT', 'EIS', 'OMA'];
+  const w = pick(W);
+  return Math.random() < .5 ? {key: 'd' + w, tag: 'Entschlüsseln', q: `<span class="mono" style="font-size:1.2rem">${toMorse(w)}</span>`, fields: [{l: 'Wort', a: w}], hint: 'Nutze die Morsetabelle in Station 3.'}
+    : {key: 'e' + w, tag: 'Verschlüsseln', q: `Wie wird <b>${w[0]}</b> gemorst? (Punkt = . Strich = -)`, fields: [{l: 'Morsezeichen', a: [MORSE[w[0]], pretty(MORSE[w[0]])]}], hint: 'Nutze die Morsetabelle in Station 3.'};
+}, {n: 6});
+matcher($('#match'), [['Brailleschrift', 'Punktmuster zum Ertasten'], ['Morsecode', 'kurze und lange Signale'], ['Erzeugercode', 'Haltungsform und Herkunft von Eiern'], ['EAN-Barcode', 'Artikelnummer an der Kasse'], ['QR-Code', 'Webadresse mit dem Smartphone scannen'], ['Binärcode', 'Folge aus 0 und 1 für den Computer']]);
+mcQuiz($('#quiz'), [
+  {q: 'Aus wie vielen Punkten besteht ein Braille-Zeichen?', a: ['6', '4', '8', '10'], ok: 0, why: 'Zwei Spalten mit je drei Punkten.'},
+  {q: 'Wer entwickelte 1837 einen Code für den Telegrafen?', a: ['Samuel Morse', 'Louis Braille', 'Johannes Gutenberg', 'Alan Turing'], ok: 0, why: 'Zusammen mit Alfred Vail.'},
+  {q: 'Was bedeutet die 0 am Anfang des Eiercodes?', a: ['ökologische Erzeugung (Bio)', 'Käfighaltung', 'Bodenhaltung', 'kein Ei'], ok: 0, why: '0 Bio, 1 Freiland, 2 Boden, 3 Käfig.'},
+  {q: 'Wofür steht EAN?', a: ['European Article Number', 'Elektronische Artikel-Nummer', 'Einkaufs-App-Name', 'Energie-Anzeige'], ok: 0, why: 'Der Barcode im Supermarkt.'},
+  {q: 'Wie viele Bits enthält eine Zelle im QR-Code?', a: ['1', '8', '2', '0'], ok: 0, why: 'Schwarz oder weiß = 1 oder 0.'},
+  {q: 'Wozu dienen die Positionsmarkierungen im QR-Code?', a: ['Der Scanner erkennt die Ausrichtung', 'Sie speichern die Webadresse', 'Sie sind nur Dekoration', 'Sie zeigen den Preis'], ok: 0, why: 'Drei Ecken haben sie, die vierte nicht.'}
+]);
+</script>

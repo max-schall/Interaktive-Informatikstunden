@@ -1,0 +1,142 @@
+<!--
+title: Urheberrecht und Bildrechte
+short: Urheberrecht
+time: 2 Unterrichtsstunden
+q: Woher weiß man, welche Fotos man verwenden darf?
+facts: Urheberrecht in Deutschland (Urheberrechtsgesetz) – auch für kleine Teile eines Werkes | Recht am eigenen Bild und Ausnahmen: Beiwerk, große Veranstaltungen, Bilder der Zeitgeschichte; bei Kindern: Erziehungsberechtigte | KI-generierte Bilder und typische Fehler | Deepfakes (M1, M2)
+inter: Darf ich das? – Fälle entscheiden · Ausnahmen zuordnen · KI-Bild: Fehler finden · Echt oder KI?
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Recherchieren und Präsentieren</p>
+      <h1>Urheberrecht und Bildrechte<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Für einen eigenen Blogeintrag sucht Maria Fotos im Internet. Woher weiß sie, welche Fotos sie verwenden darf?</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>„Das Bild war doch frei im Internet!“ – Reicht das als Erlaubnis?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Woher weiß man, welche Fotos man verwenden darf?</p></div>
+      <div class="controls"><button class="btn primary" data-go="urheber">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="urheber" data-label="Urheberrecht" data-yr="Erarbeitung" data-title="Urheberrecht in Deutschland" data-sub="Wer darf entscheiden?">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Urheberrecht in Deutschland</p>
+      <h2>Wer ein Werk macht, entscheidet</h2>
+      <ul class="facts">
+        <li>Das <b>Urheberrechtsgesetz</b> schützt Personen, die Texte, Bilder, Videos, Musik oder Teile von Computerprogrammen erstellen.</li>
+        <li>Wer ein Werk gemacht hat, ist der <b>Urheber</b> oder die <b>Urheberin</b>. Nur diese Person entscheidet, wie das Werk genutzt wird.</li>
+        <li>Frei im Internet verfügbar heißt <b>nicht</b>, dass man es verwenden darf – meist braucht man eine <b>Erlaubnis</b>.</li>
+        <li>Das gilt auch für <b>kleine Teile</b>: ein Liedausschnitt, ein Bild im Hintergrund, ein kurzer Filmausschnitt.</li>
+        <li>Wer das Urheberrecht verletzt, kann eine <b>Geldstrafe</b> bekommen.</li>
+      </ul>
+    </div>
+    <div class="vis"><div class="vis-head"><h3>Darf ich das?</h3></div><div id="tf1"></div></div>
+  </div>
+</section>
+
+<section class="station" id="bild" data-label="M1 Recht am Bild" data-yr="M1" data-title="Das Recht am eigenen Bild" data-sub="Mit Ausnahmen">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Das Recht am eigenen Bild</p>
+    <h2>Das Recht am eigenen Bild</h2>
+    <p class="lead">Ist eine Person auf einem Bild oder Video zu sehen, darf es nicht einfach veröffentlicht werden – auch nicht auf YouTube, Instagram oder TikTok. Die Person muss <b>vorher gefragt</b> werden. Bei Kindern und Jugendlichen müssen die <b>Erziehungsberechtigten</b> zustimmen.</p>
+  </div>
+  <div class="cols-3">
+    <div class="box"><span class="tag">Ausnahme 1: Beiwerk</span><p>Personen im Hintergrund einer <b>Sehenswürdigkeit</b> stehen nicht im Mittelpunkt.</p></div>
+    <div class="box"><span class="tag">Ausnahme 2: Versammlungen</span><p>Fotos von <b>Konzerten</b> oder <b>Demos</b>, wenn keine Einzelpersonen herausgehoben werden.</p></div>
+    <div class="box"><span class="tag">Ausnahme 3: Zeitgeschichte</span><p><b>Berühmte Persönlichkeiten</b> bei öffentlichem Interesse, z. B. Politiker im Parlament.</p></div>
+  </div>
+  <div class="m2cards mt" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+    <div class="m2c"><span>🗼👥</span><b>A</b><small>Der Eiffelturm, viele Touristen sind klein im Vordergrund zu sehen.</small></div>
+    <div class="m2c"><span>🧑🎈🧓</span><b>B</b><small>Zwei Männer stehen groß im Bild, einer schenkt dem anderen Luftballons.</small></div>
+    <div class="m2c"><span>🌟🗼</span><b>C</b><small>Ein berühmter Schauspieler winkt bei einer Filmpremiere vor dem Eiffelturm.</small></div>
+  </div>
+  <div class="task-card mt"><header><span class="no">M1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Verstoß oder nicht?</h3></header><p>Begründe, ob die Veröffentlichung der Bilder gegen das Recht am eigenen Bild verstößt.</p></div>
+  <div id="m1-sort"></div>
+</section>
+
+<section class="station" id="ki" data-label="M2 KI-Bilder" data-yr="M2" data-title="KI-generierte Bilder und Deepfakes" data-sub="Fehler finden">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · KI-generierte Bilder</p>
+    <h2>Echt oder von einer KI?</h2>
+    <p class="lead">Eine <b>KI</b> erhält eine Bildbeschreibung und berechnet daraus Pixel und Farben. Auf den ersten Blick sieht das oft gut aus – auf den zweiten zeigen sich <b>Fehler</b>, weil die KI das Erstellte nicht inhaltlich versteht. Finde die Fehler im Bild!</p>
+  </div>
+  <div class="cols-2" style="grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)">
+    <div class="vis" style="padding:.5rem"><svg id="kibild" class="fig-svg" viewBox="0 0 520 340" aria-label="KI-generiertes Bild eines Brettspiels – finde die Fehler">
+      <rect width="520" height="340" fill="#3F2A1D"/>
+      <polygon points="60,250 460,250 420,90 100,90" fill="#2F6F73" stroke="#1E3A3D" stroke-width="3"/>
+      <g stroke="#9ED0D3" stroke-width="1.2" opacity=".7"><line x1="133" y1="90" x2="100" y2="250"/><line x1="166" y1="90" x2="140" y2="250"/><line x1="200" y1="90" x2="185" y2="250"/><line x1="233" y1="90" x2="228" y2="250"/><line x1="290" y1="90" x2="300" y2="250"/><line x1="320" y1="90" x2="335" y2="250"/><line x1="355" y1="90" x2="380" y2="250"/><line x1="110" y1="130" x2="430" y2="130"/><line x1="96" y1="170" x2="440" y2="170"/><line x1="82" y1="210" x2="452" y2="215"/><path d="M250 90 Q262 170 248 250" fill="none"/></g>
+      <g fill="#E11D48"><circle cx="160" cy="150" r="7"/><circle cx="210" cy="190" r="7"/><circle cx="300" cy="140" r="7"/><circle cx="350" cy="200" r="7"/></g>
+      <g fill="#1D4ED8"><circle cx="180" cy="110" r="7"/><circle cx="270" cy="220" r="7"/><circle cx="380" cy="160" r="7"/></g>
+      <g><rect x="300" y="262" width="44" height="44" rx="8" fill="#F8FAFC" stroke="#94A3B8"/><g fill="#111"><circle cx="311" cy="273" r="3.5"/><circle cx="322" cy="273" r="3.5"/><circle cx="333" cy="273" r="3.5"/><circle cx="311" cy="284" r="3.5"/><circle cx="322" cy="284" r="3.5"/><circle cx="333" cy="284" r="3.5"/><circle cx="322" cy="296" r="3.5"/></g></g>
+      <g><rect x="200" y="30" width="38" height="38" rx="7" fill="#DC2626"/><circle cx="219" cy="49" r="4" fill="#fff"/><ellipse cx="219" cy="300" rx="22" ry="6" fill="#000" opacity="0"/></g>
+      <g fill="#F2C29B" stroke="#C08457" stroke-width="2"><ellipse cx="60" cy="300" rx="55" ry="34"/><rect x="85" y="252" width="14" height="40" rx="7"/><rect x="101" y="248" width="14" height="42" rx="7"/><rect x="117" y="252" width="14" height="40" rx="7"/><rect x="133" y="258" width="14" height="36" rx="7"/><rect x="149" y="265" width="13" height="32" rx="6"/><rect x="75" y="262" width="13" height="34" rx="6"/></g>
+      <g fill="#F2C29B" stroke="#C08457" stroke-width="2"><ellipse cx="470" cy="80" rx="45" ry="28"/><rect x="430" y="50" width="12" height="30" rx="6" transform="rotate(-30 436 65)"/></g>
+      <g data-part="h1" class="ki-hot"><circle cx="118" cy="275" r="52" fill="transparent"/></g>
+      <g data-part="h2" class="ki-hot"><circle cx="322" cy="284" r="32" fill="transparent"/></g>
+      <g data-part="h3" class="ki-hot"><circle cx="219" cy="49" r="32" fill="transparent"/></g>
+      <g data-part="h4" class="ki-hot"><circle cx="255" cy="170" r="30" fill="transparent"/></g>
+      <g data-part="h5" class="ki-hot"><circle cx="470" cy="80" r="45" fill="transparent"/></g>
+    </svg></div>
+    <div class="stack">
+      <div class="box"><p class="score" id="ki-score">Gefunden: <b>0</b> / 5</p><ul class="ki-found" id="ki-found"></ul><div class="controls"><button class="btn" id="ki-show">Alle zeigen</button></div></div>
+      <div class="task-card"><header><span class="no">1–3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>M2 KI-generierte Bilder</h3></header><p>Stelle Vermutungen an, wie das Spiel funktioniert. Nenne Anzeichen, die verraten, dass das Bild KI-generiert ist. Beurteile, ob es glaubhaft generiert wurde.</p></div>
+    </div>
+  </div>
+  <div class="box mt"><span class="tag lim">Deepfakes</span><p><b>Deepfakes</b> sind tiefgreifende Fälschungen: Personen werden in Situationen gezeigt – auch in Videos –, die nie stattgefunden haben. Damit werden gezielt <b>falsche Informationen</b> verbreitet. Deshalb: Quelle prüfen und mehreren Quellen vertrauen.</p></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Urheberrecht und Bildrechte</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Urheberrecht und Bildrechte</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Das <b>Urheberrecht</b> schützt Texte, Bilder, Videos, Musik und Programme. Nur der Urheber entscheidet über die Nutzung – auch bei kleinen Ausschnitten.</li>
+        <li data-step>„Frei im Internet“ heißt nicht „frei verwendbar“. Ohne Erlaubnis droht eine Geldstrafe.</li>
+        <li data-step><b>Recht am eigenen Bild:</b> Vor dem Veröffentlichen die abgebildete Person fragen (bei Kindern die Eltern).</li>
+        <li data-step>Ausnahmen: Personen als <b>Beiwerk</b>, <b>große Veranstaltungen</b>, <b>Bilder der Zeitgeschichte</b>.</li>
+        <li data-step><b>KI-Bilder</b> haben oft Fehler (Finger, Körper, unmögliche Gegenstände). <b>Deepfakes</b> sind Fälschungen, mit denen falsche Informationen verbreitet werden.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Checkliste</span><p>Schreibe drei Fragen auf, die du dir stellst, bevor du ein Bild veröffentlichst.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+trueFalse($('#tf1'), [
+  {t: 'Ein Bild aus der Google-Bildersuche darf ich in meinem YouTube-Video zeigen.', ok: false, why: 'Frei verfügbar heißt nicht frei verwendbar.'},
+  {t: 'Für einen 5-Sekunden-Ausschnitt eines Songs brauche ich keine Erlaubnis.', ok: false, why: 'Auch kleine Teile sind geschützt.'},
+  {t: 'Mein selbst gemaltes Bild darf ich veröffentlichen.', ok: true, why: 'Ich bin der Urheber.'},
+  {t: 'Wer das Urheberrecht verletzt, kann eine Geldstrafe bekommen.', ok: true, why: 'Das kann teuer werden.'}
+]);
+sorter($('#m1-sort'), [{id: 'ok', name: 'darf veröffentlicht werden'}, {id: 'no', name: 'nur mit Einverständnis'}], [
+  {t: 'A – Touristen vor dem Eiffelturm', c: 'ok', why: 'Die Personen sind nur Beiwerk.'},
+  {t: 'B – zwei Männer mit Luftballons', c: 'no', why: 'Sie stehen im Mittelpunkt und sind erkennbar.'},
+  {t: 'C – berühmter Schauspieler bei der Premiere', c: 'ok', why: 'Bild der Zeitgeschichte, öffentliches Interesse.'},
+  {t: 'Klassenfoto auf der Schulhomepage', c: 'no', why: 'Kinder sind erkennbar – Eltern müssen zustimmen.'},
+  {t: 'Foto der Zuschauermenge bei einem Konzert', c: 'ok', why: 'Große Veranstaltung, keine Einzelperson hervorgehoben.'}
+]);
+(() => {
+  const H = {h1: 'Die Hand hat sechs Finger.', h2: 'Der Würfel hat sieben Augen.', h3: 'Ein Würfel schwebt in der Luft – ohne Schatten.', h4: 'Eine Linie des Spielfelds ist krumm und passt nicht ins Raster.', h5: 'Die zweite Hand hat keine richtigen Finger, der Arm fehlt.'};
+  const found = new Set();
+  const show = id => { found.add(id); $(`#kibild [data-part="${id}"] circle`).setAttribute('stroke', '#FACC15'); $(`#kibild [data-part="${id}"] circle`).setAttribute('stroke-width', '4'); $('#ki-found').innerHTML = [...found].map(k => `<li>✅ ${H[k]}</li>`).join(''); $('#ki-score').innerHTML = `Gefunden: <b>${found.size}</b> / 5${found.size === 5 ? ' – <b class="good">alle!</b>' : ''}`; };
+  $('#kibild').addEventListener('click', e => { const g = e.target.closest('[data-part]'); if (g) show(g.dataset.part); });
+  $('#ki-show').onclick = () => Object.keys(H).forEach(show);
+})();
+mcQuiz($('#quiz'), [
+  {q: 'Wer entscheidet, wie ein Werk genutzt wird?', a: ['der Urheber oder die Urheberin', 'jeder, der es findet', 'die Suchmaschine', 'die Schule'], ok: 0, why: 'So steht es im Urheberrechtsgesetz.'},
+  {q: 'Wann darf man ein Foto mit einer erkennbaren Mitschülerin veröffentlichen?', a: ['wenn sie und ihre Eltern zugestimmt haben', 'immer', 'nie', 'wenn das Foto schön ist'], ok: 0, why: 'Recht am eigenen Bild.'},
+  {q: 'Was ist ein „Bild der Zeitgeschichte“?', a: ['ein Bild einer berühmten Person bei öffentlichem Interesse', 'ein altes Foto', 'ein KI-Bild', 'ein Selfie'], ok: 0, why: 'z. B. ein Politiker im Parlament.'},
+  {q: 'Woran erkennt man KI-Bilder oft?', a: ['an Fehlern wie zu vielen Fingern', 'an der Dateiendung .jpg', 'an der Bildgröße', 'gar nicht'], ok: 0, why: 'Die KI versteht das Bild nicht.'},
+  {q: 'Was ist ein Deepfake?', a: ['eine tiefgreifende Fälschung', 'ein Bildformat', 'ein Filter', 'ein Urheberrecht'], ok: 0, why: 'Zeigt Dinge, die nie passiert sind.'}
+]);
+</script>

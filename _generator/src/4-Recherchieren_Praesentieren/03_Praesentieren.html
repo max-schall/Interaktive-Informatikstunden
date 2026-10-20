@@ -1,0 +1,134 @@
+<!--
+title: Sinnvoll präsentieren
+short: Präsentieren
+time: 1–2 Unterrichtsstunden
+q: Was macht eine Präsentation wirkungsvoll?
+facts: Inhalte präsentieren: verständlich, interessant, gut vorbereitet | Vorbereitung: Thema, Publikum, Anschaulichkeit, Zeitplanung, Ausstattung | Präsentationsmittel: Plakat, Präsentationssoftware, Rollenspiel, Tafelbild, Video, Anschauungsobjekt | M1 Präsentationsmittel nutzen und begründet auswählen
+inter: Präsentations-Planer · Präsentationsmittel-Karten mit Vor- und Nachteilen · Bilder A–F zuordnen · Welches Mittel passt?
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Recherchieren und Präsentieren</p>
+      <h1>Sinnvoll präsentieren<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Influencer auf der ganzen Welt präsentieren täglich Produkte, Reiseziele oder Lebensstile. Und du präsentierst im Unterricht Themen und Projekte.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Erinnere dich an eine richtig gute Präsentation. Was hat sie gut gemacht?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Was macht eine Präsentation wirkungsvoll?</p></div>
+      <div class="controls"><button class="btn primary" data-go="vorbereiten">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="vorbereiten" data-label="Vorbereitung" data-yr="Erarbeitung" data-title="Präsentation vorbereiten" data-sub="Fünf Fragen vorab">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Präsentation vorbereiten</p>
+      <h2>Fünf Fragen vorab</h2>
+      <p class="lead">Eine Präsentation soll <b>verständlich</b>, <b>interessant</b> und <b>gut vorbereitet</b> sein. Das Präsentationsmittel richtet sich danach, was man zeigen möchte und an wen sie sich richtet.</p>
+      <div id="prep"></div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Präsentations-Planer</h3></div>
+      <div class="planner">
+        <label>Thema <input id="pl-t" value="Der Igel"></label>
+        <label>Ziel <select id="pl-z"><option>informieren</option><option>überzeugen</option><option>unterhalten</option></select></label>
+        <label>Publikum <select id="pl-p"><option>Mitschülerinnen und Mitschüler</option><option>Lehrkräfte</option><option>Eltern</option></select></label>
+        <label>Zeit <input id="pl-m" type="number" value="10" min="1" max="45"> Minuten</label>
+        <fieldset><legend>Ausstattung</legend><label><input type="checkbox" checked> Laptop</label><label><input type="checkbox" checked> Beamer</label><label><input type="checkbox"> Ausdrucke</label><label><input type="checkbox"> Modell</label><label><input type="checkbox"> Plakat</label></fieldset>
+      </div>
+      <p class="status" id="pl-out"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="mittel" data-label="Präsentationsmittel" data-yr="Erarbeitung" data-title="Präsentationsmittel" data-sub="Sechs Möglichkeiten">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Präsentationsmittel</p>
+    <h2>Sechs Präsentationsmittel</h2>
+    <p class="lead">Dreh die Karten um: Was spricht dafür, was dagegen?</p>
+  </div>
+  <div id="mittel-flip"></div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Mittel wählen" data-yr="M1" data-title="Präsentationsmittel nutzen" data-sub="Bilder A–F zuordnen">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Material M1</p>
+    <h2>Präsentationsmittel nutzen</h2>
+  </div>
+  <div class="m2cards" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+    <div class="m2c"><span>🎭</span><b>A</b><small>Mehrere Kinder spielen vor der Klasse eine Szene.</small></div>
+    <div class="m2c"><span>📺🚲</span><b>B</b><small>Auf einem großen Bildschirm läuft ein Film über Fahrräder.</small></div>
+    <div class="m2c"><span>🫀</span><b>C</b><small>Ein Schüler zeigt ein Modell des Herzens.</small></div>
+    <div class="m2c"><span>✍️🖤</span><b>D</b><small>Eine Schülerin zeichnet Diagramme an die Tafel.</small></div>
+    <div class="m2c"><span>🌳📄</span><b>E</b><small>Ein großes Plakat „Der Baum“ mit Bildern und kurzen Texten.</small></div>
+    <div class="m2c"><span>🖥️</span><b>F</b><small>Eine Schülerin erklärt mit Folien am Whiteboard.</small></div>
+  </div>
+  <div class="cols-2 mt">
+    <div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Präsentationsmittel erkennen</h3></header><p>Beschreibe, welche Präsentationsmittel auf den Abbildungen jeweils genutzt werden.</p></div>
+      <div id="m1-sort"></div>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Erfahrungen</h3></header><p>Partnerarbeit: Beschreibt, welche Präsentationsmittel ihr schon genutzt habt, und tauscht euch aus.</p></div>
+      <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Vor- und Nachteile</h3></header><p>Wähle zwei Präsentationsmittel aus und beschreibe mögliche Vor- und Nachteile. Die Karten in Station 2 helfen.</p></div>
+      <div class="task-card"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Biologie-Referat</h3></header><p>Du hältst ein 15-minütiges Referat über ein Säugetier deiner Wahl. Begründe, welches Präsentationsmittel du wählst.</p>
+        <div class="controls"><button class="btn" data-reveal="b4h" aria-expanded="false">HILFE</button><button class="btn" data-reveal="b4" aria-expanded="false">Lösungsidee</button></div>
+        <p class="hint-box" id="b4h" hidden>Was willst du zeigen (Aussehen, Bewegung, Lebensraum, Zahlen)? Wie lange dauert es? Was steht zur Verfügung?</p>
+        <p class="solution" id="b4" hidden>Ein <b>Vortrag mit Präsentationssoftware</b>: Fotos und kurze Videos zeigen das Tier, Karten den Lebensraum, Diagramme Größe und Gewicht. 15 Minuten lassen sich mit Folien gut gliedern. Ergänzend: ein <b>Anschauungsobjekt</b> wie ein Fell oder Schädelmodell, das herumgegeben wird.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Präsentieren</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Sinnvoll präsentieren</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Eine gute Präsentation ist <b>verständlich</b>, <b>interessant</b> und <b>gut vorbereitet</b>.</li>
+        <li data-step>Vorbereitung: <b>Thema</b> (informieren, überzeugen, unterhalten?), <b>Publikum</b>, <b>Anschaulichkeit</b>, <b>Zeitplanung</b>, <b>Ausstattung</b>.</li>
+        <li data-step>Präsentationsmittel: <b>Plakat</b>, <b>Vortrag mit Präsentationssoftware</b>, <b>Rollenspiel</b>, <b>Tafelbild</b>, <b>Video/Erklärfilm</b>, <b>Anschauungsobjekt</b>.</li>
+        <li data-step>Die Wahl hängt vom <b>Thema</b>, vom <b>Ziel</b> und vom <b>Publikum</b> ab.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Tabelle</span><p>Lege eine Tabelle an: Präsentationsmittel – Vorteil – Nachteil.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Welches Mittel passt?</h2></div>
+  <div id="fit-sort"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+flipCards($('#prep'), [['🎯 Thema', 'Wie lautet das Thema? Welche Infos sind wichtig? Soll die Präsentation informieren, überzeugen oder unterhalten?'], ['👥 Publikum', 'Mitschüler, Lehrkräfte oder Eltern – das macht einen Unterschied.'], ['🖼️ Anschaulichkeit', 'Wie wird das Thema spannend? Bilder oder Filme machen es greifbar.'], ['⏱️ Zeitplanung', 'Alles Wichtige muss in die vorgegebene Zeit passen.'], ['🎒 Ausstattung', 'Liste: Laptop, Beamer, Ausdrucke …']]);
+(() => {
+  const up = () => { const n = $$('#vorbereiten fieldset input:checked').map(i => i.parentElement.textContent.trim()); const m = +$('#pl-m').value; $('#pl-out').innerHTML = `<b>${$('#pl-t').value}</b>: ${m} Minuten für ${$('#pl-p').value}, Ziel: ${$('#pl-z').value}. Mitnehmen: ${n.join(', ') || '–'}. ${m > 15 ? 'Plane Pausen oder Fragen ein, damit das Publikum dranbleibt.' : 'Gliedere in Einleitung, Hauptteil und Schluss.'}`; };
+  $$('#vorbereiten input, #vorbereiten select').forEach(i => i.addEventListener('input', up)); up();
+})();
+flipCards($('#mittel-flip'), [
+  ['📋 Plakat', '➕ übersichtlich, bleibt hängen, ohne Technik · ➖ wenig Platz, nicht veränderbar'],
+  ['🖥️ Vortrag mit Präsentationssoftware', '➕ Texte, Bilder, Videos, Diagramme; per Beamer gut sichtbar · ➖ Technik kann ausfallen, Gefahr von zu viel Text'],
+  ['🎭 Rollenspiel oder Szene', '➕ lebendig, bei Themen mit mehreren Rollen · ➖ braucht Proben, Inhalte können untergehen'],
+  ['✍️ Tafelbild', '➕ spontan, Publikum kann mitmachen · ➖ man steht mit dem Rücken zum Publikum, braucht Zeit'],
+  ['🎬 Video oder Erklärfilm', '➕ kreativ und spannend · ➖ aufwendig zu erstellen, Rechte beachten'],
+  ['🫀 Anschauungsobjekt', '➕ echtes Objekt macht das Thema greifbar · ➖ nicht immer verfügbar, hinten schlecht zu sehen']
+]);
+sorter($('#m1-sort'), [{id: 'r', name: 'Rollenspiel'}, {id: 'v', name: 'Video'}, {id: 'o', name: 'Anschauungsobjekt'}, {id: 't', name: 'Tafelbild'}, {id: 'p', name: 'Plakat'}, {id: 's', name: 'Präsentationssoftware'}], [
+  {t: 'A', c: 'r'}, {t: 'B', c: 'v'}, {t: 'C', c: 'o'}, {t: 'D', c: 't'}, {t: 'E', c: 'p'}, {t: 'F', c: 's'}
+]);
+sorter($('#fit-sort'), [{id: 'r', name: 'Rollenspiel'}, {id: 'o', name: 'Anschauungsobjekt'}, {id: 's', name: 'Präsentationssoftware'}, {id: 'p', name: 'Plakat'}], [
+  {t: 'Streit schlichten auf dem Schulhof zeigen', c: 'r'}, {t: 'den Aufbau einer Blüte am echten Beispiel', c: 'o'}, {t: 'Klimadaten mit Diagrammen und Fotos', c: 's'}, {t: 'Ausstellung im Schulflur', c: 'p'}
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Was gehört NICHT zur Vorbereitung einer Präsentation?', a: ['das Publikum ignorieren', 'Thema bestimmen', 'Zeit planen', 'Ausstattung prüfen'], ok: 0, why: 'Das Publikum ist wichtig!'},
+  {q: 'Welches Präsentationsmittel braucht keine Technik?', a: ['Plakat', 'Präsentationssoftware', 'Video', 'Erklärfilm'], ok: 0, why: 'Papier, Bilder, Stifte.'},
+  {q: 'Wann eignet sich ein Rollenspiel?', a: ['bei Themen mit mehreren Rollen', 'für Zahlen und Diagramme', 'für einen Stadtplan', 'nie'], ok: 0, why: 'Es macht Inhalte lebendig.'},
+  {q: 'Welche drei Ziele kann eine Präsentation haben?', a: ['informieren, überzeugen, unterhalten', 'malen, singen, rechnen', 'schnell, laut, lang', 'drucken, speichern, löschen'], ok: 0, why: 'Vorab überlegen!'},
+  {q: 'Was macht ein Thema greifbar?', a: ['Bilder, Filme oder echte Objekte', 'viel Text', 'kleine Schrift', 'schnelles Sprechen'], ok: 0, why: 'Anschaulichkeit.'}
+]);
+</script>

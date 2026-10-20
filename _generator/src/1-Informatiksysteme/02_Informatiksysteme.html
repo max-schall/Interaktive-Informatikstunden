@@ -1,0 +1,443 @@
+<!--
+title: Informatiksysteme und das EVA-Prinzip
+short: EVA-Prinzip
+time: 2 Unterrichtsstunden
+q: Wie verarbeitet ein Computer Daten – und seit wann kommunizieren Menschen über Geräte?
+facts: Informatiksysteme: Hardware, Software, Netzwerk | EVA-Prinzip am Smartphone, Buchmaterial M1 mit Aufgaben 1–4 | Geschichte der Kommunikation als interaktive Zeitleiste
+inter: EVA-Fließband mit Beispielen · klickbares Smartphone mit Quiz · Geräte sortieren · Ideen-Speicher · Karten-App in EVA zerlegen · Headset · Zeitleiste mit Maßstab-Umschalter · Zeitstrahl-Puzzle · „Was war zuerst?“
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Informatiksysteme nutzen</p>
+      <h1>Das EVA-Prinzip<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Ob Smartphone, Spielkonsole oder Schulrechner: Alle Computer arbeiten nach demselben Grundprinzip. Und Menschen tauschen schon seit 40 000 Jahren Informationen aus – nur die Geräte haben sich verändert.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welche Geräte hast du heute schon benutzt? Was hast du eingegeben – und was kam heraus?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie verarbeitet ein Computer Daten – und seit wann kommunizieren Menschen über Geräte?</p></div>
+      <div class="controls"><button class="btn primary" data-go="systeme">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="systeme" data-label="Informatiksysteme" data-yr="Einstieg" data-title="Informatiksysteme" data-sub="Hardware, Software, Netzwerk">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Einstieg</p>
+    <h2>Was ist ein Informatiksystem?</h2>
+    <p class="lead">Ein <b>Informatiksystem</b> besteht aus <b>Hardware</b> und <b>Software</b>. Viele Informatiksysteme sind außerdem über ein <b>Netzwerk</b> verbunden.</p>
+  </div>
+  <div class="cols-3">
+    <div class="box"><span class="tag">Hardware</span><p>Alle Teile, die man <b>anfassen</b> kann: Gehäuse, Tastatur, Bildschirm, Prozessor, Arbeitsspeicher, Netzwerkkarte …</p></div>
+    <div class="box"><span class="tag">Software</span><p><b>Programme und Apps</b>, die dem Computer sagen, was er tun soll: Betriebssystem, Browser, Spiele, Karten-App …</p></div>
+    <div class="box"><span class="tag">Netzwerk</span><p>Damit Nutzer Daten austauschen können, sind Informatiksysteme in einem <b>Netzwerk</b> verbunden, z. B. über eine Netzwerkkarte. Das größte Netzwerk ist das <b>Internet</b>.</p></div>
+  </div>
+  <div class="cols-2 mt">
+    <div class="task-card"><header><span class="no">A</span><h3>Meine Geräte</h3></header><p>Nenne Informatikgeräte, die du nutzt, und begründe, warum du diese nutzt.</p></div>
+    <div class="task-card"><header><span class="no">B</span><h3>Hardware und Software</h3></header><p>Beschreibe Hardware und Software, die du kennst. Sortiere dazu die Karten unten.</p></div>
+  </div>
+  <div id="hw-sort"></div>
+</section>
+
+<section class="station" id="eva" data-label="EVA-Prinzip" data-yr="Erarbeitung" data-title="Eingabe – Verarbeitung – Ausgabe" data-sub="Das zentrale Prinzip der Datenverarbeitung">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Erarbeitung</p>
+      <h2>Eingabe – Verarbeitung – Ausgabe</h2>
+      <p class="lead">Computer arbeiten nach dem <b>EVA-Prinzip</b>. Es ist das zentrale Prinzip der Datenverarbeitung von Informatiksystemen.</p>
+      <ul class="facts">
+        <li><span class="E">Eingabe:</span> Über ein <b>Eingabegerät</b> – wie eine Tastatur – bekommt der Computer Daten und Informationen.</li>
+        <li><span class="V">Verarbeitung:</span> Der <b>Prozessor (CPU)</b> verarbeitet die Daten, zusammen mit dem <b>Arbeitsspeicher</b>, der <b>Grafikkarte</b> und anderen Bauteilen.</li>
+        <li><span class="A">Ausgabe:</span> Die Ergebnisse werden über ein <b>Ausgabegerät</b> ausgegeben, z. B. einen Monitor oder einen Drucker.</li>
+      </ul>
+      <div class="merke"><b>Merke:</b> Besteht ein System aus mehreren Geräten, müssen sie <b>miteinander verbunden</b> sein – per Kabel oder Funk.</div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>EVA-Fließband</h3></div>
+      <div id="eva-seg" style="margin-bottom:.9rem"></div>
+      <div id="pipe"></div>
+      <p class="status" id="pipe-status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="smartphone" data-label="Smartphone" data-yr="Material" data-title="EVA am Smartphone" data-sub="Abb. 2 im Buch zum Anklicken">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Abb. 2</p>
+    <h2>EVA-Prinzip am Beispiel eines Smartphones</h2>
+    <p class="lead">In einem Smartphone stecken viele Ein- und Ausgabegeräte. Tippe die Nummern an.</p>
+  </div>
+  <div class="phone-wrap">
+    <div class="vis" style="padding:.5rem"><svg class="phone-svg" id="phone" viewBox="0 0 560 600" role="group" aria-label="Smartphone mit nummerierten Bauteilen"></svg></div>
+    <div class="stack">
+      <div id="ph-mode"></div>
+      <div class="phone-panel" id="ph-panel" aria-live="polite"></div>
+      <ul class="legend">
+        <li><span class="sw" style="background:var(--e)"></span>Eingabe</li>
+        <li><span class="sw" style="background:var(--v)"></span>Verarbeitung</li>
+        <li><span class="sw" style="background:var(--a)"></span>Ausgabe</li>
+        <li><span class="sw" style="background:linear-gradient(90deg,var(--e) 50%,var(--a) 50%)"></span>beides</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 · Aufg. 1–2" data-yr="M1" data-title="Geräte zuordnen" data-sub="Aufgaben 1 und 2">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Eingabe- oder Ausgabegerät?</h2>
+  </div>
+  <div class="task-card"><header><span class="no">1</span><span class="lvl" title="Niveau 1"><i class="on"></i><i></i><i></i></span><h3>Geräte zuordnen</h3></header>
+    <p>Ordne den Geräten der Abbildung die Begriffe <span class="E">Eingabe-</span> oder <span class="A">Ausgabegerät</span> zu. Begründe deine Zuordnung. <i>(Karte antippen, dann Spalte antippen. Nach „Prüfen“ erscheint die Begründung.)</i></p></div>
+  <div id="dev-sort"></div>
+  <div class="task-card mt"><header><span class="no">2</span><span class="lvl" title="Niveau 2"><i class="on"></i><i class="on"></i><i></i></span><h3>Ideen-Speicher</h3></header>
+    <p>Überlege dir weitere Beispiele für Ein- und Ausgabegeräte. Tippe ein Gerät ein und ordne es zu.</p>
+    <div class="ideas-in" style="margin-top:.6rem"><input id="idea" type="text" placeholder="z. B. Webcam" autocomplete="off" aria-label="Gerät">
+      <button class="btn e" data-idea="e">Eingabe</button><button class="btn a" data-idea="a">Ausgabe</button><button class="btn" data-idea="b">beides</button><button class="btn" id="idea-ex">Beispiele zeigen</button></div>
+    <div class="ideas">
+      <div class="ideas-col" data-c="e"><h3>Eingabegeräte</h3><div class="chips"></div></div>
+      <div class="ideas-col" data-c="a"><h3>Ausgabegeräte</h3><div class="chips"></div></div>
+      <div class="ideas-col" data-c="b"><h3>Ein- und Ausgabe</h3><div class="chips"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="karte" data-label="M1 · Aufg. 3" data-yr="M1" data-title="Karten-App" data-sub="Aufgabe 3: EVA beschreiben">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1</p>
+    <h2>EVA in der Karten-App</h2>
+  </div>
+  <div class="task-card"><header><span class="no">3</span><span class="lvl" title="Niveau 3"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Ort suchen</h3></header>
+    <p>Beschreibe das EVA-Prinzip: Du suchst am Tablet mit der Karten-App einen Ort.</p>
+    <div class="controls" style="margin-top:.4rem"><button class="btn" data-reveal="karte-hilfe" aria-expanded="false">HILFE</button><button class="btn" data-reveal="karte-loes" aria-expanded="false">Musterlösung</button></div>
+    <div class="hint-box" id="karte-hilfe" hidden><b>Hilfe:</b> Stell dir den Ablauf Schritt für Schritt vor. <span class="E">Was gibst du ein – und womit?</span> <span class="V">Was macht das Tablet mit deiner Eingabe?</span> <span class="A">Was siehst oder hörst du am Ende?</span></div>
+    <div class="solution" id="karte-loes" hidden><span class="E">Eingabe:</span> Ich tippe den Ortsnamen über den Touchscreen ein (oder spreche ihn ins Mikrofon). <span class="V">Verarbeitung:</span> Der Prozessor sucht den Ort in den Kartendaten, berechnet den Kartenausschnitt und die Grafikkarte erzeugt das Bild. <span class="A">Ausgabe:</span> Der Touchscreen zeigt die Karte mit einer Markierung am gesuchten Ort an.</div>
+  </div>
+  <p class="lead">Sortiere die Schritte: Was gehört zur Eingabe, was zur Verarbeitung, was zur Ausgabe?</p>
+  <div id="map-sort"></div>
+</section>
+
+<section class="station" id="headset" data-label="M1 · Aufg. 4" data-yr="M1" data-title="Das Headset" data-sub="Aufgabe 4: nicht immer eindeutig">
+  <div class="section-head">
+    <p class="eyebrow">Station 6 · Material M1</p>
+    <h2>Ein- oder Ausgabe? Nicht immer eindeutig!</h2>
+  </div>
+  <div class="model">
+    <div class="txt">
+      <div class="task-card"><header><span class="no">4</span><span class="lvl" title="Niveau 4"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Das Headset</h3></header>
+        <p>Erkläre am Beispiel eines Headsets, dass die Zuordnung in Ein- und Ausgabegerät nicht immer eindeutig ist.</p></div>
+      <p>Tippe die Bauteile des Headsets an.</p>
+      <p class="status" id="hs-status">Ein Headset besteht aus zwei Bauteilen. Welche?</p>
+      <div class="controls"><button class="btn" data-reveal="hs-loes" aria-expanded="false">Musterlösung</button></div>
+      <div class="solution" id="hs-loes" hidden>Ein Headset besteht aus <b>Kopfhörern</b> und einem <b>Mikrofon</b>. Über die Kopfhörer werden Töne <span class="A">ausgegeben</span>, über das Mikrofon wird die Stimme <span class="E">eingegeben</span>. Das Headset ist also <b>Ein- und Ausgabegerät zugleich</b>. Ob man es Eingabe- oder Ausgabegerät nennt, hängt davon ab, welches Bauteil man betrachtet.</div>
+    </div>
+    <div class="vis">
+      <svg class="hs-svg" id="hs" viewBox="0 0 400 330" role="group" aria-label="Headset">
+        <path class="band" d="M80 190 C80 50 320 50 320 190"/>
+        <rect class="cup" data-p="l" x="45" y="160" width="70" height="105" rx="30" tabindex="0"/>
+        <rect class="cup" data-p="r" x="285" y="160" width="70" height="105" rx="30" tabindex="0"/>
+        <path class="mic" d="M95 250 C110 305 170 312 205 300"/>
+        <circle class="mic-head" data-p="m" cx="215" cy="298" r="17" tabindex="0"/>
+        <path class="wave" id="wv-a" d="M20 190 q-14 22 0 44 M5 180 q-20 32 0 64" stroke="var(--a)"/>
+        <path class="wave" id="wv-e" d="M245 285 q12 13 0 26 M258 276 q18 22 0 44" stroke="var(--e)"/>
+        <text x="200" y="40" text-anchor="middle">Headset</text>
+      </svg>
+      <p class="eyebrow" style="margin-top:1rem">Auch nicht eindeutig – umdrehen</p>
+      <div id="hs-flips"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="zeitleiste" data-label="Zeitleiste" data-yr="Zeitleiste" data-title="Geschichte der Kommunikation" data-sub="Von der Höhlenmalerei bis ChatGPT">
+  <div class="section-head">
+    <p class="eyebrow">Station 7 · Auf einen Blick</p>
+    <h2>Geschichte der Kommunikation</h2>
+    <p class="lead">Tippe eine Erfindung an. Mit den Farben kannst du filtern. Schalte auf <b>maßstabsgetreu</b> und vergleiche!</p>
+  </div>
+  <div id="zl"></div>
+  <div id="zl-detail"></div>
+  <p class="status" id="zl-status">Wie im Buch ist die Zeitachse gestaucht: Die ersten 38 000 Jahre nehmen nur einen kleinen Teil ein.</p>
+</section>
+
+<section class="station" id="zl-aufgaben" data-label="Zeitleiste üben" data-yr="Zeitleiste" data-title="Aufgaben zur Zeitleiste" data-sub="Puzzle, Sortieren, Was war zuerst?">
+  <div class="section-head">
+    <p class="eyebrow">Station 8 · Aufgaben zur Zeitleiste</p>
+    <h2>Mit der Zeitleiste arbeiten</h2>
+  </div>
+  <div class="cols-2">
+    <div>
+      <div class="task-card"><header><span class="no">5</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Zeitstrahl-Puzzle</h3></header><p>Bringe die Erfindungen in die richtige Reihenfolge. Tippe sie nacheinander an – die älteste zuerst.</p></div>
+      <div id="puzzle"></div>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">6</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Was war zuerst?</h3></header><p>Tippe die Erfindung an, die früher kam. Wie lang wird deine Serie?</p></div>
+      <div id="duel"></div>
+    </div>
+  </div>
+  <div class="task-card mt"><header><span class="no">7</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Speichern oder übertragen?</h3></header><p>Manche Erfindungen <b>halten Informationen fest</b>, andere <b>übertragen</b> sie in die Ferne. Sortiere.</p></div>
+  <div id="zl-sort"></div>
+  <div class="task-card mt"><header><span class="no">8</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>EVA früher und heute</h3></header>
+    <p>Vergleiche das Telefon von 1876 mit einem heutigen Smartphone. Nenne jeweils Eingabe- und Ausgabegeräte. Welche Erfindung hat die Kommunikation deiner Meinung nach am stärksten verändert? Begründe.</p>
+    <div class="controls"><button class="btn" data-reveal="tel-loes" aria-expanded="false">Lösungsidee</button></div>
+    <div class="solution" id="tel-loes" hidden><b>Telefon 1876:</b> <span class="E">Eingabe</span> über das Mikrofon (Sprechmuschel), <span class="A">Ausgabe</span> über den Hörer (Lautsprecher). Es kann nur Sprache übertragen. <b>Smartphone:</b> <span class="E">Eingabe</span> über Touchscreen, Mikrofon, Kamera, Sensoren; <span class="V">Verarbeitung</span> im Prozessor; <span class="A">Ausgabe</span> über Touchscreen, Lautsprecher, LED. Es überträgt Sprache, Text, Bilder und Videos. Die Begründung zur wichtigsten Erfindung ist individuell (z. B. Buchdruck: Wissen für alle; Internet: weltweit in Sekunden).</div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Das EVA-Prinzip</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Das EVA-Prinzip</h3><span>Informatik · Klasse 5/6</span></div>
+      <div class="eva-mini"><span class="e">Eingabe<small>Tastatur, Maus, Mikrofon</small></span><i>→</i><span class="v">Verarbeitung<small>Prozessor (CPU)</small></span><i>→</i><span class="a">Ausgabe<small>Bildschirm, Drucker</small></span></div>
+      <ol>
+        <li data-step>Ein <b>Informatiksystem</b> besteht aus <b>Hardware</b> (Geräte und Bauteile) und <b>Software</b> (Programme). Über ein <b>Netzwerk</b> tauschen Systeme Daten aus; das größte ist das Internet.</li>
+        <li data-step>Computer arbeiten nach dem <b>EVA-Prinzip</b>: <b>E</b>ingabe → <b>V</b>erarbeitung → <b>A</b>usgabe.</li>
+        <li data-step><b>Eingabegeräte</b> geben Daten in den Computer ein, z. B. Tastatur, Maus, Mikrofon, Kamera, Controller.</li>
+        <li data-step>Der <b>Prozessor (CPU)</b> verarbeitet die Daten, zusammen mit Arbeitsspeicher und Grafikkarte.</li>
+        <li data-step><b>Ausgabegeräte</b> geben die Ergebnisse aus, z. B. Bildschirm, Drucker, Lautsprecher, Kopfhörer.</li>
+        <li data-step>Manche Geräte sind <b>Ein- und Ausgabegerät zugleich</b>, z. B. Touchscreen oder Headset.</li>
+        <li data-step>Die <b>Geschichte der Kommunikation</b> reicht von der Höhlenmalerei über Buchdruck, Telefon und Computer bis zum Internet und zur künstlichen Intelligenz. Nachrichten werden immer schneller übertragen.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack">
+      <div class="box"><span class="tag info">Skizze</span><p>Zeichne das EVA-Schema mit drei Kästen und Pfeilen in dein Heft. Trage als Beispiel das Smartphone ein: Touchscreen → Prozessor → Lautsprecher.</p></div>
+      <div class="box"><span class="tag info">Merkhilfe</span><p><b>E</b>rst rein, <b>V</b>erarbeiten, dann <b>A</b>us – wie beim Kochen: Zutaten rein, kochen, Essen raus.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Üben und wiederholen</h2></div>
+  <h3>Gerät und Aufgabe – finde die Paare</h3>
+  <div id="match"></div>
+  <h3 class="mt">Stimmt das?</h3>
+  <div id="tf"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ================= STATION 1: Hardware / Software ================= */
+sorter($('#hw-sort'), [{id: 'h', name: 'Hardware'}, {id: 's', name: 'Software'}], [
+  {t: '⌨️ Tastatur', c: 'h', why: 'Gerät zum Anfassen'}, {t: 'Prozessor (CPU)', c: 'h', why: 'Bauteil im Computer'}, {t: 'Arbeitsspeicher', c: 'h', why: 'Bauteil im Computer'},
+  {t: 'Netzwerkkarte', c: 'h', why: 'Bauteil für die Verbindung ins Netzwerk'}, {t: '🖥️ Bildschirm', c: 'h', why: 'Gerät zum Anfassen'},
+  {t: 'Betriebssystem (z. B. Windows, Android)', c: 's', why: 'Programm, das den Computer steuert'}, {t: 'Browser', c: 's', why: 'Programm zum Surfen im Internet'},
+  {t: '🎮 Computerspiel', c: 's', why: 'Programm'}, {t: '🗺️ Karten-App', c: 's', why: 'App = Programm'}, {t: 'Textverarbeitung', c: 's', why: 'Programm zum Schreiben'}
+]);
+
+/* ================= STATION 2: EVA-Fließband ================= */
+pipeline($('#pipe'), $('#eva-seg'), $('#pipe-status'), [
+  {name: 'Rechnen', e: ['⌨️', 'Tastatur', '„2 + 3 =“'], v: ['⚙️', 'Prozessor (CPU)', 'rechnet 2 + 3'], a: ['🖥️', 'Bildschirm', '„5“'],
+   text: 'Du tippst eine Rechnung ein, der <b>Prozessor</b> rechnet, der <b>Bildschirm</b> zeigt das Ergebnis.'},
+  {name: 'Foto', e: ['📷', 'Kamera', 'Licht → Bilddaten'], v: ['⚙️', 'Prozessor + Grafikkarte', 'Bild berechnen, Filter'], a: ['🖥️', 'Bildschirm', 'Foto wird angezeigt'],
+   text: 'Die <b>Kamera</b> nimmt Licht auf und wandelt es in Daten um. Prozessor und Grafikkarte berechnen das Bild.'},
+  {name: 'Sprachnachricht', e: ['🎤', 'Mikrofon', 'deine Stimme'], v: ['⚙️', 'Prozessor', 'in Daten umwandeln, senden'], a: ['🔊', 'Lautsprecher', 'beim Empfänger hörbar'],
+   text: 'Bei einer Sprachnachricht liegt die Ausgabe auf einem <b>anderen Gerät</b>: Die Geräte sind über ein Netzwerk verbunden.'},
+  {name: 'Drucken', e: ['🖱️', 'Maus', 'Klick auf „Drucken“'], v: ['⚙️', 'Prozessor + Arbeitsspeicher', 'Dokument aufbereiten'], a: ['🖨️', 'Drucker', 'Text auf Papier'],
+   text: 'Computer und Drucker sind zwei Geräte. Sie müssen per Kabel oder WLAN <b>verbunden</b> sein.'},
+  {name: 'Spielen', e: ['🎮', 'Controller', 'Taste „Springen“'], v: ['⚙️', 'Prozessor + Grafikkarte', 'Spielfigur berechnen'], a: ['📺', 'Bildschirm + Lautsprecher', 'Figur springt, Sound'],
+   text: 'Beim Spielen läuft das EVA-Prinzip viele Male pro Sekunde – sonst würde die Figur ruckeln.'}
+]);
+
+/* ================= STATION 3: Smartphone (Abb. 2) ================= */
+(() => {
+  const P = [
+    {id: 'led', n: 'LED-Anzeige', c: 'a', p: [222, 64], h: [140, 60], side: 'l', t: 'Die LED leuchtet, wenn z. B. eine Nachricht eingegangen ist oder der Akku lädt. Sie <b>gibt</b> eine Information <b>aus</b>.'},
+    {id: 'lampe', n: 'Taschenlampe', n2: '(Rückseite)', c: 'a', p: [265, 135], h: [140, 120], side: 'l', t: 'Die Taschenlampe auf der Rückseite gibt Licht aus, z. B. als Blitz beim Fotografieren.'},
+    {id: 'laut', n: 'Regler, z. B.', n2: 'für Lautstärke', c: 'e', p: [183, 175], h: [140, 180], side: 'l', t: 'Mit den Tasten gibst du ein, ob es lauter oder leiser werden soll.'},
+    {id: 'anaus', n: 'An-/Ausschalter', c: 'e', p: [183, 248], h: [140, 248], side: 'l', t: 'Ein Tastendruck ist eine Eingabe: Das Smartphone wird ein- oder ausgeschaltet bzw. gesperrt.'},
+    {id: 'lage', n: 'Lagesensor', c: 'e', p: [215, 492], h: [140, 470], side: 'l', t: 'Der Lagesensor misst, wie du das Gerät hältst. So dreht sich z. B. das Bild ins Querformat.'},
+    {id: 'usb', n: 'Anschluss für', n2: 'Datenübertragung', c: 'ea', p: [265, 538], h: [140, 548], side: 'l', t: 'Über den Anschluss (USB-C) fließen Daten in <b>beide Richtungen</b>: Fotos auf den Computer kopieren oder Musik auf das Handy laden.'},
+    {id: 'kamera', n: 'Kamera', c: 'e', p: [302, 64], h: [400, 50], side: 'r', t: 'Die Kamera nimmt Bilder und Videos auf und gibt sie als Daten an das Smartphone weiter.'},
+    {id: 'speaker', n: 'Lautsprecher', c: 'a', p: [262, 64], h: [400, 100], side: 'r', t: 'Der Lautsprecher gibt Töne aus: Klingelton, Musik oder die Stimme beim Telefonieren.'},
+    {id: 'touch', n: 'Touchscreen', c: 'ea', p: [330, 215], h: [400, 215], side: 'r', t: 'Der Touchscreen ist <b>beides</b>: Er erkennt deine Berührungen (Eingabe) und zeigt Bilder an (Ausgabe).'},
+    {id: 'cpu', n: 'Prozessor und', n2: 'Arbeitsspeicher (innen)', c: 'v', p: [300, 330], h: [400, 330], side: 'r', t: 'Im Inneren <b>verarbeitet</b> der Prozessor (CPU) die Daten. Der Arbeitsspeicher hält sie dafür bereit, die Grafikkarte berechnet das Bild.'},
+    {id: 'mic', n: 'Mikrofon', c: 'e', p: [305, 530], h: [400, 520], side: 'r', t: 'Das Mikrofon nimmt deine Stimme auf, z. B. beim Telefonieren oder für Sprachnachrichten.'}
+  ];
+  const tiles = ['#2563EB', '#7C3AED', '#DC2626', '#C026D3', '#EA580C', '#0EA5E9', '#16A34A', '#2563EB', '#059669', '#DC2626', '#4F46E5', '#DB2777', '#DC2626', '#16A34A', '#DC2626', '#0284C7', '#2563EB', '#65A30D'];
+  let svg = `<defs><linearGradient id="gEA"><stop offset="50%" stop-color="var(--e)"/><stop offset="50%" stop-color="var(--a)"/></linearGradient></defs>
+    <rect class="body" x="180" y="38" width="170" height="510" rx="28"/>
+    <rect class="part" x="174" y="155" width="7" height="44" rx="2"/><rect class="part" x="174" y="232" width="7" height="32" rx="2"/>
+    <rect class="scr" x="192" y="90" width="146" height="400" rx="6"/>
+    <text x="200" y="104" class="cap" style="font-size:10px">12:50</text>
+    <circle class="part" cx="222" cy="64" r="4"/><rect class="part" x="245" y="60" width="36" height="7" rx="3"/><circle class="part" cx="302" cy="64" r="7"/>
+    <circle cx="265" cy="135" r="13" fill="none" stroke="var(--ink-2)" stroke-width="2" stroke-dasharray="4 3"/>
+    <rect x="225" y="500" width="80" height="18" rx="9" class="part"/><rect class="part" x="252" y="540" width="26" height="6" rx="3"/>
+    <circle class="part" cx="305" cy="530" r="2.5"/><rect x="205" y="482" width="20" height="20" fill="none" stroke="var(--ink-2)" stroke-dasharray="3 3"/>`;
+  tiles.forEach((c, i) => { const x = 204 + (i % 4) * 32, y = 180 + Math.floor(i / 4) * 40; svg += `<rect class="tile" x="${x}" y="${y}" width="24" height="24" rx="4" fill="${c}"/>`; });
+  svg += `<rect x="270" y="300" width="60" height="60" rx="4" fill="none" stroke="var(--v)" stroke-width="2.5" stroke-dasharray="5 4"/><text x="300" y="334" text-anchor="middle" style="font:600 13px var(--f-mono);fill:var(--v)">CPU</text>`;
+  P.forEach((p, i) => {
+    const [px, py] = p.p, [hx, hy] = p.h, mx = p.side === 'l' ? hx + 14 : hx - 14;
+    svg += `<path class="lead-line" d="M${mx} ${hy} H${(mx + px) / 2} L${px} ${py}"/>`;
+    const tx = p.side === 'l' ? hx - 20 : hx + 20, anc = p.side === 'l' ? 'end' : 'start';
+    svg += `<text class="cap" x="${tx}" y="${hy - (p.n2 ? 3 : -4)}" text-anchor="${anc}">${p.n}${p.n2 ? `<tspan x="${tx}" dy="15">${p.n2}</tspan>` : ''}</text>`;
+    svg += `<g class="hs" data-i="${i}" tabindex="0" role="button" aria-label="${p.n} ${p.n2 || ''}"><circle cx="${hx}" cy="${hy}" r="14"/><text x="${hx}" y="${hy}">${i + 1}</text></g>`;
+  });
+  const ph = $('#phone'), panel = $('#ph-panel');
+  ph.innerHTML = svg;
+  let mode = 'explore', sel = -1;
+  const solved = new Map();
+  const tagFor = c => `<span class="tag ${c}">${EVA[c]}</span>`;
+  const name = p => p.n + (p.n2 ? ' ' + p.n2 : '');
+  function paint() {
+    $$('.hs', ph).forEach(g => {
+      const i = +g.dataset.i, c = P[i].c;
+      g.classList.toggle('sel', i === sel && !(mode === 'explore' || solved.get(i) === true));
+      ['e', 'v', 'a', 'ea'].forEach(k => g.classList.toggle('c-' + k, (mode === 'explore' ? i === sel : solved.get(i) === true) && c === k));
+      g.classList.toggle('wrong', mode === 'quiz' && solved.get(i) === false);
+    });
+  }
+  function score() { return `<p class="score">Richtig: <b>${[...solved.values()].filter(Boolean).length}</b> / ${P.length}</p>`; }
+  function showPanel() {
+    if (sel < 0) { panel.innerHTML = mode === 'explore' ? '<p><b>Tippe eine Nummer an.</b> Du erfährst, ob das Bauteil zur Eingabe, Verarbeitung oder Ausgabe gehört.</p>' : `<p><b>Quiz:</b> Tippe eine Nummer an und entscheide: Eingabe, Verarbeitung, Ausgabe oder beides?</p>${score()}`; return; }
+    const p = P[sel];
+    if (mode === 'explore') { panel.innerHTML = `<span class="eyebrow">Bauteil ${sel + 1}</span><h3>${name(p)}</h3>${tagFor(p.c)}<p>${p.t}</p>`; return; }
+    const st = solved.get(sel);
+    panel.innerHTML = `<span class="eyebrow">Bauteil ${sel + 1}</span><h3>${name(p)}</h3>` +
+      (st === true ? `${tagFor(p.c)}<p><b class="good">Richtig!</b> ${p.t}</p>` :
+        `<div class="choices">${['e', 'v', 'a', 'ea'].map(k => `<button class="btn ${k === 'ea' ? '' : k}" data-ch="${k}">${EVA[k]}</button>`).join('')}</div>${st === false ? '<p class="bad" style="margin-top:.6rem"><b>Noch nicht richtig.</b> Überlege: Kommt etwas <i>herein</i> oder geht etwas <i>hinaus</i>?</p>' : ''}`) + score();
+  }
+  ph.addEventListener('click', e => { const g = e.target.closest('.hs'); if (!g) return; sel = +g.dataset.i; paint(); showPanel(); });
+  ph.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.closest('.hs')) { e.preventDefault(); e.target.closest('.hs').dispatchEvent(new MouseEvent('click', {bubbles: true})); } });
+  panel.addEventListener('click', e => {
+    const b = e.target.closest('[data-ch]'); if (!b) return;
+    solved.set(sel, b.dataset.ch === P[sel].c); paint(); showPanel();
+  });
+  seg($('#ph-mode'), [['explore', 'Erkunden'], ['quiz', 'Quiz: Ein- oder Ausgabe?']], v => { mode = v; sel = -1; if (v === 'quiz') solved.clear(); paint(); showPanel(); });
+})();
+
+/* ================= STATION 4: M1 Aufgaben 1 und 2 ================= */
+sorter($('#dev-sort'), [{id: 'e', name: 'Eingabegerät'}, {id: 'a', name: 'Ausgabegerät'}], [
+  {t: '🎧 Kopfhörer', c: 'a', why: 'Gibt Töne aus, die du hörst.'},
+  {t: '🎮 Controller', c: 'e', why: 'Mit den Tasten gibst du Befehle ein.'},
+  {t: '🖱️ Maus', c: 'e', why: 'Bewegungen und Klicks werden eingegeben.'},
+  {t: '🖨️ Drucker', c: 'a', why: 'Gibt Texte und Bilder auf Papier aus.'},
+  {t: '⌨️ Tastatur', c: 'e', why: 'Buchstaben und Zahlen werden eingegeben.'},
+  {t: '🖥️ Bildschirm', c: 'a', why: 'Zeigt Bilder und Texte an.'}
+]);
+(() => {
+  const inp = $('#idea'), cols = {e: $('.ideas-col[data-c="e"] .chips'), a: $('.ideas-col[data-c="a"] .chips'), b: $('.ideas-col[data-c="b"] .chips')};
+  const add = (t, c, ex) => { if (!t.trim()) return; const s = document.createElement('button'); s.className = 'chip' + (ex ? ' ex' : ''); s.textContent = t.trim(); s.title = 'Antippen zum Entfernen'; cols[c].appendChild(s); };
+  $$('[data-idea]').forEach(b => b.onclick = () => { add(inp.value, b.dataset.idea); inp.value = ''; inp.focus(); });
+  inp.addEventListener('keydown', e => { if (e.key === 'Enter') { add(inp.value, 'e'); inp.value = ''; } });
+  $('.ideas').addEventListener('click', e => { const c = e.target.closest('.chip'); if (c) c.remove(); });
+  $('#idea-ex').onclick = () => {
+    [['Webcam', 'e'], ['Mikrofon', 'e'], ['Scanner', 'e'], ['Joystick', 'e'], ['Touchpad', 'e'], ['Fingerabdrucksensor', 'e'], ['Barcode-Scanner', 'e'],
+     ['Beamer', 'a'], ['Lautsprecher', 'a'], ['3D-Drucker', 'a'], ['Smartwatch-Display', 'a'], ['Braillezeile', 'a'],
+     ['Touchscreen', 'b'], ['Headset', 'b'], ['VR-Brille mit Controllern', 'b'], ['Multifunktionsdrucker mit Scanner', 'b']].forEach(([t, c]) => add(t, c, true));
+  };
+})();
+
+/* ================= STATION 5: Karten-App ================= */
+sorter($('#map-sort'), [{id: 'e', name: 'Eingabe'}, {id: 'v', name: 'Verarbeitung'}, {id: 'a', name: 'Ausgabe'}], [
+  {t: 'Du tippst den Ortsnamen auf dem Touchscreen ein.', c: 'e'},
+  {t: 'Du sprichst den Ortsnamen ins Mikrofon.', c: 'e'},
+  {t: 'Der GPS-Empfänger meldet deinen Standort.', c: 'e'},
+  {t: 'Der Prozessor sucht den Ort in den Kartendaten.', c: 'v'},
+  {t: 'Die App berechnet den Weg dorthin.', c: 'v'},
+  {t: 'Die Grafikkarte erzeugt das Kartenbild.', c: 'v'},
+  {t: 'Die Karte mit der Markierung erscheint auf dem Bildschirm.', c: 'a'},
+  {t: 'Eine Ansage kommt aus dem Lautsprecher: „Jetzt links abbiegen.“', c: 'a'}
+]);
+
+/* ================= STATION 6: Headset ================= */
+(() => {
+  const st = $('#hs-status'), seen = new Set();
+  const T = {l: '<b>Kopfhörer (Ohrmuschel):</b> Hier kommen Töne heraus – das ist eine <span class="A">Ausgabe</span>.', r: '<b>Kopfhörer (Ohrmuschel):</b> Hier kommen Töne heraus – das ist eine <span class="A">Ausgabe</span>.', m: '<b>Mikrofon:</b> Es nimmt deine Stimme auf – das ist eine <span class="E">Eingabe</span>.'};
+  const hit = p => {
+    seen.add(p === 'r' ? 'l' : p);
+    $$('#hs [data-p]').forEach(x => { const q = x.dataset.p; x.classList.toggle('on-a', (q === 'l' || q === 'r') && seen.has('l')); x.classList.toggle('on-e', q === 'm' && seen.has('m')); });
+    $('#wv-a').classList.toggle('show', seen.has('l')); $('#wv-e').classList.toggle('show', seen.has('m'));
+    st.innerHTML = T[p] + (seen.size === 2 ? ' <b>Ein Gerät – Ein- und Ausgabe zugleich!</b>' : ' Tippe auch das andere Bauteil an.');
+  };
+  $('#hs').addEventListener('click', e => { const x = e.target.closest('[data-p]'); if (x) hit(x.dataset.p); });
+  $('#hs').addEventListener('keydown', e => { const x = e.target.closest('[data-p]'); if (x && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); hit(x.dataset.p); } });
+  flipCards($('#hs-flips'), [
+    ['📱 Touchscreen', '<span class="E">Eingabe:</span> Berührung · <span class="A">Ausgabe:</span> Bild'],
+    ['🎮 Controller mit Vibration', '<span class="E">Eingabe:</span> Tasten · <span class="A">Ausgabe:</span> Vibration'],
+    ['🥽 VR-Brille', '<span class="E">Eingabe:</span> Kopfbewegung · <span class="A">Ausgabe:</span> Bild und Ton'],
+    ['🖨️ Multifunktionsdrucker', '<span class="E">Eingabe:</span> Scanner · <span class="A">Ausgabe:</span> Drucker']
+  ]);
+})();
+
+/* ================= STATION 7: Zeitleiste ================= */
+const ZL = [
+  {y: -37975, t: 'vor 40 000 J.', lab: 'Höhlenmalerei', ic: '🦬', cat: 'schrift', keep: 1, txt: 'Die ersten Menschen malten Bilder an Höhlenwände, um Informationen festzuhalten, zum Beispiel über die Jagd oder die Sterne am Himmel.'},
+  {y: -7975, t: 'vor 10 000 J.', lab: 'Rauchzeichen', ic: '🔥', cat: 'tele', keep: 1, txt: 'Manche Völker nutzten Rauchzeichen, um Botschaften über weite Distanzen zu übermitteln.'},
+  {y: -3275, t: 'vor 5 300 J.', lab: 'Schrift', ic: '✍️', cat: 'schrift', txt: 'Die ersten Schriftzeichen entstanden. Mit ihnen konnte man Nachrichten auf Steine, Ton oder Tierhäute schreiben.'},
+  {y: -2975, t: 'vor 5 000 J.', lab: 'Papyrus', ic: '📜', cat: 'schrift', txt: 'Aus der Papyruspflanze wurde ein Schreibmaterial hergestellt. Schriften festzuhalten wurde leichter.'},
+  {y: 25, t: 'vor 2 000 J.', lab: 'Papier', ic: '📄', cat: 'schrift', txt: 'Mit dem Papier konnten immer mehr Schriftstücke erstellt werden.'},
+  {y: 1452, t: '1452', lab: 'Buchdruck', ic: '📖', cat: 'schrift', txt: 'Johannes Gutenberg entwickelte den Buchdruck. Er ermöglichte die schnelle Herstellung von Büchern in großer Zahl.'},
+  {y: 1605, t: '1605', lab: 'Zeitung', ic: '📰', cat: 'schrift', txt: 'Die erste Zeitung erschien. Neuigkeiten erreichten nun regelmäßig viele Menschen.'},
+  {y: 1826, t: '1826', lab: 'Fotografie', ic: '📷', cat: 'bild', txt: 'Die erste Fotografie entstand. Bilder konnten nun genau festgehalten werden.', eva: 'Licht fällt durch das Objektiv (<span class="E">Eingabe</span>), am Ende steht das fertige Bild (<span class="A">Ausgabe</span>).'},
+  {y: 1837, t: '1837', lab: 'Telegrafie', ic: '⚡', cat: 'tele', txt: 'Mit dem elektrischen Telegrafen konnten Menschen zum ersten Mal Nachrichten in Echtzeit elektrisch verschicken. Ein Brief musste dagegen verfasst, verschickt und zugestellt werden.', eva: '<span class="E">Eingabe</span> über eine Taste beim Sender, <span class="A">Ausgabe</span> als Klopfzeichen oder Schrift beim Empfänger.'},
+  {y: 1873, t: '1873', lab: 'Morsecode', ic: '·–', cat: 'tele', txt: 'Der Morsecode übersetzt Buchstaben in kurze und lange Signale (· und –). So lassen sich Texte per Telegraf, Licht oder Ton übertragen.'},
+  {y: 1876, t: '1876', lab: 'Telefonie', ic: '☎️', cat: 'tele', txt: 'Mit dem Telefon konnte man in Echtzeit mit anderen Menschen sprechen, selbst wenn sie viele Kilometer entfernt waren.', eva: 'Mikrofon (<span class="E">Eingabe</span>) und Lautsprecher (<span class="A">Ausgabe</span>) stecken im Hörer – wie beim Headset.'},
+  {y: 1887, t: '1887', lab: 'Schallplatte', ic: '🎶', cat: 'bild', txt: 'Auf der Schallplatte ließen sich Musik und Sprache speichern und immer wieder abspielen.'},
+  {y: 1895, t: '1895', lab: 'Film', ic: '🎞️', cat: 'bild', txt: 'Die ersten bewegten Bilder wurden vorgeführt – der Beginn des Kinos.'},
+  {y: 1906, t: '1906', lab: 'Rundfunk', ic: '📻', cat: 'tele', txt: 'Sprache und Musik wurden erstmals per Funk übertragen. In den 1920er-Jahren wurde das Radio für alle erfunden: Viele Menschen konnten gleichzeitig Nachrichten und Musik hören.', eva: 'Das Radio ist ein reines <span class="A">Ausgabegerät</span> – zurückfunken kann man nicht.'},
+  {y: 1920, t: '1920', lab: 'Fernsehen', ic: '📺', cat: 'tele', txt: 'Einige Jahre nach dem Radio kam das Fernsehen dazu. Plötzlich konnten viele Menschen gleichzeitig Filme und Nachrichten sehen.'},
+  {y: 1941, t: '1941', lab: 'Computer', ic: '🖥️', cat: 'digital', txt: 'Im 20. Jahrhundert wurde der erste Computer erfunden (Konrad Zuse, Z3). Er füllte einen ganzen Raum.', eva: 'Schon der erste Computer arbeitete nach dem <span class="E">E</span><span class="V">V</span><span class="A">A</span>-Prinzip.'},
+  {y: 1960, t: '1960', lab: 'Videotelefonie', ic: '📹', cat: 'tele', txt: 'Erste Bildtelefone zeigten beim Telefonieren das Bild des Gesprächspartners – sie waren aber teuer und selten.'},
+  {y: 1969, t: '1969', lab: 'ARPANET', ic: '🔗', cat: 'digital', txt: 'Das ARPANET verband in den USA Computer miteinander. Es ist der Vorläufer des Internets.'},
+  {y: 1971, t: '1971', lab: 'PC', ic: '💻', cat: 'digital', txt: 'Computer wurden kleiner und günstiger. Der Personal Computer (PC) kam später an Schreibtische und in Wohnzimmer.'},
+  {y: 1971.4, t: '1971', lab: 'E-Mail', ic: '📧', cat: 'digital', txt: 'Die erste E-Mail wurde verschickt. Nachrichten erreichen den Empfänger in Sekunden.'},
+  {y: 1982, t: '1982', lab: 'Audio-CD', ic: '💿', cat: 'bild', txt: 'Die Audio-CD speichert Musik digital, also als Zahlen.'},
+  {y: 1983, t: '1983', lab: 'Mobiltelefon', ic: '📞', cat: 'tele', txt: 'Das erste Mobiltelefon kam auf den Markt: groß, schwer und teuer – aber ohne Kabel.'},
+  {y: 1991, t: '1991', lab: 'Öffnung WWW', ic: '🌐', cat: 'digital', txt: '1991 entstand das Internet, wie man es heute kennt. Man kann Informationen suchen, E-Mails schreiben, Videos anschauen und chatten.'},
+  {y: 1994, t: '1994', lab: 'Smartphone', ic: '📲', cat: 'digital', txt: 'Das erste Smartphone wurde entwickelt. Es ist der Vorgänger der Smartphones, die sich seit 2009 verbreitet haben.'},
+  {y: 1995, t: '1995', lab: 'DVD', ic: '📀', cat: 'bild', txt: 'Die DVD speichert ganze Filme in guter Qualität.'},
+  {y: 2003, t: '2003', lab: 'Skype', ic: '💬', cat: 'tele', txt: 'Mit Skype konnte man kostenlos über das Internet telefonieren und per Video chatten.'},
+  {y: 2007, t: '2007', lab: 'Modernes Smartphone', ic: '📱', cat: 'digital', txt: 'Smartphones mit großem Touchscreen verbreiteten sich. Man kann damit telefonieren, Fotos machen, Nachrichten schicken, spielen und ins Internet gehen. Heute nutzen viele Menschen auch soziale Netzwerke.', eva: '<span class="E">Eingabe:</span> Touchscreen, Kamera, Mikrofon, Sensoren · <span class="V">Verarbeitung:</span> Prozessor · <span class="A">Ausgabe:</span> Touchscreen, Lautsprecher, LED.'},
+  {y: 2010, t: '2010', lab: 'Videotelefonie mit Smartphone', ic: '🤳', cat: 'tele', txt: 'Videotelefonie wurde immer beliebter. 2010 kamen auch die ersten Tablets. Mit Programmen wie Zoom oder Teams kann heute sogar die ganze Schulklasse von zu Hause aus miteinander sprechen.'},
+  {y: 2011, t: '2011', lab: 'Chatbox', ic: '🗣️', cat: 'digital', txt: 'Sprachassistenten (im Buch „Chatbox“) verstehen gesprochene Fragen und antworten mit einer Computerstimme.', eva: 'Mikrofon (<span class="E">Eingabe</span>) → Programm versteht die Frage (<span class="V">Verarbeitung</span>) → Lautsprecher (<span class="A">Ausgabe</span>).'},
+  {y: 2019, t: '2019', lab: '5G-Internet', ic: '📶', cat: 'digital', txt: '5G ermöglicht superschnelles Internet für unterwegs.'},
+  {y: 2022, t: '2022', lab: 'ChatGPT', ic: '🤖', cat: 'digital', txt: 'Künstliche Intelligenz bezeichnet Computerprogramme, die aus Daten lernen und uns beim Kommunizieren oder Schreiben helfen. ChatGPT ist ein bekanntes Beispiel.', eva: 'Du tippst eine Frage (<span class="E">Eingabe</span>), das Programm erzeugt eine Antwort (<span class="V">Verarbeitung</span>), die Antwort erscheint auf dem Bildschirm (<span class="A">Ausgabe</span>).'}
+];
+const ZL_CATS = {schrift: 'Schrift & Druck', bild: 'Ton, Bild & Film', tele: 'Übertragung', digital: 'Computer & Internet'};
+timeline($('#zl'), $('#zl-detail'), ZL, ZL_CATS, {
+  station: 'zeitleiste',
+  segs: [[-37975, 0], [-7975, .035], [-3275, .065], [-2975, .09], [25, .12], [1400, .15], [1800, .29], [1900, .4], [1950, .5], [2030, 1]],
+  ticks: [[1400, '1400'], [1500, '1500'], [1600, '1600'], [1700, '1700'], [1800, '1800'], [1900, '1900'], [1950, '1950'], [2000, '2000']],
+  onMode: v => $('#zl-status').innerHTML = v === 'book'
+    ? 'Wie im Buch ist die Zeitachse gestaucht: Die ersten 38 000 Jahre nehmen nur einen kleinen Teil ein.'
+    : 'Maßstabsgetreu: Fast alle Erfindungen drängen sich in den letzten <b>600 Jahren</b> ganz rechts zusammen. Die Kommunikation hat sich zuletzt <b>immer schneller</b> verändert.'
+});
+
+/* ================= STATION 8: Aufgaben zur Zeitleiste ================= */
+orderPuzzle($('#puzzle'), ZL, 5);
+duel($('#duel'), ZL);
+sorter($('#zl-sort'), [{id: 's', name: 'Informationen festhalten'}, {id: 'u', name: 'In die Ferne übertragen'}], [
+  {t: '🦬 Höhlenmalerei', c: 's'}, {t: '✍️ Schrift', c: 's'}, {t: '📖 Buchdruck', c: 's'}, {t: '📷 Fotografie', c: 's'}, {t: '🎶 Schallplatte', c: 's'}, {t: '💿 Audio-CD', c: 's'},
+  {t: '🔥 Rauchzeichen', c: 'u'}, {t: '⚡ Telegrafie', c: 'u'}, {t: '☎️ Telefonie', c: 'u'}, {t: '📻 Rundfunk', c: 'u'}, {t: '📧 E-Mail', c: 'u'}, {t: '🤳 Videotelefonie', c: 'u'}
+]);
+
+/* ================= ÜBUNGEN ================= */
+matcher($('#match'), [
+  ['Tastatur', 'gibt Buchstaben und Zahlen in den Computer ein'],
+  ['Prozessor (CPU)', 'verarbeitet die Daten'],
+  ['Arbeitsspeicher', 'hält Daten bereit, während sie verarbeitet werden'],
+  ['Drucker', 'gibt Texte und Bilder auf Papier aus'],
+  ['Touchscreen', 'ist Ein- und Ausgabegerät zugleich'],
+  ['Netzwerkkarte', 'verbindet den Computer mit einem Netzwerk']
+]);
+trueFalse($('#tf'), [
+  {t: 'EVA steht für Eingabe, Verarbeitung, Ausgabe.', ok: true, why: 'Das ist das Grundprinzip jedes Computers.'},
+  {t: 'Eine Maus ist ein Ausgabegerät.', ok: false, why: 'Mit der Maus gibt man Bewegungen und Klicks ein.'},
+  {t: 'Der Prozessor ist für die Verarbeitung zuständig.', ok: true, why: 'Er arbeitet mit Arbeitsspeicher und Grafikkarte zusammen.'},
+  {t: 'Ein Headset ist nur ein Ausgabegerät.', ok: false, why: 'Das Mikrofon ist ein Eingabegerät, die Kopfhörer sind Ausgabegeräte.'},
+  {t: 'Software kann man anfassen.', ok: false, why: 'Software sind Programme. Anfassen kann man nur Hardware.'},
+  {t: 'Mit dem Telegrafen konnte man erstmals Nachrichten in Echtzeit elektrisch verschicken.', ok: true, why: 'Das war 1837.'},
+  {t: 'Das Internet, wie wir es kennen, gibt es seit 1891.', ok: false, why: 'Das World Wide Web wurde 1991 geöffnet.'},
+  {t: 'Der Buchdruck wurde von Johannes Gutenberg entwickelt.', ok: true, why: 'Im Jahr 1452.'}
+], {pick: 6});
+mcQuiz($('#quiz'), [
+  {q: 'Was gehört zur Verarbeitung?', a: ['Prozessor (CPU)', 'Mikrofon', 'Lautsprecher', 'Maus'], ok: 0, why: 'Die CPU verarbeitet die Daten.'},
+  {q: 'Welches Gerät ist ein Eingabegerät?', a: ['Controller', 'Drucker', 'Bildschirm', 'Kopfhörer'], ok: 0, why: 'Mit den Tasten des Controllers gibst du Befehle ein.'},
+  {q: 'Warum ist der Touchscreen nicht eindeutig zuzuordnen?', a: ['Er erkennt Berührungen und zeigt Bilder an', 'Er ist sehr groß', 'Er verarbeitet die Daten', 'Er ist mit dem Internet verbunden'], ok: 0, why: 'Er ist Ein- und Ausgabegerät zugleich.'},
+  {q: 'Was muss bei einem System aus mehreren Geräten gegeben sein?', a: ['Die Geräte sind miteinander verbunden', 'Alle Geräte sind gleich groß', 'Es gibt nur eine Ausgabe', 'Alle Geräte sind vom selben Hersteller'], ok: 0, why: 'Per Kabel oder Funk.'},
+  {q: 'Was ist das größte Netzwerk?', a: ['das Internet', 'das Schulnetz', 'das WLAN zu Hause', 'das ARPANET'], ok: 0, why: 'Das Internet verbindet Computer auf der ganzen Welt.'},
+  {q: 'Welche Erfindung ist die älteste?', a: ['Rauchzeichen', 'Buchdruck', 'Telefonie', 'Zeitung'], ok: 0, why: 'Rauchzeichen gab es schon vor etwa 10 000 Jahren.'},
+  {q: 'Wozu dient der Lagesensor im Smartphone?', a: ['Er erkennt, wie das Gerät gehalten wird', 'Er misst die Temperatur', 'Er zeigt die Uhrzeit an', 'Er lädt den Akku'], ok: 0, why: 'So dreht sich das Bild ins Querformat – eine Eingabe.'}
+], {pick: 6});
+</script>

@@ -1,0 +1,230 @@
+<!--
+title: Objekte und Klassen in Zeichen
+short: Objekte & Klassen
+time: 1–2 Unterrichtsstunden (Expertenwissen)
+q: Wie „denkt“ ein Textverarbeitungsprogramm über Zeichen, Absätze und Abschnitte?
+facts: Expertenwissen S. 104–105: Objekte haben Eigenschaften (Auto als Objekt) | Klasse als Bauplan, Objekt als konkretes Beispiel; Attribute und Attributwerte; objektorientierte Programmierung | Klassen im Textdokument: DOKUMENT, ABSCHNITT, ABSATZ, ZEICHEN (auch GRAFIK, TABELLE) | Objektkarten und Objektdiagramm (M1–M3)
+inter: Auto-Objekt konfigurieren · Zeichen-Objekt mit Objektkarte gestalten · Dokument erkunden: Welches Objekt ist das? · Schriften den Objektkarten zuordnen (M2) · Objektdiagramm aufdecken (M3)
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Textgestaltung · Expertenwissen</p>
+      <h1>Objekte und Klassen in Zeichen<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Autos gibt es in vielen Formen, Farben und Marken – und trotzdem sind alle „Autos“. Genauso betrachtet ein Textverarbeitungsprogramm jeden Buchstaben.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Beschreibe das Auto deiner Familie oder dein Traumauto mit vier Eigenschaften.</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie „denkt“ ein Textverarbeitungsprogramm über Zeichen, Absätze und Abschnitte?</p></div>
+      <div class="controls"><button class="btn primary" data-go="auto">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="auto" data-label="Objekte" data-yr="Erarbeitung" data-title="Objekte haben Eigenschaften" data-sub="Das Auto als Objekt">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Objekte haben Eigenschaften</p>
+      <h2>Klasse und Objekt</h2>
+      <ul class="facts">
+        <li>Ein schneller Sportwagen gehört genauso zur <b>Klasse</b> der Autos wie ein geräumiger Geländewagen.</li>
+        <li>Ein roter Sportwagen ist ein konkretes <b>Objekt</b> der Klasse „Auto“.</li>
+        <li>Jedes Objekt hat <b>Eigenschaften</b>: Farbe „rot“, 2 Türen, Höchstgeschwindigkeit 250 km/h …</li>
+        <li>Diese Vorstellung von Objekten und Klassen nutzt man auch beim Programmieren: <b>objektorientierte Programmierung</b>.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Baue dein Auto-Objekt</h3></div>
+      <div class="cols-2" style="align-items:center">
+        <div class="objcard"><h4 id="car-name">auto1 : AUTO</h4><ul>
+          <li>farbe = <select id="car-c"><option value="#2563EB">blau</option><option value="#DC2626">rot</option><option value="#16A34A">grün</option><option value="#111827">schwarz</option><option value="#EAB308">gelb</option></select></li>
+          <li>sitzplätze = <select id="car-s"><option>2</option><option selected>5</option><option>7</option></select></li>
+          <li>leistung = <select id="car-p"><option>75</option><option selected>110</option><option>250</option></select> PS</li>
+          <li>preis = <select id="car-e"><option>18000</option><option selected>33000</option><option>95000</option></select> €</li>
+        </ul></div>
+        <svg id="car" viewBox="0 0 220 110" style="width:100%;max-width:16rem"><path id="car-body" d="M20 70 L40 42 Q48 32 62 32 L140 32 Q156 32 166 46 L182 62 L204 66 Q212 68 212 78 L212 86 L14 86 L14 76 Q14 70 20 70Z" fill="#2563EB" stroke="#111827" stroke-width="2.5"/><path d="M50 62 L64 40 L98 40 L98 62Z M106 40 L140 40 Q150 40 158 50 L166 62 L106 62Z" fill="#E0F2FE" stroke="#111827" stroke-width="2"/><g id="car-seats" fill="#64748B"></g><circle cx="58" cy="86" r="15" fill="#111827"/><circle cx="58" cy="86" r="6" fill="#CBD5E1"/><circle cx="168" cy="86" r="15" fill="#111827"/><circle cx="168" cy="86" r="6" fill="#CBD5E1"/></svg>
+      </div>
+      <p class="status" id="car-fb"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="zeichen" data-label="Klasse ZEICHEN" data-yr="Erarbeitung" data-title="Objekte und Klassen" data-sub="Attribute und Attributwerte">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Objekte und Klassen</p>
+      <h2>Jedes Zeichen ist ein Objekt</h2>
+      <ul class="facts">
+        <li>In Word, Google Docs oder LibreOffice Writer werden alle Zeichen als Objekte behandelt. Sie gehören zur Klasse <b>ZEICHEN</b>.</li>
+        <li>Eine Klasse ist wie ein <b>Bauplan</b>: Sie legt fest, welche Eigenschaften ein Objekt besitzen kann.</li>
+        <li>Die Eigenschaften heißen <b>Attribute</b> (Schriftart, Schriftgröße, Schriftstil, Farbe, Hintergrundfarbe), ihre einzelnen Werte <b>Attributwerte</b> (Arial, 12 Pt, fett …).</li>
+        <li>Zwei Buchstaben gehören zur gleichen Klasse, können aber unterschiedliche Attributwerte haben.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Gestalte das Objekt</h3><span id="z-pick"></span></div>
+      <div class="cols-2" style="align-items:center">
+        <div class="objcard"><h4 id="z-name">Zeichen1 : ZEICHEN</h4><ul>
+          <li>Schriftart = <select data-a="font"><option>Calibri</option><option>Arial</option><option>Times New Roman</option><option>Courier New</option></select></li>
+          <li>Schriftgröße = <select data-a="size"><option>9</option><option selected>12</option><option>14</option><option>28</option></select> Pt</li>
+          <li>Schriftstil = <select data-a="style"><option>normal</option><option>fett</option><option>kursiv</option></select></li>
+          <li>Farbe = <select data-a="color"><option>schwarz</option><option>blau</option><option>rot</option></select></li>
+          <li>Hintergrundfarbe = <select data-a="bg"><option>keine</option><option>gelb</option></select></li>
+        </ul></div>
+        <div class="obj-prev" id="z-prev"></div>
+      </div>
+      <p class="note">Zeichen 1 und 2 gehören zur gleichen Klasse ZEICHEN – vergleiche ihre Attributwerte.</p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="aufbau" data-label="Textdokument" data-yr="Erarbeitung" data-title="Aufbau eines Textdokuments" data-sub="Dokument, Abschnitt, Absatz, Zeichen">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Aufbau eines Textdokuments</p>
+    <h2>Welches Objekt ist das?</h2>
+    <p class="lead">Ein <b>Dokument</b> besteht aus <b>Abschnitten</b>, diese aus <b>Absätzen</b> (oder Grafiken und Tabellen), die Absätze aus <b>Zeichen</b>. Tippe die Teile an – rechts erscheint die <b>Objektkarte</b>.</p>
+  </div>
+  <div class="model">
+    <div class="wp-desk" id="doc-fig" style="border:1.5px solid var(--edge);border-radius:4px">
+      <div class="wp-page wp-hot" data-part="dok" style="white-space:normal;padding:.6rem">
+        <div class="wp-hot" data-part="ab1" style="padding:.4rem;border:1px dashed #94A3B8;margin-bottom:.4rem">
+          <p class="wp-hot" data-part="abs1" style="margin:0 0 .3rem;text-align:center;font-size:1.2rem;font-weight:700">Mein erster <span class="wp-hot" data-part="z1" style="color:#2563EB">L</span>aptop</p>
+          <p class="wp-hot" data-part="abs2" style="margin:0;font-size:.85rem">Lena bekommt heute ihren ersten eigenen Laptop. Ihr Vater hilft ihr beim Einrichten.</p>
+        </div>
+        <div class="wp-hot" data-part="ab2" style="padding:.4rem;border:1px dashed #94A3B8;display:grid;grid-template-columns:1fr 1fr;gap:.6rem;font-size:.8rem">
+          <p class="wp-hot" data-part="abs3" style="margin:0">„Du musst noch eine Anmelde-PIN aus vier Zahlen wählen“, sagt er.</p>
+          <div class="wp-hot" data-part="bild" style="display:grid;place-items:center;font-size:2.4rem;background:#E0F2FE;border-radius:4px">💻</div>
+        </div>
+      </div>
+    </div>
+    <div class="stack"><div id="doc-mode"></div><div class="box" id="doc-panel" aria-live="polite"></div></div>
+  </div>
+</section>
+
+<section class="station" id="m2" data-label="M1/M2 Objektkarten" data-yr="M1 · M2" data-title="Objekte im Textdokument" data-sub="Objektkarten zuordnen">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1 und M2</p>
+    <h2>Objektkarten lesen</h2>
+  </div>
+  <div class="grid-2">
+    <div class="stack">
+      <p class="slide-label">M2 · Ordne den Schriften die passenden Objektkarten zu</p>
+      <div class="cols-2">
+        <div class="wp-page" style="white-space:normal;border:1.5px solid var(--edge);font-weight:700;font-size:.75rem;letter-spacing:.03em">Passwörter verhindern, dass Fremde auf einen Account zugreifen können.<br><span class="tag">A</span></div>
+        <div class="wp-page" style="white-space:normal;border:1.5px solid var(--edge);font-style:italic;font-size:1.05rem">Im Internet gibt es viele falsche Informationen.<br><span class="tag">B</span></div>
+      </div>
+      <div class="cols-2">
+        <div class="objcard"><h4>Zeichen1 : ZEICHEN</h4><ul><li>Schriftstil = kursiv</li><li>Schriftgröße = 11 Pt</li></ul><div class="controls" style="padding:0 .6rem .5rem" data-m2="B"><button class="btn" data-v="A">A</button><button class="btn" data-v="B">B</button></div></div>
+        <div class="objcard"><h4>Zeichen2 : ZEICHEN</h4><ul><li>Schriftstil = fett</li><li>Schriftgröße = 9 Pt</li></ul><div class="controls" style="padding:0 .6rem .5rem" data-m2="A"><button class="btn" data-v="A">A</button><button class="btn" data-v="B">B</button></div></div>
+      </div>
+      <p class="status" id="m2-fb">Wähle für jede Objektkarte die passende Schrift.</p>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Leicht zu erkennen?</h3></header><p>Beschreibe, welche Formatierungen leicht zu erkennen sind.</p>
+        <div class="controls"><button class="btn" data-reveal="m2b" aria-expanded="false">Lösung</button></div><p class="solution" id="m2b" hidden>Fett und kursiv erkennt man sofort. Die genaue Schriftgröße (9 oder 11 Pt) oder die Schriftart lässt sich mit bloßem Auge kaum bestimmen – dafür muss man im Programm nachsehen.</p></div>
+    </div>
+    <div class="stack">
+      <p class="slide-label">M1 · Objekte in einem Textdokument</p>
+      <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Lenas Laptop</h3></header><p>Das Textdokument über Lena hat drei Abschnitte, getrennt durch „Abschnittswechsel (fortlaufend)“. Der zweite Abschnitt ist in drei Spalten gesetzt. Benenne die Klassen, die das Dokument zeigt, und beschreibe, wie sich der 2. vom 3. Abschnitt unterscheidet.</p>
+        <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Klassen: DOKUMENT, ABSCHNITT, ABSATZ, ZEICHEN. Abschnitt 2 hat das Attribut Spalten = 3, Abschnitt 3 hat Spalten = 1.</p></div>
+      <div class="task-card"><header><span class="no">3–5</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Am Rechner</h3></header><p>Öffne den Text über den Webcode, ergänze zwei neue Abschnitte mit Fließtexten und formatiere den Fließtext wie in Abbildung 4 der Objektkarten.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m3" data-label="M3 Objektdiagramm" data-yr="M3" data-title="Objektdiagramm" data-sub="besteht aus …">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M3</p>
+    <h2>Das Objektdiagramm</h2>
+    <p class="lead">Ein <b>Objektdiagramm</b> zeigt einzelne Objekte und ihre Beziehungen. Es hilft, das Verhalten eines Programms zu verstehen. Decke Ebene für Ebene auf.</p>
+  </div>
+  <div class="objtree" id="tree">
+    <div class="lvl-row"><div class="objcard"><h4>Textdokument1 : TEXTDOKUMENT</h4><ul><li>Papierformat = A4</li></ul></div></div>
+    <div class="rel" data-l="1">besteht aus ▼</div>
+    <div class="lvl-row" data-l="1"><div class="objcard"><h4>Abschnitt1 : ABSCHNITT</h4><ul><li>Spalten = 1</li></ul></div><div class="objcard"><h4>Abschnitt2 : ABSCHNITT</h4><ul><li>Spalten = 2</li></ul></div></div>
+    <div class="rel" data-l="2">besteht aus ▼</div>
+    <div class="lvl-row" data-l="2"><div class="objcard"><h4>Bild1 : GRAFIK</h4><ul><li>Breite = 2 cm</li><li>Höhe = 4 cm</li></ul></div><div class="objcard"><h4>Absatz1 : ABSATZ</h4><ul><li>Ausrichtung = zentriert</li></ul></div></div>
+    <div class="rel" data-l="3">besteht aus ▼</div>
+    <div class="lvl-row" data-l="3"><div class="objcard"><h4>Zeichen1 : ZEICHEN</h4><ul><li>Schriftfarbe = schwarz</li><li>Schriftstil = fett</li></ul></div><div class="objcard"><h4>Zeichen2 : ZEICHEN</h4><ul><li>Schriftfarbe = schwarz</li></ul></div><div class="objcard"><h4>Zeichen3 : ZEICHEN</h4><ul><li>Schriftfarbe = schwarz</li></ul></div></div>
+  </div>
+  <div class="controls"><button class="btn primary" id="tree-next">Nächste Ebene</button><button class="btn" id="tree-reset">Zurücksetzen</button></div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Was zeigt das Diagramm?</h3></header><p>Beschreibe, was dargestellt wird und wie das Textdokument aufgebaut ist.</p>
+      <div class="controls"><button class="btn" data-reveal="m3a" aria-expanded="false">Lösung</button></div><p class="solution" id="m3a" hidden>Ein Textdokument im Format A4 besteht aus zwei Abschnitten (einer mit 1 Spalte, einer mit 2 Spalten). Abschnitt 1 enthält ein Bild (2 cm × 4 cm) und einen zentrierten Absatz. Der Absatz besteht aus Zeichen in schwarzer Schrift; das erste ist fett.</p></div>
+    <div class="task-card"><header><span class="no">3–4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Ergänzen</h3></header><p>Ergänze bei den Zeichen weitere Attribute und Attributwerte. Ergänze den Abschnitt 2 bis zur Klasse der Zeichen mit mindestens zwei Absätzen.</p>
+      <div class="controls"><button class="btn" data-reveal="m3b" aria-expanded="false">Beispiel</button></div><p class="solution" id="m3b" hidden>Zeichen2: Schriftart = Calibri, Schriftgröße = 11 Pt, Schriftstil = kursiv. Abschnitt2 besteht aus Absatz2 (Ausrichtung = links) und Absatz3 (Ausrichtung = Blocksatz); diese bestehen aus Zeichen4, Zeichen5 …</p></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Objekte und Klassen</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Objekte und Klassen</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Eine <b>Klasse</b> ist ein Bauplan. Ein <b>Objekt</b> ist ein konkretes Beispiel dieser Klasse.</li>
+        <li data-step>Objekte haben <b>Attribute</b> (Eigenschaften) mit <b>Attributwerten</b>, z. B. Schriftgröße = 12 Pt.</li>
+        <li data-step>Klassen im Textdokument: <b>DOKUMENT</b> → <b>ABSCHNITT</b> → <b>ABSATZ</b> (auch GRAFIK, TABELLE) → <b>ZEICHEN</b>.</li>
+        <li data-step><b>Objektkarten</b> zeigen den Zustand eines Objekts, ein <b>Objektdiagramm</b> zeigt Objekte und ihre Beziehungen („besteht aus“).</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne die Objektkarte für den ersten Buchstaben deines Vornamens, so wie er in deinem Heft steht.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Klasse, Objekt, Attribut?</h2></div>
+  <div id="sort"></div>
+</section>
+
+<script>
+(() => {
+  const c = $('#car-c'), s = $('#car-s'), p = $('#car-p'), e = $('#car-e');
+  function up() {
+    $('#car-body').setAttribute('fill', c.value);
+    $('#car-seats').innerHTML = Array.from({length: +s.value}, (_, i) => `<circle cx="${70 + i * 13}" cy="56" r="4"/>`).join('');
+    $('#car-fb').innerHTML = `Objekt <b>auto1</b> der Klasse <b>AUTO</b>: farbe = ${c.selectedOptions[0].text}, sitzplätze = ${s.value}, leistung = ${p.value} PS, preis = ${(+e.value).toLocaleString('de-DE')} €`;
+  }
+  [c, s, p, e].forEach(x => x.onchange = up); up();
+})();
+(() => {
+  const Z = [{font: 'Calibri', size: '12', style: 'normal', color: 'schwarz', bg: 'keine', ch: 'A'}, {font: 'Arial', size: '28', style: 'kursiv', color: 'blau', bg: 'gelb', ch: 'B'}];
+  let k = 0;
+  const COL = {schwarz: '#111827', blau: '#2563EB', rot: '#DC2626'};
+  function show() { const z = Z[k]; $('#z-name').textContent = `Zeichen${k + 1} : ZEICHEN`; $$('[data-a]').forEach(sel => sel.value = z[sel.dataset.a]); draw(); }
+  function draw() {
+    const z = Z[k];
+    $('#z-prev').innerHTML = `<span style="font-family:'${z.font}';font-size:${z.size * 2.2}px;font-weight:${z.style === 'fett' ? 700 : 400};font-style:${z.style === 'kursiv' ? 'italic' : 'normal'};color:${COL[z.color]};background:${z.bg === 'gelb' ? '#FDE047' : 'transparent'};padding:0 .1em">${z.ch}</span>`;
+  }
+  $$('[data-a]').forEach(sel => sel.onchange = () => { Z[k][sel.dataset.a] = sel.value; draw(); });
+  seg($('#z-pick'), [['0', 'Zeichen 1 „A“'], ['1', 'Zeichen 2 „B“']], v => { k = +v; show(); });
+})();
+explorer($('#doc-fig'), $('#doc-panel'), [
+  {id: 'dok', n: 'Textdokument1 : DOKUMENT', t: '<span class="mono">Papierformat = A4 · Abschnitte = 2</span><br>Das ganze Dokument. Es besteht aus Abschnitten.'},
+  {id: 'ab1', n: 'Abschnitt1 : ABSCHNITT', t: '<span class="mono">Spalten = 1 · Absätze = 2</span><br>Ein Abschnitt enthält Absätze, Grafiken oder Tabellen.'},
+  {id: 'ab2', n: 'Abschnitt2 : ABSCHNITT', t: '<span class="mono">Spalten = 2 · Absätze = 1 · Grafiken = 1</span><br>Dieser Abschnitt ist in zwei Spalten gesetzt.'},
+  {id: 'abs1', n: 'Absatz1 : ABSATZ', t: '<span class="mono">Ausrichtung = zentriert</span><br>Die Überschrift ist ein eigener Absatz.'},
+  {id: 'abs2', n: 'Absatz2 : ABSATZ', t: '<span class="mono">Ausrichtung = links</span><br>Ein Absatz besteht aus Zeichen.'},
+  {id: 'abs3', n: 'Absatz3 : ABSATZ', t: '<span class="mono">Ausrichtung = links</span><br>Absatz in der linken Spalte von Abschnitt 2.'},
+  {id: 'bild', n: 'Bild1 : GRAFIK', t: '<span class="mono">Breite = 3 cm · Höhe = 2 cm</span><br>Auch Bilder sind Objekte mit Attributen.'},
+  {id: 'z1', n: 'Zeichen1 : ZEICHEN', t: '<span class="mono">Schriftart = Calibri · Schriftgröße = 16 Pt · Schriftstil = fett · Farbe = blau</span><br>Der Buchstabe „L“ ist ein Objekt der Klasse ZEICHEN.'}
+], {modeRoot: $('#doc-mode'), label: 'Objektkarte', intro: 'Tippe einen Teil des Dokuments an – auch einzelne Absätze oder den blauen Buchstaben.'});
+(() => {
+  const done = {};
+  $$('[data-m2]').forEach(g => g.addEventListener('click', e => {
+    const b = e.target.closest('[data-v]'); if (!b) return;
+    const ok = b.dataset.v === g.dataset.m2; done[g.dataset.m2] = ok;
+    $$('[data-v]', g).forEach(x => x.classList.remove('ok', 'err')); b.classList.add(ok ? 'ok' : 'err');
+    $('#m2-fb').innerHTML = ok ? (done.A && done.B ? '<b class="good">Beide richtig!</b> Zeichen1 (kursiv, 11 Pt) ist Text B, Zeichen2 (fett, 9 Pt) ist Text A.' : '<b class="good">Richtig!</b>') : '<b class="bad">Schau noch einmal auf den Schriftstil.</b>';
+  }));
+})();
+(() => {
+  let l = 0;
+  const up = () => $$('#tree [data-l]').forEach(x => x.style.visibility = +x.dataset.l <= l ? 'visible' : 'hidden');
+  $('#tree-next').onclick = () => { l = Math.min(3, l + 1); up(); };
+  $('#tree-reset').onclick = () => { l = 0; up(); };
+  up();
+})();
+sorter($('#sort'), [{id: 'k', name: 'Klasse'}, {id: 'o', name: 'Objekt'}, {id: 'a', name: 'Attribut'}, {id: 'w', name: 'Attributwert'}], [
+  {t: 'ZEICHEN', c: 'k'}, {t: 'ABSATZ', c: 'k'}, {t: 'AUTO', c: 'k'}, {t: 'der fett gedruckte Buchstabe „A“ in der Überschrift', c: 'o'}, {t: 'der rote Sportwagen', c: 'o'},
+  {t: 'Schriftgröße', c: 'a'}, {t: 'Ausrichtung', c: 'a'}, {t: 'farbe', c: 'a'}, {t: '12 Pt', c: 'w'}, {t: 'zentriert', c: 'w'}, {t: 'kursiv', c: 'w'}
+]);
+</script>

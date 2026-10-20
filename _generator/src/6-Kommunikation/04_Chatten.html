@@ -1,0 +1,169 @@
+<!--
+title: Chatten in Messenger-Diensten
+short: Chatten
+time: 2 Unterrichtsstunden
+q: Welche Regeln gibt es beim Chatten?
+facts: Messenger-Dienste: Nachrichten, Fotos, Videos, Sprach- und Videoanrufe in Echtzeit (direkte Kommunikation) | Die Sprache im Chat: locker, Abkürzungen, Emojis (M1) | Was beim Chatten beachten: keine persönlichen Informationen, Privatsphäre-Einstellungen, Vorsicht bei Links, Anhängen und Unbekannten (Bild 1: Sei informiert, Verrate nichts, Mobbe niemanden, Sei immer fair, Sei vorsichtig) | M2 Emojis richtig nutzen
+inter: Abkürzungen entschlüsseln · Emojis Gefühlen zuordnen · Chat mit einer unbekannten Person – sicher antworten · Emojis in Lücken einsetzen · Gleiche Nachricht, andere Wirkung
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Kommunikation in der vernetzten Welt</p>
+      <h1>Chatten in Messenger-Diensten<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Nachrichten lassen sich per Messenger-Dienst schnell versenden und beantworten. Doch was gilt dabei?</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welche Messenger kennst du? Wer ist in deinen Chatgruppen?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Welche Regeln gibt es beim Chatten?</p></div>
+      <div class="controls"><button class="btn primary" data-go="messenger">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="messenger" data-label="Messenger" data-yr="Erarbeitung" data-title="Messenger und Chatsprache" data-sub="Abkürzungen und Emojis">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Messenger-Dienste</p>
+      <h2>Schnell, direkt, locker</h2>
+      <ul class="facts">
+        <li><b>Messenger-Dienste</b> wie WhatsApp sind Apps oder Programme, mit denen man Nachrichten, Fotos, Videos und Dateien verschickt – auch Sprach- und Videoanrufe.</li>
+        <li>Nachrichten kommen in Echtzeit an: Messenger zählen zur <b>direkten Kommunikation</b>.</li>
+        <li>Die <b>Sprache im Chat</b> ist lockerer als in E-Mails. Man nutzt <b>Abkürzungen</b> und <b>Emojis</b>, um schneller zu schreiben und Gefühle auszudrücken.</li>
+        <li>Die Sprache orientiert sich an der Umgangssprache in der Gruppe – manchmal humorvoll, manchmal knapp.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Chatsprache entschlüsseln</h3></div>
+      <div id="abk"></div>
+    </div>
+  </div>
+  <h3 class="mt">M1 · Emojis: Welches Gefühl passt?</h3>
+  <div id="emo-match"></div>
+</section>
+
+<section class="station" id="regeln" data-label="Chatregeln" data-yr="Erarbeitung" data-title="Was beim Chatten beachten?" data-sub="Fünf Hinweise">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Was beim Chatten beachten?</p>
+    <h2>Fünf Hinweise für das Chatten</h2>
+    <p class="lead">Beim Chatten sollte man immer vorsichtig sein – besonders mit unbekannten Personen. Dreh die Karten um.</p>
+  </div>
+  <div id="rules"></div>
+  <div class="task-card mt"><header><span class="no">A</span><h3>Dein Chatverhalten</h3></header><p>Beschreibe dein eigenes Chatverhalten. Überprüfe dabei, ob du die Hinweise beachtest.</p></div>
+</section>
+
+<section class="station" id="unbekannt" data-label="Sicher antworten" data-yr="Ausprobieren" data-title="Chat mit Unbekannten" data-sub="Wie reagierst du?">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Ausprobieren</p>
+    <h2>Eine Nachricht von „Sky_14“</h2>
+    <p class="lead">Du bekommst Nachrichten von jemandem, den du nicht kennst. Wähle jeweils die beste Antwort.</p>
+  </div>
+  <div class="model">
+    <div class="chat"><div class="chat-head">⬅ <span style="font-size:1.4rem">👤</span><div>Sky_14<small>online</small></div></div><div class="chat-body" id="sk-body" aria-live="polite"></div></div>
+    <div class="stack"><div id="sk-opts" class="mc-opts" style="grid-template-columns:1fr"></div><p class="status" id="sk-fb"></p><div class="controls"><button class="btn" id="sk-reset">Von vorn</button></div></div>
+  </div>
+</section>
+
+<section class="station" id="m2" data-label="M2 Emojis" data-yr="M2" data-title="Emojis richtig nutzen" data-sub="Lücken im Chatverlauf">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M2</p>
+    <h2>Emojis richtig nutzen</h2>
+    <p class="lead">Tippe eine Lücke im Chatverlauf an und wähle dann ein Emoji.</p>
+  </div>
+  <div class="model">
+    <div class="chat"><div class="chat-head">⬅ <span style="font-size:1.4rem">👥</span><div>Erim und Gufa<small>2 Mitglieder</small></div></div><div class="chat-body" id="em-body"></div></div>
+    <div class="stack">
+      <div class="emo-bar" id="em-bar"></div>
+      <div class="controls"><button class="btn primary" id="em-check">Prüfen</button><button class="btn" id="em-reset">Leeren</button><span class="sort-fb" id="em-fb"></span></div>
+      <div class="vis"><div class="vis-head"><h3>2 · Gleicher Text, andere Wirkung</h3></div>
+        <div class="chat" style="box-shadow:none"><div class="chat-body"><div class="msg me" id="mood-msg">Du hast mein Rad schon wieder ausgeliehen.</div></div></div>
+        <div class="emo-bar" id="mood-bar" style="margin-top:.5rem"></div><p class="status" id="mood-fb">Wähle ein Emoji – wie wirkt die Nachricht jetzt?</p></div>
+      <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Missverständnisse</h3></header><p>Hast du schon einmal eine Nachricht falsch verstanden, weil Emojis gefehlt haben oder anders gedeutet wurden? Berichte davon.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Chatten</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Chatten in Messenger-Diensten</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step><b>Messenger-Dienste</b> verschicken Nachrichten, Fotos und Videos in Echtzeit – <b>direkte Kommunikation</b>.</li>
+        <li data-step>Die Chatsprache ist locker: <b>Abkürzungen</b> und <b>Emojis</b> drücken Gefühle aus. Emojis können die Wirkung einer Nachricht stark verändern.</li>
+        <li data-step><b>Verrate nichts:</b> keine Passwörter, Adressen, Bankdaten; neutraler Benutzername; Privatsphäre-Einstellungen nutzen.</li>
+        <li data-step><b>Sei vorsichtig</b> bei Unbekannten, Links und Anhängen; <b>sei fair</b> und <b>mobbe niemanden</b> – Störer melden.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag lim">Hilfe</span><p>Wenn dich im Chat etwas beunruhigt: Screenshot machen, blockieren, melden und mit einer Vertrauensperson sprechen. Nummer gegen Kummer: <b>116 111</b>.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Stimmt das?</h2></div>
+  <div id="tf"></div>
+</section>
+
+<script>
+matcher($('#abk'), [['LG', 'Liebe Grüße'], ['HDL', 'Hab dich lieb'], ['VLLT', 'vielleicht'], ['BRB', 'bin gleich zurück (be right back)'], ['IDK', 'weiß ich nicht (I don\'t know)'], ['GN8', 'Gute Nacht']]);
+matcher($('#emo-match'), [['<span style="font-size:2rem">😢</span>', 'traurig'], ['<span style="font-size:2rem">😃</span>', 'fröhlich'], ['<span style="font-size:2rem">😱</span>', 'schockiert'], ['<span style="font-size:2rem">😤</span>', 'selbstsicher'], ['<span style="font-size:2rem">😘</span>', 'liebevoll'], ['<span style="font-size:2rem">😜</span>', 'verrückt'], ['<span style="font-size:2rem">😎</span>', 'cool'], ['<span style="font-size:2rem">😡</span>', 'wütend']]);
+flipCards($('#rules'), [
+  ['ℹ️ Sei informiert!', 'Welche Chatregeln gelten? Wie erreiche ich Moderatoren bei Problemen? Wie erstelle ich ein sicheres Profil, das nur meine Freunde sehen können?'],
+  ['🤐 Verrate nichts!', 'Wähle einen neutralen Benutzernamen. Gib keine echten Informationen über dich bekannt. Bilder können gespeichert und woanders hochgeladen werden, ohne dass du es merkst!'],
+  ['🚫 Mobbe niemanden!', 'Mach nicht beim Mobben mit, sondern melde Störer lieber! Wenn dir eine Unterhaltung unangenehm wird, brich sie ab und gib einem Moderator Bescheid.'],
+  ['🤝 Sei immer fair!', 'Zeige anderen keine Bilder oder Webseiten, die Angst machen können. Lade keine Bilder von anderen hoch, ohne sie vorher zu fragen.'],
+  ['⚠️ Sei vorsichtig!', 'Du weißt nie, wer mit dir chattet. Nimm keine Freundschaftsanfragen von Fremden an. Triff dich nicht mit Leuten aus dem Internet. Klicke keine Links von Fremden an.']
+]);
+(() => {
+  const S = [
+    {m: 'Hi 😊 Ich hab dich in der Gruppe „Fußball Jugend“ gesehen. Wie heißt du richtig?', o: [['Ich nenne keinen echten Namen. Woher kennen wir uns?', 1, 'Gut: Du verrätst nichts und fragst nach.'], ['Ich bin Lea Schulz aus der 6b 🙂', 0, 'Echter Name und Klasse – damit kann man dich finden.'], ['Sag ich dir, wenn du mir deine Nummer gibst.', 0, 'Tauschgeschäfte mit Unbekannten sind keine gute Idee.']]},
+    {m: 'Cool! Auf welche Schule gehst du? Ich wohne bestimmt in der Nähe 😄', o: [['Das sage ich nicht.', 1, 'Richtig: Schule und Wohnort sind persönliche Daten.'], ['Gesamtschule am Park, und du?', 0, 'Jetzt weiß die Person, wo du jeden Tag bist.'], ['Schick mir zuerst ein Foto von dir.', 0, 'Fotos von Fremden können gefälscht sein – und du bringst die Person auf Ideen.']]},
+    {m: 'Schau mal, hier gibt es Gratis-Skins für dein Lieblingsspiel: http://free-skinz.xyz 🎁', o: [['Ich klicke keine Links von Fremden an.', 1, 'Genau – hinter Links kann Schadsoftware stecken.'], ['Wow, danke! *klick*', 0, 'Vorsicht: Solche Links führen oft zu Betrug oder Schadsoftware.'], ['Ich schicke den Link an meine Freunde weiter.', 0, 'Dann sind auch deine Freunde in Gefahr.']]},
+    {m: 'Lass uns doch mal treffen! Samstag am Bahnhof? Sag es aber nicht deinen Eltern 🤫', o: [['Nein. Ich blockiere dich und erzähle es meinen Eltern.', 1, 'Perfekt: Geheimhaltung ist ein Alarmzeichen. Blockieren, melden, Erwachsenen Bescheid geben.'], ['Okay, aber nur kurz.', 0, 'Triff dich nie allein mit Leuten aus dem Internet!'], ['Vielleicht, ich überlege es mir.', 0, '„Sag es nicht deinen Eltern“ ist ein klares Warnsignal.']]}
+  ];
+  let k = 0, score = 0;
+  const body = $('#sk-body');
+  function show() {
+    if (k >= S.length) { $('#sk-opts').innerHTML = ''; body.insertAdjacentHTML('beforeend', `<div class="msg sys">🚫 Du hast Sky_14 blockiert und gemeldet.</div>`); $('#sk-fb').innerHTML = `<b>${score} von ${S.length}</b> sicheren Antworten. ${score === S.length ? 'Super gemacht!' : 'Schau dir die Hinweise noch einmal an.'}`; return; }
+    body.insertAdjacentHTML('beforeend', `<div class="msg"><b>Sky_14</b>${S[k].m}<time>${16 + k}:0${k * 2}</time></div>`);
+    $('#sk-opts').innerHTML = shuffle(S[k].o.map((o, i) => [o, i])).map(([o, i]) => `<button class="mc-opt" data-i="${i}">${o[0]}</button>`).join('');
+    body.scrollTop = body.scrollHeight;
+  }
+  $('#sk-opts').addEventListener('click', e => {
+    const b = e.target.closest('.mc-opt'); if (!b || b.disabled) return;
+    const o = S[k].o[+b.dataset.i]; if (o[1]) score++;
+    $$('.mc-opt', $('#sk-opts')).forEach(x => { x.disabled = true; if (S[k].o[+x.dataset.i][1]) x.classList.add('ok'); });
+    if (!o[1]) b.classList.add('err');
+    body.insertAdjacentHTML('beforeend', `<div class="msg me ${o[1] ? 'okm' : 'flag'}">${o[0]}<time>✓✓</time></div>`); body.scrollTop = body.scrollHeight;
+    $('#sk-fb').innerHTML = (o[1] ? '<b class="good">Sicher!</b> ' : '<b class="bad">Riskant!</b> ') + o[2];
+    k++; setTimeout(show, 1600);
+  });
+  $('#sk-reset').onclick = () => { k = 0; score = 0; body.innerHTML = ''; $('#sk-fb').textContent = ''; show(); };
+  show();
+})();
+(() => {
+  const E = ['🎉', '😱', '😜', '😤', '🙌', '👍'];
+  const M = [['Erim', 'Hey, ich hab in Mathe eine Zwei geschrieben!', 1, '🎉'], ['Gufa', 'Dein Ernst?', 0, '😱'], ['Erim', 'Crazy. Keine Ahnung wie ich das gemacht hab!', 1, '😜'], ['Gufa', 'Muss an meinen Tipps gelegen haben!', 0, '😤'], ['Erim', 'Definitiv! Danke dir!', 1, '🙌'], ['Gufa', 'Kein Ding! Du hilfst mir dafür in Informatik, okay?', 0, null], ['Erim', 'Aber klar', 1, '👍', ' So machen wirs!']];
+  let sel = null;
+  const build = () => { $('#em-body').innerHTML = M.map(([n, t, me, e, rest], i) => `<div class="msg${me ? ' me' : ''}"><b>${n}</b>${t}${e ? ` <span class="slot" data-i="${i}" role="button" tabindex="0" aria-label="Emoji-Lücke"></span>` : ''}${rest || ''}</div>`).join(''); $('#em-fb').textContent = ''; sel = null; };
+  $('#em-bar').innerHTML = E.map(e => `<button data-e="${e}">${e}</button>`).join('');
+  $('#em-body').addEventListener('click', e => { const s = e.target.closest('.slot'); if (!s) return; $$('.slot').forEach(x => x.classList.remove('sel')); s.classList.add('sel'); sel = s; });
+  $('#em-bar').addEventListener('click', e => { const b = e.target.closest('[data-e]'); if (!b) return; const s = sel || $$('.slot').find(x => !x.textContent); if (s) { s.textContent = b.dataset.e; s.classList.remove('sel'); sel = null; } });
+  $('#em-check').onclick = () => {
+    let ok = 0, n = 0; $$('.slot').forEach(s => { n++; const g = s.textContent === M[+s.dataset.i][3]; s.style.borderColor = s.textContent ? (g ? '#16A34A' : '#F59E0B') : ''; if (g) ok++; });
+    $('#em-fb').innerHTML = `<b>${ok}</b> von ${n} wie im Buch-Vorschlag. Andere Emojis können auch passen – begründe deine Wahl!`;
+  };
+  $('#em-reset').onclick = build; build();
+  const MO = [['😊', 'freundlich – kein Problem'], ['😒', 'genervt'], ['😂', 'lustig gemeint'], ['😡', 'richtig wütend'], ['🥺', 'traurig, enttäuscht']];
+  $('#mood-bar').innerHTML = MO.map(([e]) => `<button data-e="${e}">${e}</button>`).join('');
+  $('#mood-bar').addEventListener('click', e => { const b = e.target.closest('[data-e]'); if (!b) return; $$('#mood-bar button').forEach(x => x.classList.toggle('sel', x === b)); $('#mood-msg').textContent = 'Du hast mein Rad schon wieder ausgeliehen. ' + b.dataset.e; $('#mood-fb').innerHTML = `Wirkung: <b>${MO.find(m => m[0] === b.dataset.e)[1]}</b>`; });
+})();
+trueFalse($('#tf'), [
+  {t: 'Messenger-Dienste zählen zur direkten Kommunikation.', ok: true, why: 'Nachrichten kommen in Echtzeit an.'},
+  {t: 'Im Chat kann ich ruhig meine Adresse nennen, wenn die Person nett ist.', ok: false, why: 'Du weißt nie, wer wirklich chattet.'},
+  {t: 'Hinter Links und Anhängen kann sich Schadsoftware verbergen.', ok: true, why: 'Nur Links von vertrauenswürdigen Personen öffnen.'},
+  {t: 'Bilder von anderen darf ich hochladen, ohne zu fragen.', ok: false, why: 'Sei fair: vorher fragen.'},
+  {t: 'Wird eine Unterhaltung unangenehm, sollte man sie abbrechen und Bescheid geben.', ok: true, why: 'Moderatoren oder Erwachsenen.'},
+  {t: 'Ein Emoji kann die Bedeutung einer Nachricht verändern.', ok: true, why: 'Es zeigt die Stimmung.'}
+]);
+</script>

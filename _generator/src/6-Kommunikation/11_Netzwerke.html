@@ -1,0 +1,195 @@
+<!--
+title: Lokale und globale Netzwerke
+short: Netzwerke
+time: 2 Unterrichtsstunden
+q: Wie sind die verschiedenen Netzwerke aufgebaut?
+facts: Lokale Netzwerke (LAN, WLAN) und Netzwerkkomponenten: Router, Provider, Modem (M1 Heimnetzwerk) | Globale Netzwerke: das Internet | Zwei Schichten des Internets: technische Schicht und Schicht der Internetdienste | IP-Adresse, Domain Name System (DNS), Router als Wegweiser (M2 Das Aufrufen einer Webseite)
+inter: Heimnetzwerk erkunden (Kabel/Funk) · Schichten des Internets sortieren · DNS-Telefonbuch · Eine Webseite aufrufen – Weg der Anfrage animiert · Router-Ausfall simulieren
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Kommunikation in der vernetzten Welt</p>
+      <h1>Lokale und globale Netzwerke<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Viele Geräte, die wir im Alltag nutzen, können untereinander oder mit dem Internet verbunden sein.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welche Geräte bei dir zu Hause sind mit dem WLAN verbunden?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie sind die verschiedenen Netzwerke aufgebaut?</p></div>
+      <div class="controls"><button class="btn primary" data-go="lokal">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="lokal" data-label="M1 Heimnetzwerk" data-yr="M1" data-title="Lokale Netzwerke" data-sub="Das Heimnetzwerk">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Lokale Netzwerke · Material M1</p>
+      <h2>Das Heimnetzwerk</h2>
+      <ul class="facts">
+        <li>Sind Computer miteinander verbunden, spricht man von einem <b>Netzwerk</b>. Stehen alle Geräte am gleichen Ort, heißt es <b>lokales Netzwerk</b> (LAN). Es ist meist kabelgebunden.</li>
+        <li>Im drahtlosen Netzwerk (<b>WLAN</b>) kommunizieren die Geräte per Funk.</li>
+        <li>Im Mittelpunkt steht der <b>Router</b>. Er verbindet über einen Internetanbieter (<b>Provider</b>) mit dem Internet und die Geräte untereinander.</li>
+        <li>Für die Übertragung über Glasfaser, Fernsehkabel, Telefonnetz (DSL) oder Mobilfunk braucht man ein <b>Modem</b> – heute meist im Router eingebaut.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Tippe die Geräte an</h3><div id="ln-mode"></div></div>
+      <svg viewBox="0 0 420 280" class="net-svg" id="home"></svg>
+      <div class="box" id="home-info" aria-live="polite"><p>Tippe auf ein Gerät.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="global" data-label="Internet" data-yr="Erarbeitung" data-title="Globale Netzwerke" data-sub="Zwei Schichten">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Globale Netzwerke</p>
+    <h2>Das Internet hat zwei Schichten</h2>
+    <p class="lead">Sind Menschen auf der ganzen Welt verbunden, nutzen sie ein <b>globales Netzwerk</b>. Das größte ist das <b>Internet</b>: Ob Nachricht nach Australien, Webseite aus Japan oder Video aus Amerika – das funktioniert, weil Computer weltweit vernetzt sind.</p>
+  </div>
+  <div class="grid-2">
+    <div class="box"><span class="tag info">Schicht der Internetdienste</span><p>Anwendungen, die man im Internet nutzt: E-Mail-Programme, Webseiten, Messenger, Streaming. Ohne sie hätte das Internet keinen Nutzen für uns.</p></div>
+    <div class="box"><span class="tag">Technische Schicht</span><p>Das <b>Fundament</b>: die Hardware wie Computer, Router, Server und Kabel. Sie ermöglicht den Datenaustausch. Ohne sie könnte niemand auf die Dienste zugreifen.</p></div>
+  </div>
+  <h3 class="mt">Ordne zu</h3>
+  <div id="layer"></div>
+</section>
+
+<section class="station" id="dns" data-label="IP & DNS" data-yr="Erarbeitung" data-title="IP-Adresse und DNS" data-sub="Das Telefonbuch des Internets">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Aufbau und Funktion des Internets</p>
+      <h2>Adressen im Internet</h2>
+      <ul class="facts">
+        <li>Möchte man eine Internetseite aufrufen, braucht man einen <b>Provider</b>, der das eigene Gerät gegen Bezahlung mit dem Internet verbindet.</li>
+        <li>Loggt man sich ins Internet ein, erhält man eine Zahlenkombination: die <b>IP-Adresse</b>. Sie ist die eigene „Anschrift“ im Internet.</li>
+        <li>Alle IP-Adressen sind im <b>Domain Name System (DNS)</b> gesammelt – einer Art <b>Telefonbuch</b> mit den Adressen aller Geräte im Internet.</li>
+        <li><b>Router</b> organisieren den Datenaustausch: Sie leiten die Daten wie Wegweiser auf dem schnellsten Weg zum Webserver.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>📖 DNS-Telefonbuch</h3></div>
+      <p>Gib eine Webadresse ein – das DNS sucht die passende IP-Adresse.</p>
+      <div class="ideas-in"><input class="text-in" id="dns-in" value="www.schule-musterstadt.de" aria-label="Webadresse" spellcheck="false"><button class="btn primary" id="dns-go">Nachschlagen</button></div>
+      <div class="chips" style="margin-top:.5rem" id="dns-ex"></div>
+      <p class="big-code mono" id="dns-out" style="font-size:1.4rem;margin:.8rem 0"></p>
+      <p class="note">Die IP-Adressen hier sind Beispiele.</p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m2" data-label="M2 Webseite aufrufen" data-yr="M2" data-title="Das Aufrufen einer Webseite" data-sub="Der Weg der Anfrage">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M2</p>
+    <h2>Florina ruft eine Webseite auf</h2>
+  </div>
+  <div class="model">
+    <div class="vis">
+      <svg viewBox="0 0 460 300" class="net-svg" id="web"></svg>
+      <div class="controls"><button class="btn primary" id="web-go">▶ Webseite aufrufen</button><button class="btn" id="web-break">💥 Router ausfallen lassen</button><button class="btn" id="web-reset">Zurücksetzen</button></div>
+    </div>
+    <div class="stack">
+      <ol class="facts" id="web-log" style="list-style:decimal;padding-left:1.4rem"></ol>
+      <div class="task-card"><header><span class="no">1–3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Aufgaben</h3></header><p>Beschreibe das Aufrufen einer Webseite. Beschreibe die Aufgaben von Webserver A mit DNS, Router und Internetprovider. Erkläre, warum manche Router nicht genutzt werden.</p>
+        <div class="controls"><button class="btn" data-reveal="w13" aria-expanded="false">Lösung</button></div><p class="solution" id="w13" hidden>Florina gibt die Webadresse ein. Die Anfrage geht über den Router ihres <b>Internetproviders</b> ins Netz. Der <b>Webserver A mit DNS</b> übersetzt die Webadresse in die IP-Adresse des Zielservers. Die <b>Router</b> leiten die Anfrage wie Wegweiser weiter zu Webserver B, der die Webseite zurückschickt. Manche Router werden nicht genutzt, weil die Daten den <b>schnellsten Weg</b> nehmen – andere Router liegen auf Umwegen. Fällt ein Router aus, wird ein anderer Weg gesucht.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Netzwerke</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Lokale und globale Netzwerke</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step><b>Lokales Netzwerk</b> (LAN, per Funk WLAN): Geräte am gleichen Ort. Der <b>Router</b> verbindet sie untereinander und über den <b>Provider</b> mit dem Internet; das <b>Modem</b> überträgt die Signale.</li>
+        <li data-step><b>Globales Netzwerk:</b> Computer auf der ganzen Welt sind verbunden – das größte ist das <b>Internet</b>.</li>
+        <li data-step>Das Internet hat zwei Schichten: die <b>technische Schicht</b> (Computer, Kabel, Server, Router) und die <b>Schicht der Internetdienste</b> (E-Mail, Webseiten, Messenger, Streaming).</li>
+        <li data-step>Jedes Gerät hat eine <b>IP-Adresse</b>. Das <b>DNS</b> ist wie ein Telefonbuch: Es übersetzt Webadressen in IP-Adressen. Router leiten Daten auf dem schnellsten Weg weiter.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne dein Heimnetzwerk mit Router, Modem und mindestens vier Geräten.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Netzwerke</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+(() => {
+  const N = {inet: [210, 34, '🌐', 'Internet', 'Das globale Netzwerk. Der Provider stellt die Verbindung her.'], modem: [210, 100, '📶', 'Modem', 'Wandelt die Signale aus Glasfaser, Kabel, DSL oder Mobilfunk um – meist im Router eingebaut.'], router: [210, 170, '🛜', 'Router', 'Mittelpunkt des Heimnetzes: verbindet alle Geräte untereinander und mit dem Internet.'],
+    pc: [60, 70, '🖥️', 'PC', 'Oft per LAN-Kabel angeschlossen – stabil und schnell.'], phone: [50, 150, '📱', 'Smartphone', 'Verbindet sich per Funk (WLAN).'], game: [60, 230, '🎮', 'Spielkonsole', 'Per Kabel oder WLAN – zum Online-Spielen.'], tv: [370, 70, '📺', 'Smart-TV', 'Streamt Filme über das Heimnetz aus dem Internet.'], tab: [370, 220, '📲', 'Tablet', 'Per WLAN verbunden.']};
+  const WIRED = {pc: 1, game: 1, tv: 1};
+  let wifi = false;
+  function draw() {
+    const s = $('#home'); let h = '';
+    h += `<path class="edge on" d="M210 52 V82"/><path class="edge on" d="M210 120 V150"/>`;
+    for (const k of ['pc', 'phone', 'game', 'tv', 'tab']) { const [x, y] = N[k], w = wifi ? true : !WIRED[k]; h += `<path class="edge ${w ? '' : 'on'}" d="M210 170 L${x} ${y}" style="${w ? 'stroke-dasharray:4 5' : ''}"/>`; }
+    for (const [k, [x, y, ic, n]] of Object.entries(N)) h += `<g class="node" data-k="${k}" style="cursor:pointer"><circle cx="${x}" cy="${y}" r="22"/><text x="${x}" y="${y + 7}" text-anchor="middle" style="font-size:20px">${ic}</text><text x="${k === 'inet' ? x + 52 : k === 'modem' ? x + 50 : x}" y="${k === 'inet' || k === 'modem' ? y + 5 : y + 36}" text-anchor="middle">${n}</text></g>`;
+    s.innerHTML = h;
+  }
+  $('#home').addEventListener('click', e => { const g = e.target.closest('[data-k]'); if (!g) return; $$('#home .node').forEach(x => x.classList.toggle('on', x === g)); const n = N[g.dataset.k]; $('#home-info').innerHTML = `<h3>${n[2]} ${n[3]}</h3><p>${n[4]}</p>`; });
+  seg($('#ln-mode'), [['l', 'LAN + WLAN'], ['w', 'nur WLAN']], v => { wifi = v === 'w'; draw(); });
+})();
+sorter($('#layer'), [{id: 'd', name: 'Schicht der Internetdienste'}, {id: 't', name: 'Technische Schicht'}], [
+  {t: '✉️ E-Mail', c: 'd'}, {t: '🌐 Website', c: 'd'}, {t: '💬 Messenger', c: 'd'}, {t: '▶️ Streaming', c: 'd'}, {t: '💻 Computer', c: 't'}, {t: '🔌 Netzwerk- und Stromkabel', c: 't'}, {t: '🗄️ Server', c: 't'}, {t: '🛜 Router', c: 't'}
+]);
+(() => {
+  const DB = {'www.schule-musterstadt.de': '203.0.113.42', 'www.westermann.de': '198.51.100.17', 'www.klicksafe.de': '192.0.2.88', 'www.kinderbuch-shop.de': '203.0.113.7', 'www.fragfinn.de': '198.51.100.230'};
+  $('#dns-ex').innerHTML = Object.keys(DB).map(d => `<button class="chip mono" data-d="${d}">${d}</button>`).join('');
+  const go = () => { const d = $('#dns-in').value.trim().toLowerCase().replace(/^https?:\/\//, ''), ip = DB[d] || DB['www.' + d]; $('#dns-out').innerHTML = ip ? `${d} → <b>${ip}</b>` : `<span class="bad">Nicht im Telefonbuch gefunden.</span>`; };
+  $('#dns-go').onclick = go; $('#dns-in').onkeydown = e => { if (e.key === 'Enter') go(); };
+  $('#dns-ex').onclick = e => { const b = e.target.closest('[data-d]'); if (b) { $('#dns-in').value = b.dataset.d; go(); } };
+  go();
+})();
+(() => {
+  const N = {F: [40, 46, '👩', 'Florina'], P: [110, 130, '🛜', 'Router Provider'], R1: [190, 70, '🛜', ''], R2: [270, 70, '🛜', ''], R3: [350, 60, '🛜', ''], R4: [270, 140, '🛜', ''], R5: [350, 150, '🛜', ''], R6: [270, 210, '🛜', ''], A: [180, 255, '🗄️', 'Webserver A (DNS)'], B: [400, 255, '🗄️', 'Webserver B']};
+  const E = [['F', 'P'], ['P', 'R1'], ['R1', 'R2'], ['R2', 'R3'], ['R1', 'R4'], ['R2', 'R4'], ['R4', 'R5'], ['R3', 'R5'], ['R4', 'R6'], ['R6', 'A'], ['R5', 'B'], ['R6', 'R5'], ['P', 'R4']];
+  let broken = null;
+  const key = (a, b) => [a, b].sort().join('-');
+  function draw(on = []) {
+    let h = E.map(([a, b]) => `<path class="edge ${on.includes(key(a, b)) ? 'on' : ''}" d="M${N[a][0]} ${N[a][1]} L${N[b][0]} ${N[b][1]}"/>`).join('');
+    h += Object.entries(N).map(([k, [x, y, ic, n]]) => `<g class="node${k === broken ? '' : ''}" data-k="${k}"><circle cx="${x}" cy="${y}" r="17" style="${k === broken ? 'fill:#FCA5A5;stroke:#DC2626' : ''}"/><text x="${x}" y="${y + 6}" text-anchor="middle" style="font-size:16px">${k === broken ? '💥' : ic}</text>${n ? `<text x="${x}" y="${y + 32}" text-anchor="middle">${n}</text>` : ''}</g>`).join('');
+    h += '<circle class="pkt" id="pk" r="6" cx="-20" cy="-20"/>';
+    $('#web').innerHTML = h;
+  }
+  function path(from, to) {
+    const adj = {}; E.forEach(([a, b]) => { if (a === broken || b === broken) return; (adj[a] = adj[a] || []).push(b); (adj[b] = adj[b] || []).push(a); });
+    const prev = {[from]: null}, q = [from];
+    while (q.length) { const c = q.shift(); if (c === to) break; (adj[c] || []).forEach(n => { if (!(n in prev)) { prev[n] = c; q.push(n); } }); }
+    const p = []; for (let c = to; c; c = prev[c]) p.unshift(c); return p[0] === from ? p : [];
+  }
+  const wait = ms => new Promise(r => setTimeout(r, RM.matches ? 0 : ms));
+  let busy = false;
+  async function travel(p, on) {
+    for (let i = 0; i < p.length; i++) { const [x, y] = N[p[i]]; const pk = $('#pk'); pk.setAttribute('cx', x); pk.setAttribute('cy', y); if (i) on.push(key(p[i - 1], p[i])); $$('#web .edge').forEach((el, j) => el.classList.toggle('on', on.includes(key(...E[j])))); await wait(450); }
+  }
+  $('#web-go').onclick = async () => {
+    if (busy) return; busy = true; draw(); const log = $('#web-log'); log.innerHTML = ''; const on = [];
+    const L = t => log.insertAdjacentHTML('beforeend', `<li>${t}</li>`);
+    L('Florina gibt die Webadresse in den Browser ein.');
+    const p1 = path('F', 'A'); L(`Die Anfrage geht über den Router ihres Providers zum <b>Webserver A mit DNS</b> (${p1.length - 1} Schritte).`); await travel(p1, on);
+    L('Das DNS findet die IP-Adresse von Webserver B.');
+    const p2 = path('A', 'B'); if (!p2.length) { L('<b class="bad">Kein Weg gefunden!</b>'); busy = false; return; }
+    L(`Router leiten die Anfrage auf dem schnellsten Weg weiter (${p2.length - 1} Schritte).`); await travel(p2, on);
+    L('Webserver B schickt die Webseite zurück zu Florina. ✅');
+    await travel(path('B', 'F'), on);
+    const unused = Object.keys(N).filter(k => k.startsWith('R') && !on.some(e => e.split('-').includes(k)));
+    L(`Nicht genutzte Router: ${unused.length} – sie lagen nicht auf dem schnellsten Weg${broken ? ' oder sind ausgefallen' : ''}.`);
+    busy = false;
+  };
+  $('#web-break').onclick = () => { if (busy) return; broken = 'R4'; draw(); $('#web-log').innerHTML = '<li>Ein Router ist ausgefallen. Starte die Anfrage erneut – findet sie einen anderen Weg?</li>'; };
+  $('#web-reset').onclick = () => { if (busy) return; broken = null; draw(); $('#web-log').innerHTML = ''; };
+  draw();
+})();
+mcQuiz($('#quiz'), [
+  {q: 'Was ist ein lokales Netzwerk?', a: ['Geräte am gleichen Ort sind verbunden', 'das ganze Internet', 'ein Netz für Fische', 'eine Webseite'], ok: 0, why: 'Zum Beispiel das Heimnetz.'},
+  {q: 'Was macht der Router im Heimnetz?', a: ['Er verbindet die Geräte untereinander und mit dem Internet', 'Er druckt', 'Er speichert Fotos', 'Er lädt den Akku'], ok: 0, why: 'Er steht im Mittelpunkt.'},
+  {q: 'Was ist ein Provider?', a: ['ein Internetanbieter', 'ein Kabel', 'ein Browser', 'ein Virus'], ok: 0, why: 'Er verbindet gegen Bezahlung mit dem Internet.'},
+  {q: 'Wozu dient das DNS?', a: ['Es übersetzt Webadressen in IP-Adressen', 'Es schützt vor Viren', 'Es speichert Videos', 'Es baut WLAN auf'], ok: 0, why: 'Wie ein Telefonbuch.'},
+  {q: 'Was gehört zur technischen Schicht des Internets?', a: ['Server und Kabel', 'Messenger', 'Streaming', 'E-Mail'], ok: 0, why: 'Das Fundament ist Hardware.'},
+  {q: 'Welchen Weg nehmen Daten im Internet?', a: ['meist den schnellsten über Router', 'immer denselben Kabelweg', 'einen zufälligen Weg', 'nur über Satelliten'], ok: 0, why: 'Router sind Wegweiser.'}
+]);
+</script>

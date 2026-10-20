@@ -1,0 +1,170 @@
+<!--
+title: Bilder bearbeiten
+short: Bildbearbeitung
+time: 2 Unterrichtsstunden
+q: Welche Möglichkeiten gibt es, Bilder zu bearbeiten?
+facts: Bildbearbeitung am Smartphone: zuschneiden, drehen, spiegeln | Helligkeit, Kontrast und Sättigung | Filter und ihre Wirkung (M1) | Bilder übertragen (Kabel, Bluetooth, Cloud), Bildbearbeitung am Computer
+inter: Foto-Editor mit Reglern für Helligkeit, Kontrast, Sättigung · Zuschneiden, Drehen, Spiegeln · vier Filter mit Stimmungen zuordnen · Übertragungswege sortieren
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Bilder und Videos</p>
+      <h1>Bilder bearbeiten<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Mit einem Smartphone kann man nicht nur Fotos machen, sondern sie auch bearbeiten – damit sie besser aussehen oder lustiger werden.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Bearbeitest du deine Fotos, bevor du sie verschickst oder postest? Wie?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Welche Möglichkeiten gibt es, Bilder zu bearbeiten?</p></div>
+      <div class="controls"><button class="btn primary" data-go="editor">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="editor" data-label="Foto-Editor" data-yr="Erarbeitung" data-title="Bildbearbeitung am Smartphone" data-sub="Helligkeit, Kontrast, Sättigung">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Bildbearbeitung am Smartphone</p>
+      <h2>Der Foto-Editor</h2>
+      <ul class="facts">
+        <li>In der Fotogalerie wählt man ein Bild und bearbeitet es über die Einstellungen oder ein Regler-Symbol.</li>
+        <li>Grundfunktionen: <b>zuschneiden</b> (Ränder entfernen), <b>drehen</b> und <b>spiegeln</b>.</li>
+        <li><b>Helligkeit:</b> Das Foto wirkt heller oder dunkler.</li>
+        <li><b>Kontrast:</b> der Unterschied zwischen hellen und dunklen Bereichen. Hoher Kontrast wirkt kräftig, niedriger eher weich.</li>
+        <li><b>Sättigung:</b> wie stark die Farben leuchten. Niedrige Sättigung wirkt blass bis grau.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="phone-ed">
+        <div class="ed-img"><canvas id="ed-cv"></canvas></div>
+        <div class="ed-tools"><button class="btn" id="ed-crop">✂ Zuschneiden</button><button class="btn" id="ed-rot">⟳ Drehen</button><button class="btn" id="ed-flip">⇋ Spiegeln</button><button class="btn" id="ed-reset">Zurücksetzen</button></div>
+        <label class="slider-row">☀ Helligkeit <input id="ed-b" type="range" min="30" max="170" value="100"><output class="mono" id="ed-bo">100 %</output></label>
+        <label class="slider-row">◐ Kontrast <input id="ed-c" type="range" min="20" max="200" value="100"><output class="mono" id="ed-co">100 %</output></label>
+        <label class="slider-row">🎨 Sättigung <input id="ed-s" type="range" min="0" max="250" value="100"><output class="mono" id="ed-so">100 %</output></label>
+        <div class="controls" style="margin-top:.4rem"><button class="btn" data-pre="hi">Abb. 1 A: hoher Kontrast</button><button class="btn" data-pre="lo">Abb. 1 B: niedriger Kontrast</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="filter" data-label="M1 Filter" data-yr="M1" data-title="Wirkung von Filtern" data-sub="Stimmungen erzeugen">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Filter</p>
+    <h2>Wirkung von Filtern</h2>
+    <p class="lead">Ein <b>Filter</b> legt mit einem Klick eine bestimmte Sättigung oder Belichtung über das Bild. Bunte Farben wirken fröhlich, dunkle und schwache Farben eher traurig. So erzeugt man gezielt eine <b>Wirkung</b> beim Betrachter.</p>
+  </div>
+  <div class="filters" id="filters"></div>
+  <div class="cols-2 mt">
+    <div>
+      <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Beschreiben und zuordnen</h3></header><p>Beschreibe die Bilder A–D (Helligkeit, Kontrast, Sättigung) und ordne jeweils eine passende Stimmung zu.</p></div>
+      <div id="mood-sort"></div>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Warum dieser Filter?</h3></header><p>Stelle Vermutungen an, warum die Filter in B und D jeweils genutzt wurden.</p>
+        <div class="controls"><button class="btn" data-reveal="f3h" aria-expanded="false">HILFE</button><button class="btn" data-reveal="f3" aria-expanded="false">Lösungsidee</button></div>
+        <p class="hint-box" id="f3h" hidden>Woran erinnern dich kühle, dunkle Farben? Woran braune, verblasste Fotos?</p>
+        <p class="solution" id="f3" hidden><b>B</b> (kühl, dunkel, kräftiger Kontrast): wirkt geheimnisvoll und spannend wie eine Nacht in der Großstadt. <b>D</b> (Sepia, verblasst): wirkt wie ein altes Foto – nostalgisch, an früher erinnernd.</p></div>
+      <div class="task-card"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Eigenes Bild</h3></header><p>Wähle eine Stimmung und entwirf ein eigenes Bild mit passendem Motiv und Filter. Zeige es deinen Mitschülerinnen und Mitschülern und notiere, ob die gewünschte Stimmung ausgelöst wurde.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="computer" data-label="Übertragen" data-yr="Erarbeitung" data-title="Übertragen und am PC bearbeiten" data-sub="Kabel, Bluetooth, Cloud – GIMP">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Bilder übertragen</p>
+    <h2>Vom Smartphone an den Computer</h2>
+  </div>
+  <div class="cols-3">
+    <div class="box"><span class="tag">🔌 Kabel</span><p>Das Smartphone wird per Kabel mit dem Computer verbunden.</p></div>
+    <div class="box"><span class="tag">📶 Bluetooth</span><p>Kabellose Übertragung über kurze Entfernungen.</p></div>
+    <div class="box"><span class="tag">☁️ Clouddienst</span><p>Die Bilder werden hochgeladen und am Computer heruntergeladen.</p></div>
+  </div>
+  <div class="cols-2 mt">
+    <div class="box"><span class="tag">Bildbearbeitung am Computer</span><p>Programme wie <b>GIMP</b> bieten viele Werkzeuge: Helligkeit, Kontrast und Sättigung anpassen, <b>Bereiche auswählen</b>, <b>freistellen</b>, mit dem Pinsel malen, <b>Texte einfügen</b>, mehrere Bilder <b>übereinanderlegen</b>. Das ist umfangreicher als am Smartphone, erfordert aber Übung.</p></div>
+    <div><p class="eyebrow">Smartphone oder Computer?</p><div id="dev-sort"></div></div>
+  </div>
+  <div class="task-card mt"><header><span class="no">A</span><h3>Selbst ausprobieren</h3></header><p>Nimm Fotos mit einem Smartphone oder einer Kamera auf. Bearbeite sie direkt auf dem Smartphone oder übertrage sie auf einen Computer und nutze ein Bildbearbeitungsprogramm.</p></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Bilder bearbeiten</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Bilder bearbeiten</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Grundfunktionen der Bildbearbeitung: <b>zuschneiden, drehen, spiegeln</b>.</li>
+        <li data-step><b>Helligkeit</b> (heller/dunkler), <b>Kontrast</b> (Unterschied hell–dunkel), <b>Sättigung</b> (wie stark die Farben leuchten).</li>
+        <li data-step><b>Filter</b> verändern das Aussehen mit einem Klick und erzeugen eine bestimmte <b>Stimmung</b>.</li>
+        <li data-step>Bilder überträgt man per <b>Kabel</b>, <b>Bluetooth</b> oder <b>Clouddienst</b> auf den Computer.</li>
+        <li data-step>Programme wie GIMP bieten mehr Möglichkeiten: Bereiche auswählen, freistellen, malen, Texte einfügen, Bilder übereinanderlegen.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Tabelle</span><p>Lege eine Tabelle an: Einstellung – was sie bewirkt – Beispiel.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Üben und wiederholen</h2></div>
+  <h3>Begriff und Wirkung</h3>
+  <div id="match"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+function scene2(w, h) {
+  const c = document.createElement('canvas'); c.width = w; c.height = h; const x = c.getContext('2d');
+  const g = x.createLinearGradient(0, 0, 0, h); g.addColorStop(0, '#2B7BD8'); g.addColorStop(.6, '#9CCDF2'); x.fillStyle = g; x.fillRect(0, 0, w, h);
+  x.fillStyle = 'rgba(255,255,255,.9)'; for (const [cx, cy, r] of [[.2, .18, .07], [.27, .16, .09], [.34, .19, .06], [.65, .1, .05], [.71, .09, .07]]) { x.beginPath(); x.arc(cx * w, cy * h, r * w, 0, 7); x.fill(); }
+  x.fillStyle = '#5E9E2F'; x.fillRect(0, h * .55, w, h * .45); x.fillStyle = '#C9B22F'; x.beginPath(); x.moveTo(0, h * .62); x.lineTo(w * .35, h * .56); x.lineTo(w * .35, h); x.lineTo(0, h); x.fill();
+  x.fillStyle = '#555'; x.beginPath(); x.moveTo(w * .47, h * .55); x.lineTo(w * .53, h * .55); x.lineTo(w * .75, h); x.lineTo(w * .25, h); x.fill();
+  x.strokeStyle = '#fff'; x.lineWidth = w / 120; x.setLineDash([w / 40, w / 40]); x.beginPath(); x.moveTo(w * .5, h * .56); x.lineTo(w * .5, h); x.stroke(); x.setLineDash([]);
+  x.fillStyle = '#4A2E14'; x.fillRect(w * .16, h * .32, w * .02, h * .26); x.fillStyle = '#1F5F1A'; x.beginPath(); x.arc(w * .17, h * .3, w * .08, 0, 7); x.fill(); x.beginPath(); x.arc(w * .13, h * .36, w * .05, 0, 7); x.fill();
+  return c;
+}
+const PIC = scene2(640, 480);
+
+/* ================= Editor ================= */
+(() => {
+  let rot = 0, flip = 1, crop = false;
+  const cv = $('#ed-cv');
+  function draw() {
+    const W = 640, H = 480; cv.width = rot % 180 ? H : W; cv.height = rot % 180 ? W : H;
+    const x = cv.getContext('2d'); x.save(); x.translate(cv.width / 2, cv.height / 2); x.rotate(rot * Math.PI / 180); x.scale(flip, 1);
+    if (crop) x.drawImage(PIC, W * .2, H * .2, W * .6, H * .6, -W / 2, -H / 2, W, H); else x.drawImage(PIC, -W / 2, -H / 2);
+    x.restore();
+    const b = $('#ed-b').value, c = $('#ed-c').value, s = $('#ed-s').value;
+    cv.style.filter = `brightness(${b}%) contrast(${c}%) saturate(${s}%)`;
+    $('#ed-bo').textContent = b + ' %'; $('#ed-co').textContent = c + ' %'; $('#ed-so').textContent = s + ' %';
+  }
+  $$('#editor input').forEach(i => i.oninput = draw);
+  $('#ed-crop').onclick = () => { crop = !crop; draw(); };
+  $('#ed-rot').onclick = () => { rot = (rot + 90) % 360; draw(); };
+  $('#ed-flip').onclick = () => { flip *= -1; draw(); };
+  $('#ed-reset').onclick = () => { rot = 0; flip = 1; crop = false; $('#ed-b').value = 100; $('#ed-c').value = 100; $('#ed-s').value = 100; draw(); };
+  $$('[data-pre]').forEach(b => b.onclick = () => { const hi = b.dataset.pre === 'hi'; $('#ed-c').value = hi ? 170 : 45; $('#ed-s').value = hi ? 160 : 50; $('#ed-b').value = hi ? 100 : 125; draw(); });
+  draw();
+})();
+
+/* ================= Filter ================= */
+(() => {
+  const F = [['A', 'sepia(.35) saturate(1.6) brightness(1.15) hue-rotate(-10deg)', 'warm, hell, kräftige Farben'], ['B', 'brightness(.6) contrast(1.4) saturate(1.5) hue-rotate(190deg)', 'dunkel, kühl, hoher Kontrast'], ['C', 'grayscale(1) contrast(1.3) brightness(.9)', 'schwarz-weiß, kontrastreich, ohne Farbe'], ['D', 'sepia(.9) saturate(.8) contrast(.85) brightness(1.05)', 'bräunlich, verblasst, wenig Kontrast']];
+  const url = PIC.toDataURL('image/jpeg', .85);
+  $('#filters').innerHTML = F.map(([k, f, d]) => `<figure class="flt"><img src="${url}" alt="Bild ${k} mit Filter" style="filter:${f}"><figcaption><b>${k}</b> ${d}</figcaption></figure>`).join('');
+})();
+sorter($('#mood-sort'), [{id: 'f', name: '😊 fröhlich'}, {id: 'g', name: '🌃 geheimnisvoll'}, {id: 't', name: '😔 traurig, ernst'}, {id: 'n', name: '📜 nostalgisch'}], [
+  {t: 'Bild A (warm, hell)', c: 'f'}, {t: 'Bild B (dunkel, kühl)', c: 'g'}, {t: 'Bild C (schwarz-weiß)', c: 't'}, {t: 'Bild D (bräunlich, verblasst)', c: 'n'}
+]);
+sorter($('#dev-sort'), [{id: 's', name: '📱 Smartphone reicht'}, {id: 'c', name: '💻 eher Computer (GIMP)'}], [
+  {t: 'Foto zuschneiden', c: 's'}, {t: 'Helligkeit erhöhen', c: 's'}, {t: 'Filter anwenden', c: 's'}, {t: 'Bild spiegeln', c: 's'},
+  {t: 'Hintergrund genau freistellen', c: 'c'}, {t: 'mehrere Bilder übereinanderlegen', c: 'c'}, {t: 'einzelne Bildteile gezielt verändern', c: 'c'}
+]);
+matcher($('#match'), [['Helligkeit', 'Bild wirkt heller oder dunkler'], ['Kontrast', 'Unterschied zwischen hellen und dunklen Bereichen'], ['Sättigung', 'wie stark die Farben leuchten'], ['Filter', 'neues Aussehen mit einem Klick'], ['Zuschneiden', 'Ränder entfernen'], ['Clouddienst', 'Bilder kabellos übertragen']]);
+mcQuiz($('#quiz'), [
+  {q: 'Was bestimmt der Kontrast?', a: ['den Unterschied zwischen hellen und dunklen Bereichen', 'wie stark die Farben leuchten', 'die Bildgröße', 'die Dateiendung'], ok: 0, why: 'Hoher Kontrast wirkt kräftig.'},
+  {q: 'Wie sieht ein Bild mit sehr niedriger Sättigung aus?', a: ['blass bis grau', 'knallbunt', 'sehr hell', 'gespiegelt'], ok: 0, why: 'Die Farben leuchten kaum.'},
+  {q: 'Was macht ein Filter?', a: ['Er verändert das Aussehen mit einem Klick', 'Er löscht das Bild', 'Er verkleinert die Datei', 'Er überträgt das Bild'], ok: 0, why: 'Und erzeugt eine Stimmung.'},
+  {q: 'Wie kann man Bilder kabellos übertragen?', a: ['Bluetooth oder Clouddienst', 'nur per USB', 'gar nicht', 'per Drucker'], ok: 0, why: 'Beides geht ohne Kabel.'},
+  {q: 'Was bietet ein Programm wie GIMP zusätzlich?', a: ['Bereiche auswählen und freistellen', 'Telefonieren', 'nur Drehen', 'Musik schneiden'], ok: 0, why: 'Viele Werkzeuge, braucht Übung.'}
+]);
+</script>

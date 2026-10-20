@@ -1,0 +1,157 @@
+<!--
+title: Wiederholung und Selbsttest
+short: Selbsttest
+time: 1–2 Unterrichtsstunden
+q: Was kann ich, und was sollte ich noch üben?
+facts: Zusammenfassung S. 110 als Karteikarten | Trainer S. 111: Texte eingeben, kopieren und verschieben; Texte mit Bildern; Texte überarbeiten und optimieren; Tabellen einfügen | Großes Quiz und „Ich kann …“-Liste
+inter: Karteikarten · Begriffe-Paare · Shortcuts an der Tastatur · Textfluss erkennen · Fehlertext korrigieren · Wortwiederholungen ersetzen · Quiz (10 zufällige Fragen) · Selbsteinschätzung
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Textgestaltung</p>
+      <h1>Wiederholung und Selbsttest<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Eingeben, formatieren, Bilder einfügen, überarbeiten und Tabellen: Prüfe, was du sicher kannst.</p>
+      <div class="controls"><button class="btn primary" data-go="begriffe">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="begriffe" data-label="Begriffe" data-yr="Wiederholen" data-title="Zusammenfassung" data-sub="Fachbegriffe">
+  <div class="section-head"><p class="eyebrow">Station 1 · Zusammenfassung (S. 110)</p><h2>Fachbegriffe</h2></div>
+  <div id="flip"></div>
+  <h3 class="mt">Paare finden</h3>
+  <div id="match"></div>
+</section>
+
+<section class="station" id="t1" data-label="T Eingeben" data-yr="Trainer" data-title="Texte eingeben, kopieren und verschieben" data-sub="Shortcuts">
+  <div class="section-head"><p class="eyebrow">Station 2 · Trainer</p><h2>Texte eingeben, kopieren und verschieben</h2></div>
+  <div id="t1-kb"></div>
+  <p class="status" id="t1-info">Tippe die nummerierten Tasten an.</p>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Shortcut</h3></header><p>Beschreibe, was ein Shortcut ist, und benenne dessen Vorteile.</p>
+      <div class="controls"><button class="btn" data-reveal="e1" aria-expanded="false">Lösung</button></div><p class="solution" id="e1" hidden>Ein Shortcut ist eine Tastenkombination, mit der man einen Befehl ausführt, ohne mit der Maus ins Menü zu klicken. Vorteil: Man arbeitet schneller und effizienter.</p></div>
+    <div class="task-card"><header><span class="no">2–3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Nummerierte Tasten</h3></header><p>Beschreibe, welche Shortcuts mit den nummerierten Tasten und der Strg-Taste möglich sind, und nenne weitere Shortcuts.</p>
+      <div class="controls"><button class="btn" data-reveal="e23" aria-expanded="false">Lösung</button></div><p class="solution" id="e23" hidden>1 C: kopieren · 2 V: einfügen · 3 N: neues Dokument · 4 ←: ein Wort nach links · 5 ↑: Absatzanfang. Weitere: Strg + X ausschneiden, Strg + S speichern, Strg + Z rückgängig, Strg + P drucken, Strg + F suchen.</p></div>
+  </div>
+</section>
+
+<section class="station" id="t2" data-label="T Bilder" data-yr="Trainer" data-title="Texte mit Bildern" data-sub="Textfluss">
+  <div class="section-head"><p class="eyebrow">Station 3 · Trainer</p><h2>Texte mit Bildern</h2></div>
+  <div class="grid-2">
+    <div class="stack">
+      <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Bild und Textfluss</h3></header><p>Wie veränderst du die Größe eines Bildes mithilfe des Rahmens? Erkläre, was sich mit dem „Textfluss“ einstellen lässt.</p>
+        <div class="controls"><button class="btn" data-reveal="b12" aria-expanded="false">Lösung</button></div><p class="solution" id="b12" hidden>Bild anklicken und an einem Eckpunkt ziehen (mit Shift bleibt das Seitenverhältnis gleich). Der Textfluss legt fest, wie der Text um das Bild herumfließt: in Zeile, Quadrat, eng, oben und unten, hinter oder vor dem Text.</p></div>
+      <div class="task-card"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Bild hinter dem Text</h3></header><p>Beschreibe eine Situation, in der es sinnvoll ist, den Textfluss so einzustellen, dass ein Bild hinter dem Text liegt.</p>
+        <div class="controls"><button class="btn" data-reveal="b4" aria-expanded="false">Lösung</button></div><p class="solution" id="b4" hidden>z. B. bei einer Einladungskarte mit Hintergrundbild oder einem blassen Schullogo als Wasserzeichen auf einem Briefbogen.</p></div>
+    </div>
+    <div><p class="eyebrow">Aufgabe 3: Wie verhalten sich Text und Bild in A–D?</p><div id="t2-quiz"></div></div>
+  </div>
+</section>
+
+<section class="station" id="t3" data-label="T Überarbeiten" data-yr="Trainer" data-title="Texte überarbeiten und optimieren" data-sub="Fehler und Synonyme">
+  <div class="section-head"><p class="eyebrow">Station 4 · Trainer</p><h2>Texte überarbeiten und optimieren</h2></div>
+  <div class="grid-2">
+    <div class="stack">
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Text A korrigieren</h3></header><p>Korrigiere die Rechtschreibfehler direkt im Text.</p>
+        <textarea class="text-in" id="ta" rows="4" style="font-size:1rem" spellcheck="false">Der junge ging in den schuhle. Er hatte sein heft Zhause fergaßen. Dann lief er schnel zurük nach hause um es zu holen.</textarea>
+        <div class="controls"><button class="btn primary" id="ta-check">Prüfen</button><button class="btn" data-reveal="ta-sol" aria-expanded="false">Lösung</button><span class="sort-fb" id="ta-fb"></span></div>
+        <p class="solution" id="ta-sol" hidden>Der <b>Junge</b> ging in die <b>Schule</b>. Er hatte sein <b>Heft zu Hause vergessen</b>. Dann lief er <b>schnell zurück</b> nach <b>Hause</b>, um es zu holen.</p></div>
+      <div class="task-card"><header><span class="no">2–3</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Wörterbuch und Thesaurus</h3></header><p>Beschreibe, wie du ein neues Wort zum Wörterbuch hinzufügst und was ein Thesaurus ist.</p>
+        <div class="controls"><button class="btn" data-reveal="u23" aria-expanded="false">Lösung</button></div><p class="solution" id="u23" hidden>Rechtsklick auf das markierte Wort → „Zum Wörterbuch hinzufügen“. Ein Thesaurus ist ein Nachschlagewerk für Synonyme, also Wörter mit ähnlicher Bedeutung.</p></div>
+    </div>
+    <div class="stack">
+      <div class="task-card"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>B: Synonyme</h3></header><p>Finde für <b>sagen</b>, <b>schön</b> und <b>gehen</b> jeweils drei Synonyme.</p>
+        <div class="controls"><button class="btn" data-reveal="u4" aria-expanded="false">Lösung</button></div><p class="solution" id="u4" hidden>sagen: erzählen, berichten, erklären · schön: hübsch, herrlich, wunderbar · gehen: laufen, spazieren, schlendern</p></div>
+      <div class="vis"><div class="vis-head"><h3>5 · C: Der Hund, der Hund …</h3><span class="score">„Hund“: <b id="h-n">5</b>×</span></div>
+        <p class="wp-page" id="hund" style="white-space:normal;border:1.5px solid var(--edge);border-radius:4px;line-height:2.1"></p><p class="status" id="h-fb">Wähle passende Wörter, damit „Hund“ nicht ständig wiederholt wird.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="t4" data-label="T Tabellen" data-yr="Trainer" data-title="Tabellen einfügen" data-sub="Funktion und Einsatz">
+  <div class="section-head"><p class="eyebrow">Station 5 · Trainer</p><h2>Tabellen einfügen</h2></div>
+  <div class="grid-2">
+    <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Funktion</h3></header><p>Beschreibe die Funktion einer Tabelle.</p>
+      <div class="controls"><button class="btn" data-reveal="g1" aria-expanded="false">Lösung</button></div><p class="solution" id="g1" hidden>Tabellen ordnen Zahlen, Namen oder Auflistungen übersichtlich in Zellen, die in Zeilen und Spalten angeordnet sind.</p></div>
+    <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Situation</h3></header><p>Beschreibe eine Situation, in der du eine Tabelle einfügen würdest. Begründe.</p>
+      <div class="controls"><button class="btn" data-reveal="g2" aria-expanded="false">Lösung</button></div><p class="solution" id="g2" hidden>z. B. ein Stundenplan, ein Trainingsplan oder die Ergebnisse einer Umfrage: Wochentage und Stunden lassen sich in Spalten und Zeilen schnell ablesen.</p></div>
+  </div>
+  <h3 class="mt">Tabelle oder Fließtext?</h3>
+  <div id="t4-sort"></div>
+</section>
+
+<section class="station" id="quiz-st" data-label="Quiz" data-yr="Testen" data-title="Großes Quiz" data-sub="10 zufällige Fragen">
+  <div class="section-head"><p class="eyebrow">Station 6 · Quiz</p><h2>Großes Quiz</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<section class="station" id="uebungen" data-label="Ich kann …">
+  <div class="section-head"><p class="eyebrow">Selbsteinschätzung</p><h2>Ich kann …</h2></div>
+  <ol id="sc"></ol>
+</section>
+
+<script>
+const BEGRIFFE = [['Textverarbeitungsprogramm', 'Programm zum Schreiben und Gestalten von Texten'], ['Absatz', 'beginnt mit der Enter-Taste'], ['Shortcut', 'Tastenkombination für einen Befehl'], ['Zwischenablage', 'speichert kopierte oder ausgeschnittene Inhalte'],
+  ['Formatierung', 'Veränderung von Schriftart, Größe, Stil oder Farbe'], ['skalieren', 'Bildgröße gleichmäßig ändern'], ['Textfluss', 'wie der Text um ein Bild herumfließt'], ['Zuschneiden', 'unerwünschte Bildbereiche entfernen'],
+  ['Klasse', 'Bauplan für Objekte, z. B. ZEICHEN'], ['Attribut', 'Eigenschaft eines Objekts, z. B. Schriftgröße'], ['Rechtschreibprüfung', 'markiert Fehler rot oder blau'], ['Thesaurus', 'findet Synonyme'], ['Zelle', 'Kästchen einer Tabelle']];
+flipCards($('#flip'), BEGRIFFE);
+matcher($('#match'), shuffle(BEGRIFFE.slice()).slice(0, 7));
+keyboard($('#t1-kb'), {marks: {C: 1, V: 2, N: 3, '←': 4, '↑': 5}, onKey(k) {
+  const I = {C: '1 – C: Strg + C kopieren', V: '2 – V: Strg + V einfügen', N: '3 – N: Strg + N neues Dokument', '←': '4 – Pfeil links: Strg + ← ein Wort nach links', '↑': '5 – Pfeil oben: Strg + ↑ zum Absatzanfang'};
+  if (I[k]) $('#t1-info').innerHTML = `<b>${I[k]}</b>`;
+}});
+(() => {
+  const L = (y, x1 = 2, x2 = 58) => `<rect x="${x1}" y="${y}" width="${x2 - x1}" height="3"/>`, img = (x, y, w, h, op = 1) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="3" fill="#111827" opacity="${op}"/>`;
+  const ic = t => `<svg viewBox="0 0 60 44" style="width:6rem;height:4.4rem;display:block"><g fill="#2563EB">${t}</g></svg>`;
+  mcQuiz($('#t2-quiz'), [
+    {q: 'A ' + ic(L(4) + img(20, 12, 20, 18) + L(36)), a: ['Oben und unten', 'Quadrat', 'Hinter dem Text', 'Vor dem Text'], ok: 0, why: 'Neben dem Bild steht kein Text.'},
+    {q: 'B ' + ic(L(12, 2, 18) + L(20, 2, 18) + L(28, 2, 18) + L(12, 42) + L(20, 42) + L(28, 42) + img(22, 10, 16, 22) + L(4) + L(36)), a: ['Quadrat', 'Oben und unten', 'Mit Text in Zeile', 'Hinter dem Text'], ok: 0, why: 'Der Text fließt rechts und links vorbei.'},
+    {q: 'C ' + ic(img(16, 6, 28, 30, .35) + L(6) + L(14) + L(22) + L(30) + L(38)), a: ['Hinter dem Text', 'Vor dem Text', 'Quadrat', 'Eng'], ok: 0, why: 'Die Linien laufen über das blasse Bild.'},
+    {q: 'D ' + ic(L(6) + L(14) + L(22) + L(30) + L(38) + img(16, 8, 28, 26)), a: ['Vor dem Text', 'Hinter dem Text', 'Oben und unten', 'Mit Text in Zeile'], ok: 0, why: 'Das Bild verdeckt den Text.'}
+  ]);
+})();
+(() => {
+  const SOL = 'Der Junge ging in die Schule. Er hatte sein Heft zu Hause vergessen. Dann lief er schnell zurück nach Hause, um es zu holen.';
+  const W = s => s.replace(/[.,]/g, '').split(/\s+/);
+  $('#ta-check').onclick = () => {
+    const a = W($('#ta').value.trim()), b = W(SOL); let ok = 0; b.forEach(w => { const i = a.indexOf(w); if (i >= 0) { ok++; a.splice(i, 1); } });
+    $('#ta-fb').innerHTML = $('#ta').value.trim().replace(/\s+/g, ' ') === SOL ? '<b class="good">Fehlerfrei!</b>' : `<b>${ok}</b> von ${b.length} Wörtern stimmen.`;
+  };
+})();
+(() => {
+  const T = 'Der {0} ging durch den Garten. {1} machte ein lautes Geräusch. Dann lief {2} zur Tür. {3} ist ein braver {4}.';
+  const O = [['Hund', 'Vierbeiner', 'Dackel'], ['Der Hund', 'Er', 'Das Tier'], ['der Hund', 'er', 'der Vierbeiner'], ['Der Hund', 'Er', 'Bello'], ['Hund', 'Kerl', 'Begleiter']];
+  $('#hund').innerHTML = T.replace(/\{(\d)\}/g, (m, i) => `<select data-k="${i}" aria-label="Ersatz">${O[i].map(o => `<option>${o}</option>`).join('')}</select>`);
+  $('#hund').addEventListener('change', () => { const n = $$('#hund select').filter(s => /Hund/.test(s.value)).length; $('#h-n').textContent = n; $('#h-fb').innerHTML = n <= 2 ? '<b class="good">Viel besser zu lesen!</b>' : `Noch ${n}× „Hund“.`; });
+})();
+sorter($('#t4-sort'), [{id: 't', name: 'Tabelle'}, {id: 'f', name: 'Fließtext'}], [
+  {t: 'Stundenplan', c: 't'}, {t: 'Ergebnisse der Bundesjugendspiele', c: 't'}, {t: 'Essensplan der Mensa', c: 't'}, {t: 'Geburtstagseinladung', c: 'f'}, {t: 'Erlebnisbericht vom Ausflug', c: 'f'}, {t: 'Brief an die Oma', c: 'f'}
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Was löscht die Rücktaste?', a: ['das Zeichen links vom Cursor', 'das Zeichen rechts vom Cursor', 'die ganze Zeile', 'das Dokument'], ok: 0, why: 'Entf löscht rechts.'},
+  {q: 'Welcher Shortcut fügt ein?', a: ['Strg + V', 'Strg + C', 'Strg + X', 'Strg + Z'], ok: 0, why: 'C kopiert, X schneidet aus.'},
+  {q: 'Was passiert beim Ausschneiden?', a: ['Der Text verschwindet und liegt in der Zwischenablage', 'Der Text wird gedruckt', 'Der Text bleibt und wird kopiert', 'Der Text wird fett'], ok: 0, why: 'Danach kann man ihn einfügen.'},
+  {q: 'Wofür eignet sich kursive Schrift?', a: ['Fachbegriffe und Zitate', 'alle Wörter', 'Seitenzahlen', 'Tabellen'], ok: 0, why: 'Fett für zentrale Begriffe.'},
+  {q: 'Wie behältst du beim Skalieren das Seitenverhältnis bei?', a: ['Shift gedrückt halten', 'Strg + Z', 'an der Seite ziehen', 'doppelklicken'], ok: 0, why: 'Sonst wird das Bild verzerrt.'},
+  {q: 'Welcher Textfluss lässt den Text um das Bild herumfließen?', a: ['Quadrat', 'Oben und unten', 'Hinter dem Text', 'Vor dem Text'], ok: 0, why: 'Oder „Eng“.'},
+  {q: 'Zu welcher Klasse gehört ein Buchstabe im Textdokument?', a: ['ZEICHEN', 'ABSATZ', 'DOKUMENT', 'TABELLE'], ok: 0, why: 'Mit Attributen wie Schriftgröße.'},
+  {q: 'Was bedeutet eine blaue Wellenlinie?', a: ['möglicher Grammatikfehler', 'Rechtschreibfehler', 'Link', 'Überschrift'], ok: 0, why: 'Rot = Rechtschreibung.'},
+  {q: 'Was findet ein Thesaurus?', a: ['Synonyme', 'Bilder', 'Tabellen', 'Shortcuts'], ok: 0, why: 'Wörter mit ähnlicher Bedeutung.'},
+  {q: 'Wie heißt die senkrechte Reihe einer Tabelle?', a: ['Spalte', 'Zeile', 'Zelle', 'Absatz'], ok: 0, why: 'Zeilen sind waagerecht.'},
+  {q: 'Wie springst du in die nächste Tabellenzelle?', a: ['Tab', 'Entf', 'Esc', 'Strg + P'], ok: 0, why: 'Oder Pfeiltasten.'},
+  {q: 'Was markiert ein Dreifachklick?', a: ['einen Absatz', 'ein Wort', 'einen Buchstaben', 'nichts'], ok: 0, why: 'Doppelklick markiert ein Wort.'}
+], {pick: 10});
+selfCheck($('#sc'), [
+  {t: 'Ich kann Texte eingeben, löschen und Absätze einfügen.', href: '01_Texte_eingeben.html#grundlagen'},
+  {t: 'Ich kann Texte kopieren, ausschneiden und einfügen.', href: '01_Texte_eingeben.html#kopieren'},
+  {t: 'Ich kann Textfelder und Bilder einfügen und skalieren.', href: '02_Textfelder_Bilder.html#bilder'},
+  {t: 'Ich kann Bilder zuschneiden und den Textfluss einstellen.', href: '02_Textfelder_Bilder.html#textfluss'},
+  {t: 'Ich kann Zeichen sinnvoll formatieren.', href: '03_Zeichen_formatieren.html#sinnvoll'},
+  {t: 'Ich kenne wichtige Shortcuts und Symbole der Symbolleiste.', href: '04_Shortcuts_Symbolleiste.html#shortcuts'},
+  {t: 'Ich kann Klasse, Objekt, Attribut und Attributwert unterscheiden.', href: '05_Objekte_Klassen.html#zeichen'},
+  {t: 'Ich kann die Rechtschreibprüfung und den Thesaurus nutzen.', href: '06_Texte_ueberarbeiten.html#pruefung'},
+  {t: 'Ich kann Tabellen einfügen, gestalten und füllen.', href: '07_Tabellen.html#einfuegen'}
+]);
+</script>

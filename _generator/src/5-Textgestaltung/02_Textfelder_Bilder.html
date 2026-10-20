@@ -1,0 +1,220 @@
+<!--
+title: Texte mit Textfeldern und Bildern
+short: Textfelder & Bilder
+time: 2 Unterrichtsstunden (mit Textverarbeitungsprogramm)
+q: Wie kann man Texte ansprechend mit Bildern in einem Textverarbeitungsprogramm gestalten?
+facts: Textfelder als Objekte einfügen und formatieren („Einfügen“ → „Textfeld“) | Bilder einfügen, skalieren (Eckpunkte, Shift-Taste) und verzerren | Bilder zuschneiden und Bildformatvorlagen | Textfluss: Mit Text in Zeile, Quadrat, Eng, Oben und unten, Hinter dem Text, Vor dem Text (M1)
+inter: Infobox-Textfeld gestalten · Bild skalieren mit und ohne Shift · Bild zuschneiden · Textfluss-Umschalter · Textflussoptionen A–E zuordnen · Bildformatvorlagen ausprobieren
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Textgestaltung</p>
+      <h1>Texte mit Textfeldern und Bildern<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Ein Text wird lebendiger, wenn Bilder und Infoboxen dazukommen – zum Beispiel in einem Steckbrief, einer Einladung oder einem Plakat.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wie sieht ein Text aus, den du gern liest?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie kann man Texte ansprechend mit Bildern in einem Textverarbeitungsprogramm gestalten?</p></div>
+      <div class="controls"><button class="btn primary" data-go="textfeld">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="textfeld" data-label="Textfelder" data-yr="Erarbeitung" data-title="Textfelder einfügen" data-sub="Ein Objekt gestalten">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Textfelder</p>
+      <h2>Das Textfeld ist ein Objekt</h2>
+      <ul class="facts">
+        <li>Mit einem Textverarbeitungsprogramm kann man nicht nur Texte schreiben, sondern auch gestalten.</li>
+        <li>Ein <b>Textfeld</b> ist ein <b>Objekt</b>: Es kann an einer beliebigen Stelle im Dokument platziert werden, z. B. als <b>Infobox</b>.</li>
+        <li>Im Textfeld lassen sich die <b>Formate</b> für Absätze und Schriften verändern.</li>
+        <li>Man findet es meist im Menü <b>„Einfügen“ → „Textfeld“</b>.</li>
+      </ul>
+    </div>
+    <div class="wp">
+      <div class="wp-tabs"><span>Start</span><span class="on">Einfügen</span><span>Formformat</span></div>
+      <div class="wp-bar"><span class="mono" style="font-size:.75rem">Rahmen</span><span id="tf-border"></span><span class="mono" style="font-size:.75rem">Füllung</span><span id="tf-fill"></span><span class="mono" style="font-size:.75rem">Position</span><span id="tf-pos"></span></div>
+      <div class="wp-desk"><div class="wp-page" style="white-space:normal;position:relative;min-height:14rem">
+        <div id="tf-box" contenteditable="true" style="width:42%;padding:.6rem .8rem;font-size:.9rem;line-height:1.35"><b>Info: Igel</b><br>Igel sind nachtaktiv und halten Winterschlaf.</div>
+        <p style="margin:0"><b style="font-size:1.3rem">Der Igel</b><br>Der Igel lebt in Gärten, Hecken und am Waldrand. Er frisst Käfer, Würmer und Schnecken. Bei Gefahr rollt er sich zu einer stacheligen Kugel zusammen. Ein erwachsener Igel hat etwa 8000 Stacheln.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="bilder" data-label="Bilder" data-yr="Erarbeitung" data-title="Bilder einfügen und skalieren" data-sub="Eckpunkte und Shift">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Bilder in Textdokumente einbinden</p>
+      <h2>Bilder einfügen und skalieren</h2>
+      <div class="table-wrap"><table class="cmp"><tbody>
+        <tr><th>Bild einfügen</th><td>Menüleiste „Einfügen“ → „Bilder“ → Datei wählen</td></tr>
+        <tr><th>Bild skalieren</th><td>Bild anklicken → <b>Anpassungspunkte</b> erscheinen → Größe durch Ziehen der Punkte ändern</td></tr>
+        <tr><th>Bild positionieren</th><td>Rechtsklick auf das Bild → „Textumbruch“ → Art wählen → Bild verschieben</td></tr>
+      </tbody></table></div>
+      <ul class="facts mt">
+        <li>Zieht man an einer <b>Ecke</b>, ändert sich die Größe gleichmäßig: <b>skalieren</b>.</li>
+        <li>Zieht man an einer <b>Seite</b>, ändert sich nur Breite oder Höhe – das Bild wird <b>verzerrt</b>.</li>
+        <li>Mit gedrückter <kbd>Shift</kbd>-Taste bleibt das <b>Seitenverhältnis</b> erhalten.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Probier's aus</h3><label class="mono" style="font-size:.85rem"><input type="checkbox" id="sk-shift" checked> <kbd>Shift</kbd> gedrückt</label></div>
+      <label class="slider-row">Breite <input type="range" id="sk-w" min="30" max="100" value="60"><output id="sk-wo" class="mono">60 %</output></label>
+      <label class="slider-row">Höhe <input type="range" id="sk-h" min="30" max="100" value="60"><output id="sk-ho" class="mono">60 %</output></label>
+      <div style="background:#fff;border:1.5px solid var(--edge);border-radius:4px;height:15rem;display:grid;place-items:center;margin-top:.8rem;overflow:hidden">
+        <div id="sk-img" style="position:relative;outline:1.5px solid #C026D3;display:grid;place-items:center;transition:all .1s"><span id="sk-emo" style="font-size:6rem;display:inline-block;line-height:1">🦅</span></div>
+      </div>
+      <p class="status" id="sk-fb"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="zuschneiden" data-label="Zuschneiden" data-yr="Erarbeitung" data-title="Bilder zuschneiden" data-sub="Bildausschnitt wählen">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Bilder zuschneiden</p>
+      <h2>Nur den besten Ausschnitt</h2>
+      <ul class="facts">
+        <li>Oft möchte man nur einen bestimmten <b>Ausschnitt</b> eines Bildes verwenden. Unerwünschte Bereiche entfernt man durch <b>Zuschneiden</b>.</li>
+        <li>Bild markieren → <b>„Bildformat“</b> → <b>„Zuschneiden“</b>. Schwarze oder graue Ecken und Markierungen erscheinen am Bildrahmen.</li>
+        <li>Die Markierungen auf den gewünschten Bereich ziehen und erneut „Zuschneiden“ anklicken.</li>
+      </ul>
+      <div class="task-card"><header><span class="no">A</span><h3>Schmetterling</h3></header><p>Schneide das Bild so zu, dass nur noch der Schmetterling zu sehen ist.</p><p class="fb" id="cr-fb"></p></div>
+    </div>
+    <div class="vis">
+      <div class="crop" id="cr"><div class="scene"><span style="position:absolute;left:8%;top:12%;font-size:2.4rem">☁️</span><span style="position:absolute;right:10%;bottom:10%;font-size:2.6rem">🌻</span><span style="position:absolute;left:12%;bottom:12%;font-size:2.4rem">🌳</span><span style="font-size:4.5rem">🦋</span></div></div>
+      <label class="slider-row">links <input type="range" id="cr-l" min="0" max="45" value="0"></label>
+      <label class="slider-row">rechts <input type="range" id="cr-r" min="0" max="45" value="0"></label>
+      <label class="slider-row">oben <input type="range" id="cr-t" min="0" max="45" value="0"></label>
+      <label class="slider-row">unten <input type="range" id="cr-b" min="0" max="45" value="0"></label>
+      <div class="controls"><button class="btn primary" id="cr-go">✂ Zuschneiden</button><button class="btn" id="cr-reset">Zurücksetzen</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="textfluss" data-label="M1 Textfluss" data-yr="M1" data-title="Textfluss einstellen" data-sub="Umbruch um das Bild">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Textfluss · Material M1</p>
+    <h2>Wie fließt der Text um das Bild?</h2>
+    <p class="lead">Texte können um Bilder herumfließen. Man nennt das <b>Umlauf</b> oder <b>Textfluss</b>: Bild anklicken → „Bildformat“ → „Textumbruch“.</p>
+  </div>
+  <div class="model">
+    <div class="stack">
+      <div id="fl-seg"></div>
+      <div class="flow-demo square" id="fl-demo"><p>Der Zitronenfalter ist einer der ersten Schmetterlinge im Frühling. <span class="fimg" id="fl-img">🦋</span>Schon an warmen Tagen im Februar sieht man ihn fliegen. Die Männchen sind leuchtend gelb, die Weibchen blass grünlich-weiß. Den Winter überstehen die Falter ohne Schutz zwischen Blättern und Zweigen. Sie können sogar Frost aushalten, weil sie eine Art Frostschutzmittel in ihrem Körper bilden. Zitronenfalter werden bis zu einem Jahr alt – für einen Schmetterling ist das sehr lang. Ihre Raupen fressen die Blätter des Faulbaums.</p></div>
+    </div>
+    <div class="box" id="fl-info" aria-live="polite"></div>
+  </div>
+  <h3 class="mt">Aufgabe 1: Ordne den Bildern A–E die passende Textflussoption zu</h3>
+  <div id="fl-sort"></div>
+</section>
+
+<section class="station" id="vorlagen" data-label="Formatvorlagen" data-yr="Ausprobieren" data-title="Bildformatvorlagen" data-sub="Rahmen, Ecken, Graustufen">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Bildformatvorlagen</p>
+    <h2>Bilder schnell gestalten</h2>
+    <p class="lead">Ist ein Bild angeklickt, kann man unter „Bildformat“ verschiedene <b>Formatvorlagen</b> auswählen: Rahmen, abgerundete Ecken, Schatten oder Graustufen.</p>
+  </div>
+  <div class="model">
+    <div class="stack"><div id="bv-seg"></div><p class="note">Aufgabe 4: Probiere die Bildformatvorlagen aus. Welche passt zu einer Einladungskarte?</p></div>
+    <div style="background:#fff;border:1.5px solid var(--edge);border-radius:4px;padding:1.5rem;display:grid;place-items:center"><div id="bv-img" style="width:14rem;aspect-ratio:4/3;display:grid;place-items:center;font-size:6rem;background:linear-gradient(160deg,#BAE6FD,#FDE68A);transition:all .3s">🎂</div></div>
+  </div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">2–3</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Am Rechner: Tiertext</h3></header><p>Schreibe einen eigenen Text zu einem Tier deiner Wahl und füge Bilder ein: rechts und links der Überschrift sowie in der Mitte des Textes. Teste verschiedene Anordnungen und passe den Textfluss an.</p></div>
+    <div class="task-card"><header><span class="no">5</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Am Rechner: Einladungskarte</h3></header><p>Gestalte eine Einladungskarte für deinen Geburtstag. Wähle besondere Schriften aus und füge Bilder oder Grafiken ein – eigene oder Bilder aus dem Internet mit Nutzungsrecht.</p></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Textfelder und Bilder</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Texte mit Textfeldern und Bildern</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Ein <b>Textfeld</b> ist ein Objekt, das man frei im Dokument platzieren kann („Einfügen“ → „Textfeld“).</li>
+        <li data-step><b>Bilder</b> fügt man über „Einfügen“ → „Bilder“ ein. Ziehen an den Ecken <b>skaliert</b> gleichmäßig, Ziehen an den Seiten <b>verzerrt</b>. Mit <kbd>Shift</kbd> bleibt das Seitenverhältnis erhalten.</li>
+        <li data-step><b>Zuschneiden</b> entfernt unerwünschte Bereiche: „Bildformat“ → „Zuschneiden“.</li>
+        <li data-step><b>Textfluss</b> (Umlauf): Mit Text in Zeile, Quadrat, Eng, Oben und unten, Hinter dem Text, Vor dem Text.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne drei Textflussoptionen als kleine Bildchen: Linien für Text, ein Kästchen für das Bild.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Welcher Textfluss passt?</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+(() => {
+  const box = $('#tf-box'); let b = '2px solid #111827', f = '#FEF3C7', p = 'right';
+  const up = () => { box.style.border = b; box.style.background = f; box.style.float = p === 'center' ? 'none' : p; box.style.margin = p === 'right' ? '0 0 .5rem .8rem' : p === 'left' ? '0 .8rem .5rem 0' : '0 auto .6rem'; };
+  seg($('#tf-border'), [['none', 'ohne'], ['2px solid #111827', 'Linie'], ['3px dashed #C2410C', 'gestrichelt']], v => { b = v; up(); }, b);
+  seg($('#tf-fill'), [['transparent', 'keine'], ['#FEF3C7', 'gelb'], ['#DBEAFE', 'blau']], v => { f = v; up(); }, f);
+  seg($('#tf-pos'), [['left', 'links'], ['center', 'Mitte'], ['right', 'rechts']], v => { p = v; up(); }, p);
+})();
+(() => {
+  const w = $('#sk-w'), h = $('#sk-h');
+  function up(src) {
+    if ($('#sk-shift').checked) { if (src === h) w.value = h.value; else h.value = w.value; }
+    const W = +w.value, H = +h.value;
+    $('#sk-wo').textContent = W + ' %'; $('#sk-ho').textContent = H + ' %';
+    $('#sk-emo').style.transform = `scale(${W / 60 * 1.3}, ${H / 60 * 1.3})`;
+    $('#sk-img').style.width = (W / 60 * 9) + 'rem'; $('#sk-img').style.height = (H / 60 * 9) + 'rem';
+    $('#sk-fb').innerHTML = W === H ? '<b class="good">Skaliert</b> – das Seitenverhältnis bleibt gleich.' : '<b class="bad">Verzerrt!</b> Breite und Höhe passen nicht mehr zusammen.';
+  }
+  w.oninput = () => up(w); h.oninput = () => up(h); $('#sk-shift').onchange = () => up(w);
+  up(w);
+})();
+(() => {
+  const S = ['l', 'r', 't', 'b'].map(k => $('#cr-' + k)), cr = $('#cr');
+  cr.insertAdjacentHTML('beforeend', '<i class="shade" data-s="l"></i><i class="shade" data-s="r"></i><i class="shade" data-s="t"></i><i class="shade" data-s="b"></i><i class="frame"></i>');
+  function up() {
+    const [l, r, t, b] = S.map(s => +s.value);
+    const sh = $$('.shade', cr);
+    Object.assign(sh[0].style, {left: 0, top: 0, bottom: 0, width: l + '%'}); Object.assign(sh[1].style, {right: 0, top: 0, bottom: 0, width: r + '%'});
+    Object.assign(sh[2].style, {left: l + '%', right: r + '%', top: 0, height: t + '%'}); Object.assign(sh[3].style, {left: l + '%', right: r + '%', bottom: 0, height: b + '%'});
+    Object.assign($('.frame', cr).style, {left: l + '%', right: r + '%', top: t + '%', bottom: b + '%'});
+  }
+  S.forEach(s => s.oninput = () => { cr.querySelector('.scene').style.clipPath = ''; $$('.shade,.frame', cr).forEach(x => x.style.display = ''); up(); });
+  $('#cr-go').onclick = () => {
+    const [l, r, t, b] = S.map(s => +s.value);
+    cr.querySelector('.scene').style.clipPath = `inset(${t}% ${r}% ${b}% ${l}%)`; $$('.shade,.frame', cr).forEach(x => x.style.display = 'none');
+    const ok = l >= 25 && r >= 25 && t >= 20 && b >= 20;
+    $('#cr-fb').className = 'fb ' + (ok ? 'ok' : ''); $('#cr-fb').textContent = ok ? 'Super – nur noch der Schmetterling!' : 'Da ist noch mehr zu sehen. Schneide weiter zu.';
+  };
+  $('#cr-reset').onclick = () => { S.forEach(s => s.value = 0); cr.querySelector('.scene').style.clipPath = ''; $$('.shade,.frame', cr).forEach(x => x.style.display = ''); $('#cr-fb').textContent = ''; up(); };
+  up();
+})();
+(() => {
+  const O = {inline: ['Mit Text in Zeile', 'Das Bild wird wie ein Buchstabe behandelt und steht mitten im Text.'], square: ['Quadrat', 'Der Text fließt um das Bild herum – in einem rechteckigen Abstand.'], tight: ['Eng', 'Der Text steht direkt am Bild und folgt seiner Form.'],
+    topbottom: ['Oben und unten', 'Der Text steht nur über und unter dem Bild, daneben bleibt Platz frei.'], behind: ['Hinter dem Text', 'Das Bild liegt wie ein Hintergrund hinter dem Text.'], front: ['Vor dem Text', 'Das Bild liegt über dem Text und verdeckt ihn.']};
+  seg($('#fl-seg'), Object.entries(O).map(([k, v]) => [k, v[0]]), v => { $('#fl-demo').className = 'flow-demo ' + v; $('#fl-info').innerHTML = `<span class="tag info">Textumbruch</span><h3>${O[v][0]}</h3><p>${O[v][1]}</p>`; }, 'square');
+  const ic = (k, t) => `<svg viewBox="0 0 60 44" class="flow-ic" style="width:4.2rem;height:3.1rem;display:block;margin:.2rem auto"><g fill="#2563EB">${t}</g></svg><span class="mono">${k}</span>`;
+  const L = (y, x1 = 2, x2 = 58) => `<rect x="${x1}" y="${y}" width="${x2 - x1}" height="3"/>`;
+  const img = (x, y, w, h, op = 1) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="3" fill="#111827" opacity="${op}"/>`;
+  sorter($('#fl-sort'), [{id: 'z', name: 'Mit Text in Zeile'}, {id: 'q', name: 'Quadrat'}, {id: 'o', name: 'Oben und unten'}, {id: 'h', name: 'Hinter dem Text'}, {id: 'v', name: 'Vor dem Text'}], [
+    {t: ic('A', L(4) + img(20, 12, 20, 18) + L(36)), c: 'o'},
+    {t: ic('B', L(4) + L(12, 2, 18) + L(20, 2, 18) + L(28, 2, 18) + L(12, 42) + L(20, 42) + L(28, 42) + img(22, 10, 16, 22) + L(36)), c: 'q'},
+    {t: ic('C', L(10, 2, 24) + img(26, 2, 16, 14) + L(10, 44) + L(22) + L(32)), c: 'z'},
+    {t: ic('D', img(16, 6, 28, 30, .35) + L(6) + L(14) + L(22) + L(30) + L(38)), c: 'h'},
+    {t: ic('E', L(6) + L(14) + L(22) + L(30) + L(38) + img(16, 8, 28, 26)), c: 'v'}
+  ]);
+})();
+(() => {
+  const V = {none: ['', 'Original'], frame: ['border:10px solid #fff;box-shadow:0 0 0 1px #9CA3AF, 4px 6px 10px rgba(0,0,0,.35)', 'weißer Rahmen'], round: ['border-radius:24px', 'abgerundete Ecken'], oval: ['border-radius:50%', 'Oval'], gray: ['filter:grayscale(1)', 'Graustufen'], shadow: ['box-shadow:10px 10px 0 #111827', 'Schatten']};
+  seg($('#bv-seg'), Object.entries(V).map(([k, v]) => [k, v[1]]), v => { $('#bv-img').style.cssText = $('#bv-img').style.cssText.replace(/border[^;]*;|box-shadow[^;]*;|filter[^;]*;|border-radius[^;]*;/g, '') + V[v][0]; });
+})();
+mcQuiz($('#quiz'), [
+  {q: 'Ein Foto soll mitten im Satz stehen wie ein großer Buchstabe.', a: ['Mit Text in Zeile', 'Vor dem Text', 'Quadrat', 'Hinter dem Text'], ok: 0, why: 'Das Bild wird wie ein Zeichen behandelt.'},
+  {q: 'Ein blasses Wasserzeichen soll hinter dem ganzen Text liegen.', a: ['Hinter dem Text', 'Vor dem Text', 'Eng', 'Oben und unten'], ok: 0, why: 'Der Text bleibt lesbar.'},
+  {q: 'Der Text soll links und rechts um ein Bild herumfließen.', a: ['Quadrat', 'Oben und unten', 'Hinter dem Text', 'Mit Text in Zeile'], ok: 0, why: 'Oder „Eng“, wenn er der Form folgen soll.'},
+  {q: 'Ein breites Bild soll alleine zwischen zwei Absätzen stehen.', a: ['Oben und unten', 'Quadrat', 'Eng', 'Vor dem Text'], ok: 0, why: 'Neben dem Bild steht kein Text.'},
+  {q: 'Du ziehst an einer Ecke und hältst Shift gedrückt. Was passiert?', a: ['Das Bild wird gleichmäßig skaliert', 'Das Bild wird verzerrt', 'Das Bild wird zugeschnitten', 'Das Bild wird gelöscht'], ok: 0, why: 'Das Seitenverhältnis bleibt.'},
+  {q: 'Wo findest du „Zuschneiden“?', a: ['Bildformat', 'Überprüfen', 'Datei', 'Ansicht'], ok: 0, why: 'Die Registerkarte erscheint, wenn das Bild markiert ist.'}
+]);
+</script>

@@ -1,0 +1,162 @@
+<!--
+title: Eigene Mediennutzung überprüfen
+short: Mediennutzung
+time: 1–2 Unterrichtsstunden (Methode)
+q: Wie viel Zeit verbringe ich mit Medien – und ist das gut so?
+facts: Methode S. 117: Empfehlungen zur Mediennutzung nach Alter (bis 10 Jahre 30–60 Min., 11–13 Jahre 60–90 Min., ab 14 bis 2 Std.) | Fragen zur Überprüfung der eigenen Mediennutzung | M1 Mediennutzung von Kindern und Jugendlichen (12–19 Jahre) | M2 Medientagebuch
+inter: Bildschirmzeit-Rechner nach Alter · Schätzen und mit M1 vergleichen · Laras Medientagebuch auswerten · eigenes Medientagebuch ausfüllen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Kommunikation in der vernetzten Welt · Methode</p>
+      <h1>Eigene Mediennutzung überprüfen<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Streaming, Musik hören oder das Posten in sozialen Netzwerken sind ein wichtiger Teil der Freizeit vieler Jugendlicher. Doch wie viel ist gut?</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Schätze: Wie viele Minuten warst du gestern vor einem Bildschirm?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie viel Zeit verbringe ich mit Medien – und ist das gut so?</p></div>
+      <div class="controls"><button class="btn primary" data-go="regeln">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="regeln" data-label="Empfehlungen" data-yr="Erarbeitung" data-title="Mediennutzung" data-sub="Empfehlungen nach Alter">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Mediennutzung</p>
+      <h2>Wie viel ist angemessen?</h2>
+      <p>Die Mediennutzung sollte dem Alter angepasst sein. Für Freizeit-Medien wie Videos, Spiele und Chats gelten folgende Empfehlungen:</p>
+      <div class="table-wrap"><table class="cmp"><tbody>
+        <tr><th>bis 10 Jahre</th><td>maximal 30–60 Minuten pro Tag</td></tr>
+        <tr><th>11 bis 13 Jahre</th><td>60–90 Minuten pro Tag</td></tr>
+        <tr><th>ab 14 Jahren</th><td>bis zu 2 Stunden täglich – wenn Schule, Freunde, Familie, Schlaf und Hobbys nicht zu kurz kommen</td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Bildschirmzeit-Rechner</h3><div id="age"></div></div>
+      <label class="slider-row">🎮 Spiele <input type="range" min="0" max="180" step="5" value="30" data-m><output class="mono">30 min</output></label>
+      <label class="slider-row">📺 Videos <input type="range" min="0" max="180" step="5" value="40" data-m><output class="mono">40 min</output></label>
+      <label class="slider-row">💬 Chats <input type="range" min="0" max="180" step="5" value="25" data-m><output class="mono">25 min</output></label>
+      <label class="slider-row">🎵 Social Media <input type="range" min="0" max="180" step="5" value="15" data-m><output class="mono">15 min</output></label>
+      <div class="pw-bar mt" style="height:22px;position:relative"><i id="bz-bar"></i><b id="bz-lim" style="position:absolute;top:-4px;bottom:-4px;width:3px;background:var(--ink)"></b></div>
+      <p class="status" id="bz-out"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="pruefen" data-label="Prüffragen" data-yr="Erarbeitung" data-title="Die eigene Mediennutzung prüfen" data-sub="Fragen und Regeln">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Die eigene Mediennutzung prüfen</p>
+    <h2>Mach dir deine Mediennutzung bewusst</h2>
+  </div>
+  <div class="grid-2">
+    <div class="stack">
+      <div class="box"><span class="tag info">Fragen, die helfen</span><ul class="facts"><li>Wie viel Zeit verbringe ich täglich mit dem Smartphone oder vor dem Bildschirm?</li><li>Welche Apps, Spiele oder Webseiten nutze ich am häufigsten?</li><li>Nutze ich Medien zum Lernen, zur Unterhaltung oder zum Kommunizieren?</li></ul></div>
+      <div class="box"><span class="tag">Wichtig</span><p>Neben der Medienzeit muss noch genug Zeit bleiben für <b>persönliche Gespräche</b>, <b>Schlaf</b>, <b>Hausaufgaben</b> und <b>Hobbys</b>. Verdrängen Medien andere wichtige Dinge, sollte man die eigene Nutzung überdenken und bewusster planen.</p></div>
+    </div>
+    <div class="stack">
+      <div class="task-card"><header><span class="no">A</span><h3>Regeln bei dir zu Hause</h3></header><p>Notiere Regeln zur Mediennutzung, die es bei dir zu Hause gibt.</p>
+        <div class="ideas-in"><input id="rule-in" class="text-in" placeholder="z. B. Kein Handy beim Essen" aria-label="Regel"><button class="btn" id="rule-add">+</button></div><div class="chips" id="rules"></div></div>
+      <div class="task-card"><header><span class="no">B</span><h3>Was funktioniert?</h3></header><p>Beschreibe, welche dieser Regeln gut funktionieren – und warum.</p>
+        <div class="controls"><button class="btn" data-reveal="pb" aria-expanded="false">Ideen</button></div><p class="solution" id="pb" hidden>Regeln funktionieren gut, wenn sie klar sind (feste Zeiten), für alle gelten (auch für Erwachsene), gemeinsam vereinbart wurden und es Alternativen gibt, z. B. Handy-Parkplatz im Flur ab 20 Uhr, Bildschirmzeit-Einstellung, handyfreies Abendessen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Statistik" data-yr="M1" data-title="Mediennutzung von Jugendlichen" data-sub="Erst schätzen, dann vergleichen">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Material M1</p>
+    <h2>Tägliche Nutzung bei 12- bis 19-Jährigen</h2>
+    <p class="lead">Schätze zuerst: Wie viel Prozent der Jugendlichen nutzen das jeden Tag? Dann decke die Werte aus dem Buch auf.</p>
+  </div>
+  <div id="est"></div>
+  <div class="controls"><button class="btn primary" id="est-go">Aufdecken</button><button class="btn" id="est-reset">Neu schätzen</button><span class="sort-fb" id="est-fb"></span></div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Beschreiben</h3></header><p>Beschreibe die Mediennutzung von Kindern und Jugendlichen im Alter von 12 bis 19 Jahren.</p>
+      <div class="controls"><button class="btn" data-reveal="s1" aria-expanded="false">Lösung</button></div><p class="solution" id="s1" hidden>Fast alle nutzen täglich das Smartphone (98 %), das Internet (96 %) und hören Musik (94 %). Viele streamen Videos (85 %) und spielen Computerspiele (72 %). Computer (69 %) und Tablet (59 %) werden seltener genutzt, Podcasts nur von etwa einem Viertel (26 %).</p></div>
+    <div class="task-card"><header><span class="no">2–3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Dein Schultag</h3></header><p>Beschreibe deine Mediennutzung an einem typischen Schultag und notiere die Geräte. Vergleiche mit der Grafik.</p></div>
+  </div>
+</section>
+
+<section class="station" id="m2" data-label="M2 Tagebuch" data-yr="M2" data-title="Medientagebuch" data-sub="Laras Tag und deiner">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M2</p>
+    <h2>Das Medientagebuch</h2>
+    <p class="lead">Jedes Kästchen steht für eine Stunde. Oben siehst du Laras Tag (vereinfacht nachgebaut), unten kannst du deinen eigenen Tag eintragen.</p>
+  </div>
+  <p class="slide-label">Lara</p>
+  <div class="table-wrap"><table class="mtb" id="lara"></table></div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Laras Tag</h3></header><p>Beschreibe Laras Mediennutzung. Nimm Stellung zur Aussage: „Lara ist dauernd mit dem Smartphone und Tablet beschäftigt.“</p>
+      <div class="controls"><button class="btn" data-reveal="l12" aria-expanded="false">Lösung</button></div><p class="solution" id="l12" hidden>Lara chattet über den Tag verteilt sehr oft, auch schon früh am Morgen und spät am Abend. Abends streamt sie, zwischendurch surft sie und sieht fern. Zeiten ohne Medien gibt es nur wenige. Die Aussage stimmt teilweise: Lara nutzt Medien sehr häufig, aber nicht ununterbrochen – trotzdem liegt sie deutlich über der Empfehlung.</p></div>
+    <div class="task-card"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Vergleichen</h3></header><p>Fülle das Medientagebuch für deinen gestrigen Tag aus. Freiwillige stellen ihre Ergebnisse vor – vergleicht eure Gewohnheiten miteinander.</p></div>
+  </div>
+  <div class="vis mt"><div class="vis-head"><h3>3 · Mein Tag</h3><span class="score">Medienzeit: <b id="me-sum">0</b> h</span></div><p class="note">Tippe die Kästchen an.</p><div class="table-wrap"><table class="mtb" id="me"></table></div></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Mediennutzung</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Eigene Mediennutzung überprüfen</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Empfehlung für Freizeit-Medien: bis 10 Jahre <b>30–60 Minuten</b>, 11–13 Jahre <b>60–90 Minuten</b>, ab 14 Jahren <b>bis zu 2 Stunden</b> pro Tag.</li>
+        <li data-step>Ich prüfe: <b>Wie lange</b> nutze ich Medien? <b>Welche</b> Apps und Spiele? <b>Wofür</b> – Lernen, Unterhaltung oder Kommunikation?</li>
+        <li data-step>Ein <b>Medientagebuch</b> zeigt, wann und wofür ich Medien nutze.</li>
+        <li data-step>Gespräche, Schlaf, Hausaufgaben und Hobbys dürfen nicht zu kurz kommen – sonst plane ich meine Mediennutzung <b>bewusster</b>.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Hausaufgabe</span><p>Führe drei Tage lang ein Medientagebuch und vergleicht eure Ergebnisse in der Klasse.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Mediennutzung</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+(() => {
+  const LIM = {k: [60, 'bis 10 Jahre: höchstens 30–60 Minuten'], m: [90, '11–13 Jahre: 60–90 Minuten'], j: [120, 'ab 14 Jahren: bis zu 2 Stunden']};
+  let a = 'm';
+  function up() {
+    const s = $$('[data-m]').reduce((t, i) => { i.nextElementSibling.textContent = i.value + ' min'; return t + +i.value; }, 0), lim = LIM[a][0], max = 360;
+    $('#bz-bar').style.width = Math.min(100, s / max * 100) + '%'; $('#bz-bar').style.background = s <= lim ? '#16A34A' : s <= lim * 1.5 ? '#F59E0B' : '#DC2626';
+    $('#bz-lim').style.left = (lim / max * 100) + '%';
+    $('#bz-out').innerHTML = `Zusammen: <b>${Math.floor(s / 60)} h ${s % 60} min</b>. Empfehlung ${LIM[a][1]}. ${s <= lim ? '<b class="good">Im grünen Bereich.</b>' : `<b class="bad">${s - lim} Minuten zu viel.</b>`}`;
+  }
+  seg($('#age'), [['k', 'bis 10'], ['m', '11–13'], ['j', 'ab 14']], v => { a = v; up(); }, 'm');
+  $$('[data-m]').forEach(i => i.oninput = up); up();
+})();
+(() => {
+  const add = () => { const v = $('#rule-in').value.trim(); if (!v) return; $('#rules').insertAdjacentHTML('beforeend', `<span class="chip">${v.replace(/</g, '&lt;')}</span>`); $('#rule-in').value = ''; };
+  $('#rule-add').onclick = add; $('#rule-in').onkeydown = e => { if (e.key === 'Enter') add(); };
+})();
+(() => {
+  const D = [['📱 Smartphone', 98], ['💻 Tablet', 59], ['🖥️ Computer', 69], ['🌐 Internet', 96], ['🎵 Musik hören', 94], ['🎬 Videos streamen', 85], ['🎮 Computerspiele', 72], ['🎙️ Podcasts hören', 26]];
+  const build = () => { $('#est').innerHTML = D.map(([n], i) => `<div class="prob" style="grid-template-columns:10rem 1fr 7rem"><span>${n}</span><input type="range" min="0" max="100" step="1" value="50" data-i="${i}" aria-label="Schätzung ${n}"><output class="mono" data-o="${i}">50 %</output></div>`).join(''); $('#est-fb').textContent = ''; };
+  $('#est').addEventListener('input', e => { const i = e.target.dataset.i; if (i) $(`[data-o="${i}"]`).textContent = e.target.value + ' %'; });
+  $('#est-go').onclick = () => {
+    let dev = 0;
+    $$('#est input').forEach(inp => { const i = +inp.dataset.i, real = D[i][1], d = Math.abs(+inp.value - real); dev += d; $(`[data-o="${i}"]`).innerHTML = `${inp.value} → <b>${real} %</b>`; inp.style.accentColor = d <= 10 ? '#16A34A' : d <= 25 ? '#F59E0B' : '#DC2626'; });
+    $('#est-fb').innerHTML = `Im Schnitt ${Math.round(dev / D.length)} Prozentpunkte daneben.`;
+  };
+  $('#est-reset').onclick = build; build();
+})();
+(() => {
+  const H = Array.from({length: 18}, (_, i) => i + 6), CAT = ['im Internet surfen', 'chatten', 'fernsehen', 'streamen', 'Freizeit ohne Medien'];
+  const LARA = {0: [16, 19], 1: [6, 7, 10, 11, 14, 15, 19, 20, 22], 2: [15, 17], 3: [20, 21], 4: [8, 13, 18, 23]};
+  const head = `<thead><tr><th></th>${H.map(h => `<th>${h}</th>`).join('')}</tr></thead>`;
+  $('#lara').innerHTML = head + CAT.map((c, k) => `<tr><th>${c}</th>${H.map(h => `<td class="${(LARA[k] || []).includes(h) ? 'on' : ''}" style="cursor:default"></td>`).join('')}</tr>`).join('');
+  $('#me').innerHTML = head + CAT.map((c, k) => `<tr data-k="${k}"><th>${c}</th>${H.map(() => '<td></td>').join('')}</tr>`).join('');
+  $('#me').addEventListener('click', e => { const td = e.target.closest('td'); if (!td) return; td.classList.toggle('on'); $('#me-sum').textContent = $$('#me tr:not([data-k="4"]) td.on').length; });
+})();
+mcQuiz($('#quiz'), [
+  {q: 'Wie viel Freizeit-Medienzeit wird für 11- bis 13-Jährige empfohlen?', a: ['60–90 Minuten pro Tag', '30 Minuten pro Woche', '4 Stunden pro Tag', 'unbegrenzt'], ok: 0, why: 'Ab 14 Jahren bis zu 2 Stunden.'},
+  {q: 'Welches Gerät nutzen laut M1 fast alle Jugendlichen täglich?', a: ['Smartphone (98 %)', 'Tablet (59 %)', 'Podcasts (26 %)', 'Computer (69 %)'], ok: 0, why: 'Auch das Internet mit 96 %.'},
+  {q: 'Wozu dient ein Medientagebuch?', a: ['Es zeigt, wann und wofür man Medien nutzt', 'Es sperrt Apps', 'Es misst die Akkuladung', 'Es zählt Likes'], ok: 0, why: 'So wird die eigene Nutzung bewusst.'},
+  {q: 'Woran merkst du, dass du deine Mediennutzung überdenken solltest?', a: ['Wenn Schlaf, Hausaufgaben oder Freunde zu kurz kommen', 'Wenn der Akku voll ist', 'Wenn das Handy neu ist', 'Wenn es regnet'], ok: 0, why: 'Medien sollen andere wichtige Dinge nicht verdrängen.'},
+  {q: 'Was ist ein Beispiel für Mediennutzung zum Lernen?', a: ['ein Erklärvideo zu Brüchen ansehen', 'ein Spiel zocken', 'Memes verschicken', 'Serien streamen'], ok: 0, why: 'Medien sind nicht nur Unterhaltung.'}
+]);
+</script>

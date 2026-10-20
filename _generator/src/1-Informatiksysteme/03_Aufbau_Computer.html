@@ -1,0 +1,273 @@
+<!--
+title: Aufbau eines Computers
+short: Computer
+time: 1–2 Unterrichtsstunden
+q: Aus welchen Teilen besteht ein Computer – und wie arbeiten sie zusammen?
+facts: Komponenten und Hauptplatine | Prozessor (CPU) und Lüfter | Arbeitsspeicher (RAM) und sekundärer Speicher (HDD/SSD), Grafikkarte, Netzteil | M1 Komponenten beim Programmstart
+inter: Aufgeschraubter PC zum Erkunden und Finden · CPU-Temperatur mit und ohne Lüfter · RAM-oder-Festplatte-Simulation · Programmstart Schritt für Schritt
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Informatiksysteme nutzen</p>
+      <h1>Aufbau eines Computers<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Die meisten Menschen nutzen täglich einen Computer, egal ob in der Freizeit oder bei der Arbeit. Doch was steckt eigentlich im Gehäuse?</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Was glaubst du: Welche Teile findet man, wenn man einen Computer aufschraubt?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Aus welchen Teilen besteht ein Computer – und wie arbeiten sie zusammen?</p></div>
+      <div class="controls"><button class="btn primary" data-go="komponenten">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="komponenten" data-label="Komponenten" data-yr="Einstieg" data-title="Ein Blick ins Gehäuse" data-sub="Komponenten und Hauptplatine">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Hardware eines Computers</p>
+    <h2>Ein Blick ins Gehäuse</h2>
+    <p class="lead">Die Hardware-Bauteile eines Computers heißen <b>Komponenten</b>. Damit alle zusammenarbeiten können, sind sie mit der <b>Hauptplatine</b> verbunden – über Steckplätze und <b>Leiterbahnen</b>.</p>
+  </div>
+  <div class="phone-wrap">
+    <div class="vis" style="padding:.6rem"><svg id="pc" class="fig-svg" viewBox="0 0 640 420" aria-label="Geöffneter Computer">
+      <rect x="6" y="6" width="628" height="408" rx="14" fill="var(--surface-2)" stroke="var(--edge)" stroke-width="3"/>
+      <g data-part="platine"><rect x="230" y="26" width="384" height="300" rx="6" fill="#1F7A4D" stroke="#0E3B25" stroke-width="2"/>
+        <path d="M250 300 H600 M250 290 H420 V200 M430 40 V320 M250 60 H300 M540 120 H600" stroke="#7BD3A2" stroke-width="1.5" fill="none" opacity=".6"/></g>
+      <g data-part="netzteil"><rect x="26" y="26" width="180" height="96" rx="6" fill="#3A4247" stroke="#111" stroke-width="2"/>
+        <circle cx="116" cy="74" r="34" fill="#20262A" stroke="#888" stroke-width="2"/><g class="fan" style="transform-origin:116px 74px"><path d="M116 74 l0 -28 a14 14 0 0 1 12 18z M116 74 l24 14 a14 14 0 0 1 -21 4z M116 74 l-24 14 a14 14 0 0 1 9 -19z" fill="#9AA5AD"/></g></g>
+      <g data-part="cpu"><rect x="290" y="56" width="124" height="124" rx="6" fill="#B9C0C6" stroke="#333" stroke-width="2"/><text x="352" y="74" text-anchor="middle" style="font:700 12px var(--f-mono);fill:#333">CPU</text></g>
+      <g data-part="luefter"><circle cx="352" cy="122" r="42" fill="#2A2F33"/><g class="fan cpufan" style="transform-origin:352px 122px"><path d="M352 122 l0 -36 a18 18 0 0 1 16 24z M352 122 l31 18 a18 18 0 0 1 -28 5z M352 122 l-31 18 a18 18 0 0 1 12 -26z" fill="#C7D0D6"/></g></g>
+      <g data-part="ram"><rect x="446" y="44" width="16" height="160" rx="2" fill="#1E3A8A" stroke="#0B1A44"/><rect x="472" y="44" width="16" height="160" rx="2" fill="#1E3A8A" stroke="#0B1A44"/>
+        <rect x="449" y="60" width="10" height="16" fill="#111"/><rect x="449" y="100" width="10" height="16" fill="#111"/><rect x="475" y="60" width="10" height="16" fill="#111"/><rect x="475" y="100" width="10" height="16" fill="#111"/></g>
+      <g data-part="gpu"><rect x="250" y="222" width="320" height="64" rx="6" fill="#2F3438" stroke="#111" stroke-width="2"/>
+        <circle cx="330" cy="254" r="24" fill="#1A1D20"/><circle cx="410" cy="254" r="24" fill="#1A1D20"/><circle cx="490" cy="254" r="24" fill="#1A1D20"/>
+        <g class="fan" style="transform-origin:330px 254px"><path d="M330 254 l0 -20 l8 12z M330 254 l17 10 l-14 2z M330 254 l-17 10 l6 -13z" fill="#8F99A1"/></g>
+        <g class="fan" style="transform-origin:410px 254px"><path d="M410 254 l0 -20 l8 12z M410 254 l17 10 l-14 2z M410 254 l-17 10 l6 -13z" fill="#8F99A1"/></g>
+        <g class="fan" style="transform-origin:490px 254px"><path d="M490 254 l0 -20 l8 12z M490 254 l17 10 l-14 2z M490 254 l-17 10 l6 -13z" fill="#8F99A1"/></g></g>
+      <g data-part="anschluesse"><rect x="584" y="40" width="22" height="16" fill="#C9CED2" stroke="#333"/><rect x="584" y="62" width="22" height="16" fill="#C9CED2" stroke="#333"/><rect x="584" y="84" width="22" height="22" fill="#E5E7EB" stroke="#333"/><rect x="584" y="112" width="22" height="12" fill="#3B82F6" stroke="#333"/></g>
+      <g data-part="netzwerk"><rect x="520" y="150" width="44" height="40" rx="3" fill="#0F172A" stroke="#94A3B8"/><text x="542" y="174" text-anchor="middle" style="font:600 10px var(--f-mono);fill:#94A3B8">LAN</text></g>
+      <g data-part="ssd"><rect x="30" y="150" width="170" height="64" rx="5" fill="#D9DEE2" stroke="#333" stroke-width="2"/><text x="115" y="188" text-anchor="middle" style="font:700 16px var(--f-mono);fill:#333">SSD</text></g>
+      <g data-part="hdd"><rect x="30" y="236" width="170" height="160" rx="6" fill="#A7B0B7" stroke="#333" stroke-width="2"/><circle cx="115" cy="316" r="58" fill="#DCE3E8" stroke="#666"/><circle cx="115" cy="316" r="10" fill="#666"/><path d="M175 260 L130 310" stroke="#333" stroke-width="6" stroke-linecap="round"/></g>
+    </svg></div>
+    <div class="stack">
+      <div id="pc-mode"></div>
+      <div class="phone-panel xp-panel" id="pc-panel" aria-live="polite"></div>
+      <div class="task-card"><header><span class="no">A</span><h3>Vorsicht!</h3></header><p>Begründe, warum ein Computer mit großer Sorgfalt behandelt werden muss.</p>
+        <div class="controls"><button class="btn" data-reveal="a-loes" aria-expanded="false">Lösungsidee</button></div>
+        <p class="solution" id="a-loes" hidden>Die Komponenten sind empfindlich und teuer. Stöße, Staub oder Flüssigkeit können Leiterbahnen, Festplatte oder Lüfter beschädigen. Dann gehen im schlimmsten Fall Daten verloren.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="prozessor" data-label="Prozessor" data-yr="Erarbeitung" data-title="Das Herz des Computers" data-sub="CPU und Lüfter">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Herz eines Computers</p>
+      <h2>Der Prozessor (CPU)</h2>
+      <ul class="facts">
+        <li>Die zentrale Komponente ist der <b>Prozessor</b>, auch <b>CPU</b> (<b>C</b>entral <b>P</b>rocessing <b>U</b>nit) genannt.</li>
+        <li>Er empfängt die Daten aller Komponenten, rechnet sie in Codes um, formuliert Anweisungen und schickt sie an die richtigen Zielorte. Zum Schluss rechnet er die Codes zurück, damit der Benutzer sie versteht.</li>
+        <li>Die CPU <b>steuert alle Abläufe</b> im Computer. Je leistungsstärker sie ist, desto schneller laufen die Prozesse.</li>
+        <li>Dabei wird sie warm. Ein eigener Ventilator, der <b>Lüfter</b>, kühlt sie.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>CPU unter Last</h3><div id="fan-seg"></div></div>
+      <div class="cpu-sim">
+        <svg viewBox="0 0 200 200" class="cpu-fig" aria-hidden="true"><rect x="20" y="20" width="160" height="160" rx="10" fill="#B9C0C6" stroke="var(--edge)" stroke-width="3"/><circle cx="100" cy="100" r="62" fill="#2A2F33"/><g id="bigfan" class="fan" style="transform-origin:100px 100px"><path d="M100 100 l0 -55 a26 26 0 0 1 24 36z M100 100 l48 28 a26 26 0 0 1 -43 7z M100 100 l-48 28 a26 26 0 0 1 19 -41z" fill="#C7D0D6"/></g></svg>
+        <div class="thermo"><div class="thermo-bar"><i id="temp-bar"></i></div><b id="temp-val" class="mono">35 °C</b></div>
+      </div>
+      <label class="slider-row">Auslastung <input id="last" type="range" min="0" max="100" value="10"><output id="last-out" class="mono">10 %</output></label>
+      <p class="status" id="cpu-status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="speicher" data-label="Speicher" data-yr="Erarbeitung" data-title="Kurz- und Langzeitgedächtnis" data-sub="RAM und Festplatte">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Speicher eines Computers</p>
+    <h2>Kurzzeit- und Langzeitgedächtnis</h2>
+  </div>
+  <div class="cols-2">
+    <div class="box"><span class="tag">Hauptspeicher</span><p>Der <b>Arbeitsspeicher</b> oder <b>RAM</b> (<b>R</b>andom <b>A</b>ccess <b>M</b>emory) enthält alle Daten, mit denen der Prozessor gerade arbeitet. Wird der Computer heruntergefahren, werden sie <b>gelöscht</b>. Er ist wie das <b>Kurzzeitgedächtnis</b> des Menschen.</p></div>
+    <div class="box"><span class="tag">Sekundärer Speicher</span><p>Die <b>Festplatte</b> – als <b>HDD</b> (<b>H</b>ard <b>D</b>isc <b>D</b>rive) oder <b>SSD</b> (<b>S</b>olid <b>S</b>tate <b>D</b>rive) – behält die Daten, auch wenn der Computer aus ist. Sie ist das <b>Langzeitgedächtnis</b>: große Datenmengen für lange Zeit.</p></div>
+  </div>
+  <div class="vis mt">
+    <div class="vis-head"><h3>Probier's aus: Was passiert mit den Daten?</h3></div>
+    <div class="controls" style="margin-top:0" id="mem-btns">
+      <button class="btn primary" data-m="on">⏻ Einschalten</button><button class="btn" data-m="open">Textprogramm öffnen</button><button class="btn" data-m="type">Text tippen</button><button class="btn" data-m="save">💾 Speichern</button><button class="btn" data-m="close">Programm schließen</button><button class="btn" data-m="off">⏻ Herunterfahren</button>
+    </div>
+    <div class="mem">
+      <div class="mem-box"><h3>RAM <small>flüchtig</small></h3><div id="ram-c" class="chips"></div></div>
+      <div class="mem-box"><h3>Festplatte <small>dauerhaft</small></h3><div id="hdd-c" class="chips"></div></div>
+    </div>
+    <p class="status" id="mem-status"></p>
+  </div>
+</section>
+
+<section class="station" id="weitere" data-label="Grafik & Strom" data-yr="Erarbeitung" data-title="Grafikkarte und Netzteil" data-sub="Bilder und Energie">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Grafikkarte und Stromversorgung</p>
+    <h2>Grafikkarte und Netzteil</h2>
+  </div>
+  <div class="cols-2">
+    <div class="box"><span class="tag">Grafikkarte</span><p>Damit die Abläufe im Computer sichtbar werden, müssen sie in <b>Bilder</b> umgewandelt werden. Dafür gibt es die <b>Grafikkarte</b> (oder eine Grafikeinheit). Sie hat eine große Rechenleistung, ist komplex aufgebaut und funktioniert wie ein <b>eigener kleiner Computer</b>.</p></div>
+    <div class="box"><span class="tag">Netzteil</span><p>Das <b>Netzteil</b> versorgt alle Komponenten mit elektrischer Energie. Weil es viel Wärme freisetzt, hat es ebenfalls einen <b>Lüfter</b>.</p></div>
+  </div>
+  <h3 class="mt">Wenn der Computer ein Mensch wäre …</h3>
+  <div id="vgl"></div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Programmstart" data-yr="M1" data-title="Komponenten arbeiten zusammen" data-sub="Aufgaben 1–4">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1</p>
+    <h2>Komponenten eines Computers</h2>
+    <p class="lead">Was passiert, wenn du ein Programm öffnest? Gehe die Schritte durch.</p>
+  </div>
+  <div class="steps4" id="m1-steps">
+    <div class="s4"><span class="s4-ic">🙋</span><b>Benutzer</b><small>öffnet Programm</small></div>
+    <div class="s4"><span class="s4-ic">🔲</span><b>CPU</b><small>holt sich Programm von Festplatte</small></div>
+    <div class="s4"><span class="s4-ic">📟</span><b>RAM</b><small>erhält Kopie der Programmanweisung</small></div>
+    <div class="s4"><span class="s4-ic">🖥️</span><b>Monitor</b><small>stellt Programm dar</small></div>
+  </div>
+  <div id="m1-step"></div>
+  <p class="status" id="m1-status"></p>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Zusammenwirken</h3></header><p>Beschreibe mithilfe der Abbildung, wie die einzelnen Hardware-Komponenten beim Aufrufen eines Programms zusammenwirken.</p></div>
+    <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Programm geschlossen</h3></header><p>Beschreibe, was mit den Daten im RAM geschieht, nachdem das Programm geschlossen wird.</p>
+      <div class="controls"><button class="btn" data-reveal="m2" aria-expanded="false">Lösungsidee</button></div><p class="solution" id="m2" hidden>Die Daten im RAM werden nicht mehr gebraucht und freigegeben bzw. gelöscht. Der Platz steht anderen Programmen zur Verfügung. Wurde nicht gespeichert, ist die Arbeit verloren.</p></div>
+    <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Haupt- und sekundärer Speicher</h3></header><p>Erkläre den Unterschied zwischen einem Hauptspeicher und einem sekundären Speicher eines Computers.</p>
+      <div class="controls"><button class="btn" data-reveal="m3h" aria-expanded="false">HILFE</button><button class="btn" data-reveal="m3" aria-expanded="false">Lösungsidee</button></div>
+      <p class="hint-box" id="m3h" hidden>Denke an das Kurzzeit- und das Langzeitgedächtnis. Was passiert beim Ausschalten?</p>
+      <p class="solution" id="m3" hidden>Der Hauptspeicher (RAM) hält nur die Daten, mit denen gerade gearbeitet wird, und verliert sie beim Ausschalten (Kurzzeitgedächtnis). Der sekundäre Speicher (HDD/SSD) speichert große Datenmengen dauerhaft, auch ohne Strom (Langzeitgedächtnis).</p></div>
+    <div class="task-card"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Drei Lüfter?</h3></header><p>Stelle Vermutungen an, warum moderne Grafikkarten bis zu drei Lüfter besitzen können.</p>
+      <div class="controls"><button class="btn" data-reveal="m4" aria-expanded="false">Lösungsidee</button></div><p class="solution" id="m4" hidden>Grafikkarten haben eine sehr große Rechenleistung, z. B. bei Spielen. Dabei entsteht viel Wärme. Mehrere Lüfter kühlen besser und können langsamer und damit leiser laufen.</p></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Aufbau eines Computers</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Aufbau eines Computers</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Die Hardware-Bauteile heißen <b>Komponenten</b>. Sie sind alle mit der <b>Hauptplatine</b> verbunden.</li>
+        <li data-step>Der <b>Prozessor (CPU)</b> ist das Herz des Computers: Er verarbeitet alle Daten und steuert alle Abläufe. Ein <b>Lüfter</b> kühlt ihn.</li>
+        <li data-step>Der <b>Arbeitsspeicher (RAM)</b> enthält die Daten, mit denen gerade gearbeitet wird. Beim Ausschalten werden sie gelöscht (Kurzzeitgedächtnis).</li>
+        <li data-step>Die <b>Festplatte (HDD oder SSD)</b> ist der sekundäre Speicher. Sie speichert Daten dauerhaft (Langzeitgedächtnis).</li>
+        <li data-step>Die <b>Grafikkarte</b> wandelt die Abläufe in Bilder um. Das <b>Netzteil</b> versorgt alle Komponenten mit Energie.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack">
+      <div class="box"><span class="tag info">Skizze</span><p>Zeichne den Programmstart als Pfeilkette: Benutzer → CPU → RAM → Monitor.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Üben und wiederholen</h2></div>
+  <h3>Komponente und Aufgabe</h3>
+  <div id="match"></div>
+  <h3 class="mt">RAM oder Festplatte?</h3>
+  <div id="mem-sort"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ================= Komponenten ================= */
+explorer($('#pc'), $('#pc-panel'), [
+  {id: 'platine', n: 'Hauptplatine', t: 'Alle Komponenten sind mit ihr verbunden – über Steckplätze und Leiterbahnen. Auf ihr liegen auch die Anschlüsse.'},
+  {id: 'cpu', n: 'Prozessor (CPU)', t: 'Das Herz des Computers: verarbeitet alle Daten und steuert alle Abläufe.'},
+  {id: 'luefter', n: 'Lüfter', t: 'Ein Ventilator, der die CPU kühlt, damit sie nicht überhitzt.'},
+  {id: 'ram', n: 'Arbeitsspeicher (RAM)', t: 'Hält die Daten, mit denen die CPU gerade arbeitet. Beim Ausschalten wird er gelöscht.'},
+  {id: 'gpu', n: 'Grafikkarte', t: 'Wandelt die Abläufe in Bilder für den Monitor um – wie ein eigener kleiner Computer.'},
+  {id: 'ssd', n: 'SSD (Festplatte)', t: 'Sekundärer Speicher ohne bewegliche Teile: speichert Daten dauerhaft.'},
+  {id: 'hdd', n: 'HDD (Festplatte)', t: 'Sekundärer Speicher mit sich drehender Scheibe: speichert große Datenmengen dauerhaft.'},
+  {id: 'netzteil', n: 'Netzteil', t: 'Versorgt alle Komponenten mit elektrischer Energie. Hat einen eigenen Lüfter.'},
+  {id: 'anschluesse', n: 'Anschlüsse', t: 'Für Internet (LAN), Monitor und USB-Geräte – sie sitzen auf der Hauptplatine.'},
+  {id: 'netzwerk', n: 'Netzwerkkarte', t: 'Ermöglicht den Zugriff auf ein Netzwerk, z. B. das Internet. Hier ist sie in die Hauptplatine eingebaut.'}
+], {modeRoot: $('#pc-mode'), intro: 'Tippe ein Bauteil im Gehäuse an.'});
+
+/* ================= CPU-Temperatur ================= */
+(() => {
+  let fan = true, temp = 35, load = 10;
+  const bar = $('#temp-bar'), val = $('#temp-val'), st = $('#cpu-status'), bf = $('#bigfan');
+  seg($('#fan-seg'), [['on', 'Lüfter an'], ['off', 'Lüfter aus']], v => { fan = v === 'on'; upd(); });
+  $('#last').oninput = e => { load = +e.target.value; $('#last-out').textContent = load + ' %'; };
+  function upd() {
+    const target = fan ? 35 + load * .4 : 35 + load * 1.1;
+    temp += (target - temp) * .08;
+    bar.style.width = Math.min(100, temp) + '%';
+    bar.style.background = temp > 90 ? 'var(--bad)' : temp > 70 ? 'var(--v)' : 'var(--good)';
+    val.textContent = Math.round(temp) + ' °C';
+    bf.style.animationDuration = fan ? (1.6 - load / 80).toFixed(2) + 's' : '0s';
+    bf.style.animationPlayState = fan ? 'running' : 'paused';
+    st.innerHTML = temp > 95 ? '<b class="bad">Zu heiß!</b> Ohne Kühlung schaltet sich der Computer zum Schutz ab oder wird beschädigt.'
+      : temp > 70 ? 'Die CPU wird heiß. Der Lüfter muss schneller drehen.' : fan ? 'Der Lüfter hält die CPU kühl. Je mehr sie rechnet, desto schneller dreht er.' : 'Ohne Lüfter steigt die Temperatur bei Last stark an. Erhöhe die Auslastung!';
+  }
+  setInterval(() => { if (!$('#prozessor').hidden) upd(); }, 120);
+})();
+
+/* ================= RAM / Festplatte ================= */
+(() => {
+  let on = false, open = false, text = 0, saved = false;
+  const ram = $('#ram-c'), hdd = $('#hdd-c'), st = $('#mem-status');
+  const files = ['⚙️ Betriebssystem', '📝 Textprogramm', '🖼️ Urlaubsfotos'];
+  function draw(msg) {
+    hdd.innerHTML = files.map(f => `<span class="chip">${f}</span>`).join('') + (saved ? `<span class="chip ok">📄 Aufsatz.docx (${saved} ${saved === 1 ? "Satz" : "Sätze"})</span>` : '');
+    ram.innerHTML = !on ? '<span class="note">– leer, Computer aus –</span>' : '<span class="chip">⚙️ Betriebssystem (Kopie)</span>' + (open ? '<span class="chip">📝 Textprogramm (Kopie)</span>' : '') + (open && text ? `<span class="chip warn">📄 Aufsatz: ${text} ${text === 1 ? "Satz" : "Sätze"}${text > saved ? ' (ungespeichert)' : ''}</span>` : '');
+    $$('#mem-btns [data-m]').forEach(b => b.disabled = (b.dataset.m === 'on') === on || (['type', 'save', 'close'].includes(b.dataset.m) && !open) || (b.dataset.m === 'open' && open));
+    st.innerHTML = msg;
+  }
+  $('#mem-btns').addEventListener('click', e => {
+    const m = e.target.closest('[data-m]')?.dataset.m; if (!m) return;
+    if (m === 'on') { on = true; draw('Beim Start lädt die CPU das Betriebssystem von der Festplatte in den RAM.'); }
+    if (m === 'open') { open = true; draw('Die CPU holt das Textprogramm von der Festplatte und legt eine <b>Kopie</b> in den RAM.'); }
+    if (m === 'type') { text++; draw('Dein Text liegt nur im <b>RAM</b>. Noch ist er nicht dauerhaft gesichert!'); }
+    if (m === 'save') { saved = text; draw(text ? 'Gespeichert! Der Text liegt jetzt <b>dauerhaft</b> auf der Festplatte.' : 'Es gibt noch nichts zu speichern.'); }
+    if (m === 'close') { const lost = text > saved; open = false; text = 0; draw(lost ? '<b class="bad">Ungespeicherte Sätze sind weg!</b> Beim Schließen wird der Platz im RAM freigegeben.' : 'Das Programm wird geschlossen, der Platz im RAM wird freigegeben. Die Datei liegt sicher auf der Festplatte.'); }
+    if (m === 'off') { const lost = open && text > saved; on = open = false; text = 0; draw(lost ? '<b class="bad">Der RAM ist gelöscht – ungespeicherte Arbeit ist verloren.</b> Die Festplatte behält alles.' : 'Der RAM ist jetzt leer. Die Festplatte behält ihre Daten auch ohne Strom.'); }
+  });
+  draw('Schalte den Computer ein.');
+})();
+
+/* ================= Vergleich Mensch ================= */
+flipCards($('#vgl'), [
+  ['🔲 Prozessor (CPU)', 'wie das <b>Gehirn</b>: denkt, rechnet, steuert alles'],
+  ['📟 Arbeitsspeicher (RAM)', 'wie das <b>Kurzzeitgedächtnis</b>'],
+  ['💽 Festplatte', 'wie das <b>Langzeitgedächtnis</b>'],
+  ['🎨 Grafikkarte', 'wie ein <b>Zeichner</b>, der alles in Bilder umsetzt'],
+  ['🔌 Netzteil', 'wie das <b>Essen</b>: liefert Energie'],
+  ['🟩 Hauptplatine', 'wie das <b>Nervensystem</b>: verbindet alle Teile']
+]);
+
+/* ================= M1 Programmstart ================= */
+(() => {
+  const T = ['Der <b>Benutzer</b> klickt doppelt auf das Programmsymbol.', 'Die <b>CPU</b> holt sich das Programm von der Festplatte.', 'Der <b>RAM</b> erhält eine Kopie der Programmanweisungen. So kann die CPU schnell darauf zugreifen.', 'Die Grafikkarte erzeugt das Bild, der <b>Monitor</b> stellt das Programm dar.'];
+  const s4 = $$('#m1-steps .s4');
+  stepper($('#m1-step'), 4, k => { s4.forEach((s, i) => { s.classList.toggle('on', i === k); s.classList.toggle('done', i < k); }); $('#m1-status').innerHTML = T[k]; });
+})();
+
+/* ================= ÜBUNGEN ================= */
+matcher($('#match'), [
+  ['Prozessor (CPU)', 'verarbeitet alle Daten und steuert die Abläufe'],
+  ['Arbeitsspeicher (RAM)', 'speichert Daten kurz, solange sie gebraucht werden'],
+  ['Festplatte (HDD/SSD)', 'speichert Daten dauerhaft'],
+  ['Grafikkarte', 'wandelt die Abläufe in Bilder um'],
+  ['Netzteil', 'versorgt die Komponenten mit Energie'],
+  ['Hauptplatine', 'verbindet alle Komponenten miteinander'],
+  ['Lüfter', 'kühlt Prozessor und Netzteil']
+]);
+sorter($('#mem-sort'), [{id: 'r', name: 'RAM'}, {id: 'f', name: 'Festplatte'}], [
+  {t: 'wird beim Ausschalten gelöscht', c: 'r'}, {t: 'Kurzzeitgedächtnis', c: 'r'}, {t: 'enthält die Daten, mit denen die CPU gerade arbeitet', c: 'r'}, {t: 'Hauptspeicher', c: 'r'},
+  {t: 'behält Daten ohne Strom', c: 'f'}, {t: 'Langzeitgedächtnis', c: 'f'}, {t: 'gibt es als HDD oder SSD', c: 'f'}, {t: 'sekundärer Speicher', c: 'f'}
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Wofür steht CPU?', a: ['Central Processing Unit', 'Computer Power Unit', 'Central Program Use', 'Control Plate Unit'], ok: 0, why: 'Zentrale Recheneinheit.'},
+  {q: 'Womit sind alle Komponenten verbunden?', a: ['mit der Hauptplatine', 'mit dem Monitor', 'mit dem Lüfter', 'mit der Maus'], ok: 0, why: 'Über Steckplätze und Leiterbahnen.'},
+  {q: 'Was passiert mit den Daten im RAM beim Herunterfahren?', a: ['Sie werden gelöscht', 'Sie werden auf CD gebrannt', 'Sie bleiben erhalten', 'Sie werden gedruckt'], ok: 0, why: 'Der RAM ist ein flüchtiger Speicher.'},
+  {q: 'Warum hat die CPU einen Lüfter?', a: ['Sie setzt viel Wärme frei', 'Er macht sie schneller', 'Er speichert Daten', 'Er erzeugt Strom'], ok: 0, why: 'Damit die Temperatur nicht zu stark ansteigt.'},
+  {q: 'Welche Komponente funktioniert wie ein eigener kleiner Computer?', a: ['die Grafikkarte', 'das Netzteil', 'die Festplatte', 'die Tastatur'], ok: 0, why: 'Sie hat eine große Rechenleistung.'},
+  {q: 'Wofür steht SSD?', a: ['Solid State Drive', 'Super Speed Disc', 'Safe Storage Data', 'System Start Drive'], ok: 0, why: 'Eine Festplatte ohne bewegliche Teile.'}
+]);
+</script>

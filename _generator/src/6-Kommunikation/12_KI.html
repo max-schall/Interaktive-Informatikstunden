@@ -1,0 +1,168 @@
+<!--
+title: Künstliche Intelligenz
+short: KI
+time: 2 Unterrichtsstunden
+q: Was ist eine künstliche Intelligenz?
+facts: Künstliche Intelligenz: Maschinen lösen Aufgaben selbst; KI im Alltag (Abb. 1) | Assistiertes, automatisiertes und autonomes Fahren (M1) | Starke KI (theoretisches Modell) und schwache KI; M2 KI im Haushalt | Expertenwissen: KI in Filmen (gefährlich, friedlich, empfindungsfähig) | Auf einen Blick: Entwicklung von KI 1936–2023
+inter: Wo steckt KI? · Stufen des Fahrens mit Regler · Starke oder schwache KI? · KI im Haushalt: KI oder Mensch? · Film-KIs einordnen · Zeitleiste ordnen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Kommunikation in der vernetzten Welt</p>
+      <h1>Künstliche Intelligenz<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Bei vielen Computerspielen muss man nicht gegen andere Menschen spielen, sondern kann auch gegen eine künstliche Intelligenz spielen.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wo bist du heute schon einer KI begegnet?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Was ist eine künstliche Intelligenz?</p></div>
+      <div class="controls"><button class="btn primary" data-go="ki">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="ki" data-label="Was ist KI?" data-yr="Erarbeitung" data-title="Künstliche Intelligenz" data-sub="KI im Alltag">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Künstliche Intelligenz</p>
+      <h2>Wenn Maschinen „denken“</h2>
+      <ul class="facts">
+        <li>Bei Schach überlegt ein Mensch, was er als Nächstes macht. Ihm helfen Erfahrungen und manchmal ein Gefühl.</li>
+        <li>Ein Schachprogramm berechnet viel mehr Züge im Voraus, prüft sehr viele Möglichkeiten und entscheidet sich für den besten Zug. Manche Programme erkennen sogar, wie der Mensch denkt.</li>
+        <li>Wenn Maschinen Aufgaben selbst lösen können, nennt man das <b>künstliche Intelligenz</b>, kurz <b>KI</b>.</li>
+        <li>KI in unserem Alltag kann <b>nicht selbstständig lernen</b>: Sie muss mit vorgegebenen Datenmengen trainiert werden und löst klar festgelegte Aufgaben, z. B. Texte übersetzen.</li>
+      </ul>
+    </div>
+    <div class="stack"><p class="eyebrow">Wo steckt KI? Finde Paare</p><div id="use"></div></div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Autofahren" data-yr="M1" data-title="KI beim Autofahren" data-sub="Assistiert, automatisiert, autonom">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Material M1</p>
+      <h2>KI beim Autofahren</h2>
+      <ul class="facts">
+        <li><b>Assistiertes Fahren:</b> KI unterstützt bei einzelnen Aufgaben, z. B. hält der Tempomat eine feste Geschwindigkeit.</li>
+        <li><b>Automatisiertes Fahren:</b> Der Fahrer kann Aufgaben zeitweise abgeben, z. B. hält ein Abstandstempomat Entfernungen zum Verkehr ein.</li>
+        <li><b>Autonomes Fahren:</b> Das Auto fährt vollständig ohne Fahrer.</li>
+      </ul>
+      <div class="task-card"><header><span class="no">3–4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Sensoren und Vernetzung</h3></header><p>Erläutere die Bedeutung von Sensoren und der Vernetzung (Internet, Satelliten, andere Autos) für das automatisierte Fahren.</p>
+        <div class="controls"><button class="btn" data-reveal="s34" aria-expanded="false">Lösung</button></div><p class="solution" id="s34" hidden>Sensoren (Kameras, Radar, Ultraschall) sind die „Augen“ des Autos: Sie erkennen Fahrbahn, Schilder, Fußgänger und Abstände. Über Satelliten (GPS) kennt das Auto seine Position, über das Internet Staus und Baustellen. Autos, die untereinander vernetzt sind, warnen sich gegenseitig, z. B. vor Glatteis oder einer Vollbremsung.</p></div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Stufe wählen</h3></div>
+      <label class="slider-row">Stufe <input type="range" id="lv" min="1" max="3" value="1"><output class="mono" id="lv-o"></output></label>
+      <div id="lv-out" class="cols-2" style="margin-top:.8rem;gap:.5rem"></div>
+      <p class="eyebrow mt">Aufgabe 2: Spurhalte- und Stauassistent einordnen</p>
+      <div id="lv-sort"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="stark" data-label="Stark/schwach" data-yr="Erarbeitung" data-title="Starke und schwache KI" data-sub="M2 KI im Haushalt">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Starke KI – schwache KI · Material M2</p>
+      <h2>Stark oder schwach?</h2>
+      <ul class="facts">
+        <li>Eine KI, die selbstständig lernt, eigenständig Lösungen für neue Probleme entwickelt, kreativ denken und sozial handeln kann, heißt <b>starke KI</b>. Sie ist bisher nur ein <b>theoretisches Modell</b> – es ist unklar, ob es sie jemals geben wird.</li>
+        <li>Die KI in unserer Welt heißt <b>schwache KI</b>. Sie wird mit Erkennungsmustern und Daten trainiert und erledigt festgelegte Aufgaben wie Sprache erkennen oder Texte übersetzen – sie kann nicht kreativ denken.</li>
+      </ul>
+      <div class="cols-2"><div class="post"><div class="post-img" style="aspect-ratio:3/2">🤖🧹</div><div class="post-cap">Saugroboter</div></div><div class="post"><div class="post-img" style="aspect-ratio:3/2">🔊💬</div><div class="post-cap">Smart Speaker</div></div></div>
+    </div>
+    <div class="stack">
+      <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>KI im Haushalt</h3></header><p>Beschreibe die Aufgaben der Geräte und stelle Vermutungen an, was die KI dabei lernen oder erkennen könnte.</p>
+        <div class="controls"><button class="btn" data-reveal="h12" aria-expanded="false">Lösung</button></div><p class="solution" id="h12" hidden>Der Saugroboter saugt selbstständig; er erkennt Hindernisse, merkt sich den Grundriss der Wohnung und lernt, wo es oft schmutzig ist. Der Smart Speaker beantwortet Fragen, spielt Musik und steuert Licht; er erkennt Sprache und Stimmen und lernt, welche Musik man mag.</p></div>
+      <p class="eyebrow">Aufgabe 3: Wer sollte das übernehmen?</p>
+      <div id="hh"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="filme" data-label="KI in Filmen" data-yr="Expertenwissen" data-title="Künstliche Intelligenz in Filmen" data-sub="Drei Kategorien">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Expertenwissen</p>
+    <h2>KI in Filmen</h2>
+    <p class="lead">KI ist ein häufiges Thema in Filmen. Dabei geht es auch um moralische und gesellschaftliche Fragen. Die Darstellungen lassen sich in drei Kategorien einteilen.</p>
+  </div>
+  <div class="cols-3">
+    <div class="box"><span class="tag lim">😈 Die gefährliche KI</span><p>Eine KI soll Probleme lösen, erkennt aber den Menschen als Ursache vieler Krisen. Mit eigenem Bewusstsein wendet sie sich gegen die Menschheit und übernimmt die Kontrolle.</p></div>
+    <div class="box"><span class="tag info">😊 Die friedliche KI</span><p>Der Mensch bleibt überlegen. Die KI wird gezielt eingesetzt oder arbeitet friedlich mit den Menschen zusammen, hilft und bleibt unter Kontrolle.</p></div>
+    <div class="box"><span class="tag">🥹 Die empfindungsfähige KI</span><p>Die KI entwickelt Gefühle und ein Bewusstsein. Sie denkt über sich nach, sucht nach Sinn und Identität und will dazugehören.</p></div>
+  </div>
+  <h3 class="mt">M1 · Ordne die Infokarten zu</h3>
+  <div id="film"></div>
+  <div class="box mt"><span class="tag">Sind Filme realistisch?</span><p>Viele Darstellungen sind übertrieben oder stark vereinfacht – das ist Science-Fiction. In der Realität ist KI bislang auf bestimmte Aufgaben beschränkt. Trotzdem greifen Filme wichtige Fragen auf: Wie setzen wir KI sicher ein, und wer trägt die Verantwortung?</p></div>
+</section>
+
+<section class="station" id="zeit" data-label="Entwicklung" data-yr="Auf einen Blick" data-title="Entwicklung von KI" data-sub="1936 bis heute">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Auf einen Blick</p>
+    <h2>Die Entwicklung von KI</h2>
+    <p class="lead">Bringe die Meilensteine in die richtige Reihenfolge.</p>
+  </div>
+  <div id="tl-order"></div>
+  <div class="controls"><button class="btn" data-reveal="tl-txt" aria-expanded="false">Zeitleiste mit Erklärungen</button></div>
+  <div class="solution" id="tl-txt" hidden><ul class="facts">
+    <li><b>1936</b> – Der britische Mathematiker Alan Turing stellt die Theorie einer Rechenmaschine vor, die selbstständig lernen kann: die <b>Turingmaschine</b>.</li>
+    <li><b>1956</b> – Der Begriff „<b>künstliche Intelligenz</b>“ wird für Maschinen vorgeschlagen, die menschliche Intelligenz simulieren.</li>
+    <li><b>1966</b> – Der erste <b>Chatbot</b>: ein Programm, das mit Menschen kommuniziert und sich wie ein Gesprächspartner verhält.</li>
+    <li><b>1986</b> – Der erste Computer, der Wörter <b>lesen und korrekt aussprechen</b> kann.</li>
+    <li><b>1997</b> – Das Programm „<b>Deep Blue</b>“ schlägt den Schachweltmeister Garri Kasparow.</li>
+    <li><b>2011</b> – KI erreicht den menschlichen <b>Alltag</b>, z. B. als Sprachassistent.</li>
+    <li><b>2023</b> – Die Zahl der KI-Systeme wächst täglich; Unternehmen und Privatleute nutzen KI für alltägliche Fragen.</li>
+  </ul></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Künstliche Intelligenz</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Künstliche Intelligenz</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Wenn Maschinen Aufgaben selbst lösen können, spricht man von <b>künstlicher Intelligenz (KI)</b>. Sie wird mit großen Datenmengen <b>trainiert</b>.</li>
+        <li data-step>KI im Alltag: Sprachassistenten, Übersetzung, Websuche, Saugroboter, autonome Autos, Roboter in Fabriken.</li>
+        <li data-step>Beim Autofahren unterscheidet man <b>assistiertes</b>, <b>automatisiertes</b> und <b>autonomes</b> Fahren.</li>
+        <li data-step><b>Schwache KI</b> erledigt festgelegte Aufgaben und gibt es heute. <b>Starke KI</b>, die selbstständig lernt und kreativ denkt, ist nur ein theoretisches Modell.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Zeitleiste</span><p>Zeichne eine Zeitleiste von 1936 bis heute mit vier Meilensteinen der KI.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Stimmt das?</h2></div>
+  <div id="tf"></div>
+</section>
+
+<script>
+matcher($('#use'), [['📱 Persönlicher digitaler Assistent', 'beantwortet gesprochene Fragen'], ['🔍 Websuche', 'zeigt passende Treffer'], ['🌍 Automatische Übersetzung', 'übersetzt Texte in andere Sprachen'], ['🛡️ Cybersicherheit', 'bekämpft Desinformation und Angriffe'], ['🤖 Saugroboter', 'Internet der Dinge im Haushalt'], ['🏭 Roboter in Fabriken', 'bauen Autos zusammen'], ['🛒 Online-Shopping', 'schlägt passende Produkte vor']]);
+(() => {
+  const C = ['👁️ Fahrer überwacht Verkehr', '📖 Fahrer kann andere Tätigkeiten machen', '🛰️ zentrale Überwachung', '🛋️ nur Passagiere'];
+  const S = {1: ['assistiertes Fahren', [1, 0, 0, 0]], 2: ['automatisiertes Fahren', [1, 1, 0, 0]], 3: ['autonomes Fahren', [0, 1, 1, 1]]};
+  const up = () => { const v = +$('#lv').value; $('#lv-o').textContent = v + ' · ' + S[v][0]; $('#lv-out').innerHTML = C.map((c, i) => `<div class="box" style="padding:.5rem .7rem;opacity:${S[v][1][i] ? 1 : .35}">${S[v][1][i] ? '✅' : '—'} ${c}</div>`).join(''); };
+  $('#lv').oninput = up; up();
+  sorter($('#lv-sort'), [{id: '1', name: 'assistiert'}, {id: '2', name: 'automatisiert'}, {id: '3', name: 'autonom'}], [
+    {t: 'Tempomat hält 100 km/h', c: '1'}, {t: 'Spurhalteassistent lenkt sanft zurück', c: '1'}, {t: 'Abstandstempomat bremst und beschleunigt', c: '2'}, {t: 'Stauassistent fährt im Stau selbst', c: '2'}, {t: 'Robotaxi ohne Lenkrad', c: '3'}
+  ]);
+})();
+sorter($('#hh'), [{id: 'k', name: '🤖 KI kann helfen'}, {id: 'm', name: '🧑 besser ein Mensch'}], [
+  {t: 'Lieblingsmusik abspielen', c: 'k', why: 'Der Speaker erkennt den Wunsch.'}, {t: 'den Boden saugen', c: 'k', why: 'Der Saugroboter erkennt Hindernisse.'},
+  {t: 'Spielzeug aufräumen', c: 'm', why: 'Heutige Roboter erkennen und greifen Spielzeug kaum zuverlässig.'}, {t: 'entscheiden, was gekocht wird', c: 'm', why: 'Geschmack, Gesundheit und Familie – das entscheiden Menschen. Eine KI kann höchstens Rezepte vorschlagen.'}
+]);
+sorter($('#film'), [{id: 'g', name: '😈 gefährlich'}, {id: 'f', name: '😊 friedlich'}, {id: 'e', name: '🥹 empfindungsfähig'}], [
+  {t: '<b>HAL 4500</b>: Bordcomputer eines Raumschiffs. Er beobachtet das menschliche Verhalten genau und beginnt, die Besatzung auszuschalten.', c: 'g'},
+  {t: '<b>RD-22</b>: kleiner Roboter, der Türen öffnet, Nachrichten übermittelt und repariert. Zeigt keine Gefühle, bleibt seinen Besitzern treu.', c: 'f'},
+  {t: '<b>Wall-U</b>: kleiner Roboter, der die Erde aufräumt. Er trifft andere Roboter, hinterfragt seine Umwelt und handelt selbstständig und emotional.', c: 'e'}
+]);
+orderSteps($('#tl-order'), ['1936 · Turingmaschine', '1956 · Begriff „künstliche Intelligenz“', '1966 · erster Chatbot', '1986 · Computer liest und spricht', '1997 · Deep Blue schlägt Kasparow', '2011 · KI erreicht den Alltag', '2023 · Zahl der KI-Systeme wächst täglich']);
+trueFalse($('#tf'), [
+  {t: 'Die KI in unserem Alltag lernt völlig selbstständig.', ok: false, why: 'Sie wird mit vorgegebenen Daten trainiert.'},
+  {t: 'Starke KI gibt es bisher nur als theoretisches Modell.', ok: true, why: 'Unklar, ob es sie jemals geben wird.'},
+  {t: 'Ein Tempomat ist ein Beispiel für assistiertes Fahren.', ok: true, why: 'Er übernimmt nur eine einzelne Aufgabe.'},
+  {t: 'Beim autonomen Fahren muss der Fahrer ständig den Verkehr überwachen.', ok: false, why: 'Es gibt nur noch Passagiere.'},
+  {t: '1997 schlug ein Computerprogramm den Schachweltmeister.', ok: true, why: 'Deep Blue gegen Garri Kasparow.'},
+  {t: 'KI in Filmen zeigt genau, was KI heute kann.', ok: false, why: 'Vieles ist Science-Fiction.'}
+]);
+</script>

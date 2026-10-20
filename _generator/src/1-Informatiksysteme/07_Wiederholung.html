@@ -1,0 +1,172 @@
+<!--
+title: Wiederholung und Selbsttest
+short: Selbsttest
+time: 1–2 Unterrichtsstunden
+q: Was kann ich, und was sollte ich noch üben?
+facts: Zusammenfassung S. 26 als Karteikarten | Trainer T1–T4 (S. 27): Informatiksysteme, Aufbau eines Computers, Datenspeicherung, Programme und Dateien | Großes Quiz und „Ich kann …“-Liste mit Links zurück in die Stunden
+inter: Karteikarten · Begriffe-Paare · EVA sortieren · Komponenten finden · Tabelle aufdecken · Anleitung ordnen · Quiz (10 zufällige Fragen) · Selbsteinschätzung
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Informatiksysteme nutzen</p>
+      <h1>Wiederholung und Selbsttest<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Informatiksysteme, EVA-Prinzip, Aufbau eines Computers, Programme und Dateien, Datenspeicherung: Prüfe, was du sicher kannst.</p>
+      <div class="controls"><button class="btn primary" data-go="begriffe">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="begriffe" data-label="Begriffe" data-yr="Wiederholen" data-title="Zusammenfassung" data-sub="Fachbegriffe als Karteikarten">
+  <div class="section-head"><p class="eyebrow">Station 1 · Zusammenfassung (S. 26)</p><h2>Fachbegriffe</h2></div>
+  <div id="flip"></div>
+  <h3 class="mt">Paare finden</h3>
+  <div id="match"></div>
+</section>
+
+<section class="station" id="t1" data-label="T1 Systeme" data-yr="Trainer" data-title="T1 Informatiksysteme" data-sub="EVA-Prinzip">
+  <div class="section-head"><p class="eyebrow">Station 2 · Trainer T1</p><h2>Informatiksysteme</h2></div>
+  <div class="grid-2">
+    <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Beispiele</h3></header><p>Nenne Beispiele für Informatiksysteme.</p>
+      <div class="controls"><button class="btn" data-reveal="t11" aria-expanded="false">Lösung</button></div><p class="solution" id="t11" hidden>Smartphone, Tablet, Computer/Laptop, Spielkonsole, Smartwatch …</p></div>
+    <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>EVA am Smartphone</h3></header><p>Erläutere mithilfe der Abbildung (Kamera, Verarbeitung, Touchscreen) an einem Beispiel das EVA-Prinzip.</p>
+      <div class="controls"><button class="btn" data-reveal="t12" aria-expanded="false">Lösung</button></div><p class="solution" id="t12" hidden>Ich mache ein Foto: Die <span class="E">Kamera</span> nimmt das Bild auf (Eingabe), der <span class="V">Prozessor</span> verarbeitet und speichert es (Verarbeitung), der <span class="A">Touchscreen</span> zeigt das Foto an (Ausgabe).</p></div>
+    <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>EVA am Computer</h3></header><p>Erkläre das EVA-Prinzip mithilfe eines Beispiels am Computer.</p>
+      <div class="controls"><button class="btn" data-reveal="t13" aria-expanded="false">Lösung</button></div><p class="solution" id="t13" hidden>Ich schreibe einen Text: Über die <span class="E">Tastatur</span> gebe ich Buchstaben ein. Der <span class="V">Prozessor</span> verarbeitet die Daten mit dem Arbeitsspeicher. Der <span class="A">Monitor</span> zeigt den Text an, der <span class="A">Drucker</span> druckt ihn aus.</p></div>
+  </div>
+  <h3 class="mt">Eingabe, Verarbeitung oder Ausgabe?</h3>
+  <div id="eva-sort"></div>
+</section>
+
+<section class="station" id="t2" data-label="T2 Computer" data-yr="Trainer" data-title="T2 Aufbau eines Computers" data-sub="Komponenten benennen">
+  <div class="section-head"><p class="eyebrow">Station 3 · Trainer T2</p><h2>Aufbau eines Computers</h2><p class="lead">Aufgabe 1: Benenne die Komponenten – im Modus „Finden“.</p></div>
+  <div class="phone-wrap">
+    <div class="vis" style="padding:.6rem"><svg id="pc" class="fig-svg" viewBox="0 0 640 420" aria-label="Geöffneter Computer">
+      <rect x="6" y="6" width="628" height="408" rx="14" fill="var(--surface-2)" stroke="var(--edge)" stroke-width="3"/>
+      <g data-part="platine"><rect x="230" y="26" width="384" height="300" rx="6" fill="#1F7A4D" stroke="#0E3B25" stroke-width="2"/></g>
+      <g data-part="netzteil"><rect x="26" y="26" width="180" height="96" rx="6" fill="#3A4247" stroke="#111" stroke-width="2"/><circle cx="116" cy="74" r="34" fill="#20262A" stroke="#888" stroke-width="2"/></g>
+      <g data-part="cpu"><rect x="290" y="56" width="124" height="124" rx="6" fill="#B9C0C6" stroke="#333" stroke-width="2"/><circle cx="352" cy="122" r="42" fill="#2A2F33"/></g>
+      <g data-part="ram"><rect x="446" y="44" width="16" height="160" rx="2" fill="#1E3A8A"/><rect x="472" y="44" width="16" height="160" rx="2" fill="#1E3A8A"/></g>
+      <g data-part="gpu"><rect x="250" y="222" width="320" height="64" rx="6" fill="#2F3438" stroke="#111" stroke-width="2"/><circle cx="330" cy="254" r="24" fill="#1A1D20"/><circle cx="410" cy="254" r="24" fill="#1A1D20"/><circle cx="490" cy="254" r="24" fill="#1A1D20"/></g>
+      <g data-part="hdd"><rect x="30" y="200" width="170" height="190" rx="6" fill="#A7B0B7" stroke="#333" stroke-width="2"/><circle cx="115" cy="295" r="62" fill="#DCE3E8" stroke="#666"/><circle cx="115" cy="295" r="10" fill="#666"/></g>
+    </svg></div>
+    <div class="stack"><div id="pc-mode"></div><div class="phone-panel xp-panel" id="pc-panel" aria-live="polite"></div></div>
+  </div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Aufgaben der Komponenten</h3></header><p>Erläutere, welche Aufgaben die verschiedenen Komponenten in einem Computer ausführen. (Modus „Erkunden“)</p></div>
+    <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Haupt- und sekundärer Speicher</h3></header><p>Erkläre den Unterschied zwischen Hauptspeicher und sekundärem Speicher.</p>
+      <div class="controls"><button class="btn" data-reveal="t23" aria-expanded="false">Lösung</button></div><p class="solution" id="t23" hidden>Der Hauptspeicher (RAM) speichert Daten nur kurz, solange sie gebraucht werden, und verliert sie beim Ausschalten. Der sekundäre Speicher (HDD/SSD) speichert Daten dauerhaft.</p></div>
+    <div class="task-card"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Überhitzung</h3></header><p>Erkläre, wie verhindert wird, dass die CPU überhitzt.</p>
+      <div class="controls"><button class="btn" data-reveal="t24" aria-expanded="false">Lösung</button></div><p class="solution" id="t24" hidden>Ein eigener Ventilator, der Lüfter, sitzt auf der CPU und kühlt sie. Je mehr sie rechnet, desto schneller dreht er.</p></div>
+  </div>
+</section>
+
+<section class="station" id="t3" data-label="T3 Speicher" data-yr="Trainer" data-title="T3 Datenspeicherung" data-sub="Speicherarten und Backups">
+  <div class="section-head"><p class="eyebrow">Station 4 · Trainer T3</p><h2>Datenspeicherung</h2></div>
+  <div class="cols-2">
+    <div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Tabelle</h3></header><p>Übertrage und vervollständige die Tabelle. Tippe die Felder an.</p></div>
+      <div class="table-wrap"><table class="cmp" id="t3-tab"><thead><tr><th>Speicherart</th><th>Datenspeicherung</th></tr></thead><tbody>
+        <tr><th>optische Speicherung</th><td class="q"><span>mit einem Laserstrahl, z. B. CD</span></td></tr>
+        <tr><th class="q"><span>magnetische Speicherung</span></th><td>findet auf Bändern oder Platten statt</td></tr>
+        <tr><th>elektronische Speicherung</th><td class="q"><span>mit elektronischen Bauteilen, z. B. Speicherkarte, SSD</span></td></tr>
+      </tbody></table></div>
+      <div class="cmp-tools"><button class="btn" id="t3-q">Verdecken</button><button class="btn" id="t3-a">Aufdecken</button></div>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Datensicherung</h3></header><p>Erläutere verschiedene Möglichkeiten zur Datensicherung.</p>
+        <div class="controls"><button class="btn" data-reveal="t32" aria-expanded="false">Lösung</button></div><p class="solution" id="t32" hidden>Regelmäßige Backups auf externen Speichern (externe Festplatte, USB-Stick) oder in der Cloud: Voll-Backup (alle Daten), differentielles Backup (Änderungen seit dem letzten Voll-Backup), inkrementelles Backup (Änderungen seit dem letzten Backup).</p></div>
+      <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>differentiell oder inkrementell?</h3></header><p>Nenne den Unterschied zwischen einem differentiellen und einem inkrementellen Backup.</p>
+        <div class="controls"><button class="btn" data-reveal="t33" aria-expanded="false">Lösung</button></div><p class="solution" id="t33" hidden>Das differentielle Backup sichert alles, was seit dem letzten <b>Voll-Backup</b> geändert wurde. Das inkrementelle Backup sichert nur die Änderungen seit dem <b>letzten Backup</b> (egal welcher Art).</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="t4" data-label="T4 Dateien" data-yr="Trainer" data-title="T4 Programme und Dateien" data-sub="Anleitung und Dateiformate">
+  <div class="section-head"><p class="eyebrow">Station 5 · Trainer T4</p><h2>Programme und Dateien</h2></div>
+  <div class="cols-2">
+    <div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Schritt-für-Schritt-Anleitung</h3></header><p>Erstelle eine Anleitung, wie du vom Anmelde-Bildschirm in ein Textverarbeitungsprogramm gelangst. Ordne die Schritte.</p></div>
+      <div id="t4-order"></div>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Alternativen</h3></header><p>Bei der Anmeldung muss man ein Passwort eingeben. Nenne Alternativen zu diesem Ablauf.</p>
+        <div class="controls"><button class="btn" data-reveal="t42" aria-expanded="false">Lösung</button></div><p class="solution" id="t42" hidden>PIN, Fingerabdruck, Gesichtserkennung.</p></div>
+      <div class="task-card"><header><span class="no">3–5</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Dateiformate</h3></header><p>Beschreibe, was die Symbole zeigen, welche Formate du schon verwendet hast und welche Daten dahinterliegen. Sortiere:</p></div>
+      <div id="t4-sort"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="quiz-st" data-label="Quiz" data-yr="Testen" data-title="Großes Quiz" data-sub="10 zufällige Fragen">
+  <div class="section-head"><p class="eyebrow">Station 6 · Quiz</p><h2>Großes Quiz</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<section class="station" id="uebungen" data-label="Ich kann …">
+  <div class="section-head"><p class="eyebrow">Selbsteinschätzung</p><h2>Ich kann …</h2></div>
+  <ol id="sc"></ol>
+</section>
+
+<script>
+const BEGRIFFE = [
+  ['Information', 'das, was jemand weitergeben möchte'], ['Daten', 'repräsentierte Informationen'], ['Informatiksystem', 'Gerät aus Hardware, Software und Netzwerk'],
+  ['Hardware', 'alles, was man anfassen kann'], ['Software', 'Programme, die auf dem Gerät laufen'], ['EVA-Prinzip', 'Eingabe → Verarbeitung → Ausgabe'],
+  ['Prozessor (CPU)', 'verarbeitet alle Daten, Herz des Computers'], ['Arbeitsspeicher (RAM)', 'speichert Daten nur kurz'], ['Festplatte (HDD/SSD)', 'speichert Daten dauerhaft'],
+  ['Hauptplatine', 'verbindet alle Komponenten'], ['Dateiformat', 'wird an der Endung erkannt, z. B. .jpg'], ['Backup', 'Sicherungskopie von Daten'],
+  ['optische Speicherung', 'mit Laserstrahl, z. B. CD'], ['magnetische Speicherung', 'mit Lese-Schreib-Kopf, z. B. HDD'], ['FPS', 'Bilder pro Sekunde']
+];
+flipCards($('#flip'), BEGRIFFE);
+matcher($('#match'), shuffle(BEGRIFFE.slice()).slice(0, 7));
+sorter($('#eva-sort'), [{id: 'e', name: 'Eingabe'}, {id: 'v', name: 'Verarbeitung'}, {id: 'a', name: 'Ausgabe'}], [
+  {t: '📷 Kamera', c: 'e'}, {t: '⌨️ Tastatur', c: 'e'}, {t: '🎤 Mikrofon', c: 'e'}, {t: '🖱️ Maus', c: 'e'},
+  {t: '🔲 Prozessor', c: 'v'}, {t: '📟 Arbeitsspeicher', c: 'v'}, {t: '🎨 Grafikkarte', c: 'v'},
+  {t: '🖥️ Monitor', c: 'a'}, {t: '🖨️ Drucker', c: 'a'}, {t: '🔊 Lautsprecher', c: 'a'}
+]);
+explorer($('#pc'), $('#pc-panel'), [
+  {id: 'netzteil', n: 'Netzteil (A)', t: 'Versorgt alle Komponenten mit elektrischer Energie.'},
+  {id: 'gpu', n: 'Grafikkarte (B)', t: 'Wandelt die Abläufe in Bilder um.'},
+  {id: 'hdd', n: 'Festplatte HDD (C)', t: 'Sekundärer Speicher: speichert Daten dauerhaft.'},
+  {id: 'ram', n: 'Arbeitsspeicher RAM (D)', t: 'Hauptspeicher: hält die Daten, mit denen die CPU gerade arbeitet.'},
+  {id: 'platine', n: 'Hauptplatine (E)', t: 'Verbindet alle Komponenten über Steckplätze und Leiterbahnen.'},
+  {id: 'cpu', n: 'Prozessor CPU (F)', t: 'Verarbeitet alle Daten und steuert die Abläufe. Ein Lüfter kühlt ihn.'}
+], {modeRoot: $('#pc-mode')});
+quizTable($('#t3-tab'), $('#t3-q'), $('#t3-a'));
+orderSteps($('#t4-order'), ['Benutzernamen und Kennwort eingeben', 'Auf „Anmelden“ klicken – der Desktop erscheint', 'In der Taskleiste das Startmenü öffnen', 'Das Textverarbeitungsprogramm in der Liste suchen (oder die Suche nutzen)', 'Das Programm anklicken – es öffnet sich']);
+sorter($('#t4-sort'), [{id: 't', name: 'Text/Dokument'}, {id: 'b', name: 'Bild'}, {id: 'm', name: 'Ton/Video'}, {id: 'p', name: 'Präsentation/Tabelle'}], [
+  {t: 'DOC', c: 't'}, {t: 'TXT', c: 't'}, {t: 'PDF', c: 't'}, {t: 'JPG', c: 'b'}, {t: 'GIF', c: 'b'}, {t: 'MP3', c: 'm'}, {t: 'MP4', c: 'm'}, {t: 'PPT', c: 'p'}, {t: 'XLS', c: 'p'}
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Wie nennt man das Darstellen einer Information?', a: ['Repräsentation', 'Interpretation', 'Backup', 'Komponente'], ok: 0, why: 'z. B. als Text, Bild oder Geste.'},
+  {q: 'Woraus besteht ein Informatiksystem?', a: ['Hardware, Software und Netzwerk', 'nur aus Hardware', 'Tastatur und Maus', 'Programmen und Dateien'], ok: 0, why: 'Die drei Bestandteile.'},
+  {q: 'Wofür steht EVA?', a: ['Eingabe, Verarbeitung, Ausgabe', 'Erst, Vorher, Anschließend', 'Energie, Volt, Ampere', 'Elektronik, Video, Audio'], ok: 0, why: 'Das zentrale Prinzip der Datenverarbeitung.'},
+  {q: 'Welches Gerät ist ein Ausgabegerät?', a: ['Drucker', 'Maus', 'Mikrofon', 'Tastatur'], ok: 0, why: 'Er gibt Ergebnisse auf Papier aus.'},
+  {q: 'Welches Gerät ist Ein- und Ausgabegerät zugleich?', a: ['Touchscreen', 'Lautsprecher', 'Maus', 'Monitor ohne Touch'], ok: 0, why: 'Berührung rein, Bild raus.'},
+  {q: 'Was macht der Arbeitsspeicher beim Herunterfahren?', a: ['Er verliert seine Daten', 'Er speichert alles dauerhaft', 'Er wird heißer', 'Er druckt'], ok: 0, why: 'Er ist flüchtig.'},
+  {q: 'Was kühlt die CPU?', a: ['der Lüfter', 'das Netzteil', 'die Grafikkarte', 'der RAM'], ok: 0, why: 'Ein eigener Ventilator.'},
+  {q: 'Was zeigt die Dateiendung .mp4?', a: ['ein Video', 'ein Foto', 'einen Text', 'eine Präsentation'], ok: 0, why: 'MP4 ist ein Videoformat.'},
+  {q: 'Wie ist eine Ordnerstruktur aufgebaut?', a: ['wie ein Baum', 'wie ein Kreis', 'wie eine Liste ohne Ordner', 'zufällig'], ok: 0, why: 'Hauptordner, Unterordner, Dateien.'},
+  {q: 'Wie wird eine HDD gelesen?', a: ['mit einem Lese-Schreib-Kopf', 'mit einem Laser', 'mit Licht', 'gar nicht'], ok: 0, why: 'Magnetische Speicherung.'},
+  {q: 'Welches Backup sichert nur Änderungen seit dem letzten Backup?', a: ['inkrementelles Backup', 'Voll-Backup', 'differentielles Backup', 'Papierkorb'], ok: 0, why: 'Egal, welches Backup davor war.'},
+  {q: 'Welche Komponente verbindet alle anderen?', a: ['Hauptplatine', 'Monitor', 'Lüfter', 'Maus'], ok: 0, why: 'Über Steckplätze und Leiterbahnen.'},
+  {q: 'Was bedeutet 09.04.27 in den USA?', a: ['4. September 2027', '9. April 2027', '27. April 2009', 'nichts'], ok: 0, why: 'Dort steht der Monat vorne.'},
+  {q: 'Wann entstanden die ersten Videospiele?', a: ['in den 1970er Jahren', 'um 1900', 'in den 2010er Jahren', 'im Mittelalter'], ok: 0, why: 'z. B. Pong.'},
+  {q: 'Wann wurde das World Wide Web geöffnet?', a: ['1991', '1452', '1876', '2022'], ok: 0, why: 'Siehe Geschichte der Kommunikation.'},
+  {q: 'Was bedeutet FPS?', a: ['Bilder pro Sekunde', 'Festplatten pro Server', 'Fehler pro Spiel', 'Farben pro Pixel'], ok: 0, why: 'Frames per Second.'}
+], {pick: 10});
+selfCheck($('#sc'), [
+  {t: 'Ich kann Information, Repräsentation, Daten und Medium unterscheiden.', href: '01_Informationen_Medien.html#daten'},
+  {t: 'Ich kann erklären, warum Sender und Empfänger eine gemeinsame Sprache brauchen.', href: '01_Informationen_Medien.html#sprache'},
+  {t: 'Ich kann die Bestandteile eines Informatiksystems nennen.', href: '02_Informatiksysteme.html#systeme'},
+  {t: 'Ich kann das EVA-Prinzip an Beispielen erklären.', href: '02_Informatiksysteme.html#eva'},
+  {t: 'Ich kann Ein- und Ausgabegeräte zuordnen.', href: '02_Informatiksysteme.html#m1'},
+  {t: 'Ich kann die Komponenten eines Computers und ihre Aufgaben nennen.', href: '03_Aufbau_Computer.html#komponenten'},
+  {t: 'Ich kann Arbeitsspeicher und Festplatte unterscheiden.', href: '03_Aufbau_Computer.html#speicher'},
+  {t: 'Ich kann Dateien sinnvoll benennen und in Ordnern ablegen.', href: '04_Programme_Dateien.html#ordner'},
+  {t: 'Ich kenne wichtige Dateiformate.', href: '04_Programme_Dateien.html#formate'},
+  {t: 'Ich kann optische, magnetische und elektronische Speicher unterscheiden.', href: '05_Datenspeicherung.html#arten'},
+  {t: 'Ich kann die drei Backup-Arten erklären.', href: '05_Datenspeicherung.html#backup'},
+  {t: 'Ich kann die Entwicklung der Computerspiele beschreiben und Gaming bewerten.', href: '06_Computerspiele.html#geschichte'}
+]);
+</script>

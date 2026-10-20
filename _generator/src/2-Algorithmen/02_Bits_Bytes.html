@@ -1,0 +1,216 @@
+<!--
+title: Bits und Bytes
+short: Bits & Bytes
+time: 1–2 Unterrichtsstunden
+q: Was versteht man unter Bits und Bytes – und wie lange dauert ein Download?
+facts: Daten werden als Binärcode gespeichert | Bit als kleinste Einheit, Byte = 8 Bit, 256 Kombinationen | Speichereinheiten KB, MB, GB, TB | Datenübertragung in Bit pro Sekunde, M1 Mobilfunkverträge vergleichen
+inter: Text in Bytes übersetzen · Speichereinheiten-Treppe · Wie viel passt aufs Handy? · Download-Rechner · Handyverträge vergleichen · Umrechnungs-Training
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Algorithmen und Problemlösen</p>
+      <h1>Bits und Bytes<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Überprüft man den belegten Speicher der Festplatte, werden die Speicherkapazitäten in <b>Bytes</b> angegeben. Internetanbieter werben dagegen mit <b>Mbit pro Sekunde</b>.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wie viel Speicher hat dein Handy? Und was frisst am meisten Platz?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Was versteht man unter Bits und Bytes – und wie lange dauert ein Download?</p></div>
+      <div class="controls"><button class="btn primary" data-go="speichern">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="speichern" data-label="Daten speichern" data-yr="Einstieg" data-title="Daten speichern" data-sub="Vom Dokument zum Binärcode">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Daten speichern</p>
+    <h2>Vom Dokument zum Binärcode</h2>
+    <p class="lead">Beim Speichern wird ein Dokument im Computer in einen <b>Binärcode</b> aus Nullen und Einsen übersetzt – so kann es auf Festplatte, USB-Stick oder Speicherkarte gespeichert werden.</p>
+  </div>
+  <div class="flow-line">
+    <div class="fl-box"><span class="tag">Darstellung auf dem Bildschirm</span><b>📄 Hausaufgabe</b><small>„Aufgabe 1: Die Antwort lautet …“</small></div>
+    <div class="fl-arrow">Umwandlung in Binärcode →</div>
+    <div class="fl-box acc"><span class="tag info">Dokument im Arbeitsspeicher</span><b class="mono" style="font-size:.8rem;word-break:break-all">01000001 01110101 01100110 …</b></div>
+    <div class="fl-arrow">Speichern →</div>
+    <div class="fl-box"><span class="tag">Binärcode auf der Festplatte</span><b>💽 dauerhaft gespeichert</b><small>als Folge von „Strom an / aus“ bzw. magnetisch</small></div>
+  </div>
+  <div class="cols-2 mt">
+    <div class="box"><span class="tag">Kleinste Speicherkapazität</span><p>Die kleinste Informationseinheit ist das <b>Bit</b>: „1“ = An/Wahr, „0“ = Aus/Falsch. Weil Computer auf elektronischen Schaltungen beruhen, können sie nur mit „Strom an“ und „Strom aus“ codieren.</p></div>
+    <div class="box"><span class="tag">Bitfolge</span><p>Für Zahlen oder Buchstaben werden mehrere Bits zu einer <b>Bitfolge</b> zusammengefasst. Bilder, Musik und Videos brauchen je nach Größe unterschiedlich viel Speicherplatz.</p></div>
+  </div>
+</section>
+
+<section class="station" id="bytes" data-label="Byte" data-yr="Erarbeitung" data-title="Das Byte" data-sub="8 Bit = 1 Byte">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Bytes</p>
+      <h2>8 Bit = 1 Byte</h2>
+      <ul class="facts">
+        <li>Mit nur zwei Zeichen sind die Möglichkeiten begrenzt. Deshalb fasst man <b>8 Bits</b> zu einem Paket zusammen: einem <b>Byte (B)</b>.</li>
+        <li>Mit 8 Stellen aus 0 und 1 gibt es <b>2⁸ = 256</b> verschiedene Kombinationen.</li>
+        <li>Der Buchstabe <b>A</b> wird zum Beispiel als <b class="mono">01000001</b> codiert.</li>
+      </ul>
+      <div class="byte-demo mono"><span>0</span><span>1</span><span>1</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span></div>
+      <p class="note">Abb. 2: Ein Kästchen ist 1 Bit, alle acht zusammen sind 1 Byte.</p>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Dein Text in Bytes</h3></div>
+      <input id="enc-in" class="text-in" value="Hallo" maxlength="24" aria-label="Text">
+      <div class="enc" id="enc"></div>
+      <p class="status" id="enc-status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="einheiten" data-label="Einheiten" data-yr="Erarbeitung" data-title="Speichereinheiten" data-sub="KB, MB, GB, TB">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Speichereinheiten</p>
+    <h2>Kilo, Mega, Giga, Tera</h2>
+    <p class="lead">Große Dateien brauchen große Byte-Zahlen. Früher rechnete man in 1024er-Sprüngen (2, 4, 8, … 512, <b>1024</b>), heute ist der Faktor auf <b>1000</b> festgelegt.</p>
+  </div>
+  <div class="ladder" id="ladder"></div>
+  <div class="cols-2 mt">
+    <div class="vis">
+      <div class="vis-head"><h3>Wie viel passt aufs Handy?</h3><div id="fit-seg"></div></div>
+      <div class="fit" id="fit"></div>
+      <p class="status" id="fit-status"></p>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">A</span><h3>Bits und Bytes</h3></header><p>Beschreibe den Unterschied zwischen Bits und Bytes.</p>
+        <div class="controls"><button class="btn" data-reveal="ba" aria-expanded="false">Lösung</button></div><p class="solution" id="ba" hidden>Ein Bit ist die kleinste Einheit (0 oder 1). Ein Byte besteht aus 8 Bits. Speichergrößen gibt man in Bytes an, Übertragungsgeschwindigkeiten in Bits pro Sekunde.</p></div>
+      <div class="task-card"><header><span class="no">B</span><h3>Umrechnen</h3></header><p>Rechne um: 2 TB in GB, 5 B in Bit, 2 MB in B.</p>
+        <div class="controls"><button class="btn" data-reveal="bb" aria-expanded="false">Lösung</button></div><p class="solution mono" id="bb" hidden>2 TB = 2000 GB · 5 B = 40 Bit · 2 MB = 2 000 000 B</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="uebertragen" data-label="Übertragen" data-yr="Erarbeitung" data-title="Daten übertragen" data-sub="Bit pro Sekunde">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 4 · Daten übertragen</p>
+      <h2>Bit pro Sekunde</h2>
+      <div class="merke"><b>Speichergrößen</b> von Festplatten werden in <b>Bytes</b> angegeben. <b>Datenübertragungen</b> werden in <b>Bits</b> pro Sekunde angegeben.</div>
+      <ul class="facts">
+        <li>Internetanbieter werben mit z. B. <b>100 Mbit/s</b> – das sind 100 000 kbit pro Sekunde oder 100 Millionen Bit pro Sekunde.</li>
+        <li>Achtung: 1 Byte = 8 Bit. Mit 100 Mbit/s lädt man pro Sekunde also <b>12,5 MB</b>.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Download-Rechner</h3></div>
+      <label class="slider-row">Dateigröße <input id="dl-size" type="range" min="1" max="100" value="12"><output id="dl-size-o" class="mono">12 GB</output></label>
+      <label class="slider-row">Geschwindigkeit <input id="dl-speed" type="range" min="1" max="10" value="4"><output id="dl-speed-o" class="mono">50 Mbit/s</output></label>
+      <div class="dl-bar"><i id="dl-prog"></i></div>
+      <p class="status" id="dl-status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Handyvertrag" data-yr="M1" data-title="Mobilfunkanbieter" data-sub="Verträge vergleichen">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1</p>
+    <h2>Mobilfunkanbieter</h2>
+  </div>
+  <div class="cols-3">
+    <div class="tarif" style="--c:#F59E0B"><b>Telefonie All 100 GB</b><span class="price">5,99 € <small>monatlich</small></span><ul><li>Flat Telefonie</li><li>Flat SMS</li><li>Flat Internet <b>100 GB</b> bis zu <b>16 MBit/s</b></li><li>Flat EU-Ausland</li></ul></div>
+    <div class="tarif" style="--c:#EA580C"><b>LTE All 5 + 3 GB</b><span class="price">9,99 € <small>monatlich</small></span><ul><li>Flat Telefonie</li><li>Flat SMS</li><li>Flat Internet LTE <b>8 GB</b> bis zu <b>50 MBit/s</b></li><li>Flat EU-Ausland</li></ul></div>
+    <div class="tarif" style="--c:#DC2626"><b>LTE All 50 GB</b><span class="price">24,99 € <small>monatlich</small></span><ul><li>Flat Telefonie + SMS</li><li>Flat Internet LTE <b>50 GB</b> bis zu <b>50 MBit/s</b></li><li>Flat EU-Ausland</li><li>6 Monate Streaming-Abo inkl.</li></ul></div>
+  </div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Vergleichen</h3></header><p>Vergleiche die Datenvolumen und Übertragungsgeschwindigkeiten der drei Angebote.</p>
+      <div class="controls"><button class="btn" data-reveal="t1" aria-expanded="false">Lösung</button></div>
+      <div class="solution" id="t1" hidden>Das günstigste Angebot hat das größte Datenvolumen (100 GB), ist aber am langsamsten (16 Mbit/s). Das mittlere ist schnell (50 Mbit/s), hat aber nur 8 GB. Das teuerste ist schnell und hat 50 GB plus ein Streaming-Abo.</div></div>
+    <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Sebastian streamt</h3></header><p>Sebastian streamt gerne Serien oder Musik mit seinem Smartphone. Gib ihm eine Empfehlung, worauf er bei einem Angebot achten sollte.</p>
+      <div class="controls"><button class="btn" data-reveal="t2h" aria-expanded="false">HILFE</button><button class="btn" data-reveal="t2" aria-expanded="false">Lösungsidee</button></div>
+      <p class="hint-box" id="t2h" hidden>Streaming braucht viele Daten. Was passiert, wenn das Datenvolumen aufgebraucht ist?</p>
+      <p class="solution" id="t2" hidden>Streaming verbraucht viel Datenvolumen. Sebastian sollte auf ein großes Datenvolumen achten (8 GB reichen nicht lange) und auf eine ausreichende Geschwindigkeit für flüssige Videos. Das erste Angebot (100 GB, 16 Mbit/s) reicht für Serien meist aus und ist am günstigsten.</p></div>
+    <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Downloadzeit</h3></header><p>Ermittle die Downloadzeit eines 12 GB großen Films bei 50 Mbit/Sekunde. (Probiere es im Download-Rechner aus!)</p>
+      <div class="controls"><button class="btn" data-reveal="t3" aria-expanded="false">Lösung</button></div>
+      <p class="solution" id="t3" hidden>12 GB = 12 000 MB = 96 000 Mbit (· 8). 96 000 Mbit : 50 Mbit/s = 1920 s = <b>32 Minuten</b>.</p></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Bits und Bytes</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Bits und Bytes</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Daten werden im Computer als <b>Binärcode</b> aus 0 und 1 gespeichert.</li>
+        <li data-step>Das <b>Bit</b> ist die kleinste Informationseinheit: 1 (an) oder 0 (aus).</li>
+        <li data-step><b>8 Bit = 1 Byte</b>. Mit einem Byte gibt es 2⁸ = 256 Kombinationen, z. B. A = 01000001.</li>
+        <li data-step>Speichereinheiten: 1 KB = 1000 B, 1 MB = 1000 KB, 1 GB = 1000 MB, 1 TB = 1000 GB (früher 1024).</li>
+        <li data-step><b>Speichergrößen</b> gibt man in <b>Bytes</b> an, <b>Übertragungsgeschwindigkeiten</b> in <b>Bit pro Sekunde</b> (z. B. 50 Mbit/s).</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne die Einheiten-Treppe: Bit → (·8) Byte → (·1000) KB → MB → GB → TB.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Umrechnen</h2></div>
+  <div id="ts"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ================= Text → Bytes ================= */
+(() => {
+  const inp = $('#enc-in');
+  function draw() {
+    const t = [...inp.value].slice(0, 24);
+    $('#enc').innerHTML = t.map(ch => { const c = ch.charCodeAt(0); return `<div class="enc-c"><b>${ch === ' ' ? '␣' : ch}</b><span class="mono">${c < 256 ? c.toString(2).padStart(8, '0') : '–'}</span></div>`; }).join('');
+    $('#enc-status').innerHTML = `${t.length} Zeichen = <b>${t.length} Byte</b> = <b>${t.length * 8} Bit</b>`;
+  }
+  inp.addEventListener('input', draw); draw();
+})();
+
+/* ================= Einheiten ================= */
+(() => {
+  const U = [['Bit', '0 oder 1'], ['Byte (B)', '= 8 Bit'], ['Kilobyte (KB)', '= 1000 Byte'], ['Megabyte (MB)', '= 1000 KB'], ['Gigabyte (GB)', '= 1000 MB'], ['Terabyte (TB)', '= 1000 GB']];
+  $('#ladder').innerHTML = U.map(([a, b], i) => `<div class="step" style="--i:${i}"><b>${a}</b><small>${b}</small></div>`).join('');
+  const F = [['mp3', '🎵 MP3-Song (5 min)', 12], ['seite', '📖 Buchdoppelseite', 6], ['film', '🎬 Kinofilm', 7000], ['foto', '📷 Handyfoto', 4]];
+  let cap = 64;
+  seg($('#fit-seg'), [[32, '32 GB'], [64, '64 GB'], [128, '128 GB']], v => { cap = +v; draw(); }, 64);
+  function draw() {
+    $('#fit').innerHTML = F.map(([k, n, mb]) => `<div class="fit-r"><span>${n}</span><b class="mono">${Math.floor(cap * 1000 / mb).toLocaleString('de-DE')}×</b><small>je ca. ${mb >= 1000 ? mb / 1000 + ' GB' : mb + ' MB'}</small></div>`).join('');
+    $('#fit-status').innerHTML = `Auf ein Handy mit <b>${cap} GB</b> passen so viele Dateien – wenn sonst nichts darauf ist.`;
+  }
+})();
+
+/* ================= Download ================= */
+(() => {
+  const SP = [8, 16, 25, 50, 100, 250, 500, 1000, 2000, 10000];
+  let t0 = 0;
+  function upd() {
+    const gb = +$('#dl-size').value, v = SP[+$('#dl-speed').value - 1];
+    $('#dl-size-o').textContent = gb + ' GB'; $('#dl-speed-o').textContent = v + ' Mbit/s';
+    const s = gb * 8000 / v, m = Math.floor(s / 60), h = Math.floor(m / 60);
+    $('#dl-status').innerHTML = `${gb} GB = ${(gb * 8000).toLocaleString('de-DE')} Mbit · ${(gb * 8000).toLocaleString('de-DE')} : ${v} = <b>${Math.round(s).toLocaleString('de-DE')} s</b> ≈ <b>${h ? h + ' h ' : ''}${m % 60} min</b>`;
+    $('#dl-prog').style.animationDuration = Math.max(.4, Math.min(12, s / 200)) + 's';
+  }
+  $('#dl-size').oninput = upd; $('#dl-speed').oninput = upd; upd();
+})();
+
+/* ================= Übungen ================= */
+taskSet($('#ts'), () => {
+  const T = [
+    () => { const n = randInt(2, 9); return {q: `${n} TB = ? GB`, a: n * 1000, u: 'GB'}; },
+    () => { const n = randInt(2, 12); return {q: `${n} Byte = ? Bit`, a: n * 8, u: 'Bit'}; },
+    () => { const n = randInt(2, 9); return {q: `${n} MB = ? KB`, a: n * 1000, u: 'KB'}; },
+    () => { const n = randInt(1, 9) * 8; return {q: `${n} Bit = ? Byte`, a: n / 8, u: 'Byte'}; },
+    () => { const n = randInt(2, 9) * 1000; return {q: `${n.toLocaleString('de-DE')} MB = ? GB`, a: n / 1000, u: 'GB'}; },
+    () => { const n = randInt(2, 6); return {q: `${n} GB = ? MB`, a: n * 1000, u: 'MB'}; }
+  ];
+  const t = pick(T)();
+  return {key: t.q, tag: 'Einheiten', q: `<span class="big">${t.q}</span>`, fields: [{l: 'Ergebnis', a: t.a, unit: t.u}], hint: 'Zwischen den Einheiten liegt jeweils der Faktor 1000, zwischen Bit und Byte der Faktor 8.'};
+}, {n: 6});
+mcQuiz($('#quiz'), [
+  {q: 'Wie viele Bits hat ein Byte?', a: ['8', '2', '10', '1024'], ok: 0, why: 'Ein 8er-Paket.'},
+  {q: 'Wie viele Kombinationen gibt es mit einem Byte?', a: ['256', '8', '16', '1000'], ok: 0, why: '2⁸ = 256'},
+  {q: 'Worin gibt man die Übertragungsgeschwindigkeit an?', a: ['Bit pro Sekunde', 'Byte', 'Gigabyte', 'Pixel'], ok: 0, why: 'z. B. 50 Mbit/s.'},
+  {q: 'Was ist größer?', a: ['1 TB', '1 GB', '1 MB', '1 KB'], ok: 0, why: 'Tera > Giga > Mega > Kilo.'},
+  {q: 'Wie wird der Buchstabe A codiert?', a: ['01000001', '00000001', '11111111', '10101010'], ok: 0, why: 'Siehe Text-Übersetzer.'},
+  {q: 'Wie lange dauert der Download von 12 GB mit 50 Mbit/s?', a: ['etwa 32 Minuten', 'etwa 12 Sekunden', 'etwa 4 Stunden', 'etwa 1 Minute'], ok: 0, why: '96 000 Mbit : 50 = 1920 s.'}
+]);
+</script>

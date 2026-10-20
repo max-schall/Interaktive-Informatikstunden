@@ -1,0 +1,204 @@
+<!--
+title: Tabellen einfügen
+short: Tabellen
+time: 2 Unterrichtsstunden (mit Textverarbeitungsprogramm)
+q: Wie kann man Tabellen in einem Textdokument einfügen?
+facts: Funktion von Tabellen: Zellen, Spalten (von oben nach unten), Zeilen (von links nach rechts) | Tabelle einfügen: „Einfügen“ → „Tabelle“ → Größe wählen | Tabellen einrichten: Tabellenentwurf (Farben, Linien, Formatvorlagen) und Tabellenlayout (Ausrichtung, Größe, Zeilen/Spalten einfügen oder löschen) | Text in Zellen eingeben (Tab, Pfeiltasten), kopieren und verschieben; M1 Stundenplan
+inter: Zelle, Zeile oder Spalte? · Tabelle einfügen mit Rasterauswahl · Tabellenentwurf und Layout ausprobieren · Mit Tab durch die Zellen · Malikas Stundenplan übertragen und prüfen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Textgestaltung</p>
+      <h1>Tabellen einfügen<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Tabellen helfen, Stunden- oder Wochenpläne übersichtlich zu machen.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wo begegnen dir im Alltag Tabellen?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie kann man Tabellen in einem Textdokument einfügen?</p></div>
+      <div class="controls"><button class="btn primary" data-go="aufbau">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="aufbau" data-label="Aufbau" data-yr="Erarbeitung" data-title="Funktion von Tabellen" data-sub="Zelle, Zeile, Spalte">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Funktion von Tabellen</p>
+      <h2>Zellen, Zeilen und Spalten</h2>
+      <ul class="facts">
+        <li>Tabellen helfen, Dinge ordentlich zu zeigen: Zahlen, Namen oder Auflistungen – auch Stunden- und Essenspläne.</li>
+        <li>Eine Tabelle besteht aus vielen kleinen Kästchen: den <b>Zellen</b>.</li>
+        <li>Die Zellen sind in <b>Spalten</b> (von oben nach unten) und <b>Zeilen</b> (von links nach rechts) geordnet.</li>
+      </ul>
+      <div class="box"><span class="tag info">Eselsbrücke</span><p>Eine <b>Zeile</b> liest man wie eine Text<b>zeile</b> – von links nach rechts. Eine <b>Spalte</b> steht senkrecht wie eine Säule.</p></div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Tippe eine Zelle an</h3><div id="ab-mode"></div></div>
+      <table class="wtable" id="ab-tab"></table>
+      <p class="status" id="ab-fb"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="einfuegen" data-label="Einfügen" data-yr="Ausprobieren" data-title="Eine Tabelle einfügen und einrichten" data-sub="Entwurf und Layout">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Eine Tabelle einfügen</p>
+    <h2>„Einfügen“ → „Tabelle“</h2>
+    <p class="lead">Fahre über das Raster und wähle, wie viele Spalten und Zeilen du brauchst. Mit einem Klick erscheint die Tabelle im Text.</p>
+  </div>
+  <div class="model">
+    <div class="stack">
+      <div class="wp">
+        <div class="wp-tabs"><span>Start</span><span class="on">Einfügen</span><span>Tabellenentwurf</span><span>Tabellenlayout</span></div>
+        <div class="wp-bar" style="flex-direction:column;align-items:flex-start"><b class="mono" id="gp-lbl" style="font-size:.8rem">Tabelle einfügen</b><div class="grid-pick" id="gp"></div></div>
+      </div>
+      <div class="box"><span class="tag">Tabellenentwurf</span><p>Farben, dickere oder dünnere Linien und fertige <b>Tabellenformatvorlagen</b>.</p><div id="st-seg"></div></div>
+      <div class="box"><span class="tag">Tabellenlayout</span><p>Ausrichtung, Größe der Zellen, Zeilen und Spalten einfügen oder löschen.</p>
+        <div class="controls" style="margin-top:.3rem"><button class="btn" id="tl-row">+ Zeile</button><button class="btn" id="tl-col">+ Spalte</button><button class="btn" id="tl-delrow">− Zeile</button><button class="btn" id="tl-delcol">− Spalte</button></div><div id="al-seg"></div></div>
+    </div>
+    <div class="wp-desk" style="border:1.5px solid var(--edge);border-radius:4px"><div class="wp-page" style="white-space:normal;min-height:16rem"><p style="margin:0 0 .5rem"><b>Mein Essensplan</b></p><div id="ins"><p class="note" style="color:#6B7280">Hier erscheint deine Tabelle.</p></div><p style="margin:.6rem 0 0;font-size:.85rem;color:#6B7280">Tipp: Mit der <kbd>Tab</kbd>-Taste springst du in die nächste Zelle.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="zellen" data-label="Zellen füllen" data-yr="Erarbeitung" data-title="Text in Zellen eingeben" data-sub="Tab, kopieren, verschieben">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Text in Zellen eingeben</p>
+      <h2>Zellen füllen</h2>
+      <ul class="facts">
+        <li>In die gewünschte Zelle klicken und tippen.</li>
+        <li>Zur nächsten Zelle: mit der Maus klicken, <kbd>Tab</kbd> drücken oder die <b>Pfeiltasten</b> nutzen.</li>
+        <li>Texte in Zellen lassen sich formatieren wie normaler Fließtext: Schriftgröße, Schriftfarbe, Unterstreichungen unter „Start“.</li>
+        <li><b>Kopieren:</b> markieren → <kbd>Strg</kbd>+<kbd>C</kbd> → Zelle anklicken → <kbd>Strg</kbd>+<kbd>V</kbd>. <b>Verschieben:</b> <kbd>Strg</kbd>+<kbd>X</kbd> → neue Zelle → <kbd>Strg</kbd>+<kbd>V</kbd>.</li>
+      </ul>
+      <div class="task-card"><header><span class="no">A</span><h3>Aufbau beschreiben</h3></header><p>Beschreibe den Aufbau einer Tabelle.</p>
+        <div class="controls"><button class="btn" data-reveal="za" aria-expanded="false">Lösung</button></div><p class="solution" id="za" hidden>Eine Tabelle besteht aus Zellen. Die Zellen sind in Zeilen (waagerecht, von links nach rechts) und Spalten (senkrecht, von oben nach unten) angeordnet. Die erste Zeile enthält oft Überschriften.</p></div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Wochenplan sortieren</h3></div>
+      <p>Die Termine stehen in den falschen Zellen. Verschiebe sie mit Ausschneiden und Einfügen (oder per Drag & Drop) an den richtigen Tag.</p>
+      <table class="wtable st-green" id="wk"></table>
+      <div class="controls"><button class="btn primary" id="wk-check">Prüfen</button><button class="btn" id="wk-reset">Neu</button><span class="sort-fb" id="wk-fb"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Stundenplan" data-yr="M1" data-title="Stundenplan" data-sub="Malikas Plan übertragen">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Malikas Stundenplan</h2>
+    <p class="lead">Malika hat ihren Stundenplan handschriftlich aufgeschrieben. Nun möchte sie diesen in einem Textverarbeitungsprogramm erstellen.</p>
+  </div>
+  <div class="grid-2">
+    <div class="stack">
+      <p class="slide-label">Malikas Zettel</p>
+      <div style="background:#FEF9C3;color:#1F2937;border:1.5px solid var(--edge);border-radius:4px;padding:.8rem 1rem;font-family:'Comic Sans MS','Segoe Print',cursive;font-size:.95rem;line-height:1.6;transform:rotate(-1deg)">
+        <b>Mo:</b> Deutsch, Deutsch, Engl., Engl., Mathe, Mathe<br><b>Di:</b> Mathe, Mathe, ILZ, ILZ, Mathe, ILZ<br><b>Mi:</b> Engl., Engl., ILZ, ILZ, Sport, Sport<br><b>Do:</b> NaWi, NaWi, Deutsch, Deutsch, Kunst, Kunst<br><b>Fr:</b> Sport, Sport, Geschichte, Medienbildung, Ethik/Religion
+      </div>
+      <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Vorlage und Übertragen</h3></header><p>Erstelle eine Vorlage für Malikas Stundenplan und übertrage die Informationen vom Zettel. Tipp: Die Spalten sind die Wochentage, die Zeilen die Stunden.</p></div>
+      <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Neues Halbjahr</h3></header><p>Malika möchte im nächsten Halbjahr dienstags in der 8. Stunde die <b>Volleyball-AG</b> und donnerstags in der 8. Stunde die <b>Technik-AG</b> besuchen. Ergänze die Tabelle.</p>
+        <div class="controls"><button class="btn" data-reveal="m3" aria-expanded="false">Lösung</button></div><p class="solution" id="m3" hidden>Zwei Zeilen anfügen (7. und 8. Stunde): In Zeile 8 steht unter Dienstag „Volleyball-AG“ und unter Donnerstag „Technik-AG“; die 7. Stunde bleibt frei.</p></div>
+      <div class="task-card"><header><span class="no">4–5</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Eigener Stundenplan</h3></header><p>Entwickle deinen eigenen Stundenplan mit Fächern und Lehrkräften. Gestalte ihn anschaulich mit verschiedenen Ausrichtungen und vergleiche mit deinen Mitschülerinnen und Mitschülern.</p></div>
+    </div>
+    <div class="stack">
+      <div class="wp">
+        <div class="wp-bar"><button class="btn primary" id="sp-check">Prüfen</button><button class="btn" id="sp-add">+ Zeile</button><button class="btn" id="sp-solve">Lösung</button><button class="btn" id="sp-clear">Leeren</button></div>
+        <div class="wp-desk"><div class="wp-page" style="white-space:normal;padding:.6rem"><table class="wtable st-blue" id="sp"></table></div></div>
+        <div class="wp-status"><span id="sp-fb">Trage die Fächer ein. Tab springt weiter.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Tabellen</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Tabellen einfügen</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Tabellen ordnen Informationen übersichtlich. Sie bestehen aus <b>Zellen</b>, die in <b>Zeilen</b> (waagerecht) und <b>Spalten</b> (senkrecht) angeordnet sind.</li>
+        <li data-step>Einfügen: „Einfügen“ → „Tabelle“ → Anzahl der Spalten und Zeilen wählen.</li>
+        <li data-step><b>Tabellenentwurf:</b> Farben, Linien, Formatvorlagen. <b>Tabellenlayout:</b> Ausrichtung, Zellgröße, Zeilen und Spalten einfügen oder löschen.</li>
+        <li data-step>Mit <kbd>Tab</kbd> oder den Pfeiltasten springt man zur nächsten Zelle. Texte in Zellen formatiert, kopiert und verschiebt man wie Fließtext.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne eine Tabelle mit 3 Spalten und 4 Zeilen. Markiere eine Zeile gelb, eine Spalte grün und eine Zelle rot.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Tabellen</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+(() => {
+  const H = ['Stunde', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag'], R = [['1', 'Mathe', '', '', '', ''], ['2', 'Mathe', '', '', '', ''], ['3', 'Englisch', '', '', '', ''], ['4', 'Deutsch', '', '', '', '']];
+  const t = $('#ab-tab'); let mode = 'cell';
+  t.innerHTML = `<tr>${H.map(h => `<th>${h}</th>`).join('')}</tr>` + R.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('');
+  seg($('#ab-mode'), [['cell', 'Zelle'], ['row', 'Zeile'], ['col', 'Spalte']], v => { mode = v; $$('.hl-col,.hl-row', t).forEach(x => x.classList.remove('hl-col', 'hl-row')); $('#ab-fb').textContent = ''; });
+  t.addEventListener('click', e => {
+    const c = e.target.closest('td,th'); if (!c) return;
+    $$('.hl-col,.hl-row', t).forEach(x => x.classList.remove('hl-col', 'hl-row'));
+    const ri = c.parentElement.rowIndex, ci = c.cellIndex;
+    if (mode === 'cell') { c.classList.add('hl-col'); $('#ab-fb').innerHTML = `<b>Zelle</b> in Zeile ${ri + 1}, Spalte ${ci + 1}${c.textContent ? ` – Inhalt: „${c.textContent}“` : ''}`; }
+    if (mode === 'row') { c.parentElement.classList.add('hl-row'); $('#ab-fb').innerHTML = `<b>Zeile</b> ${ri + 1}: von links nach rechts, ${H.length} Zellen`; }
+    if (mode === 'col') { $$('tr', t).forEach(tr => tr.cells[ci].classList.add('hl-col')); $('#ab-fb').innerHTML = `<b>Spalte</b> „${H[ci]}“: von oben nach unten, ${R.length + 1} Zellen`; }
+  });
+})();
+(() => {
+  const gp = $('#gp'); let tab = null, style = 'st-blue', align = 'left';
+  gp.innerHTML = Array.from({length: 80}, (_, i) => `<span data-c="${i % 10 + 1}" data-r="${Math.floor(i / 10) + 1}"></span>`).join('');
+  gp.addEventListener('mouseover', e => { const s = e.target.closest('span'); if (!s) return; const c = +s.dataset.c, r = +s.dataset.r; $$('span', gp).forEach(x => x.classList.toggle('on', +x.dataset.c <= c && +x.dataset.r <= r)); $('#gp-lbl').textContent = `${c}x${r} Tabelle`; });
+  const make = (c, r) => { $('#ins').innerHTML = `<table class="wtable ${style}">${Array.from({length: r}, (_, y) => `<tr>${Array.from({length: c}, (_, x) => y === 0 ? `<th contenteditable="true">${['Tag', 'Frühstück', 'Mittag', 'Abend'][x] || ''}</th>` : `<td contenteditable="true"></td>`).join('')}</tr>`).join('')}</table>`; tab = $('#ins table'); applyAlign(); };
+  gp.addEventListener('click', e => { const s = e.target.closest('span'); if (s) make(+s.dataset.c, +s.dataset.r); });
+  const applyAlign = () => { if (tab) $$('td,th', tab).forEach(c => c.style.textAlign = align); };
+  seg($('#st-seg'), [['st-blue', 'blau'], ['st-green', 'grün'], ['st-plain', 'schlicht'], ['', 'ohne']], v => { style = v; if (tab) tab.className = 'wtable ' + v; }, 'st-blue');
+  seg($('#al-seg'), [['left', 'links'], ['center', 'zentriert'], ['right', 'rechts']], v => { align = v; applyAlign(); });
+  const need = () => tab || (make(3, 3), tab);
+  $('#tl-row').onclick = () => { const t = need(), n = t.rows[0].cells.length; t.insertRow().innerHTML = Array.from({length: n}, () => '<td contenteditable="true"></td>').join(''); applyAlign(); };
+  $('#tl-col').onclick = () => { const t = need(); $$('tr', t).forEach((tr, y) => tr.insertAdjacentHTML('beforeend', y === 0 ? '<th contenteditable="true"></th>' : '<td contenteditable="true"></td>')); applyAlign(); };
+  $('#tl-delrow').onclick = () => { const t = need(); if (t.rows.length > 1) t.deleteRow(-1); };
+  $('#tl-delcol').onclick = () => { const t = need(); if (t.rows[0].cells.length > 1) $$('tr', t).forEach(tr => tr.deleteCell(-1)); };
+})();
+(() => {
+  const D = ['Mo', 'Di', 'Mi', 'Do', 'Fr'], ITEMS = [['Fußballtraining', 'Mo'], ['Klavier', 'Di'], ['Oma besuchen', 'Mi'], ['Schwimmen', 'Do'], ['Kino', 'Fr']];
+  const t = $('#wk');
+  function build() {
+    const sh = shuffle(ITEMS.slice()); if (sh.every((x, i) => x === ITEMS[i])) sh.reverse();
+    t.innerHTML = `<tr>${D.map(d => `<th>${d}</th>`).join('')}</tr><tr>${sh.map(([n]) => `<td contenteditable="true">${n}</td>`).join('')}</tr>`;
+    $('#wk-fb').textContent = '';
+  }
+  $('#wk-check').onclick = () => {
+    let ok = 0; $$('td', t).forEach((td, i) => { const g = td.textContent.trim() === ITEMS[i][0]; td.style.background = g ? '#DCFCE7' : '#FEE2E2'; if (g) ok++; });
+    $('#wk-fb').innerHTML = ok === 5 ? '<b class="good">Alles am richtigen Tag!</b>' : `<b>${ok}</b> von 5 richtig. (Mo Fußball, Di Klavier, Mi Oma, Do Schwimmen, Fr Kino)`;
+  };
+  $('#wk-reset').onclick = build; build();
+})();
+(() => {
+  const D = ['Mo', 'Di', 'Mi', 'Do', 'Fr'];
+  const SOL = [['Deutsch', 'Mathe', 'Engl.', 'NaWi', 'Sport'], ['Deutsch', 'Mathe', 'Engl.', 'NaWi', 'Sport'], ['Engl.', 'ILZ', 'ILZ', 'Deutsch', 'Geschichte'], ['Engl.', 'ILZ', 'ILZ', 'Deutsch', 'Medienbildung'], ['Mathe', 'Mathe', 'Sport', 'Kunst', 'Ethik/Religion'], ['Mathe', 'ILZ', 'Sport', 'Kunst', '']];
+  const t = $('#sp'); let rows = 6;
+  const norm = s => s.toLowerCase().replace(/[^a-zäöüß]/g, '').replace(/^englisch/, 'engl').replace(/^naturwissenschaft\w*/, 'nawi');
+  function build(fill) { t.innerHTML = `<tr><th>Std.</th>${D.map(d => `<th>${d}</th>`).join('')}</tr>` + Array.from({length: rows}, (_, r) => `<tr><th>${r + 1}.</th>${D.map((d, c) => `<td contenteditable="true">${fill && SOL[r] ? SOL[r][c] : ''}</td>`).join('')}</tr>`).join(''); }
+  $('#sp-check').onclick = () => {
+    let ok = 0, n = 0;
+    $$('tr', t).slice(1, 7).forEach((tr, r) => $$('td', tr).forEach((td, c) => { if (!SOL[r][c]) return; n++; const g = norm(td.textContent) === norm(SOL[r][c]); td.style.background = g ? '#DCFCE7' : td.textContent.trim() ? '#FEE2E2' : ''; if (g) ok++; }));
+    $('#sp-fb').innerHTML = ok === n ? '✅ Malikas Stundenplan ist vollständig!' : `${ok} von ${n} Fächern richtig.`;
+  };
+  $('#sp-add').onclick = () => { rows++; const tr = t.insertRow(); tr.innerHTML = `<th>${rows}.</th>` + D.map(() => '<td contenteditable="true"></td>').join(''); };
+  $('#sp-solve').onclick = () => { rows = 6; build(true); $('#sp-fb').textContent = 'Lösung eingetragen.'; };
+  $('#sp-clear').onclick = () => { rows = 6; build(false); $('#sp-fb').textContent = 'Trage die Fächer ein. Tab springt weiter.'; };
+  build(false);
+})();
+mcQuiz($('#quiz'), [
+  {q: 'Wie heißen die Kästchen einer Tabelle?', a: ['Zellen', 'Felder', 'Boxen', 'Pixel'], ok: 0, why: 'Sie sind in Zeilen und Spalten angeordnet.'},
+  {q: 'Wie verläuft eine Spalte?', a: ['von oben nach unten', 'von links nach rechts', 'diagonal', 'im Kreis'], ok: 0, why: 'Senkrecht wie eine Säule.'},
+  {q: 'Wo fügt man eine Tabelle ein?', a: ['„Einfügen“ → „Tabelle“', '„Datei“ → „Speichern“', '„Überprüfen“ → „Thesaurus“', '„Ansicht“ → „Zoom“'], ok: 0, why: 'Dann die Größe im Raster wählen.'},
+  {q: 'Wie springst du zur nächsten Zelle?', a: ['Tab-Taste', 'Entf-Taste', 'Strg + Z', 'Esc'], ok: 0, why: 'Oder Pfeiltasten bzw. Mausklick.'},
+  {q: 'Unter welchem Reiter fügst du eine neue Zeile ein?', a: ['Tabellenlayout', 'Tabellenentwurf', 'Start', 'Überprüfen'], ok: 0, why: 'Dort auch Ausrichtung und Zellgröße.'},
+  {q: 'Was bietet der Reiter „Tabellenentwurf“?', a: ['Farben, Linien und Formatvorlagen', 'Rechtschreibprüfung', 'Seitenränder', 'Shortcuts'], ok: 0, why: 'So sieht die Tabelle schöner aus.'},
+  {q: 'Wie verschiebst du Text in eine andere Zelle?', a: ['Strg + X, dann Strg + V', 'Strg + C, dann Strg + Z', 'Strg + A', 'Strg + P'], ok: 0, why: 'Ausschneiden und einfügen.'}
+]);
+</script>

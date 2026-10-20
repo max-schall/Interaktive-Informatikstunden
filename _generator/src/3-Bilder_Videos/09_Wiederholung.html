@@ -1,0 +1,132 @@
+<!--
+title: Wiederholung und Selbsttest
+short: Selbsttest
+time: 1–2 Unterrichtsstunden
+q: Was kann ich, und was sollte ich noch üben?
+facts: Zusammenfassung S. 72 als Karteikarten | Trainer S. 73: Pixel und Rastergrafiken, Daten komprimieren, Farbmischung und RGB-Modell, Erklärvideos | Großes Quiz und „Ich kann …“-Liste
+inter: Karteikarten · Begriffe-Paare · Dateiformate sortieren · Lauflängen-Training · RGB-Werte erkennen · Filmart wählen · Quiz (10 zufällige Fragen) · Selbsteinschätzung
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Bilder und Videos</p>
+      <h1>Wiederholung und Selbsttest<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Pixel, Kompression, Farben, Bildbearbeitung, Videos und Podcasts: Prüfe, was du sicher kannst.</p>
+      <div class="controls"><button class="btn primary" data-go="begriffe">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="begriffe" data-label="Begriffe" data-yr="Wiederholen" data-title="Zusammenfassung" data-sub="Fachbegriffe">
+  <div class="section-head"><p class="eyebrow">Station 1 · Zusammenfassung (S. 72)</p><h2>Fachbegriffe</h2></div>
+  <div id="flip"></div>
+  <h3 class="mt">Paare finden</h3>
+  <div id="match"></div>
+</section>
+
+<section class="station" id="t1" data-label="T Pixel" data-yr="Trainer" data-title="Pixel und Rastergrafiken" data-sub="Dateiformate">
+  <div class="section-head"><p class="eyebrow">Station 2 · Trainer</p><h2>Pixel und Rastergrafiken</h2></div>
+  <div class="grid-2">
+    <div>
+      <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Dateiformate</h3></header><p>Notiere die Namen der Dateiformate JPG, PNG, GIF, TIF und beschreibe, bei welchen beim Speichern Informationen verloren gehen.</p>
+        <div class="controls"><button class="btn" data-reveal="p12" aria-expanded="false">Lösung</button></div><p class="solution" id="p12" hidden>JPEG (Joint Photographic Experts Group), PNG (Portable Network Graphics), GIF (Graphics Interchange Format), TIFF (Tagged Image File Format). Nur bei <b>JPEG</b> gehen Informationen verloren.</p></div>
+      <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Animation</h3></header><p>Begründe, welches Dateiformat du für eine kurze Animation aus mehreren Einzelbildern nutzt.</p>
+        <div class="controls"><button class="btn" data-reveal="p3" aria-expanded="false">Lösung</button></div><p class="solution" id="p3" hidden><b>GIF</b>: Es kann aus mehreren Einzelbildern bestehen, die als Animation abgespielt werden.</p></div>
+    </div>
+    <div><p class="eyebrow">Welches Format passt?</p><div id="fmt-sort"></div></div>
+  </div>
+</section>
+
+<section class="station" id="t2" data-label="T Kompression" data-yr="Trainer" data-title="Daten komprimieren" data-sub="Lauflängencodierung">
+  <div class="section-head"><p class="eyebrow">Station 3 · Trainer</p><h2>Daten komprimieren</h2></div>
+  <div class="grid-2">
+    <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Auswirkungen</h3></header><p>Beschreibe Auswirkungen einer Datenkompression.</p>
+      <div class="controls"><button class="btn" data-reveal="k1" aria-expanded="false">Lösung</button></div><p class="solution" id="k1" hidden>Die Datei wird kleiner, braucht weniger Speicher und lässt sich schneller übertragen. Bei verlustbehafteter Kompression sinkt die Qualität.</p></div>
+    <div class="task-card"><header><span class="no">3–4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Lauflängencodierung</h3></header><p>Beschreibe den Ablauf der Lauflängencodierung und begründe, warum sie genutzt wird.</p>
+      <div class="controls"><button class="btn" data-reveal="k3" aria-expanded="false">Lösung</button></div><p class="solution" id="k3" hidden>Man zählt, wie oft ein Zeichen hintereinander vorkommt, und speichert Anzahl und Zeichen (AAAA → 4A). Sie ist verlustfrei und verkürzt Daten mit vielen Wiederholungen, z. B. Schwarz-Weiß-Bilder.</p></div>
+  </div>
+  <div id="ts" class="mt"></div>
+</section>
+
+<section class="station" id="t3" data-label="T Farben" data-yr="Trainer" data-title="Farbmischung und RGB-Modell" data-sub="CMY, RGB, Graustufen">
+  <div class="section-head"><p class="eyebrow">Station 4 · Trainer</p><h2>Farbmischung und RGB-Modell</h2></div>
+  <div class="grid-2">
+    <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Subtraktiv oder additiv?</h3></header><p>Vergleiche die beiden Farbmischungen. Welches Bild zeigt welche?</p>
+      <div class="mix sub" style="max-width:150px;display:inline-block;width:45%"><i class="c1" style="background:#00B7EB"></i><i class="c2" style="background:#EC008C"></i><i class="c3" style="background:#FFF200"></i></div>
+      <div class="mix add" style="max-width:150px;display:inline-block;width:45%"><i class="c1" style="background:#00FF00"></i><i class="c2" style="background:#FF0000"></i><i class="c3" style="background:#0000FF"></i></div>
+      <div class="controls"><button class="btn" data-reveal="f12" aria-expanded="false">Lösung</button></div><p class="solution" id="f12" hidden>Links: <b>subtraktiv</b> (Cyan, Magenta, Yellow; Mitte schwarz). Rechts: <b>additiv</b> (Rot, Grün, Blau; Mitte weiß).</p></div>
+    <div class="task-card"><header><span class="no">3–4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Graustufen und RGB</h3></header><p>Beschreibe, wie im Graustufen-Modell die Helligkeit definiert ist, und beschreibe das RGB-Modell und wo es zum Einsatz kommt.</p>
+      <div class="controls"><button class="btn" data-reveal="f34" aria-expanded="false">Lösung</button></div><p class="solution" id="f34" hidden>Graustufen: ein Wert von 0 (Schwarz) bis 255 (Weiß) pro Pixel. RGB: drei Werte (Rot, Grün, Blau) von 0 bis 255 pro Pixel; eingesetzt bei Bildschirmen, in Text- und Bildbearbeitungsprogrammen.</p></div>
+  </div>
+  <h3 class="mt">Welche Farbe?</h3>
+  <div id="rgbq"></div>
+</section>
+
+<section class="station" id="t4" data-label="T Videos" data-yr="Trainer" data-title="Erklärvideos nutzen" data-sub="Filmarten">
+  <div class="section-head"><p class="eyebrow">Station 5 · Trainer</p><h2>Erklärvideos nutzen</h2></div>
+  <div class="grid-2">
+    <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Arten</h3></header><p>Beschreibe ein Animationsvideo (A) und einen Realfilm (B) und nenne je Vor- und Nachteile.</p>
+      <div class="controls"><button class="btn" data-reveal="v12" aria-expanded="false">Lösung</button></div><p class="solution" id="v12" hidden>A: bewegte Grafiken – ansprechend, aber teuer und zeitaufwendig. B: echte Menschen und Gegenstände – lebensnah, aber schwer nachzubearbeiten; Recht am eigenen Bild beachten.</p></div>
+    <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Tutorial</h3></header><p>Begründe, welche Erklärfilm-Art du für ein Tutorial zu einem Bildbearbeitungsprogramm nutzt.</p>
+      <div class="controls"><button class="btn" data-reveal="v3" aria-expanded="false">Lösung</button></div><p class="solution" id="v3" hidden>Einen <b>Screencast</b>: Er zeigt den Bildschirm, während man das Programm bedient, und ist einfach zu erstellen.</p></div>
+  </div>
+</section>
+
+<section class="station" id="quiz-st" data-label="Quiz" data-yr="Testen" data-title="Großes Quiz" data-sub="10 zufällige Fragen">
+  <div class="section-head"><p class="eyebrow">Station 6 · Quiz</p><h2>Großes Quiz</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<section class="station" id="uebungen" data-label="Ich kann …">
+  <div class="section-head"><p class="eyebrow">Selbsteinschätzung</p><h2>Ich kann …</h2></div>
+  <ol id="sc"></ol>
+</section>
+
+<script>
+const BEGRIFFE = [['Pixel', 'kleinster Bildpunkt mit Farbe und Position'], ['Rastergrafik', 'Bild aus einem Raster von Pixeln'], ['Farbtiefe', 'Anzahl der Bits pro Pixel'], ['Auflösung', 'Anzahl der Pixel eines Bildes'], ['Datenkompression', 'Verkleinern von Datenmengen'],
+  ['Lauflängencodierung', 'verlustfreie Kompression: 5A2B'], ['subtraktive Farbmischung', 'CMY – alle zusammen ergeben Schwarz'], ['additive Farbmischung', 'RGB – alle zusammen ergeben Weiß'], ['Sättigung', 'wie stark die Farben leuchten'],
+  ['Bildmanipulation', 'Bearbeitung, die die Realität verfälscht'], ['Screencast', 'Bildschirmaufnahme für Tutorials'], ['Recht am eigenen Bild', 'jeder entscheidet über Veröffentlichung seiner Bilder'], ['Podcast', 'Hördatei wie eine Radiosendung']];
+flipCards($('#flip'), BEGRIFFE);
+matcher($('#match'), shuffle(BEGRIFFE.slice()).slice(0, 7));
+sorter($('#fmt-sort'), [{id: 'j', name: 'JPEG'}, {id: 'p', name: 'PNG'}, {id: 'g', name: 'GIF'}, {id: 't', name: 'TIFF'}], [
+  {t: 'Urlaubsfoto fürs Handy', c: 'j'}, {t: 'Logo mit durchsichtigem Hintergrund', c: 'p'}, {t: 'kurze Animation', c: 'g'}, {t: 'Foto für den Buchdruck', c: 't'}
+]);
+taskSet($('#ts'), () => {
+  let s = '', b = Math.random() < .5 ? '1' : '0'; for (let i = 0; i < 4; i++) { s += b.repeat(randInt(1, 6)); b = b === '1' ? '0' : '1'; }
+  return Math.random() < .5 ? {key: 'e' + s, tag: 'Codieren', q: `<span class="big">${s}</span>`, fields: [{l: 'Lauflängen', a: [rle(s), rle(s).replace(/(\d+[01])/g, '$1 ').trim()]}]} : {key: 'd' + s, tag: 'Decodieren', q: `<span class="big">${rle(s).replace(/(\d+[01])/g, '$1 ').trim()}</span>`, fields: [{l: 'Bitfolge', a: [s]}]};
+}, {n: 4});
+mcQuiz($('#rgbq'), [
+  {q: '<span class="qsw" style="background:rgb(0,0,255)"></span> (0, 0, 255)', a: ['Blau', 'Rot', 'Grün', 'Gelb'], ok: 0, why: 'Nur Blau.'},
+  {q: '<span class="qsw" style="background:rgb(255,0,255)"></span> (255, 0, 255)', a: ['Magenta', 'Cyan', 'Gelb', 'Weiß'], ok: 0, why: 'Rot + Blau.'},
+  {q: '<span class="qsw" style="background:rgb(128,128,128)"></span> (128, 128, 128)', a: ['Grau', 'Schwarz', 'Weiß', 'Braun'], ok: 0, why: 'Alle gleich, mittlere Helligkeit.'}
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Was ist ein Pixel?', a: ['kleinster Bildpunkt', 'ein Dateiformat', 'ein Filter', 'eine Kamera'], ok: 0, why: 'Mit Farbe und Position.'},
+  {q: 'Wie viele Bits braucht ein Schwarz-Weiß-Pixel?', a: ['1', '8', '24', '255'], ok: 0, why: '0 oder 1.'},
+  {q: 'Welches Format verliert Informationen?', a: ['JPEG', 'PNG', 'TIFF', 'GIF'], ok: 0, why: 'Dafür spart es Speicher.'},
+  {q: 'Wie lautet 000111 in Lauflängencodierung?', a: ['30 31', '3 3', '000 111', '6'], ok: 0, why: 'Dreimal 0, dreimal 1.'},
+  {q: 'Welche Grundfarben hat das CMY-Modell?', a: ['Cyan, Magenta, Yellow', 'Rot, Grün, Blau', 'Schwarz, Weiß, Grau', 'Rot, Gelb, Blau'], ok: 0, why: 'Subtraktive Mischung.'},
+  {q: 'Was ergibt (255, 255, 255)?', a: ['Weiß', 'Schwarz', 'Grau', 'Gelb'], ok: 0, why: 'Alle Farben voll.'},
+  {q: 'Was bestimmt die Sättigung?', a: ['wie stark die Farben leuchten', 'die Helligkeit', 'die Bildgröße', 'die Dateigröße'], ok: 0, why: 'Niedrig = blass.'},
+  {q: 'Was ist Bildmanipulation?', a: ['eine Bearbeitung, die die Realität verfälscht', 'ein Zuschnitt', 'ein Filter für Spaßfotos', 'ein Backup'], ok: 0, why: 'Das Bild ist nicht mehr authentisch.'},
+  {q: 'Welches Werkzeug wählt gleichfarbige Bereiche aus?', a: ['Zauberstab', 'Lasso', 'Klon-Werkzeug', 'Pinsel'], ok: 0, why: 'Klick auf eine Farbe.'},
+  {q: 'Welche Filmart eignet sich für Geschichten mit Knetfiguren?', a: ['Stop-Motion', 'Screencast', 'Whiteboard-Film', 'Realfilm'], ok: 0, why: 'Viele Einzelbilder.'},
+  {q: 'Was muss man vor dem Hochladen eines Videos mit Mitschülern tun?', a: ['ihre Erlaubnis einholen', 'nichts', 'den Ton entfernen', 'es schwarz-weiß machen'], ok: 0, why: 'Recht am eigenen Bild.'},
+  {q: 'Was gehört zum Podcast-Skript?', a: ['Abschnitte, Fragen und Audio', 'nur die Musik', 'nur der Dateiname', 'Fotos'], ok: 0, why: 'Eröffnung, Hauptteil, Abschluss.'}
+], {pick: 10});
+selfCheck($('#sc'), [
+  {t: 'Ich kann erklären, was Pixel, Auflösung und Farbtiefe sind.', href: '01_Pixel_Rastergrafiken.html#pixel'},
+  {t: 'Ich kann ein Schwarz-Weiß-Bild binär codieren.', href: '01_Pixel_Rastergrafiken.html#sw'},
+  {t: 'Ich kenne die Dateiformate JPEG, PNG, GIF und TIFF.', href: '01_Pixel_Rastergrafiken.html#m2'},
+  {t: 'Ich kann verlustbehaftete und verlustfreie Kompression unterscheiden.', href: '02_Komprimieren.html#verlust'},
+  {t: 'Ich kann die Lauflängencodierung anwenden.', href: '02_Komprimieren.html#rle'},
+  {t: 'Ich kann subtraktive und additive Farbmischung erklären.', href: '03_Farben_RGB.html#mischen'},
+  {t: 'Ich kann Farben im RGB-Modell und Graustufen angeben.', href: '03_Farben_RGB.html#rgb'},
+  {t: 'Ich kann Helligkeit, Kontrast und Sättigung eines Bildes verändern.', href: '04_Bilder_bearbeiten.html#editor'},
+  {t: 'Ich erkenne Bildmanipulation und kenne Werkzeuge wie den Zauberstab.', href: '05_Bildmanipulation.html#alltag'},
+  {t: 'Ich kenne Arten von Erklärvideos und kann eine passende wählen.', href: '06_Erklaervideos.html#arten'},
+  {t: 'Ich kann ein Video planen und kenne Urheber- und Persönlichkeitsrechte.', href: '07_Videoproduktion.html#checkliste'},
+  {t: 'Ich kann einen Podcast planen und aufnehmen.', href: '08_Podcast.html#schritte'}
+]);
+</script>

@@ -1,0 +1,190 @@
+<!--
+title: E-Mails schreiben
+short: E-Mails
+time: 2 Unterrichtsstunden
+q: Wie formuliert man eine E-Mail richtig?
+facts: Funktion von E-Mails als digitaler Brief und verzögerte Kommunikation | Aufbau einer E-Mail-Adresse: Benutzername @ Domain | Formulierung: Betreff, Anrede, Einleitung, Hauptteil, Schlussformel; höfliche Sprache | Versenden: An, cc, bcc, Antworten, Allen antworten, Anhang (M1 E-Mail formulieren)
+inter: E-Mail-Adressen zerlegen und prüfen · Teile der E-Mail 1–8 zuordnen · cc und bcc: Wer sieht wen? · E-Mail-Werkstatt mit Live-Checkliste · formell oder privat?
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Kommunikation in der vernetzten Welt</p>
+      <h1>E-Mails schreiben<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">E-Mails sind ein wichtiges Mittel der Kommunikation – in der Schule, in Vereinen und im Beruf.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wer hat schon einmal eine E-Mail geschrieben? An wen?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie formuliert man eine E-Mail richtig?</p></div>
+      <div class="controls"><button class="btn primary" data-go="adresse">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="adresse" data-label="E-Mail-Adresse" data-yr="Erarbeitung" data-title="Funktion und Adresse" data-sub="Benutzername @ Domain">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Funktion und Aufbau</p>
+      <h2>Der digitale Brief</h2>
+      <ul class="facts">
+        <li>Eine <b>E-Mail</b> ist wie ein digitaler Brief. Man verschickt damit Nachrichten, Dokumente oder Termine – die Schule an Eltern, Firmen an Mitarbeiter, Bewerbungen, Werbung.</li>
+        <li>E-Mails können jederzeit gelesen und beantwortet werden: <b>verzögerte Kommunikation</b>.</li>
+        <li>Man braucht ein <b>E-Mail-Konto</b>. Eine Adresse besteht aus <b>Benutzername</b>, dem <b>@-Zeichen</b> und der <b>Domain</b>. Die Domain zeigt, zu welchem Anbieter das Konto gehört.</li>
+        <li>Jede Adresse ist <b>einzigartig</b>. Ist ein Name schon vergeben, ergänzt man z. B. Ziffern.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Adress-Zerleger</h3></div>
+      <input class="text-in" id="ad-in" value="max.mustermann@westermann.de" aria-label="E-Mail-Adresse" spellcheck="false">
+      <div id="ad-out" style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem;font-family:var(--f-mono)"></div>
+      <p class="status" id="ad-st"></p>
+      <div class="controls"><button class="btn" data-ad="lina.becker@schule-musterstadt.de">Beispiel 1</button><button class="btn" data-ad="schleckermaeulchen99@mail.de">Beispiel 2</button><button class="btn" data-ad="tom@@web.de">Beispiel 3</button><button class="btn" data-ad="jonas meier@gmx.de">Beispiel 4</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="aufbau" data-label="M1 Aufbau" data-yr="M1" data-title="E-Mail formulieren" data-sub="Teile 1–8 zuordnen">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Formulierung einer E-Mail · Material M1</p>
+    <h2>Klar, freundlich und strukturiert</h2>
+  </div>
+  <div class="grid-2">
+    <div class="mailform">
+      <div class="mf-bar"><b>✉️ Senden</b></div>
+      <div class="mf-row"><label>An</label><span style="padding:.4rem .5rem">bmueller@igsfrauheim.de <i class="mf-num">1</i></span></div>
+      <div class="mf-row"><label>Cc</label><span style="padding:.4rem .5rem"><i class="mf-num">2</i> <span style="float:right">Bcc <i class="mf-num">3</i></span></span></div>
+      <div class="mf-row"><label>Betreff</label><span style="padding:.4rem .5rem">Termin Besprechung Referat Australien <i class="mf-num">4</i></span></div>
+      <div class="mf-body">Sehr geehrte Frau Müller, <i class="mf-num">5</i>
+
+ich schreibe Ihnen, um Sie um einen Termin zur Besprechung meines Australien-Referats zu bitten. <i class="mf-num">6</i>
+
+Sind Sie in der nächsten Woche für ein Gespräch verfügbar? Ich hätte am Donnerstag um 14 Uhr oder am Freitag um 13 Uhr Zeit. Bitte lassen Sie mich wissen, wann es Ihnen am besten passt. <i class="mf-num">7</i>
+
+Mit freundlichen Grüßen <i class="mf-num">8</i>
+Joel Lindor</div>
+    </div>
+    <div class="stack">
+      <p class="eyebrow">Aufgabe 1: Ordne den Ziffern die Begriffe zu</p>
+      <div id="num-match"></div>
+      <div class="box"><span class="tag info">So ist eine E-Mail aufgebaut</span><p><b>Betreff</b>: kurz, worum es geht · <b>Anrede</b>: „Sehr geehrte Frau Müller“ (formell) oder „Hallo Max“ (privat) · <b>Einleitung</b>: wer man ist oder warum man schreibt · <b>Hauptteil</b>: Anliegen klar und verständlich · <b>Schlussformel</b>: „Mit freundlichen Grüßen“ oder „Viele Grüße“, dann der Name.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="cc" data-label="An, cc, bcc" data-yr="Ausprobieren" data-title="E-Mail versenden" data-sub="Wer sieht wen?">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · E-Mail versenden</p>
+      <h2>An, cc und bcc</h2>
+      <ul class="facts">
+        <li>„Neue E-Mail“ → <b>Empfänger-Adresse</b> eingeben → <b>Betreff</b> → Nachricht → „Senden“.</li>
+        <li><b>cc</b> (Kopie): Alle sehen, wer die Mail bekommt.</li>
+        <li><b>bcc</b> (Blindkopie): Diese Empfänger bleiben für die anderen <b>geheim</b>.</li>
+        <li><b>Antworten</b> geht nur an den Absender, <b>Allen antworten</b> an alle Empfänger.</li>
+        <li><b>Anhang</b>: mit dem Büroklammer-Symbol ein Bild oder Dokument mitschicken.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Wer sieht wen?</h3></div>
+      <div class="mailform">
+        <div class="mf-row"><label>An</label><input id="cc-an" value="mia@mail.de"></div>
+        <div class="mf-row"><label>Cc</label><input id="cc-cc" value="florian@mail.de"></div>
+        <div class="mf-row"><label>Bcc</label><input id="cc-bcc" value="jonas@mail.de"></div>
+      </div>
+      <p class="eyebrow mt">So sieht die E-Mail bei …</p>
+      <div id="cc-views" class="stack"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="werkstatt" data-label="E-Mail-Werkstatt" data-yr="Ausprobieren" data-title="E-Mail-Werkstatt" data-sub="Formell oder privat?">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1 · Aufgaben 3–5</p>
+    <h2>Die E-Mail-Werkstatt</h2>
+    <p class="lead">E-Mail B beginnt mit „Hey, wir haben uns ewig nicht gesehen …“ und endet mit „Ich freue mich, Max“. Für eine Freundin passt das – für die Schulleitung nicht. Schreibe eine formelle E-Mail an deine Lehrkraft.</p>
+  </div>
+  <div class="model">
+    <div class="mailform">
+      <div class="mf-bar"><b>✉️ Neue E-Mail</b><span id="ws-mode" style="margin-left:auto"></span></div>
+      <div class="mf-row"><label>Von</label><input id="ws-from" value="schleckermaeulchen99@mail.de"></div>
+      <div class="mf-row"><label>An</label><input id="ws-to" value="b.schmidt@schule.de"></div>
+      <div class="mf-row"><label>Betreff</label><input id="ws-sub" value=""></div>
+      <textarea class="mf-body" id="ws-body" rows="9" aria-label="Nachricht">hey,
+ich war gestern krank. was ist die hausaufgabe???
+tschüss</textarea>
+    </div>
+    <div class="stack">
+      <ul class="ck-list" id="ws-ck"></ul>
+      <div class="controls"><button class="btn" id="ws-ex">Musterlösung einsetzen</button></div>
+      <div class="task-card"><header><span class="no">4–5</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Nachgedacht</h3></header><p>Warum sollte der Benutzername kein lustiger Name wie „Schleckermäulchen99“ sein? Warum sind E-Mails verzögerte Kommunikation?</p>
+        <div class="controls"><button class="btn" data-reveal="w45" aria-expanded="false">Lösung</button></div><p class="solution" id="w45" hidden>Bei Lehrkräften, Vereinen oder Bewerbungen wirkt ein lustiger Name unseriös – besser Vor- und Nachname. E-Mails sind verzögert, weil der Empfänger sie liest und beantwortet, wann es ihm passt; man muss nicht sofort reagieren.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: E-Mails</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>E-Mails schreiben</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Eine <b>E-Mail</b> ist ein digitaler Brief – eine <b>verzögerte</b> Kommunikation.</li>
+        <li data-step>Aufbau der Adresse: <b>Benutzername @ Domain</b>, z. B. max.mustermann@westermann.de. Jede Adresse ist einzigartig.</li>
+        <li data-step>Aufbau der E-Mail: <b>Betreff</b> – <b>Anrede</b> – <b>Einleitung</b> – <b>Hauptteil</b> – <b>Schlussformel</b> mit Namen. Höflich und in korrekter Rechtschreibung.</li>
+        <li data-step><b>cc</b>: Kopie, alle sehen es. <b>bcc</b>: Blindkopie, geheim. <b>Anhang</b> über die Büroklammer.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Aufgabe A</span><p>Beschreibe den Aufbau einer E-Mail-Adresse am Beispiel bmueller@igsfrauheim.de.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Formell oder privat?</h2></div>
+  <div id="sort"></div>
+</section>
+
+<script>
+(() => {
+  const draw = () => {
+    const v = $('#ad-in').value.trim(), m = v.match(/^([^@\s]+)@([^@\s]+\.[a-z]{2,})$/i), out = $('#ad-out');
+    if (!m) { out.innerHTML = `<span class="chip warn">${v.replace(/</g, '&lt;') || '…'}</span>`; $('#ad-st').innerHTML = `<b class="bad">Ungültig:</b> ${!v.includes('@') ? 'Das @-Zeichen fehlt.' : /@.*@/.test(v) ? 'Es darf nur ein @-Zeichen geben.' : /\s/.test(v) ? 'Leerzeichen sind nicht erlaubt.' : 'Die Domain braucht einen Punkt und eine Endung wie .de.'}`; return; }
+    out.innerHTML = `<span class="chip ok">👤 ${m[1]}<small class="mono" style="display:block;font-size:.7rem">Benutzername</small></span><span class="chip" style="font-size:1.4rem">@</span><span class="chip ok">🌐 ${m[2]}<small class="mono" style="display:block;font-size:.7rem">Domain (Anbieter)</small></span>`;
+    $('#ad-st').innerHTML = /\d{2}$|maeulchen|cool|hase|king|queen/i.test(m[1]) ? '<b>Gültig</b> – aber für Schule und Bewerbungen wirkt der Benutzername wenig seriös.' : '<b class="good">Gültige E-Mail-Adresse.</b>';
+  };
+  $('#ad-in').oninput = draw; $$('[data-ad]').forEach(b => b.onclick = () => { $('#ad-in').value = b.dataset.ad; draw(); }); draw();
+})();
+matcher($('#num-match'), [['1', 'Empfänger'], ['2', 'cc'], ['3', 'bcc'], ['4', 'Betreff'], ['5', 'Anrede'], ['6', 'Einleitung'], ['7', 'Hauptteil'], ['8', 'Schlussformel']]);
+(() => {
+  const list = id => $(id).value.split(/[,;\s]+/).filter(Boolean);
+  function draw() {
+    const an = list('#cc-an'), cc = list('#cc-cc'), bcc = list('#cc-bcc');
+    const view = (who, role) => `<div class="mailform"><div class="mf-bar"><b>📥 ${who}</b><small class="mono" style="margin-left:auto">${role}</small></div><div class="mf-row"><label>An</label><span style="padding:.3rem .5rem">${an.join(', ')}</span></div><div class="mf-row"><label>Cc</label><span style="padding:.3rem .5rem">${cc.join(', ') || '–'}</span></div>${role === 'Bcc' ? `<div class="mf-row"><label>Bcc</label><span style="padding:.3rem .5rem">${who} <small>(nur du siehst das)</small></span></div>` : ''}</div>`;
+    $('#cc-views').innerHTML = [...an.map(a => view(a, 'An')), ...cc.map(a => view(a, 'Cc')), ...bcc.map(a => view(a, 'Bcc'))].join('') + (bcc.length ? `<p class="note">${bcc.join(', ')} bleibt für alle anderen unsichtbar.</p>` : '');
+  }
+  ['#cc-an', '#cc-cc', '#cc-bcc'].forEach(i => $(i).oninput = draw); draw();
+})();
+(() => {
+  const C = [
+    ['Seriöse Absender-Adresse (Vor- und Nachname)', () => !/maeulchen|\d{2}@/i.test($('#ws-from').value)],
+    ['Betreff vorhanden', () => $('#ws-sub').value.trim().length > 3],
+    ['Höfliche Anrede (z. B. „Sehr geehrte Frau Schmidt,“)', () => /^(sehr geehrte|liebe|guten tag)/i.test($('#ws-body').value.trim())],
+    ['Anliegen klar formuliert (mind. 2 Sätze)', () => ($('#ws-body').value.match(/[.?!](\s|$)/g) || []).length >= 3],
+    ['Keine mehrfachen Satzzeichen wie „???“', () => !/[?!]{2,}/.test($('#ws-body').value)],
+    ['Satzanfänge groß geschrieben', () => !/[.?!]\s+[a-zäöü]/.test($('#ws-body').value)],
+    ['Schlussformel (z. B. „Mit freundlichen Grüßen“)', () => /(mit freundlichen grüßen|viele grüße|freundliche grüße)/i.test($('#ws-body').value)],
+    ['Name am Ende', () => /\n\s*[A-ZÄÖÜ][a-zäöüß]+(\s[A-ZÄÖÜ][a-zäöüß]+)?\s*$/.test($('#ws-body').value)]
+  ];
+  const up = () => { $('#ws-ck').innerHTML = C.map(([t, f]) => { const ok = f(); return `<li class="${ok ? 'ok' : 'err'}">${ok ? '✅' : '⬜'} ${t}</li>`; }).join(''); };
+  ['#ws-from', '#ws-sub', '#ws-body'].forEach(i => $(i).addEventListener('input', up));
+  $('#ws-ex').onclick = () => {
+    $('#ws-from').value = 'lena.kaya@mail.de'; $('#ws-sub').value = 'Hausaufgaben vom 14. Oktober';
+    $('#ws-body').value = 'Sehr geehrte Frau Schmidt,\n\nich war gestern leider krank und konnte nicht am Unterricht teilnehmen. Könnten Sie mir bitte mitteilen, welche Hausaufgaben wir aufbekommen haben? Vielen Dank im Voraus.\n\nMit freundlichen Grüßen\nLena Kaya';
+    up();
+  };
+  up();
+})();
+sorter($('#sort'), [{id: 'f', name: 'formell (Schule, Firma)'}, {id: 'p', name: 'privat (Freunde)'}], [
+  {t: 'Sehr geehrter Herr Schulz,', c: 'f'}, {t: 'Mit freundlichen Grüßen', c: 'f'}, {t: 'Könnten Sie mir bitte mitteilen, …', c: 'f'}, {t: 'lena.kaya@mail.de', c: 'f'},
+  {t: 'Hey Max!', c: 'p'}, {t: 'Bis bald 😎', c: 'p'}, {t: 'Hast du Lust auf ein Treffen?', c: 'p'}, {t: 'schleckermaeulchen99@mail.de', c: 'p'}
+]);
+</script>

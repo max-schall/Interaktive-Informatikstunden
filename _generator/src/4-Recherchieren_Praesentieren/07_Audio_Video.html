@@ -1,0 +1,182 @@
+<!--
+title: Audios und Videos in Präsentationen
+short: Audio & Video
+time: 1–2 Unterrichtsstunden (mit Präsentationsprogramm)
+q: Wie bindet man Töne, Musik und Videos sinnvoll in eine Präsentation ein?
+facts: Expertenwissen: Audios einfügen (Audio auf meinem PC, Audio aufnehmen), automatisch oder per Klick | Probleme vermeiden: Rechte, Dateigröße, Lautstärke, passend zum Thema | Expertenwissen: Videos einfügen, kürzen, formatieren | Musik, Sounds und Videos nur mit Nutzungsrechten
+inter: Audio-Optionen an einer Mini-Präsentation testen · Wann passen Sounds? · Video kürzen mit Start- und Endregler · Helligkeit und Kontrast · Schritte ordnen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Recherchieren und Präsentieren</p>
+      <h1>Audios und Videos<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Musik, Geräusche und kurze Videos machen eine Präsentation abwechslungsreich – wenn man sie richtig einsetzt.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wann hat dich Musik in einer Präsentation gestört – und wann hat sie gepasst?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie bindet man Töne, Musik und Videos sinnvoll in eine Präsentation ein?</p></div>
+      <div class="controls"><button class="btn primary" data-go="audio">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="audio" data-label="Audio" data-yr="Experte" data-title="Audios einfügen" data-sub="Automatisch oder per Klick">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Expertenwissen</p>
+      <h2>Audios und Musik einfügen</h2>
+      <ul class="facts">
+        <li>Folie wählen → „Einfügen“ → „Audio“ → „<b>Audio auf meinem PC</b>“ oder „<b>Audio aufnehmen</b>“.</li>
+        <li>Ein Audiosymbol erscheint auf der Folie. Man stellt ein, ob der Sound <b>automatisch</b> oder <b>beim Klicken</b> startet.</li>
+        <li>Weitere Optionen: <b>folienübergreifend</b> wiedergeben, <b>endlos</b> wiedergeben, Symbol <b>bei der Präsentation ausblenden</b>.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Audiooptionen testen</h3></div>
+      <div class="aopt">
+        <label>Start: <select id="ao-start"><option value="auto">Automatisch</option><option value="click">Beim Klicken</option></select></label>
+        <label><input type="checkbox" id="ao-cross"> folienübergreifend</label><label><input type="checkbox" id="ao-loop"> endlos</label><label><input type="checkbox" id="ao-hide"> bei Präsentation ausblenden</label>
+      </div>
+      <div class="slide" id="ao-slide"></div>
+      <div id="ao-step"></div>
+      <p class="status" id="ao-status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="probleme" data-label="Probleme vermeiden" data-yr="Erarbeitung" data-title="Probleme vermeiden" data-sub="Wann passen Sounds?">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Probleme vermeiden</p>
+    <h2>Sound ja – aber richtig</h2>
+  </div>
+  <div class="cols-3">
+    <div class="box"><span class="tag lim">⚖️ Rechte</span><p>Nur Musik und Audios verwenden, für die man die <b>Nutzungsrechte</b> hat.</p></div>
+    <div class="box"><span class="tag">💾 Dateigröße</span><p>Zu große Dateien können die Präsentation <b>verlangsamen</b> oder das Laden erschweren.</p></div>
+    <div class="box"><span class="tag">🔊 Lautstärke &amp; Thema</span><p>Angemessen laut – und passend zu <b>Thema</b> und <b>Stimmung</b>.</p></div>
+  </div>
+  <h3 class="mt">Aufgabe 4: Wann bieten sich Sounds an – und wann eher nicht?</h3>
+  <div id="snd-sort"></div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">5</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Urheberrecht</h3></header><p>Erkläre, warum es wichtig ist, beim Einbinden von Musik auf Urheberrechte zu achten.</p>
+      <div class="controls"><button class="btn" data-reveal="a5" aria-expanded="false">Lösung</button></div><p class="solution" id="a5" hidden>Musik ist urheberrechtlich geschützt. Wer sie ohne Erlaubnis nutzt – auch nur kurz –, verletzt das Urheberrecht und kann eine Strafe zahlen müssen, besonders wenn die Präsentation veröffentlicht wird.</p></div>
+    <div class="task-card"><header><span class="no">6</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Lizenzfreie Musik</h3></header><p>Recherchiere im Internet nach lizenzfreier Musik. Erstelle eine Liste mit nutzbaren Webseiten.</p>
+      <div class="controls"><button class="btn" data-reveal="a6" aria-expanded="false">Suchtipp</button></div><p class="hint-box" id="a6" hidden>Nutze Suchoperatoren, z. B. <span class="mono">„lizenzfreie Musik“ Schule</span> oder <span class="mono">Musik „Creative Commons“ -kaufen</span>. Prüfe auf jeder Seite, ob man den Namen des Künstlers nennen muss.</p></div>
+  </div>
+</section>
+
+<section class="station" id="video" data-label="Video kürzen" data-yr="Experte" data-title="Videos einfügen und bearbeiten" data-sub="Kürzen und formatieren">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Expertenwissen</p>
+      <h2>Videos einfügen und bearbeiten</h2>
+      <ul class="facts">
+        <li>„Einfügen“ → „Medien“ → „<b>Video</b>“, Speicherort wählen, „Einfügen“. Am Rahmen lässt sich die Größe ändern.</li>
+        <li><b>Video kürzen:</b> Video anklicken → „Wiedergabe“ → „Video kürzen“. Der <b class="good">grüne Regler</b> bestimmt den Anfang, der <b class="bad">rote</b> das Ende.</li>
+        <li><b>Formatieren:</b> Rechtsklick → „Video formatieren“: Helligkeit, Kontrast, Farbe.</li>
+        <li>Auch bei Videos: nur mit <b>Nutzungsrechten</b>!</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Video kürzen</h3><span class="mono" id="v-t">00:00,0</span></div>
+      <canvas id="v-cv" class="game-cv" style="height:190px" aria-label="Beispielvideo"></canvas>
+      <div class="trim"><div class="trim-bar"><i id="v-sel"></i><b id="v-head"></b></div>
+        <label class="slider-row good">Start <input id="v-start" type="range" min="0" max="80" value="0"><output id="v-so" class="mono">0,0 s</output></label>
+        <label class="slider-row bad">Ende <input id="v-end" type="range" min="0" max="80" value="80"><output id="v-eo" class="mono">8,0 s</output></label></div>
+      <label class="slider-row">Helligkeit <input id="v-b" type="range" min="40" max="160" value="100"></label>
+      <label class="slider-row">Kontrast <input id="v-c" type="range" min="40" max="180" value="100"></label>
+      <div class="controls"><button class="btn primary" id="v-play">▶ Abspielen</button><button class="btn" id="v-task">Aufgabe 2: vorn 2 s, hinten 1 s kürzen</button></div>
+      <p class="status" id="v-status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="schritte" data-label="Schritte" data-yr="Üben" data-title="Schritt für Schritt" data-sub="Video einfügen">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Ablauf</p>
+    <h2>Ein Video einfügen – Schritt für Schritt</h2>
+  </div>
+  <div id="v-order"></div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">Audio 1–3</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Am Rechner</h3></header><p>Erstelle drei Folien: Folie 1 mit Audio, das automatisch abläuft; Folie 2 mit Musik, die erst beim Anklicken startet; Folie 3 mit einer selbst aufgenommenen Sounddatei.</p></div>
+    <div class="task-card"><header><span class="no">Video 1–3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Am Rechner</h3></header><p>Füge ein Video ein, das erst beim Anklicken abläuft. Kürze es am Anfang um zwei Sekunden und am Ende um eine Sekunde. Formatiere es (Farbe, Helligkeit, Kontrast).</p></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Audio und Video</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Audios und Videos in Präsentationen</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step><b>Audio:</b> „Einfügen“ → „Audio“ (von PC oder aufnehmen). Start <b>automatisch</b> oder <b>beim Klicken</b>; Optionen: folienübergreifend, endlos, Symbol ausblenden.</li>
+        <li data-step><b>Video:</b> „Einfügen“ → „Medien“ → „Video“. <b>Kürzen</b> über „Wiedergabe“ (grün = Anfang, rot = Ende), <b>formatieren</b> per Rechtsklick.</li>
+        <li data-step>Probleme vermeiden: <b>Nutzungsrechte</b> prüfen, nicht zu große Dateien, angemessene <b>Lautstärke</b>, passend zum <b>Thema</b>.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Liste</span><p>Notiere zwei Webseiten mit lizenzfreier Musik.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ================= Audiooptionen ================= */
+(() => {
+  let k = 0, playing = false, ctx, osc, gain, tmr;
+  const S = ['<h4>Der Igel</h4><p class="sub">Folie 1 – mit Audio „Naturgeräusche“</p>', '<h4>Lebensraum</h4><ul><li>Gärten, Wälder, Wiesen</li></ul>', '<h4>Danke!</h4>'];
+  const stop = () => { playing = false; clearInterval(tmr); try { osc && osc.stop(); } catch (e) {} osc = null; };
+  const play = () => { stop(); try { ctx = ctx || new (window.AudioContext || window.webkitAudioContext)(); gain = ctx.createGain(); gain.gain.value = .05; gain.connect(ctx.destination); osc = ctx.createOscillator(); osc.type = 'triangle'; osc.connect(gain); let n = 0; const notes = [523, 659, 784, 659]; osc.frequency.value = notes[0]; osc.start(); tmr = setInterval(() => { n++; if (n >= 8 && !$('#ao-loop').checked) { stop(); draw(); return; } osc.frequency.value = notes[n % 4]; }, 300); } catch (e) {} playing = true; };
+  function draw() {
+    const auto = $('#ao-start').value === 'auto', hide = $('#ao-hide').checked;
+    $('#ao-slide').innerHTML = S[k] + (k === 0 && !hide ? `<button class="aicon" id="aicon">${playing ? '🔊' : '🔈'}</button>` : '');
+    const ic = $('#aicon'); if (ic) ic.onclick = () => { playing ? stop() : play(); draw(); };
+    $('#ao-status').innerHTML = playing ? `♪ Musik läuft${$('#ao-loop').checked ? ' (endlos)' : ''}.` : k === 0 ? (auto ? 'Automatischer Start …' : 'Klicke auf das Audiosymbol, um zu starten.') + (hide ? ' Das Symbol ist während der Präsentation ausgeblendet.' : '') : 'Kein Ton auf dieser Folie.';
+  }
+  stepper($('#ao-step'), 3, kk => { k = kk; if (k === 0 && $('#ao-start').value === 'auto') play(); else if (k !== 0 && !$('#ao-cross').checked) stop(); draw(); }, {next: 'Nächste Folie', reset: false});
+  $$('#audio .aopt input, #audio .aopt select').forEach(i => i.addEventListener('change', draw));
+  onShow.push(id => { if (id !== 'audio') { stop(); } });
+})();
+sorter($('#snd-sort'), [{id: 'j', name: '👍 Sound passt'}, {id: 'n', name: '👎 eher nicht'}], [
+  {t: 'Vogelstimmen bei einem Referat über Singvögel', c: 'j'}, {t: 'kurzes Intro-Jingle zur Titelfolie', c: 'j'}, {t: 'Originalton aus einem Interview', c: 'j'},
+  {t: 'laute Popmusik während des ganzen Vortrags', c: 'n'}, {t: 'Sound-Effekt bei jedem Stichpunkt', c: 'n'}, {t: 'fröhliche Musik zu einem traurigen Thema', c: 'n'}
+]);
+
+/* ================= Video kürzen ================= */
+(() => {
+  const DUR = 8; let t = 0, playing = false;
+  const s = () => +$('#v-start').value / 10, e = () => +$('#v-end').value / 10;
+  function ui() {
+    if (+$('#v-end').value < +$('#v-start').value + 5) $('#v-end').value = +$('#v-start').value + 5;
+    $('#v-so').textContent = s().toLocaleString('de-DE', {minimumFractionDigits: 1}) + ' s'; $('#v-eo').textContent = e().toLocaleString('de-DE', {minimumFractionDigits: 1}) + ' s';
+    $('#v-sel').style.left = s() / DUR * 100 + '%'; $('#v-sel').style.width = (e() - s()) / DUR * 100 + '%';
+    $('#v-cv').style.filter = `brightness(${$('#v-b').value}%) contrast(${$('#v-c').value}%)`;
+    const ok = Math.abs(s() - 2) < .05 && Math.abs(e() - 7) < .05;
+    $('#v-status').innerHTML = `Das gekürzte Video dauert <b>${(e() - s()).toLocaleString('de-DE', {maximumFractionDigits: 1})} s</b>.${ok ? ' <b class="good">Aufgabe 2 erfüllt!</b>' : ''}`;
+  }
+  $$('#video input').forEach(i => i.addEventListener('input', ui));
+  $('#v-play').onclick = () => { t = s(); playing = true; };
+  $('#v-task').onclick = () => { $('#v-start').value = 20; $('#v-end').value = 70; ui(); };
+  loopCanvas($('#v-cv'), 'video', (ctx, w, h, tt) => {
+    if (playing) { t += 1 / 60; if (t >= e()) { t = e(); playing = false; } }
+    const g = ctx.createLinearGradient(0, 0, 0, h); g.addColorStop(0, '#7DD3FC'); g.addColorStop(1, '#FEF3C7'); ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = '#65A30D'; ctx.fillRect(0, h * .8, w, h * .2);
+    const x = (t / DUR) * (w - 60) + 30, y = h * .8 - 20 - Math.abs(Math.sin(t * 2.2)) * h * .45;
+    ctx.font = '40px serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('⚽', x, y);
+    ctx.fillStyle = 'rgba(0,0,0,.55)'; ctx.fillRect(8, 8, 120, 22); ctx.fillStyle = '#fff'; ctx.font = '600 12px monospace'; ctx.textAlign = 'left'; ctx.fillText('▶ ' + t.toFixed(1) + ' / 8,0 s', 14, 19);
+    $('#v-head').style.left = t / DUR * 100 + '%'; $('#v-t').textContent = '00:0' + t.toFixed(1).replace('.', ',');
+  });
+  ui();
+})();
+orderSteps($('#v-order'), ['Folie auswählen', '„Einfügen“ → „Medien“ → „Video“ wählen', 'Speicherort wählen, Video auswählen, „Einfügen“ klicken', 'Größe am Rahmen anpassen', '„Wiedergabe“ → „Video kürzen“: grüner Regler Anfang, roter Regler Ende', 'Rechtsklick → „Video formatieren“: Helligkeit und Kontrast'], {label: 'Reihenfolge'});
+mcQuiz($('#quiz'), [
+  {q: 'Wo fügt man ein Audio ein?', a: ['„Einfügen“ → „Audio“', '„Start“ → „Neue Folie“', '„Datei“ → „Drucken“', '„Ansicht“ → „Zoom“'], ok: 0, why: 'Von PC oder selbst aufnehmen.'},
+  {q: 'Was bedeutet „endlos wiedergeben“?', a: ['Der Sound wiederholt sich immer wieder', 'Der Sound läuft nur einmal', 'Der Sound ist stumm', 'Der Sound wird gelöscht'], ok: 0, why: 'Bis man die Folie verlässt.'},
+  {q: 'Welcher Regler bestimmt beim Kürzen den Anfang?', a: ['der grüne', 'der rote', 'der blaue', 'der gelbe'], ok: 0, why: 'Rot = Ende.'},
+  {q: 'Welches Problem können zu große Audiodateien machen?', a: ['Die Präsentation wird langsam', 'Die Schrift wird kleiner', 'Die Folien werden bunt', 'gar keins'], ok: 0, why: 'Laden dauert lange.'},
+  {q: 'Darf man jedes Video aus dem Internet einbinden?', a: ['Nein, nur mit Nutzungsrechten', 'Ja, immer', 'Ja, wenn es kurz ist', 'Ja, wenn man es kürzt'], ok: 0, why: 'Urheberrecht.'}
+]);
+</script>

@@ -1,0 +1,149 @@
+<!--
+title: Algorithmen im Alltag
+short: Algorithmen
+time: 1–2 Unterrichtsstunden
+q: Was hat ein Pfannkuchenrezept mit Informatik zu tun?
+facts: Anweisung, Ablauf und Sequenz am Beispiel Pfannkuchen | Algorithmus: eindeutig, ausführbar, endlich | M1 Händewaschen als Befehlsfolge | M2 Fluchtweg aus dem Klassenzimmer
+inter: Rezept in die richtige Reihenfolge bringen · Fehlerhafte Anweisungen den Bedingungen zuordnen · Händewaschen als Befehlsfolge · Fluchtweg programmieren
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Algorithmen und Problemlösen</p>
+      <h1>Algorithmen im Alltag<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Bei der Zubereitung von Pfannkuchen muss eine bestimmte Anleitung befolgt werden. Was hat das mit Informatik zu tun?</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Erkläre deiner Banknachbarin oder deinem Banknachbarn ganz genau, wie man sich die Schuhe bindet.</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Was hat ein Pfannkuchenrezept mit Informatik zu tun?</p></div>
+      <div class="controls"><button class="btn primary" data-go="anweisungen">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="anweisungen" data-label="Pfannkuchen" data-yr="Einstieg" data-title="Anweisungen im Alltag" data-sub="Das Pfannkuchen-Rezept">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Anweisungen im Alltag</p>
+    <h2>Das Pfannkuchen-Rezept</h2>
+    <p class="lead">Ein gutes Rezept beschreibt jeden Arbeitsschritt klar und in einer bestimmten Reihenfolge. Einen Arbeitsschritt nennt man <b>Anweisung</b>. Hintereinander ausgeführte Anweisungen heißen <b>Ablauf</b> oder <b>Sequenz</b>.</p>
+  </div>
+  <div id="pk"></div>
+  <p class="note mt">Achtung: Manche Schritte dürfen auch vertauscht werden. Welche?</p>
+</section>
+
+<section class="station" id="eigenschaften" data-label="Bedingungen" data-yr="Erarbeitung" data-title="Was ist ein Algorithmus?" data-sub="eindeutig, ausführbar, endlich">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Algorithmus</p>
+    <h2>Eindeutig, ausführbar, endlich</h2>
+    <p class="lead">Wird ein Ablauf so genau beschrieben, dass man ihn <b>ohne Vorkenntnisse</b> durchführen kann, spricht man von einem <b>Algorithmus</b>.</p>
+  </div>
+  <div class="cols-3">
+    <div class="box prop" style="--c:#2563EB"><span class="tag">✔ Eindeutigkeit</span><p>Die Anweisungen beschreiben klar, was getan werden soll – auch die <b>Reihenfolge</b> ist festgelegt.</p><p class="note">Bevor der Teig in die Pfanne kommt, muss Öl hinein.</p></div>
+    <div class="box prop" style="--c:#16A34A"><span class="tag">✔ Ausführbarkeit</span><p>Jede einzelne Anweisung ist <b>sinnvoll und ausführbar</b>.</p><p class="note">Die Eier werden nicht mit Schale in den Teig gegeben.</p></div>
+    <div class="box prop" style="--c:#DC2626"><span class="tag">✔ Endlichkeit</span><p>Alle Abläufe haben ein <b>klar formuliertes Ende</b>.</p><p class="note">Ist der Pfannkuchen leicht braun und knusprig, ist er fertig.</p></div>
+  </div>
+  <h3 class="mt">Welche Bedingung ist hier verletzt?</h3>
+  <div id="prop-sort"></div>
+  <div class="task-card mt"><header><span class="no">A</span><h3>Bedingungen</h3></header><p>Nenne und beschreibe die Bedingungen, die ein Algorithmus erfüllen muss.</p></div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Händewaschen" data-yr="M1" data-title="Händewaschen" data-sub="Bilder als Befehlsfolge">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Material M1</p>
+    <h2>Händewaschen</h2>
+  </div>
+  <div class="hw" id="hw">
+    <div class="hw-c"><span>🧴</span><b>A</b><small>Hand unter den Seifenspender</small></div>
+    <div class="hw-c"><span>💧</span><b>B</b><small>Hände unter Wasser anfeuchten</small></div>
+    <div class="hw-c"><span>🫧</span><b>C</b><small>Seife gründlich verreiben</small></div>
+    <div class="hw-c"><span>🚿</span><b>D</b><small>Seife abspülen</small></div>
+    <div class="hw-c"><span>🧻</span><b>E</b><small>Hände abtrocknen</small></div>
+  </div>
+  <div class="cols-2 mt">
+    <div>
+      <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Befehlsfolge</h3></header><p>Beschreibe mithilfe der Bilder A–E, wie man sich die Hände gründlich wäscht. Übertrage deine Beschreibung in eine <b>Befehlsfolge</b>. Beginne mit: „Halte eine Hand unter den Seifenspender.“</p></div>
+      <div id="hw-order"></div>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Bedingungen prüfen</h3></header><p>Erläutere, ob die Bedingungen Eindeutigkeit, Ausführbarkeit und Endlichkeit bei diesem Ablaufplan zutreffen.</p>
+        <div class="controls"><button class="btn" data-reveal="h3h" aria-expanded="false">HILFE</button><button class="btn" data-reveal="h3" aria-expanded="false">Lösungsidee</button></div>
+        <p class="hint-box" id="h3h" hidden>Weiß jeder genau, was zu tun ist? Kann man jeden Schritt machen? Gibt es ein Ende?</p>
+        <p class="solution" id="h3" hidden><b>Eindeutig:</b> Jeder Schritt ist klar beschrieben, die Reihenfolge ist festgelegt. (Unklar bleibt nur, wie lange man reibt – besser: „30 Sekunden“.) <b>Ausführbar:</b> Alle Schritte kann man ausführen. <b>Endlich:</b> Mit dem Abtrocknen ist der Ablauf beendet.</p></div>
+      <div class="task-card"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Vertauschen?</h3></header><p>Stelle Vermutungen an, ob einige Anweisungen in der Reihenfolge vertauscht werden können.</p>
+        <div class="controls"><button class="btn" data-reveal="h4" aria-expanded="false">Lösungsidee</button></div>
+        <p class="solution" id="h4" hidden>Seife nehmen und Hände anfeuchten (A und B) kann man vertauschen. Abspülen und Abtrocknen (D und E) nicht: Wer zuerst abtrocknet, hat danach nasse, seifige Hände. Auch beim Pfannkuchen ist die Reihenfolge der Zutaten teilweise egal, das Braten aber nicht.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m2" data-label="M2 Fluchtweg" data-yr="M2" data-title="Fluchtweg" data-sub="Den kürzesten Weg beschreiben">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M2</p>
+    <h2>Fluchtweg</h2>
+    <p class="lead">Den kürzesten Fluchtweg aus der Schule zu kennen, ist wichtig! Führe die Schülerin 🧒 aus dem Klassenzimmer zum Sammelplatz 🟩.</p>
+  </div>
+  <div id="flucht"></div>
+  <div class="task-card mt"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Ablaufbeschreibung</h3></header><p>Erstelle eine Ablaufbeschreibung für den Fluchtweg aus <b>deinem</b> Klassenzimmer. Nutze den Fluchtplan an der Wand.</p>
+    <div class="controls"><button class="btn" data-reveal="f1" aria-expanded="false">HILFE</button></div><p class="hint-box" id="f1" hidden>Schreibe im Imperativ: „Verlasse das Klassenzimmer. Biege nach links ab. Gehe bis zur Treppe …“ Achte auf eindeutige Angaben (links/rechts, wie weit).</p></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Algorithmen</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Algorithmen im Alltag</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Ein einzelner Arbeitsschritt heißt <b>Anweisung</b>. Mehrere Anweisungen hintereinander bilden einen <b>Ablauf</b> oder eine <b>Sequenz</b>.</li>
+        <li data-step>Ein <b>Algorithmus</b> ist eine so genaue Handlungsanweisung, dass man den Ablauf ohne Vorkenntnisse durchführen kann.</li>
+        <li data-step><b>Eindeutigkeit:</b> Jede Anweisung ist klar, die Reihenfolge ist festgelegt.</li>
+        <li data-step><b>Ausführbarkeit:</b> Jede Anweisung ist sinnvoll und kann ausgeführt werden.</li>
+        <li data-step><b>Endlichkeit:</b> Der Ablauf hat ein klar formuliertes Ende.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Beispiel</span><p>Schreibe einen Algorithmus für eine Tätigkeit deiner Wahl (z. B. Zähneputzen) in 5–8 Anweisungen auf.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Üben und wiederholen</h2></div>
+  <h3>Stimmt das?</h3>
+  <div id="tf"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+orderSteps($('#pk'), ['🥚 2 Eier aufschlagen und in eine Schüssel geben', '🥛 200 ml Milch hinzugeben', '🧂 0,5 g Salz und 0,5 g Zucker hinzugeben', '🌾 200 g Mehl hinzugeben', '💧 60 ml Mineralwasser hinzugeben', '🥄 Alles zu einem Teig vermengen', '🍳 In einer Pfanne etwas Speiseöl erhitzen', '🥣 Mit einer Schöpfkelle etwas Teig in die Pfanne geben', '↔️ Pfanne kurz schwenken, um den Teig zu verteilen', '🔄 Nach 1–2 Minuten den Pfannkuchen wenden', '🥞 Von beiden Seiten bräunlich ausbacken – guten Appetit!'], {label: 'Dein Rezept'});
+sorter($('#prop-sort'), [{id: 'e', name: 'Eindeutigkeit verletzt'}, {id: 'a', name: 'Ausführbarkeit verletzt'}, {id: 'n', name: 'Endlichkeit verletzt'}], [
+  {t: 'Brate den Teig an. Gib danach Öl in die Pfanne.', c: 'e', why: 'falsche Reihenfolge'},
+  {t: 'Nimm etwas Mehl.', c: 'e', why: 'Wie viel genau?'},
+  {t: 'Gib die Eier mit Schale in die Schüssel.', c: 'a', why: 'nicht sinnvoll ausführbar'},
+  {t: 'Fliege zum Supermarkt und kaufe Milch.', c: 'a', why: 'Man kann nicht fliegen.'},
+  {t: 'Rühre den Teig immer weiter.', c: 'n', why: 'Wann ist Schluss?'},
+  {t: 'Backe den Pfannkuchen – irgendwann ist er fertig.', c: 'n', why: 'Kein klares Ende: schwarz und verkohlt?'}
+]);
+orderSteps($('#hw-order'), ['Halte eine Hand unter den Seifenspender.', 'Halte die Hände unter das Wasser.', 'Verreibe die Seife gründlich auf beiden Händen.', 'Spüle die Seife unter fließendem Wasser ab.', 'Trockne die Hände mit einem Handtuch ab.'], {label: 'Befehlsfolge'});
+gridBot($('#flucht'), [
+  '###########',
+  '#S....#...#',
+  '###.#.#.#.#',
+  '#...#...#.#',
+  '#.#######.#',
+  '#.........Z',
+  '###########'], {bot: '🧒', goal: '🟩'});
+trueFalse($('#tf'), [
+  {t: 'Ein Rezept ist ein Algorithmus aus dem Alltag.', ok: true, why: 'Es beschreibt Schritt für Schritt, was zu tun ist.'},
+  {t: 'Ein Algorithmus darf unendlich lange laufen.', ok: false, why: 'Er muss endlich sein.'},
+  {t: '„Nimm etwas Salz“ ist eine eindeutige Anweisung.', ok: false, why: 'Wie viel ist „etwas“?'},
+  {t: 'Mehrere Anweisungen hintereinander nennt man Sequenz.', ok: true, why: 'Oder Ablauf.'},
+  {t: 'Bei einem Algorithmus ist die Reihenfolge egal.', ok: false, why: 'Sie muss festgelegt sein.'},
+  {t: 'Auch Zähneputzen folgt einem Ablauf.', ok: true, why: 'Tägliche Routinen sind Abläufe.'}
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Wie nennt man einen einzelnen Arbeitsschritt?', a: ['Anweisung', 'Sequenz', 'Programm', 'Bedingung'], ok: 0, why: 'z. B. „Schlage 2 Eier auf.“'},
+  {q: 'Welche drei Bedingungen muss ein Algorithmus erfüllen?', a: ['eindeutig, ausführbar, endlich', 'schnell, kurz, bunt', 'lang, schwer, genau', 'digital, binär, sicher'], ok: 0, why: 'Die drei Merkmale.'},
+  {q: 'Welche Anweisung ist NICHT ausführbar?', a: ['Gib die Eier mit Schale in den Teig.', 'Erhitze Öl in der Pfanne.', 'Gib 200 g Mehl hinzu.', 'Wende den Pfannkuchen.'], ok: 0, why: 'Das ergibt keinen Sinn.'},
+  {q: 'Was bedeutet „endlich“?', a: ['Der Ablauf hat ein klares Ende.', 'Der Ablauf ist sehr kurz.', 'Der Ablauf ist endlos.', 'Der Ablauf ist fehlerfrei.'], ok: 0, why: 'z. B. „Wenn der Pfannkuchen braun ist, ist er fertig.“'},
+  {q: 'Wann ist ein Ablauf ein Algorithmus?', a: ['wenn man ihn ohne Vorkenntnisse durchführen kann', 'wenn er auf einem Computer läuft', 'wenn er mehr als 10 Schritte hat', 'wenn er geheim ist'], ok: 0, why: 'Er ist genau genug beschrieben.'}
+]);
+</script>

@@ -1,0 +1,211 @@
+<!--
+title: Texte überarbeiten und optimieren
+short: Überarbeiten
+time: 2 Unterrichtsstunden (mit Textverarbeitungsprogramm)
+q: Welche Funktionen eines Textverarbeitungsprogramms helfen dir, einen Text zu überarbeiten und zu optimieren?
+facts: Automatische Rechtschreibprüfung: Fehlererkennung (rot) und Grammatikprüfung (blau) mit Verbesserungsvorschlägen – nicht immer verlässlich | Rechtschreibprüfung nutzen: Rechtsklick → Vorschlag wählen → „Ändern“ | Neue Wörter zum Wörterbuch hinzufügen, Sprache festlegen („Überprüfen“ → „Sprache“) | Thesaurus und Synonyme (M2), M1 Fehler korrigieren
+inter: Rechtschreibprüfung mit Rechtsklick-Menü · Wörterbuch ergänzen · Unmarkierte Fehler finden · Thesaurus zum Nachschlagen · Wortwiederholungen ersetzen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Textgestaltung</p>
+      <h1>Texte überarbeiten und optimieren<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Ein gut strukturierter und fehlerfreier Text wirkt professionell und ist leichter zu verstehen.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Was bedeuten die roten und blauen Wellenlinien unter manchen Wörtern?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Welche Funktionen helfen dir, einen Text zu überarbeiten und zu optimieren?</p></div>
+      <div class="controls"><button class="btn primary" data-go="pruefung">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="pruefung" data-label="Rechtschreibprüfung" data-yr="Erarbeitung" data-title="Rechtschreibprüfung" data-sub="Rot und blau">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Rechtschreibprüfung</p>
+      <h2>Rote und blaue Wellen</h2>
+      <ul class="facts">
+        <li>Textverarbeitungsprogramme haben eine <b>automatische Rechtschreibprüfung</b>. Sie hilft, Fehler zu vermeiden – wichtig z. B. für Bewerbungen oder Präsentationen.</li>
+        <li><b>Fehlererkennung:</b> Tipp- und Rechtschreibfehler werden <span class="wavy" style="cursor:default">rot</span> unterstrichen.</li>
+        <li><b>Grammatikprüfung:</b> Fehler im Satzbau und in der Grammatik werden <span class="wavy gram" style="cursor:default">blau</span> markiert.</li>
+        <li>Zu jedem Fehler gibt es <b>Verbesserungsvorschläge</b>: Rechtsklick auf das Wort → Vorschlag wählen → „Ändern“.</li>
+        <li>Aber: Die Prüfung ist <b>nicht immer verlässlich</b>. Manche Fehler werden nicht erkannt, manche richtigen Wörter werden markiert. Die Markierungen werden <b>nicht mitgedruckt</b>.</li>
+      </ul>
+    </div>
+    <div class="stack">
+      <div class="wp">
+        <div class="wp-tabs"><span>Start</span><span>Einfügen</span><span class="on">Überprüfen</span></div>
+        <div class="wp-desk" style="position:relative"><div class="wp-page" id="sp" style="white-space:normal"></div></div>
+        <div class="wp-status"><span id="sp-stat"></span><button class="btn" id="sp-reset" style="font-size:.7rem;padding:.1rem .4rem">Neu</button></div>
+      </div>
+      <p class="note">Klicke (oder Rechtsklick) auf ein markiertes Wort und wähle einen Vorschlag.</p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Fehler" data-yr="M1" data-title="Fehler korrigieren" data-sub="Was die Prüfung übersieht">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Material M1</p>
+    <h2>Fehler korrigieren</h2>
+    <p class="lead">Die Rechtschreibprüfung hat im Text oben nicht alle Fehler gefunden. Klicke die Wörter an, die du für falsch hältst.</p>
+  </div>
+  <div class="grid-2">
+    <div class="stack">
+      <div class="wp-page" id="hunt" style="white-space:normal;border:1.5px solid var(--edge);border-radius:4px;line-height:2"></div>
+      <div class="controls"><button class="btn primary" id="hunt-check">Prüfen</button><button class="btn" id="hunt-solve">Lösung</button><span class="sort-fb" id="hunt-fb"></span></div>
+    </div>
+    <div class="stack">
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Rot und blau</h3></header><p>Erkläre den Unterschied zwischen roten und blauen Markierungen.</p>
+        <div class="controls"><button class="btn" data-reveal="h1" aria-expanded="false">Lösung</button></div><p class="solution" id="h1" hidden>Rot: Rechtschreib- oder Tippfehler in einem Wort. Blau: Fehler in der Grammatik oder im Satzbau, z. B. falsche Zeitform oder Groß- und Kleinschreibung im Satzzusammenhang.</p></div>
+      <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Nicht markierte Fehler</h3></header><p>Gibt es Fehler, die nicht markiert sind? Verbessere sie.</p>
+        <div class="controls"><button class="btn" data-reveal="h3" aria-expanded="false">Lösung</button></div><p class="solution" id="h3" hidden>Ja: „mit <b>voler</b> Kraft“ → „voller“ und „einem <b>spieler</b>“ → „Spieler“ (Nomen werden großgeschrieben). Die Prüfung erkennt nicht jeden Fehler – deshalb immer selbst Korrektur lesen!</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="thesaurus" data-label="Thesaurus" data-yr="Erarbeitung" data-title="Synonyme und Thesaurus" data-sub="Wörter mit ähnlicher Bedeutung">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Synonyme nutzen</p>
+      <h2>Der Thesaurus</h2>
+      <ul class="facts">
+        <li>Oft sucht man nach Wörtern, um einen Text anders zu formulieren. Ein <b>Thesaurus</b> hilft dabei – das Wort kommt aus dem Griechischen und bedeutet „Schatz“ oder „Schatzkammer“.</li>
+        <li>Er funktioniert wie ein Wörterbuch für Wörter mit ähnlicher Bedeutung: <b>Synonyme</b>. Beispiel: groß → riesig, gigantisch, enorm.</li>
+        <li>So vermeidet man <b>Wortwiederholungen</b> und erweitert den eigenen Wortschatz.</li>
+        <li>In Word: Wort markieren → „Überprüfen“ → „Thesaurus“ – oder Rechtsklick → „Synonyme“.</li>
+      </ul>
+    </div>
+    <div class="stack">
+      <div class="thes"><h4>Thesaurus</h4><div style="padding:.5rem"><input class="text-in" id="th-in" value="groß" aria-label="Suchwort" list="th-list"><datalist id="th-list"></datalist></div><div class="chips" id="th-out"></div></div>
+      <div class="box"><span class="tag info">Satz verbessern</span><p id="th-sent"></p><p class="note">Tippe ein Synonym an – es ersetzt das markierte Wort im Satz.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m2" data-label="M2 Synonyme" data-yr="M2" data-title="Thesaurus nutzen" data-sub="Wortwiederholungen ersetzen">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M2</p>
+    <h2>Mit dem Thesaurus formulieren</h2>
+  </div>
+  <div class="grid-2">
+    <div class="stack">
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>A: Drei Synonyme</h3></header><p>Finde für <b>essen</b>, <b>wichtig</b> und <b>Zuhause</b> jeweils drei passende Synonyme.</p>
+        <div class="controls"><button class="btn" data-reveal="s1" aria-expanded="false">Lösung</button></div><p class="solution" id="s1" hidden>essen: speisen, verzehren, futtern · wichtig: bedeutend, wesentlich, entscheidend · Zuhause: Heim, Wohnung, Daheim</p></div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>B: Fett gedruckte Wörter ersetzen</h3></header><p><i>Die Bilder, die wir in unserem letzten Urlaub gemacht haben, waren wirklich sehr <b>schön</b>.</i><br><i>Er hat sehr <b>schnell</b> auf die Nachricht reagiert.</i></p>
+        <div class="controls"><button class="btn" data-reveal="s2" aria-expanded="false">Lösung</button></div><p class="solution" id="s2" hidden>schön → herrlich, wunderbar, traumhaft · schnell → zügig, rasch, prompt. Der Satz darf seine Bedeutung nicht verlieren: „schnell“ nicht durch „hastig“ ersetzen.</p></div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>C: Wortwiederholungen ersetzen</h3><span class="score">„gut“: <b id="rep-n">4</b>×</span></div>
+      <p class="wp-page" id="rep" style="white-space:normal;border:1.5px solid var(--edge);border-radius:4px;line-height:2.1"></p>
+      <p class="status" id="rep-fb">Ersetze möglichst viele „gut“ durch passende Synonyme.</p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Texte überarbeiten</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Texte überarbeiten und optimieren</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Die <b>Rechtschreibprüfung</b> unterstreicht Rechtschreibfehler <b>rot</b> und Grammatikfehler <b>blau</b>.</li>
+        <li data-step>Korrigieren: Rechtsklick auf das Wort → Vorschlag wählen → „Ändern“. Richtige Wörter (z. B. Namen) kann man <b>zum Wörterbuch hinzufügen</b>.</li>
+        <li data-step>Die Prüfung ist <b>nicht immer verlässlich</b> – den Text immer selbst Korrektur lesen.</li>
+        <li data-step>Der <b>Thesaurus</b> findet <b>Synonyme</b> (Wörter mit ähnlicher Bedeutung). Er hilft, Wortwiederholungen zu vermeiden.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Aufgabe A/B</span><p>Beschreibe, wie die Rechtschreibprüfung beim Erstellen von Texten helfen kann. Erkläre, was ein Thesaurus ist.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Stimmt das?</h2></div>
+  <div id="tf"></div>
+</section>
+
+<script>
+(() => {
+  const RAW = [['Das'], ['Hocky-Spiel', 'r', ['Hockey-Spiel', 'Hocke-Spiel']], ['war richtig spannend! Beide'], ['Manschaften', 'r', ['Mannschaften', 'Manschetten']], ['kämpften um den Ball. Plötzlich schoss ein Spieler mit'], ['voler', '', null],
+    ['Kraft aufs Tor, doch der Ball'], ['ist nicht Reingegangen', 'g', ['ging nicht hinein', 'ist nicht reingegangen']], ['. Kurz vor Schluss stand es'], ['unentschiden', 'r', ['unentschieden', 'entschieden']],
+    [', doch dann gelang einem'], ['spieler', '', null], ['ein toller Pass. Sein Mitspieler'], ['Jonte', 'r', [], 'name'], ['schoss – und TOR!']];
+  window.SP_RAW = RAW;
+  let fixed;
+  const sp = $('#sp');
+  function draw() {
+    sp.innerHTML = RAW.map(([t, k], i) => k ? `<span class="wavy${k === 'g' ? ' gram' : ''}${fixed[i] ? ' fixed' : ''}" data-i="${i}">${fixed[i] || t}</span>` : t).join(' ').replace(/ ([.,])/g, '$1');
+    const open = RAW.filter((r, i) => r[1] && !fixed[i]).length;
+    $('#sp-stat').innerHTML = open ? `Rechtschreibung: ${open} Hinweis${open > 1 ? 'e' : ''}` : '✅ Keine Hinweise mehr – aber ist der Text jetzt fehlerfrei?';
+  }
+  function pop(el) {
+    $$('.spell-pop').forEach(p => p.remove());
+    const i = +el.dataset.i, [, k, sug, kind] = RAW[i];
+    const p = document.createElement('div'); p.className = 'spell-pop';
+    p.innerHTML = `<small>${k === 'g' ? 'Grammatik' : 'Rechtschreibung'}</small>${sug.map(s => `<button data-s="${s}"><b>${s}</b></button>`).join('')}${kind === 'name' ? '<button data-add="1">📖 Zum Wörterbuch hinzufügen</button>' : ''}<button data-ign="1">Ignorieren</button>`;
+    const r = el.getBoundingClientRect(), d = sp.parentElement.getBoundingClientRect();
+    p.style.left = (r.left - d.left) + 'px'; p.style.top = (r.bottom - d.top + 4) + 'px';
+    sp.parentElement.appendChild(p);
+    p.onclick = e => {
+      const b = e.target.closest('button'); if (!b) return;
+      fixed[i] = b.dataset.s || RAW[i][0];
+      if (b.dataset.s && b.dataset.s !== sug[0]) $('#sp-stat').innerHTML = `Hm – „${b.dataset.s}“ passt hier nicht. Nimm den ersten Vorschlag.`;
+      p.remove(); draw();
+      if (b.dataset.add) $('#sp-stat').innerHTML = '📖 „Jonte“ ist jetzt im Wörterbuch und wird nicht mehr markiert.';
+      if (b.dataset.ign && kind !== 'name') $('#sp-stat').innerHTML = 'Ignoriert – aber war das wirklich richtig?';
+    };
+  }
+  sp.addEventListener('click', e => { const w = e.target.closest('.wavy:not(.fixed)'); if (w) pop(w); });
+  sp.addEventListener('contextmenu', e => { const w = e.target.closest('.wavy:not(.fixed)'); if (w) { e.preventDefault(); pop(w); } });
+  document.addEventListener('click', e => { if (!e.target.closest('.spell-pop') && !e.target.closest('.wavy')) $$('.spell-pop').forEach(p => p.remove()); });
+  $('#sp-reset').onclick = () => { fixed = {}; draw(); };
+  fixed = {}; draw();
+})();
+(() => {
+  const T = 'Das Hockey-Spiel war richtig spannend! Beide Mannschaften kämpften um den Ball. Plötzlich schoss ein Spieler mit voler Kraft aufs Tor, doch der Ball ging nicht hinein. Kurz vor Schluss stand es unentschieden, doch dann gelang einem spieler ein toller Pass. Sein Mitspieler Jonte schoss – und TOR!';
+  const BAD = new Set(['voler', 'spieler']);
+  $('#hunt').innerHTML = T.split(' ').map(w => { const c = w.replace(/[.,!]/g, ''); return `<span class="chip" data-w="${c}" style="margin:.1rem;cursor:pointer">${w}</span>`; }).join(' ');
+  $('#hunt').addEventListener('click', e => { const c = e.target.closest('.chip'); if (c) { c.classList.toggle('warn'); c.classList.remove('ok', 'ex'); } });
+  const check = solve => {
+    let hit = 0, wrong = 0;
+    $$('#hunt .chip').forEach(c => { const bad = BAD.has(c.dataset.w); if (solve) c.classList.toggle('warn', bad); const sel = c.classList.contains('warn'); c.classList.toggle('ok', sel && bad); if (sel && bad) hit++; if (sel && !bad) { wrong++; c.classList.add('ex'); } });
+    $('#hunt-fb').innerHTML = `<b>${hit}</b> von ${BAD.size} Fehlern gefunden${wrong ? ` · ${wrong} richtige Wörter markiert` : ''}${hit === BAD.size && !wrong ? ' – perfekt!' : ''}`;
+  };
+  $('#hunt-check').onclick = () => check(false); $('#hunt-solve').onclick = () => check(true);
+})();
+(() => {
+  const TH = {groß: ['riesig', 'gigantisch', 'enorm', 'gewaltig', 'mächtig'], schön: ['herrlich', 'wunderbar', 'hübsch', 'traumhaft', 'prächtig'], schnell: ['zügig', 'rasch', 'flink', 'prompt', 'flott'],
+    gut: ['toll', 'prima', 'lecker', 'super', 'ausgezeichnet', 'hervorragend'], essen: ['speisen', 'verzehren', 'futtern', 'naschen'], wichtig: ['bedeutend', 'wesentlich', 'entscheidend', 'zentral'], Zuhause: ['Heim', 'Wohnung', 'Daheim', 'Unterkunft'],
+    sagen: ['erzählen', 'berichten', 'erklären', 'antworten', 'meinen'], gehen: ['laufen', 'spazieren', 'schlendern', 'wandern'], klein: ['winzig', 'gering', 'niedlich', 'zierlich']};
+  const S = {groß: 'Der Elefant ist ein großes Tier.', schön: 'Wir hatten einen schönen Tag am See.', schnell: 'Der Gepard läuft sehr schnell.', gut: 'Das Essen war gut.', sagen: 'Mia will dir etwas sagen.', gehen: 'Wir gehen durch den Park.', klein: 'Die Maus ist klein.'};
+  $('#th-list').innerHTML = Object.keys(TH).map(k => `<option value="${k}">`).join('');
+  let word = 'groß', sentence = S.groß, rep = null;
+  function look() {
+    const v = $('#th-in').value.trim(), hit = TH[v] || TH[v.toLowerCase()];
+    $('#th-out').innerHTML = hit ? hit.map(s => `<button class="chip" data-s="${s}">${s}</button>`).join('') : `<span class="note">Kein Eintrag. Probiere: ${Object.keys(TH).join(', ')}.</span>`;
+    if (S[v]) { word = v; sentence = S[v]; rep = null; }
+    drawS();
+  }
+  const drawS = () => { $('#th-sent').innerHTML = sentence.replace(new RegExp(word + '\\w*'), m => `<mark>${rep ? rep + m.slice(word.length) : m}</mark>`); };
+  $('#th-in').addEventListener('input', look);
+  $('#th-out').addEventListener('click', e => { const b = e.target.closest('[data-s]'); if (b && S[word]) { rep = b.dataset.s; drawS(); } });
+  look();
+})();
+(() => {
+  const parts = ['Das Essen, das wir bestellt hatten, war', 'gut. Die Lieferzeit war nicht so', 'gut. Besonders', 'gut fand ich jedoch, dass das Restaurant uns eine Nachspeise geschenkt hat. Die war wirklich', 'gut.'];
+  const OPT = [['lecker', 'köstlich', 'prima'], ['kurz', 'schnell', 'toll'], ['erfreulich', 'schön', 'nett'], ['köstlich', 'lecker', 'super']];
+  $('#rep').innerHTML = parts.map((p, i) => i === 0 ? p : `<select data-k="${i - 1}" aria-label="Ersatz für gut"><option>gut</option>${OPT[i - 1].map(o => `<option>${o}</option>`).join('')}</select>${p.slice(3)}`).join(' ');
+  $('#rep').addEventListener('change', () => {
+    const n = $$('#rep select').filter(s => s.value === 'gut').length; $('#rep-n').textContent = n;
+    $('#rep-fb').innerHTML = n <= 1 ? '<b class="good">Viel abwechslungsreicher!</b> Ein „gut“ darf bleiben.' : `Noch ${n}× „gut“.`;
+  });
+})();
+trueFalse($('#tf'), [
+  {t: 'Die Rechtschreibprüfung findet immer alle Fehler.', ok: false, why: 'Manche Fehler werden nicht erkannt, manche richtigen Wörter markiert.'},
+  {t: 'Grammatikfehler werden blau markiert.', ok: true, why: 'Rechtschreibfehler rot.'},
+  {t: 'Die Wellenlinien werden mit ausgedruckt.', ok: false, why: 'Sie erscheinen nur am Bildschirm.'},
+  {t: 'Einen Namen, der als Fehler markiert ist, kann man zum Wörterbuch hinzufügen.', ok: true, why: 'Dann wird er nicht mehr markiert.'},
+  {t: 'Ein Thesaurus findet Wörter mit ähnlicher Bedeutung.', ok: true, why: 'Synonyme.'},
+  {t: 'Schreibt man englische Texte, muss man nichts umstellen.', ok: false, why: 'Unter „Überprüfen“ → „Sprache“ die Sprache für die Korrekturhilfen festlegen.'}
+]);
+</script>

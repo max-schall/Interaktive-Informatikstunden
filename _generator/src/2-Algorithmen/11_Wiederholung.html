@@ -1,0 +1,129 @@
+<!--
+title: Wiederholung und Selbsttest
+short: Selbsttest
+time: 1–2 Unterrichtsstunden
+q: Was kann ich, und was sollte ich noch üben?
+facts: Fachbegriffe des Kapitels als Karteikarten und Paare | Trainer: Binärsystem und Bytes, Codierung, Algorithmen, Scratch | Großes Quiz und „Ich kann …“-Liste (Zusammenfassung und Trainer S. 52–53 lagen nicht vor – eigene Umsetzung)
+inter: Karteikarten · Begriffe-Paare · Umrechnungs-Training · Morse und Codes · Ablaufplan prüfen · Scratch-Schleifen · Quiz (10 zufällige Fragen) · Selbsteinschätzung
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Algorithmen und Problemlösen</p>
+      <h1>Wiederholung und Selbsttest<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Binärsystem, Bits und Bytes, Codes, Algorithmen und Scratch: Prüfe, was du sicher kannst.</p>
+      <div class="controls"><button class="btn primary" data-go="begriffe">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="begriffe" data-label="Begriffe" data-yr="Wiederholen" data-title="Fachbegriffe" data-sub="Karteikarten und Paare">
+  <div class="section-head"><p class="eyebrow">Station 1 · Fachbegriffe</p><h2>Fachbegriffe</h2></div>
+  <div id="flip"></div>
+  <h3 class="mt">Paare finden</h3>
+  <div id="match"></div>
+</section>
+
+<section class="station" id="t1" data-label="T1 Binär" data-yr="Trainer" data-title="T1 Binärsystem und Bytes" data-sub="Umrechnen">
+  <div class="section-head"><p class="eyebrow">Station 2 · Trainer T1</p><h2>Binärsystem, Bits und Bytes</h2></div>
+  <div id="ts"></div>
+</section>
+
+<section class="station" id="t2" data-label="T2 Codes" data-yr="Trainer" data-title="T2 Codierung" data-sub="Codes erkennen">
+  <div class="section-head"><p class="eyebrow">Station 3 · Trainer T2</p><h2>Codierung von Daten</h2></div>
+  <div class="grid-2">
+    <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Morse</h3></header><p>Übersetze: <b class="mono">− • − / • − / • • • / • • • / •</b> – ein Ort, an dem täglich Codes gescannt werden.</p>
+      <div class="controls"><button class="btn" data-reveal="m1" aria-expanded="false">Lösung</button></div><p class="solution" id="m1" hidden><b>KASSE</b> – dort wird der EAN-Barcode gescannt.</p></div>
+    <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Eiercode</h3></header><p>Entschlüssele den Erzeugercode <b class="mono">1-DE-0812345</b>.</p>
+      <div class="controls"><button class="btn" data-reveal="m2" aria-expanded="false">Lösung</button></div><p class="solution" id="m2" hidden>1 = Freilandhaltung · DE = Deutschland · 08 = Baden-Württemberg, danach Betriebs- und Stallnummer.</p></div>
+    <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>QR oder Barcode?</h3></header><p>Begründe, warum Schulbücher QR-Codes statt Barcodes für Zusatzmaterial nutzen.</p>
+      <div class="controls"><button class="btn" data-reveal="m3" aria-expanded="false">Lösung</button></div><p class="solution" id="m3" hidden>Ein QR-Code kann eine ganze Internet-Adresse speichern (bis zu 4296 Zeichen) und mit jedem Smartphone gelesen werden. Ein EAN-Barcode enthält nur 13 Ziffern.</p></div>
+  </div>
+  <h3 class="mt">Welcher Code?</h3>
+  <div id="code-sort"></div>
+</section>
+
+<section class="station" id="t3" data-label="T3 Algorithmen" data-yr="Trainer" data-title="T3 Algorithmen" data-sub="Eindeutig, ausführbar, endlich">
+  <div class="section-head"><p class="eyebrow">Station 4 · Trainer T3</p><h2>Algorithmen</h2></div>
+  <div class="cols-2">
+    <div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Bedingungen prüfen</h3></header><p>„Nimm etwas Wasser. Koche es irgendwann. Gieße den Tee auf und warte.“ Prüfe den Ablauf auf die drei Bedingungen eines Algorithmus.</p>
+        <div class="controls"><button class="btn" data-reveal="a1" aria-expanded="false">Lösung</button></div><p class="solution" id="a1" hidden>Nicht <b>eindeutig</b> („etwas“, „irgendwann“), <b>ausführbar</b> ja, nicht <b>endlich</b> („warte“ – wie lange?). Besser: „Fülle 300 ml Wasser in den Wasserkocher. Koche das Wasser. Gieße den Tee auf. Warte 5 Minuten. Nimm den Teebeutel heraus.“</p></div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Ablaufplan</h3></header><p>Erstelle einen Ablaufplan für das Teekochen.</p></div>
+    </div>
+    <div id="fb-tee"></div>
+  </div>
+</section>
+
+<section class="station" id="t4" data-label="T4 Scratch" data-yr="Trainer" data-title="T4 Scratch" data-sub="Schleifen und Bedingungen">
+  <div class="section-head"><p class="eyebrow">Station 5 · Trainer T4</p><h2>Scratch</h2><p class="lead">Was macht dieses Programm? Erst vermuten, dann starten! Wie musst du es ändern, damit die Katze ein Dreieck zeichnet?</p></div>
+  <div id="s-t4"></div>
+  <h3 class="mt">Welche Kontrollstruktur?</h3>
+  <div id="ks-sort"></div>
+</section>
+
+<section class="station" id="quiz-st" data-label="Quiz" data-yr="Testen" data-title="Großes Quiz" data-sub="10 zufällige Fragen">
+  <div class="section-head"><p class="eyebrow">Station 6 · Quiz</p><h2>Großes Quiz</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<section class="station" id="uebungen" data-label="Ich kann …">
+  <div class="section-head"><p class="eyebrow">Selbsteinschätzung</p><h2>Ich kann …</h2></div>
+  <ol id="sc"></ol>
+</section>
+
+<script>
+const BEGRIFFE = [
+  ['Bit', 'kleinste Informationseinheit: 0 oder 1'], ['Byte', '8 Bit'], ['Binärsystem', 'Zahlensystem mit den Ziffern 0 und 1'], ['Dualzahl', 'Zahl im Binärsystem, z. B. 101₂'],
+  ['Code', 'Zeichen, die Daten anders darstellen'], ['Brailleschrift', 'Blindenschrift aus 6 Punkten'], ['QR-Code', 'zweidimensionaler Code aus Zellen'], ['Algorithmus', 'eindeutige, ausführbare, endliche Handlungsanweisung'],
+  ['Sequenz', 'Anweisungen, die nacheinander ausgeführt werden'], ['Ablaufplan', 'Flussdiagramm eines Algorithmus'], ['Schleife', 'Wiederholung von Anweisungen'], ['Verzweigung', 'falls … dann … sonst'], ['Attribut', 'Eigenschaftswert einer Figur']
+];
+flipCards($('#flip'), BEGRIFFE);
+matcher($('#match'), shuffle(BEGRIFFE.slice()).slice(0, 7));
+taskSet($('#ts'), () => {
+  const r = Math.random();
+  if (r < .35) { const n = randInt(2, 127), b = n.toString(2); return {key: 'b' + b, tag: 'Dual → Dezimal', q: `<span class="big">${b}₂</span>`, fields: [{l: 'Dezimalzahl', a: n}]}; }
+  if (r < .7) { const n = randInt(2, 127); return {key: 'd' + n, tag: 'Dezimal → Dual', q: `<span class="big">${n}</span>`, fields: [{l: 'Dualzahl', a: [n.toString(2)]}]}; }
+  const n = randInt(2, 9); return pick([{key: 'gb' + n, tag: 'Einheiten', q: `<span class="big">${n} GB = ? MB</span>`, fields: [{l: 'Ergebnis', a: n * 1000, unit: 'MB'}]}, {key: 'by' + n, tag: 'Einheiten', q: `<span class="big">${n} Byte = ? Bit</span>`, fields: [{l: 'Ergebnis', a: n * 8, unit: 'Bit'}]}]);
+}, {n: 6});
+sorter($('#code-sort'), [{id: 'm', name: 'für Menschen'}, {id: 'c', name: 'für Maschinen'}], [
+  {t: 'Brailleschrift', c: 'm'}, {t: 'Morsezeichen', c: 'm'}, {t: 'Erzeugercode auf Eiern', c: 'm'}, {t: 'Kfz-Kennzeichen', c: 'm'},
+  {t: 'EAN-Barcode', c: 'c'}, {t: 'QR-Code', c: 'c'}, {t: 'Pfandsymbol', c: 'c'}, {t: 'Binärcode', c: 'c'}
+]);
+flowBuilder($('#fb-tee'), {pool: ['Fülle 300 ml Wasser in den Wasserkocher.', 'Schalte den Wasserkocher ein.', 'Hänge einen Teebeutel in die Tasse.', 'Gieße das kochende Wasser in die Tasse.', 'Warte 5 Minuten.', 'Nimm den Teebeutel heraus.']});
+scratch($('#s-t4'), [{op: 'flag'}, {op: 'repeat', n: 4, body: [{op: 'move', n: 100}, {op: 'turn', n: 90}]}, {op: 'say', text: 'Fertig!', s: 2}], {pen: true, x: -50, y: 50});
+sorter($('#ks-sort'), [{id: 's', name: 'Sequenz'}, {id: 'z', name: 'Zählschleife'}, {id: 'e', name: 'Endlosschleife'}, {id: 'b', name: 'Bedingung'}], [
+  {t: sblock('ct', 'wiederhole 10 mal'), c: 'z'}, {t: sblock('ct', 'wiederhole fortlaufend'), c: 'e'}, {t: sblock('ct', 'falls Antwort = 2, dann'), c: 'b'}, {t: sblock('ct', 'wiederhole bis Rand berührt?'), c: 'b'},
+  {t: sblock('mo', 'gehe 10') + sblock('lo', 'sage Hallo!'), c: 's'}
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Wie viel ist 1010₂?', a: ['10', '1010', '5', '12'], ok: 0, why: '8 + 2'},
+  {q: 'Wie lautet 7 als Dualzahl?', a: ['111₂', '1000₂', '101₂', '7₂'], ok: 0, why: '4 + 2 + 1'},
+  {q: 'Wie viele Kombinationen hat ein Byte?', a: ['256', '8', '255', '1024'], ok: 0, why: '2⁸'},
+  {q: 'Was ist größer: 1 GB oder 1 MB?', a: ['1 GB', '1 MB', 'gleich groß', 'kommt drauf an'], ok: 0, why: '1 GB = 1000 MB.'},
+  {q: 'Worin wird die Internetgeschwindigkeit angegeben?', a: ['Bit pro Sekunde', 'Byte', 'Pixel', 'Hertz'], ok: 0, why: 'z. B. 50 Mbit/s.'},
+  {q: 'Wer erfand die Blindenschrift mit 6 Punkten?', a: ['Louis Braille', 'Samuel Morse', 'Konrad Zuse', 'Alfred Vail'], ok: 0, why: 'Louis Braille.'},
+  {q: 'Was zeigt die Prüfziffer im EAN-Code?', a: ['ob der Code richtig gelesen wurde', 'den Preis', 'das Land', 'den Hersteller'], ok: 0, why: 'Sie erkennt Lesefehler.'},
+  {q: 'Welche Bedingung muss ein Algorithmus NICHT erfüllen?', a: ['schnell', 'eindeutig', 'ausführbar', 'endlich'], ok: 0, why: 'Schnell muss er nicht sein.'},
+  {q: 'Wie stehen Anweisungen im Ablaufplan?', a: ['im Imperativ', 'als Fragen', 'in Klammern', 'auf Englisch'], ok: 0, why: '„Gehe“, „Nimm“ …'},
+  {q: 'Wo liegt in Scratch der Punkt (0|0)?', a: ['in der Bühnenmitte', 'oben links', 'unten rechts', 'außerhalb'], ok: 0, why: 'Der Ursprung.'},
+  {q: 'Welcher Block wiederholt endlos?', a: ['wiederhole fortlaufend', 'wiederhole 10 mal', 'falls … dann', 'warte 1 Sekunden'], ok: 0, why: 'Er hört nie von selbst auf.'},
+  {q: 'Was macht „falls … dann … sonst“?', a: ['Es verzweigt je nach Bedingung', 'Es wiederholt immer', 'Es startet das Programm', 'Es stoppt das Programm'], ok: 0, why: 'Mit Alternative.'},
+  {q: 'Zu welcher Kategorie gehört „spiele Klang Miau“?', a: ['Klang', 'Aussehen', 'Steuerung', 'Ereignisse'], ok: 0, why: 'Klangblöcke sind rosa.'},
+  {q: 'Wie zeichnet man ein Dreieck?', a: ['wiederhole 3 mal: gehe 100, drehe 120°', 'wiederhole 3 mal: gehe 100, drehe 90°', 'wiederhole 4 mal: drehe 60°', 'gehe 300'], ok: 0, why: '3 · 120° = 360°.'}
+], {pick: 10});
+selfCheck($('#sc'), [
+  {t: 'Ich kann Dualzahlen in Dezimalzahlen umrechnen und umgekehrt.', href: '01_Binaersystem.html#umrechnen'},
+  {t: 'Ich kann Bits und Bytes unterscheiden und Speichereinheiten umrechnen.', href: '02_Bits_Bytes.html#einheiten'},
+  {t: 'Ich kann eine Downloadzeit berechnen.', href: '02_Bits_Bytes.html#uebertragen'},
+  {t: 'Ich kenne Codes wie Brailleschrift, Morsealphabet, Barcode und QR-Code.', href: '03_Codierung.html#codieren'},
+  {t: 'Ich kann die drei Bedingungen eines Algorithmus nennen und prüfen.', href: '04_Algorithmen_Alltag.html#eigenschaften'},
+  {t: 'Ich kann einen Ablaufplan erstellen.', href: '05_Algorithmen_darstellen.html#ablaufplan'},
+  {t: 'Ich kenne die Bereiche des Scratch-Fensters und das Koordinatensystem der Bühne.', href: '06_Scratch_Umgebung.html#fenster'},
+  {t: 'Ich kann Zählschleife, Endlosschleife und Wiederholung mit Bedingung unterscheiden.', href: '07_Wiederholungen.html#zaehl'},
+  {t: 'Ich kann bedingte Anweisungen und Verzweigungen programmieren.', href: '08_Bedingungen.html#mathe'},
+  {t: 'Ich kann eine Sequenz in Scratch programmieren.', href: '09_Sequenzen.html#m1'},
+  {t: 'Ich kann ein eigenes Scratch-Projekt planen und umsetzen.', href: '10_Projekte.html#phasen'}
+]);
+</script>

@@ -1,0 +1,177 @@
+<!--
+title: Farbmischung und RGB-Modell
+short: Farben
+time: 2 Unterrichtsstunden
+q: Wie werden Farben gemischt und dargestellt?
+facts: Subtraktive Farbmischung mit Cyan, Magenta, Yellow (CMY) | Additive Farbmischung mit Rot, Grün, Blau (RGB) am Bildschirm | Graustufen mit Helligkeitswerten 0 bis 255 | M1 Farbbilder im RGB-Modell, M2 Graustufenbilder
+inter: Farbkreise ein- und ausschalten · RGB-Mischpult mit Farb-Challenges · Graustufen-Regler · Graustufenbild aus Zahlen · Bild einfärben mit automatischem RGB-Raster
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Bilder und Videos</p>
+      <h1>Farbmischung und RGB-Modell<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Im Malkasten mischt man Blau und Gelb zu Grün. Am Bildschirm ergibt Rot plus Grün … Gelb? Wie werden Farben gemischt und dargestellt?</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Was entsteht, wenn du alle Farben im Malkasten mischst? Und was, wenn du alle Lampenfarben übereinander leuchten lässt?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie werden Farben gemischt und dargestellt?</p></div>
+      <div class="controls"><button class="btn primary" data-go="mischen">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="mischen" data-label="Farbmischung" data-yr="Erarbeitung" data-title="Subtraktiv und additiv" data-sub="CMY und RGB">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Farbmischung</p>
+    <h2>Subtraktiv und additiv</h2>
+  </div>
+  <div class="cols-2">
+    <div class="vis">
+      <div class="vis-head"><h3>Abb. 1: Subtraktive Farbmischung</h3><div class="mixbtn" id="sub-btn"></div></div>
+      <div class="mix sub" id="sub"><i class="c1" style="background:#00B7EB"></i><i class="c2" style="background:#EC008C"></i><i class="c3" style="background:#FFF200"></i></div>
+      <p>Weißes Licht enthält alle Farben. Gedruckte oder gemalte Farben wirken wie ein <b>Filter</b>: Sie halten Teile des Lichts zurück. Grundfarben: <b>Cyan, Magenta, Yellow</b> (CMY-Modell). Jede weitere Farbe filtert mehr Licht – alle zusammen ergeben <b>Schwarz</b>.</p>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Abb. 2: Additive Farbmischung</h3><div class="mixbtn" id="add-btn"></div></div>
+      <div class="mix add" id="add"><i class="c1" style="background:#00FF00"></i><i class="c2" style="background:#FF0000"></i><i class="c3" style="background:#0000FF"></i></div>
+      <p>Displays strahlen selbst Licht aus. Ihr Licht setzt sich aus <b>Rot, Grün und Blau</b> zusammen (RGB-Modell). Die Grundfarben werden in unterschiedlicher Helligkeit gemischt – alle zusammen ergeben <b>Weiß</b>.</p>
+    </div>
+  </div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">A</span><h3>Vergleichen</h3></header><p>Vergleiche die subtraktive und die additive Farbmischung miteinander.</p>
+      <div class="controls"><button class="btn" data-reveal="fa" aria-expanded="false">Lösung</button></div><p class="solution" id="fa" hidden>Subtraktiv (Farbe auf Papier): Farben filtern Licht heraus, jede weitere macht dunkler – alle zusammen ergeben Schwarz. Additiv (Licht am Bildschirm): Lichtfarben werden addiert, jede weitere macht heller – alle zusammen ergeben Weiß.</p></div>
+    <div class="task-card"><header><span class="no">B</span><h3>CMY und RGB</h3></header><p>Erkläre den Unterschied zwischen dem CMY- und dem RGB-Modell.</p>
+      <div class="controls"><button class="btn" data-reveal="fb2" aria-expanded="false">Lösung</button></div><p class="solution" id="fb2" hidden>CMY nutzt Cyan, Magenta und Yellow und wird beim Drucken und Malen verwendet (subtraktiv). RGB nutzt Rot, Grün und Blau und wird bei Bildschirmen verwendet (additiv).</p></div>
+  </div>
+</section>
+
+<section class="station" id="rgb" data-label="M1 RGB" data-yr="M1" data-title="Farben im RGB-Modell" data-sub="Das Mischpult">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Darstellung von Farben</p>
+      <h2>Drei Zahlen pro Pixel</h2>
+      <ul class="facts">
+        <li>In Text- und Bildbearbeitungsprogrammen kommt oft das <b>RGB-Modell</b> zum Einsatz.</li>
+        <li>Für jede Grundfarbe wird eine Zahl zwischen <b>0 und 255</b> festgelegt – sie steht für die <b>Helligkeit</b> dieser Farbe.</li>
+        <li>Für jedes Pixel eines Farbbildes wird ein <b>Rot-, Grün- und Blauwert</b> gespeichert.</li>
+      </ul>
+      <div class="task-card"><header><span class="no">Challenge</span><h3 id="ch-t"></h3></header><p id="ch-p">Mische die gesuchte Farbe!</p><div class="controls"><button class="btn primary" id="ch-check">Prüfen</button><button class="btn" id="ch-next">Nächste Farbe</button></div><p class="fb" id="ch-fb"></p></div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>RGB-Mischpult</h3></div>
+      <div class="rgbmix">
+        <div class="swatch" id="sw"></div>
+        <div class="stack">
+          <label class="slider-row r">Rot <input id="r" type="range" min="0" max="255" value="255"><output id="ro" class="mono">255</output></label>
+          <label class="slider-row g">Grün <input id="g" type="range" min="0" max="255" value="0"><output id="go" class="mono">0</output></label>
+          <label class="slider-row b">Blau <input id="b" type="range" min="0" max="255" value="0"><output id="bo" class="mono">0</output></label>
+        </div>
+      </div>
+      <p class="status" id="rgb-status"></p>
+    </div>
+  </div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Drei Werte</h3></header><p>Erkläre, warum ein RGB-Bild drei Werte für ein Pixel codiert.</p>
+      <div class="controls"><button class="btn" data-reveal="r1" aria-expanded="false">Lösung</button></div><p class="solution" id="r1" hidden>Jede Farbe am Bildschirm wird aus Rot, Grün und Blau gemischt. Für jede der drei Grundfarben braucht man einen Helligkeitswert von 0 bis 255.</p></div>
+    <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Graustufen- und RGB-Bild</h3></header><p>Erkläre Unterschiede zwischen einem Graustufenbild und einem RGB-Bild.</p>
+      <div class="controls"><button class="btn" data-reveal="r2" aria-expanded="false">Lösung</button></div><p class="solution" id="r2" hidden>Ein Graustufenbild speichert pro Pixel <b>einen</b> Helligkeitswert (0–255), ein RGB-Bild <b>drei</b> Werte (Rot, Grün, Blau). Das RGB-Bild ist bunt, braucht aber dreimal so viel Speicher.</p></div>
+  </div>
+</section>
+
+<section class="station" id="grau" data-label="M2 Graustufen" data-yr="M2" data-title="Graustufenbilder" data-sub="Helligkeit von 0 bis 255">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Graustufen-Modell</p>
+    <h2>Graustufen</h2>
+    <p class="lead">Mit Grautönen lassen sich Akzente setzen, die mit nur schwarzen und weißen Pixeln nicht möglich wären. Jeder Grauwert wird durch seine <b>Helligkeit</b> von <b>0</b> (Schwarz) bis <b>255</b> (Weiß) festgelegt. Für jedes Pixel wird ein Grauwert gespeichert.</p>
+  </div>
+  <label class="slider-row" style="max-width:640px">Helligkeit <input id="gray" type="range" min="0" max="255" value="128"><output id="gray-o" class="mono">128</output><span class="gray-sw" id="gray-sw"></span></label>
+  <div class="px-pair mt">
+    <div><p class="eyebrow">A: Rastergrafik</p><div id="gA"></div></div>
+    <div><p class="eyebrow">B: Pixelraster</p><div class="pxcode num" id="gB"></div></div>
+    <div class="stack" style="flex:1;min-width:15rem">
+      <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Zusammenhang</h3></header><p>Beschreibe, wie sich ein Graustufenwert zusammensetzt und wie Bild A und Bild B zusammenhängen.</p>
+        <div class="controls"><button class="btn" data-reveal="g2" aria-expanded="false">Lösung</button></div><p class="solution" id="g2" hidden>Ein Graustufenwert ist eine Zahl von 0 (schwarz) bis 255 (weiß) für die Helligkeit. Bild B ist der Code von Bild A: Jede Zahl gibt die Helligkeit des Pixels an derselben Stelle an (0 = schwarz, 64 = dunkelgrau, 160 = hellgrau, 255 = weiß).</p></div>
+    </div>
+  </div>
+  <h3 class="mt">Aufgaben 3–4: Färbe das Bild ein – das RGB-Raster entsteht automatisch</h3>
+  <div class="palette" id="pal"></div>
+  <div class="px-pair"><div id="gC"></div><div class="pxcode num small" id="gD"></div></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Farben</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Farbmischung und RGB-Modell</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step><b>Subtraktive Farbmischung</b> (Malen, Drucken): Grundfarben Cyan, Magenta, Yellow (CMY). Farben filtern Licht – alle zusammen ergeben Schwarz.</li>
+        <li data-step><b>Additive Farbmischung</b> (Bildschirme): Grundfarben Rot, Grün, Blau (RGB). Licht wird gemischt – alle zusammen ergeben Weiß.</li>
+        <li data-step><b>Graustufen:</b> Für jedes Pixel wird ein Helligkeitswert von 0 (Schwarz) bis 255 (Weiß) gespeichert.</li>
+        <li data-step><b>RGB-Modell:</b> Für jedes Pixel werden drei Werte von 0 bis 255 gespeichert – für Rot, Grün und Blau. Beispiel: (255, 255, 0) = Gelb.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne die beiden Farbkreise (CMY und RGB) mit Buntstiften und beschrifte die Mischfarben.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Üben und wiederholen</h2></div>
+  <h3>Welche Farbe ist das?</h3>
+  <div id="quiz2"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ================= Farbkreise ================= */
+for (const [id, names] of [['sub', ['Cyan', 'Magenta', 'Yellow']], ['add', ['Grün', 'Rot', 'Blau']]]) {
+  const root = $('#' + id), on = [true, true, true];
+  $(`#${id}-btn`).innerHTML = names.map((n, i) => `<button class="btn" aria-pressed="true" data-i="${i}">${n}</button>`).join('');
+  $(`#${id}-btn`).addEventListener('click', e => { const b = e.target.closest('[data-i]'); if (!b) return; const i = +b.dataset.i; on[i] = !on[i]; b.setAttribute('aria-pressed', on[i]); $$('i', root)[i].style.opacity = on[i] ? 1 : 0; });
+}
+
+/* ================= RGB ================= */
+(() => {
+  const C = [['Gelb', [255, 255, 0]], ['Cyan', [0, 255, 255]], ['Magenta', [255, 0, 255]], ['Orange', [255, 165, 0]], ['Weiß', [255, 255, 255]], ['Schwarz', [0, 0, 0]], ['Grau', [128, 128, 128]], ['Lila', [128, 0, 128]], ['Himmelblau', [135, 206, 235]]];
+  let k = 0;
+  const up = () => { const [r, g, b] = ['r', 'g', 'b'].map(c => +$('#' + c).value); ['r', 'g', 'b'].forEach(c => $('#' + c + 'o').textContent = $('#' + c).value); $('#sw').style.background = `rgb(${r},${g},${b})`; $('#rgb-status').innerHTML = `Rot ${r} · Grün ${g} · Blau ${b} → <b class="mono">(${r}, ${g}, ${b})</b>`; };
+  const ch = () => { $('#ch-t').textContent = `Mische: ${C[k][0]}`; $('#ch-fb').textContent = ''; };
+  $$('#rgb input').forEach(i => i.oninput = up);
+  $('#ch-next').onclick = () => { k = (k + 1) % C.length; ch(); };
+  $('#ch-check').onclick = () => { const v = ['r', 'g', 'b'].map(c => +$('#' + c).value), t = C[k][1], d = Math.max(...v.map((x, i) => Math.abs(x - t[i]))); $('#ch-fb').className = 'fb ' + (d <= 40 ? 'ok' : 'err'); $('#ch-fb').textContent = d <= 40 ? `Super! Ziel war (${t.join(', ')}).` : 'Noch nicht – vergleiche die Farbe genau.'; };
+  up(); ch();
+})();
+
+/* ================= Graustufen ================= */
+(() => {
+  const up = () => { const v = $('#gray').value; $('#gray-o').textContent = v; $('#gray-sw').style.background = `rgb(${v},${v},${v})`; };
+  $('#gray').oninput = up; up();
+  const B = [[255, 0, 0, 0, 0, 0, 255, 255], [255, 0, 160, 160, 160, 160, 255, 255], [255, 160, 160, 0, 160, 0, 255, 255], [255, 160, 160, 160, 160, 160, 255, 255], [64, 64, 64, 0, 64, 64, 64, 160], [160, 64, 64, 0, 64, 64, 255, 255], [255, 64, 64, 64, 64, 64, 255, 255], [255, 160, 255, 255, 255, 160, 255, 255]];
+  const key = {255: 'w', 160: 'h', 64: 'd', 0: 's'}, PAL = {w: [255, 255, 255], h: [160, 160, 160], d: [64, 64, 64], s: [0, 0, 0], r: [220, 38, 38], o: [249, 115, 22], y: [250, 204, 21], g: [22, 163, 74], b: [37, 99, 235], p: [147, 51, 234], k: [244, 194, 155], n: [120, 72, 40]};
+  const css = v => `rgb(${PAL[v].join(',')})`;
+  const data = B.map(r => r.map(v => key[v]).join(''));
+  pixelGrid($('#gA'), {w: 8, h: 8, data, palette: Object.fromEntries(Object.keys(PAL).map(k => [k, css(k)])), readonly: true});
+  $('#gB').innerHTML = B.map(r => `<span>${r.map(v => String(v).padStart(3, ' ')).join(' ')}</span>`).join('');
+  const code = d => $('#gD').innerHTML = d.map(r => `<span>${[...r].map(c => `(${PAL[c].join(',')})`).join(' ')}</span>`).join('');
+  const gc = pixelGrid($('#gC'), {w: 8, h: 8, data, palette: Object.fromEntries(Object.keys(PAL).map(k => [k, css(k)])), pen: 'r', onChange: code});
+  $('#pal').innerHTML = Object.keys(PAL).map(k => `<button class="pal-c ${k === 'r' ? 'on' : ''}" data-k="${k}" style="background:${css(k)}" aria-label="Farbe (${PAL[k].join(', ')})"></button>`).join('');
+  $('#pal').addEventListener('click', e => { const b = e.target.closest('[data-k]'); if (!b) return; $$('.pal-c').forEach(x => x.classList.toggle('on', x === b)); gc.setPen(b.dataset.k); });
+})();
+
+/* ================= Übungen ================= */
+mcQuiz($('#quiz2'), [
+  {q: '<span class="qsw" style="background:rgb(255,0,0)"></span> (255, 0, 0)', a: ['Rot', 'Grün', 'Blau', 'Schwarz'], ok: 0, why: 'Nur Rot leuchtet voll.'},
+  {q: '<span class="qsw" style="background:rgb(255,255,0)"></span> (255, 255, 0)', a: ['Gelb', 'Weiß', 'Orange', 'Cyan'], ok: 0, why: 'Rot + Grün = Gelb (additiv).'},
+  {q: '<span class="qsw" style="background:rgb(0,0,0)"></span> (0, 0, 0)', a: ['Schwarz', 'Weiß', 'Grau', 'Blau'], ok: 0, why: 'Keine Farbe leuchtet.'},
+  {q: '<span class="qsw" style="background:rgb(255,255,255)"></span> (255, 255, 255)', a: ['Weiß', 'Schwarz', 'Gelb', 'Grau'], ok: 0, why: 'Alle Farben voll = Weiß.'},
+  {q: '<span class="qsw" style="background:rgb(0,255,255)"></span> (0, 255, 255)', a: ['Cyan', 'Magenta', 'Gelb', 'Grün'], ok: 0, why: 'Grün + Blau.'}
+], {pick: 5});
+mcQuiz($('#quiz'), [
+  {q: 'Welche Grundfarben hat das RGB-Modell?', a: ['Rot, Grün, Blau', 'Cyan, Magenta, Yellow', 'Rot, Gelb, Blau', 'Schwarz, Weiß, Grau'], ok: 0, why: 'Für Bildschirme.'},
+  {q: 'Was ergibt die subtraktive Mischung aller Grundfarben?', a: ['Schwarz', 'Weiß', 'Grau', 'Braun'], ok: 0, why: 'Alles Licht wird herausgefiltert.'},
+  {q: 'Welche Mischung nutzen Bildschirme?', a: ['additive', 'subtraktive', 'beide nicht', 'nur Graustufen'], ok: 0, why: 'Sie strahlen selbst Licht aus.'},
+  {q: 'Welchen Wert hat Weiß im Graustufen-Modell?', a: ['255', '0', '128', '1'], ok: 0, why: '0 ist Schwarz.'},
+  {q: 'Wie viele Werte speichert ein RGB-Bild pro Pixel?', a: ['3', '1', '8', '255'], ok: 0, why: 'Rot, Grün, Blau.'}
+]);
+</script>

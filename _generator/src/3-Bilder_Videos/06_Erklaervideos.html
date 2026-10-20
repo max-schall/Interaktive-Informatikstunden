@@ -1,0 +1,141 @@
+<!--
+title: Erklärvideos nutzen
+short: Erklärvideos
+time: 1–2 Unterrichtsstunden
+q: Welche Arten von Erklärvideos gibt es – und welche passt zu meinem Thema?
+facts: Animationsvideo, Realfilm, Screencast, Whiteboard-Film, Stop-Motion-Film | Merkmale, Einsatz, Vor- und Nachteile (Abb. 4) | Recht am eigenen Bild bei Realfilmen | M1 Erklärfilme zuordnen und begründet auswählen
+inter: Videoarten-Tabelle aufdecken · Stop-Motion-Daumenkino · Merkmale zuordnen · Themen der passenden Filmart zuordnen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Bilder und Videos</p>
+      <h1>Erklärvideos nutzen<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Erklärvideos helfen, unterschiedliche Dinge einfach verständlich zu machen – beim Lernen sind sie nicht mehr wegzudenken.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welches Erklärvideo hast du zuletzt angeschaut? Was hat es gut gemacht?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Welche Arten von Erklärvideos gibt es – und welche passt zu meinem Thema?</p></div>
+      <div class="controls"><button class="btn primary" data-go="arten">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="arten" data-label="Videoarten" data-yr="Erarbeitung" data-title="Fünf Arten von Erklärvideos" data-sub="Abb. 4 im Überblick">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Erklärvideos im Überblick</p>
+    <h2>Fünf Arten von Erklärvideos</h2>
+    <p class="lead">Tippe die Felder an, um sie aufzudecken.</p>
+  </div>
+  <div class="table-wrap"><table class="cmp" id="vt">
+    <thead><tr><th>Art</th><th>Merkmale</th><th>Einsatz im Unterricht</th><th>Vorteile und Nachteile</th></tr></thead>
+    <tbody>
+      <tr><th>🎞️ Animationsvideo</th><td class="q"><span>bewegte Grafiken und Zeichnungen</span></td><td class="q"><span>Veranschaulichung komplizierter Vorgänge</span></td><td class="q"><span>ansprechend, aber teuer und zeitaufwendig</span></td></tr>
+      <tr><th>🎥 Realfilm</th><td class="q"><span>echte Menschen und Gegenstände</span></td><td class="q"><span>Experimente, Interviews</span></td><td class="q"><span>lebensnah, aber schwer nachzubearbeiten</span></td></tr>
+      <tr><th>🖥️ Screencast</th><td class="q"><span>Bildschirmaufnahme mit Audio</span></td><td class="q"><span>Tutorials für Software oder Aufgaben</span></td><td class="q"><span>einfach zu erstellen, aber wenig abwechslungsreich</span></td></tr>
+      <tr><th>✏️ Whiteboard-Film</th><td class="q"><span>Whiteboard-Zeichnungen im Zeitraffer</span></td><td class="q"><span>Erklärungen von Unterrichtsinhalten</span></td><td class="q"><span>übersichtlich, aber benötigt gute Planung</span></td></tr>
+      <tr><th>🧸 Stop-Motion-Film</th><td class="q"><span>zusammengesetzte Einzelbilder</span></td><td class="q"><span>Geschichten, Abläufe</span></td><td class="q"><span>kreativ und ansprechend, aber sehr zeitaufwendig</span></td></tr>
+    </tbody></table></div>
+  <div class="cmp-tools"><button class="btn" id="vt-q">Verdecken</button><button class="btn" id="vt-a">Alles aufdecken</button></div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">A</span><h3>Animationsvideo</h3></header><p>Beschreibe, warum sich ein Animationsvideo besser als andere Erklärvideos für komplizierte Vorgänge eignet.</p>
+      <div class="controls"><button class="btn" data-reveal="ea" aria-expanded="false">Lösung</button></div><p class="solution" id="ea" hidden>Mit bewegten Grafiken kann man zeigen, was man mit einer Kamera nicht filmen kann – z. B. Vorgänge im Körper oder in einer Pflanze. Man kann vereinfachen, vergrößern und Schritt für Schritt vorgehen.</p></div>
+    <div class="task-card"><header><span class="no">B</span><h3>Tutorials</h3></header><p>Nenne die Art Erklärvideo, mit der man gut Tutorials erstellen kann.</p>
+      <div class="controls"><button class="btn" data-reveal="eb" aria-expanded="false">Lösung</button></div><p class="solution" id="eb" hidden>Den <b>Screencast</b>: Er zeigt, was auf dem Bildschirm passiert.</p></div>
+  </div>
+</section>
+
+<section class="station" id="stopmotion" data-label="Stop-Motion" data-yr="Ausprobieren" data-title="Einzelbilder werden zum Film" data-sub="Stop-Motion-Daumenkino">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Stop-Motion</p>
+      <h2>Einzelbilder werden zum Film</h2>
+      <p class="lead">Bei einem Stop-Motion-Film werden viele <b>Einzelbilder</b> zusammengesetzt. Oft nutzt man Spielbausteine, Papier oder Knetfiguren. Das erfordert Geduld!</p>
+      <p>Spiele die Einzelbilder ab und verändere die Geschwindigkeit. Wie viele Bilder pro Sekunde braucht man, damit es flüssig wirkt?</p>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Daumenkino</h3><div id="sm-seg"></div></div>
+      <div class="flipbook" id="fbk"></div>
+      <div class="frames" id="frames"></div>
+      <p class="status" id="sm-status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Erklärfilme" data-yr="M1" data-title="Erklärfilme auswählen" data-sub="Welche Filmart passt?">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Material M1</p>
+    <h2>Welche Filmart passt?</h2>
+  </div>
+  <div class="m2cards" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+    <div class="m2c"><span>🧸🧸</span><b>A</b><small>Knetfiguren, die in vielen Einzelbildern bewegt werden</small></div>
+    <div class="m2c"><span>🧪</span><b>B</b><small>Nahaufnahme: Eine Flüssigkeit tropft in ein Becherglas</small></div>
+    <div class="m2c"><span>🧑‍🔬</span><b>C</b><small>Eine Person im Laborkittel erklärt einen Versuch</small></div>
+  </div>
+  <div class="cols-2 mt">
+    <div>
+      <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Zuordnen</h3></header><p>Beschreibe den Unterschied in Gestaltung und Wirkung der drei Filme und ordne sie einer Art zu. Begründe.</p></div>
+      <div id="m1-sort"></div>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Welche Filmart bietet sich an?</h3></header><p>Begründe, welche Filmart sich für die Inhalte eignet.</p></div>
+      <div id="m4-sort"></div>
+    </div>
+  </div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Mein Thema</h3></header><p>Überlege dir ein Thema deiner Wahl. Begründe, welche Art des Films du dafür wählen würdest.</p></div>
+    <div class="task-card"><header><span class="no">5</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Realfilme</h3></header><p>Erkläre, was man bei Realfilmen beachten sollte.</p>
+      <div class="controls"><button class="btn" data-reveal="e5" aria-expanded="false">Lösung</button></div><p class="solution" id="e5" hidden>Realfilme sind aufwendig zu filmen und schwer nachzubearbeiten – gute Planung hilft. Sind Personen zu sehen, gilt das <b>Recht am eigenen Bild</b>: Vor der Veröffentlichung im Internet muss man ihre <b>Einwilligung</b> einholen.</p></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Erklärvideos</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Arten von Erklärvideos</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step><b>Animationsvideo:</b> bewegte Grafiken; gut für komplizierte Vorgänge; ansprechend, aber teuer und zeitaufwendig.</li>
+        <li data-step><b>Realfilm:</b> echte Menschen und Gegenstände; für Interviews und Experimente; lebensnah, aber schwer nachzubearbeiten. Recht am eigenen Bild beachten!</li>
+        <li data-step><b>Screencast:</b> Bildschirmaufnahme mit Kommentar; für Software-Tutorials; einfach, aber wenig abwechslungsreich.</li>
+        <li data-step><b>Whiteboard-Film:</b> Zeichnungen im Zeitraffer; übersichtlich, braucht gute Planung.</li>
+        <li data-step><b>Stop-Motion-Film:</b> viele Einzelbilder; kreativ, aber sehr zeitaufwendig.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Tabelle</span><p>Übertrage Abb. 4 als Tabelle in dein Heft.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Üben und wiederholen</h2></div>
+  <div id="match"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+quizTable($('#vt'), $('#vt-q'), $('#vt-a'));
+(() => {
+  const F = ['🐣', '🐥', '🐤', '🐔', '🍳', '🥞'];
+  const pos = [10, 25, 40, 55, 70, 85];
+  $('#frames').innerHTML = F.map((f, i) => `<span class="frame"><b>${f}</b><small>Bild ${i + 1}</small></span>`).join('');
+  let fps = 2, k = 0, timer;
+  const run = () => { clearInterval(timer); timer = setInterval(() => { if ($('#stopmotion').hidden) return; k = (k + 1) % F.length; $('#fbk').innerHTML = `<span style="left:${pos[k]}%">${F[k]}</span>`; $$('#frames .frame').forEach((x, i) => x.classList.toggle('on', i === k)); }, 1000 / fps); };
+  seg($('#sm-seg'), [[1, '1 Bild/s'], [2, '2'], [6, '6'], [12, '12 Bilder/s']], v => { fps = +v; $('#sm-status').innerHTML = fps < 6 ? 'Langsam: Man sieht einzelne Bilder.' : fps < 12 ? 'Schon flüssiger …' : '<b>12 Bilder pro Sekunde</b>: Für Stop-Motion wirkt das schon wie ein Film.'; run(); }, 2);
+})();
+sorter($('#m1-sort'), [{id: 's', name: 'Stop-Motion-Film'}, {id: 'r', name: 'Realfilm'}], [
+  {t: 'A – Knetfiguren in Einzelbildern', c: 's', why: 'Viele Einzelbilder werden zusammengesetzt.'}, {t: 'B – Flüssigkeit tropft ins Becherglas', c: 'r', why: 'Echte Gegenstände werden gefilmt.'}, {t: 'C – Person erklärt einen Versuch', c: 'r', why: 'Echte Person – Recht am eigenen Bild beachten.'}
+]);
+sorter($('#m4-sort'), [{id: 'r', name: 'Realfilm'}, {id: 's', name: 'Stop-Motion'}, {id: 'a', name: 'Animationsvideo'}, {id: 'c', name: 'Screencast'}], [
+  {t: 'ein Interview führen', c: 'r'}, {t: 'Bogenschießen erklären', c: 'r'}, {t: 'Keimung und Wachstum einer Bohne dokumentieren', c: 's', why: 'Viele Einzelbilder über Tage – Zeitraffer'},
+  {t: 'Bau einer Pyramide im alten Ägypten zeigen', c: 'a', why: 'Kann man nicht filmen.'}, {t: 'zeigen, wie man in GIMP freistellt', c: 'c'}
+]);
+matcher($('#match'), [['Animationsvideo', 'bewegte Grafiken für komplizierte Vorgänge'], ['Realfilm', 'echte Menschen und Gegenstände'], ['Screencast', 'Bildschirmaufnahme für Tutorials'], ['Whiteboard-Film', 'Zeichnungen im Zeitraffer'], ['Stop-Motion', 'viele Einzelbilder, z. B. mit Knete'], ['Recht am eigenen Bild', 'Einwilligung vor dem Veröffentlichen']]);
+mcQuiz($('#quiz'), [
+  {q: 'Welche Filmart eignet sich für ein Software-Tutorial?', a: ['Screencast', 'Stop-Motion', 'Realfilm', 'Animationsvideo'], ok: 0, why: 'Bildschirmaufnahme.'},
+  {q: 'Was ist ein Nachteil von Animationsvideos?', a: ['teuer und zeitaufwendig', 'nicht ansprechend', 'nur schwarz-weiß', 'ohne Ton'], ok: 0, why: 'Man braucht teure Software.'},
+  {q: 'Was muss man bei Realfilmen mit Personen beachten?', a: ['das Recht am eigenen Bild', 'nichts', 'nur die Länge', 'die Farbtiefe'], ok: 0, why: 'Einwilligung einholen.'},
+  {q: 'Woraus besteht ein Stop-Motion-Film?', a: ['aus vielen Einzelbildern', 'aus einer Bildschirmaufnahme', 'aus einem Interview', 'nur aus Ton'], ok: 0, why: 'Bild für Bild.'},
+  {q: 'Warum laufen Whiteboard-Filme oft im Zeitraffer?', a: ['weil das Zeichnen viel Zeit braucht', 'weil sie sonst zu leise sind', 'weil sie keine Farben haben', 'weil es Pflicht ist'], ok: 0, why: 'Sonst wären sie zu lang.'}
+]);
+</script>

@@ -1,0 +1,195 @@
+<!--
+title: Shortcuts und Symbolleiste
+short: Shortcuts
+time: 1 Unterrichtsstunde
+q: Wie arbeitet man mit Tastenkombinationen und der Symbolleiste schneller?
+facts: Auf einen Blick: Shortcuts unter Windows und macOS (S. 102) | Shortcuts hängen vom Betriebssystem und von der Software ab | Auf einen Blick: Übersicht über die Symbolleiste mit 10 Funktionen (S. 103) | Groß-/Kleinschreibung, Formatierungen löschen, Einzug, Sortieren, Alle anzeigen, Texteffekte, Texthervorhebungsfarbe, Schattierung, Rahmen
+inter: Shortcut-Tastatur Windows/Mac umschalten · Shortcut-Memory · Shortcut-Sprint · Symbolleiste erkunden und finden · Sortieren- und Groß/klein-Funktion ausprobieren
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Textgestaltung</p>
+      <h1>Shortcuts und Symbolleiste<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Profis greifen selten zur Maus: Mit Tastenkombinationen und der Symbolleiste geht das Formatieren viel schneller.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welche Tastenkombinationen kennst du schon?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie arbeitet man mit Tastenkombinationen und der Symbolleiste schneller?</p></div>
+      <div class="controls"><button class="btn primary" data-go="shortcuts">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="shortcuts" data-label="Shortcuts" data-yr="Auf einen Blick" data-title="Shortcuts bei der Textverarbeitung" data-sub="Windows und macOS">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Auf einen Blick (S. 102)</p>
+    <h2>Shortcuts unter Windows und macOS</h2>
+    <p class="lead">Tastenkombinationen sind Befehle, die man mit der Tastatur ausführt, statt mit der Maus zu klicken. Wähle einen Befehl – die Tasten leuchten auf.</p>
+  </div>
+  <div class="stack">
+    <div id="os"></div>
+    <div id="sc-kb"></div>
+    <div class="chips" id="sc-list"></div>
+    <p class="status" id="sc-out">Wähle einen Befehl.</p>
+  </div>
+  <div class="box mt"><span class="tag">Gut zu wissen</span><p>Welche Shortcuts welche Tastenkombination haben, hängt vom <b>Betriebssystem</b> ab: Windows läuft auf Geräten vieler Hersteller, macOS nur auf Geräten von Apple. Auch die <b>Software</b> ist wichtig – nicht jedes Textverarbeitungsprogramm bietet die gleichen Shortcuts.</p></div>
+</section>
+
+<section class="station" id="memory" data-label="Shortcut-Memory" data-yr="Üben" data-title="Shortcut-Memory und Sprint" data-sub="Kombinationen merken">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Üben</p>
+    <h2>Shortcuts merken</h2>
+  </div>
+  <div class="grid-2">
+    <div><h3>Paare finden</h3><div id="sc-match"></div></div>
+    <div class="vis">
+      <div class="vis-head"><h3>Shortcut-Sprint (Windows)</h3><span class="score">Richtig: <b id="sp-ok">0</b> / <span id="sp-n">0</span></span></div>
+      <p>Welcher Befehl gehört zu</p>
+      <p class="sc-combo" id="sp-q"></p>
+      <div class="mc-opts" id="sp-opts"></div>
+      <p class="status" id="sp-fb"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="symbolleiste" data-label="Symbolleiste" data-yr="Auf einen Blick" data-title="Übersicht über die Symbolleiste" data-sub="Zehn Funktionen">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Auf einen Blick (S. 103)</p>
+    <h2>Die Symbolleiste</h2>
+    <p class="lead">Tippe die Symbole an. Im Modus „Finden“ wird eine Funktion genannt.</p>
+  </div>
+  <div class="model">
+    <div class="wp">
+      <div class="wp-tabs"><span>Datei</span><span class="on">Start</span><span>Einfügen</span></div>
+      <div class="wp-bar" id="sym-bar" style="gap:.35rem">
+        <span class="btn">Aptos ▾</span><span class="btn">12 ▾</span><span class="btn wp-hot" data-part="case">Aa ▾</span><span class="btn wp-hot" data-part="clear">A⌫</span><span class="sep"></span>
+        <span class="btn">•≡</span><span class="btn">1.≡</span><span class="btn wp-hot" data-part="indminus">⇤≡</span><span class="btn wp-hot" data-part="indplus">≡⇥</span><span class="btn wp-hot" data-part="sort">A↓Z</span><span class="btn wp-hot" data-part="pilcrow">¶</span>
+      </div>
+      <div class="wp-bar" style="gap:.35rem">
+        <span class="btn"><b>F</b></span><span class="btn"><i>K</i></span><span class="btn"><u>U</u></span><span class="btn"><s>ab</s></span><span class="btn">x₂</span><span class="btn">x²</span><span class="btn wp-hot" data-part="effects" style="color:#2563EB;text-shadow:0 0 3px #60A5FA">A</span><span class="btn wp-hot" data-part="hl" style="border-bottom:4px solid #FDE047">🖍</span><span class="btn" style="border-bottom:4px solid #DC2626">A</span><span class="sep"></span>
+        <span class="btn">≡</span><span class="btn">≣</span><span class="btn wp-hot" data-part="shade" style="border-bottom:4px solid #94A3B8">🪣</span><span class="btn wp-hot" data-part="border">⊞</span>
+      </div>
+      <div class="wp-desk"><div class="wp-page" style="min-height:5rem;white-space:normal">Die Symbolleiste fasst Befehle in den Gruppen <b>Schriftart</b> und <b>Absatz</b> zusammen.</div></div>
+    </div>
+    <div class="stack"><div id="sym-mode"></div><div class="box" id="sym-panel" aria-live="polite"></div></div>
+  </div>
+</section>
+
+<section class="station" id="ausprobieren" data-label="Ausprobieren" data-yr="Ausprobieren" data-title="Funktionen ausprobieren" data-sub="Sortieren, Groß/klein, ¶">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Ausprobieren</p>
+    <h2>Drei Funktionen im Test</h2>
+  </div>
+  <div class="wp">
+    <div class="wp-bar"><button class="btn" data-f="sort">A↓Z Sortieren</button><button class="btn" data-f="upper">GROSS</button><button class="btn" data-f="lower">klein</button><button class="btn" data-f="title">Wortanfänge groß</button><button class="btn" data-f="pil">¶ Alle anzeigen</button><span class="sep"></span><button class="btn" data-f="reset">Zurücksetzen</button></div>
+    <div class="wp-desk"><div class="wp-page" id="fx" style="min-height:10rem"></div></div>
+  </div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">A</span><h3>Sortieren</h3></header><p>Wozu kann die Funktion „Sortieren“ beim Schreiben eines Glossars nützlich sein?</p>
+      <div class="controls"><button class="btn" data-reveal="fa" aria-expanded="false">Lösung</button></div><p class="solution" id="fa" hidden>Sie bringt alle Begriffe mit einem Klick in alphabetische Reihenfolge – man muss sie nicht einzeln ausschneiden und einfügen.</p></div>
+    <div class="task-card"><header><span class="no">B</span><h3>Alle anzeigen</h3></header><p>Warum kann es helfen, die Absatzmarken ¶ und Leerzeichen · sichtbar zu machen?</p>
+      <div class="controls"><button class="btn" data-reveal="fb2" aria-expanded="false">Lösung</button></div><p class="solution" id="fb2" hidden>Man sieht doppelte Leerzeichen und leere Absätze und kann sie löschen. Die Zeichen werden nicht mit ausgedruckt.</p></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Shortcuts</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Shortcuts und Symbolleiste</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step><b>Shortcuts</b> sind Tastenkombinationen für Befehle. Man arbeitet damit schneller als mit der Maus.</li>
+        <li data-step>Windows: <kbd>Strg</kbd>+<kbd>S</kbd> speichern, <kbd>Strg</kbd>+<kbd>Z</kbd> rückgängig, <kbd>Strg</kbd>+<kbd>F</kbd> suchen, <kbd>Strg</kbd>+<kbd>P</kbd> drucken, <kbd>Strg</kbd>+<kbd>N</kbd> neues Dokument.</li>
+        <li data-step>Shortcuts hängen vom <b>Betriebssystem</b> (Windows, macOS) und von der <b>Software</b> ab. Am Mac ersetzt <kbd>cmd ⌘</kbd> meist <kbd>Strg</kbd>.</li>
+        <li data-step>Die <b>Symbolleiste</b> enthält z. B. Groß-/Kleinschreibung, Formatierungen löschen, Einzug, Sortieren, Alle anzeigen ¶, Texthervorhebung, Schattierung und Rahmen.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Meine Top 5</span><p>Schreibe die fünf Shortcuts auf, die du am häufigsten brauchst.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Stimmt das?</h2></div>
+  <div id="tf"></div>
+</section>
+
+<script>
+const SC = [
+  {n: 'kopieren', w: ['Strg', 'C'], m: ['cmd ⌘', 'C']}, {n: 'einfügen', w: ['Strg', 'V'], m: ['cmd ⌘', 'V']}, {n: 'ausschneiden', w: ['Strg', 'X'], m: ['cmd ⌘', 'X']},
+  {n: 'speichern', w: ['Strg', 'S'], m: ['cmd ⌘', 'S']}, {n: 'rückgängig', w: ['Strg', 'Z'], m: ['cmd ⌘', 'Z']}, {n: 'suchen', w: ['Strg', 'F'], m: ['cmd ⌘', 'F']},
+  {n: 'neues Dokument', w: ['Strg', 'N'], m: ['cmd ⌘', 'N']}, {n: 'drucken', w: ['Strg', 'P'], m: ['cmd ⌘', 'P']}, {n: 'schließen', w: ['Strg', 'W'], m: ['cmd ⌘', 'W']},
+  {n: 'Absatz zentrieren', w: ['Strg', 'E'], m: ['cmd ⌘', 'E']}, {n: 'fett', w: ['Strg', 'Shift', 'F'], m: ['cmd ⌘', 'B']}, {n: 'kursiv', w: ['Strg', 'Shift', 'K'], m: ['cmd ⌘', 'I']},
+  {n: 'unterstreichen', w: ['Strg', 'Shift', 'U'], m: ['cmd ⌘', 'U']}, {n: 'Schrift 1 Pt größer', w: ['Strg', '9'], m: null}, {n: 'Seitenumbruch', w: ['Strg', 'Enter'], m: ['cmd ⌘', 'Enter']},
+  {n: 'Fußnote einfügen', w: ['Strg', 'Alt', 'F'], m: ['cmd ⌘', 'option', 'F']}
+];
+const combo = k => k.map(x => `<kbd>${x}</kbd>`).join(' + ');
+(() => {
+  let mac = false, kb = keyboard($('#sc-kb'));
+  const draw = () => { $('#sc-list').innerHTML = SC.filter(s => !mac || s.m).map((s, i) => `<button class="chip" data-i="${SC.indexOf(s)}">${s.n}</button>`).join(''); $('#sc-out').textContent = 'Wähle einen Befehl.'; };
+  seg($('#os'), [['w', '🪟 Windows'], ['m', '🍎 macOS']], v => { mac = v === 'm'; kb = keyboard($('#sc-kb'), {mac}); draw(); });
+  $('#sc-list').addEventListener('click', e => {
+    const b = e.target.closest('.chip'); if (!b) return;
+    const s = SC[+b.dataset.i], k = mac ? s.m : s.w;
+    kb.clear(); kb.press(k.map(x => x === 'Shift' ? 'Shift' : x));
+    $$('.chip', $('#sc-list')).forEach(c => c.classList.toggle('ok', c === b));
+    $('#sc-out').innerHTML = `<b>${s.n}</b>: ${combo(k)}`;
+  });
+})();
+matcher($('#sc-match'), shuffle(SC.slice()).slice(0, 6).map(s => [combo(s.w), s.n]));
+(() => {
+  let ok = 0, n = 0, cur = null, order = [];
+  function next() {
+    if (!order.length) order = shuffle(SC.slice());
+    cur = order.pop();
+    $('#sp-q').innerHTML = combo(cur.w);
+    const opts = shuffle([cur, ...shuffle(SC.filter(s => s !== cur)).slice(0, 3)]);
+    $('#sp-opts').innerHTML = opts.map(s => `<button class="mc-opt" data-n="${s.n}">${s.n}</button>`).join('');
+  }
+  $('#sp-opts').addEventListener('click', e => {
+    const b = e.target.closest('.mc-opt'); if (!b || b.disabled) return;
+    n++; const good = b.dataset.n === cur.n; if (good) ok++;
+    $$('.mc-opt', $('#sp-opts')).forEach(x => { x.disabled = true; if (x.dataset.n === cur.n) x.classList.add('ok'); });
+    if (!good) b.classList.add('err');
+    $('#sp-fb').innerHTML = good ? '<b class="good">Richtig!</b>' : `<b class="bad">Leider nein</b> – das ist „${cur.n}“.`;
+    $('#sp-ok').textContent = ok; $('#sp-n').textContent = n;
+    setTimeout(next, 1200);
+  });
+  next();
+})();
+explorer($('#sym-bar').parentElement, $('#sym-panel'), [
+  {id: 'case', n: '1 · Groß-/Kleinschreibung', t: 'Markierte Texte werden vollständig groß- oder kleingeschrieben oder nur die Wort- bzw. Satzanfänge groß.'},
+  {id: 'clear', n: '2 · Alle Formatierungen löschen', t: 'Entfernt alle Formatierungen im markierten Text mit einem Klick.'},
+  {id: 'indplus', n: '3 · Einzug vergrößern', t: 'Der markierte Text wird eingerückt.'},
+  {id: 'indminus', n: '4 · Einzug verkleinern', t: 'Macht den Einzug des markierten Textes rückgängig.'},
+  {id: 'sort', n: '5 · Sortieren', t: 'Sortiert den markierten Text alphabetisch oder nach Nummern.'},
+  {id: 'pilcrow', n: '6 · Alle anzeigen', t: 'Macht Absatzmarken ¶ und Formatierungssymbole sichtbar. Sie werden nicht mit ausgedruckt.'},
+  {id: 'effects', n: '7 · Texteffekte und Typografie', t: 'Fügt dem markierten Text Schatten- oder Leuchteffekte hinzu.'},
+  {id: 'hl', n: '8 · Texthervorhebungsfarbe', t: 'Hinterlegt den Text mit einer Farbe – wie ein Textmarker.'},
+  {id: 'shade', n: '9 · Schattierung', t: 'Färbt den Hintergrund hinter dem Text. Die Schriftfarbe passt sich automatisch an, z. B. hell auf dunkler Schattierung.'},
+  {id: 'border', n: '10 · Rahmen', t: 'Zieht Rahmen um den markierten Bereich, z. B. für Wortkästen – gestrichelt oder durchgezogen.'}
+], {modeRoot: $('#sym-mode'), label: 'Symbol', intro: 'Tippe ein markiertes Symbol der Symbolleiste an.'});
+(() => {
+  const words = ['Zebra', 'Apfel', 'Monitor', 'Drucker', 'Cursor', 'Bit', 'Tastatur'], fx = $('#fx');
+  let cur = words.slice(), pil = false, mode = 'none';
+  const tf = w => mode === 'upper' ? w.toUpperCase() : mode === 'lower' ? w.toLowerCase() : mode === 'title' ? w[0].toUpperCase() + w.slice(1).toLowerCase() : w;
+  const draw = () => fx.innerHTML = cur.map(w => tf(w) + (pil ? '<span style="color:#2563EB">¶</span>' : '')).join('<br>') + (pil ? '<br><span style="color:#2563EB">¶</span><br><span style="color:#2563EB">¶</span>' : '<br><br>');
+  $$('[data-f]').forEach(b => b.onclick = () => {
+    const f = b.dataset.f;
+    if (f === 'sort') cur.sort((a, b2) => a.localeCompare(b2, 'de'));
+    if (['upper', 'lower', 'title'].includes(f)) mode = f;
+    if (f === 'pil') pil = !pil;
+    if (f === 'reset') { cur = words.slice(); mode = 'none'; pil = false; }
+    draw();
+  });
+  draw();
+})();
+trueFalse($('#tf'), [
+  {t: 'Shortcuts funktionieren in jedem Programm und auf jedem Betriebssystem gleich.', ok: false, why: 'Sie hängen von Betriebssystem und Software ab.'},
+  {t: 'Mit Strg + Z macht man den letzten Schritt rückgängig.', ok: true, why: 'Sehr praktisch nach einem Fehler.'},
+  {t: 'Am Mac wird meist die Command-Taste statt Strg genutzt.', ok: true, why: 'cmd ⌘ + C kopiert.'},
+  {t: 'Die Absatzmarken ¶ werden mit ausgedruckt.', ok: false, why: 'Sie sind nur auf dem Bildschirm sichtbar.'},
+  {t: 'Die Funktion „Sortieren“ ordnet markierte Zeilen alphabetisch.', ok: true, why: 'Oder nach Nummern.'},
+  {t: 'Die Texthervorhebungsfarbe ändert die Schriftart.', ok: false, why: 'Sie hinterlegt den Text farbig wie ein Textmarker.'}
+]);
+</script>

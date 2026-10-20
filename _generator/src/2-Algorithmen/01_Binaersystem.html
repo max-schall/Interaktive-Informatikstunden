@@ -1,0 +1,236 @@
+<!--
+title: Das Binärsystem
+short: Binärsystem
+time: 2 Unterrichtsstunden
+q: Wie lassen sich unsere Zahlen ins Binärsystem umrechnen?
+facts: Kapitelauftakt Algorithmen und Problemlösen (S. 28–29) | Bit, Dezimalsystem und Binärsystem, Stellenwerttafeln | Umrechnen: Dualzahl → Dezimalzahl und Dezimalzahl → Dualzahl (Division durch 2) | M1 Lampenreihen, M2 Stellenwerttafel bis 30
+inter: Mindmap sortieren · Binäre Stellenwerttafel zum Anklicken · Divisions-Rechner Schritt für Schritt · Lampenreihen lesen und schalten · Zahlen 1–30 aufdecken · Umrechnungs-Training mit neuen Aufgaben
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Algorithmen und Problemlösen</p>
+      <h1>Das Binärsystem<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Wir stellen Zahlen mit den Ziffern 0 bis 9 dar. Ein Computer kennt aber nur <b>0</b> und <b>1</b> – Strom aus, Strom an.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wie viele verschiedene Zahlen kannst du mit zwei Händen zeigen, wenn jeder Finger nur „oben“ oder „unten“ sein darf?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie lassen sich unsere Zahlen ins Binärsystem umrechnen?</p></div>
+      <div class="controls"><button class="btn primary" data-go="auftakt">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="auftakt" data-label="Kapitelauftakt" data-yr="Einstieg" data-title="Algorithmen und Problemlösen" data-sub="Kapitelauftakt S. 28–29">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Kapitelauftakt</p>
+    <h2>Algorithmen und Problemlösen</h2>
+    <p class="lead">Ordne die Begriffe der Mindmap den drei Ästen zu.</p>
+  </div>
+  <div id="mind-sort"></div>
+  <div class="cols-3 mt">
+    <div class="task-card"><header><span class="no">A</span><h3>📦 Barcode</h3></header><p>Bild 1 zeigt, wie ein Barcode gescannt wird. Nennt weitere Situationen, in denen Barcodes oder andere Codes gescannt werden.</p>
+      <div class="controls"><button class="btn" data-reveal="aa" aria-expanded="false">Ideen</button></div><p class="solution" id="aa" hidden>Supermarktkasse, Paketdienst, Bibliotheksausweis, Bordkarte am Flughafen, Konzertticket, QR-Code auf Plakaten, Pfandautomat …</p></div>
+    <div class="task-card"><header><span class="no">B</span><h3>🥞 Pfannkuchen</h3></header><p>Stellt Vermutungen darüber an, was Pfannkuchen mit dem Ausführen von Algorithmen zu tun haben.</p>
+      <div class="controls"><button class="btn" data-reveal="ab" aria-expanded="false">Idee</button></div><p class="solution" id="ab" hidden>Ein Rezept ist eine genaue Schritt-für-Schritt-Anleitung. Wer sie in der richtigen Reihenfolge ausführt, bekommt am Ende Pfannkuchen – so funktioniert auch ein Algorithmus.</p></div>
+    <div class="task-card"><header><span class="no">C</span><h3>🧊 Zauberwürfel</h3></header><p>Stellt Vermutungen an, ob man eine Anleitung für die Lösung eines Zauberwürfels erstellen kann.</p>
+      <div class="controls"><button class="btn" data-reveal="ac" aria-expanded="false">Idee</button></div><p class="solution" id="ac" hidden>Ja: Es gibt Lösungsanleitungen, die Schicht für Schicht mit festen Zugfolgen arbeiten. Jeder, der sie genau befolgt, kann den Würfel lösen – das ist ein Algorithmus.</p></div>
+  </div>
+</section>
+
+<section class="station" id="binaer" data-label="Bit & Stellenwert" data-yr="Erarbeitung" data-title="Nur 0 und 1" data-sub="Bit und Stellenwerttafeln">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Binärsystem</p>
+      <h2>Nur 0 und 1</h2>
+      <ul class="facts">
+        <li>Wir nutzen das <b>Dezimalsystem</b> (10er-System) mit den Ziffern 0 bis 9.</li>
+        <li>Ein Computer arbeitet nur mit <b>0</b> und <b>1</b>: Der Code heißt <b>Binary Digit</b>, kurz <b>Bit</b>. „0“ bedeutet „Aus“, „1“ bedeutet „An“.</li>
+        <li>In einer <b>Stellenwerttafel</b> haben die Stellen im Dezimalsystem die Werte 1, 10, 100, 1000 … (immer ·10).</li>
+        <li>Im Binärsystem heißen die Stellenwerte <b>1, 2, 4, 8, 16 …</b> (immer ·2).</li>
+        <li>Binärzahlen heißen auch <b>Dualzahlen</b>. Man kennzeichnet sie mit einer tiefgestellten 2: <b>11100₂</b>.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Binäre Stellenwerttafel</h3><span class="note">Stellen antippen</span></div>
+      <div class="pv" id="pv"></div>
+      <p class="status" id="pv-status"></p>
+      <div class="controls"><button class="btn" id="pv-ex">Beispiel aus dem Buch: 110010001₂</button><button class="btn" id="pv-0">Alles auf 0</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="umrechnen" data-label="Umrechnen" data-yr="Erarbeitung" data-title="Umrechnen" data-sub="In beide Richtungen">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Umrechnung</p>
+    <h2>Umrechnen in beide Richtungen</h2>
+  </div>
+  <div class="cols-2">
+    <div class="box"><span class="tag">Dualzahl → Dezimalzahl</span><p>Jede Ziffer mit ihrem Stellenwert <b>multiplizieren</b>, dann alles <b>addieren</b>:</p>
+      <p class="mono" style="font-size:1.05rem">11100₂ = 1·16 + 1·8 + 1·4 + 0·2 + 0·1 = <b>28</b></p>
+      <div class="task-card" style="box-shadow:none;margin:0"><header><span class="no">A</span><h3>Probier's</h3></header><p>Rechne die Binärzahl 1111₂ in eine Dezimalzahl um.</p>
+        <div class="controls"><button class="btn" data-reveal="ua" aria-expanded="false">Lösung</button></div><p class="solution" id="ua" hidden>1111₂ = 1·8 + 1·4 + 1·2 + 1·1 = <b>15</b></p></div></div>
+    <div class="vis"><div class="vis-head"><h3>Dezimalzahl → Dualzahl</h3></div>
+      <p>Die Zahl immer wieder <b>durch 2 teilen</b>. Die <b>Reste</b> von <b>unten nach oben</b> gelesen ergeben die Dualzahl.</p>
+      <label class="slider-row">Zahl <input id="div-n" type="number" min="1" max="1023" value="28" style="flex:0 0 6rem;font:inherit;padding:.3rem;border:1.5px solid var(--edge);border-radius:4px;background:var(--surface);color:var(--ink)"></label>
+      <table class="divt mono" id="divt"></table>
+      <div id="div-step"></div>
+      <p class="status" id="div-status"></p></div>
+  </div>
+  <div class="merke mt"><b>Merke:</b> Mit 8 Bits (1 Byte) lassen sich die Dezimalzahlen <b>0 bis 255</b> darstellen.</div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Lampen" data-yr="M1" data-title="Dualzahlen und Dezimalzahlen" data-sub="Lampenreihen lesen und schalten">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Zahlen mit Lampen</h2>
+    <p class="lead">Eine leuchtende LED entspricht dem Zustand <b>1</b>. Leuchtet sie nicht, ist es <b>0</b>.</p>
+  </div>
+  <div class="grid-2">
+    <div>
+      <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Lampenreihen lesen</h3></header><p>Schreibe die Dualzahl auf, die bei den Lampenreihen dargestellt wird, und rechne sie in die Dezimalzahl um.</p></div>
+      <div id="rows"></div>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Lampen schalten</h3></header><p>Begründe, welche LEDs leuchten müssen, um die Dezimalzahlen 40, 33 und 17 darzustellen. Schalte die Lampen!</p>
+        <div id="target-seg"></div></div>
+      <div class="lamps big" id="lamp"></div>
+      <p class="status" id="lamp-status"></p>
+      <div class="task-card mt"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Umrechnen</h3></header><p>Rechne um: 2025, 154, 89, 11001₂, 10₂.</p>
+        <div class="controls"><button class="btn" data-reveal="m4h" aria-expanded="false">HILFE</button><button class="btn" data-reveal="m4" aria-expanded="false">Lösung</button></div>
+        <p class="hint-box" id="m4h" hidden>Dezimalzahlen: durch 2 teilen und die Reste von unten nach oben lesen. Dualzahlen: Stellenwerte 1, 2, 4, 8, 16 … addieren.</p>
+        <p class="solution mono" id="m4" hidden>2025 = 11111101001₂ · 154 = 10011010₂ · 89 = 1011001₂ · 11001₂ = 25 · 10₂ = 2</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m2" data-label="M2 Tafel" data-yr="M2" data-title="Stellenwerttafel" data-sub="Bitfolgen und Zahlen bis 30">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M2</p>
+    <h2>Stellenwerttafel</h2>
+  </div>
+  <div class="cols-2">
+    <div>
+      <div class="task-card"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Tafel bis 30</h3></header><p>Übertrage die Stellenwerttafel in dein Heft und ergänze sie bis zur Zahl 30. Tippe Zeilen an, um sie aufzudecken.</p></div>
+      <div class="table-wrap" style="max-height:24rem;overflow:auto"><table class="cmp mono" id="t30"></table></div>
+      <div class="cmp-tools"><button class="btn" id="t30-q">Verdecken</button><button class="btn" id="t30-a">Alles aufdecken</button></div>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>10101001</h3></header><p>Stelle die Bitfolge 10101001 als Dezimalzahl dar.</p>
+        <div class="controls"><button class="btn" data-reveal="t1" aria-expanded="false">Lösung</button></div><p class="solution mono" id="t1" hidden>128 + 32 + 8 + 1 = <b>169</b></p></div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Eigene Bitfolge</h3></header><p>Überlege dir eine eigene Bitfolge und stelle sie als Dezimalzahl dar. Nutze die Stellenwerttafel in Station 2 zum Prüfen.</p></div>
+      <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>162</h3></header><p>Stelle die Dezimalzahl 162 als Bitfolge dar.</p>
+        <div class="controls"><button class="btn" data-reveal="t3h" aria-expanded="false">HILFE</button><button class="btn" data-reveal="t3" aria-expanded="false">Lösung</button></div>
+        <p class="hint-box" id="t3h" hidden>Welcher ist der größte Stellenwert, der in 162 passt? 128! Was bleibt übrig?</p>
+        <p class="solution mono" id="t3" hidden>162 = 128 + 32 + 2 → <b>10100010</b></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Das Binärsystem</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Das Binärsystem</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Computer arbeiten nur mit den Ziffern <b>0</b> (Aus) und <b>1</b> (An). Eine solche Stelle heißt <b>Bit</b> (Binary Digit).</li>
+        <li data-step>Im <b>Binärsystem</b> (Dualsystem) haben die Stellen die Werte 1, 2, 4, 8, 16, 32, 64, 128 … Dualzahlen schreibt man z. B. als 11100₂.</li>
+        <li data-step><b>Dual → Dezimal:</b> Ziffer mal Stellenwert, dann addieren: 11100₂ = 16 + 8 + 4 = 28.</li>
+        <li data-step><b>Dezimal → Dual:</b> immer durch 2 teilen, die Reste von unten nach oben lesen: 28 → 11100₂.</li>
+        <li data-step>Mit 8 Bits (1 Byte) kann man die Zahlen 0 bis 255 darstellen.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack">
+      <div class="box"><span class="tag info">Skizze</span><p>Zeichne eine binäre Stellenwerttafel mit 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 und trage die Zahl 28 ein.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Umrechnungs-Training</h2></div>
+  <div id="ts"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+const bin = n => n.toString(2);
+sorter($('#mind-sort'), [{id: 'b', name: 'Binärsystem'}, {id: 'a', name: 'Algorithmen'}, {id: 's', name: 'Scratch'}], [
+  {t: 'Sprache von Computern', c: 'b'}, {t: 'Bits und Bytes', c: 'b'}, {t: 'Codierungen', c: 'b'},
+  {t: 'eindeutig', c: 'a'}, {t: 'ausführbar', c: 'a'}, {t: 'endlich', c: 'a'},
+  {t: 'Wiederholungen', c: 's'}, {t: 'Bedingte Anweisungen', c: 's'}, {t: 'Sequenzen und Projekte', c: 's'}
+]);
+
+/* ================= Stellenwerttafel ================= */
+(() => {
+  const V = [256, 128, 64, 32, 16, 8, 4, 2, 1], bits = V.map(() => 0);
+  const root = $('#pv');
+  function draw() {
+    root.innerHTML = `<div class="pv-row">${V.map((v, i) => `<div class="pv-c"><small>${v}</small><button class="pv-b ${bits[i] ? 'on' : ''}" data-i="${i}" aria-label="Stelle ${v}">${bits[i]}</button></div>`).join('')}</div>`;
+    const sum = V.reduce((s, v, i) => s + v * bits[i], 0), parts = V.filter((v, i) => bits[i]);
+    const str = bits.join('').replace(/^0+(?=.)/, '');
+    $('#pv-status').innerHTML = `<b class="mono">${str}₂</b> = ${parts.length ? parts.join(' + ') : '0'} = <b>${sum}</b>`;
+  }
+  root.addEventListener('click', e => { const b = e.target.closest('.pv-b'); if (b) { bits[+b.dataset.i] ^= 1; draw(); } });
+  $('#pv-ex').onclick = () => { '110010001'.split('').forEach((c, i) => bits[i] = +c); draw(); };
+  $('#pv-0').onclick = () => { bits.fill(0); draw(); };
+  draw();
+})();
+
+/* ================= Division durch 2 ================= */
+(() => {
+  let rows = [], k = 0, ctl;
+  function build() {
+    let n = Math.max(1, Math.min(1023, parseInt($('#div-n').value) || 1)); rows = [];
+    while (n > 0) { rows.push([n, Math.floor(n / 2), n % 2]); n = Math.floor(n / 2); }
+    ctl = stepper($('#div-step'), rows.length + 1, kk => { k = kk; draw(); });
+  }
+  function draw() {
+    $('#divt').innerHTML = rows.map((r, i) => `<tr class="${i < k ? '' : 'hid'}"><td>${r[0]} : 2</td><td>= ${r[1]}</td><td>Rest <b>${r[2]}</b></td></tr>`).join('');
+    const res = rows.map(r => r[2]).reverse().join('');
+    $('#div-status').innerHTML = k > rows.length - 1 ? `Reste von unten nach oben: <b class="mono">${res}₂</b>` : k ? 'Teile das Ergebnis weiter durch 2, bis 0 herauskommt.' : 'Starte mit „Weiter“.';
+  }
+  $('#div-n').addEventListener('input', build);
+  build();
+})();
+
+/* ================= M1 Lampen ================= */
+(() => {
+  const L = [64, 32, 16, 8, 4, 2, 1];
+  const lamps = (bits, cls = '') => `<div class="lamps ${cls}">${L.map((v, i) => `<span class="lamp ${bits[i] === '1' ? 'on' : ''}" data-i="${i}"><i></i><small>${v}</small></span>`).join('')}</div>`;
+  const ROWS = ['0010111', '1001010', '0010001', '0111010', '0100101', '1111101'];
+  $('#rows').innerHTML = ROWS.map((r, i) => `<div class="lrow">${lamps(r)}<div class="lrow-a">${i === 0 ? `<span class="mono">${r}₂ = 16 + 4 + 2 + 1 = 23</span>` : `<button class="btn" data-sol="${i}">Lösung</button><span class="mono" hidden>${r.replace(/^0+/, '')}₂ = ${L.filter((v, k) => r[k] === '1').join(' + ')} = <b>${parseInt(r, 2)}</b></span>`}</div></div>`).join('');
+  $('#rows').addEventListener('click', e => { const b = e.target.closest('[data-sol]'); if (b) { b.nextElementSibling.hidden = false; b.remove(); } });
+  const bits = L.map(() => 0); let target = 40;
+  const lp = $('#lamp');
+  function draw() {
+    lp.innerHTML = lamps(bits.join(''), 'big').replace(/^<div class="lamps big">|<\/div>$/g, '');
+    const v = L.reduce((s, x, i) => s + x * bits[i], 0);
+    $('#lamp-status').innerHTML = `Angezeigt: <b class="mono">${bits.join('')}₂ = ${v}</b> · Ziel: <b>${target}</b> ${v === target ? '<b class="good">✓ richtig!</b>' : ''}`;
+  }
+  lp.addEventListener('click', e => { const l = e.target.closest('.lamp'); if (l) { bits[+l.dataset.i] ^= 1; draw(); } });
+  seg($('#target-seg'), [[40, '40'], [33, '33'], [17, '17']], v => { target = +v; bits.fill(0); draw(); });
+})();
+
+/* ================= M2 Tafel bis 30 ================= */
+(() => {
+  const V = [16, 8, 4, 2, 1];
+  $('#t30').innerHTML = `<thead><tr><th>Zehnersystem</th>${V.map(v => `<th>${v}</th>`).join('')}</tr></thead><tbody>${Array.from({length: 30}, (_, k) => { const n = k + 1, b = n.toString(2).padStart(5, ' '); return `<tr><th>${n}</th>${[...b].map(c => n > 5 ? `<td class="q"><span>${c.trim()}</span></td>` : `<td>${c.trim()}</td>`).join('')}</tr>`; }).join('')}</tbody>`;
+  quizTable($('#t30'), $('#t30-q'), $('#t30-a'));
+  $('#t30').addEventListener('click', e => { const tr = e.target.closest('tr'); if (tr) $$('td.q', tr).forEach(td => td.classList.add('shown')); });
+})();
+
+/* ================= Übungen ================= */
+taskSet($('#ts'), () => {
+  if (Math.random() < .5) { const n = randInt(2, 63), b = bin(n); return {key: 'b' + b, tag: 'Dual → Dezimal', q: `<span class="big">${b}₂</span>`, fields: [{l: 'Dezimalzahl', a: n}], hint: 'Stellenwerte 1, 2, 4, 8, 16, 32 addieren.'}; }
+  const n = randInt(2, 63); return {key: 'd' + n, tag: 'Dezimal → Dual', q: `<span class="big">${n}</span>`, fields: [{l: 'Dualzahl', a: [bin(n)]}], hint: 'Durch 2 teilen, Reste von unten nach oben lesen.'};
+}, {n: 6});
+mcQuiz($('#quiz'), [
+  {q: 'Wofür steht „Bit“?', a: ['Binary Digit', 'Big Information Tool', 'Bildtext', 'Basic Input'], ok: 0, why: 'Binärziffer: 0 oder 1.'},
+  {q: 'Welche Stellenwerte hat das Binärsystem?', a: ['1, 2, 4, 8, 16 …', '1, 10, 100, 1000 …', '1, 3, 9, 27 …', '2, 4, 6, 8 …'], ok: 0, why: 'Jede Stelle ist doppelt so viel wert.'},
+  {q: 'Wie viel ist 101₂?', a: ['5', '101', '3', '6'], ok: 0, why: '4 + 1 = 5'},
+  {q: 'Wie lautet 8 als Dualzahl?', a: ['1000₂', '111₂', '1010₂', '10₂'], ok: 0, why: '8 = 1·8 + 0·4 + 0·2 + 0·1'},
+  {q: 'Welche Zahlen kann man mit 8 Bits darstellen?', a: ['0 bis 255', '0 bis 8', '0 bis 100', '1 bis 1000'], ok: 0, why: '2⁸ = 256 Möglichkeiten.'},
+  {q: 'Wie rechnet man eine Dezimalzahl ins Binärsystem um?', a: ['immer durch 2 teilen, Reste von unten nach oben lesen', 'mal 10 rechnen', 'Ziffern rückwärts lesen', 'durch 10 teilen'], ok: 0, why: 'Divisionsverfahren.'}
+]);
+</script>

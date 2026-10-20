@@ -1,0 +1,188 @@
+<!--
+title: Datenspeicherung
+short: Speichern
+time: 2 Unterrichtsstunden
+q: Wie werden Daten gespeichert – und wie schützt man sie vor Verlust?
+facts: Dokument – Datei – Daten, interne und externe Speicherung | Optische, magnetische und elektronische Speichermedien, flüchtige und permanente Speicher | Datensicherung: Voll-Backup, differentielles und inkrementelles Backup (M1)
+inter: Intern oder extern? · Speichermedien sortieren · Backup-Simulator für eine Schulwoche · Wiederherstellen planen · Backup-Strategie entwickeln
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Informatiksysteme nutzen</p>
+      <h1>Datenspeicherung<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Täglich speichern Menschen Daten: Fotos, Hausaufgaben, Spielstände. Aber wo landen die Daten – und was passiert, wenn der USB-Stick in die Waschmaschine gerät?</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Auf welchen Geräten und Speichermedien hast du schon Daten gespeichert?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie werden Daten gespeichert – und wie schützt man sie vor Verlust?</p></div>
+      <div class="controls"><button class="btn primary" data-go="dokument">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="dokument" data-label="Intern / extern" data-yr="Einstieg" data-title="Dokument, Datei, Daten" data-sub="Intern oder extern speichern">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Dokument – Datei – Daten</p>
+      <h2>Vom Dokument zur Datei</h2>
+      <ul class="facts">
+        <li>Daten erstellt man in Programmen, z. B. Texte in einem Textprogramm.</li>
+        <li>Beim Speichern wird ein <b>Dokument</b> in einer <b>Datei</b> zusammengefasst und in einen <b>Code</b> übersetzt, den der Computer versteht.</li>
+        <li>Speichert man auf dem Gerät selbst, ist das <b>interne</b> Speicherung. Außerhalb des Geräts – z. B. auf USB-Stick oder externer Festplatte – heißt sie <b>externe</b> Speicherung.</li>
+        <li>Speicher unterscheiden sich in <b>Kapazität</b>, <b>Art der Speicherung</b> und <b>Anschluss</b>.</li>
+      </ul>
+      <div class="merke"><b>Achtung:</b> Externe Speicher sind praktisch zum Mitnehmen. Ist er <b>beschädigt</b>, kommt man nicht mehr an die Daten. Geht er <b>verloren</b>, können Fremde die Daten lesen.</div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Intern oder extern?</h3></div>
+      <div id="ie-sort"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="arten" data-label="Speicherarten" data-yr="Erarbeitung" data-title="Optisch, magnetisch, elektronisch" data-sub="Drei Arten der Speicherung">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Speicherarten</p>
+    <h2>Optisch, magnetisch, elektronisch</h2>
+  </div>
+  <div class="cols-3">
+    <div class="box"><span class="tag">💿 Optisch</span><p>Ein <b>Laserstrahl</b> liest und schreibt die Daten. Die Oberfläche lenkt ihn mehr oder weniger ab (<b>Reflexion</b>). Beispiel: <b>CD</b>, DVD.</p></div>
+    <div class="box"><span class="tag">🧲 Magnetisch</span><p>Daten liegen auf <b>magnetisierbarem Material</b> (Bänder, Karten, Platten). Ein <b>Lese-Schreib-Kopf</b> liest sie. Beispiel: <b>HDD</b>, Kassette, Tonband.</p></div>
+    <div class="box"><span class="tag">⚡ Elektronisch</span><p>Daten werden mit <b>elektronischen Bauteilen</b> gespeichert. Beispiel: <b>Speicherkarte</b> (microSD), <b>SSD</b>, USB-Stick, <b>RAM</b>.</p></div>
+  </div>
+  <div class="cols-2 mt">
+    <div class="box"><span class="tag lim">flüchtig</span><p>Primäre Speicher wie der <b>RAM</b> verlieren ihre Daten, sobald der Strom weg ist.</p></div>
+    <div class="box"><span class="tag">permanent / semipermanent</span><p>Diese Speicher behalten die Daten auch <b>ohne Strom</b> – z. B. SSD, USB-Stick, Speicherkarte.</p></div>
+  </div>
+  <h3 class="mt">Sortiere die Speichermedien (Abb. 2–7)</h3>
+  <div id="art-sort"></div>
+</section>
+
+<section class="station" id="backup" data-label="Backup-Simulator" data-yr="Erarbeitung" data-title="Datensicherung" data-sub="Backup-Simulator für eine Woche">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Datensicherung</p>
+    <h2>Backups: Sicherungskopien</h2>
+    <p class="lead">Ein <b>Backup</b> ist eine Sicherungskopie. Geht das Speichermedium kaputt oder verloren, kann man die Daten wiederherstellen.</p>
+  </div>
+  <div class="cols-3">
+    <div class="box"><span class="tag">Voll-Backup</span><p>sichert <b>alle Daten</b> eines Systems.</p></div>
+    <div class="box"><span class="tag">differentielles Backup</span><p>sichert alle Daten, die seit dem <b>letzten Voll-Backup</b> geändert wurden.</p></div>
+    <div class="box"><span class="tag">inkrementelles Backup</span><p>sichert nur die Änderungen seit dem <b>letzten Backup</b> – egal welcher Art.</p></div>
+  </div>
+  <div class="vis mt">
+    <div class="vis-head"><h3>Simulator: Leas Schulwoche</h3><div id="bk-seg"></div></div>
+    <div class="table-wrap"><table class="bk" id="bk"></table></div>
+    <p class="status" id="bk-status"></p>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Strategien" data-yr="M1" data-title="Backup-Strategien" data-sub="Aufgaben 1–3">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Backup-Strategien</h2>
+  </div>
+  <div class="cols-2">
+    <div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Tabelle vervollständigen</h3></header><p>Übertrage und vervollständige die Tabelle. Tippe die Felder an.</p></div>
+      <div class="table-wrap"><table class="cmp" id="m1-tab"><thead><tr><th>Backup-Art</th><th>gesicherte Daten</th></tr></thead><tbody>
+        <tr><th>Voll-Backup</th><td>alle Daten</td></tr>
+        <tr><th>differentielles Backup</th><td class="q"><span>alle Daten, die seit dem letzten Voll-Backup geändert wurden</span></td></tr>
+        <tr><th>inkrementelles Backup</th><td class="q"><span>nur die Änderungen seit dem letzten Backup (Voll- oder differentielles Backup)</span></td></tr>
+      </tbody></table></div>
+      <div class="cmp-tools"><button class="btn" id="m1-q">Verdecken</button><button class="btn" id="m1-a">Aufdecken</button></div>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Immer ein Voll-Backup?</h3></header><p>Erkläre, ob es sinnvoll ist, bei jeder Gelegenheit ein Voll-Backup zu erstellen.</p>
+        <div class="controls"><button class="btn" data-reveal="b2" aria-expanded="false">Lösungsidee</button></div>
+        <p class="solution" id="b2" hidden>Ein Voll-Backup ist am sichersten und am einfachsten wiederherzustellen. Es dauert aber lange und braucht sehr viel Speicherplatz, weil auch unveränderte Daten jedes Mal neu gesichert werden. Deshalb kombiniert man meist ein Voll-Backup mit differentiellen oder inkrementellen Backups.</p></div>
+      <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Deine Backup-Strategie</h3></header><p>Entwickle eine Backup-Strategie. Beschreibe, wie oft du welche Backup-Art nutzen würdest und welche Speichermedien infrage kämen.</p>
+        <div class="controls"><button class="btn" data-reveal="b3h" aria-expanded="false">HILFE</button><button class="btn" data-reveal="b3" aria-expanded="false">Beispiel</button></div>
+        <p class="hint-box" id="b3h" hidden>Wie oft änderst du deine Daten? Wie viel Platz hast du? Wo ist das Backup sicher, wenn z. B. der Laptop gestohlen wird?</p>
+        <p class="solution" id="b3" hidden>Einmal pro Monat ein Voll-Backup auf eine externe Festplatte, jeden Sonntag ein differentielles Backup. Die externe Festplatte liegt nicht neben dem Laptop, sondern sicher in einer Schublade. Wichtige Schulsachen zusätzlich auf einem USB-Stick.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Datenspeicherung</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Datenspeicherung</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Beim Speichern wird ein Dokument in einer <b>Datei</b> zusammengefasst und in einen <b>Code</b> übersetzt, den der Computer versteht.</li>
+        <li data-step><b>Interne</b> Speicherung: auf dem Gerät selbst. <b>Externe</b> Speicherung: außerhalb, z. B. USB-Stick oder externe Festplatte.</li>
+        <li data-step>Arten der Speicherung: <b>optisch</b> (Laser, z. B. CD), <b>magnetisch</b> (Lese-Schreib-Kopf, z. B. HDD), <b>elektronisch</b> (z. B. SSD, Speicherkarte, RAM).</li>
+        <li data-step><b>Flüchtige</b> Speicher (RAM) verlieren ohne Strom ihre Daten, <b>permanente</b> Speicher nicht.</li>
+        <li data-step>Ein <b>Backup</b> ist eine Sicherungskopie: <b>Voll-Backup</b> = alle Daten, <b>differentiell</b> = Änderungen seit dem letzten Voll-Backup, <b>inkrementell</b> = Änderungen seit dem letzten Backup.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack">
+      <div class="box"><span class="tag info">Tabelle</span><p>Lege eine Tabelle mit den Spalten <i>Speicherart</i>, <i>So funktioniert's</i> und <i>Beispiele</i> an.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Üben und wiederholen</h2></div>
+  <h3>Stimmt das?</h3>
+  <div id="tf"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+sorter($('#ie-sort'), [{id: 'i', name: 'intern'}, {id: 'e', name: 'extern'}], [
+  {t: '💻 eingebaute SSD im Laptop', c: 'i'}, {t: '📱 Speicher im Smartphone', c: 'i'}, {t: '🖥️ Festplatte im PC-Gehäuse', c: 'i'},
+  {t: '🔑 USB-Stick', c: 'e'}, {t: '💽 externe Festplatte', c: 'e'}, {t: '☁️ Cloud-Speicher (z. B. OneDrive)', c: 'e', why: 'Die Daten liegen auf einem fremden Server.'}, {t: '💿 gebrannte CD', c: 'e'}
+]);
+sorter($('#art-sort'), [{id: 'o', name: '💿 optisch'}, {id: 'm', name: '🧲 magnetisch'}, {id: 'e', name: '⚡ elektronisch'}], [
+  {t: 'CD', c: 'o', why: 'Laserstrahl und Reflexion'}, {t: 'DVD / Blu-ray', c: 'o', why: 'Laserstrahl'},
+  {t: 'Kassette', c: 'm', why: 'magnetisches Band'}, {t: 'HDD', c: 'm', why: 'magnetische Platten mit Lese-Schreib-Kopf'}, {t: 'Tonband', c: 'm', why: 'magnetisches Band'},
+  {t: 'SSD', c: 'e', why: 'elektronische Bauteile'}, {t: 'microSD-Karte', c: 'e', why: 'elektronische Bauteile'}, {t: 'RAM', c: 'e', why: 'elektronisch und flüchtig'}, {t: 'USB-Stick', c: 'e', why: 'elektronische Bauteile'}
+]);
+
+/* ================= Backup-Simulator ================= */
+(() => {
+  const F = ['Mathe.docx', 'Bio.pptx', 'Fotos.zip', 'Spielstand.sav', 'Musik.mp3', 'Englisch.pdf'];
+  const D = ['Mo', 'Di', 'Mi', 'Do', 'Fr'];
+  const CH = [[0, 1, 2, 3, 4, 5], [0], [1], [3], [0]]; /* Mo: alles neu, danach einzelne Änderungen */
+  const CHT = ['Alle Dateien sind neu.', 'Lea ändert Mathe.docx.', 'Lea ändert Bio.pptx.', 'Lea spielt: Spielstand.sav ändert sich.', 'Lea ändert noch einmal Mathe.docx.'];
+  let mode = 'voll';
+  function saved(d) {
+    if (d === 0 || mode === 'voll') return [0, 1, 2, 3, 4, 5];
+    if (mode === 'diff') return [...new Set(CH.slice(1, d + 1).flat())];
+    return CH[d];
+  }
+  function draw() {
+    let tot = 0;
+    const rows = F.map((f, i) => `<tr><th class="mono">${f}</th>${D.map((d, k) => { const ch = CH[k].includes(i), sv = saved(k).includes(i); return `<td class="${sv ? 'sv' : ''}">${ch ? '✏️' : ''}${sv ? '💾' : ''}</td>`; }).join('')}</tr>`).join('');
+    D.forEach((d, k) => tot += saved(k).length);
+    const need = mode === 'voll' ? 'nur das Backup vom <b>Freitag</b>' : mode === 'diff' ? 'das Voll-Backup vom <b>Montag</b> + das differentielle Backup vom <b>Freitag</b>' : '<b>alle</b> Backups von Montag bis Freitag';
+    $('#bk').innerHTML = `<thead><tr><th>Datei</th>${D.map((d, k) => `<th>${d}<small>${k === 0 || mode === 'voll' ? 'Voll' : mode === 'diff' ? 'diff.' : 'inkr.'}</small></th>`).join('')}</tr></thead><tbody>${rows}</tbody>
+      <tfoot><tr><th>gesichert</th>${D.map((d, k) => `<td class="mono">${saved(k).length}</td>`).join('')}</tr></tfoot>`;
+    $('#bk-status').innerHTML = `✏️ = geändert, 💾 = gesichert. Insgesamt <b>${tot} Dateikopien</b> in dieser Woche. Wiederherstellen am Freitag: ${need}.`;
+  }
+  seg($('#bk-seg'), [['voll', 'jeden Tag Voll'], ['diff', 'Mo Voll + differentiell'], ['inkr', 'Mo Voll + inkrementell']], v => { mode = v; draw(); });
+  $('#bk').title = CHT.join(' ');
+})();
+quizTable($('#m1-tab'), $('#m1-q'), $('#m1-a'));
+
+/* ================= ÜBUNGEN ================= */
+trueFalse($('#tf'), [
+  {t: 'Eine CD ist ein optisches Speichermedium.', ok: true, why: 'Sie wird mit einem Laser gelesen.'},
+  {t: 'Eine HDD speichert Daten elektronisch.', ok: false, why: 'Sie speichert magnetisch.'},
+  {t: 'Der RAM ist ein flüchtiger Speicher.', ok: true, why: 'Ohne Strom sind die Daten weg.'},
+  {t: 'Ein inkrementelles Backup sichert immer alle Daten.', ok: false, why: 'Nur die Änderungen seit dem letzten Backup.'},
+  {t: 'Geht ein USB-Stick verloren, können Fremde die Daten lesen.', ok: true, why: 'Deshalb vorsichtig mit externen Speichern umgehen.'},
+  {t: 'Eine SSD verliert ihre Daten beim Ausschalten.', ok: false, why: 'Sie ist ein permanenter Speicher.'}
+], {pick: 6});
+mcQuiz($('#quiz'), [
+  {q: 'Was ist ein Backup?', a: ['eine Sicherungskopie von Daten', 'ein neues Programm', 'ein Speicherfehler', 'eine Datei-Endung'], ok: 0, why: 'Damit kann man Daten wiederherstellen.'},
+  {q: 'Welches Backup sichert alles, was seit dem letzten Voll-Backup geändert wurde?', a: ['differentielles Backup', 'inkrementelles Backup', 'Voll-Backup', 'Papierkorb'], ok: 0, why: 'Es wächst bis zum nächsten Voll-Backup.'},
+  {q: 'Wie wird eine CD gelesen?', a: ['mit einem Laserstrahl', 'mit einem Magneten', 'mit einem Lüfter', 'mit Strom'], ok: 0, why: 'Optische Speicherung.'},
+  {q: 'Welches Speichermedium ist elektronisch?', a: ['microSD-Karte', 'Kassette', 'CD', 'HDD'], ok: 0, why: 'Sie speichert mit elektronischen Bauteilen.'},
+  {q: 'Was ist eine externe Speicherung?', a: ['Speichern außerhalb des Geräts', 'Speichern im RAM', 'Speichern auf dem Desktop', 'Speichern ohne Namen'], ok: 0, why: 'z. B. USB-Stick oder externe Festplatte.'},
+  {q: 'Welche Backup-Art braucht am meisten Speicherplatz?', a: ['tägliches Voll-Backup', 'inkrementelles Backup', 'differentielles Backup', 'alle gleich'], ok: 0, why: 'Es sichert jedes Mal alles.'}
+]);
+</script>

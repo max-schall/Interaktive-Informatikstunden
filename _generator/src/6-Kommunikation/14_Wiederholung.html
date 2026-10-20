@@ -1,0 +1,141 @@
+<!--
+title: Wiederholung und Selbsttest
+short: Selbsttest
+time: 1–2 Unterrichtsstunden
+q: Was kann ich, und was sollte ich noch üben?
+facts: Zusammenfassung S. 144 als Karteikarten | Trainer S. 145: Digitale Kommunikation, E-Mails schreiben, Lokale und globale Netzwerke, Künstliche Intelligenz | Großes Quiz und „Ich kann …“-Liste
+inter: Karteikarten · Begriffe-Paare · Kommunikationskanäle zuordnen · Direkt oder verzögert? · E-Mail-Adresse zerlegen · Schichten des Internets · LLM und Prompts · Quiz (12 zufällige Fragen) · Selbsteinschätzung
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Kommunikation in der vernetzten Welt</p>
+      <h1>Wiederholung und Selbsttest<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Kommunikation, E-Mails, Chats, Datenschutz, Gefahren, Netzwerke und KI: Prüfe, was du sicher kannst.</p>
+      <div class="controls"><button class="btn primary" data-go="begriffe">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="begriffe" data-label="Begriffe" data-yr="Wiederholen" data-title="Zusammenfassung" data-sub="Fachbegriffe">
+  <div class="section-head"><p class="eyebrow">Station 1 · Zusammenfassung (S. 144)</p><h2>Fachbegriffe</h2></div>
+  <div id="flip"></div>
+  <h3 class="mt">Paare finden</h3>
+  <div id="match"></div>
+</section>
+
+<section class="station" id="t1" data-label="T Kommunikation" data-yr="Trainer" data-title="Digitale Kommunikation" data-sub="Kanäle, direkt, verzögert">
+  <div class="section-head"><p class="eyebrow">Station 2 · Trainer</p><h2>Digitale Kommunikation</h2></div>
+  <div class="grid-2">
+    <div class="stack">
+      <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Kommunikationskanäle</h3></header><p>Nenne vier verschiedene Kommunikationskanäle und ordne zu.</p><div id="t1-sort"></div></div>
+      <div class="task-card"><header><span class="no">3–4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Unterschiede</h3></header><p>Beschreibe den Unterschied zwischen Ein-Weg- und Zwei-Wege-Kommunikation. Vergleiche direkte mit verzögerter Kommunikation.</p>
+        <div class="controls"><button class="btn" data-reveal="k34" aria-expanded="false">Lösung</button></div><p class="solution" id="k34" hidden>Ein-Weg: Nur einer sendet (Radio). Zwei-Wege: Beide senden und empfangen (Gespräch, Chat). Direkt: in Echtzeit, schnelle Klärung, Stimmungen über Tonfall und Mimik (Videoanruf). Verzögert: zeitversetzt, jeder antwortet, wenn es passt, kein Zeitdruck (E-Mail, Sprachnachricht).</p></div>
+    </div>
+    <div><p class="eyebrow">Aufgabe 5: Direkt oder verzögert?</p><div id="t1-quiz"></div></div>
+  </div>
+</section>
+
+<section class="station" id="t2" data-label="T E-Mails" data-yr="Trainer" data-title="E-Mails schreiben" data-sub="Adresse und Formulierung">
+  <div class="section-head"><p class="eyebrow">Station 3 · Trainer</p><h2>E-Mails schreiben</h2></div>
+  <div class="grid-2">
+    <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Aufbau einer Adresse</h3></header><p>Beschreibe den Aufbau einer E-Mail-Adresse und nenne Beispiele.</p>
+      <div class="controls"><button class="btn" data-reveal="e1" aria-expanded="false">Lösung</button></div><p class="solution" id="e1" hidden>Benutzername – @ – Domain, z. B. <span class="mono">max.mustermann@westermann.de</span> oder <span class="mono">lina.becker@schule-musterstadt.de</span>.</p></div>
+    <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Zwei E-Mails</h3></header><p>Formuliere zwei E-Mails: einmal an die Schulleitung, einmal an einen Freund. Worin unterscheiden sie sich?</p>
+      <div class="controls"><button class="btn" data-reveal="e2" aria-expanded="false">Lösung</button></div><p class="solution" id="e2" hidden>Schulleitung: Betreff, „Sehr geehrte Frau …,“, sachlich, Sie-Form, „Mit freundlichen Grüßen“ und voller Name. Freund: lockere Anrede („Hey Tim,“), Du-Form, Emojis möglich, „Bis bald“.</p></div>
+  </div>
+  <h3 class="mt">Teile einer E-Mail ordnen</h3>
+  <div id="t2-order"></div>
+</section>
+
+<section class="station" id="t3" data-label="T Netzwerke" data-yr="Trainer" data-title="Lokale und globale Netzwerke" data-sub="Schichten des Internets">
+  <div class="section-head"><p class="eyebrow">Station 4 · Trainer</p><h2>Lokale und globale Netzwerke</h2></div>
+  <div class="grid-2">
+    <div class="stack">
+      <div class="task-card"><header><span class="no">1–2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Lokal und global</h3></header><p>Beschreibe den Aufbau eines lokalen Netzwerks. Nenne Unterschiede zu einem globalen Netzwerk.</p>
+        <div class="controls"><button class="btn" data-reveal="n12" aria-expanded="false">Lösung</button></div><p class="solution" id="n12" hidden>Im lokalen Netzwerk sind Geräte am gleichen Ort über einen Router verbunden (per Kabel = LAN, per Funk = WLAN). Ein globales Netzwerk wie das Internet verbindet Computer auf der ganzen Welt über Provider, viele Router und Server.</p></div>
+      <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Aufbau des Internets</h3></header><p>Erläutere, wie das Internet aufgebaut ist.</p>
+        <div class="controls"><button class="btn" data-reveal="n3" aria-expanded="false">Lösung</button></div><p class="solution" id="n3" hidden>Zwei Schichten: Die technische Schicht (Computer, Kabel, Server, Router) ist das Fundament für den Datenaustausch. Darauf baut die Schicht der Internetdienste auf (E-Mail, Webseiten, Messenger, Streaming).</p></div>
+    </div>
+    <div><p class="eyebrow">Ordne den Schichten zu</p><div id="t3-sort"></div></div>
+  </div>
+</section>
+
+<section class="station" id="t4" data-label="T KI" data-yr="Trainer" data-title="Künstliche Intelligenz" data-sub="LLM und Prompts">
+  <div class="section-head"><p class="eyebrow">Station 5 · Trainer</p><h2>Künstliche Intelligenz</h2></div>
+  <div class="grid-2">
+    <div class="stack">
+      <div class="task-card"><header><span class="no">1–3</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>KI im Alltag</h3></header><p>Nenne Beispiele für KI im Alltag und Unterschiede zwischen starker und schwacher KI. Erläutere, worum es sich bei einem LLM handelt.</p>
+        <div class="controls"><button class="btn" data-reveal="i13" aria-expanded="false">Lösung</button></div><p class="solution" id="i13" hidden>Beispiele: Sprachassistent, Übersetzer, Saugroboter, Spurhalteassistent, Chatbot. Schwache KI erledigt festgelegte Aufgaben (gibt es heute), starke KI würde selbstständig lernen und kreativ denken (nur Theorie). Ein LLM ist ein großes Sprachmodell, das mit vielen Texten trainiert wurde und das wahrscheinlichste nächste Wort berechnet.</p></div>
+      <div class="task-card"><header><span class="no">4–6</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>LLM, Prompts, Risiken</h3></header><p>Beschreibe den Ablauf im Inneren eines LLM („Es war einmal eine …“). Erläutere Eigenschaften eines präzisen Prompts und Risiken generativer KI.</p>
+        <div class="controls"><button class="btn" data-reveal="i46" aria-expanded="false">Lösung</button></div><p class="solution" id="i46" hidden>Die Eingabeschicht nimmt den bisherigen Text auf, das Netzwerk nutzt gelernte Zusammenhänge, die Ausgabeschicht berechnet Wahrscheinlichkeiten: Prinzessin 50 %, Königstochter 35 %, Bundeskanzlerin 10 %, Prinz 5 %. Präziser Prompt: Rolle, klare Anweisung, Beispiele, Länge. Risiken: falsche Fakten, Fake News, Deepfakes, Betrug, weniger eigenes Lernen.</p></div>
+    </div>
+    <div><p class="eyebrow">Starke oder schwache KI?</p><div id="t4-sort"></div></div>
+  </div>
+</section>
+
+<section class="station" id="quiz-st" data-label="Quiz" data-yr="Testen" data-title="Großes Quiz" data-sub="12 zufällige Fragen">
+  <div class="section-head"><p class="eyebrow">Station 6 · Quiz</p><h2>Großes Quiz</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<section class="station" id="uebungen" data-label="Ich kann …">
+  <div class="section-head"><p class="eyebrow">Selbsteinschätzung</p><h2>Ich kann …</h2></div>
+  <ol id="sc"></ol>
+</section>
+
+<script>
+const BEGRIFFE = [['Sender und Empfänger', 'übermitteln Informationen über einen Kanal'], ['Zwei-Wege-Kommunikation', 'beide können senden und empfangen'], ['verzögerte Kommunikation', 'die Antwort erfolgt zeitversetzt'], ['Messenger', 'App für Nachrichten in Echtzeit'],
+  ['Recht am eigenen Bild', 'Fotos von Personen nur mit Zustimmung posten'], ['Phishing', 'Daten-Angeln mit gefälschten Nachrichten'], ['Zwei-Faktor-Authentifizierung', 'Passwort plus zweiter Faktor'], ['personenbezogene Daten', 'Angaben, die einer Person zugeordnet werden können'],
+  ['DSGVO', 'EU-Gesetz zum Schutz von Daten'], ['Cyber-Grooming', 'Erwachsene erschleichen sich das Vertrauen von Kindern'], ['Fake News', 'absichtlich falsche Nachrichten'], ['Router', 'leitet Daten im Netzwerk weiter'], ['DNS', 'Telefonbuch des Internets'], ['Prompt', 'Eingabe für eine KI'], ['Deepfake', 'täuschend echte KI-Fälschung']];
+flipCards($('#flip'), BEGRIFFE);
+matcher($('#match'), shuffle(BEGRIFFE.slice()).slice(0, 7));
+sorter($('#t1-sort'), [{id: 'v', name: 'verbal'}, {id: 'n', name: 'nonverbal'}, {id: 'i', name: 'visuell'}], [
+  {t: 'ein Gespräch', c: 'v'}, {t: 'eine Textnachricht', c: 'v'}, {t: 'ein Lächeln', c: 'n'}, {t: 'ein Verkehrsschild', c: 'i'}, {t: 'ein Emoji in einer Nachricht', c: 'i'}
+]);
+mcQuiz($('#t1-quiz'), [
+  {q: 'A ✉️ Eine E-Mail mit Anhang „beispiel_3.dox“', a: ['verzögert', 'direkt'], ok: 0, why: 'Die Antwort kommt später.'},
+  {q: 'B 🎙️ Eine Sprachnachricht vom 7. Juli', a: ['verzögert', 'direkt'], ok: 0, why: 'Man hört sie an, wenn es passt.'},
+  {q: 'C 🎥 Eine Videokonferenz mit zwei Personen', a: ['direkt', 'verzögert'], ok: 0, why: 'Alle sind gleichzeitig aktiv.'}
+]);
+orderSteps($('#t2-order'), ['Betreff', 'Anrede', 'Einleitung', 'Hauptteil', 'Schlussformel', 'Name']);
+sorter($('#t3-sort'), [{id: 'd', name: 'Internetdienste'}, {id: 't', name: 'Technische Schicht'}], [
+  {t: 'E-Mail', c: 'd'}, {t: 'Website', c: 'd'}, {t: 'Messenger', c: 'd'}, {t: 'Streaming', c: 'd'}, {t: 'Computer', c: 't'}, {t: 'Kabel', c: 't'}, {t: 'Server', c: 't'}, {t: 'Router', c: 't'}
+]);
+sorter($('#t4-sort'), [{id: 's', name: 'schwache KI (gibt es)'}, {id: 'x', name: 'starke KI (nur Theorie)'}], [
+  {t: 'übersetzt Texte', c: 's'}, {t: 'erkennt Sprache', c: 's'}, {t: 'spielt Schach', c: 's'}, {t: 'lernt völlig selbstständig Neues', c: 'x'}, {t: 'denkt kreativ und hat Gefühle', c: 'x'}, {t: 'löst jedes neue Problem allein', c: 'x'}
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Was braucht jede Kommunikation?', a: ['Sender, Kanal, Empfänger', 'nur ein Smartphone', 'Internet', 'eine E-Mail-Adresse'], ok: 0, why: 'Sender-Empfänger-Modell.'},
+  {q: 'Wie viel Freizeit-Medienzeit wird für 11- bis 13-Jährige empfohlen?', a: ['60–90 Minuten pro Tag', '4 Stunden', '10 Minuten', 'unbegrenzt'], ok: 0, why: 'Ab 14 bis zu 2 Stunden.'},
+  {q: 'Was bedeutet „bcc“ bei einer E-Mail?', a: ['Blindkopie – für andere unsichtbar', 'Betreff', 'Anhang', 'Absender'], ok: 0, why: 'cc sehen alle.'},
+  {q: 'Was solltest du einer unbekannten Person im Chat nicht verraten?', a: ['Adresse, Schule, echten Namen', 'deine Lieblingsfarbe', 'das Wetter', 'nichts davon ist schlimm'], ok: 0, why: 'Du weißt nie, wer chattet.'},
+  {q: 'Was musst du vor dem Posten eines Fotos mit Freunden tun?', a: ['sie um Erlaubnis fragen', 'nichts', 'sie markieren', 'den Filter ändern'], ok: 0, why: 'Recht am eigenen Bild.'},
+  {q: 'Welches Passwort ist sicher?', a: ['29smjMdoSj_#1asS', 'passwort', 'qwertzuiop', 'FCSchalke04'], ok: 0, why: 'Lang und gemischt.'},
+  {q: 'Wie beeinflusst Werbung oft?', a: ['über Gefühle und Klischees', 'nur über Fakten', 'gar nicht', 'nur über den Preis'], ok: 0, why: 'Mit dem Produkt soll man glücklicher sein.'},
+  {q: 'Zu welchen Daten gehört die Kontonummer?', a: ['Bankdaten', 'Werturteile', 'physische Merkmale', 'Onlinedaten'], ok: 0, why: 'Wie Kreditkarte und Einkommen.'},
+  {q: 'Was ist Cyber-Mobbing?', a: ['Beleidigen im Internet', 'ein Computerspiel', 'ein Virus', 'eine Werbung'], ok: 0, why: 'Hilfe holen, nicht mitmachen.'},
+  {q: 'Was tust du bei einer Nachricht ohne Quelle, die dich schockiert?', a: ['prüfen und nicht weiterleiten', 'sofort an alle schicken', 'glauben', 'kommentieren'], ok: 0, why: 'Fake News keine Chance geben.'},
+  {q: 'Was macht ein Router?', a: ['leitet Daten weiter und verbindet Geräte', 'druckt Seiten', 'speichert Fotos', 'schreibt Texte'], ok: 0, why: 'Er ist ein Wegweiser.'},
+  {q: 'Was ist ein Probeabo?', a: ['am Anfang kostenlos, danach kostenpflichtig', 'immer kostenlos', 'ein Geschenk', 'ein Virus'], ok: 0, why: 'Rechtzeitig kündigen!'},
+  {q: 'Was gehört zu einem guten Prompt?', a: ['klare Anweisung und Antwortlänge', 'möglichst ungenau', 'nur ein Wort', 'Großbuchstaben'], ok: 0, why: 'Und Rolle, Beispiele.'},
+  {q: 'Was ist ein Deepfake?', a: ['eine täuschend echte KI-Fälschung', 'ein tiefes Foto', 'ein Router', 'eine E-Mail'], ok: 0, why: 'Bilder, Videos oder Stimmen.'}
+], {pick: 12});
+selfCheck($('#sc'), [
+  {t: 'Ich kann das Sender-Empfänger-Modell erklären und Kommunikationskanäle unterscheiden.', href: '01_Digitale_Kommunikation.html#modell'},
+  {t: 'Ich kann direkte und verzögerte Kommunikation unterscheiden.', href: '01_Digitale_Kommunikation.html#m2'},
+  {t: 'Ich kann meine Mediennutzung überprüfen.', href: '02_Mediennutzung.html#regeln'},
+  {t: 'Ich kann eine E-Mail richtig formulieren.', href: '03_E_Mails.html#aufbau'},
+  {t: 'Ich kenne Regeln für das Chatten.', href: '04_Chatten.html#regeln'},
+  {t: 'Ich weiß, was ich vor dem Posten beachten muss.', href: '05_Posten.html#regeln'},
+  {t: 'Ich kann sichere Passwörter erstellen und Phishing erkennen.', href: '06_Passwoerter.html#passwort'},
+  {t: 'Ich erkenne, wie Werbung uns beeinflusst.', href: '07_Werbung.html#m2'},
+  {t: 'Ich kenne personenbezogene Daten und schütze sie.', href: '08_Datenschutz.html#daten'},
+  {t: 'Ich kenne Gefahren im Internet und weiß, wo ich Hilfe bekomme.', href: '09_Gefahren.html#grooming'},
+  {t: 'Ich kann Fake News prüfen und mit verstörenden Inhalten umgehen.', href: '10_Fake_News.html#check'},
+  {t: 'Ich kann lokale und globale Netzwerke beschreiben.', href: '11_Netzwerke.html#lokal'},
+  {t: 'Ich kann erklären, was KI ist und was sie kann.', href: '12_KI.html#ki'},
+  {t: 'Ich kann generative KI sinnvoll nutzen und Deepfakes erkennen.', href: '13_Generative_KI.html#prompt'}
+]);
+</script>

@@ -1,0 +1,170 @@
+<!--
+title: Bedingte Anweisungen in Scratch
+short: Bedingungen
+time: 2 Unterrichtsstunden (mit Scratch am Rechner)
+q: Wann führt ein Programm eine Anweisung aus – und wann nicht?
+facts: Anweisung mit Bedingung (Fußgängerampel) | Verzweigung mit Alternative (Freizeitpark) | Bedingungen in Scratch: „falls … dann“ und „falls … dann … sonst“, Mathe-Profi | M1 Bedingte Anweisung im Alltag, M2 Verzweigung im Navi
+inter: Ampel-Programm mit Schalter · Verzweigung testen · Mathe-Quiz-Katze · Sätze zuordnen · Navi umleiten · Schleife oder Bedingung?
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Algorithmen und Problemlösen</p>
+      <h1>Bedingte Anweisungen<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Leuchtet eine Fußgängerampel rot, wartet man. Schaltet sie auf Grün, ist das die Voraussetzung zum Laufen. Gibt es so etwas auch beim Programmieren?</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Vervollständige: „Wenn es regnet, dann …“ – „sonst …“</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wann führt ein Programm eine Anweisung aus – und wann nicht?</p></div>
+      <div class="controls"><button class="btn primary" data-go="ampel">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="ampel" data-label="Bedingung" data-yr="Erarbeitung" data-title="Anweisungen mit Bedingung" data-sub="Die Fußgängerampel">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Anweisungen mit Bedingung</p>
+    <h2>Erst wenn es grün ist …</h2>
+    <p class="lead">Die Anweisung „Geh über die Straße!“ wird erst ausgeführt, wenn die Ampel auf Grün schaltet. Das Umschalten ist die <b>Bedingung</b>. Ist eine Bedingung mit einer Anweisung verknüpft, spricht man von einer <b>bedingten Anweisung</b>.</p>
+  </div>
+  <p class="eyebrow">Abb. 2: Bedingte Anweisung – schalte die Ampel um und starte das Programm.</p>
+  <div id="s-ampel"></div>
+</section>
+
+<section class="station" id="verzweigung" data-label="Verzweigung" data-yr="Erarbeitung" data-title="Anweisungen mit Verzweigung" data-sub="Falls … dann … sonst">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Anweisungen mit Verzweigung</p>
+    <h2>Und wenn nicht?</h2>
+    <p class="lead">Im Freizeitpark ist dein Lieblings-Fahrgeschäft wegen Wartung geschlossen. Die Bedingung ist nicht erfüllt – also gehst du als <b>Alternative</b> zum nächsten. Wird bei nicht erfüllter Bedingung eine andere Handlung ausgeführt, heißt das <b>Verzweigung</b>.</p>
+  </div>
+  <div class="cols-2">
+    <div class="fc-static">
+      <div class="fc term">Start</div><div class="fc-ar">↓</div>
+      <div class="fc cond">Ist die Achterbahn geöffnet?</div>
+      <div class="branch"><div><span class="good mono">ja ↓</span><div class="fc">Fahre Achterbahn.</div></div><div><span class="bad mono">nein ↓</span><div class="fc">Gehe zum nächsten Fahrgeschäft.</div></div></div>
+      <div class="fc-ar">↓</div><div class="fc term">Stopp</div>
+    </div>
+    <div><p class="eyebrow">Abb. 3: Verzweigung in Scratch</p><div id="s-verz"></div></div>
+  </div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">A</span><h3>Bedingung</h3></header><p>Beschreibe den Begriff „Bedingung“ an einem Beispiel aus dem Alltag.</p></div>
+    <div class="task-card"><header><span class="no">B</span><h3>Unterschied</h3></header><p>Beschreibe den Unterschied zwischen einer bedingten Anweisung und einer Verzweigung.</p>
+      <div class="controls"><button class="btn" data-reveal="vb" aria-expanded="false">Lösung</button></div><p class="solution" id="vb" hidden>Bei der <b>bedingten Anweisung</b> passiert nur dann etwas, wenn die Bedingung erfüllt ist – sonst nichts. Bei der <b>Verzweigung</b> gibt es zusätzlich eine Alternative („sonst“), die ausgeführt wird, wenn die Bedingung nicht erfüllt ist.</p></div>
+  </div>
+</section>
+
+<section class="station" id="mathe" data-label="Mathe-Profi" data-yr="Scratch" data-title="Bedingungen in Scratch" data-sub="Die Mathe-Katze">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Bedingungen in Scratch</p>
+    <h2>Die Mathe-Katze</h2>
+    <p class="lead">Die Katze fragt nach dem Ergebnis von 1 + 1. Lautet die Antwort „2“, ist die Bedingung erfüllt: Sie sagt „Mathe-Profi!“. Sonst sagt sie „Nochmal üben!“. Probiere beides!</p>
+  </div>
+  <div id="s-mathe"></div>
+  <p class="note mt">Ändere die Frage und die richtige Antwort im Block „Antwort = …“ – zum Beispiel „Wie viel ist 7 · 8?“.</p>
+</section>
+
+<section class="station" id="m1" data-label="M1 Alltag" data-yr="M1" data-title="Bedingte Anweisung im Alltag" data-sub="Sätze A–C">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Bedingte Anweisung im Alltag</h2>
+  </div>
+  <div class="cols-2">
+    <div>
+      <div class="box"><p><b>A:</b> Wenn es über 30 °C ist, gehe ich ins Freibad.</p><p><b>B:</b> Wenn ich einen Einkaufschip habe, kann ich einen Einkaufswagen nehmen, ansonsten kann ich einen Einkaufskorb nehmen.</p><p><b>C:</b> Wenn der Wecker morgens klingelt, muss ich aufstehen.</p></div>
+      <div class="task-card mt"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Zuordnen</h3></header><p>Ordne den Sätzen A–C zu: „bedingte Anweisung“ oder „Verzweigung“.</p></div>
+      <div id="abc-sort"></div>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Bedingungen nennen</h3></header><p>Nenne die jeweilige Bedingung in den Handlungen.</p>
+        <div class="controls"><button class="btn" data-reveal="b2" aria-expanded="false">Lösung</button></div><p class="solution" id="b2" hidden>A: „über 30 °C“ · B: „Einkaufschip vorhanden“ · C: „Wecker klingelt“</p></div>
+      <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Ablaufpläne</h3></header><p>Erstelle zu den drei Handlungen je einen Ablaufplan. Nutze für die Bedingung eine Raute mit „ja“ und „nein“.</p></div>
+      <div class="task-card"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Erweitern</h3></header><p>Erweitere das Beispiel „Draußen mit Freunden treffen“ zu einer bedingten Anweisung oder einer Verzweigung.</p>
+        <div class="controls"><button class="btn" data-reveal="b4" aria-expanded="false">Beispiel</button></div><p class="solution" id="b4" hidden>Verzweigung: „Wenn die Sonne scheint, treffe ich mich draußen mit Freunden, sonst spielen wir drinnen ein Brettspiel.“</p></div>
+      <div class="task-card"><header><span class="no">5</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Bedingung oder Wiederholung?</h3></header><p>Begründe, ob sich die Handlungen mit einer Bedingung oder einer Wiederholung mit fester Anzahl lösen lassen:</p><div id="b5-sort"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m2" data-label="M2 Navi" data-yr="M2" data-title="Verzweigung im Navi" data-sub="Stau – und jetzt?">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M2</p>
+    <h2>Verzweigung im Navi</h2>
+    <p class="lead">Das Navigationsgerät zeigt einen Stau (rot) und eine Alternative an. Schalte den Stau ein und aus.</p>
+  </div>
+  <div class="cols-2">
+    <div class="vis">
+      <div class="vis-head"><h3>Navigationsgerät</h3><div id="stau-seg"></div></div>
+      <svg class="fig-svg navi" viewBox="0 0 400 260" aria-label="Karte mit zwei Routen">
+        <rect width="400" height="260" rx="10" fill="#E7F0D8"/>
+        <path d="M30 220 C120 220 140 60 370 50" id="r1" fill="none" stroke-width="10" stroke-linecap="round"/>
+        <path d="M30 220 C200 250 320 200 370 50" id="r2" fill="none" stroke-width="10" stroke-linecap="round" stroke-dasharray="2 14"/>
+        <text x="150" y="105" font-size="13" font-weight="700" fill="#555">L 311</text><text x="300" y="215" font-size="13" font-weight="700" fill="#555">K 47</text>
+        <circle cx="30" cy="220" r="10" fill="#2563EB"/><text x="20" y="250" font-size="12">Start</text>
+        <circle cx="370" cy="50" r="10" fill="#DC2626"/><text x="345" y="30" font-size="12">Ziel</text>
+        <text id="stau-ic" x="130" y="150" font-size="26">⚠️</text>
+      </svg>
+      <p class="status" id="navi-status"></p>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Bedingung formulieren</h3></header><p>Der Fahrer möchte an sein Ziel kommen und hat zwei Routen. Formuliere eine passende Bedingung.</p>
+        <div class="controls"><button class="btn" data-reveal="n1h" aria-expanded="false">HILFE</button><button class="btn" data-reveal="n1" aria-expanded="false">Lösung</button></div>
+        <p class="hint-box" id="n1h" hidden>Beginne mit „Falls …, dann …, sonst …“.</p>
+        <p class="solution" id="n1" hidden>Falls auf der L 311 Stau ist, dann fahre über die K 47, sonst fahre über die L 311.</p></div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Ablaufplan</h3></header><p>Erstelle einen Ablaufplan für die Handlung des Fahrers. Orientiere dich an der Verzweigung in Station 2.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Bedingungen</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Bedingte Anweisungen und Verzweigungen</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Eine <b>Bedingung</b> ist eine Voraussetzung, die erfüllt (wahr) oder nicht erfüllt (falsch) sein kann.</li>
+        <li data-step><b>Bedingte Anweisung</b>: Die Anweisung wird nur ausgeführt, wenn die Bedingung erfüllt ist. Scratch: „falls … dann“.</li>
+        <li data-step><b>Verzweigung</b>: Ist die Bedingung nicht erfüllt, wird eine Alternative ausgeführt. Scratch: „falls … dann … sonst“.</li>
+        <li data-step>Im Ablaufplan stellt man die Bedingung als <b>Raute</b> mit den Ausgängen „ja“ und „nein“ dar.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne einen Ablaufplan mit Verzweigung zu „Wenn es über 30 °C ist, gehe ich ins Freibad, sonst …“.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Üben und wiederholen</h2></div>
+  <h3>Lückentext</h3>
+  <div id="cloze"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+scratch($('#s-ampel'), [{op: 'flag'}, {op: 'if', cond: {c: 'var', name: 'Ampel', v: 'Grün'}, body: [{op: 'move', n: 50}]}], {vars: {Ampel: ['Rot', 'Grün']}, x: -100, done: 'Fertig. Ist die Ampel rot, bleibt die Katze stehen – die Bedingung ist nicht erfüllt.'});
+scratch($('#s-verz'), [{op: 'flag'}, {op: 'ifelse', cond: {c: 'var', name: 'Ampel', v: 'Grün'}, body: [{op: 'move', n: 50}], else: [{op: 'say', text: 'Ich warte.', s: 2}]}], {vars: {Ampel: ['Rot', 'Grün']}, x: -100});
+scratch($('#s-mathe'), [{op: 'flag'}, {op: 'ask', text: 'Wie viel ist 1+1?'}, {op: 'ifelse', cond: {c: 'answer', v: '2'}, body: [{op: 'say', text: 'Mathe-Profi!', s: 2}], else: [{op: 'say', text: 'Nochmal üben!', s: 2}]}]);
+sorter($('#abc-sort'), [{id: 'b', name: 'bedingte Anweisung'}, {id: 'v', name: 'Verzweigung'}], [
+  {t: 'A: Freibad ab 30 °C', c: 'b', why: 'Ohne Alternative.'}, {t: 'B: Einkaufswagen oder -korb', c: 'v', why: '„ansonsten“ = Alternative.'}, {t: 'C: Aufstehen, wenn der Wecker klingelt', c: 'b', why: 'Ohne Alternative.'}
+]);
+sorter($('#b5-sort'), [{id: 'w', name: 'Wiederholung mit fester Anzahl'}, {id: 'b', name: 'Bedingung'}], [
+  {t: 'Eine Tüte mit 30 Fruchtgummis füllen', c: 'w', why: 'genau 30-mal'}, {t: 'Im Sportunterricht 5 Runden rennen', c: 'w', why: 'genau 5-mal'},
+  {t: 'Helle Plätzchen mit Zuckerstreuseln, dunkle mit Marmelade', c: 'b', why: 'Verzweigung: falls hell … sonst …'}
+]);
+(() => {
+  seg($('#stau-seg'), [['ja', 'Stau auf L 311'], ['nein', 'freie Fahrt']], v => {
+    const st = v === 'ja';
+    $('#r1').setAttribute('stroke', st ? '#DC2626' : '#2563EB'); $('#r2').setAttribute('stroke', st ? '#2563EB' : '#9CA3AF');
+    $('#r1').setAttribute('stroke-dasharray', st ? '2 14' : ''); $('#r2').setAttribute('stroke-dasharray', st ? '' : '2 14');
+    $('#stau-ic').style.display = st ? '' : 'none';
+    $('#navi-status').innerHTML = st ? 'Bedingung <b>„Stau auf L 311“</b> ist <b>wahr</b> → das Navi wählt die <b>Alternative K 47</b>.' : 'Bedingung ist <b>falsch</b> → das Navi bleibt auf der schnellen Route <b>L 311</b>.';
+  });
+})();
+cloze($('#cloze'), 'Eine {Bedingung|Schleife|Sequenz} kann wahr oder falsch sein. Bei einer {bedingten Anweisung|Endlosschleife|Sequenz} wird die Anweisung nur ausgeführt, wenn die Bedingung erfüllt ist. Gibt es eine Alternative, spricht man von einer {Verzweigung|Wiederholung|Variable}. In Scratch nutzt man dafür den Block „falls … dann … {sonst|wiederhole|warte}“. Im Ablaufplan wird die Bedingung als {Raute|Kreis|Pfeil} gezeichnet.');
+mcQuiz($('#quiz'), [
+  {q: 'Was ist bei der Fußgängerampel die Bedingung?', a: ['Die Ampel schaltet auf Grün.', 'Man geht über die Straße.', 'Die Straße ist breit.', 'Es ist Mittag.'], ok: 0, why: 'Erst dann wird die Anweisung ausgeführt.'},
+  {q: 'Welcher Block ist eine Verzweigung?', a: ['falls … dann … sonst', 'falls … dann', 'wiederhole 10 mal', 'gehe 10 er Schritt'], ok: 0, why: 'Mit Alternative.'},
+  {q: 'Die Katze fragt „1+1?“, du antwortest „3“. Was sagt sie?', a: ['Nochmal üben!', 'Mathe-Profi!', 'nichts', '3'], ok: 0, why: 'Die Bedingung ist nicht erfüllt.'},
+  {q: 'Welcher Satz enthält eine Verzweigung?', a: ['Wenn es regnet, nehme ich den Bus, sonst das Rad.', 'Wenn es klingelt, öffne ich.', 'Ich laufe 5 Runden.', 'Ich putze die Zähne.'], ok: 0, why: '„sonst“ = Alternative.'},
+  {q: 'Wie stellt man im Ablaufplan eine Bedingung dar?', a: ['als Raute', 'als Kreis', 'als Pfeil', 'als Stern'], ok: 0, why: 'Mit Ausgängen ja/nein.'}
+]);
+</script>

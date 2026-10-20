@@ -1,0 +1,195 @@
+<!--
+title: Programmierumgebung Scratch
+short: Scratch
+time: 1–2 Unterrichtsstunden (mit Scratch am Rechner)
+q: Wie genau funktioniert die Programmiersprache Scratch?
+facts: Scratch als visuelle Programmiersprache: Codeblöcke wie Puzzleteile | Programmfenster: Registerkarten, Codebereich, Skriptbereich, Bühne, Figurenliste | Die Bühne mit Koordinatensystem (x: −240 bis 240, y: −180 bis 180) | Figuren und ihre Attribute, M1 Figuren und Bühnenbilder bearbeiten
+inter: Scratch-Fenster erkunden und finden · Katze auf Koordinaten ziehen · Koordinaten-Challenge · Attribute verändern (Größe, Richtung, Sichtbarkeit, Position)
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Algorithmen und Problemlösen</p>
+      <h1>Programmierumgebung Scratch<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Mit einer visuellen Programmiersprache lassen sich verschiedene Geräte programmieren – sogar Drohnen. Wie funktioniert Scratch?</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Hast du schon einmal mit Blöcken programmiert – in Scratch, mit einem Roboter oder in einem Spiel?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie genau funktioniert die Programmiersprache Scratch?</p></div>
+      <div class="controls"><button class="btn primary" data-go="fenster">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="fenster" data-label="Programmfenster" data-yr="Erarbeitung" data-title="Das Programmfenster" data-sub="Bereiche von Scratch">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Programmiersprache Scratch</p>
+    <h2>Das Programmfenster</h2>
+    <p class="lead">In Scratch wird der Code aus <b>Codeblöcken</b> zusammengestellt, die wie <b>Puzzleteile</b> zusammengesteckt werden. Scratch ist eine <b>visuelle Programmiersprache</b>. Man nutzt es im Browser oder installiert es; das Projekt speichert man als Datei.</p>
+  </div>
+  <div class="phone-wrap" style="grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)">
+    <div class="scw" id="sw">
+      <div class="sw-top"><b>Scratch</b><span>🌐</span><span>Datei</span><span>Bearbeiten</span><span>💡 Tutorien</span></div>
+      <div class="sw-main">
+        <div class="sw-left">
+          <div class="sw-tabs" data-part="tabs"><span class="on">Code</span><span>Kostüme</span><span>Klänge</span></div>
+          <div class="sw-pal" data-part="codebereich">
+            <div class="sw-cats"><i style="background:#4C97FF"></i><i style="background:#9966FF"></i><i style="background:#CF63CF"></i><i style="background:#FFBF00"></i><i style="background:#FFAB19"></i><i style="background:#5CB1D6"></i></div>
+            <div class="sw-blocks"><span class="sb mo">gehe 10 er Schritt</span><span class="sb mo">drehe dich ↻ um 15 Grad</span><span class="sb lo">sage Hallo!</span><span class="sb ev hat">Wenn ⚑ angeklickt</span><span class="sb ct">warte 1 Sek.</span></div>
+          </div>
+        </div>
+        <div class="sw-script" data-part="skriptbereich"><span class="sb ev hat">Wenn <span class="flag">⚑</span> angeklickt wird</span><span class="sb mo">gehe 10 er Schritt</span><span class="sb lo">sage Hallo! für 2 Sek.</span><span class="sw-mini">🐈</span></div>
+        <div class="sw-right">
+          <div class="sw-bar"><span data-part="fahne" class="sw-flag">⚑</span><span data-part="stopp" class="sw-stop">⬣</span></div>
+          <div class="sw-stage" data-part="buehne"><span data-part="figur" class="sw-cat">🐈</span></div>
+          <div class="sw-bottom">
+            <div class="sw-sprites" data-part="figurenliste"><span class="sw-sp on">🐈<small>Figur1</small></span><span class="sw-add">＋</span></div>
+            <div class="sw-bg" data-part="buehnenliste"><small>Bühne</small>🖼️<span class="sw-add">＋</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stack"><div id="sw-mode"></div><div class="phone-panel xp-panel" id="sw-panel" aria-live="polite"></div></div>
+  </div>
+  <div class="task-card mt"><header><span class="no">A</span><h3>Visuelle Programmiersprache</h3></header><p>Beschreibe, was eine visuelle Programmiersprache ist.</p>
+    <div class="controls"><button class="btn" data-reveal="sa" aria-expanded="false">Lösung</button></div><p class="solution" id="sa" hidden>Man programmiert nicht mit getipptem Text, sondern mit grafischen Blöcken, die man zusammensteckt. Die Farben und Formen zeigen, was ein Block tut und welche Blöcke zusammenpassen.</p></div>
+</section>
+
+<section class="station" id="buehne" data-label="Bühne" data-yr="Erarbeitung" data-title="Die Bühne" data-sub="Koordinatensystem">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Die Bühne</p>
+      <h2>Ein Koordinatensystem</h2>
+      <ul class="facts">
+        <li>Auf der <b>Bühne</b> bewegen sich die Figuren. Bühnenbilder für den Hintergrund wählt man in der <b>Bühnenliste</b> – oder malt bzw. lädt eigene hoch.</li>
+        <li>Die Position einer Figur wird durch ein <b>Koordinatensystem</b> bestimmt. Die Mitte ist der <b>Ursprung (0|0)</b>.</li>
+        <li><b>x</b> geht nach rechts und links (−240 bis 240), <b>y</b> nach oben und unten (−180 bis 180).</li>
+      </ul>
+      <div class="task-card"><header><span class="no">B</span><h3>Koordinaten-Challenge</h3></header><p>Ziehe die Katze an die gesuchte Position.</p><p class="big-code" id="ch-goal" style="font-size:1.6rem"></p><div class="controls"><button class="btn primary" id="ch-check">Prüfen</button><button class="btn" id="ch-new">Neue Position</button></div><p class="fb" id="ch-fb"></p></div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Abb. 2: Bühne</h3><span class="mono" id="xy">x: 0 y: 0</span></div>
+      <div class="cstage" id="cstage"><span class="ax-x"></span><span class="ax-y"></span>
+        <span class="clab" style="left:1%;top:50%">(−240|0)</span><span class="clab" style="right:1%;top:50%">(240|0)</span><span class="clab" style="left:51%;top:1%">(0|180)</span><span class="clab" style="left:51%;bottom:1%">(0|−180)</span>
+        <span class="ccat" id="ccat">🐈</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="figuren" data-label="M1 Figuren" data-yr="M1" data-title="Figuren und Attribute" data-sub="Größe, Richtung, Sichtbarkeit">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Figuren</p>
+      <h2>Figuren haben Attribute</h2>
+      <ul class="facts">
+        <li>In der <b>Figurenliste</b> wählt man Figuren aus; die ausgewählte ist blau hervorgehoben. Jede Figur hat ihren eigenen Programmierbereich.</li>
+        <li>Figuren haben Eigenschaftswerte: <b>Name</b>, <b>Position</b>, <b>Sichtbarkeit</b>, <b>Richtung</b> und <b>Größe</b>. In der Informatik heißen sie <b>Attribute</b>.</li>
+        <li>Viele Figuren haben mehrere <b>Kostüme</b>, die man im Medienbereich ansehen, ändern oder selbst erstellen kann.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>M1 Figur bearbeiten</h3></div>
+      <div class="attr">
+        <label>Figur <input id="a-name" value="Figur1"></label>
+        <label>↔ x <input id="a-x" type="number" value="-188" min="-240" max="240"></label>
+        <label>↕ y <input id="a-y" type="number" value="-127" min="-180" max="180"></label>
+        <label>Zeige dich <span class="seg" id="a-vis-wrap"><button id="a-vis" aria-pressed="true">👁</button><button id="a-hid" aria-pressed="false">⊘</button></span></label>
+        <label>Größe <input id="a-size" type="number" value="100" min="10" max="300"></label>
+        <label>Richtung <input id="a-dir" type="number" value="90" min="-180" max="180"></label>
+      </div>
+      <div class="cstage small" id="astage"><span class="ax-x"></span><span class="ax-y"></span><span class="ccat" id="acat">🐈<small id="aname">Figur1</small></span></div>
+      <p class="status" id="a-status"></p>
+    </div>
+  </div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Am Rechner</h3></header><p>Wähle eine Figur aus der Figurenliste. Füge ein passendes Bühnenbild ein. Speichere dein Projekt mit einem passenden Dateinamen über „Datei“ → „Auf deinem Computer speichern“.</p></div>
+    <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Attribute verändern</h3></header><p>Verändere die Attribute deiner Figur. Beschreibe die Auswirkungen, wenn Größe, Richtung, Sichtbarkeit und Position verändert werden.</p>
+      <div class="controls"><button class="btn" data-reveal="f2" aria-expanded="false">Lösung</button></div><p class="solution" id="f2" hidden><b>Größe:</b> Die Figur wird größer oder kleiner (100 = normal). <b>Richtung:</b> Die Figur dreht sich (90 = nach rechts, 0 = nach oben, −90 = nach links). <b>Sichtbarkeit:</b> Die Figur wird angezeigt oder versteckt. <b>Position:</b> Die Figur steht an einer anderen Stelle (x, y).</p></div>
+    <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Eigene Figuren</h3></header><p>Gestalte eigene Figuren und Bühnenbilder oder lade eigene hoch (Pinsel- oder Hochladen-Symbol in der Figuren- bzw. Bühnenauswahl).</p></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Scratch</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Programmierumgebung Scratch</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step><b>Scratch</b> ist eine <b>visuelle Programmiersprache</b>: Codeblöcke werden wie Puzzleteile zusammengesteckt.</li>
+        <li data-step>Das Programmfenster: <b>Registerkarten</b> (Code, Kostüme, Klänge), <b>Codebereich</b> mit allen Blöcken, <b>Skriptbereich</b> zum Programmieren, <b>Bühne</b>, <b>Figurenliste</b> und <b>Bühnenliste</b>.</li>
+        <li data-step>Die Bühne ist ein <b>Koordinatensystem</b>: Mitte (0|0), x von −240 bis 240, y von −180 bis 180.</li>
+        <li data-step>Figuren haben <b>Attribute</b>: Name, Position (x, y), Sichtbarkeit, Richtung und Größe. Sie können mehrere <b>Kostüme</b> haben.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne die Bühne mit Koordinatenkreuz und trage die vier Randpunkte ein.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Üben und wiederholen</h2></div>
+  <h3>Bereich und Aufgabe</h3>
+  <div id="match"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+explorer($('#sw'), $('#sw-panel'), [
+  {id: 'tabs', n: 'Registerkarten', t: 'Wechsel zwischen „Code“ (Skripte), „Kostüme“ und „Klänge“. Kostüme und Klänge sind die Medienbereiche.'},
+  {id: 'codebereich', n: 'Codebereich', t: 'Listet alle verfügbaren Codeblöcke auf – nach Kategorien und Farben sortiert.'},
+  {id: 'skriptbereich', n: 'Skriptbereich', t: 'Hierhin zieht man die Blöcke und steckt sie zu einem Programm zusammen.'},
+  {id: 'buehne', n: 'Bühne', t: 'Oben rechts: Hier laufen die Programme ab und bewegen sich die Figuren.'},
+  {id: 'figur', n: 'Figur', t: 'Ein Objekt auf der Bühne, das man programmieren kann – zu Beginn die Scratch-Katze.'},
+  {id: 'figurenliste', n: 'Figurenauswahl / Figurenliste', t: 'Hier wählt man Figuren aus, fügt neue hinzu oder malt eigene.'},
+  {id: 'buehnenliste', n: 'Bühnenauswahl', t: 'Hier wählt man Bühnenbilder (Hintergründe) aus oder lädt eigene hoch.'},
+  {id: 'fahne', n: 'Grüne Fahne', t: 'Startet das Programm.'},
+  {id: 'stopp', n: 'Stoppschild', t: 'Stoppt das Programm.'}
+], {modeRoot: $('#sw-mode'), label: 'Bereich', intro: 'Tippe einen Bereich des Scratch-Fensters an.'});
+
+/* ================= Koordinaten ================= */
+function stageDrag(stage, cat, onMove) {
+  const P = {x: 0, y: 0};
+  const place = () => { cat.style.left = (50 + P.x / 4.8) + '%'; cat.style.top = (50 - P.y / 3.6) + '%'; onMove && onMove(P); };
+  let drag = false;
+  cat.addEventListener('pointerdown', e => { drag = true; cat.setPointerCapture(e.pointerId); });
+  cat.addEventListener('pointerup', () => drag = false);
+  cat.addEventListener('pointermove', e => { if (!drag) return; const r = stage.getBoundingClientRect(); P.x = Math.round(clamp((e.clientX - r.left) / r.width * 480 - 240, -240, 240)); P.y = Math.round(clamp(180 - (e.clientY - r.top) / r.height * 360, -180, 180)); place(); });
+  stage.addEventListener('click', e => { if (e.target === cat) return; const r = stage.getBoundingClientRect(); P.x = Math.round((e.clientX - r.left) / r.width * 480 - 240); P.y = Math.round(180 - (e.clientY - r.top) / r.height * 360); place(); });
+  place(); return {P, place};
+}
+(() => {
+  let goal;
+  const d = stageDrag($('#cstage'), $('#ccat'), P => $('#xy').textContent = `x: ${P.x}  y: ${P.y}`);
+  const nw = () => { goal = [randInt(-20, 20) * 10, randInt(-15, 15) * 10]; $('#ch-goal').textContent = `x: ${goal[0]} | y: ${goal[1]}`; $('#ch-fb').textContent = ''; };
+  $('#ch-new').onclick = nw;
+  $('#ch-check').onclick = () => { const ok = Math.abs(d.P.x - goal[0]) <= 15 && Math.abs(d.P.y - goal[1]) <= 15; $('#ch-fb').className = 'fb ' + (ok ? 'ok' : 'err'); $('#ch-fb').textContent = ok ? 'Richtig! Fast genau getroffen.' : `Noch nicht: Die Katze steht bei x: ${d.P.x} | y: ${d.P.y}.`; };
+  nw();
+})();
+
+/* ================= Attribute ================= */
+(() => {
+  let vis = true;
+  const cat = $('#acat');
+  function upd() {
+    const x = clamp(+$('#a-x').value || 0, -240, 240), y = clamp(+$('#a-y').value || 0, -180, 180), s = clamp(+$('#a-size').value || 100, 10, 300), r = +$('#a-dir').value || 0;
+    cat.style.left = (50 + x / 4.8) + '%'; cat.style.top = (50 - y / 3.6) + '%';
+    cat.style.transform = `translate(-50%,-50%) scale(${s / 100}) rotate(${r - 90}deg)`; cat.style.opacity = vis ? 1 : .08;
+    $('#aname').textContent = $('#a-name').value;
+    $('#a-status').innerHTML = `Position (${x}|${y}) · Größe ${s} % · Richtung ${r}° (${r === 90 ? 'nach rechts' : r === 0 ? 'nach oben' : r === -90 ? 'nach links' : r === 180 || r === -180 ? 'nach unten' : 'schräg'}) · ${vis ? 'sichtbar' : 'versteckt'}`;
+  }
+  $$('#figuren .attr input').forEach(i => i.addEventListener('input', upd));
+  $('#a-vis').onclick = () => { vis = true; $('#a-vis').setAttribute('aria-pressed', true); $('#a-hid').setAttribute('aria-pressed', false); upd(); };
+  $('#a-hid').onclick = () => { vis = false; $('#a-vis').setAttribute('aria-pressed', false); $('#a-hid').setAttribute('aria-pressed', true); upd(); };
+  upd();
+})();
+
+matcher($('#match'), [['Codebereich', 'listet alle Codeblöcke auf'], ['Skriptbereich', 'hier wird programmiert'], ['Bühne', 'hier läuft das Programm ab'], ['Attribut', 'Eigenschaftswert einer Figur, z. B. Größe'], ['Kostüm', 'ein anderes Aussehen der Figur'], ['Ursprung', 'die Mitte der Bühne (0|0)']]);
+mcQuiz($('#quiz'), [
+  {q: 'Was ist Scratch?', a: ['eine visuelle Programmiersprache', 'ein Betriebssystem', 'ein Malprogramm', 'eine Suchmaschine'], ok: 0, why: 'Blöcke statt getipptem Code.'},
+  {q: 'Wo liegt der Ursprung (0|0) auf der Bühne?', a: ['in der Mitte', 'oben links', 'unten rechts', 'unten links'], ok: 0, why: 'Von dort zählen x und y.'},
+  {q: 'Welche Werte kann x annehmen?', a: ['−240 bis 240', '0 bis 480', '−180 bis 180', '0 bis 100'], ok: 0, why: 'Die Bühne ist 480 breit.'},
+  {q: 'Welche Richtung bedeutet 90?', a: ['nach rechts', 'nach oben', 'nach links', 'nach unten'], ok: 0, why: '0 ist oben, 90 rechts.'},
+  {q: 'Wie heißen Eigenschaftswerte einer Figur in der Informatik?', a: ['Attribute', 'Kostüme', 'Skripte', 'Bühnen'], ok: 0, why: 'z. B. Name, Größe, Richtung.'},
+  {q: 'Wo programmiert man in Scratch?', a: ['im Skriptbereich', 'auf der Bühne', 'in der Figurenliste', 'im Startmenü'], ok: 0, why: 'Dorthin zieht man die Blöcke.'}
+]);
+</script>

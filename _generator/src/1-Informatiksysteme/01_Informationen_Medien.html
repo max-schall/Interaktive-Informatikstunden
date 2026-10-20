@@ -1,0 +1,287 @@
+<!--
+title: Informationen und Medien im Alltag
+short: Informationen
+time: 2 Unterrichtsstunden
+q: Wie werden Informationen dargestellt – und wann kommen sie richtig beim Empfänger an?
+facts: Kapitelauftakt: Informatik im Alltag (S. 6–7) | Information, Repräsentation, Trägermedium und gemeinsame Sprache | Daten und Medium am Beispiel des Schäfers, Medien im Alltag und Manipulation | M1 Von der Idee zum Lied
+inter: Begriffe der Mindmap sortieren · „Mir ist kalt!“ in fünf Darstellungen · Datum DE/USA umschalten · Kerben schnitzen · Medien-Tricks · Bildergeschichte ordnen und Begriffe zuordnen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Informatiksysteme nutzen</p>
+      <h1>Informationen und Medien<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Ob Fahrplan, Chatnachricht oder Lied: Ständig geben wir Informationen weiter. Aber eine Information kann nicht einfach von Kopf zu Kopf springen – sie muss <b>dargestellt</b> werden.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wie zeigst du jemandem, dass dir kalt ist – ohne ein Wort zu sagen?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie werden Informationen dargestellt – und wann kommen sie richtig beim Empfänger an?</p></div>
+      <div class="controls"><button class="btn primary" data-go="auftakt">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="auftakt" data-label="Kapitelauftakt" data-yr="Einstieg" data-title="Informatik im Alltag" data-sub="Kapitelauftakt S. 6–7">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Kapitelauftakt</p>
+    <h2>Informatiksysteme nutzen</h2>
+    <p class="lead">Smartphones, Tablets, Computer: Informatik begegnet uns überall. Ordne die Begriffe der Mindmap aus dem Buch den vier Ästen zu.</p>
+  </div>
+  <div id="mind-sort"></div>
+  <div class="cols-3 mt">
+    <div class="task-card"><header><span class="no">A</span><h3>Informatik im Alltag</h3></header><p>Beschreibt mithilfe der Bilder, wie uns Informatik im Alltag begegnet.</p></div>
+    <div class="task-card"><header><span class="no">B</span><h3>Mein Beispiel</h3></header><p>Beschreibt ein konkretes Beispiel, bei dem ihr täglich ein Informatiksystem nutzt.</p></div>
+    <div class="task-card"><header><span class="no">C</span><h3>Weitere Beispiele</h3></header><p>Beschreibt weitere Beispiele, bei denen Informatiksysteme zum Einsatz kommen, die nicht abgebildet sind.</p>
+      <div class="controls"><button class="btn" data-reveal="c-loes" aria-expanded="false">Ideen</button></div>
+      <p class="solution" id="c-loes" hidden>Fahrkartenautomat, Kasse im Supermarkt, Navi im Auto, Smartwatch, Ampelsteuerung, Geldautomat, Waschmaschine, smarter Lautsprecher, Anzeigetafel am Bahnhof …</p></div>
+  </div>
+</section>
+
+<section class="station" id="information" data-label="Information" data-yr="Erarbeitung" data-title="Information und Repräsentation" data-sub="„Mir ist kalt!“ in fünf Formen">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Information</p>
+      <h2>Information und Repräsentation</h2>
+      <ul class="facts">
+        <li>Eine <b>Information</b> kann man nicht einfach von seinem Kopf in einen anderen Kopf übertragen.</li>
+        <li>Sie muss erst <b>dargestellt</b> werden: mit Worten, als Text, als Bild … Das Darstellen einer Information nennt man <b>Repräsentation</b>.</li>
+        <li>Repräsentationen können aus gesprochener Sprache, Text, Bildern, Gesten, Tönen oder elektrischen Signalen bestehen.</li>
+        <li>Zur Weitergabe braucht man ein <b>Trägermedium</b>: Für Schrift Papier oder einen Bildschirm, Sprache reist als Schallwellen durch die Luft.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Abb. 1: „Mir ist kalt!“</h3><span class="note">Karten umdrehen</span></div>
+      <div id="kalt"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="sprache" data-label="Gemeinsame Sprache" data-yr="Erarbeitung" data-title="Gemeinsame Sprache" data-sub="Sender, Empfänger, Interpretation">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Informationsübertragung</p>
+    <h2>Sender, Empfänger und eine gemeinsame Sprache</h2>
+    <p class="lead">Der <b>Sender</b> wählt eine Form der Repräsentation, die andere verstehen. Der <b>Empfänger</b> liest oder hört sie und <b>interpretiert</b> den Inhalt. Fehlt eine gemeinsame Sprache, kommt die Information nicht richtig an.</p>
+  </div>
+  <div class="flow-line">
+    <div class="fl-box"><span class="tag">Sender</span><b>hat eine Information</b><small>„Ich habe 20 Schafe.“</small></div>
+    <div class="fl-arrow">repräsentiert →</div>
+    <div class="fl-box acc"><span class="tag info">Daten auf einem Medium</span><b>20 Kerben im Ast</b><small>Medium: der Ast</small></div>
+    <div class="fl-arrow">→ interpretiert</div>
+    <div class="fl-box"><span class="tag">Empfänger</span><b>versteht die Information</b><small>„Er hat 20 Schafe.“</small></div>
+  </div>
+  <div class="cols-2 mt">
+    <div class="vis">
+      <div class="vis-head"><h3>Was bedeutet 09.04.27?</h3><div id="dat-seg"></div></div>
+      <p class="big-code" style="text-align:center;margin:.4rem 0">09.04.27</p>
+      <p class="status" id="dat-status"></p>
+    </div>
+    <div>
+      <p class="eyebrow">Noch mehr Missverständnisse – umdrehen</p>
+      <div id="miss"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="daten" data-label="Daten" data-yr="Erarbeitung" data-title="Daten und Medium" data-sub="Der Schäfer und seine Kerben">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 4 · Daten</p>
+      <h2>Aus Informationen werden Daten</h2>
+      <p class="lead">Werden Informationen repräsentiert, erhält man <b>Daten</b>.</p>
+      <ul class="facts">
+        <li>Ein Schäfer hat 20 Schafe. Er schnitzt <b>20 Kerben</b> in einen Ast.</li>
+        <li>Der <b>Ast</b> ist das <b>Medium</b>, die <b>Kerben</b> sind die <b>Daten</b>.</li>
+        <li>Wenn alle Bauern im Dorf so zählen, sprechen sie dieselbe Sprache: Jeder kann die Daten richtig interpretieren.</li>
+        <li>Daten können <b>gesammelt, geordnet und analysiert</b> werden.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Schäfer-Zählung</h3></div>
+      <div id="schafe" class="sheep" aria-live="polite"></div>
+      <svg id="ast" class="fig-svg" viewBox="0 0 600 110" aria-label="Ast mit Kerben"></svg>
+      <div class="controls"><button class="btn primary" id="schaf-plus">🐑 Schaf zählen</button><button class="btn" id="schaf-reset">Neu</button></div>
+      <p class="status" id="schaf-status"></p>
+    </div>
+  </div>
+  <h3 class="mt">Information, Daten oder Medium?</h3>
+  <div id="idm-sort"></div>
+</section>
+
+<section class="station" id="medien" data-label="Medien" data-yr="Erarbeitung" data-title="Medien im Alltag" data-sub="Gestalten – und manipulieren">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 5 · Medien im Alltag</p>
+      <h2>Medien gestalten Informationen</h2>
+      <ul class="facts">
+        <li>Wichtige Medien im Alltag sind <b>Fernsehen</b>, <b>Radio</b> und <b>soziale Netzwerke</b>.</li>
+        <li>Durch Überschriften, Bilder, Farben oder die Reihenfolge der Inhalte lenken Medien die <b>Aufmerksamkeit</b>.</li>
+        <li>Medien können auch zur <b>Manipulation</b> genutzt werden: einseitig berichten, Details weglassen, Bilder verändern.</li>
+      </ul>
+      <div class="merke"><b>Merke:</b> Informationen kritisch prüfen und <b>verschiedene Quellen vergleichen</b>!</div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Gleiche Nachricht, andere Wirkung</h3><div id="news-seg"></div></div>
+      <div class="news" id="news"></div>
+      <p class="status" id="news-status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Lied" data-yr="M1" data-title="Von der Idee zum Lied" data-sub="Aufgaben 1–5">
+  <div class="section-head">
+    <p class="eyebrow">Station 6 · Material M1</p>
+    <h2>Von der Idee zum Lied</h2>
+  </div>
+  <div class="cols-2">
+    <div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Bildergeschichte ordnen</h3></header><p>Bringe die vier Bilder in die richtige Reihenfolge.</p></div>
+      <div id="lied-order"></div>
+      <div class="task-card mt"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Der Weg zum Lied</h3></header><p>Beschreibe den Weg von der Idee zum Lied.</p>
+        <div class="controls"><button class="btn" data-reveal="l2" aria-expanded="false">Lösungsidee</button></div>
+        <p class="solution" id="l2" hidden>Ein Junge hat die Idee für ein Lied. Er schreibt die Melodie in Noten auf. Das Notenblatt wird an eine Band weitergegeben. Die Musiker lesen die Noten und spielen das Lied.</p></div>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Begriffe zuordnen</h3></header><p>Ordne den Bildern die passenden Begriffe zu: Repräsentation, Interpretation, Information, Daten. Begründe deine Zuordnung.</p></div>
+      <div id="lied-sort"></div>
+    </div>
+  </div>
+  <div class="cols-2 mt">
+    <div class="task-card"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Noten: Daten oder Repräsentation?</h3></header><p>Begründe, ob es sich bei den Noten um Daten oder um Repräsentation handelt.</p>
+      <div class="controls"><button class="btn" data-reveal="l4" aria-expanded="false">HILFE</button><button class="btn" data-reveal="l4b" aria-expanded="false">Lösungsidee</button></div>
+      <p class="hint-box" id="l4" hidden>Repräsentation ist der <i>Vorgang</i> des Darstellens. Was entsteht dabei?</p>
+      <p class="solution" id="l4b" hidden>Das Aufschreiben der Melodie ist die Repräsentation. Die fertigen Noten auf dem Blatt sind das Ergebnis davon – also <b>Daten</b>. Das Notenblatt ist das Medium.</p></div>
+    <div class="task-card"><header><span class="no">5</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Stellung nehmen</h3></header><p>Nimm Stellung zu der Aussage: „Noten sind die Sprache der Musik.“</p>
+      <div class="controls"><button class="btn" data-reveal="l5" aria-expanded="false">Lösungsidee</button></div>
+      <p class="solution" id="l5" hidden>Dafür spricht: Noten sind eine gemeinsame Sprache mit festen Regeln. Musiker auf der ganzen Welt können sie lesen und das Lied gleich spielen. Dagegen spricht: Nicht jeder kann Noten lesen, und Lautstärke, Gefühl oder Stil lassen sich nur teilweise aufschreiben – jede Band interpretiert ein Lied etwas anders.</p></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Informationen und Daten</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Informationen und Daten</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Um eine <b>Information</b> weiterzugeben, muss man sie darstellen. Das nennt man <b>Repräsentation</b> (z. B. Sprache, Text, Bild, Geste, Ton, elektrisches Signal).</li>
+        <li data-step>Zur Weitergabe braucht man ein <b>Trägermedium</b>, z. B. Papier, Bildschirm oder Luft (Schallwellen).</li>
+        <li data-step>Der <b>Sender</b> repräsentiert die Information, der <b>Empfänger</b> interpretiert sie. Beide brauchen eine <b>gemeinsame Sprache</b> mit gleichen Regeln.</li>
+        <li data-step>Repräsentierte Informationen nennt man <b>Daten</b>. Beispiel: 20 Kerben (Daten) in einem Ast (Medium) für 20 Schafe (Information).</li>
+        <li data-step><b>Medien</b> wie Fernsehen, Radio und soziale Netzwerke gestalten Informationen. Sie können auch manipulieren. Deshalb: kritisch prüfen und Quellen vergleichen.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack">
+      <div class="box"><span class="tag info">Skizze</span><p>Zeichne die Informationsübertragung: Sender → (repräsentiert) → Daten auf Medium → (interpretiert) → Empfänger.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Üben und wiederholen</h2></div>
+  <h3>Begriff und Bedeutung</h3>
+  <div id="match"></div>
+  <h3 class="mt">Stimmt das?</h3>
+  <div id="tf"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ================= Auftakt ================= */
+sorter($('#mind-sort'), [{id: 'h', name: 'Hardware'}, {id: 's', name: 'Software'}, {id: 'c', name: 'Computer'}, {id: 'i', name: 'Informatik im Alltag'}], [
+  {t: '⌨️ Tastatur', c: 'h'}, {t: '🎮 Controller', c: 'h'}, {t: '🖥️ Monitor', c: 'h'}, {t: 'Grafikkarte', c: 'h'},
+  {t: 'Computerspiele', c: 's'}, {t: 'Anwendungsprogramme', c: 's'}, {t: 'Betriebssystem', c: 's'},
+  {t: '📱 Smartphones', c: 'c'}, {t: 'Tablet', c: 'c'},
+  {t: 'Informationen', c: 'i'}, {t: 'Daten', c: 'i'}
+]);
+
+/* ================= Information ================= */
+flipCards($('#kalt'), [
+  ['🗣️ Sie sagt: „Mir ist kalt.“', '<b>gesprochene Sprache</b><br>Trägermedium: Luft (Schallwellen)'],
+  ['✍️ Er schreibt: „Mir ist kalt.“', '<b>Text</b><br>Trägermedium: Papier oder Bildschirm'],
+  ['📱 Sie sendet 🥶', '<b>Bild (Emoji)</b><br>als elektrisches Signal an ein anderes Handy'],
+  ['🙅 Er verschränkt die Arme vor Kälte', '<b>Geste</b><br>Man sieht es (Licht)'],
+  ['🥶 Er bibbert vor Kälte', '<b>Körpersignal / Geste</b><br>Auch ohne Worte versteht man die Information.']
+]);
+
+/* ================= Gemeinsame Sprache ================= */
+seg($('#dat-seg'), [['de', '🇩🇪 Deutschland'], ['us', '🇺🇸 USA']], v => $('#dat-status').innerHTML = v === 'de'
+  ? 'In Deutschland steht der <b>Tag</b> vorne: <b>9. April 2027</b>.'
+  : 'In den USA steht der <b>Monat</b> vorne: <b>4. September 2027</b>. Gleiche Daten – andere Interpretation!');
+flipCards($('#miss'), [
+  ['👍 Daumen hoch', 'In Deutschland „super“ – in einigen Ländern eine Beleidigung.'],
+  ['🙂‍↕️ Kopfnicken', 'Bei uns „ja“ – in Bulgarien bedeutet es „nein“.'],
+  ['🕖 „Wir treffen uns um 7.“', 'Morgens oder abends? Ohne gemeinsame Regel unklar.'],
+  ['🇬🇧 „Gift“', 'Im Englischen „Geschenk“, im Deutschen etwas Giftiges.']
+]);
+
+/* ================= Daten: Schäfer ================= */
+(() => {
+  let n = 0;
+  const ast = $('#ast'), st = $('#schaf-status'), sh = $('#schafe');
+  function draw() {
+    let s = '<path d="M10 55 Q300 35 590 52 L590 78 Q300 62 10 82 Z" fill="#A47148" stroke="#5B3A1E" stroke-width="2"/><path d="M580 50 l18 -14 M560 52 l10 -22" stroke="#5B3A1E" stroke-width="5" stroke-linecap="round"/>';
+    for (let i = 0; i < n; i++) { const x = 30 + i * 26 + Math.floor(i / 5) * 6; s += `<line x1="${x}" y1="${48 - i * 0.25}" x2="${x - 6}" y2="${74 - i * 0.25}" stroke="#2B1A0C" stroke-width="4" stroke-linecap="round"/>`; }
+    ast.innerHTML = s;
+    sh.textContent = '🐑'.repeat(n);
+    st.innerHTML = n ? `Information: <b>${n} Schaf${n > 1 ? 'e' : ''}</b> · Daten: <b>${n} Kerbe${n > 1 ? 'n' : ''}</b> · Medium: <b>Ast</b>` : 'Zähle die Schafe – für jedes Schaf schnitzt der Schäfer eine Kerbe.';
+    $('#schaf-plus').disabled = n >= 20;
+  }
+  $('#schaf-plus').onclick = () => { n++; draw(); };
+  $('#schaf-reset').onclick = () => { n = 0; draw(); };
+  draw();
+})();
+sorter($('#idm-sort'), [{id: 'i', name: 'Information'}, {id: 'd', name: 'Daten'}, {id: 'm', name: 'Medium'}], [
+  {t: 'Draußen ist es 21 Grad warm.', c: 'i', why: 'Das, was man wissen will.'}, {t: 'die Ziffern „21 °C“ auf der Anzeige', c: 'd', why: 'So wird die Information dargestellt.'}, {t: 'das Display des Thermometers', c: 'm', why: 'Darauf werden die Daten gezeigt.'},
+  {t: 'Der Bus kommt 5 Minuten später.', c: 'i', why: 'Das, was man wissen will.'}, {t: 'die Anzeige „+5 min“', c: 'd', why: 'Darstellung der Information.'}, {t: 'die Anzeigetafel an der Haltestelle', c: 'm', why: 'Träger der Daten.'},
+  {t: 'Lea hat am 3. Mai Geburtstag.', c: 'i', why: 'Das, was man wissen will.'}, {t: 'der Eintrag „03.05. Lea 🎂“', c: 'd', why: 'Darstellung der Information.'}, {t: 'der Wandkalender aus Papier', c: 'm', why: 'Träger der Daten.'}
+]);
+
+/* ================= Medien ================= */
+(() => {
+  const N = {
+    a: {h: 'Klasse 6b verliert knapp 2:3', img: '⚽', col: 'var(--surface-2)', t: 'Sachliche Überschrift, alle wichtigen Fakten.'},
+    b: {h: 'BLAMAGE! 6b ohne jede Chance!', img: '😭', col: 'color-mix(in srgb,var(--bad) 22%,var(--surface))', t: '<b>Einseitig</b> und übertrieben: Dass es nur 2:3 stand, fehlt. Rote Farbe und ein trauriges Bild verstärken die Wirkung.'},
+    c: {h: '6b schießt zwei Traumtore!', img: '🥳', col: 'color-mix(in srgb,var(--good) 22%,var(--surface))', t: '<b>Wichtiges Detail weggelassen</b>: Dass die 6b verloren hat, steht nicht da.'}
+  };
+  seg($('#news-seg'), [['a', 'Bericht A'], ['b', 'Bericht B'], ['c', 'Bericht C']], v => {
+    const x = N[v];
+    $('#news').innerHTML = `<div class="news-card" style="background:${x.col}"><span class="news-img">${x.img}</span><b>${x.h}</b><small>Schulnachrichten · heute</small></div>`;
+    $('#news-status').innerHTML = x.t;
+  });
+})();
+
+/* ================= M1 ================= */
+orderSteps($('#lied-order'), ['💡 Ein Junge mit Gitarre hat eine Idee für ein Lied.', '✍️ Er schreibt die Melodie in Noten auf.', '🎼 Das fertige Notenblatt liegt vor.', '🎸 Eine Band spielt das Lied nach den Noten.'], {label: 'Reihenfolge der Bilder'});
+sorter($('#lied-sort'), [{id: 'inf', name: 'Information'}, {id: 'rep', name: 'Repräsentation'}, {id: 'dat', name: 'Daten'}, {id: 'int', name: 'Interpretation'}], [
+  {t: '💡 Idee im Kopf', c: 'inf', why: 'Die Melodie existiert erst im Kopf.'},
+  {t: '✍️ Noten aufschreiben', c: 'rep', why: 'Die Idee wird dargestellt.'},
+  {t: '🎼 Notenblatt', c: 'dat', why: 'Ergebnis der Repräsentation.'},
+  {t: '🎸 Band spielt', c: 'int', why: 'Die Musiker lesen und deuten die Noten.'}
+]);
+
+/* ================= ÜBUNGEN ================= */
+matcher($('#match'), [
+  ['Information', 'das, was jemand weitergeben möchte'],
+  ['Repräsentation', 'das Darstellen einer Information'],
+  ['Daten', 'repräsentierte Informationen, z. B. Kerben im Ast'],
+  ['Trägermedium', 'z. B. Papier, Bildschirm oder Luft'],
+  ['Interpretation', 'der Empfänger deutet die Daten'],
+  ['Manipulation', 'Informationen einseitig oder verändert darstellen']
+]);
+trueFalse($('#tf'), [
+  {t: 'Eine Information kann direkt von Kopf zu Kopf übertragen werden.', ok: false, why: 'Sie muss erst dargestellt (repräsentiert) werden.'},
+  {t: 'Ein Emoji ist eine Form der Repräsentation.', ok: true, why: 'Es stellt die Information als Bild dar.'},
+  {t: 'Das Datum 09.04.27 bedeutet überall auf der Welt dasselbe.', ok: false, why: 'In den USA steht der Monat vorne.'},
+  {t: 'Beim Schäfer sind die Kerben die Daten und der Ast ist das Medium.', ok: true, why: 'Genau so steht es im Buch.'},
+  {t: 'Medien zeigen immer alle Details einer Nachricht.', ok: false, why: 'Manchmal werden wichtige Details weggelassen.'},
+  {t: 'Sprache wird als Schallwellen durch die Luft übertragen.', ok: true, why: 'Die Luft ist dann das Trägermedium.'}
+], {pick: 6});
+mcQuiz($('#quiz'), [
+  {q: 'Wie nennt man das Darstellen einer Information?', a: ['Repräsentation', 'Interpretation', 'Manipulation', 'Kommunikation'], ok: 0, why: 'Repräsentation = Darstellung.'},
+  {q: 'Was macht der Empfänger mit den Daten?', a: ['Er interpretiert sie', 'Er repräsentiert sie', 'Er löscht sie', 'Er verschickt sie'], ok: 0, why: 'Er liest oder hört sie und versteht den Inhalt.'},
+  {q: 'Was braucht man, damit eine Information richtig ankommt?', a: ['eine gemeinsame Sprache mit gleichen Regeln', 'einen Computer', 'ein Bild', 'möglichst viele Wörter'], ok: 0, why: 'Sonst kommt es zu Missverständnissen.'},
+  {q: 'Was ist beim Schäfer das Medium?', a: ['der Ast', 'die Kerben', 'die Schafe', 'der Schäfer'], ok: 0, why: 'Der Ast trägt die Daten.'},
+  {q: 'Wie schützt du dich vor Manipulation durch Medien?', a: ['verschiedene Quellen vergleichen', 'nur Überschriften lesen', 'nur einem Kanal folgen', 'alles glauben, was oft geteilt wird'], ok: 0, why: 'Kritisch prüfen und vergleichen.'},
+  {q: 'Welches ist KEIN Trägermedium?', a: ['eine Idee', 'Papier', 'ein Bildschirm', 'Luft'], ok: 0, why: 'Eine Idee ist eine Information im Kopf.'}
+]);
+</script>

@@ -1,0 +1,186 @@
+<!--
+title: Digitale Kommunikation
+short: Kommunikation
+time: 2 Unterrichtsstunden
+q: Auf welche Weisen werden bei der Kommunikation Informationen übermittelt?
+facts: Kapitelauftakt Kommunikation in der vernetzten Welt (S. 112–113) | Sender-Empfänger-Modell: Information, codieren, Kanal, Signal, decodieren; Ein-Weg- und Zwei-Wege-Kommunikation | Kommunikationskanäle: verbal, nonverbal, visuell, digital (M1) | Direkte (Echtzeit) und verzögerte Kommunikation (M2)
+inter: Mindmap zum Kapitel · Sender-Empfänger-Modell Schritt für Schritt · verbal, nonverbal oder visuell? · Bilder A–F: Ein-Weg oder Zwei-Wege? · Tabelle M2 ausfüllen und prüfen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Kommunikation in der vernetzten Welt</p>
+      <h1>Digitale Kommunikation<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Wir reden, schreiben, schicken Sprachnachrichten, posten Fotos und verschicken Emojis. Bei der Kommunikation werden Informationen auf ganz verschiedene Weisen übermittelt.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Mit wem hast du heute schon kommuniziert – und wie?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Welche Formen der Kommunikation gibt es?</p></div>
+      <div class="controls"><button class="btn primary" data-go="auftakt">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="auftakt" data-label="Kapitelauftakt" data-yr="Einstieg" data-title="Kommunikation in der vernetzten Welt" data-sub="Kapitelauftakt S. 112–113">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Kapitelauftakt</p>
+    <h2>Kommunikation in der vernetzten Welt</h2>
+  </div>
+  <div class="cols-3">
+    <div class="task-card"><header><span class="no">A</span><h3>📱🛏️ Abends im Bett</h3></header><p>Ein Jugendlicher nutzt abends im Bett unter der Decke das Smartphone. Beschreibt, was an diesem Verhalten problematisch sein kann.</p>
+      <div class="controls"><button class="btn" data-reveal="aa" aria-expanded="false">Lösungsidee</button></div><p class="solution" id="aa" hidden>Das helle Licht und die spannenden Inhalte halten wach – man schläft schlechter und ist am nächsten Tag müde. Nachrichten können stressen, und man verliert leicht das Gefühl für die Zeit.</p></div>
+    <div class="task-card"><header><span class="no">B</span><h3>💬 Deine Medien</h3></header><p>Nenne Medien, die du nutzt. Wie kommunizierst du mit deinen Freunden?</p>
+      <div class="controls"><button class="btn" data-reveal="ab" aria-expanded="false">Beispiele</button></div><p class="solution" id="ab" hidden>Smartphone, Tablet, Computer, Spielkonsole; Messenger, Sprachnachrichten, Videoanrufe, Telefon, soziale Netzwerke, Online-Spiele mit Chat – und natürlich persönliche Gespräche.</p></div>
+    <div class="task-card"><header><span class="no">C</span><h3>🕵️ Inkognito-Modus</h3></header><p>Ein Smartphone-Browser zeigt „You've gone Incognito“. Stellt Vermutungen an, was der Inkognito-Modus bewirkt.</p>
+      <div class="controls"><button class="btn" data-reveal="ac" aria-expanded="false">Lösungsidee</button></div><p class="solution" id="ac" hidden>Der Browser speichert keinen Verlauf, keine Cookies und keine Eingaben auf dem Gerät. Unsichtbar ist man aber nicht: Webseiten, Schule oder Internetanbieter können trotzdem sehen, was man aufruft.</p></div>
+  </div>
+  <h3 class="mt">Mindmap: Ordne die Begriffe zu</h3>
+  <div id="mind"></div>
+</section>
+
+<section class="station" id="modell" data-label="Sender & Empfänger" data-yr="Erarbeitung" data-title="Kommunizieren" data-sub="Das Sender-Empfänger-Modell">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Kommunizieren</p>
+      <h2>Das Sender-Empfänger-Modell</h2>
+      <ul class="facts">
+        <li>Bei jeder Kommunikation werden <b>Informationen</b> mithilfe von Signalen übermittelt. Man braucht einen <b>Sender</b>, einen <b>Empfänger</b> und einen <b>Kanal</b> (Übertragungsweg).</li>
+        <li>Der Sender <b>codiert</b> die Information mithilfe von Sprache, Schrift oder Körpersprache. Der Empfänger <b>decodiert</b> sie – er entschlüsselt sie für sich.</li>
+        <li><b>Ein-Weg-Kommunikation:</b> nur von einem Sender zu einem Empfänger, z. B. Musik hören.</li>
+        <li><b>Zwei-Wege-Kommunikation:</b> Der Empfänger kann auch Sender sein, z. B. Diskussion, Chat.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Eine Nachricht verschicken</h3><div id="km-way"></div></div>
+      <div class="cols-2" style="gap:.6rem"><label class="mono" style="font-size:.85rem">Nachricht<input class="text-in" id="km-msg" value="Treffen wir uns um 3?" style="font-size:1rem"></label><label class="mono" style="font-size:.85rem">Kanal<select id="km-ch" class="text-in" style="font-size:1rem"><option value="✍️">Schrift (Chat)</option><option value="🗣️">Sprache (Telefon)</option><option value="🤟">Körpersprache</option></select></label></div>
+      <svg viewBox="0 0 520 170" class="net-svg" id="km-svg" style="margin-top:.6rem">
+        <g class="node" id="km-s"><rect x="8" y="50" width="96" height="70" rx="8"/><text x="56" y="44" text-anchor="middle">Sender</text><text x="56" y="95" text-anchor="middle" style="font-size:30px">🧑</text></g>
+        <g class="node" id="km-c"><rect x="124" y="65" width="80" height="40" rx="6"/><text x="164" y="90" text-anchor="middle">codieren</text></g>
+        <path class="edge" id="km-k" d="M204 85 H316"/><text x="260" y="75" text-anchor="middle" id="km-kt">Kanal</text>
+        <g class="node" id="km-d"><rect x="316" y="65" width="80" height="40" rx="6"/><text x="356" y="90" text-anchor="middle">decodieren</text></g>
+        <g class="node" id="km-e"><rect x="416" y="50" width="96" height="70" rx="8"/><text x="464" y="44" text-anchor="middle">Empfänger</text><text x="464" y="95" text-anchor="middle" style="font-size:30px">👩</text></g>
+        <path class="edge" id="km-back" d="M464 120 V150 H56 V120" style="display:none;stroke-dasharray:6 5"/><text x="260" y="164" text-anchor="middle" id="km-bt" style="display:none">Antwort: Der Empfänger wird zum Sender</text>
+        <text x="260" y="105" text-anchor="middle" id="km-sig" style="font-size:22px"></text>
+      </svg>
+      <p class="status" id="km-st">Drücke „Senden“ und verfolge die Nachricht.</p>
+      <div class="controls"><button class="btn primary" id="km-go">Senden ▶</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="kanaele" data-label="Kanäle" data-yr="Erarbeitung" data-title="Kommunikationskanäle" data-sub="verbal, nonverbal, visuell">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Kommunikationskanäle</p>
+    <h2>Verbal, nonverbal, visuell – und digital</h2>
+  </div>
+  <div class="cols-3">
+    <div class="box"><span class="tag info">🗣️ verbal</span><p>Man spricht miteinander oder schreibt eine Textnachricht – mit <b>Sprache und Schrift</b>.</p></div>
+    <div class="box"><span class="tag info">🎭 nonverbal</span><p>Ohne Sprache und Schrift: mit <b>Gesichtsausdrücken</b> und <b>Körpersprache</b>.</p></div>
+    <div class="box"><span class="tag info">⚠️ visuell</span><p>Über <b>Bilder, Symbole und Zeichen</b> – zum Beispiel Emojis oder Verkehrsschilder.</p></div>
+  </div>
+  <p class="mt">Bei der <b>digitalen Kommunikation</b> nutzen wir Smartphones, Tablets oder Computer, um Nachrichten zu verschicken, zu chatten oder Videos zu teilen. Sie ermöglicht schnelle, ortsunabhängige Kommunikation – deshalb sind soziale Netzwerke und Messenger so erfolgreich.</p>
+  <h3 class="mt">Ordne zu</h3>
+  <div id="kan-sort"></div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Bilder A–F" data-yr="M1" data-title="Kommunikation" data-sub="Ein-Weg oder Zwei-Wege?">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Ein-Weg oder Zwei-Wege?</h2>
+    <p class="lead">Ordne die Beispiele A–F zu. Kann der Empfänger antworten?</p>
+  </div>
+  <div id="m1-sort"></div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">2–4</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Kanäle und Modell</h3></header><p>Beschreibe an zwei Beispielen die Kommunikationskanäle. Welche Beispiele zeigen visuelle Kommunikation? Erkläre das Sender-Empfänger-Modell an einem Beispiel.</p>
+      <div class="controls"><button class="btn" data-reveal="m24" aria-expanded="false">Lösung</button></div><p class="solution" id="m24" hidden>E (Videokonferenz): verbal über Sprache, nonverbal über Mimik im Bild. D (Werbeplakat „WOW!“): visuell über Bild und Schrift; auch die Emojis im Chat (F) sind visuell. Beispiel F: Die Absenderin codiert ihre Nachricht als Text, der Kanal ist der Messenger, die Empfängerin liest und decodiert sie – und antwortet.</p></div>
+    <div class="task-card"><header><span class="no">5</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Deine Kanäle</h3></header><p>Welche Kommunikationskanäle nutzt du häufig? Lege eine Tabelle an: Kanal – eigene Rolle – wofür? (Beispiel: Streaminganbieter – Empfänger – Unterhaltung)</p></div>
+  </div>
+</section>
+
+<section class="station" id="m2" data-label="M2 Direkt?" data-yr="M2" data-title="Direkt oder verzögert?" data-sub="Echtzeit oder später">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 5 · Material M2</p>
+      <h2>Direkt oder verzögert?</h2>
+      <ul class="facts">
+        <li><b>Direkte Kommunikation:</b> Sender und Empfänger sind gleichzeitig aktiv und tauschen sich sofort aus – in <b>Echtzeit</b>. Beispiele: Gespräch, Telefonat, Videokonferenz, Live-Chat. Gut für schnelle Entscheidungen und um Missverständnisse direkt zu klären.</li>
+        <li><b>Verzögerte Kommunikation:</b> Die Antwort erfolgt später. Beispiele: Brief, E-Mail, Sprachnachricht, Forenbeitrag. Jeder antwortet, wenn es zeitlich passt – niemand wird unter Druck gesetzt.</li>
+      </ul>
+    </div>
+    <div class="stack">
+      <div class="table-wrap"><table class="cmp" id="m2-tab"><thead><tr><th>Medium</th><th>direkt / verzögert</th><th>Ein-Weg / Zwei-Wege</th></tr></thead><tbody></tbody></table></div>
+      <div class="controls"><button class="btn primary" id="m2-check">Prüfen</button><button class="btn" id="m2-solve">Lösung</button><span class="sort-fb" id="m2-fb"></span></div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Dein Alltag</h3></header><p>Beschreibe zwei Situationen aus deinem Alltag, wie und mit wem du kommunizierst. Begründe, ob es jeweils direkt oder verzögert ist.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Digitale Kommunikation</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Digitale Kommunikation</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step>Bei der Kommunikation übermittelt ein <b>Sender</b> über einen <b>Kanal</b> Informationen an einen <b>Empfänger</b>. Der Sender codiert, der Empfänger decodiert.</li>
+        <li data-step><b>Ein-Weg-Kommunikation:</b> nur Sender → Empfänger (Radio). <b>Zwei-Wege-Kommunikation:</b> beide senden und empfangen (Chat, Gespräch).</li>
+        <li data-step>Kanäle: <b>verbal</b> (Sprache, Schrift), <b>nonverbal</b> (Mimik, Gestik), <b>visuell</b> (Bilder, Symbole, Emojis).</li>
+        <li data-step><b>Direkte</b> Kommunikation in Echtzeit (Telefonat, Videochat); <b>verzögerte</b> Kommunikation zeitversetzt (E-Mail, Sprachnachricht, Brief).</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne das Sender-Empfänger-Modell mit einem eigenen Beispiel.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Stimmt das?</h2></div>
+  <div id="tf"></div>
+</section>
+
+<script>
+sorter($('#mind'), [{id: 'n', name: 'Netzwerke'}, {id: 'd', name: 'Datenschutz'}, {id: 'k', name: 'Kommunikation'}, {id: 'i', name: 'Künstliche Intelligenz'}], [
+  {t: 'Lokales Netzwerk', c: 'n'}, {t: 'Globales Netzwerk', c: 'n'}, {t: 'Internet', c: 'n'}, {t: 'Datenklau', c: 'd'}, {t: 'Inkognito-Modus', c: 'd'}, {t: 'Personenbezogene Daten', c: 'd'},
+  {t: 'Kommunikationskanäle', c: 'k'}, {t: 'direkt', c: 'k'}, {t: 'verzögert', c: 'k'}, {t: 'Starke KI', c: 'i'}, {t: 'Schwache KI', c: 'i'}, {t: 'Generative KI', c: 'i'}
+]);
+(() => {
+  let two = false, busy = false;
+  seg($('#km-way'), [['1', 'Ein-Weg'], ['2', 'Zwei-Wege']], v => { two = v === '2'; $('#km-back').style.display = $('#km-bt').style.display = two ? '' : 'none'; });
+  const on = (id, b) => $('#' + id).classList.toggle('on', b);
+  const wait = ms => new Promise(r => setTimeout(r, RM.matches ? 0 : ms));
+  $('#km-ch').onchange = () => $('#km-kt').textContent = 'Kanal ' + $('#km-ch').value;
+  $('#km-go').onclick = async () => {
+    if (busy) return; busy = true;
+    const m = $('#km-msg').value || '…', st = $('#km-st'), ch = $('#km-ch').value;
+    ['km-s', 'km-c', 'km-k', 'km-d', 'km-e'].forEach(i => on(i, false)); $('#km-sig').textContent = '';
+    on('km-s', true); st.innerHTML = `<b>Sender</b> hat eine Information: „${m}“`; await wait(1100);
+    on('km-c', true); st.innerHTML = `<b>Codieren:</b> Die Information wird in ${ch === '✍️' ? 'Schrift' : ch === '🗣️' ? 'Sprache' : 'Gesten'} umgewandelt.`; await wait(1100);
+    on('km-k', true); $('#km-sig').textContent = ch + ' 〰️'; st.innerHTML = '<b>Kanal:</b> Das Signal wird übertragen.'; await wait(1100);
+    on('km-d', true); st.innerHTML = '<b>Decodieren:</b> Die Empfängerin entschlüsselt das Signal.'; await wait(1100);
+    on('km-e', true); st.innerHTML = `<b>Empfängerin</b> versteht: „${m}“` + (two ? ' – und antwortet: „Ja, bis gleich!“ (Zwei-Wege-Kommunikation)' : ' – sie kann nicht antworten (Ein-Weg-Kommunikation).');
+    busy = false;
+  };
+})();
+sorter($('#kan-sort'), [{id: 'v', name: '🗣️ verbal'}, {id: 'n', name: '🎭 nonverbal'}, {id: 'i', name: '⚠️ visuell'}], [
+  {t: 'Telefonat mit Oma', c: 'v'}, {t: 'Textnachricht im Chat', c: 'v'}, {t: 'Vortrag in der Klasse', c: 'v'}, {t: 'Lächeln', c: 'n'}, {t: 'Schulterzucken', c: 'n'}, {t: 'Daumen hoch zeigen', c: 'n'},
+  {t: 'Verkehrsschild', c: 'i'}, {t: 'Emoji 😂', c: 'i'}, {t: 'Piktogramm am Notausgang', c: 'i'}
+]);
+sorter($('#m1-sort'), [{id: '1', name: 'Ein-Weg-Kommunikation'}, {id: '2', name: 'Zwei-Wege-Kommunikation'}], [
+  {t: '<b>A</b> 🎧📱 Ein Mädchen hört Musik auf dem Smartphone.', c: '1', why: 'Sie kann nicht antworten.'}, {t: '<b>B</b> 📖 Ein Junge liest ein Buch.', c: '1', why: 'Der Autor erfährt nichts zurück.'},
+  {t: '<b>C</b> 💻✉️ Eine Frau schreibt eine E-Mail.', c: '2', why: 'Der Empfänger kann antworten (verzögert).'}, {t: '<b>D</b> 🪧 „WOW!“ – ein großes Werbeplakat.', c: '1', why: 'Visuelle Kommunikation ohne Antwort.'},
+  {t: '<b>E</b> 🎧🖥️ Ein Mann in einer Videokonferenz.', c: '2', why: 'Alle sprechen in Echtzeit.'}, {t: '<b>F</b> 💬📱 Eine Schülerin chattet.', c: '2', why: 'Nachrichten hin und her.'}
+]);
+(() => {
+  const R = [['📻 Radio', 'd', '1'], ['✉️ E-Mail', 'v', '2'], ['🎥 Videochat', 'd', '2'], ['☎️ Telefonat', 'd', '2'], ['🎙️ Sprachnachricht', 'v', '2'], ['💬 Live-Chat', 'd', '2'], ['🗂️ Forumsbeitrag', 'v', '2']];
+  $('#m2-tab tbody').innerHTML = R.map(([n], i) => `<tr><th>${n}</th><td><select data-r="${i}" data-c="1"><option value="">…</option><option value="d">direkt</option><option value="v">verzögert</option></select></td><td><select data-r="${i}" data-c="2"><option value="">…</option><option value="1">Ein-Weg</option><option value="2">Zwei-Wege</option></select></td></tr>`).join('');
+  const check = () => { let ok = 0; $$('#m2-tab select').forEach(s => { const g = s.value === R[+s.dataset.r][+s.dataset.c]; s.className = s.value ? (g ? 'ok' : 'err') : ''; if (g) ok++; }); $('#m2-fb').innerHTML = ok === 14 ? '<b class="good">Alles richtig!</b>' : `<b>${ok}</b> von 14 richtig.`; };
+  $('#m2-check').onclick = check;
+  $('#m2-solve').onclick = () => { $$('#m2-tab select').forEach(s => s.value = R[+s.dataset.r][+s.dataset.c]); check(); };
+})();
+trueFalse($('#tf'), [
+  {t: 'Ein Sender codiert eine Information, der Empfänger decodiert sie.', ok: true, why: 'Er entschlüsselt sie für sich.'},
+  {t: 'Musikhören ist Zwei-Wege-Kommunikation.', ok: false, why: 'Der Hörer kann nicht antworten – Ein-Weg.'},
+  {t: 'Ein Emoji ist ein Beispiel für visuelle Kommunikation.', ok: true, why: 'Wie Verkehrsschilder.'},
+  {t: 'Eine E-Mail ist direkte Kommunikation in Echtzeit.', ok: false, why: 'Die Antwort kommt zeitversetzt.'},
+  {t: 'Bei einer Videokonferenz kann man Stimmungen über Tonfall und Gesichtsausdruck zeigen.', ok: true, why: 'Direkte Kommunikation.'},
+  {t: 'Nonverbale Kommunikation braucht Sprache.', ok: false, why: 'Sie funktioniert über Mimik und Körpersprache.'}
+]);
+</script>

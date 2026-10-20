@@ -1,0 +1,194 @@
+<!--
+title: Zeichen formatieren
+short: Formatieren
+time: 2 Unterrichtsstunden (mit Textverarbeitungsprogramm)
+q: Wie können Texte übersichtlich gestaltet werden?
+facts: Formatierungen: Schriftart, Schriftgröße, fett, kursiv, unterstrichen, durchgestrichen, hoch-/tiefgestellt, Schriftfarbe, Texthervorhebung, Effekte | Formatierungen sinnvoll nutzen: Informationen hervorheben, Struktur und Lesbarkeit, besondere Formatierungen | Markieren vor dem Formatieren (Doppelklick, Dreifachklick, Shift + ↓, Strg + A) | Formatieren über Start-Registerkarte, Kontextmenü, Mini-Symbolleiste; M1 Text formatieren (Wasserkreislauf)
+inter: Formatierungs-Labor mit echter Symbolleiste · Wozu welche Formatierung? · Markier-Training mit Anzeige · M1-Text analysieren und neu formatieren · Quiz
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Textgestaltung</p>
+      <h1>Zeichen formatieren<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Ist etwas übersichtlich, finden wir uns sofort zurecht – in einer Werkstatt genauso wie in einem Text.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Woran erkennst du in deinem Schulbuch sofort, was wichtig ist?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie können Texte übersichtlich gestaltet werden?</p></div>
+      <div class="controls"><button class="btn primary" data-go="formate">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="formate" data-label="Formatierungen" data-yr="Erarbeitung" data-title="Formatierungen" data-sub="Formatierungs-Labor">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Formatierungen</p>
+      <h2>Zeichen verändern</h2>
+      <ul class="facts">
+        <li>Zeichen können angepasst werden: Man spricht von <b>Formatierungen</b>.</li>
+        <li><b>Schriftart</b> (z. B. Arial, Times New Roman, Calibri) und <b>Schriftgröße</b> lassen sich verändern.</li>
+        <li>Hervorhebungen: <b>fett</b>, <i>kursiv</i>, <u>unterstrichen</u>, <s>durchgestrichen</s>, hoch- und tiefgestellt (x<sup>2</sup>, CO<sub>2</sub>).</li>
+        <li>Auch die <span style="color:#7E22CE">Schriftfarbe</span> und eine farbige <span style="background:#FDE047;color:#111827">Texthervorhebung</span> lassen sich ändern. Dazu gibt es <b>Effekte</b> wie Schatten, Kontur oder Leuchten.</li>
+      </ul>
+    </div>
+    <div class="wp">
+      <div class="wp-tabs"><span>Datei</span><span class="on">Start</span><span>Einfügen</span><span>Layout</span></div>
+      <div class="wp-bar fmtbar" id="lab-bar"></div>
+      <div class="wp-desk"><div class="wp-page" id="lab" contenteditable="true" spellcheck="false" style="white-space:normal">Schriftart Arial, Schriftgröße 12<br>Schriftart Georgia, Schriftgröße 11<br>Schriftart Calibri, Schriftgröße 11, fett geschrieben<br>Schriftart Calibri, Schriftgröße 11, kursiv geschrieben<br>Schriftart Calibri, Schriftgröße 11, unterstrichen<br>Schriftart Calibri, Schriftgröße 11, Schriftfarbe lila</div></div>
+      <div class="wp-status"><span>Markiere eine Zeile und formatiere sie so, wie sie heißt.</span><button class="btn" id="lab-reset" style="font-size:.7rem;padding:.1rem .4rem">Zurücksetzen</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="sinnvoll" data-label="Sinnvoll nutzen" data-yr="Erarbeitung" data-title="Formatierungen sinnvoll nutzen" data-sub="Wozu welche Formatierung?">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Formatierungen sinnvoll nutzen</p>
+    <h2>Gezielt und sparsam</h2>
+    <p class="lead">Die Formatierung hängt von der Textart und ihrem Zweck ab: Ein Werbeplakat sieht anders aus als eine Einkaufsliste oder eine E-Mail. Formatierungen sollten den Text <b>übersichtlich</b> und <b>leserfreundlich</b> machen.</p>
+  </div>
+  <div class="cols-3">
+    <div class="box"><span class="tag info">Informationen hervorheben</span><ul class="facts"><li><b>Fett</b> für zentrale Begriffe oder wichtige Aussagen.</li><li><i>Kursiv</i> für Fachbegriffe, Zitate oder Gedanken.</li><li><u>Unterstreichungen</u> sparsam – sie wirken schnell unübersichtlich.</li></ul></div>
+    <div class="box"><span class="tag info">Struktur und Lesbarkeit</span><ul class="facts"><li><b>Einheitliche</b> Schriftart und Schriftgröße.</li><li><b>Absatz- und Zeilenabstände</b> erleichtern das Lesen.</li><li>Texthervorhebungen in <b>dezenten</b> Farben.</li></ul></div>
+    <div class="box"><span class="tag info">Besondere Formatierungen</span><ul class="facts"><li><b>Hoch- und Tiefstellung</b> für Formeln: 2<sup>3</sup>, CO<sub>2</sub>.</li><li><b>Farben</b> sparsam, am besten für Überschriften.</li><li><b>Aufzählungen</b> und <b>Nummerierungen</b> für Listen.</li></ul></div>
+  </div>
+  <h3 class="mt">Welche Formatierung passt?</h3>
+  <div id="pur-sort"></div>
+</section>
+
+<section class="station" id="markieren" data-label="Markieren" data-yr="Ausprobieren" data-title="Markieren vor dem Formatieren" data-sub="Doppelklick, Dreifachklick, Shortcuts">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Markieren und Formatieren</p>
+      <h2>Erst markieren, dann formatieren</h2>
+      <ul class="facts">
+        <li>Ein einzelnes <b>Wort</b>: <b>Doppelklick</b> darauf.</li>
+        <li>Einen ganzen <b>Absatz</b>: <b>Dreifachklick</b> – oder Cursor an den Anfang setzen und <kbd>Shift</kbd> + <kbd>↓</kbd>.</li>
+        <li>Beliebige Stellen: mit gedrückter linker Maustaste darüberziehen.</li>
+        <li>Den <b>gesamten Text</b>: <kbd>Strg</kbd> + <kbd>A</kbd>.</li>
+      </ul>
+      <p class="eyebrow">Drei Wege zum Formatieren</p>
+      <ol class="facts" style="list-style:decimal;padding-left:1.4rem">
+        <li style="padding-left:.3rem"><b>Start-Registerkarte:</b> Symbole <b>F</b> (fett), <i>K</i> (kursiv), <u>U</u> (unterstrichen).</li>
+        <li style="padding-left:.3rem"><b>Kontextmenü:</b> Rechtsklick → „Schriftart“ – mit Vorschau der Änderungen.</li>
+        <li style="padding-left:.3rem"><b>Mini-Symbolleiste:</b> erscheint direkt am markierten Text.</li>
+      </ol>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Markier-Training</h3><span class="score">Geschafft: <b id="mk-n">0</b> / 4</span></div>
+      <div class="wp-page" id="mk" tabindex="0" style="white-space:normal;border:1.5px solid var(--edge);border-radius:4px;user-select:text"><p style="margin:0 0 .6rem">Der Igel ist ein Säugetier. Er frisst Insekten und Würmer.</p><p style="margin:0 0 .6rem">Im Winter hält der Igel Winterschlaf. Dabei sinkt seine Körpertemperatur stark.</p><p style="margin:0">Igel stehen in Deutschland unter Naturschutz.</p></div>
+      <p class="status" id="mk-sel">Noch nichts markiert.</p>
+      <ul class="ck-list" id="mk-tasks"></ul>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Formatieren" data-yr="M1" data-title="Text formatieren" data-sub="Der Wasserkreislauf">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Text formatieren</h2>
+  </div>
+  <div class="grid-2">
+    <div class="stack">
+      <p class="slide-label">So ist der Text formatiert</p>
+      <div class="wp-page" style="white-space:normal;border:1.5px solid var(--edge);font-family:Calibri,Arial,sans-serif"><u>Der Wasserkreislauf</u> <span style="font-family:Georgia,serif">Die chemische Formel für Wasser ist H<sup>2</sup>O.</span> Der <u>Wasserkreislauf</u> ist ein <i>natürliches</i> System, <b>das</b> ständig in Bewegung ist.<br>Wasser <i>verdunstet</i> durch die Sonne und <i>steigt</i> als Wasserdampf nach <sup>oben</sup>.<br>In der <u>Atmosphäre</u> kühlt es ab und bildet Wolken.<br><span style="font-family:'Courier New',monospace">Dabei gibt es verschiedene Phasen: <b>Verdunstung/Kondensation/ Niederschlag/Versickerung</b></span></div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Formatierungen nennen</h3></header><p>Nenne verschiedene Formatierungen, die in diesem Text angewandt wurden.</p>
+        <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>unterstrichen (Der Wasserkreislauf, Wasserkreislauf, Atmosphäre), kursiv (natürliches, verdunstet, steigt), fett (das, Phasen), hochgestellt (2, oben), verschiedene Schriftarten (Calibri, Georgia, Courier).</p></div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Gut formatiert?</h3></header><p>Überlege, ob der Text gut formatiert ist, und begründe deine Entscheidung.</p>
+        <div class="controls"><button class="btn" data-reveal="m1b" aria-expanded="false">Lösung</button></div><p class="solution" id="m1b" hidden>Nein. Die Überschrift ist nur unterstrichen und steht in der Zeile. Es gibt drei Schriftarten. Unwichtige Wörter („das“, „steigt“) sind hervorgehoben. Die 2 in H<sub>2</sub>O muss <b>tief</b>gestellt sein, „oben“ darf nicht hochgestellt sein. Die Phasen wären als Aufzählung übersichtlicher.</p></div>
+    </div>
+    <div class="stack">
+      <p class="slide-label">Aufgabe 3: Formatiere den Text übersichtlich</p>
+      <div class="wp">
+        <div class="wp-bar fmtbar" id="m1-bar"></div>
+        <div class="wp-desk"><div class="wp-page" id="m1-ed" contenteditable="true" spellcheck="false" style="white-space:normal"></div></div>
+        <div class="wp-status"><span>Tipp: Überschrift groß und fett, H2O mit Tiefstellung, Phasen als Aufzählung.</span><button class="btn" id="m1-reset" style="font-size:.7rem;padding:.1rem .4rem">Neu</button></div>
+      </div>
+      <div class="controls"><button class="btn" data-reveal="m1c" aria-expanded="false">Musterlösung</button></div>
+      <div class="solution" id="m1c" hidden><p style="font-size:1.3rem;font-weight:700;margin:0">Der Wasserkreislauf</p><p>Die chemische Formel für Wasser ist H<sub>2</sub>O. Der Wasserkreislauf ist ein <b>natürliches System</b>, das ständig in Bewegung ist. Wasser verdunstet durch die Sonne und steigt als Wasserdampf nach oben. In der <i>Atmosphäre</i> kühlt es ab und bildet Wolken. Dabei gibt es verschiedene Phasen:</p><ul><li>Verdunstung</li><li>Kondensation</li><li>Niederschlag</li><li>Versickerung</li></ul></div>
+      <div class="task-card"><header><span class="no">4–5</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Shortcuts und Textarten</h3></header><p>Formatiere den Text nur mit Shortcuts (z. B. <kbd>Strg</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd> fett, <kbd>Strg</kbd>+<kbd>Shift</kbd>+<kbd>K</kbd> kursiv). Diskutiert sinnvolle Formatierungen für ein Rezept, eine Gebrauchsanweisung und einen Sachtext.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Zeichen formatieren</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Zeichen formatieren</h3><span>Informatik · Klasse 5/6</span></div>
+      <ol>
+        <li data-step><b>Formatierungen</b> verändern Zeichen: Schriftart, Schriftgröße, <b>fett</b>, <i>kursiv</i>, <u>unterstrichen</u>, durchgestrichen, hoch-/tiefgestellt, Schriftfarbe, Texthervorhebung.</li>
+        <li data-step>Vor dem Formatieren <b>markieren</b>: Doppelklick (Wort), Dreifachklick (Absatz), <kbd>Strg</kbd>+<kbd>A</kbd> (alles).</li>
+        <li data-step>Formatieren über die <b>Start-Registerkarte</b>, das <b>Kontextmenü</b> (Rechtsklick) oder die <b>Mini-Symbolleiste</b>.</li>
+        <li data-step>Formatierungen <b>gezielt und sparsam</b> einsetzen: fett für zentrale Begriffe, kursiv für Fachbegriffe und Zitate, einheitliche Schrift.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Aufgabe A</span><p>Schreibe den Namen deiner Schule mehrmals untereinander und formatiere jede Zeile anders – wie in Abbildung 1.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Formatieren</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+function wpBar(bar, page) {
+  bar.innerHTML = `<select data-font aria-label="Schriftart"><option value="Calibri">Calibri</option><option value="Arial">Arial</option><option value="Georgia">Georgia</option><option value="Times New Roman">Times New Roman</option><option value="Courier New">Courier New</option></select>
+    <select data-fsize aria-label="Schriftgröße"><option value="2">10</option><option value="3" selected>12</option><option value="4">14</option><option value="5">18</option><option value="6">24</option></select><span class="sep"></span>
+    <button class="btn" data-cmd="bold" title="fett"><b>F</b></button><button class="btn" data-cmd="italic" title="kursiv"><i>K</i></button><button class="btn" data-cmd="underline" title="unterstrichen"><u>U</u></button><button class="btn" data-cmd="strikeThrough" title="durchgestrichen"><s>ab</s></button><button class="btn" data-cmd="subscript" title="tiefgestellt">x₂</button><button class="btn" data-cmd="superscript" title="hochgestellt">x²</button><span class="sep"></span>
+    <button class="btn" data-color="#7E22CE" title="Schriftfarbe lila" style="color:#7E22CE">A</button><button class="btn" data-color="#DC2626" title="Schriftfarbe rot" style="color:#DC2626">A</button><button class="btn" data-color="#111827" title="Schriftfarbe schwarz">A</button><button class="btn" data-hl="#FDE047" title="Texthervorhebung" style="background:#FDE047;color:#111827">ab</button><span class="sep"></span>
+    <button class="btn" data-cmd="insertUnorderedList" title="Aufzählung">•≡</button><button class="btn" data-cmd="removeFormat" title="Formatierung löschen">⌀</button>`;
+  const keep = e => e.preventDefault();
+  $$('button', bar).forEach(b => b.addEventListener('mousedown', keep));
+  bar.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    if (b.dataset.cmd) document.execCommand(b.dataset.cmd);
+    if (b.dataset.color) document.execCommand('foreColor', false, b.dataset.color);
+    if (b.dataset.hl) document.execCommand('hiliteColor', false, b.dataset.hl);
+  });
+  let saved = null;
+  page.addEventListener('mouseup', () => { const s = getSelection(); if (s.rangeCount) saved = s.getRangeAt(0).cloneRange(); });
+  page.addEventListener('keyup', () => { const s = getSelection(); if (s.rangeCount) saved = s.getRangeAt(0).cloneRange(); });
+  const restore = () => { if (saved) { const s = getSelection(); s.removeAllRanges(); s.addRange(saved); } };
+  $('[data-font]', bar).onchange = e => { restore(); document.execCommand('fontName', false, e.target.value); };
+  $('[data-fsize]', bar).onchange = e => { restore(); document.execCommand('fontSize', false, e.target.value); };
+}
+(() => {
+  const lab = $('#lab'), start = lab.innerHTML;
+  wpBar($('#lab-bar'), lab);
+  $('#lab-reset').onclick = () => lab.innerHTML = start;
+})();
+sorter($('#pur-sort'), [{id: 'f', name: 'fett'}, {id: 'k', name: 'kursiv'}, {id: 't', name: 'hoch-/tiefgestellt'}, {id: 'a', name: 'Aufzählung'}], [
+  {t: 'der wichtigste Begriff im Merksatz', c: 'f'}, {t: 'eine Warnung in der Anleitung', c: 'f'}, {t: 'ein Zitat aus einem Buch', c: 'k'}, {t: 'ein Fachbegriff wie „Photosynthese“', c: 'k'},
+  {t: 'CO2 in einem Sachtext', c: 't'}, {t: '3 hoch 2 in Mathe', c: 't'}, {t: 'die Zutaten eines Rezepts', c: 'a'}, {t: 'die Schritte einer Anleitung', c: 'a'}
+]);
+(() => {
+  const mk = $('#mk'), done = new Set();
+  const T = [['w', 'Markiere das Wort „Säugetier“ mit einem Doppelklick.', s => s === 'Säugetier'], ['p', 'Markiere den zweiten Absatz mit einem Dreifachklick.', s => s.startsWith('Im Winter') && s.includes('stark')],
+    ['s', 'Markiere „Insekten und Würmer“ durch Ziehen mit der Maus.', s => s === 'Insekten und Würmer'], ['a', 'Markiere den gesamten Text mit Strg + A.', s => s.startsWith('Der Igel') && s.includes('Naturschutz')]];
+  const draw = () => { $('#mk-tasks').innerHTML = T.map(([k, t]) => `<li class="${done.has(k) ? 'ok' : ''}">${done.has(k) ? '✅' : '⬜'} ${t}</li>`).join(''); $('#mk-n').textContent = done.size; };
+  document.addEventListener('selectionchange', () => {
+    const s = getSelection(); if (!s.rangeCount || !mk.contains(s.anchorNode)) return;
+    const t = s.toString().replace(/\s+/g, ' ').trim(); if (!t) { $('#mk-sel').textContent = 'Noch nichts markiert.'; return; }
+    const w = t.split(' ').length;
+    $('#mk-sel').innerHTML = `Markiert: <b>${w}</b> ${w === 1 ? 'Wort' : 'Wörter'} – „${t.length > 50 ? t.slice(0, 50) + '…' : t}“`;
+    T.forEach(([k, , f]) => { if (f(t)) done.add(k); }); draw();
+  });
+  draw();
+})();
+(() => {
+  const ed = $('#m1-ed'), raw = 'Der Wasserkreislauf<br>Die chemische Formel für Wasser ist H2O. Der Wasserkreislauf ist ein natürliches System, das ständig in Bewegung ist. Wasser verdunstet durch die Sonne und steigt als Wasserdampf nach oben. In der Atmosphäre kühlt es ab und bildet Wolken. Dabei gibt es verschiedene Phasen:<br>Verdunstung<br>Kondensation<br>Niederschlag<br>Versickerung';
+  ed.innerHTML = raw; wpBar($('#m1-bar'), ed); $('#m1-reset').onclick = () => ed.innerHTML = raw;
+})();
+mcQuiz($('#quiz'), [
+  {q: 'Wie markierst du ein einzelnes Wort am schnellsten?', a: ['Doppelklick', 'Dreifachklick', 'Strg + A', 'Rechtsklick'], ok: 0, why: 'Dreifachklick markiert einen Absatz.'},
+  {q: 'Welche Formatierung eignet sich für Fachbegriffe und Zitate?', a: ['kursiv', 'durchgestrichen', 'hochgestellt', 'unterstrichen'], ok: 0, why: 'Fett eher für zentrale Begriffe.'},
+  {q: 'Wie schreibt man die Formel für Kohlenstoffdioxid richtig?', a: ['CO mit tiefgestellter 2', 'CO mit hochgestellter 2', 'CO2 in fett', 'CO2 kursiv'], ok: 0, why: 'Tiefstellung: CO₂.'},
+  {q: 'Was markiert Strg + A?', a: ['den gesamten Text', 'einen Absatz', 'ein Wort', 'eine Zeile'], ok: 0, why: 'A wie „alles“.'},
+  {q: 'Warum sollte man Unterstreichungen sparsam nutzen?', a: ['Sie wirken schnell unübersichtlich', 'Sie werden nicht gedruckt', 'Sie löschen den Text', 'Sie sind verboten'], ok: 0, why: 'Zu viele Hervorhebungen heben nichts mehr hervor.'},
+  {q: 'Wo erscheint die Mini-Symbolleiste?', a: ['direkt am markierten Text', 'in der Statusleiste', 'im Menü „Datei“', 'nur beim Drucken'], ok: 0, why: 'So formatiert man, ohne ein Menü zu öffnen.'},
+  {q: 'Was sorgt für ein übersichtliches Erscheinungsbild?', a: ['einheitliche Schriftart und Schriftgröße', 'viele verschiedene Schriftarten', 'alles fett', 'bunte Farben überall'], ok: 0, why: 'Einheitlichkeit schafft Ordnung.'}
+]);
+</script>
