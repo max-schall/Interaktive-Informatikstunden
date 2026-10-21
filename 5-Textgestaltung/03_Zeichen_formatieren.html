@@ -790,7 +790,7 @@ table.bk{border-collapse:collapse;width:100%;font-size:.92rem}
 .flt img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
 .flt figcaption{padding:.4rem .6rem;font-size:.85rem}.flt figcaption b{font-family:var(--f-mono);color:var(--accent);margin-right:.3rem}
 .cat-demo{display:flex;flex-direction:column;align-items:center;gap:0;background:var(--surface);border:1.5px solid var(--edge);border-radius:6px;padding:1rem;max-width:320px;box-shadow:4px 4px 0 var(--edge-shadow)}
-.cat-face{font-size:5rem;line-height:1}.cat-body{font-size:6rem;line-height:.8;margin-top:-1rem}
+.cat-face{font-size:5rem;line-height:1;position:relative;z-index:1}.cat-body{font-size:6rem;line-height:.8;margin-top:-1rem;position:relative;z-index:0}
 .m2cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7rem}
 .m2c{background:var(--surface);border:1.5px solid var(--edge);border-radius:6px;box-shadow:3px 3px 0 var(--edge-shadow);padding:.8rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.25rem}
 .m2c span{font-size:2.4rem}.m2c b{font-family:var(--f-mono)}.m2c small{color:var(--ink-2)}
@@ -911,6 +911,7 @@ table.bk{border-collapse:collapse;width:100%;font-size:.92rem}
 .wp-desk{background:#D6DBE1;padding:.9rem}
 .wp-page{background:#fff;color:#111827;min-height:12rem;padding:1rem 1.3rem;box-shadow:0 1px 4px rgba(0,0,0,.25);font-size:1.05rem;line-height:1.5;outline:none;white-space:pre-wrap;word-wrap:break-word}
 .wp-page:focus{box-shadow:0 0 0 2px #2B579A}
+.wp-page .chip{background:#F3F4F6;border-color:#D1D5DB;color:#111827}.wp-page .chip.warn{background:#FEE2E2;border-color:#DC2626}.wp-page .chip.ok{background:#DCFCE7;border-color:#16A34A}
 textarea.wp-page{width:100%;border:0;resize:vertical;font-family:inherit;display:block}
 .wp-status{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;background:#F3F4F6;color:#374151;font-size:.75rem;padding:.25rem .7rem;border-top:1px solid #D1D5DB;font-family:var(--f-mono)}
 .wp-clip{font-family:var(--f-mono);font-size:.85rem;background:var(--surface-2);border:1.5px dashed var(--line);border-radius:4px;padding:.4rem .6rem;min-height:2.2rem}
@@ -949,8 +950,8 @@ textarea.wp-page{width:100%;border:0;resize:vertical;font-family:inherit;display
 .flow-ic i{display:block;height:3px;background:#2563EB;margin:3px 0}
 .crop{position:relative;background:#fff;border:1.5px solid var(--edge);border-radius:4px;aspect-ratio:4/3;overflow:hidden}
 .crop .scene{position:absolute;inset:0;display:grid;place-items:center;font-size:5rem;background:linear-gradient(160deg,#FDE68A,#FDBA74 60%,#86EFAC)}
-.crop .shade{position:absolute;background:rgba(15,23,42,.6);transition:all .15s}
-.crop .frame{position:absolute;border:2px dashed #fff;box-shadow:0 0 0 1px #111827}
+.crop .shade{position:absolute;background:rgba(15,23,42,.5);transition:all .15s}
+.crop .frame{position:absolute;display:block;padding:0;border-radius:0;background:transparent;border:2px dashed #fff;box-shadow:0 0 0 1px #111827}
 .wtable{border-collapse:collapse;background:#fff;color:#111827;font-family:Calibri,Arial,sans-serif;font-size:.9rem;width:100%}
 .wtable td,.wtable th{border:1px solid #9CA3AF;padding:.3rem .45rem;min-width:3.4rem;height:1.9rem;text-align:left}
 .wtable td[contenteditable]{outline:none}.wtable td:focus{box-shadow:inset 0 0 0 2px #2B579A}
@@ -1103,7 +1104,7 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
     <div class="wp">
       <div class="wp-tabs"><span>Datei</span><span class="on">Start</span><span>Einfügen</span><span>Layout</span></div>
       <div class="wp-bar fmtbar" id="lab-bar"></div>
-      <div class="wp-desk"><div class="wp-page" id="lab" contenteditable="true" spellcheck="false" style="white-space:normal">Schriftart Arial, Schriftgröße 12<br>Schriftart Georgia, Schriftgröße 11<br>Schriftart Calibri, Schriftgröße 11, fett geschrieben<br>Schriftart Calibri, Schriftgröße 11, kursiv geschrieben<br>Schriftart Calibri, Schriftgröße 11, unterstrichen<br>Schriftart Calibri, Schriftgröße 11, Schriftfarbe lila</div></div>
+      <div class="wp-desk"><div class="wp-page" id="lab" contenteditable="true" spellcheck="false" style="white-space:normal;font-family:Calibri,Carlito,sans-serif">Schriftart Arial, Schriftgröße 12<br>Schriftart Georgia, Schriftgröße 11<br>Schriftart Calibri, Schriftgröße 11, fett geschrieben<br>Schriftart Calibri, Schriftgröße 11, kursiv geschrieben<br>Schriftart Calibri, Schriftgröße 11, unterstrichen<br>Schriftart Calibri, Schriftgröße 11, Schriftfarbe lila</div></div>
       <div class="wp-status"><span>Markiere eine Zeile und formatiere sie so, wie sie heißt.</span><button class="btn" id="lab-reset" style="font-size:.7rem;padding:.1rem .4rem">Zurücksetzen</button></div>
     </div>
   </div>
@@ -2062,8 +2063,8 @@ function keyboard(root, o = {}) {
 /* ================= Inhalte dieser Stunde ================= */
 
 function wpBar(bar, page) {
-  bar.innerHTML = `<select data-font aria-label="Schriftart"><option value="Calibri">Calibri</option><option value="Arial">Arial</option><option value="Georgia">Georgia</option><option value="Times New Roman">Times New Roman</option><option value="Courier New">Courier New</option></select>
-    <select data-fsize aria-label="Schriftgröße"><option value="2">10</option><option value="3" selected>12</option><option value="4">14</option><option value="5">18</option><option value="6">24</option></select><span class="sep"></span>
+  bar.innerHTML = `<select data-font aria-label="Schriftart"><option value="" selected disabled>Schriftart</option><option value="Calibri, Carlito, sans-serif">Calibri</option><option value="Arial, 'Liberation Sans', Helvetica, sans-serif">Arial</option><option value="Georgia, serif">Georgia</option><option value="'Times New Roman', 'Liberation Serif', Times, serif">Times New Roman</option><option value="'Courier New', 'Liberation Mono', Courier, monospace">Courier New</option></select>
+    <select data-fsize aria-label="Schriftgröße"><option value="" selected disabled>Größe</option><option value="2">10</option><option value="3">12</option><option value="4">14</option><option value="5">18</option><option value="6">24</option></select><span class="sep"></span>
     <button class="btn" data-cmd="bold" title="fett"><b>F</b></button><button class="btn" data-cmd="italic" title="kursiv"><i>K</i></button><button class="btn" data-cmd="underline" title="unterstrichen"><u>U</u></button><button class="btn" data-cmd="strikeThrough" title="durchgestrichen"><s>ab</s></button><button class="btn" data-cmd="subscript" title="tiefgestellt">x₂</button><button class="btn" data-cmd="superscript" title="hochgestellt">x²</button><span class="sep"></span>
     <button class="btn" data-color="#7E22CE" title="Schriftfarbe lila" style="color:#7E22CE">A</button><button class="btn" data-color="#DC2626" title="Schriftfarbe rot" style="color:#DC2626">A</button><button class="btn" data-color="#111827" title="Schriftfarbe schwarz">A</button><button class="btn" data-hl="#FDE047" title="Texthervorhebung" style="background:#FDE047;color:#111827">ab</button><span class="sep"></span>
     <button class="btn" data-cmd="insertUnorderedList" title="Aufzählung">•≡</button><button class="btn" data-cmd="removeFormat" title="Formatierung löschen">⌀</button>`;
@@ -2076,11 +2077,11 @@ function wpBar(bar, page) {
     if (b.dataset.hl) document.execCommand('hiliteColor', false, b.dataset.hl);
   });
   let saved = null;
-  page.addEventListener('mouseup', () => { const s = getSelection(); if (s.rangeCount) saved = s.getRangeAt(0).cloneRange(); });
-  page.addEventListener('keyup', () => { const s = getSelection(); if (s.rangeCount) saved = s.getRangeAt(0).cloneRange(); });
-  const restore = () => { if (saved) { const s = getSelection(); s.removeAllRanges(); s.addRange(saved); } };
-  $('[data-font]', bar).onchange = e => { restore(); document.execCommand('fontName', false, e.target.value); };
-  $('[data-fsize]', bar).onchange = e => { restore(); document.execCommand('fontSize', false, e.target.value); };
+  const save = () => { const s = getSelection(); if (s.rangeCount && page.contains(s.anchorNode)) saved = s.getRangeAt(0).cloneRange(); };
+  page.addEventListener('mouseup', save); page.addEventListener('keyup', save);
+  const restore = () => { page.focus(); if (saved) { const s = getSelection(); s.removeAllRanges(); s.addRange(saved); } };
+  $('[data-font]', bar).onchange = e => { restore(); document.execCommand('fontName', false, e.target.value); save(); e.target.selectedIndex = 0; };
+  $('[data-fsize]', bar).onchange = e => { restore(); document.execCommand('fontSize', false, e.target.value); save(); e.target.selectedIndex = 0; };
 }
 (() => {
   const lab = $('#lab'), start = lab.innerHTML;

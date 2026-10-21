@@ -35,7 +35,7 @@ inter: Formatierungs-Labor mit echter Symbolleiste · Wozu welche Formatierung? 
     <div class="wp">
       <div class="wp-tabs"><span>Datei</span><span class="on">Start</span><span>Einfügen</span><span>Layout</span></div>
       <div class="wp-bar fmtbar" id="lab-bar"></div>
-      <div class="wp-desk"><div class="wp-page" id="lab" contenteditable="true" spellcheck="false" style="white-space:normal">Schriftart Arial, Schriftgröße 12<br>Schriftart Georgia, Schriftgröße 11<br>Schriftart Calibri, Schriftgröße 11, fett geschrieben<br>Schriftart Calibri, Schriftgröße 11, kursiv geschrieben<br>Schriftart Calibri, Schriftgröße 11, unterstrichen<br>Schriftart Calibri, Schriftgröße 11, Schriftfarbe lila</div></div>
+      <div class="wp-desk"><div class="wp-page" id="lab" contenteditable="true" spellcheck="false" style="white-space:normal;font-family:Calibri,Carlito,sans-serif">Schriftart Arial, Schriftgröße 12<br>Schriftart Georgia, Schriftgröße 11<br>Schriftart Calibri, Schriftgröße 11, fett geschrieben<br>Schriftart Calibri, Schriftgröße 11, kursiv geschrieben<br>Schriftart Calibri, Schriftgröße 11, unterstrichen<br>Schriftart Calibri, Schriftgröße 11, Schriftfarbe lila</div></div>
       <div class="wp-status"><span>Markiere eine Zeile und formatiere sie so, wie sie heißt.</span><button class="btn" id="lab-reset" style="font-size:.7rem;padding:.1rem .4rem">Zurücksetzen</button></div>
     </div>
   </div>
@@ -135,8 +135,8 @@ inter: Formatierungs-Labor mit echter Symbolleiste · Wozu welche Formatierung? 
 
 <script>
 function wpBar(bar, page) {
-  bar.innerHTML = `<select data-font aria-label="Schriftart"><option value="Calibri">Calibri</option><option value="Arial">Arial</option><option value="Georgia">Georgia</option><option value="Times New Roman">Times New Roman</option><option value="Courier New">Courier New</option></select>
-    <select data-fsize aria-label="Schriftgröße"><option value="2">10</option><option value="3" selected>12</option><option value="4">14</option><option value="5">18</option><option value="6">24</option></select><span class="sep"></span>
+  bar.innerHTML = `<select data-font aria-label="Schriftart"><option value="" selected disabled>Schriftart</option><option value="Calibri, Carlito, sans-serif">Calibri</option><option value="Arial, 'Liberation Sans', Helvetica, sans-serif">Arial</option><option value="Georgia, serif">Georgia</option><option value="'Times New Roman', 'Liberation Serif', Times, serif">Times New Roman</option><option value="'Courier New', 'Liberation Mono', Courier, monospace">Courier New</option></select>
+    <select data-fsize aria-label="Schriftgröße"><option value="" selected disabled>Größe</option><option value="2">10</option><option value="3">12</option><option value="4">14</option><option value="5">18</option><option value="6">24</option></select><span class="sep"></span>
     <button class="btn" data-cmd="bold" title="fett"><b>F</b></button><button class="btn" data-cmd="italic" title="kursiv"><i>K</i></button><button class="btn" data-cmd="underline" title="unterstrichen"><u>U</u></button><button class="btn" data-cmd="strikeThrough" title="durchgestrichen"><s>ab</s></button><button class="btn" data-cmd="subscript" title="tiefgestellt">x₂</button><button class="btn" data-cmd="superscript" title="hochgestellt">x²</button><span class="sep"></span>
     <button class="btn" data-color="#7E22CE" title="Schriftfarbe lila" style="color:#7E22CE">A</button><button class="btn" data-color="#DC2626" title="Schriftfarbe rot" style="color:#DC2626">A</button><button class="btn" data-color="#111827" title="Schriftfarbe schwarz">A</button><button class="btn" data-hl="#FDE047" title="Texthervorhebung" style="background:#FDE047;color:#111827">ab</button><span class="sep"></span>
     <button class="btn" data-cmd="insertUnorderedList" title="Aufzählung">•≡</button><button class="btn" data-cmd="removeFormat" title="Formatierung löschen">⌀</button>`;
@@ -149,11 +149,11 @@ function wpBar(bar, page) {
     if (b.dataset.hl) document.execCommand('hiliteColor', false, b.dataset.hl);
   });
   let saved = null;
-  page.addEventListener('mouseup', () => { const s = getSelection(); if (s.rangeCount) saved = s.getRangeAt(0).cloneRange(); });
-  page.addEventListener('keyup', () => { const s = getSelection(); if (s.rangeCount) saved = s.getRangeAt(0).cloneRange(); });
-  const restore = () => { if (saved) { const s = getSelection(); s.removeAllRanges(); s.addRange(saved); } };
-  $('[data-font]', bar).onchange = e => { restore(); document.execCommand('fontName', false, e.target.value); };
-  $('[data-fsize]', bar).onchange = e => { restore(); document.execCommand('fontSize', false, e.target.value); };
+  const save = () => { const s = getSelection(); if (s.rangeCount && page.contains(s.anchorNode)) saved = s.getRangeAt(0).cloneRange(); };
+  page.addEventListener('mouseup', save); page.addEventListener('keyup', save);
+  const restore = () => { page.focus(); if (saved) { const s = getSelection(); s.removeAllRanges(); s.addRange(saved); } };
+  $('[data-font]', bar).onchange = e => { restore(); document.execCommand('fontName', false, e.target.value); save(); e.target.selectedIndex = 0; };
+  $('[data-fsize]', bar).onchange = e => { restore(); document.execCommand('fontSize', false, e.target.value); save(); e.target.selectedIndex = 0; };
 }
 (() => {
   const lab = $('#lab'), start = lab.innerHTML;
