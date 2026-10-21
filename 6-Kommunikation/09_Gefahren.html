@@ -603,7 +603,7 @@ table.bk{border-collapse:collapse;width:100%;font-size:.92rem}
 .scr-bubble.think{border-style:dotted}
 .scr-ask{position:absolute;left:.5rem;right:.5rem;bottom:.5rem;background:#fff;border:2px solid #5CB1D6;border-radius:8px;padding:.4rem;display:flex;gap:.4rem;align-items:center}
 .scr-ask span{display:none}
-.scr-ask input{flex:1;font:inherit;padding:.3rem .5rem;border:1px solid #ccc;border-radius:999px;color:#222}
+.scr-ask input{flex:1;font:inherit;padding:.3rem .5rem;border:1px solid #ccc;border-radius:999px;color:#222;background:#fff;color-scheme:light}
 /* Labyrinth */
 .gbot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1rem;align-items:start}
 .gb-grid{position:relative;display:grid;grid-template-columns:repeat(var(--w),1fr);border:1.5px solid var(--edge);border-radius:6px;overflow:hidden;box-shadow:4px 4px 0 var(--edge-shadow);background:#7DB35B}
@@ -615,10 +615,10 @@ table.bk{border-collapse:collapse;width:100%;font-size:.92rem}
 .gb-prog li.on{background:var(--accent);color:var(--accent-ink);border-radius:3px}
 @media (max-width:900px){.scr,.gbot{grid-template-columns:minmax(0,1fr)}}
 /* Binärsystem */
-.pv-row{display:flex;gap:.35rem;flex-wrap:wrap}
-.pv-c{display:flex;flex-direction:column;align-items:center;gap:.2rem;flex:1 1 2.6rem}
+.pv-row{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:.35rem}
+.pv-c{display:flex;flex-direction:column;align-items:center;gap:.2rem;min-width:0}
 .pv-c small{font-family:var(--f-mono);font-size:.75rem;color:var(--ink-2)}
-.pv-b{width:100%;aspect-ratio:1/1.1;font-family:var(--f-mono);font-size:1.5rem;font-weight:600;border:1.5px solid var(--edge);border-radius:5px;background:var(--surface-2);cursor:pointer;color:var(--ink-2)}
+.pv-b{width:100%;padding:0;aspect-ratio:1/1.1;font-family:var(--f-mono);font-size:1.5rem;font-weight:600;border:1.5px solid var(--edge);border-radius:5px;background:var(--surface-2);cursor:pointer;color:var(--ink-2)}
 .pv-b.on{background:var(--accent);color:var(--accent-ink);box-shadow:0 0 12px color-mix(in srgb,var(--accent) 60%,transparent)}
 .divt{border-collapse:collapse;margin:.6rem 0;font-size:1rem}
 .divt td{padding:.2rem .8rem .2rem 0}
@@ -672,7 +672,7 @@ table.bk{border-collapse:collapse;width:100%;font-size:.92rem}
 .morse-out{font-size:1.5rem;min-height:2.5rem;word-break:break-word;margin:.6rem 0 0}
 .mtab{display:grid;grid-template-columns:repeat(auto-fill,minmax(6.5rem,1fr));gap:.25rem .8rem;margin-top:.5rem;font-size:.95rem}
 .mtab b{display:inline-block;width:1.2rem;color:var(--accent)}
-.egg{background:radial-gradient(ellipse at 40% 35%,#FCD9B0,#E8A86B);border-radius:50% 50% 46% 46%/60% 60% 40% 40%;width:min(100%,22rem);aspect-ratio:1.35;display:grid;place-items:center;margin:0 auto;border:1.5px solid var(--edge)}
+.egg{background:radial-gradient(ellipse at 40% 35%,#FCD9B0,#E8A86B);border-radius:42% 58% 58% 42%/50% 50% 50% 50%;width:min(100%,22rem);aspect-ratio:1.3;display:grid;place-items:center;margin:0 auto;border:1.5px solid var(--edge)}
 .egg input{width:78%;font-size:1.3rem;text-align:center;background:transparent;border:0;border-bottom:2px dashed #7C2D12;color:#14532D;font-weight:700}
 .egg-out{display:flex;flex-direction:column;gap:.4rem;margin-top:.8rem}
 .egg-r{display:flex;gap:.7rem;align-items:baseline;padding:.4rem .6rem;background:var(--surface-2);border-radius:4px}
@@ -1869,8 +1869,9 @@ function scratch(root, script, o = {}) {
     const W = stage.clientWidth, H = stage.clientHeight;
     spr.style.left = (W / 2 + S.x * W / 480) + 'px'; spr.style.top = (H / 2 - S.y * H / 360) + 'px';
     const flip = S.dir < 0 || S.dir > 180 ? -1 : 1;
-    cat.style.transform = `translate(-50%,-50%) scale(${S.size / 100 * flip}, ${S.size / 100}) rotate(${(S.dir - 90) * flip}deg)`;
-    cat.textContent = S.cos % 2 ? '🐈‍⬛' : '🐈'; spr.style.opacity = S.vis ? 1 : 0;
+    /* Kostüm 2 = Schritt-Pose (leicht angehoben und gekippt) statt Emoji-Wechsel, sonst flackert die Figur */
+    cat.style.transform = `translate(-50%,-50%) scale(${S.size / 100 * flip}, ${S.size / 100}) rotate(${(S.dir - 90) * flip}deg)${S.cos % 2 ? ' translateY(-6%) rotate(-7deg)' : ''}`;
+    spr.style.opacity = S.vis ? 1 : 0;
     $('.scr-xy', root).textContent = `x: ${Math.round(S.x)}  y: ${Math.round(S.y)}  Richtung: ${Math.round(S.dir)}`;
   }
   function reset() {
@@ -1891,14 +1892,26 @@ function scratch(root, script, o = {}) {
   }
   const num = (el, k, b) => { const v = parseFloat(String(b[k]).replace(',', '.')); return isFinite(v) ? v : 0; };
   async function moveTo(nx, ny, ms, id) {
-    const x0 = S.x, y0 = S.y, n = Math.max(1, Math.round(ms / 16));
-    for (let i = 1; i <= n; i++) { if (id !== run) return; const px = S.x, py = S.y; S.x = x0 + (nx - x0) * i / n; S.y = y0 + (ny - y0) * i / n; line(px, py, S.x, S.y); draw(); await sleep(16); }
+    /* im Takt der Bildwiederholung bewegen, damit die Figur nicht ruckelt */
+    const x0 = S.x, y0 = S.y, t0 = performance.now();
+    for (let k = 0; k < 1;) {
+      await new Promise(r => requestAnimationFrame(r)); if (id !== run) return;
+      k = Math.min(1, (performance.now() - t0) / Math.max(ms, 1)); const px = S.x, py = S.y; S.x = x0 + (nx - x0) * k; S.y = y0 + (ny - y0) * k; line(px, py, S.x, S.y); draw();
+    }
+  }
+  /* Dauer eines Blocks in ms: Nur Blöcke, die lange genug laufen, werden gelb markiert –
+     sonst flackert die Markierung in schnellen Schleifen. */
+  function dur(b, el) {
+    if (b.body || b.op === 'ask') return Infinity;
+    const s = () => num(el, 's', b) * 1000;
+    return {move: clamp(Math.abs(num(el, 'n', b)) * 4, 30, 400), turn: 80, turnL: 80, goto: 60, glide: s(), say: b.s != null ? s() : 300, think: b.s != null ? s() : 300,
+      costume: 50, costume2: 120, size: 120, sound: 500, wait: s()}[b.op] || 0;
   }
   async function exec(list, path, id) {
     for (let i = 0; i < list.length; i++) {
       if (id !== run) return;
       const b = list[i], p = path + i, el = $(`[data-p="${p}"]`, root);
-      el.classList.add('run');
+      if (dur(b, el) >= (RM.matches ? Infinity : 150)) el.classList.add('run');
       try {
         switch (b.op) {
           case 'move': { const n = num(el, 'n', b), r = S.dir * Math.PI / 180; await moveTo(clamp(S.x + n * Math.sin(r), -240, 240), clamp(S.y + n * Math.cos(r), -180, 180), clamp(Math.abs(n) * 4, 30, 400), id); break; }

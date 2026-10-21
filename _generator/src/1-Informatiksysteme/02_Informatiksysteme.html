@@ -67,7 +67,7 @@ inter: EVA-Fließband mit Beispielen · klickbares Smartphone mit Quiz · Gerät
     <p class="lead">In einem Smartphone stecken viele Ein- und Ausgabegeräte. Tippe die Nummern an.</p>
   </div>
   <div class="phone-wrap">
-    <div class="vis" style="padding:.5rem"><svg class="phone-svg" id="phone" viewBox="0 0 560 600" role="group" aria-label="Smartphone mit nummerierten Bauteilen"></svg></div>
+    <div class="vis" style="padding:.5rem"><svg class="phone-svg" id="phone" viewBox="0 0 560 480" role="group" aria-label="Smartphone mit nummerierten Bauteilen"></svg></div>
     <div class="stack">
       <div id="ph-mode"></div>
       <div class="phone-panel" id="ph-panel" aria-live="polite"></div>
@@ -242,30 +242,30 @@ pipeline($('#pipe'), $('#eva-seg'), $('#pipe-status'), [
 /* ================= STATION 3: Smartphone (Abb. 2) ================= */
 (() => {
   const P = [
-    {id: 'led', n: 'LED-Anzeige', c: 'a', p: [222, 64], h: [140, 60], side: 'l', t: 'Die LED leuchtet, wenn z. B. eine Nachricht eingegangen ist oder der Akku lädt. Sie <b>gibt</b> eine Information <b>aus</b>.'},
-    {id: 'lampe', n: 'Taschenlampe', n2: '(Rückseite)', c: 'a', p: [265, 135], h: [140, 120], side: 'l', t: 'Die Taschenlampe auf der Rückseite gibt Licht aus, z. B. als Blitz beim Fotografieren.'},
-    {id: 'laut', n: 'Regler, z. B.', n2: 'für Lautstärke', c: 'e', p: [183, 175], h: [140, 180], side: 'l', t: 'Mit den Tasten gibst du ein, ob es lauter oder leiser werden soll.'},
-    {id: 'anaus', n: 'An-/Ausschalter', c: 'e', p: [183, 248], h: [140, 248], side: 'l', t: 'Ein Tastendruck ist eine Eingabe: Das Smartphone wird ein- oder ausgeschaltet bzw. gesperrt.'},
-    {id: 'lage', n: 'Lagesensor', c: 'e', p: [215, 492], h: [140, 470], side: 'l', t: 'Der Lagesensor misst, wie du das Gerät hältst. So dreht sich z. B. das Bild ins Querformat.'},
-    {id: 'usb', n: 'Anschluss für', n2: 'Datenübertragung', c: 'ea', p: [265, 538], h: [140, 548], side: 'l', t: 'Über den Anschluss (USB-C) fließen Daten in <b>beide Richtungen</b>: Fotos auf den Computer kopieren oder Musik auf das Handy laden.'},
-    {id: 'kamera', n: 'Kamera', c: 'e', p: [302, 64], h: [400, 50], side: 'r', t: 'Die Kamera nimmt Bilder und Videos auf und gibt sie als Daten an das Smartphone weiter.'},
-    {id: 'speaker', n: 'Lautsprecher', c: 'a', p: [262, 64], h: [400, 100], side: 'r', t: 'Der Lautsprecher gibt Töne aus: Klingelton, Musik oder die Stimme beim Telefonieren.'},
-    {id: 'touch', n: 'Touchscreen', c: 'ea', p: [330, 215], h: [400, 215], side: 'r', t: 'Der Touchscreen ist <b>beides</b>: Er erkennt deine Berührungen (Eingabe) und zeigt Bilder an (Ausgabe).'},
-    {id: 'cpu', n: 'Prozessor und', n2: 'Arbeitsspeicher (innen)', c: 'v', p: [300, 330], h: [400, 330], side: 'r', t: 'Im Inneren <b>verarbeitet</b> der Prozessor (CPU) die Daten. Der Arbeitsspeicher hält sie dafür bereit, die Grafikkarte berechnet das Bild.'},
-    {id: 'mic', n: 'Mikrofon', c: 'e', p: [305, 530], h: [400, 520], side: 'r', t: 'Das Mikrofon nimmt deine Stimme auf, z. B. beim Telefonieren oder für Sprachnachrichten.'}
+    {id: 'led', n: 'LED-Anzeige', c: 'a', p: [205, 60], h: [140, 50], side: 'l', t: 'Die LED leuchtet, wenn z. B. eine Nachricht eingegangen ist oder der Akku lädt. Sie <b>gibt</b> eine Information <b>aus</b>.'},
+    {id: 'lampe', n: 'Taschenlampe', n2: '(Rückseite)', c: 'a', p: [265, 120], h: [140, 105], side: 'l', t: 'Die Taschenlampe auf der Rückseite gibt Licht aus, z. B. als Blitz beim Fotografieren.'},
+    {id: 'laut', n: 'Regler, z. B.', n2: 'für Lautstärke', c: 'e', p: [167, 152], h: [140, 165], side: 'l', t: 'Mit den Tasten gibst du ein, ob es lauter oder leiser werden soll.'},
+    {id: 'anaus', n: 'An-/Ausschalter', c: 'e', p: [167, 216], h: [140, 225], side: 'l', t: 'Ein Tastendruck ist eine Eingabe: Das Smartphone wird ein- oder ausgeschaltet bzw. gesperrt.'},
+    {id: 'lage', n: 'Lagesensor', c: 'e', p: [198, 384], h: [140, 385], side: 'l', t: 'Der Lagesensor misst, wie du das Gerät hältst. So dreht sich z. B. das Bild ins Querformat.'},
+    {id: 'usb', n: 'Anschluss für', n2: 'Datenübertragung', c: 'ea', p: [265, 437], h: [140, 445], side: 'l', t: 'Über den Anschluss (USB-C) fließen Daten in <b>beide Richtungen</b>: Fotos auf den Computer kopieren oder Musik auf das Handy laden.'},
+    {id: 'kamera', n: 'Kamera', c: 'e', p: [320, 60], h: [400, 45], side: 'r', t: 'Die Kamera nimmt Bilder und Videos auf und gibt sie als Daten an das Smartphone weiter.'},
+    {id: 'speaker', n: 'Lautsprecher', c: 'a', p: [275, 60], h: [400, 95], side: 'r', t: 'Der Lautsprecher gibt Töne aus: Klingelton, Musik oder die Stimme beim Telefonieren.'},
+    {id: 'touch', n: 'Touchscreen', c: 'ea', p: [340, 180], h: [400, 180], side: 'r', t: 'Der Touchscreen ist <b>beides</b>: Er erkennt deine Berührungen (Eingabe) und zeigt Bilder an (Ausgabe).'},
+    {id: 'cpu', n: 'Prozessor und', n2: 'Arbeitsspeicher (innen)', c: 'v', p: [332, 330], h: [400, 330], side: 'r', t: 'Im Inneren <b>verarbeitet</b> der Prozessor (CPU) die Daten. Der Arbeitsspeicher hält sie dafür bereit, die Grafikkarte berechnet das Bild.'},
+    {id: 'mic', n: 'Mikrofon', c: 'e', p: [320, 418], h: [400, 420], side: 'r', t: 'Das Mikrofon nimmt deine Stimme auf, z. B. beim Telefonieren oder für Sprachnachrichten.'}
   ];
   const tiles = ['#2563EB', '#7C3AED', '#DC2626', '#C026D3', '#EA580C', '#0EA5E9', '#16A34A', '#2563EB', '#059669', '#DC2626', '#4F46E5', '#DB2777', '#DC2626', '#16A34A', '#DC2626', '#0284C7', '#2563EB', '#65A30D'];
   let svg = `<defs><linearGradient id="gEA"><stop offset="50%" stop-color="var(--e)"/><stop offset="50%" stop-color="var(--a)"/></linearGradient></defs>
-    <rect class="body" x="180" y="38" width="170" height="510" rx="28"/>
-    <rect class="part" x="174" y="155" width="7" height="44" rx="2"/><rect class="part" x="174" y="232" width="7" height="32" rx="2"/>
-    <rect class="scr" x="192" y="90" width="146" height="400" rx="6"/>
-    <text x="200" y="104" class="cap" style="font-size:10px">12:50</text>
-    <circle class="part" cx="222" cy="64" r="4"/><rect class="part" x="245" y="60" width="36" height="7" rx="3"/><circle class="part" cx="302" cy="64" r="7"/>
-    <circle cx="265" cy="135" r="13" fill="none" stroke="var(--ink-2)" stroke-width="2" stroke-dasharray="4 3"/>
-    <rect x="225" y="500" width="80" height="18" rx="9" class="part"/><rect class="part" x="252" y="540" width="26" height="6" rx="3"/>
-    <circle class="part" cx="305" cy="530" r="2.5"/><rect x="205" y="482" width="20" height="20" fill="none" stroke="var(--ink-2)" stroke-dasharray="3 3"/>`;
-  tiles.forEach((c, i) => { const x = 204 + (i % 4) * 32, y = 180 + Math.floor(i / 4) * 40; svg += `<rect class="tile" x="${x}" y="${y}" width="24" height="24" rx="4" fill="${c}"/>`; });
-  svg += `<rect x="270" y="300" width="60" height="60" rx="4" fill="none" stroke="var(--v)" stroke-width="2.5" stroke-dasharray="5 4"/><text x="300" y="334" text-anchor="middle" style="font:600 13px var(--f-mono);fill:var(--v)">CPU</text>`;
+    <rect class="body" x="170" y="40" width="190" height="400" rx="30"/>
+    <rect class="part" x="164" y="130" width="7" height="44" rx="2"/><rect class="part" x="164" y="200" width="7" height="32" rx="2"/>
+    <rect class="scr" x="182" y="80" width="166" height="320" rx="6"/>
+    <text x="190" y="94" class="cap" style="font-size:10px">12:50</text>
+    <circle class="part" cx="205" cy="60" r="4"/><rect class="part" x="250" y="57" width="36" height="7" rx="3"/><circle class="part" cx="320" cy="60" r="7"/>
+    <circle cx="265" cy="120" r="13" fill="none" stroke="var(--ink-2)" stroke-width="2" stroke-dasharray="4 3"/>
+    <rect x="225" y="410" width="80" height="16" rx="8" class="part"/><rect class="part" x="252" y="434" width="26" height="6" rx="3"/>
+    <circle class="part" cx="320" cy="418" r="2.5"/><rect x="188" y="374" width="20" height="20" fill="none" stroke="var(--ink-2)" stroke-dasharray="3 3"/>`;
+  tiles.forEach((c, i) => { const x = 196 + (i % 4) * 38, y = 150 + Math.floor(i / 4) * 40; svg += `<rect class="tile" x="${x}" y="${y}" width="24" height="24" rx="4" fill="${c}"/>`; });
+  svg += `<rect x="272" y="302" width="60" height="56" rx="4" fill="none" stroke="var(--v)" stroke-width="2.5" stroke-dasharray="5 4"/><text x="302" y="334" text-anchor="middle" style="font:600 13px var(--f-mono);fill:var(--v)">CPU</text>`;
   P.forEach((p, i) => {
     const [px, py] = p.p, [hx, hy] = p.h, mx = p.side === 'l' ? hx + 14 : hx - 14;
     svg += `<path class="lead-line" d="M${mx} ${hy} H${(mx + px) / 2} L${px} ${py}"/>`;

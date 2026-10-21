@@ -636,8 +636,9 @@ function scratch(root, script, o = {}) {
     const W = stage.clientWidth, H = stage.clientHeight;
     spr.style.left = (W / 2 + S.x * W / 480) + 'px'; spr.style.top = (H / 2 - S.y * H / 360) + 'px';
     const flip = S.dir < 0 || S.dir > 180 ? -1 : 1;
-    cat.style.transform = `translate(-50%,-50%) scale(${S.size / 100 * flip}, ${S.size / 100}) rotate(${(S.dir - 90) * flip}deg)`;
-    cat.textContent = S.cos % 2 ? '🐈‍⬛' : '🐈'; spr.style.opacity = S.vis ? 1 : 0;
+    /* Kostüm 2 = Schritt-Pose (leicht angehoben und gekippt) statt Emoji-Wechsel, sonst flackert die Figur */
+    cat.style.transform = `translate(-50%,-50%) scale(${S.size / 100 * flip}, ${S.size / 100}) rotate(${(S.dir - 90) * flip}deg)${S.cos % 2 ? ' translateY(-6%) rotate(-7deg)' : ''}`;
+    spr.style.opacity = S.vis ? 1 : 0;
     $('.scr-xy', root).textContent = `x: ${Math.round(S.x)}  y: ${Math.round(S.y)}  Richtung: ${Math.round(S.dir)}`;
   }
   function reset() {
@@ -658,14 +659,26 @@ function scratch(root, script, o = {}) {
   }
   const num = (el, k, b) => { const v = parseFloat(String(b[k]).replace(',', '.')); return isFinite(v) ? v : 0; };
   async function moveTo(nx, ny, ms, id) {
-    const x0 = S.x, y0 = S.y, n = Math.max(1, Math.round(ms / 16));
-    for (let i = 1; i <= n; i++) { if (id !== run) return; const px = S.x, py = S.y; S.x = x0 + (nx - x0) * i / n; S.y = y0 + (ny - y0) * i / n; line(px, py, S.x, S.y); draw(); await sleep(16); }
+    /* im Takt der Bildwiederholung bewegen, damit die Figur nicht ruckelt */
+    const x0 = S.x, y0 = S.y, t0 = performance.now();
+    for (let k = 0; k < 1;) {
+      await new Promise(r => requestAnimationFrame(r)); if (id !== run) return;
+      k = Math.min(1, (performance.now() - t0) / Math.max(ms, 1)); const px = S.x, py = S.y; S.x = x0 + (nx - x0) * k; S.y = y0 + (ny - y0) * k; line(px, py, S.x, S.y); draw();
+    }
+  }
+  /* Dauer eines Blocks in ms: Nur Blöcke, die lange genug laufen, werden gelb markiert –
+     sonst flackert die Markierung in schnellen Schleifen. */
+  function dur(b, el) {
+    if (b.body || b.op === 'ask') return Infinity;
+    const s = () => num(el, 's', b) * 1000;
+    return {move: clamp(Math.abs(num(el, 'n', b)) * 4, 30, 400), turn: 80, turnL: 80, goto: 60, glide: s(), say: b.s != null ? s() : 300, think: b.s != null ? s() : 300,
+      costume: 50, costume2: 120, size: 120, sound: 500, wait: s()}[b.op] || 0;
   }
   async function exec(list, path, id) {
     for (let i = 0; i < list.length; i++) {
       if (id !== run) return;
       const b = list[i], p = path + i, el = $(`[data-p="${p}"]`, root);
-      el.classList.add('run');
+      if (dur(b, el) >= (RM.matches ? Infinity : 150)) el.classList.add('run');
       try {
         switch (b.op) {
           case 'move': { const n = num(el, 'n', b), r = S.dir * Math.PI / 180; await moveTo(clamp(S.x + n * Math.sin(r), -240, 240), clamp(S.y + n * Math.cos(r), -180, 180), clamp(Math.abs(n) * 4, 30, 400), id); break; }
