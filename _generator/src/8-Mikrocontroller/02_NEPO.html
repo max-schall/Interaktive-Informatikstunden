@@ -1,0 +1,124 @@
+<!--
+title: Programmieren mit NEPO im Open Roberta Lab
+short: NEPO
+time: 2 Unterrichtsstunden
+q: Wie programmiert man den Calliope mit NEPO?
+facts: Open Roberta Lab: Programmierumgebung im Browser, Benutzerprofil zum Speichern | NEPO: grafische Programmiersprache mit farbigen Blockgruppen | Startblock, Aktionsblöcke (Text, Bild, LED, Ton), Kontrollblöcke (Wiederholung, Bedingung), Sensorblöcke, Logik und Mathematik | Programme übertragen und im Simulator testen
+inter: Blockgruppen zuordnen · Bilder für die LED-Matrix zeichnen · Würfel programmieren · Wechselblinker · Programm vorhersagen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Einen Mikrocontroller programmieren</p>
+      <h1>Programmieren mit NEPO<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Im <b>Open Roberta Lab</b> wird der Calliope mit der grafischen Sprache <b>NEPO</b> programmiert – ganz ähnlich wie Scratch: Blöcke werden zusammengesteckt.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welche Blöcke aus Scratch kennst du schon? Welche wird der Calliope brauchen?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie programmiert man den Calliope mit NEPO?</p></div>
+      <div class="controls"><button class="btn primary" data-go="lab">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="lab" data-label="Open Roberta" data-yr="Einstieg" data-title="Open Roberta Lab" data-sub="Die Programmierumgebung">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Die Programmierumgebung</p>
+    <h2>Das Open Roberta Lab</h2>
+  </div>
+  <div class="cols-3">
+    <div class="box"><span class="tag info">Im Browser</span><p>Das Open Roberta Lab läuft im Browser. Zuerst wird das <b>System</b> ausgewählt – hier der Calliope mini.</p></div>
+    <div class="box"><span class="tag info">Benutzerprofil</span><p>Damit Programme gespeichert werden können, legt man unter dem Benutzer-Symbol ein <b>Profil</b> mit Benutzername und Passwort an.</p></div>
+    <div class="box"><span class="tag info">Testen</span><p>Programme lassen sich im eingebauten <b>Simulator</b> ausprobieren oder per USB-Kabel auf den Calliope übertragen.</p></div>
+  </div>
+  <h3 class="mt">Blockgruppen in NEPO</h3>
+  <div id="match"></div>
+</section>
+
+<section class="station" id="aktion" data-label="Aktionen" data-yr="Erarbeitung" data-title="Aktionsblöcke" data-sub="Text, Bild, LED, Ton">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Aktionsblöcke</p>
+    <h2>Bilder für die LED-Matrix</h2>
+    <p class="lead">Jedes Programm beginnt mit dem <b>Startblock</b>. Mit <b>Aktionsblöcken</b> gibt der Calliope Text, Bilder, Farben und Töne aus. Zeichne ein eigenes Bild – der Block „zeige Bild“ wird dafür mit 25 Feldern gefüllt.</p>
+  </div>
+  <div class="model">
+    <div class="vis">
+      <div class="vis-head"><h3>Bild-Editor</h3><button class="btn" id="px-clear">Leeren</button></div>
+      <div id="px"></div>
+      <p class="mono note" id="px-code"></p>
+    </div>
+    <div id="cal-bild"></div>
+  </div>
+</section>
+
+<section class="station" id="wuerfel" data-label="Würfel" data-yr="Übung" data-title="Ein Würfel" data-sub="Zufall und Schütteln">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Projekt: Würfel</p>
+    <h2>Schütteln und würfeln</h2>
+    <p class="lead">Wird der Calliope geschüttelt, zeigt er eine Zufallszahl von 1 bis 6. Der <b>Lagesensor</b> erkennt das Schütteln, der Block <b>„Zufallszahl von 1 bis 6“</b> aus der Gruppe Mathematik liefert die Zahl.</p>
+  </div>
+  <div id="cal-w"></div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Blinker" data-yr="M1" data-title="Wechselblinker" data-sub="Wiederholung und Warten">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Ein Wechselblinker wie am Bahnübergang</h2>
+    <p class="lead">Die RGB-LED soll abwechselnd rot und aus sein, immer eine halbe Sekunde. Mit Taste B soll das Blinken schneller werden. Schau dir das Programm an und probiere es aus.</p>
+  </div>
+  <div id="cal-bl"></div>
+  <div class="task-card mt"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Erweitern</h3></header><p>Erweitere das Programm: Mit Taste A soll das Blinken wieder langsamer werden. Wie musst du den Block ändern?</p>
+    <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Einen weiteren Block „wenn Taste A gedrückt? → ändere Pause um +100“ in die Wiederholung einfügen. Damit die Pause nicht negativ wird, kann man eine Bedingung „wenn Pause &gt; 100“ ergänzen.</p></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: NEPO</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Programmieren mit NEPO</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step>Das <b>Open Roberta Lab</b> ist eine Programmierumgebung im Browser; <b>NEPO</b> ist ihre grafische Programmiersprache.</li>
+        <li data-step>Blockgruppen: <b>Aktion</b> (Text, Bild, LED, Ton), <b>Sensoren</b>, <b>Kontrolle</b> (Wiederholung, Bedingung, Warten), <b>Logik</b>, <b>Mathematik</b>, <b>Variablen</b>, <b>Nachrichten</b>.</li>
+        <li data-step>Jedes Programm beginnt mit dem <b>Startblock</b>. Die zusammengesteckten Blöcke ähneln einem Struktogramm.</li>
+        <li data-step>Programme werden im Simulator getestet und per USB auf den Calliope übertragen.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne ein 5 × 5-Raster mit deinem eigenen Bild und schreibe das Würfel-Programm als Struktogramm auf.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: NEPO</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+matcher($('#match'), [
+  [`<span class="nb ak">Aktion</span>`, 'Text, Bilder, Farben und Töne ausgeben'], [`<span class="nb se">Sensoren</span>`, 'Werte von Licht, Temperatur, Tasten abfragen'], [`<span class="nb ko">Kontrolle</span>`, 'Wiederholungen, Bedingungen, warten'],
+  [`<span class="nb lo">Logik</span>`, 'Vergleiche wie =, &lt;, &gt; und „und/oder“'], [`<span class="nb ma">Mathematik</span>`, 'Zahlen, Rechnen, Zufallszahl'], [`<span class="nb va">Variablen</span>`, 'Werte speichern und verändern']
+]);
+(() => {
+  let cal;
+  const g = pixelGrid($('#px'), {w: 5, h: 5, data: ['11011', '11011', '00000', '10001', '01110'].map(r => r.replace(/[01]/g, c => c === '1' ? '0' : '1')), onChange: d => {
+    const rows = d.map(r => r.replace(/[01]/g, c => c === '0' ? '1' : '0'));
+    $('#px-code').textContent = 'zeige Bild ' + rows.join(' ');
+    if (cal) { window.__calRows = rows; }
+  }});
+  $('#px-clear').onclick = () => g.clear();
+  cal = calliope($('#cal-bild'), {blocks: [[0, 'st', '+ Programm starten'], [1, 'ak', 'zeige Bild <i>(dein Bild)</i>'], [1, 'ak', 'schalte LED an Farbe <i>blau</i>'], [1, 'ak', 'spiele Ton <i>523 Hz</i> für <i>300 ms</i>']],
+    run: async c => { c.image(window.__calRows || ['00000', '01010', '00000', '10001', '01110']); c.rgb('#2563EB'); await c.tone(523, 300); }, only: []});
+  window.__calRows = g.get().map(r => r.replace(/[01]/g, ch => ch === '0' ? '1' : '0'));
+})();
+calliope($('#cal-w'), {blocks: [[0, 'st', '+ Programm starten'], [1, 'ko', 'wiederhole unendlich oft'], [2, 'ko', 'wenn <i>geschüttelt</i>?'], [3, 'va', 'setze Zahl auf <span class="nb ma" style="display:inline">Zufallszahl von <i>1</i> bis <i>6</i></span>'], [3, 'ak', 'zeige Text <i>Zahl</i>'], [3, 'ak', 'spiele Ton <i>660 Hz</i>']],
+  run: async c => { c.log('Schüttle den Calliope!'); while (c.running) { if (c.shaken()) { const z = randInt(1, 6); c.set('Zahl', z); c.tone(660, 120); await c.show(String(z)); c.image(CAL_FONT[String(z)]); } await c.wait(50); } }, only: []});
+calliope($('#cal-bl'), {blocks: [[0, 'st', '+ Programm starten'], [1, 'va', 'setze Pause auf <i>500</i>'], [1, 'ko', 'wiederhole unendlich oft'], [2, 'ak', 'schalte LED an Farbe <i>rot</i>'], [2, 'ko', 'warte <i>Pause</i> ms'], [2, 'ak', 'schalte LED aus'], [2, 'ko', 'warte <i>Pause</i> ms'], [2, 'ko', 'wenn Taste <i>B</i> gedrückt?'], [3, 'va', 'ändere Pause um <i>−100</i>']],
+  run: async c => { let p = 500; c.set('Pause', p); while (c.running) { c.rgb('#FF2D2D'); await c.wait(p); c.rgb(null); await c.wait(p); if (c.pressed('B') && p > 100) { p -= 100; c.set('Pause', p); } } }, only: []});
+mcQuiz($('#quiz'), [
+  {q: 'Wie heißt die Programmiersprache im Open Roberta Lab?', a: ['NEPO', 'Scratch', 'HTML', 'Python'], ok: 0},
+  {q: 'Womit beginnt jedes NEPO-Programm?', a: ['mit dem Startblock', 'mit einer Variablen', 'mit einem Ton', 'mit dem Ende'], ok: 0},
+  {q: 'In welcher Gruppe findet man „zeige Text“?', a: ['Aktion', 'Logik', 'Sensoren', 'Mathematik'], ok: 0},
+  {q: 'Welcher Sensor erkennt das Schütteln?', a: ['der Lagesensor', 'der Lichtsensor', 'der Temperatursensor', 'das Mikrofon'], ok: 0},
+  {q: 'Wozu braucht man ein Benutzerprofil im Lab?', a: ['um Programme zu speichern', 'um den Calliope zu laden', 'um Töne zu spielen', 'gar nicht'], ok: 0},
+  {q: 'Wie wird die Blinkpause im Wechselblinker kürzer?', a: ['„ändere Pause um −100“ bei Taste B', 'durch Schütteln', 'durch Stopp', 'automatisch'], ok: 0}
+]);
+</script>

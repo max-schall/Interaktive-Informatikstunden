@@ -1,0 +1,189 @@
+<!--
+title: Sensor-Aktor-Systeme
+short: Sensor & Aktor
+time: 2 Unterrichtsstunden
+q: Wie arbeiten Sensoren und Aktoren in technischen Systemen zusammen?
+facts: Sensoren messen (Licht, Temperatur, Abstand, Druck), Aktoren handeln (Motor, Lampe, Lautsprecher, Ventil) | Steuerelement verarbeitet die Sensordaten | Beispiele: Rolltreppe mit Lichtschranke, Einparkhilfe, Klimaanlage und smartes Thermostat mit Soll- und Ist-Wert | Projekt Alarmanlage
+inter: Sensor oder Aktor? sortieren · Rolltreppe Schritt für Schritt · Einparkhilfe mit Abstand · Thermostat-Regelung simulieren · Alarmanlage im Schuhkarton
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Einen Mikrocontroller programmieren</p>
+      <h1>Sensor-Aktor-Systeme<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Die Rolltreppe fährt erst los, wenn jemand kommt. Das Auto piept beim Einparken immer schneller. Die Heizung regelt sich selbst. Überall arbeiten <b>Sensoren</b> und <b>Aktoren</b> zusammen.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Woher „weiß“ eine automatische Schiebetür, dass jemand davorsteht?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie arbeiten Sensoren und Aktoren in technischen Systemen zusammen?</p></div>
+      <div class="controls"><button class="btn primary" data-go="prinzip">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="prinzip" data-label="Prinzip" data-yr="Erarbeitung" data-title="Sensor – Steuerung – Aktor" data-sub="Das Zusammenspiel">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Sensor und Aktor</p>
+    <h2>Messen, entscheiden, handeln</h2>
+  </div>
+  <div class="flow-line">
+    <div class="fl-box"><span class="tag info">Sensor</span><b>misst</b><small>Licht, Temperatur, Abstand, Druck, Feuchtigkeit, Beschleunigung</small></div>
+    <div class="fl-arrow">Signal →</div>
+    <div class="fl-box acc"><span class="tag">Steuerelement</span><b>verarbeitet</b><small>Mikrocontroller mit Programm: vergleicht mit Bedingungen</small></div>
+    <div class="fl-arrow">Befehl →</div>
+    <div class="fl-box"><span class="tag info">Aktor</span><b>handelt</b><small>Motor (Bewegung), Lampe/Anzeige (optisch), Lautsprecher (Ton), Ventil</small></div>
+  </div>
+  <h3 class="mt">Sensor oder Aktor?</h3>
+  <div id="sort-sa"></div>
+</section>
+
+<section class="station" id="rolltreppe" data-label="Rolltreppe" data-yr="Erarbeitung" data-title="Die Rolltreppe" data-sub="Lichtschranke und Motor">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Beispiel Rolltreppe</p>
+      <h2>Eine Lichtschranke startet den Motor</h2>
+      <p>Manche Rolltreppen bewegen sich erst, wenn jemand sie betritt. Am Eingang ist eine <b>Lichtschranke</b> (Sensor) eingebaut. Unterbricht ein Körper den Lichtstrahl, geht ein Signal an die Steuerung, die den <b>Elektromotor</b> (Aktor) startet.</p>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Rolltreppe</h3><button class="btn primary" id="rt-go">🚶 Person kommt</button></div>
+      <svg viewBox="0 0 320 170" id="rt-svg" class="nail"></svg>
+      <p class="status" id="rt-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="auto" data-label="Einparkhilfe" data-yr="Erarbeitung" data-title="Fahrassistenz im Auto" data-sub="Ultraschall-Einparkhilfe">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Material M1</p>
+      <h2>Die Einparkhilfe</h2>
+      <ul class="facts">
+        <li>Moderne Autos haben viele <b>Fahrassistenzsysteme</b> für mehr Sicherheit.</li>
+        <li>Die <b>Einparkhilfe</b> misst mit <b>Ultraschallsensoren</b> den Abstand zum Hindernis. Je näher, desto schneller piept der Lautsprecher (Aktor).</li>
+        <li>Weitere Beispiele: Rückfahrkamera, Regensensor schaltet den Scheibenwischer, Notbremsassistent mit Radar.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Abstand</h3></div>
+      <div class="park"><span class="car">🚗</span><span class="wall"></span></div>
+      <label class="slider-row">Abstand <input id="pk-d" type="range" min="5" max="150" value="120"><output id="pk-o" class="mono"></output></label>
+      <div class="controls"><button class="btn" id="pk-snd">🔊 Ton an</button></div>
+      <p class="status" id="pk-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="regel" data-label="Thermostat" data-yr="Vertiefung" data-title="Soll- und Ist-Wert" data-sub="Das smarte Thermostat">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M2</p>
+    <h2>Das smarte Thermostat</h2>
+    <p class="lead">Für jeden Raum wird eine <b>Solltemperatur</b> festgelegt. Ein Sensor misst ständig die <b>Ist-Temperatur</b>. Ist es zu kalt, öffnet ein Stellmotor das Ventil der Heizung; ist die Solltemperatur erreicht, wird es geschlossen. So entsteht ein <b>Regelkreis</b>. Die Klimaanlage im Auto arbeitet genauso.</p>
+  </div>
+  <div class="vis">
+    <div class="vis-head"><h3>Regelkreis</h3><label class="slider-row" style="margin:0">Soll <input id="th-s" type="range" min="16" max="24" value="21"><output id="th-so" class="mono"></output></label><button class="btn" id="th-win">🪟 Fenster auf</button></div>
+    <canvas id="th-cv" style="width:100%;height:14rem;display:block"></canvas>
+    <p class="status" id="th-st"></p>
+  </div>
+</section>
+
+<section class="station" id="alarm" data-label="Alarmanlage" data-yr="Projekt" data-title="Projekt Alarmanlage" data-sub="Calliope im Schuhkarton">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Projekt</p>
+    <h2>Eine Alarmanlage für die Schatzkiste</h2>
+    <p class="lead">Ein Calliope liegt in einem geschlossenen Schuhkarton – dort ist es dunkel. Wird der Karton geöffnet, misst der <b>Lichtsensor</b> mehr Licht und der Calliope piept laut. Mit Taste A wird die Anlage scharf geschaltet. Teste mit dem Licht-Regler!</p>
+  </div>
+  <div id="cal-a"></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Sensor-Aktor-Systeme</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Sensor-Aktor-Systeme</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step><b>Sensoren</b> messen Eigenschaften der Umgebung (Licht, Temperatur, Abstand, Druck) und senden Signale.</li>
+        <li data-step>Ein <b>Steuerelement</b> (z. B. Mikrocontroller) verarbeitet die Daten nach einem Programm.</li>
+        <li data-step><b>Aktoren</b> setzen Befehle um: mechanisch (Motor, Ventil), optisch (Lampe, Anzeige) oder akustisch (Lautsprecher).</li>
+        <li data-step>Bei einer <b>Regelung</b> wird der Ist-Wert ständig mit dem Sollwert verglichen (Thermostat, Klimaanlage).</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Tabelle</span><p>Lege eine Tabelle an: System | Sensor | Aktor – für Rolltreppe, Einparkhilfe, Thermostat und zwei eigene Beispiele.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Sensor und Aktor</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+sorter($('#sort-sa'), [{id: 's', name: 'Sensor'}, {id: 'a', name: 'Aktor'}], [
+  {t: 'Lichtschranke', c: 's'}, {t: 'Ultraschallsensor', c: 's'}, {t: 'Thermometer', c: 's'}, {t: 'Regensensor', c: 's'}, {t: 'Mikrofon', c: 's'},
+  {t: 'Elektromotor', c: 'a'}, {t: 'Lautsprecher', c: 'a'}, {t: 'LED', c: 'a'}, {t: 'Heizungsventil', c: 'a'}
+]);
+
+/* ================= Rolltreppe ================= */
+(() => {
+  let t = null, on = false, off = 0;
+  const draw = (person, beam, motor) => {
+    $('#rt-svg').innerHTML = `<polygon points="60,140 260,30 300,30 300,40 70,150" fill="#9CA3AF"/>${[...Array(9)].map((_, i) => `<line x1="${80 + i * 24 + off % 24}" y1="${140 - (i * 24 + off % 24) * .55}" x2="${80 + i * 24 + off % 24}" y2="${148 - (i * 24 + off % 24) * .55}" stroke="#4B5563" stroke-width="3"/>`).join('')}
+      <rect x="30" y="80" width="6" height="70" fill="#374151"/><rect x="54" y="80" width="6" height="70" fill="#374151"/>
+      <line x1="36" y1="110" x2="54" y2="110" stroke="${beam ? '#EF4444' : '#FCA5A5'}" stroke-width="${beam ? 3 : 1}" stroke-dasharray="${beam ? '' : '3 3'}"/>
+      ${person ? '<text x="44" y="135" text-anchor="middle" style="font-size:30px">🚶</text>' : ''}
+      <rect x="250" y="100" width="56" height="34" rx="4" fill="${motor ? '#16A34A' : '#6B7280'}"/><text x="278" y="122" text-anchor="middle" style="fill:#fff;font-family:var(--f-mono);font-size:11px">Motor</text>`;
+  };
+  draw(false, true, false); $('#rt-st').textContent = 'Lichtstrahl ungestört – Motor aus.';
+  $('#rt-go').onclick = () => {
+    clearInterval(t); draw(true, false, false); $('#rt-st').innerHTML = '<b>Sensor:</b> Lichtstrahl unterbrochen → Signal an die Steuerung.';
+    setTimeout(() => { $('#rt-st').innerHTML = '<b>Aktor:</b> Steuerung startet den Elektromotor – die Rolltreppe fährt.'; let n = 0; t = setInterval(() => { off += 2; n++; draw(n < 10, n >= 10, true); if (n > 120) { clearInterval(t); draw(false, true, false); $('#rt-st').textContent = 'Niemand mehr da – nach einer Weile stoppt der Motor.'; } }, RM.matches ? 5 : 40); }, RM.matches ? 0 : 900);
+  };
+})();
+
+/* ================= Einparkhilfe ================= */
+(() => {
+  let snd = false, timer = null, A = null;
+  const beep = () => { if (!snd) return; try { A = A || new (window.AudioContext || window.webkitAudioContext)(); const g = A.createGain(), o = A.createOscillator(); o.frequency.value = 1200; o.connect(g); g.connect(A.destination); g.gain.setValueAtTime(.08, A.currentTime); g.gain.exponentialRampToValueAtTime(.001, A.currentTime + .08); o.start(); o.stop(A.currentTime + .08); } catch (e) {} };
+  function upd() {
+    const d = +$('#pk-d').value; $('#pk-o').textContent = d + ' cm'; $('.park .car').style.left = `calc(${(150 - d) / 150 * 70}% )`;
+    clearInterval(timer);
+    const iv = d < 20 ? 0 : d < 50 ? 150 : d < 100 ? 400 : null;
+    $('#pk-st').innerHTML = iv === null ? 'Kein Hindernis in der Nähe – kein Ton.' : iv === 0 ? '<b class="bad">Dauerton – STOPP!</b>' : `Piepen alle <b>${iv} ms</b>`;
+    $('.park').classList.toggle('warn', iv !== null);
+    if (iv !== null) timer = setInterval(() => { if (STATIONS[cur] === 'auto') beep(); $('.park .wall').classList.toggle('blink'); }, iv || 90);
+  }
+  $('#pk-d').oninput = upd; $('#pk-snd').onclick = () => { snd = !snd; $('#pk-snd').textContent = snd ? '🔇 Ton aus' : '🔊 Ton an'; };
+  upd();
+})();
+
+/* ================= Thermostat ================= */
+(() => {
+  const cv = $('#th-cv'); let T = 17, hist = [], valve = false, win = false, last = 0;
+  $('#th-win').onclick = () => { win = !win; $('#th-win').textContent = win ? '🪟 Fenster zu' : '🪟 Fenster auf'; };
+  const upd = () => $('#th-so').textContent = $('#th-s').value + ' °C'; $('#th-s').oninput = upd; upd();
+  loopCanvas(cv, 'regel', (c, w, h, t) => {
+    if (t - last > .12) {
+      last = t; const S = +$('#th-s').value;
+      valve = T < S - .2 ? true : T > S + .2 ? false : valve;
+      T += (valve ? .12 : 0) - (T - (win ? 5 : 12)) * (win ? .02 : .008);
+      hist.push([T, valve, S]); if (hist.length > 200) hist.shift();
+      $('#th-st').innerHTML = `Ist <b>${numDE(T, 1)} °C</b> · Soll <b>${S} °C</b> · Ventil <b class="${valve ? 'good' : ''}">${valve ? 'offen – Heizung an' : 'zu'}</b>${win ? ' · Fenster offen!' : ''}`;
+    }
+    const Y = v => h - 16 - (v - 10) / 16 * (h - 30), X = i => i / 200 * w;
+    c.fillStyle = 'rgba(220,38,38,.08)'; hist.forEach(([, v], i) => { if (v) c.fillRect(X(i), 0, w / 200 + 1, h); });
+    c.strokeStyle = '#9CA3AF'; c.setLineDash([5, 4]); c.beginPath(); hist.forEach(([, , s], i) => i ? c.lineTo(X(i), Y(s)) : c.moveTo(X(i), Y(s))); c.stroke(); c.setLineDash([]);
+    c.strokeStyle = '#DC2626'; c.lineWidth = 3; c.beginPath(); hist.forEach(([v], i) => i ? c.lineTo(X(i), Y(v)) : c.moveTo(X(i), Y(v))); c.stroke(); c.lineWidth = 1;
+    c.fillStyle = '#6B7280'; c.font = '11px monospace'; c.fillText('rot: Ist · grau: Soll · rosa: Heizung an', 8, 14);
+  });
+})();
+
+calliope($('#cal-a'), {blocks: [[0, 'st', '+ Programm starten · <i>scharf = falsch</i>'], [1, 'ko', 'wiederhole unendlich oft'], [2, 'ko', 'wenn Taste <i>A</i> gedrückt? → setze scharf auf <i>wahr</i>, zeige Bild <i>HAKEN</i>'], [2, 'ko', 'wenn <i>scharf</i> und <span class="nb se" style="display:inline">gib Helligkeit</span> &gt; <i>20</i>'], [3, 'ko', 'wiederhole <i>5</i> mal'], [4, 'ak', 'spiele Ton <i>880 Hz</i>, LED rot'], [4, 'ak', 'spiele Ton <i>440 Hz</i>, LED aus'], [2, 'ko', 'wenn Taste <i>B</i> gedrückt? → setze scharf auf <i>falsch</i>']],
+  run: async c => { let scharf = false; c.set('scharf', 'falsch'); c.log('Licht unter 20 stellen (Karton zu), dann Taste A.'); while (c.running) { if (c.pressed('A')) { scharf = true; c.set('scharf', 'wahr'); c.image('HAKEN'); } if (c.pressed('B')) { scharf = false; c.set('scharf', 'falsch'); c.clear(); c.rgb(null); } if (scharf && c.sensor('licht') > 20) { c.image('GLOCKE'); for (let i = 0; i < 5 && c.running; i++) { c.rgb('#FF2D2D'); await c.tone(880, 150); c.rgb(null); await c.tone(440, 150); } } await c.wait(60); } }, sensors: {licht: 5}, only: ['licht']});
+mcQuiz($('#quiz'), [
+  {q: 'Was macht ein Sensor?', a: ['Er misst Eigenschaften der Umgebung.', 'Er bewegt etwas.', 'Er speichert Programme.', 'Er erzeugt Strom.'], ok: 0},
+  {q: 'Welches Bauteil ist ein Aktor?', a: ['Elektromotor', 'Lichtschranke', 'Thermometer', 'Mikrofon'], ok: 0},
+  {q: 'Welcher Sensor steckt in der Einparkhilfe?', a: ['Ultraschallsensor', 'Temperatursensor', 'Lichtschranke', 'Kompass'], ok: 0},
+  {q: 'Was vergleicht ein Thermostat ständig?', a: ['Ist- und Solltemperatur', 'Uhrzeit und Datum', 'Licht und Lautstärke', 'nichts'], ok: 0},
+  {q: 'Welcher Sensor eignet sich für die Alarmanlage im Karton?', a: ['Lichtsensor', 'Kompass', 'Temperatursensor', 'Pins'], ok: 0},
+  {q: 'Welche Rolle hat der Mikrocontroller im Sensor-Aktor-System?', a: ['Steuerelement: verarbeitet die Sensordaten', 'Sensor', 'Aktor', 'Stromquelle'], ok: 0}
+]);
+</script>

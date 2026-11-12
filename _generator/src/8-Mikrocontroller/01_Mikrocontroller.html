@@ -1,0 +1,125 @@
+<!--
+title: Der Calliope mini – ein Mikrocontroller
+short: Mikrocontroller
+time: 1–2 Unterrichtsstunden
+q: Was ist ein Mikrocontroller und woraus besteht der Calliope mini?
+facts: Mikrocontroller: kleiner Computer auf einem Chip, in vielen Alltagsgeräten | Calliope mini: Prozessor, Speicher, Sensoren, LED-Matrix, RGB-LED, Lautsprecher, Tasten, Pins, Funk | EVA-Prinzip am Mikrocontroller | Programmierung über USB oder kabellos
+inter: Mikrocontroller im Alltag finden · Calliope-Bauteile erkunden (Erkunden/Finden) · EVA sortieren · erstes Programm im Simulator
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Einen Mikrocontroller programmieren</p>
+      <h1>Der Calliope mini<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">In Waschmaschine, Ampel, Fitnessarmband und Spielzeug stecken winzige Computer, die nur aus einem Chip bestehen: <b>Mikrocontroller</b>. Der Calliope mini ist ein Mikrocontroller zum Lernen und Experimentieren.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welche Geräte bei dir zu Hause enthalten wohl einen kleinen Computer?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Was ist ein Mikrocontroller und woraus besteht der Calliope mini?</p></div>
+      <div class="controls"><button class="btn primary" data-go="alltag">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="alltag" data-label="Im Alltag" data-yr="Einstieg" data-title="Mikrocontroller im Alltag" data-sub="Kleine Computer überall">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Mikrocontroller im Alltag</p>
+    <h2>Kleine Computer überall</h2>
+    <p class="lead">Ein <b>Mikrocontroller</b> ist ein sehr kleiner Computer: Prozessor, Arbeitsspeicher und Programmspeicher sitzen gemeinsam auf einem Chip. Er wird mit einem Programm bespielt, nimmt Informationen auf und steuert Funktionen. Welche Geräte enthalten einen Mikrocontroller?</p>
+  </div>
+  <div id="sort-mc"></div>
+</section>
+
+<section class="station" id="bauteile" data-label="Bauteile" data-yr="Erarbeitung" data-title="Bauteile des Calliope" data-sub="Erkunden und finden">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Bauteile des Calliope mini</p>
+    <h2>Was steckt auf der Platine?</h2>
+  </div>
+  <div class="model">
+    <svg viewBox="0 0 300 260" class="cal-svg" id="cb" style="max-width:28rem">
+      <path class="cal-pcb" d="M150 8 L196 44 L272 44 L272 126 L290 182 L230 252 L70 252 L10 182 L28 126 L28 44 L104 44 Z"/>
+      <g data-part="pins"><circle cx="150" cy="30" r="14" class="calp"/><circle cx="42" cy="64" r="14" class="calp"/><circle cx="258" cy="64" r="14" class="calp"/><circle cx="42" cy="196" r="14" class="calp"/><circle cx="258" cy="196" r="14" class="calp"/><circle cx="150" cy="236" r="14" class="calp"/></g>
+      <g data-part="matrix" id="cb-mx"></g>
+      <g data-part="tasten"><circle cx="62" cy="130" r="16" fill="#E5E7EB" stroke="#111" stroke-width="2"/><text x="62" y="136" text-anchor="middle" class="calt">A</text><circle cx="238" cy="130" r="16" fill="#E5E7EB" stroke="#111" stroke-width="2"/><text x="238" y="136" text-anchor="middle" class="calt">B</text></g>
+      <g data-part="rgb"><circle cx="150" cy="200" r="10" fill="#22C55E"/></g>
+      <g data-part="usb"><rect x="132" y="44" width="36" height="16" rx="3" fill="#9CA3AF"/></g>
+      <g data-part="mikro"><rect x="208" y="196" width="22" height="14" rx="3" fill="#111"/></g>
+      <g data-part="lautsp"><circle cx="90" cy="206" r="12" fill="#111"/></g>
+      <g data-part="chip"><rect x="182" y="44" width="40" height="24" rx="2" fill="#0B0F14"/></g>
+      <g data-part="grove"><rect x="30" y="96" width="20" height="18" rx="2" fill="#F5F5F5" stroke="#666"/><rect x="250" y="96" width="20" height="18" rx="2" fill="#F5F5F5" stroke="#666"/></g>
+    </svg>
+    <div class="stack"><div id="cb-mode"></div><div class="box xp-panel" id="cb-info"></div></div>
+  </div>
+</section>
+
+<section class="station" id="eva" data-label="EVA" data-yr="Erarbeitung" data-title="EVA am Mikrocontroller" data-sub="Eingabe, Verarbeitung, Ausgabe">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · EVA-Prinzip</p>
+    <h2>Auch der Calliope arbeitet nach EVA</h2>
+    <p class="lead">Wie jedes Informatiksystem arbeitet der Calliope nach dem <b>EVA-Prinzip</b>: Eingaben über Tasten, Pins und Sensoren; Verarbeitung im Prozessor nach dem Programm; Ausgaben über LEDs, Lautsprecher und Pins. Sortiere.</p>
+  </div>
+  <div id="sort-eva"></div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Erstes Programm" data-yr="M1" data-title="Ein erstes Programm" data-sub="Im Simulator">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Hallo, Calliope!</h2>
+    <p class="lead">Starte das Programm. Drücke danach Taste A und Taste B. Das Programm wird über ein USB-Kabel oder kabellos per App auf den Calliope übertragen.</p>
+  </div>
+  <div id="cal1"></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Mikrocontroller</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Der Calliope mini – ein Mikrocontroller</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step>Ein <b>Mikrocontroller</b> ist ein sehr kleiner Computer auf einem Chip (Prozessor + Speicher). Er steckt in vielen Alltagsgeräten und führt ein festes Programm aus.</li>
+        <li data-step>Der <b>Calliope mini</b> hat: Tasten A und B, Pins (berührungsempfindlich), Sensoren (Licht, Temperatur, Lage, Lautstärke), 5 × 5-LED-Matrix, RGB-LED, Lautsprecher, Funkmodul, USB-Anschluss.</li>
+        <li data-step>Er arbeitet nach dem <b>EVA-Prinzip</b>: Eingabe (Tasten, Sensoren) → Verarbeitung (Prozessor) → Ausgabe (LEDs, Töne).</li>
+        <li data-step>Programme werden am Computer erstellt und per USB oder kabellos übertragen.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne den Calliope mini und beschrifte sechs Bauteile.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Mikrocontroller</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+sorter($('#sort-mc'), [{id: 'ja', name: 'mit Mikrocontroller'}, {id: 'nein', name: 'ohne'}], [
+  {t: 'Waschmaschine', c: 'ja'}, {t: 'Fitnessarmband', c: 'ja'}, {t: 'Fußgängerampel', c: 'ja'}, {t: 'Fernbedienung', c: 'ja'}, {t: 'Rauchmelder', c: 'ja'},
+  {t: 'Holzlöffel', c: 'nein'}, {t: 'Fahrradklingel', c: 'nein'}, {t: 'Schere', c: 'nein'}
+]);
+$('#cb-mx').innerHTML = '<rect x="100" y="78" width="100" height="100" rx="4" fill="#2B3A4F"/>' + [...Array(25)].map((_, i) => `<rect x="${106 + (i % 5) * 19}" y="${84 + Math.floor(i / 5) * 19}" width="13" height="13" rx="2" fill="${[1, 3, 5, 6, 7, 8, 9, 11, 12, 13, 17].includes(i) ? '#FF3B30' : '#3B4A60'}"/>`).join('');
+explorer($('#cb'), $('#cb-info'), [
+  {id: 'pins', n: 'Pins (Anschlüsse)', t: 'Goldene Anschlüsse mit Touchfunktion. Man hält den Minus-Pin mit einer Hand und berührt mit der anderen einen der Pins 0–3. Auch andere elektrische Geräte können angeschlossen werden.'},
+  {id: 'matrix', n: '5 × 5-LED-Matrix', t: 'Ausgabe: 25 rote LEDs, einzeln programmierbar. Zeigt Text, Zahlen und Bilder. Einige LEDs dienen auch als Lichtsensor.'},
+  {id: 'tasten', n: 'Tasten A und B', t: 'Eingabe: Mit den Tasten werden je nach Programm unterschiedliche Reaktionen ausgelöst – auch beide gleichzeitig.'},
+  {id: 'rgb', n: 'RGB-LED', t: 'Ausgabe: leuchtet in jeder Farbe, gemischt aus Rot, Grün und Blau.'},
+  {id: 'usb', n: 'USB-Anschluss', t: 'Hier wird das Programm vom Computer übertragen und der Calliope mit Strom versorgt (sonst Batterie).'},
+  {id: 'mikro', n: 'Mikrofon', t: 'Eingabe: misst als Lautstärkesensor die Lautstärke in der Umgebung.'},
+  {id: 'lautsp', n: 'Lautsprecher', t: 'Ausgabe: spielt Töne und Melodien.'},
+  {id: 'chip', n: 'Prozessor und Sensoren', t: 'Verarbeitung: Prozessor und Arbeitsspeicher. Im Chip-Bereich sitzen auch Temperatursensor und Lagesensor (Beschleunigung, Kompass) sowie das Funkmodul (Bluetooth).'},
+  {id: 'grove', n: 'Grove-Anschlüsse', t: 'Hier lassen sich Erweiterungen anstecken, z. B. Farbsensoren oder Motoren.'}
+], {modeRoot: $('#cb-mode'), intro: 'Tippe ein Bauteil an.', label: 'Bauteil'});
+sorter($('#sort-eva'), [{id: 'e', name: 'Eingabe'}, {id: 'v', name: 'Verarbeitung'}, {id: 'a', name: 'Ausgabe'}], [
+  {t: 'Taste A', c: 'e'}, {t: 'Lichtsensor', c: 'e'}, {t: 'Temperatursensor', c: 'e'}, {t: 'Mikrofon', c: 'e'}, {t: 'Pin berühren', c: 'e'},
+  {t: 'Prozessor', c: 'v'}, {t: 'Arbeitsspeicher', c: 'v'}, {t: 'LED-Matrix', c: 'a'}, {t: 'RGB-LED', c: 'a'}, {t: 'Lautsprecher', c: 'a'}
+]);
+calliope($('#cal1'), {blocks: [[0, 'st', '+ Programm starten'], [1, 'ak', 'zeige Text <i>Hallo!</i>'], [1, 'ko', 'wiederhole unendlich oft'], [2, 'ko', 'wenn Taste <i>A</i> gedrückt?'], [3, 'ak', 'zeige Bild <i>HERZ</i>'], [3, 'ak', 'schalte LED an Farbe <i>rot</i>'], [2, 'ko', 'sonst wenn Taste <i>B</i> gedrückt?'], [3, 'ak', 'zeige Bild <i>SMILEY</i>'], [3, 'ak', 'spiele Ton <i>440 Hz</i>']],
+  run: async c => { await c.show('Hallo!'); c.log('Drücke Taste A oder B.'); while (c.running) { if (c.pressed('A')) { c.image('HERZ'); c.rgb('#FF2D2D'); } else if (c.pressed('B')) { c.image('SMILEY'); await c.tone(440, 250); } await c.wait(50); } }});
+mcQuiz($('#quiz'), [
+  {q: 'Was ist ein Mikrocontroller?', a: ['ein sehr kleiner Computer auf einem Chip', 'ein Mikrofon', 'eine Fernbedienung', 'ein Kabel'], ok: 0},
+  {q: 'Was ist am Calliope eine Ausgabe?', a: ['LED-Matrix', 'Taste A', 'Lichtsensor', 'Mikrofon'], ok: 0},
+  {q: 'Wie viele LEDs hat die Matrix?', a: ['25', '5', '10', '100'], ok: 0},
+  {q: 'Wie wird ein Programm auf den Calliope übertragen?', a: ['per USB oder kabellos', 'per Post', 'durch Schütteln', 'gar nicht'], ok: 0},
+  {q: 'Was misst das Mikrofon?', a: ['die Lautstärke', 'die Temperatur', 'die Helligkeit', 'die Lage'], ok: 0},
+  {q: 'Welches Gerät enthält wahrscheinlich keinen Mikrocontroller?', a: ['eine Schere', 'eine Waschmaschine', 'ein Rauchmelder', 'ein Fitnessarmband'], ok: 0}
+]);
+</script>

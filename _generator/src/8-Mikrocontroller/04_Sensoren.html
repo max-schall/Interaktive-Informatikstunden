@@ -1,0 +1,94 @@
+<!--
+title: Der Calliope reagiert auf seine Umwelt
+short: Sensoren
+time: 2 Unterrichtsstunden
+q: Wie nimmt der Calliope seine Umgebung wahr und reagiert darauf?
+facts: Sensoren messen Eigenschaften der Umgebung: Licht (0–100), Temperatur, Lautstärke, Lage | Messwerte anzeigen und in Bedingungen mit Vergleichsoperatoren nutzen | Automatische Bildschirmhelligkeit als Vorbild | Temperatursensor sitzt im Prozessor-Bauteil | Messreihe im Klassenzimmer
+inter: Sensoren und Messgrößen zuordnen · Lichtmesser mit Anzeige · Nachtlicht mit Bedingung · Thermometer mit Ampelfarben · Lärmampel · Struktogramm in Programm umsetzen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Einen Mikrocontroller programmieren</p>
+      <h1>Sensoren<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Das Smartphone dreht das Display heller, wenn die Sonne scheint. Menschen nehmen die Umwelt mit ihren Sinnesorganen wahr – technische Geräte mit <b>Sensoren</b>.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welche Sensoren stecken in deinem Smartphone?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie nimmt der Calliope seine Umgebung wahr und reagiert darauf?</p></div>
+      <div class="controls"><button class="btn primary" data-go="sensoren">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="sensoren" data-label="Sensoren" data-yr="Einstieg" data-title="Sensoren des Calliope" data-sub="Was wird gemessen?">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Sensoren</p>
+    <h2>Messfühler für die Umwelt</h2>
+    <p class="lead"><b>Sensoren</b> sind Bauteile, die Eigenschaften der Umgebung messen und als Zahlenwert liefern. Ordne zu.</p>
+  </div>
+  <div id="match"></div>
+</section>
+
+<section class="station" id="licht" data-label="Lichtsensor" data-yr="Erarbeitung" data-title="Der Lichtsensor" data-sub="Helligkeit 0–100">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Lichtsensor nutzen</p>
+    <h2>Ein Nachtlicht</h2>
+    <p class="lead">Der Lichtsensor liefert Werte von <b>0 (dunkel)</b> bis <b>100 (sehr hell)</b>. Mit einem <b>Vergleich</b> (Logik-Block) wird daraus eine Bedingung: Ist es dunkel, geht die Lampe an. Bewege den Licht-Regler!</p>
+  </div>
+  <div id="cal-l"></div>
+</section>
+
+<section class="station" id="temp" data-label="Thermometer" data-yr="Erarbeitung" data-title="Der Temperatursensor" data-sub="Ein Ampel-Thermometer">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Temperatursensor</p>
+    <h2>Ein Ampel-Thermometer</h2>
+    <p class="lead">Der Temperatursensor sitzt im gleichen Bauteil wie der Prozessor und überwacht dessen Temperatur – er misst also eher etwas zu viel. Das Programm zeigt die Temperatur und färbt die LED: unter 18 °C blau, bis 25 °C grün, darüber rot. Bedingungen werden mit <b>sonst wenn</b> verknüpft.</p>
+  </div>
+  <div id="cal-th"></div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Lärmampel" data-yr="M1" data-title="Eine Lärmampel" data-sub="Struktogramm umsetzen">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Eine Lärmampel fürs Klassenzimmer</h2>
+    <p class="lead">Setze das Struktogramm in ein Programm um. Teste mit dem Lautstärke-Regler.</p>
+  </div>
+  <div class="model">
+    <div id="ns-laerm"></div>
+    <div id="cal-lm"></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Sensoren</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Der Calliope reagiert auf seine Umwelt</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step><b>Sensoren</b> messen Eigenschaften der Umgebung und liefern Zahlenwerte: Licht (0–100), Temperatur (°C), Lautstärke, Lage und Beschleunigung.</li>
+        <li data-step>Messwerte können angezeigt oder in <b>Bedingungen</b> mit Vergleichsoperatoren (&lt;, &gt;, =) genutzt werden.</li>
+        <li data-step>Mehrere Fälle verknüpft man mit „wenn … sonst wenn … sonst“.</li>
+        <li data-step>Damit das Gerät ständig reagiert, steht die Abfrage in einer Endlosschleife („wiederhole unendlich oft“).</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Messreihe</span><p>Miss an fünf Stellen im Klassenzimmer Helligkeit und Temperatur und notiere sie in einer Tabelle.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Welche Farbe leuchtet?</h2></div>
+  <div id="ts"></div>
+</section>
+
+<script>
+matcher($('#match'), [['Lichtsensor', 'Helligkeit der Umgebung (0–100)'], ['Temperatursensor', 'Temperatur in °C'], ['Mikrofon', 'Lautstärke'], ['Lagesensor', 'Neigung, Schütteln, Beschleunigung'], ['Kompass', 'Himmelsrichtung'], ['Pins', 'Berührung']]);
+calliope($('#cal-l'), {blocks: [[0, 'st', '+ Programm starten'], [1, 'ko', 'wiederhole unendlich oft'], [2, 'ko', 'wenn <span class="nb lo" style="display:inline"><span class="nb se" style="display:inline">gib Helligkeit</span> &lt; <i>30</i></span>'], [3, 'ak', 'zeige Bild <i>MOND</i>'], [3, 'ak', 'schalte LED an Farbe <i>gelb</i>'], [2, 'ko', 'sonst'], [3, 'ak', 'zeige Bild <i>SONNE</i>'], [3, 'ak', 'schalte LED aus']],
+  run: async c => { while (c.running) { const l = c.sensor('licht'); c.set('Helligkeit', l); if (l < 30) { c.image('MOND'); c.rgb('#FDE047'); } else { c.image('SONNE'); c.rgb(null); } await c.wait(100); } }, only: ['licht']});
+calliope($('#cal-th'), {blocks: [[0, 'st', '+ Programm starten'], [1, 'ko', 'wiederhole unendlich oft'], [2, 'va', 'setze T auf <span class="nb se" style="display:inline">gib Temperatur</span>'], [2, 'ko', 'wenn T &lt; <i>18</i>'], [3, 'ak', 'schalte LED an Farbe <i>blau</i>'], [2, 'ko', 'sonst wenn T &lt;= <i>25</i>'], [3, 'ak', 'schalte LED an Farbe <i>grün</i>'], [2, 'ko', 'sonst'], [3, 'ak', 'schalte LED an Farbe <i>rot</i>'], [2, 'ak', 'zeige Text <i>T</i>'], [2, 'ko', 'warte <i>1000</i> ms']],
+  run: async c => { while (c.running) { const t = c.sensor('temp'); c.set('T', t); c.rgb(t < 18 ? '#2563EB' : t <= 25 ? '#16A34A' : '#DC2626'); await c.show(t + '°'); await c.wait(400); } }, only: ['temp']});
+nsd($('#ns-laerm'), [{t: 'forever', body: [{t: 's', text: 'setze L auf Lautstärke'}, {t: 'if', cond: 'L > 70?', yes: [{t: 's', text: 'LED rot, zeige Bild KREUZ'}], no: [{t: 'if', cond: 'L > 40?', yes: [{t: 's', text: 'LED gelb'}], no: [{t: 's', text: 'LED grün, zeige Bild HAKEN'}]}]}]}], {title: 'Lärmampel'});
+calliope($('#cal-lm'), {blocks: [[0, 'st', '+ Programm starten'], [1, 'ko', 'wiederhole unendlich oft'], [2, 'va', 'setze L auf <span class="nb se" style="display:inline">gib Lautstärke</span>'], [2, 'ko', 'wenn L &gt; <i>70</i> → rot + KREUZ'], [2, 'ko', 'sonst wenn L &gt; <i>40</i> → gelb'], [2, 'ko', 'sonst → grün + HAKEN']],
+  run: async c => { while (c.running) { const l = c.sensor('laut'); c.set('L', l); if (l > 70) { c.rgb('#DC2626'); c.image('KREUZ'); } else if (l > 40) { c.rgb('#EAB308'); c.clear(); } else { c.rgb('#16A34A'); c.image('HAKEN'); } await c.wait(100); } }, only: ['laut']});
+taskSet($('#ts'), () => { const t = randInt(10, 32); return {key: 't' + t, tag: 'Thermometer', q: `Der Sensor misst <b>${t} °C</b>. Welche Farbe zeigt das Ampel-Thermometer?`, fields: [{l: 'Farbe', a: t < 18 ? 'blau' : t <= 25 ? 'grün' : 'rot'}], hint: 'unter 18 blau, bis 25 grün, darüber rot'}; }, {n: 4});
+</script>

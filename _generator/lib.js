@@ -948,3 +948,83 @@ function nsd(root, nodes, o = {}) {
   root.classList.add('nsd');
   root.innerHTML = (o.title ? `<div class="ns-title">${esc(o.title)}</div>` : '') + R(nodes);
 }
+
+/* ================= Calliope-Simulator (Klasse 8) =================
+   calliope(root, {blocks: [[einrückung, kategorie, 'Text'], …], run: async c => {…}, sensors: {licht, temp, laut}, channel, label})
+   Kategorien: st Start, ak Aktion, se Sensor, ko Kontrolle, lo Logik, ma Mathe, va Variable, na Nachrichten
+   API im Programm: c.show(text) · c.image(name|[5 Zeilen]) · c.clear() · c.plot(x,y,on) · c.rgb(farbe|null) · c.tone(hz, ms) · await c.wait(ms)
+     c.sensor('licht'|'temp'|'laut') · c.pressed('A'|'B'|'AB') (seit letzter Abfrage gedrückt?) · c.held('A') · c.pin(0–3) · c.shaken()
+     c.set(name, wert) (Variablenanzeige) · c.send(text) · c.receive() → Text oder null · c.running · c.log(text) */
+const CAL_FONT = {
+  '0': [14, 19, 21, 25, 14], '1': [4, 12, 4, 4, 14], '2': [30, 1, 14, 16, 31], '3': [30, 1, 6, 1, 30], '4': [18, 18, 31, 2, 2], '5': [31, 16, 30, 1, 30], '6': [14, 16, 30, 17, 14], '7': [31, 2, 4, 8, 8], '8': [14, 17, 14, 17, 14], '9': [14, 17, 15, 1, 14],
+  A: [14, 17, 31, 17, 17], B: [30, 17, 30, 17, 30], C: [15, 16, 16, 16, 15], D: [30, 17, 17, 17, 30], E: [31, 16, 30, 16, 31], F: [31, 16, 30, 16, 16], G: [15, 16, 19, 17, 15], H: [17, 17, 31, 17, 17], I: [14, 4, 4, 4, 14], J: [7, 2, 2, 18, 12],
+  K: [18, 20, 24, 20, 18], L: [16, 16, 16, 16, 31], M: [17, 27, 21, 17, 17], N: [17, 25, 21, 19, 17], O: [14, 17, 17, 17, 14], P: [30, 17, 30, 16, 16], Q: [14, 17, 21, 18, 13], R: [30, 17, 30, 18, 17], S: [15, 16, 14, 1, 30], T: [31, 4, 4, 4, 4],
+  U: [17, 17, 17, 17, 14], V: [17, 17, 17, 10, 4], W: [17, 17, 21, 27, 17], X: [17, 10, 4, 10, 17], Y: [17, 10, 4, 4, 4], Z: [31, 2, 4, 8, 31], ' ': [0, 0, 0, 0, 0], '!': [4, 4, 4, 0, 4], '?': [14, 1, 6, 0, 4], '-': [0, 0, 14, 0, 0], '+': [0, 4, 14, 4, 0],
+  ':': [0, 4, 0, 4, 0], '%': [25, 26, 4, 11, 19], '°': [12, 18, 12, 0, 0], '.': [0, 0, 0, 0, 4], ',': [0, 0, 0, 4, 8], '=': [0, 31, 0, 31, 0]
+};
+const CAL_IMG = {HERZ: [10, 31, 31, 14, 4], SMILEY: [0, 10, 0, 17, 14], TRAURIG: [0, 10, 0, 14, 17], HAKEN: [0, 1, 2, 20, 8], KREUZ: [17, 10, 4, 10, 17], PFEIL_HOCH: [4, 14, 21, 4, 4], PFEIL_RUNTER: [4, 4, 21, 14, 4], SONNE: [21, 14, 31, 14, 21], MOND: [6, 12, 12, 12, 6], GLOCKE: [4, 14, 14, 31, 4]};
+const CAL_RADIO = {};
+function calliope(root, o = {}) {
+  const sens = Object.assign({licht: 50, temp: 21, laut: 10}, o.sensors || {});
+  const ch = o.channel || 'kanal1', id = Math.random().toString(36).slice(2);
+  root.classList.add('cal');
+  root.innerHTML = `<div class="cal-code">${(o.blocks || []).map(([ind, cat, t]) => `<div class="nb ${cat}" style="margin-left:${ind * 1.2}rem">${t}</div>`).join('')}</div>
+    <div class="cal-right">
+      <div class="cal-bar"><button class="btn primary cal-go">▶ Programm starten</button><button class="btn cal-stop">■ Stopp</button>${o.label ? `<span class="tag info">${o.label}</span>` : ''}</div>
+      <div class="cal-board">
+        <svg viewBox="0 0 260 230" class="cal-svg">
+          <path class="cal-pcb" d="M130 8 L170 40 L236 40 L236 112 L252 160 L200 222 L60 222 L8 160 L24 112 L24 40 L90 40 Z"/>
+          ${[[130, 28, '+'], [36, 58, '0'], [224, 58, '1'], [36, 172, '2'], [224, 172, '3'], [130, 208, '−']].map(([x, y, t]) => `<g class="cal-pin" data-pin="${t}"><circle cx="${x}" cy="${y}" r="14"/><text x="${x}" y="${y + 5}" text-anchor="middle">${t}</text></g>`).join('')}
+          <g class="cal-mx">${[...Array(25)].map((_, i) => `<rect class="cal-led" data-i="${i}" x="${85 + (i % 5) * 19}" y="${70 + Math.floor(i / 5) * 19}" width="13" height="13" rx="2"/>`).join('')}</g>
+          <g class="cal-btn" data-b="A"><circle cx="55" cy="118" r="16"/><text x="55" y="124" text-anchor="middle">A</text></g>
+          <g class="cal-btn" data-b="B"><circle cx="205" cy="118" r="16"/><text x="205" y="124" text-anchor="middle">B</text></g>
+          <circle class="cal-rgb" cx="130" cy="185" r="9"/><text x="150" y="189" class="cal-lbl">RGB</text>
+          <text x="96" y="58" class="cal-lbl">5×5-LED-Matrix</text>
+        </svg>
+        <p class="cal-note mono" aria-live="polite"></p>
+      </div>
+      <div class="cal-sens">
+        ${[['licht', '☀ Licht', 0, 100, '%'], ['temp', '🌡 Temperatur', -10, 40, '°C'], ['laut', '🎤 Lautstärke', 0, 100, '%']].filter(s => !o.only || o.only.includes(s[0])).map(([k, n, a, b, u]) => `<label class="slider-row">${n} <input type="range" min="${a}" max="${b}" value="${sens[k]}" data-s="${k}"><output class="mono">${sens[k]} ${u}</output></label>`).join('')}
+        <div class="controls" style="margin:.2rem 0 0"><button class="btn cal-shake">📳 Schütteln</button><button class="btn cal-ab">A+B</button></div>
+      </div>
+      <div class="cal-vars mono"></div>
+    </div>`;
+  const leds = $$('.cal-led', root), note = $('.cal-note', root);
+  let grid = Array(25).fill(0), run = 0, flags = {}, held = {}, inbox = [], shake = false, vars = {}, audio = null;
+  const draw = () => leds.forEach((l, i) => l.classList.toggle('on', !!grid[i]));
+  const rows = r => { grid = r.flatMap(v => [16, 8, 4, 2, 1].map(b => v & b ? 1 : 0)); draw(); };
+  const sleep = ms => new Promise(r => setTimeout(r, RM.matches ? Math.min(ms, 40) : ms));
+  CAL_RADIO[ch] = CAL_RADIO[ch] || {}; CAL_RADIO[ch][id] = m => { inbox.push(m); };
+  const api = {
+    get running() { return api._id === run; }, _id: 0,
+    show: async t => { const s = String(t).toUpperCase(); note.textContent = '▸ ' + t; for (const chr of s) { if (!api.running) return; rows(CAL_FONT[chr] || CAL_FONT['?']); await sleep(420); rows([0, 0, 0, 0, 0]); await sleep(60); } },
+    image: n => { rows(Array.isArray(n) ? n.map(r => typeof r === 'string' ? parseInt(r.replace(/[^01]/g, ''), 2) : r) : CAL_IMG[n] || CAL_IMG.KREUZ); note.textContent = '▸ Bild ' + (Array.isArray(n) ? '' : n); },
+    clear: () => { grid = Array(25).fill(0); draw(); },
+    plot: (x, y, on = 1) => { if (x >= 0 && x < 5 && y >= 0 && y < 5) { grid[y * 5 + x] = on ? 1 : 0; draw(); } },
+    rgb: c => { $('.cal-rgb', root).style.fill = c || ''; $('.cal-rgb', root).classList.toggle('on', !!c); },
+    tone: async (hz = 440, ms = 300) => { try { audio = audio || new (window.AudioContext || window.webkitAudioContext)(); const g = audio.createGain(), osc = audio.createOscillator(); osc.frequency.value = hz; osc.connect(g); g.connect(audio.destination); g.gain.setValueAtTime(.12, audio.currentTime); g.gain.exponentialRampToValueAtTime(.001, audio.currentTime + ms / 1000); osc.start(); osc.stop(audio.currentTime + ms / 1000); } catch (e) {} note.textContent = `♪ ${hz} Hz`; await sleep(ms); },
+    wait: ms => sleep(ms),
+    sensor: k => sens[k],
+    pressed: b => { const v = !!flags[b]; flags[b] = false; return v; },
+    held: b => !!held[b],
+    pin: n => { const v = !!flags['P' + n]; flags['P' + n] = false; return v; },
+    shaken: () => { const v = shake; shake = false; return v; },
+    set: (k, v) => { vars[k] = v; $('.cal-vars', root).innerHTML = Object.entries(vars).map(([a, b]) => `<span class="scr-mon">${a} <b>${b}</b></span>`).join(' '); },
+    send: m => { Object.entries(CAL_RADIO[ch]).forEach(([k, f]) => { if (k !== id) f(m); }); note.textContent = `📡 gesendet: ${m}`; },
+    receive: () => inbox.length ? inbox.shift() : null,
+    log: t => note.textContent = t
+  };
+  const press = (b, down) => { if (down) { flags[b] = true; held[b] = true; } else held[b] = false; $$(`.cal-btn[data-b="${b}"]`, root).forEach(x => x.classList.toggle('down', down)); };
+  root.addEventListener('pointerdown', e => { const b = e.target.closest('.cal-btn'); if (b) press(b.dataset.b, true); const p = e.target.closest('.cal-pin'); if (p) { flags['P' + p.dataset.pin] = true; p.classList.add('down'); setTimeout(() => p.classList.remove('down'), 250); } });
+  root.addEventListener('pointerup', () => { press('A', false); press('B', false); });
+  $('.cal-ab', root).onclick = () => { flags.AB = true; flags.A = flags.B = false; };
+  $('.cal-shake', root).onclick = () => { shake = true; $('.cal-board', root).classList.remove('shake'); void root.offsetWidth; $('.cal-board', root).classList.add('shake'); };
+  root.addEventListener('input', e => { const k = e.target.dataset.s; if (!k) return; sens[k] = +e.target.value; e.target.nextElementSibling.textContent = `${sens[k]} ${k === 'temp' ? '°C' : '%'}`; });
+  $('.cal-go', root).onclick = async () => {
+    api._id = ++run; grid = Array(25).fill(0); draw(); api.rgb(null); flags = {}; inbox = []; vars = {}; $('.cal-vars', root).innerHTML = ''; note.textContent = 'Programm läuft …';
+    try { await o.run(api); } catch (err) { note.textContent = 'Fehler: ' + err.message; }
+    if (api.running) note.textContent = note.textContent.startsWith('▸') || note.textContent.startsWith('📡') ? note.textContent : 'Programm beendet.';
+  };
+  $('.cal-stop', root).onclick = () => { run++; note.textContent = 'Gestoppt.'; };
+  return api;
+}

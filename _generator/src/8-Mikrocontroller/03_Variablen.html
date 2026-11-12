@@ -1,0 +1,107 @@
+<!--
+title: Mit Variablen arbeiten
+short: Variablen
+time: 2 Unterrichtsstunden
+q: Wie kann der Calliope zählen und sich Werte merken?
+facts: Variable in NEPO: Name, Typ (Zahl, Zeichenkette, Farbe, logischer Wert) und Anfangswert | Variablenblöcke: setze, ändere, Wert verwenden | Projekt Torzähler mit Taste A/B und Zurücksetzen | Projekt Farbmischer: RGB-Werte in Variablen
+inter: Variablentypen zuordnen · Torzähler im Simulator · Farbmischer mit drei Variablen · Programm vorhersagen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Einen Mikrocontroller programmieren</p>
+      <h1>Mit Variablen arbeiten<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Beim Fußballspiel werden Tore gezählt. Früher mit einem Handzähler, heute kann das der Calliope: Er merkt sich die Anzahl in einer <b>Variablen</b>.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wie funktioniert ein Handzähler, wie ihn Einlasskontrollen benutzen?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie kann der Calliope zählen und sich Werte merken?</p></div>
+      <div class="controls"><button class="btn primary" data-go="typen">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="typen" data-label="Variablen" data-yr="Erarbeitung" data-title="Variablen in NEPO" data-sub="Name, Typ, Wert">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Variablen in NEPO</p>
+      <h2>Name, Typ und Wert</h2>
+      <ul class="facts">
+        <li>Eine Variable ist ein <b>Platzhalter</b> – wie in der Mathematik. Ihr Wert kann sich während des Programms ändern.</li>
+        <li>Mit dem <b>+</b> im Startblock wird eine neue Variable angelegt. Man legt <b>Namen</b>, <b>Typ</b> und <b>Anfangswert</b> fest.</li>
+        <li>Im Menü <b>Variablen</b> gibt es für jede Variable eigene Blöcke zum Setzen und Verwenden.</li>
+      </ul>
+    </div>
+    <div><h3>Welcher Typ passt?</h3><div id="sort-typ"></div></div>
+  </div>
+</section>
+
+<section class="station" id="tore" data-label="Torzähler" data-yr="Erarbeitung" data-title="Ein Torzähler" data-sub="Zählen auf Knopfdruck">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Projekt: Torzähler</p>
+    <h2>Tore zählen auf Knopfdruck</h2>
+    <p class="lead">Taste A zählt die Tore von Team A, Taste B die von Team B. Berührt man Pin 1, wird alles auf den Anfangswert 0 zurückgesetzt.</p>
+  </div>
+  <div id="cal-t"></div>
+</section>
+
+<section class="station" id="farbe" data-label="Farbmischer" data-yr="Vertiefung" data-title="Ein Farbmischer" data-sub="RGB in Variablen">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Projekt: Farbmischer</p>
+    <h2>Farben mischen mit drei Variablen</h2>
+    <p class="lead">Rot, Grün und Blau werden in drei Variablen gespeichert und starten bei 255 (weiß). Taste A verringert Rot um 51, Taste B verringert Grün, Pin 0 verringert Blau. Unter 0 springt der Wert zurück auf 255.</p>
+  </div>
+  <div id="cal-f"></div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Vorhersagen" data-yr="M1" data-title="Was zeigt der Calliope?" data-sub="Programme lesen">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Was zeigt der Calliope?</h2>
+    <p class="lead">Lies das Programm genau und gib an, welche Zahl am Ende angezeigt wird.</p>
+  </div>
+  <div id="m1-ts"></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Variablen</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Mit Variablen arbeiten</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step>Eine <b>Variable</b> ist ein Platzhalter mit <b>Namen</b>, <b>Typ</b> und <b>Wert</b>. Der Wert kann sich während des Programms ändern.</li>
+        <li data-step>Typen in NEPO: <b>Zahl</b>, <b>Zeichenkette</b> (Text), <b>logischer Wert</b> (wahr/falsch), <b>Farbe</b>.</li>
+        <li data-step>Zum <b>Zählen</b> wird eine Variable auf einen Startwert gesetzt und dann immer wieder um 1 erhöht („ändere … um 1“).</li>
+        <li data-step>Variablen können Farbwerte (RGB 0–255), Messwerte oder Spielstände speichern.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Schreibe das Programm für den Torzähler als Struktogramm auf.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Variablen</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+sorter($('#sort-typ'), [{id: 'z', name: 'Zahl'}, {id: 't', name: 'Zeichenkette'}, {id: 'l', name: 'logischer Wert'}, {id: 'f', name: 'Farbe'}], [
+  {t: 'Anzahl der Tore', c: 'z'}, {t: 'gemessene Temperatur', c: 'z'}, {t: 'Name des Spielers', c: 't'}, {t: 'Nachricht „Hallo“', c: 't'}, {t: 'Spiel läuft? (wahr/falsch)', c: 'l'}, {t: 'Taste gedrückt? (wahr/falsch)', c: 'l'}, {t: 'Farbe der RGB-LED', c: 'f'}
+]);
+calliope($('#cal-t'), {blocks: [[0, 'st', '+ Programm starten · Variablen: <i>ToreA = 0</i>, <i>ToreB = 0</i>'], [1, 'ko', 'wiederhole unendlich oft'], [2, 'ko', 'wenn Taste <i>A</i> gedrückt?'], [3, 'va', 'ändere ToreA um <i>1</i>'], [3, 'ak', 'zeige Text <i>ToreA : ToreB</i>'], [2, 'ko', 'wenn Taste <i>B</i> gedrückt?'], [3, 'va', 'ändere ToreB um <i>1</i>'], [3, 'ak', 'zeige Text <i>ToreA : ToreB</i>'], [2, 'ko', 'wenn Pin <i>1</i> berührt?'], [3, 'va', 'setze ToreA auf <i>0</i>, ToreB auf <i>0</i>'], [3, 'ak', 'zeige Bild <i>HAKEN</i>']],
+  run: async c => { let a = 0, b = 0; c.set('ToreA', a); c.set('ToreB', b); c.log('Taste A / B: Tor · Pin 1: zurücksetzen'); while (c.running) { if (c.pressed('A')) { a++; c.set('ToreA', a); await c.show(`${a}:${b}`); } if (c.pressed('B')) { b++; c.set('ToreB', b); await c.show(`${a}:${b}`); } if (c.pin(1)) { a = b = 0; c.set('ToreA', 0); c.set('ToreB', 0); c.image('HAKEN'); } await c.wait(40); } }, only: []});
+calliope($('#cal-f'), {blocks: [[0, 'st', '+ Programm starten · <i>Rot = 255</i>, <i>Grün = 255</i>, <i>Blau = 255</i>'], [1, 'ko', 'wiederhole unendlich oft'], [2, 'ak', 'schalte LED an Farbe <span class="nb ma" style="display:inline">RGB(Rot, Grün, Blau)</span>'], [2, 'ko', 'wenn Taste <i>A</i> gedrückt?'], [3, 'va', 'ändere Rot um <i>−51</i>'], [2, 'ko', 'wenn Taste <i>B</i> gedrückt?'], [3, 'va', 'ändere Grün um <i>−51</i>'], [2, 'ko', 'wenn Pin <i>0</i> berührt?'], [3, 'va', 'ändere Blau um <i>−51</i>'], [2, 'ko', 'wenn Wert &lt; 0 → setze auf <i>255</i>']],
+  run: async c => { const v = {Rot: 255, Grün: 255, Blau: 255}; const show = () => { Object.entries(v).forEach(([k, x]) => c.set(k, x)); c.rgb(`rgb(${v.Rot},${v.Grün},${v.Blau})`); }; show(); c.log('A: Rot · B: Grün · Pin 0: Blau'); while (c.running) { const dec = k => { v[k] -= 51; if (v[k] < 0) v[k] = 255; show(); }; if (c.pressed('A')) dec('Rot'); if (c.pressed('B')) dec('Grün'); if (c.pin(0)) dec('Blau'); await c.wait(40); } }, only: []});
+taskSet($('#m1-ts'), () => {
+  const s = randInt(0, 5), a = randInt(2, 5), b = randInt(1, 3), n = randInt(2, 4);
+  return {key: `${s}${a}${b}${n}`, tag: 'Vorhersage', q: `<span class="mono" style="font-size:.9rem">setze x auf ${s}<br>wiederhole ${n} mal:<br>&nbsp;&nbsp;ändere x um ${a}<br>ändere x um −${b}<br>zeige Text x</span>`, fields: [{l: 'Anzeige', a: s + n * a - b}], hint: 'Startwert + Anzahl · Änderung − letzte Änderung.'};
+}, {n: 4});
+mcQuiz($('#quiz'), [
+  {q: 'Was hat eine Variable in NEPO?', a: ['Namen, Typ und Wert', 'nur eine Farbe', 'nur einen Namen', 'einen Pin'], ok: 0},
+  {q: 'Welcher Typ passt zu „Spiel läuft: wahr“?', a: ['logischer Wert', 'Zahl', 'Farbe', 'Zeichenkette'], ok: 0},
+  {q: 'Was macht „ändere Tore um 1“?', a: ['erhöht den Wert um 1', 'setzt den Wert auf 1', 'löscht die Variable', 'zeigt die Variable an'], ok: 0},
+  {q: 'Welche RGB-Werte ergeben Weiß?', a: ['255, 255, 255', '0, 0, 0', '255, 0, 0', '0, 255, 0'], ok: 0},
+  {q: 'Wozu dient beim Torzähler das Berühren von Pin 1?', a: ['Zurücksetzen auf 0', 'Tor für Team A', 'Ton abspielen', 'Calliope ausschalten'], ok: 0},
+  {q: 'Wo legt man in NEPO eine neue Variable an?', a: ['mit dem + im Startblock', 'im Simulator', 'mit Taste A', 'im Browserverlauf'], ok: 0}
+]);
+</script>

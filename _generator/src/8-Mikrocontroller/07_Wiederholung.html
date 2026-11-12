@@ -1,0 +1,103 @@
+<!--
+title: Wiederholung und Selbsttest
+short: Selbsttest
+time: 1 Unterrichtsstunde
+q: Was kann ich, und was sollte ich noch üben?
+facts: Zusammenfassung als Karteikarten | Trainer T1–T4: Bauteile und EVA, NEPO und Variablen, Sensoren und Aktoren, Funk | Großes Quiz und „Ich kann …“-Liste mit Links zurück in die Stunden
+inter: Karteikarten · Paare finden · Bauteile finden · Programm vorhersagen · Sensor/Aktor sortieren · Funk-Aufgabe · Quiz · Selbsteinschätzung
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Einen Mikrocontroller programmieren</p>
+      <h1>Wiederholung und Selbsttest<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Mikrocontroller, NEPO, Variablen, Sensoren, Sensor-Aktor-Systeme und Funk: Prüfe, was du sicher kannst.</p>
+      <div class="controls"><button class="btn primary" data-go="begriffe">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="begriffe" data-label="Begriffe" data-yr="Wiederholen" data-title="Zusammenfassung" data-sub="Fachbegriffe als Karteikarten">
+  <div class="section-head"><p class="eyebrow">Station 1 · Zusammenfassung</p><h2>Fachbegriffe</h2></div>
+  <div id="flip"></div>
+  <h3 class="mt">Paare finden</h3>
+  <div id="match"></div>
+</section>
+
+<section class="station" id="t1" data-label="T1 Bauteile" data-yr="Trainer" data-title="T1 Bauteile und EVA" data-sub="Calliope mini">
+  <div class="section-head"><p class="eyebrow">Station 2 · Trainer T1</p><h2>Bauteile und EVA</h2></div>
+  <div id="t1-sort"></div>
+</section>
+
+<section class="station" id="t2" data-label="T2 NEPO" data-yr="Trainer" data-title="T2 NEPO und Variablen" data-sub="Programme vorhersagen">
+  <div class="section-head"><p class="eyebrow">Station 3 · Trainer T2</p><h2>NEPO und Variablen</h2></div>
+  <div id="t2-ts"></div>
+</section>
+
+<section class="station" id="t3" data-label="T3 Sensoren" data-yr="Trainer" data-title="T3 Sensoren und Aktoren" data-sub="Systeme analysieren">
+  <div class="section-head"><p class="eyebrow">Station 4 · Trainer T3</p><h2>Sensoren und Aktoren</h2></div>
+  <div id="t3-match"></div>
+  <h3 class="mt">Nachtlicht</h3>
+  <div id="t3-ts"></div>
+</section>
+
+<section class="station" id="t4" data-label="T4 Funk" data-yr="Trainer" data-title="T4 Funk" data-sub="Nachrichten">
+  <div class="section-head"><p class="eyebrow">Station 5 · Trainer T4</p><h2>Funk</h2></div>
+  <div id="t4-tf"></div>
+</section>
+
+<section class="station" id="quiz-st" data-label="Quiz" data-yr="Testen" data-title="Großes Quiz" data-sub="10 zufällige Fragen">
+  <div class="section-head"><p class="eyebrow">Station 6 · Quiz</p><h2>Großes Quiz</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<section class="station" id="uebungen" data-label="Ich kann …">
+  <div class="section-head"><p class="eyebrow">Selbsteinschätzung</p><h2>Ich kann …</h2></div>
+  <ol id="sc"></ol>
+</section>
+
+<script>
+const BEGRIFFE = [
+  ['Mikrocontroller', 'kleiner Computer auf einem Chip'], ['LED-Matrix', '5 × 5 einzeln steuerbare LEDs'], ['Pin', 'Anschluss mit Touchfunktion'], ['NEPO', 'grafische Programmiersprache im Open Roberta Lab'],
+  ['Startblock', 'Beginn jedes NEPO-Programms'], ['Variable', 'Platzhalter mit Name, Typ und Wert'], ['logischer Wert', 'wahr oder falsch'], ['Sensor', 'misst Eigenschaften der Umgebung'],
+  ['Aktor', 'setzt Befehle um, z. B. Motor'], ['Sollwert', 'gewünschter Wert bei einer Regelung'], ['Funkkanal', 'muss bei Sender und Empfänger gleich sein'], ['Nachrichtenliste', 'codiert Nachrichten als Zahlen']
+];
+flipCards($('#flip'), BEGRIFFE);
+matcher($('#match'), shuffle(BEGRIFFE.slice()).slice(0, 7));
+sorter($('#t1-sort'), [{id: 'e', name: 'Eingabe'}, {id: 'v', name: 'Verarbeitung'}, {id: 'a', name: 'Ausgabe'}], [
+  {t: 'Taste B', c: 'e'}, {t: 'Lagesensor', c: 'e'}, {t: 'Mikrofon', c: 'e'}, {t: 'Prozessor', c: 'v'}, {t: 'RGB-LED', c: 'a'}, {t: 'Lautsprecher', c: 'a'}, {t: 'LED-Matrix', c: 'a'}
+]);
+taskSet($('#t2-ts'), () => { const s = randInt(0, 3), n = randInt(2, 5), d = randInt(1, 3); return {key: `${s}${n}${d}`, tag: 'Vorhersage', q: `<span class="mono" style="font-size:.9rem">setze Tore auf ${s}<br>Taste A wird ${n}-mal gedrückt: ändere Tore um ${d}<br>zeige Text Tore</span>`, fields: [{l: 'Anzeige', a: s + n * d}]}; }, {n: 3});
+matcher($('#t3-match'), [['Rolltreppe', 'Lichtschranke → Motor'], ['Einparkhilfe', 'Ultraschall → Lautsprecher'], ['Thermostat', 'Temperatursensor → Heizungsventil'], ['Nachtlicht', 'Lichtsensor → LED'], ['Alarmanlage', 'Lichtsensor → Ton']]);
+taskSet($('#t3-ts'), () => { const l = randInt(0, 100); return {key: 'l' + l, tag: 'Helligkeit ' + l, q: `wenn Helligkeit &lt; 30 → LED an, sonst LED aus. Helligkeit = <b>${l}</b>`, fields: [{l: 'LED (an/aus)', a: l < 30 ? 'an' : 'aus'}]}; }, {n: 3});
+trueFalse($('#t4-tf'), [
+  {t: 'Für Funk brauchen beide Calliope eine Internetverbindung.', ok: false, why: 'Sie funken direkt miteinander.'}, {t: 'Sender und Empfänger müssen denselben Kanal nutzen.', ok: true},
+  {t: 'Man kann Zahlen und Zeichenketten senden.', ok: true}, {t: 'Ohne Nachrichtenliste weiß der Empfänger, was „3“ bedeutet.', ok: false, why: 'Beide brauchen dieselbe Liste.'},
+  {t: 'Der Empfänger prüft in einer Schleife, ob eine Nachricht angekommen ist.', ok: true}
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Was ist ein Mikrocontroller?', a: ['ein Computer auf einem Chip', 'ein Lautsprecher', 'ein Kabel', 'eine App'], ok: 0},
+  {q: 'Welche Taste setzt das laufende Programm zurück?', a: ['RESET', 'A', 'B', 'Pin 0'], ok: 0},
+  {q: 'Wie viele LEDs hat die Matrix?', a: ['25', '16', '36', '9'], ok: 0},
+  {q: 'In welcher Gruppe steht „wiederhole unendlich oft“?', a: ['Kontrolle', 'Aktion', 'Sensoren', 'Variablen'], ok: 0},
+  {q: 'Welcher Typ hat eine Variable für „Name des Spielers“?', a: ['Zeichenkette', 'Zahl', 'Farbe', 'logischer Wert'], ok: 0},
+  {q: 'Welchen Wertebereich hat der Lichtsensor?', a: ['0 bis 100', '0 bis 1', '−10 bis 40', '0 bis 255'], ok: 0},
+  {q: 'Warum misst der Temperatursensor des Calliope oft etwas zu viel?', a: ['Er sitzt im Prozessor-Bauteil, das warm wird.', 'Er ist kaputt.', 'Er misst Licht.', 'Er misst in Fahrenheit.'], ok: 0},
+  {q: 'Was ist ein Aktor?', a: ['ein Bauteil, das etwas bewirkt, z. B. Motor', 'ein Messfühler', 'ein Programm', 'eine Variable'], ok: 0},
+  {q: 'Was vergleicht ein Regelkreis?', a: ['Ist-Wert und Sollwert', 'Text und Bild', 'Taste A und B', 'Sender und Empfänger'], ok: 0},
+  {q: 'Was braucht man für Funkkommunikation mit dem Calliope?', a: ['zwei Calliope mit gleichem Kanal', 'WLAN', 'ein USB-Kabel zwischen beiden', 'eine Cloud'], ok: 0},
+  {q: 'Was zeigt „zeige Bild HERZ“?', a: ['ein Herz auf der LED-Matrix', 'eine rote RGB-LED', 'einen Ton', 'nichts'], ok: 0}
+], {pick: 10});
+selfCheck($('#sc'), [
+  {t: 'Ich kann erklären, was ein Mikrocontroller ist.', href: '01_Mikrocontroller.html#alltag'},
+  {t: 'Ich kann die Bauteile des Calliope benennen und dem EVA-Prinzip zuordnen.', href: '01_Mikrocontroller.html#bauteile'},
+  {t: 'Ich kenne die Blockgruppen in NEPO.', href: '02_NEPO.html#lab'},
+  {t: 'Ich kann Text, Bilder, Farben und Töne ausgeben.', href: '02_NEPO.html#aktion'},
+  {t: 'Ich kann Variablen anlegen und zum Zählen nutzen.', href: '03_Variablen.html#tore'},
+  {t: 'Ich kann Sensorwerte in Bedingungen nutzen.', href: '04_Sensoren.html#licht'},
+  {t: 'Ich kann Sensor-Aktor-Systeme beschreiben.', href: '05_Sensor_Aktor.html#prinzip'},
+  {t: 'Ich kann einen Regelkreis mit Soll- und Ist-Wert erklären.', href: '05_Sensor_Aktor.html#regel'},
+  {t: 'Ich kann Nachrichten per Funk senden und empfangen.', href: '06_Funk.html#funk'}
+]);
+</script>

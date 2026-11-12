@@ -1,0 +1,129 @@
+<!--
+title: Mit dem Calliope kommunizieren
+short: Funk
+time: 2 Unterrichtsstunden
+q: Wie können mehrere Calliope mini per Funk Nachrichten austauschen?
+facts: Funkmodul: Daten zwischen Mikrocontrollern übertragen | Sender und Empfänger müssen denselben Kanal (Gruppe) nutzen | Blöcke „sende Nachricht“ und „empfange Nachricht“: Zahl, logischer Wert oder Zeichenkette | Codierte Nachrichten mit Nachrichtenliste | Projekt: Alarmanlage mit Sender und Empfänger
+inter: Zwei Calliope im Simulator: Sender und Empfänger · Nachrichtenliste codieren · Abstimmungsgerät · Funk-Alarmanlage planen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Einen Mikrocontroller programmieren</p>
+      <h1>Kommunizieren per Funk<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">„Gehen wir später zusammen shoppen?“ – Nachrichten kann man nicht nur mit dem Smartphone verschicken. Der Calliope mini hat ein <b>Funkmodul</b> und kann mit anderen Calliope mini Daten austauschen.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wie könnten zwei Calliope ohne Kabel und ohne Internet miteinander „sprechen“?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie können mehrere Calliope mini per Funk Nachrichten austauschen?</p></div>
+      <div class="controls"><button class="btn primary" data-go="funk">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="funk" data-label="Senden & Empfangen" data-yr="Erarbeitung" data-title="Senden und Empfangen" data-sub="Zwei Calliope">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Kommunikation über Funk</p>
+    <h2>Sender und Empfänger</h2>
+    <p class="lead">Für die Kommunikation braucht man zwei Calliope: einen <b>Sender</b> und einen <b>Empfänger</b>. Beide müssen denselben <b>Kanal</b> (Gruppe) eingestellt haben. Starte beide Programme und drücke beim Sender Taste A oder B.</p>
+  </div>
+  <div class="cols-2">
+    <div id="cal-s"></div>
+    <div id="cal-e"></div>
+  </div>
+</section>
+
+<section class="station" id="liste" data-label="Nachrichtenliste" data-yr="Erarbeitung" data-title="Codierte Nachrichten" data-sub="Zahlen statt Text">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Codierte Nachrichten</p>
+      <h2>Eine Nachrichtenliste</h2>
+      <ul class="facts">
+        <li>Man kann ganze Zeichenketten senden – oft ist es aber praktischer, nur <b>Zahlen</b> zu schicken, die für eine Nachricht stehen.</li>
+        <li>Sender und Empfänger nutzen dieselbe <b>Nachrichtenliste</b> als Code. Mit Taste A wird die Nachrichtennummer erhöht, mit Taste B gesendet.</li>
+        <li>Wer die Liste nicht kennt, versteht die Zahlen nicht.</li>
+      </ul>
+      <ol class="msg-list" id="ml"></ol>
+    </div>
+    <div class="cols-2" style="gap:.6rem">
+      <div id="cal-l1"></div>
+      <div id="cal-l2"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Abstimmung" data-yr="M1" data-title="Ein Abstimmungsgerät" data-sub="Viele Sender, ein Empfänger">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Material M1</p>
+    <h2>Abstimmen in der Klasse</h2>
+    <p class="lead">Jede Gruppe hat einen Calliope und stimmt mit A (ja) oder B (nein) ab. Ein Empfänger-Calliope zählt die Stimmen und zeigt das Ergebnis. Probiere es mit den zwei Sendern aus.</p>
+  </div>
+  <div class="cols-3 vote">
+    <div id="cal-v1"></div>
+    <div id="cal-v2"></div>
+    <div id="cal-vr"></div>
+  </div>
+</section>
+
+<section class="station" id="projekt" data-label="Projekt" data-yr="Projekt" data-title="Funk-Alarmanlage" data-sub="Planen">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Projekt</p>
+    <h2>Eine Alarmanlage mit Fernmeldung</h2>
+    <p class="lead">Kira möchte über das Öffnen ihrer Schatztruhe informiert werden, auch wenn sie nicht im Raum ist. Ein Calliope in der Truhe ist der Sender, einer bei Kira der Empfänger. Ordne die Blöcke den beiden Geräten zu.</p>
+  </div>
+  <div id="sort-proj"></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Funk</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Mit dem Calliope kommunizieren</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step>Der Calliope besitzt ein <b>Funkmodul</b>. Damit können Daten zwischen mehreren Mikrocontrollern übertragen werden.</li>
+        <li data-step>Sender und Empfänger müssen denselben <b>Kanal</b> (Gruppe) eingestellt haben.</li>
+        <li data-step>Blöcke: „<b>sende Nachricht</b>“ und „<b>empfange Nachricht</b>“. Der Typ ist eine Zahl, ein logischer Wert oder eine Zeichenkette.</li>
+        <li data-step>Mit einer <b>Nachrichtenliste</b> können Nachrichten als Zahlen codiert werden. Der Empfänger prüft wiederholt, ob eine Nachricht angekommen ist.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne das Struktogramm für den Empfänger der Funk-Alarmanlage.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Funk</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+calliope($('#cal-s'), {label: 'Sender · Kanal 1', channel: 'k1', blocks: [[0, 'st', '+ Programm starten · Funkkanal <i>1</i>'], [1, 'ko', 'wiederhole unendlich oft'], [2, 'ko', 'wenn Taste <i>A</i> gedrückt?'], [3, 'na', 'sende Nachricht <i>„HI“</i>'], [2, 'ko', 'wenn Taste <i>B</i> gedrückt?'], [3, 'na', 'sende Nachricht <i>„OK“</i>']],
+  run: async c => { c.log('Taste A oder B drücken'); while (c.running) { if (c.pressed('A')) { c.send('HI'); c.image('PFEIL_HOCH'); } if (c.pressed('B')) { c.send('OK'); c.image('PFEIL_HOCH'); } await c.wait(40); } }, only: []});
+calliope($('#cal-e'), {label: 'Empfänger · Kanal 1', channel: 'k1', blocks: [[0, 'st', '+ Programm starten · Funkkanal <i>1</i>'], [1, 'ko', 'wiederhole unendlich oft'], [2, 'va', 'setze N auf <span class="nb na" style="display:inline">empfange Nachricht</span>'], [2, 'ko', 'wenn N ≠ <i>leer</i>'], [3, 'ak', 'zeige Text <i>N</i>'], [3, 'ak', 'spiele Ton <i>660 Hz</i>']],
+  run: async c => { c.log('Warte auf Nachrichten …'); while (c.running) { const n = c.receive(); if (n) { c.set('N', n); c.tone(660, 120); await c.show(n); } await c.wait(40); } }, only: []});
+
+const ML = ['Gehen wir später zusammen shoppen?', 'Direkt nach der Schule?', 'Ja!', 'Nein, keine Zeit.', 'Treffen am Eingang.'];
+$('#ml').innerHTML = ML.map(m => `<li>${m}</li>`).join('');
+calliope($('#cal-l1'), {label: 'Lena', channel: 'k2', blocks: [[0, 'st', '+ Start · <i>Nr = 1</i>'], [1, 'ko', 'wiederhole unendlich oft'], [2, 'ko', 'wenn A → ändere Nr um 1 (nach 5 wieder 1), zeige Nr'], [2, 'ko', 'wenn B → <span class="nb na" style="display:inline">sende Nachricht Nr</span>'], [2, 'ko', 'wenn Nachricht empfangen → zeige Zahl']],
+  run: async c => { let nr = 1; c.set('Nr', nr); c.image(CAL_FONT['1']); while (c.running) { if (c.pressed('A')) { nr = nr % 5 + 1; c.set('Nr', nr); c.image(CAL_FONT[String(nr)]); } if (c.pressed('B')) c.send(String(nr)); const m = c.receive(); if (m) { c.tone(660, 100); c.log(`📩 ${m}: ${ML[+m - 1]}`); c.image(CAL_FONT[m]); } await c.wait(40); } }, only: []});
+calliope($('#cal-l2'), {label: 'Tom', channel: 'k2', blocks: [[0, 'st', 'gleiches Programm wie Lena']],
+  run: async c => { let nr = 1; c.set('Nr', nr); c.image(CAL_FONT['1']); while (c.running) { if (c.pressed('A')) { nr = nr % 5 + 1; c.set('Nr', nr); c.image(CAL_FONT[String(nr)]); } if (c.pressed('B')) c.send(String(nr)); const m = c.receive(); if (m) { c.tone(660, 100); c.log(`📩 ${m}: ${ML[+m - 1]}`); c.image(CAL_FONT[m]); } await c.wait(40); } }, only: []});
+
+const voter = (el, name) => calliope(el, {label: name, channel: 'vote', blocks: [[0, 'st', '+ Start'], [1, 'ko', 'wenn A → sende <i>1</i> (ja), Bild HAKEN'], [1, 'ko', 'wenn B → sende <i>0</i> (nein), Bild KREUZ']],
+  run: async c => { while (c.running) { if (c.pressed('A')) { c.send('1'); c.image('HAKEN'); } if (c.pressed('B')) { c.send('0'); c.image('KREUZ'); } await c.wait(40); } }, only: []});
+voter($('#cal-v1'), 'Gruppe 1'); voter($('#cal-v2'), 'Gruppe 2');
+calliope($('#cal-vr'), {label: 'Auszählung', channel: 'vote', blocks: [[0, 'st', '+ Start · <i>Ja = 0</i>, <i>Nein = 0</i>'], [1, 'ko', 'wenn Nachricht = 1 → ändere Ja um 1'], [1, 'ko', 'wenn Nachricht = 0 → ändere Nein um 1'], [1, 'ko', 'wenn Taste A → zeige Ja : Nein']],
+  run: async c => { let j = 0, n = 0; c.set('Ja', 0); c.set('Nein', 0); while (c.running) { const m = c.receive(); if (m === '1') { j++; c.set('Ja', j); } if (m === '0') { n++; c.set('Nein', n); } if (c.pressed('A')) await c.show(`${j}:${n}`); await c.wait(40); } }, only: []});
+
+sorter($('#sort-proj'), [{id: 's', name: 'Sender (in der Truhe)'}, {id: 'e', name: 'Empfänger (bei Kira)'}], [
+  {t: 'misst die Helligkeit', c: 's'}, {t: 'wenn Helligkeit > 20: sende „OFFEN“', c: 's'}, {t: 'liegt im Dunkeln', c: 's'},
+  {t: 'prüft wiederholt: Nachricht empfangen?', c: 'e'}, {t: 'spielt Alarmton und zeigt GLOCKE', c: 'e'}, {t: 'Kira kann den Alarm mit Taste B quittieren', c: 'e'}
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Was braucht der Calliope für Funk?', a: ['ein Funkmodul', 'ein USB-Kabel', 'Internet', 'einen Lautsprecher'], ok: 0},
+  {q: 'Was müssen Sender und Empfänger gemeinsam haben?', a: ['denselben Kanal', 'dieselbe Farbe', 'dieselbe Temperatur', 'nichts'], ok: 0},
+  {q: 'Welche Typen kann eine Funknachricht haben?', a: ['Zahl, logischer Wert, Zeichenkette', 'nur Bilder', 'nur Töne', 'nur Farben'], ok: 0},
+  {q: 'Wozu dient eine Nachrichtenliste?', a: ['Nachrichten als Zahlen zu codieren', 'den Akku zu laden', 'Sensoren zu messen', 'Musik zu speichern'], ok: 0},
+  {q: 'Was macht der Empfänger in der Schleife?', a: ['prüft wiederholt, ob eine Nachricht angekommen ist', 'sendet ständig', 'misst die Temperatur', 'schaltet sich aus'], ok: 0},
+  {q: 'Warum versteht ein Dritter die codierten Zahlen nicht?', a: ['Er kennt die Nachrichtenliste nicht.', 'Funk ist unsichtbar.', 'Zahlen kann man nicht senden.', 'Er hat keinen Lautsprecher.'], ok: 0}
+]);
+</script>
