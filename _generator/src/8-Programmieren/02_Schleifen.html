@@ -1,0 +1,109 @@
+<!--
+title: Schleifen
+short: Schleifen
+time: 2 Unterrichtsstunden
+q: Wie wiederholt man Anweisungen in JavaScript?
+facts: for-Schleife (Zählschleife): Initialisierung, Schleifenbedingung, Zählschritt | Ablauf der for-Schleife | Muster mit Schleifen zeichnen, Zufall mit random | Verschachtelte for-Schleifen für Raster | while-Schleife mit Bedingung
+inter: Ablauf der for-Schleife Schritt für Schritt · Reihe von Kreisen · Zufallsmuster · Schachbrett mit verschachtelter Schleife · Ausgabe vorhersagen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Programmieren mit Programmiersprachen</p>
+      <h1>Schleifen<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">20 Kreise in einer Reihe? 400 Felder eines Rasters? Mit einer <b>Schleife</b> sind das nur drei Zeilen Code.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wie hieß die Zählschleife in Scratch?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie wiederholt man Anweisungen in JavaScript?</p></div>
+      <div class="controls"><button class="btn primary" data-go="for">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="for" data-label="for-Schleife" data-yr="Erarbeitung" data-title="Die for-Schleife" data-sub="Ablauf Schritt für Schritt">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Die for-Schleife</p>
+      <h2>Drei Angaben in einer Klammer</h2>
+      <ul class="facts">
+        <li>Die <b>for-Schleife</b> (Zählschleife) beginnt mit dem Schlüsselwort <code>for</code>.</li>
+        <li>In den runden Klammern stehen: <b>Initialisierung</b> der Zählvariablen, <b>Schleifenbedingung</b> und <b>Zählschritt</b>.</li>
+        <li>Die Anweisungen in <code>{ }</code> werden ausgeführt, solange die Bedingung erfüllt ist. Nach jedem Durchlauf wird die Zählvariable verändert.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div id="for-code"></div>
+      <div id="for-step"></div>
+      <p class="status" id="for-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="reihe" data-label="Muster" data-yr="Übung" data-title="Muster zeichnen" data-sub="Reihen und Zufall">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Muster mit Schleifen</p>
+    <h2>Eine Reihe von Kreisen</h2>
+    <p class="lead">Die Zählvariable <code>x</code> bestimmt die Position. Ändere Startwert, Bedingung und Schritt. Mit <code>random(a, b)</code> entstehen Zufallsmuster – probiere die Beispiele.</p>
+  </div>
+  <div id="lab1"></div>
+</section>
+
+<section class="station" id="verschachtelt" data-label="Verschachtelt" data-yr="Erarbeitung" data-title="Verschachtelte Schleifen" data-sub="Raster zeichnen">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Verschachtelte for-Schleifen</p>
+    <h2>Ein Raster aus zwei Schleifen</h2>
+    <p class="lead">Die <b>äußere</b> Schleife bestimmt die y-Koordinaten (Zeilen), die <b>innere</b> die x-Koordinaten (Spalten). Bei jedem Durchlauf der äußeren läuft die innere komplett. Mit einer Bedingung entsteht ein Schachbrett.</p>
+  </div>
+  <div id="lab2"></div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Vorhersagen" data-yr="M1" data-title="Was gibt die Schleife aus?" data-sub="Code lesen">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Was gibt die Schleife aus?</h2>
+    <p class="lead">Lies den Code und sage voraus, was in der Konsole steht. Prüfe danach im Code-Labor von Station 2.</p>
+  </div>
+  <div id="m1-ts"></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Schleifen</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Schleifen in JavaScript</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step><code>for (var i = 0; i &lt; 10; i = i + 1) { … }</code> – Initialisierung, Bedingung, Zählschritt.</li>
+        <li data-step>Ablauf: Zählvariable initialisieren → Bedingung prüfen → wenn wahr: Anweisungen ausführen → Zählschritt → wieder prüfen … bis die Bedingung falsch ist.</li>
+        <li data-step>Die Zählvariable kann im Block genutzt werden, z. B. als Koordinate: <code>Canvas.circle(x, 6, 0.4)</code>.</li>
+        <li data-step><b>Verschachtelte Schleifen</b>: äußere Schleife für die Zeilen, innere für die Spalten – so entstehen Raster.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Schreibe eine Schleife, die die Zahlen 5, 10, 15, …, 50 ausgibt.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Wie oft läuft die Schleife?</h2></div>
+  <div id="ts"></div>
+</section>
+
+<script>
+(() => {
+  const L = ['for (var i = 1; i <= 3; i = i + 1) {', '  Console.print(i);', '}'];
+  const S = [[1, 'Initialisierung: i = 1'], [1, 'Bedingung prüfen: 1 <= 3 → wahr'], [2, 'Ausgabe: 1'], [1, 'Zählschritt: i = 2 · Bedingung 2 <= 3 → wahr'], [2, 'Ausgabe: 2'], [1, 'Zählschritt: i = 3 · Bedingung 3 <= 3 → wahr'], [2, 'Ausgabe: 3'], [1, 'Zählschritt: i = 4 · Bedingung 4 <= 3 → falsch → Schleife endet']];
+  stepper($('#for-step'), S.length, k => { codeView($('#for-code'), L.join('\n'), [S[k][0]]); $('#for-st').innerHTML = S[k][1] + `<br><span class="mono">Konsole: ${S.slice(0, k + 1).filter(s => s[1].startsWith('Ausgabe')).map(s => s[1].slice(9)).join(' ')}</span>`; });
+})();
+codeLab($('#lab1'), {code: 'Canvas.init([0,20], [0,12], {background:"lightgrey"});\n\nfor (var x = 1; x < 20; x = x + 2) {\n  Canvas.circle(x, 6, 0.8, {fill:"blue"});\n  Console.print(x);\n}', h: 12,
+  examples: {'Größer werdend': 'Canvas.init([0,20], [0,12]);\nfor (var i = 1; i <= 9; i = i + 1) {\n  Canvas.circle(i * 2, 6, i * 0.2, {fill:"teal"});\n}', 'Zufallsmuster': 'Canvas.init([0,20], [0,12], {background:"black"});\nfor (var i = 0; i < 80; i = i + 1) {\n  var farbe = "rgb(" + randint(0,255) + "," + randint(0,255) + ",255)";\n  Canvas.circle(random(0,20), random(0,12), random(0.2,1.2), {fill: farbe});\n}', 'Treppe': 'Canvas.init([0,20], [0,12]);\nfor (var i = 0; i < 10; i = i + 1) {\n  Canvas.rect(i * 2 + 1, i + 0.5, 2, 1, {fill:"orange"});\n}'}});
+codeLab($('#lab2'), {code: 'Canvas.init([0,8], [0,8]);\n\nfor (var y = 0; y < 8; y = y + 1) {        // äußere Schleife: Zeilen\n  for (var x = 0; x < 8; x = x + 1) {      // innere Schleife: Spalten\n    if ((x + y) % 2 == 0) {\n      Canvas.rect(x + 0.5, y + 0.5, 1, 1, {fill:"black"});\n    }\n  }\n}', h: 12, console: false,
+  examples: {'Punktraster': 'Canvas.init([0,20], [0,12]);\nfor (var y = 1; y < 12; y = y + 1) {\n  for (var x = 1; x < 20; x = x + 1) {\n    Canvas.circle(x, y, 0.3, {fill:"rgb(" + x*12 + ",100," + y*20 + ")"});\n  }\n}', 'Gedrehte Quadrate': 'Canvas.init([0,20], [0,12]);\nfor (var y = 1; y < 12; y = y + 2) {\n  for (var x = 1; x < 20; x = x + 2) {\n    Canvas.rect(x, y, 1.4, 1.4, {fill:"purple", rotate: random(0, 90)});\n  }\n}'}});
+taskSet($('#m1-ts'), () => {
+  const a = randInt(0, 4), b = a + randInt(3, 6), s = pick([1, 2]); const out = []; for (let i = a; i < b; i += s) out.push(i);
+  return {key: `${a}${b}${s}`, tag: 'Ausgabe', q: `<span class="mono" style="font-size:.9rem">for (var i = ${a}; i &lt; ${b}; i = i + ${s}) {<br>&nbsp;&nbsp;Console.print(i);<br>}</span>`, fields: [{l: 'Ausgabe (mit Leerzeichen)', a: [out.join(' '), out.join(','), out.join(', ')], wide: true}], hint: 'Bedingung „kleiner als“: Der Endwert selbst wird nicht ausgegeben.'};
+}, {n: 3});
+taskSet($('#ts'), () => {
+  const a = randInt(0, 5), b = randInt(8, 20), s = pick([1, 2, 3]); let n = 0; for (let i = a; i < b; i += s) n++;
+  return {key: `${a}${b}${s}`, tag: 'Durchläufe', q: `<span class="mono" style="font-size:.9rem">for (var i = ${a}; i &lt; ${b}; i = i + ${s})</span>`, fields: [{l: 'Durchläufe', a: n}]};
+}, {n: 4});
+</script>

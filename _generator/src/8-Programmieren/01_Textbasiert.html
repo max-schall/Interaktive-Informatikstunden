@@ -1,0 +1,133 @@
+<!--
+title: Textbasiert programmieren – die Zeichenfläche
+short: Zeichenfläche
+time: 2 Unterrichtsstunden
+q: Wie schreibt man ein Programm als Text – und wie zeichnet man damit?
+facts: Grafische und textbasierte Programmiersprachen | Quellcode, Syntax: Anweisungen enden mit Semikolon, Kommentare mit //, Zeichenketten in Anführungszeichen | JavaScript im Browser | Zeichenfläche mit Koordinatensystem: Canvas.init, circle, rect, line, text | Verpflichtende Argumente und optionale Parameter
+inter: Scratch und JavaScript vergleichen · Syntaxfehler finden · Code-Labor: Kreise, Rechtecke, Linien, Text · Koordinaten ablesen · Figur nach Skizze programmieren
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Programmieren mit Programmiersprachen</p>
+      <h1>Textbasiert programmieren<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Mit Blöcken lässt sich vieles programmieren. Profis schreiben ihre Programme aber als <b>Text</b>: Apps, Webseiten und Spiele bestehen aus Millionen Zeilen <b>Quellcode</b>. Wir starten mit <b>JavaScript</b> – der Sprache, die jeder Browser versteht.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welche Vorteile könnte Text gegenüber Blöcken haben?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie schreibt man ein Programm als Text – und wie zeichnet man damit?</p></div>
+      <div class="controls"><button class="btn primary" data-go="vergleich">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="vergleich" data-label="Text vs. Blöcke" data-yr="Einstieg" data-title="Textbasierte Programmierung" data-sub="Blöcke und Text vergleichen">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Textbasierte Programmierung</p>
+    <h2>Dasselbe Programm – zwei Sprachen</h2>
+    <p class="lead">Bei einer <b>grafischen</b> Programmiersprache (Scratch, NEPO) werden Befehle als Blöcke dargestellt. Bei einer <b>textbasierten</b> Sprache wird der Ablauf als lesbarer Text aus Zeichen, Symbolen und <b>Schlüsselwörtern</b> geschrieben: dem <b>Quellcode</b>. Ein Compiler oder eine Laufzeitumgebung (hier der Browser) macht ihn für den Computer verständlich.</p>
+  </div>
+  <div class="cols-2">
+    <div class="vis"><div class="vis-head"><h3>Scratch</h3></div><div class="sb-stack"><span class="sb hat ev">Wenn ⚑ angeklickt wird</span><span class="sb va">setze summe auf 0</span><span class="sb ct">wiederhole mit i von 1 bis 10</span><span class="sb va" style="margin-left:1.2rem">ändere summe um i</span><span class="sb lo">sage summe</span></div></div>
+    <div class="vis"><div class="vis-head"><h3>JavaScript</h3></div><div id="cv-sum"></div></div>
+  </div>
+</section>
+
+<section class="station" id="syntax" data-label="Syntax" data-yr="Erarbeitung" data-title="Regeln der Sprache" data-sub="Syntax">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Syntax</p>
+      <h2>Regeln für den Text</h2>
+      <ul class="facts">
+        <li>Jede Anweisung endet mit einem <b>Semikolon</b> <code>;</code>.</li>
+        <li>Zeilen, die mit <code>//</code> beginnen, sind <b>Kommentare</b>. Sie erklären den Code und werden nicht ausgeführt.</li>
+        <li><b>Zeichenketten</b> (Text) stehen in Anführungszeichen: <code>"Hallo"</code>.</li>
+        <li>Groß- und Kleinschreibung zählt: <code>Canvas</code> ≠ <code>canvas</code>.</li>
+        <li>Klammern kommen immer paarweise: <code>( )</code>, <code>{ }</code>, <code>[ ]</code>.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Findest du die Syntaxfehler?</h3></div>
+      <div id="err-code"></div>
+      <div id="err-tf"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="canvas" data-label="Zeichenfläche" data-yr="Erarbeitung" data-title="Die Zeichenfläche" data-sub="Canvas mit Koordinaten">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Die Canvas-Zeichenfläche</p>
+    <h2>Zeichnen mit Befehlen</h2>
+    <p class="lead"><code>Canvas.init([0,20], [0,12], {background:"lightgrey"})</code> legt eine Zeichenfläche an: x von 0 bis 20, y von 0 bis 12. Der Ursprung liegt <b>unten links</b>. <code>Canvas.circle(10, 6, 5, {fill:"blue"})</code> zeichnet einen Kreis mit Mittelpunkt (10 | 6) und Radius 5. Ändere den Code und klicke auf „Ausführen“!</p>
+  </div>
+  <div id="lab1"></div>
+</section>
+
+<section class="station" id="argumente" data-label="Argumente" data-yr="Erarbeitung" data-title="Argumente und Optionen" data-sub="Pflicht und optional">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 4 · Argumente und Optionen</p>
+      <h2>Was muss, was kann?</h2>
+      <ul class="facts">
+        <li><b>Verpflichtende Argumente</b> stehen der Reihe nach in runden Klammern: Position und Größe.</li>
+        <li><b>Optionale Parameter</b> stehen in geschweiften Klammern mit Namen und Doppelpunkt: <code>{fill:"red"}</code>. Fehlen sie, gilt ein <b>Standardwert</b> (schwarz).</li>
+        <li>Kommazahlen schreibt man mit <b>Punkt</b>: <code>2.5</code>.</li>
+        <li>Farben als Name (<code>"red"</code>, <code>"gold"</code>) oder als RGB: <code>"rgb(255,128,0)"</code>.</li>
+      </ul>
+      <div class="box"><span class="tag">Befehle</span><p class="mono" style="font-size:.82rem">Canvas.circle(x, y, r, {fill})<br>Canvas.rect(x, y, breite, höhe, {fill})<br>Canvas.line(x1, y1, x2, y2, {stroke, width})<br>Canvas.text(x, y, "Text", {fill, size})</p></div>
+    </div>
+    <div class="vis"><div class="vis-head"><h3>Beschrifte den Befehl</h3></div><div id="arg"></div></div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Figur" data-yr="M1" data-title="Eine Figur zeichnen" data-sub="Von der Skizze zum Code">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1</p>
+    <h2>Von der Skizze zum Code</h2>
+    <p class="lead">Ein Haus mit Sonne. Eine Skizze auf Karopapier hilft, die Koordinaten zu bestimmen. Die <b>Reihenfolge</b> der Befehle bestimmt, was vorne liegt. Ergänze ein Fenster, eine Tür und einen Baum!</p>
+  </div>
+  <div id="lab2"></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Textbasiert programmieren</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Textbasiert programmieren</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step>In <b>textbasierten</b> Programmiersprachen wird der <b>Quellcode</b> als Text aus Zeichen, Symbolen und Schlüsselwörtern geschrieben. JavaScript läuft in jedem Browser.</li>
+        <li data-step><b>Syntax:</b> Anweisungen enden mit <code>;</code>, Kommentare beginnen mit <code>//</code>, Zeichenketten stehen in <code>" "</code>, Klammern kommen paarweise.</li>
+        <li data-step><code>Canvas.init([0,20],[0,12])</code> erzeugt eine Zeichenfläche mit Koordinatensystem (Ursprung unten links). Befehle: circle, rect, line, text.</li>
+        <li data-step><b>Verpflichtende Argumente</b> (Position, Größe) in runden Klammern; <b>optionale Parameter</b> (Farbe) in geschweiften Klammern mit Namen.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Skizziere auf Karopapier (20 × 12 Kästchen) eine Figur aus Kreisen und Rechtecken und schreibe den Code dazu.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Textbasiert</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+codeView($('#cv-sum'), '// Summe der Zahlen 1 bis 10\nvar summe = 0;\nfor (var i = 1; i <= 10; i = i + 1) {\n  summe = summe + i;\n}\nConsole.print(summe);');
+codeView($('#err-code'), 'Canvas.init([0,20], [0,12]);\nCanvas.circle(10, 6, 5, {fill:"blue"})\ncanvas.circle(3, 3, 1);\nCanvas.text(10, 6, Hallo);\nCanvas.rect(5, 5, 2, 2, {fill:"red"};');
+trueFalse($('#err-tf'), [
+  {t: 'Zeile 2: Es fehlt das Semikolon am Ende.', ok: true}, {t: 'Zeile 3: „canvas“ muss großgeschrieben werden.', ok: true},
+  {t: 'Zeile 4: „Hallo“ muss in Anführungszeichen stehen.', ok: true}, {t: 'Zeile 5: Die runde Klammer wird nicht geschlossen.', ok: true},
+  {t: 'Zeile 1 enthält einen Fehler.', ok: false, why: 'Zeile 1 ist korrekt.'}
+]);
+codeLab($('#lab1'), {code: '// Zeichenfläche initialisieren\nCanvas.init([0,20], [0,12], {background:"lightgrey"});\n\n// Kreis zeichnen\nCanvas.circle(10, 6, 5, {fill:"blue"});\n\n// Zeichenkette darstellen\nCanvas.text(10, 6, "Hello world!", {fill:"white"});', console: false, h: 12});
+matcher($('#arg'), [['<code>10</code> (1. Argument)', 'x-Koordinate des Mittelpunkts'], ['<code>6</code> (2. Argument)', 'y-Koordinate des Mittelpunkts'], ['<code>5</code> (3. Argument)', 'Radius'], ['<code>{fill:"blue"}</code>', 'optionale Farbe'], ['<code>Canvas.circle</code>', 'Befehl zum Zeichnen eines Kreises']]);
+codeLab($('#lab2'), {code: 'Canvas.init([0,20], [0,12], {background:"skyblue"});\n\n// Wiese\nCanvas.rect(10, 1, 20, 2, {fill:"green"});\n// Sonne\nCanvas.circle(17, 10, 1.5, {fill:"gold"});\n// Haus\nCanvas.rect(7, 4, 6, 4, {fill:"white"});\n// Dach aus zwei Linien\nCanvas.line(4, 6, 7, 9, {stroke:"darkred", width:6});\nCanvas.line(7, 9, 10, 6, {stroke:"darkred", width:6});\n\n// Ergänze: Fenster, Tür, Baum …\n', console: false, h: 16,
+  examples: {'Lösungsidee': 'Canvas.init([0,20], [0,12], {background:"skyblue"});\nCanvas.rect(10, 1, 20, 2, {fill:"green"});\nCanvas.circle(17, 10, 1.5, {fill:"gold"});\nCanvas.rect(7, 4, 6, 4, {fill:"white"});\nCanvas.line(4, 6, 7, 9, {stroke:"darkred", width:6});\nCanvas.line(7, 9, 10, 6, {stroke:"darkred", width:6});\n// Fenster\nCanvas.rect(5.5, 4.8, 1.4, 1.4, {fill:"lightblue"});\n// Tür\nCanvas.rect(8.3, 3, 1.4, 2.4, {fill:"saddlebrown"});\n// Baum\nCanvas.rect(14, 3, 0.6, 2.5, {fill:"sienna"});\nCanvas.circle(14, 5.2, 1.6, {fill:"forestgreen"});'}});
+mcQuiz($('#quiz'), [
+  {q: 'Womit endet in JavaScript eine Anweisung?', a: ['mit einem Semikolon ;', 'mit einem Punkt .', 'mit einem Doppelpunkt :', 'mit nichts'], ok: 0},
+  {q: 'Wie beginnt ein Kommentar?', a: ['//', '##', '!!', '<!'], ok: 0},
+  {q: 'Wo liegt der Ursprung der Zeichenfläche?', a: ['unten links', 'oben links', 'in der Mitte', 'oben rechts'], ok: 0},
+  {q: 'Was bedeutet Canvas.circle(4, 3, 2)?', a: ['Kreis mit Mittelpunkt (4|3) und Radius 2', 'Kreis mit Radius 4', 'Rechteck 4 × 3', 'Linie von 4 nach 3'], ok: 0},
+  {q: 'Wie schreibt man zweieinhalb im Code?', a: ['2.5', '2,5', '2 1/2', 'zweieinhalb'], ok: 0},
+  {q: 'Was passiert ohne die Option {fill:…}?', a: ['Es wird der Standardwert Schwarz verwendet.', 'Nichts wird gezeichnet.', 'Es gibt einen Fehler.', 'Es wird weiß.'], ok: 0}
+]);
+</script>

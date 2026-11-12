@@ -1,0 +1,125 @@
+<!--
+title: Datenfelder und Fehlersuche
+short: Datenfelder
+time: 2 Unterrichtsstunden
+q: Wie speichert man viele Werte in einer Variablen – und wie findet man Fehler?
+facts: Datenfeld (Array) als Liste von Daten mit Index ab 0 | Zugriff A[i], Länge A.length, Anhängen A.push(…) | Datenfelder mit Schleifen verarbeiten, Diagramme zeichnen | Werte tauschen mit Hilfsvariable | Fehlersuche: syntaktische und semantische Fehler, Konsole, Haltepunkte, Debugger
+inter: Datenfeld als Schublade mit Indizes · Balkendiagramm aus einem Array · Summe und Maximum berechnen · Werte tauschen · Fehlerstrategien und fehlerhafter Code
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Programmieren mit Programmiersprachen</p>
+      <h1>Datenfelder<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Die Temperaturen einer ganzen Woche, die Punkte aller Spieler, 1000 Zufallszahlen: Dafür einzeln Variablen anzulegen wäre mühsam. Ein <b>Datenfeld</b> speichert viele Werte unter einem Namen – wie eine gut sortierte Schublade.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wie würdest du die Noten aller Schülerinnen und Schüler einer Klasse speichern?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie speichert man viele Werte in einer Variablen – und wie findet man Fehler?</p></div>
+      <div class="controls"><button class="btn primary" data-go="array">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="array" data-label="Datenfeld" data-yr="Erarbeitung" data-title="Datenfelder" data-sub="Index ab 0">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Datenfelder in JavaScript</p>
+      <h2>Viele Werte, ein Name</h2>
+      <ul class="facts">
+        <li>Ein <b>Datenfeld</b> (Array) wird mit eckigen Klammern angelegt: <code>var A = [4, 8, 15, 16];</code></li>
+        <li>Jedes Element hat einen <b>Index</b>. Achtung: Er beginnt bei <b>0</b>! <code>A[0]</code> ist 4, <code>A[3]</code> ist 16.</li>
+        <li><code>A.length</code> ist die Länge (hier 4), <code>A.push(23)</code> hängt ein Element an.</li>
+        <li><code>A[1] = 9;</code> weist einem Element einen neuen Wert zu.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Die Schublade A</h3><button class="btn" id="ar-push">A.push(random)</button></div>
+      <div class="drawer" id="ar"></div>
+      <div class="ideas-in" style="margin-top:.6rem"><span class="mono">A[</span><input class="text-in mono" id="ar-i" value="2" style="max-width:4rem" aria-label="Index"><span class="mono">]</span><button class="btn primary" id="ar-get">lesen</button></div>
+      <p class="status" id="ar-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="schleife" data-label="Mit Schleife" data-yr="Erarbeitung" data-title="Datenfelder verarbeiten" data-sub="Schleife über alle Elemente">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Datenfelder und Schleifen</p>
+    <h2>Alle Elemente durchlaufen</h2>
+    <p class="lead">Mit <code>for (var i = 0; i &lt; A.length; i = i + 1)</code> kommt man an jedes Element. So entsteht aus den Temperaturen einer Woche ein Diagramm – und Summe, Durchschnitt und Maximum lassen sich berechnen.</p>
+  </div>
+  <div id="lab1"></div>
+</section>
+
+<section class="station" id="tauschen" data-label="Tauschen" data-yr="Vertiefung" data-title="Werte tauschen" data-sub="Mit Hilfsvariable">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Werte tauschen</p>
+      <h2>Ohne Hilfsvariable geht es schief</h2>
+      <p>Ein wichtiges Konzept (z. B. beim Sortieren): die Werte zweier Elemente tauschen. Schreibt man einfach <code>A[0] = A[1]; A[1] = A[0];</code>, ist der alte Wert von A[0] verloren. Man braucht eine <b>Hilfsvariable</b> – wie beim Tauschen zweier voller Gläser ein drittes, leeres Glas.</p>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Tauschen</h3><div id="sw-seg"></div></div>
+      <div id="sw-code"></div><div id="sw-step"></div>
+      <div class="glasses" id="sw-g"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Fehlersuche" data-yr="M1" data-title="Strategien zur Fehlersuche" data-sub="Bugs finden">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Methode: Fehlersuche</p>
+    <h2>Wo steckt der Bug?</h2>
+    <p class="lead">Softwarefehler heißen <b>Bugs</b> (Käfer). <b>Syntaktische Fehler</b> verletzen die Regeln der Sprache (Klammern, Semikolons). <b>Semantische Fehler</b>: Der Code läuft, tut aber nicht, was er soll. Strategien: Fehlermeldung lesen, Werte mit <code>Console.print</code> ausgeben, Code Schritt für Schritt durchgehen, Debugger mit Haltepunkten nutzen. Dieses Programm soll die Summe des Datenfelds ausgeben – findest du die Fehler?</p>
+  </div>
+  <div id="lab2"></div>
+  <div class="task-card mt"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Lösung</h3></header><p>Welche Fehler stecken im Code?</p>
+    <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>1. <code>var summe;</code> hat keinen Startwert (<code>undefined</code>). <code>undefined + 3</code> ergibt <code>NaN</code> („keine Zahl“) – ein semantischer Fehler. Richtig: <code>var summe = 0;</code><br>2. Die Bedingung <code>i &lt;= A.length</code> läuft einen Schritt zu weit: <code>A[5]</code> gibt es nicht. Richtig: <code>i &lt; A.length</code>.</p></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Datenfelder</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Datenfelder und Fehlersuche</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step>Ein <b>Datenfeld</b> speichert eine Liste von Werten: <code>var A = [4, 8, 15];</code>. Zugriff über den <b>Index</b>, der bei <b>0</b> beginnt: <code>A[0]</code>.</li>
+        <li data-step><code>A.length</code> = Anzahl der Elemente, <code>A.push(x)</code> hängt x an. Mit einer for-Schleife von 0 bis <code>A.length − 1</code> durchläuft man alle Elemente.</li>
+        <li data-step>Zum <b>Tauschen</b> zweier Werte braucht man eine <b>Hilfsvariable</b>: <code>h = A[0]; A[0] = A[1]; A[1] = h;</code></li>
+        <li data-step>Fehlerarten: <b>syntaktisch</b> (Regeln verletzt) und <b>semantisch</b> (falsches Verhalten). Strategien: Fehlermeldung lesen, Werte ausgeben, Schritt für Schritt prüfen, Debugger.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Code</span><p>Schreibe ein Programm, das das größte Element eines Datenfelds findet.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Index und Länge</h2></div>
+  <div id="ts"></div>
+</section>
+
+<script>
+/* ================= Schublade ================= */
+(() => {
+  let A = [4, 8, 15, 16, 23];
+  const draw = hl => $('#ar').innerHTML = A.map((v, i) => `<div class="dr ${i === hl ? 'on' : ''}"><b>${v}</b><small>A[${i}]</small></div>`).join('') + `<p class="note mono" style="grid-column:1/-1">A.length = ${A.length}</p>`;
+  $('#ar-push').onclick = () => { if (A.length < 10) A.push(randInt(1, 50)); draw(A.length - 1); $('#ar-st').innerHTML = `Angehängt: <b>${A[A.length - 1]}</b> an Index ${A.length - 1}`; };
+  $('#ar-get').onclick = () => { const i = parseInt($('#ar-i').value); draw(i); $('#ar-st').innerHTML = i >= 0 && i < A.length ? `A[${i}] = <b>${A[i]}</b>` : `<b class="bad">A[${i}] = undefined</b> – diesen Index gibt es nicht (0 bis ${A.length - 1}).`; };
+  draw(-1); $('#ar-st').textContent = 'Lies ein Element oder hänge eines an.';
+})();
+codeLab($('#lab1'), {code: 'var T = [12, 15, 14, 18, 21, 19, 16];   // Temperaturen Mo–So\nCanvas.init([-1, T.length], [0, 25]);\n\nvar summe = 0;\nvar max = T[0];\nfor (var i = 0; i < T.length; i = i + 1) {\n  Canvas.rect(i, T[i] / 2, 0.7, T[i], {fill:"tomato"});\n  Canvas.text(i, T[i] + 1, T[i], {size: 14});\n  summe = summe + T[i];\n  if (T[i] > max) {\n    max = T[i];\n  }\n}\nConsole.print("Summe:", summe);\nConsole.print("Durchschnitt:", summe / T.length);\nConsole.print("Maximum:", max);', h: 16,
+  examples: {'Zufallswerte mit push': 'var A = [];\nfor (var i = 0; i < 12; i = i + 1) {\n  A.push(random(-1, 1));\n}\nCanvas.init([-1, A.length], [-1.2, 1.2]);\nCanvas.line(-1, 0, A.length, 0, {stroke:"grey"});\nfor (var i = 0; i < A.length; i = i + 1) {\n  Canvas.circle(i, A[i], 0.25, {fill:"blue"});\n}\nConsole.print(A);'}});
+(() => {
+  const V = {gut: ['var h = A[0];', 'A[0] = A[1];', 'A[1] = h;'], schlecht: ['A[0] = A[1];', 'A[1] = A[0];']};
+  let mode = 'gut', st;
+  const states = m => { let a = [7, 3], h = '–'; const out = [[...a, h]]; if (m === 'gut') { h = a[0]; out.push([...a, h]); a[0] = a[1]; out.push([...a, h]); a[1] = h; out.push([...a, h]); } else { a[0] = a[1]; out.push([...a, h]); a[1] = a[0]; out.push([...a, h]); } return out; };
+  const init = m => { mode = m; const S = states(m); const el = $('#sw-step'), f = el.cloneNode(false); el.replaceWith(f);
+    stepper(f, S.length, k => { codeView($('#sw-code'), 'var A = [7, 3];\n' + V[m].join('\n'), k ? [k + 1] : []); const [a0, a1, h] = S[k]; $('#sw-g').innerHTML = `<div class="gl"><b>${a0}</b><small>A[0]</small></div><div class="gl"><b>${a1}</b><small>A[1]</small></div>${m === 'gut' ? `<div class="gl h"><b>${h}</b><small>h</small></div>` : ''}<p class="status" style="grid-column:1/-1">${k === S.length - 1 ? (m === 'gut' ? '<b class="good">Getauscht: [3, 7]</b>' : '<b class="bad">Ergebnis [3, 3] – die 7 ist verloren!</b>') : 'Schritt für Schritt …'}</p>`; }); };
+  seg($('#sw-seg'), [['gut', 'mit Hilfsvariable'], ['schlecht', 'ohne']], init, 'gut');
+})();
+codeLab($('#lab2'), {code: '// Soll die Summe aller Elemente ausgeben\nvar A = [3, 9, 4, 7, 2];\nvar summe;\n\nfor (var i = 0; i <= A.length; i = i + 1) {\n  summe = summe + A[i];\n  Console.print("i =", i, " A[i] =", A[i], " summe =", summe);\n}\nConsole.print("Ergebnis:", summe);', h: 11});
+taskSet($('#ts'), () => {
+  const A = [...Array(randInt(4, 7))].map(() => randInt(1, 30)), i = randInt(0, A.length - 1);
+  return {key: A.join() + i, tag: 'Datenfeld', q: `<span class="mono" style="font-size:.95rem">var A = [${A.join(', ')}];</span>`, fields: [{l: `A[${i}]`, a: A[i]}, {l: 'A.length', a: A.length}], hint: 'Der Index beginnt bei 0.'};
+}, {n: 4});
+</script>

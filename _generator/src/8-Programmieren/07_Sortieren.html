@@ -1,0 +1,155 @@
+<!--
+title: Sortierverfahren
+short: Sortieren
+time: 2 Unterrichtsstunden
+q: Wie sortiert ein Computer ein Datenfeld – und welches Verfahren ist schneller?
+facts: Sortierverfahren: Algorithmus, der ein Datenfeld ordnet | Bubblesort: benachbarte Elemente vergleichen und tauschen, größte Werte „blubbern“ nach hinten | Selectionsort: das kleinste Element suchen und nach vorn tauschen | Vergleiche und Vertauschungen zählen, Aufwand wächst stark mit der Länge | Umsetzung in JavaScript mit verschachtelten Schleifen und Hilfsvariable
+inter: Karten von Hand sortieren · Bubblesort Schritt für Schritt · Selectionsort Schritt für Schritt · Vergleiche zählen bei wachsender Länge · Bubblesort im Code-Labor
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Programmieren mit Programmiersprachen</p>
+      <h1>Sortierverfahren<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Kontakte alphabetisch, Fotos nach Datum, Suchergebnisse nach Relevanz: Sortieren gehört zu den ältesten und wichtigsten Aufgaben der Informatik. Doch wie geht ein Computer dabei vor?</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wie sortierst du einen Stapel Spielkarten?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie sortiert ein Computer ein Datenfeld – und welches Verfahren ist schneller?</p></div>
+      <div class="controls"><button class="btn primary" data-go="hand">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="hand" data-label="Von Hand" data-yr="Einstieg" data-title="Von Hand sortieren" data-sub="Nur tauschen erlaubt">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Von Hand sortieren</p>
+    <h2>Tausche zwei Nachbarn</h2>
+    <p class="lead">Sortiere die Zahlen aufsteigend. Du darfst nur zwei <b>benachbarte</b> Karten tauschen: Tippe auf die Lücke zwischen ihnen. Wie viele Tauschvorgänge brauchst du?</p>
+  </div>
+  <div class="vis"><div class="cards-row" id="hd"></div><div class="controls"><button class="btn" id="hd-new">Neu mischen</button></div><p class="status" id="hd-st"></p></div>
+</section>
+
+<section class="station" id="bubble" data-label="Bubblesort" data-yr="Erarbeitung" data-title="Bubblesort" data-sub="Nachbarn vergleichen">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Bubblesort</p>
+      <h2>Große Werte steigen auf wie Blasen</h2>
+      <ul class="facts">
+        <li>Zwei <b>benachbarte</b> Elemente werden verglichen. Ist das linke größer, werden sie <b>getauscht</b>.</li>
+        <li>Nach einem Durchlauf steht das größte Element ganz rechts – es ist „aufgestiegen“ wie eine Blase.</li>
+        <li>Das wird wiederholt, bis keine Vertauschung mehr nötig ist.</li>
+        <li>Leicht zu verstehen, aber bei großen Datenfeldern langsam.</li>
+      </ul>
+    </div>
+    <div class="vis"><div class="bars" id="bs"></div><div id="bs-step"></div><p class="status" id="bs-st"></p></div>
+  </div>
+</section>
+
+<section class="station" id="selection" data-label="Selectionsort" data-yr="Erarbeitung" data-title="Selectionsort" data-sub="Das Kleinste nach vorn">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Selectionsort</p>
+      <h2>Das Kleinste nach vorn</h2>
+      <ul class="facts">
+        <li>Suche im unsortierten Teil das <b>kleinste</b> Element.</li>
+        <li>Tausche es an die erste Stelle des unsortierten Teils.</li>
+        <li>Der sortierte Teil wächst von links um ein Element. Wiederhole, bis alles sortiert ist.</li>
+        <li>Es braucht ähnlich viele Vergleiche wie Bubblesort, aber deutlich weniger Vertauschungen.</li>
+      </ul>
+    </div>
+    <div class="vis"><div class="bars" id="ss"></div><div id="ss-step"></div><p class="status" id="ss-st"></p></div>
+  </div>
+</section>
+
+<section class="station" id="aufwand" data-label="Aufwand" data-yr="Vertiefung" data-title="Wie schnell?" data-sub="Vergleiche zählen">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 4 · Aufwand</p>
+      <h2>Doppelt so lang – viermal so viel Arbeit</h2>
+      <p>Bei n Elementen braucht Bubblesort im schlimmsten Fall etwa n · n / 2 Vergleiche. Verdoppelt man die Länge, vervierfacht sich der Aufwand. Deshalb werden in der Praxis schnellere Verfahren genutzt (z. B. Quicksort, Mergesort).</p>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Messung</h3></div>
+      <label class="slider-row">Länge n <input id="af-n" type="range" min="5" max="1000" step="5" value="100"><output id="af-o" class="mono"></output></label>
+      <div class="table-wrap"><table class="cmp" id="af"></table></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Code" data-yr="M1" data-title="Bubblesort in JavaScript" data-sub="Code verstehen">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1</p>
+    <h2>Bubblesort in JavaScript</h2>
+    <p class="lead">Die Funktion bekommt ein Datenfeld A, kopiert es (damit A unverändert bleibt), sortiert die Kopie mit zwei verschachtelten Schleifen und gibt sie zurück. Getauscht wird mit der Hilfsvariablen h.</p>
+  </div>
+  <div id="lab"></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Sortieren</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Sortierverfahren</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step>Ein <b>Sortierverfahren</b> ist ein Algorithmus, der ein Datenfeld ordnet (z. B. aufsteigend).</li>
+        <li data-step><b>Bubblesort:</b> benachbarte Elemente vergleichen und tauschen, wenn das linke größer ist. Nach jedem Durchlauf steht das größte Element am Ende.</li>
+        <li data-step><b>Selectionsort:</b> das kleinste Element des unsortierten Teils suchen und an dessen Anfang tauschen.</li>
+        <li data-step>Der Aufwand wächst stark: doppelte Länge → etwa vierfache Zahl an Vergleichen. Für große Datenmengen nutzt man schnellere Verfahren.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Sortiere [5, 2, 8, 1] mit Bubblesort und schreibe das Datenfeld nach jedem Durchlauf auf.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Nach dem ersten Durchlauf</h2></div>
+  <div id="ts"></div>
+</section>
+
+<script>
+/* ================= Von Hand ================= */
+(() => {
+  let A, n;
+  const draw = () => { $('#hd').innerHTML = A.map((v, i) => `<span class="card-n">${v}</span>${i < A.length - 1 ? `<button class="swap" data-i="${i}" aria-label="tauschen">⇄</button>` : ''}`).join(''); const ok = A.every((v, i) => !i || A[i - 1] <= v); $('#hd-st').innerHTML = `Vertauschungen: <b>${n}</b>${ok ? ' – <b class="good">sortiert!</b>' : ''}`; };
+  const neu = () => { A = shuffle([3, 7, 1, 9, 4, 6, 2, 8]); n = 0; draw(); };
+  $('#hd').addEventListener('click', e => { const b = e.target.closest('.swap'); if (!b) return; const i = +b.dataset.i; [A[i], A[i + 1]] = [A[i + 1], A[i]]; n++; draw(); });
+  $('#hd-new').onclick = neu; neu();
+})();
+
+/* ================= Sortier-Visualisierung ================= */
+function sortViz(root, stRoot, stepRoot, algo) {
+  const A0 = [5, 2, 8, 1, 9, 3, 7, 4], S = [];
+  const A = A0.slice(); let cmp = 0, sw = 0;
+  S.push({a: A.slice(), hl: [], done: [], msg: 'Ausgangslage.', cmp, sw});
+  if (algo === 'bubble') {
+    for (let i = 0; i < A.length - 1; i++) { for (let j = 0; j < A.length - 1 - i; j++) { cmp++; const t = A[j] > A[j + 1]; if (t) { [A[j], A[j + 1]] = [A[j + 1], A[j]]; sw++; } S.push({a: A.slice(), hl: [j, j + 1], done: [...Array(i)].map((_, k) => A.length - 1 - k), msg: `Vergleiche ${t ? A[j + 1] : A[j]} und ${t ? A[j] : A[j + 1]}: ${t ? 'links größer → <b>tauschen</b>' : 'Reihenfolge stimmt'}`, cmp, sw}); }
+      S.push({a: A.slice(), hl: [], done: [...Array(i + 1)].map((_, k) => A.length - 1 - k), msg: `Durchlauf ${i + 1} fertig: ${A[A.length - 1 - i]} steht an der richtigen Stelle.`, cmp, sw}); }
+  } else {
+    for (let i = 0; i < A.length - 1; i++) { let m = i; for (let j = i + 1; j < A.length; j++) { cmp++; if (A[j] < A[m]) m = j; } S.push({a: A.slice(), hl: [m], done: [...Array(i)].map((_, k) => k), msg: `Kleinstes im unsortierten Teil: <b>${A[m]}</b>`, cmp, sw});
+      if (m !== i) { [A[i], A[m]] = [A[m], A[i]]; sw++; } S.push({a: A.slice(), hl: [i], done: [...Array(i + 1)].map((_, k) => k), msg: `${A[i]} an Position ${i} tauschen. Sortierter Teil wächst.`, cmp, sw}); }
+  }
+  stepper(stepRoot, S.length, k => { const s = S[k]; root.innerHTML = s.a.map((v, i) => `<div class="bar ${s.hl.includes(i) ? 'hl' : ''} ${s.done.includes(i) ? 'done' : ''}" style="--h:${v * 10}%"><span>${v}</span></div>`).join(''); stRoot.innerHTML = `${s.msg}<br><span class="mono">Vergleiche: ${s.cmp} · Vertauschungen: ${s.sw}</span>`; });
+}
+sortViz($('#bs'), $('#bs-st'), $('#bs-step'), 'bubble');
+sortViz($('#ss'), $('#ss-st'), $('#ss-step'), 'selection');
+
+/* ================= Aufwand ================= */
+(() => {
+  const upd = () => {
+    const n = +$('#af-n').value; $('#af-o').textContent = n;
+    const A = [...Array(n)].map(() => Math.random()); let c1 = 0, s1 = 0; const B = A.slice();
+    for (let i = 0; i < n - 1; i++) for (let j = 0; j < n - 1 - i; j++) { c1++; if (B[j] > B[j + 1]) { [B[j], B[j + 1]] = [B[j + 1], B[j]]; s1++; } }
+    let c2 = 0, s2 = 0; const C = A.slice(); for (let i = 0; i < n - 1; i++) { let m = i; for (let j = i + 1; j < n; j++) { c2++; if (C[j] < C[m]) m = j; } if (m !== i) { [C[i], C[m]] = [C[m], C[i]]; s2++; } }
+    $('#af').innerHTML = `<thead><tr><th>n = ${n}</th><th>Vergleiche</th><th>Vertauschungen</th></tr></thead><tbody><tr><th>Bubblesort</th><td class="mono">${c1.toLocaleString('de-DE')}</td><td class="mono">${s1.toLocaleString('de-DE')}</td></tr><tr><th>Selectionsort</th><td class="mono">${c2.toLocaleString('de-DE')}</td><td class="mono">${s2.toLocaleString('de-DE')}</td></tr></tbody>`;
+  };
+  $('#af-n').oninput = upd; upd();
+})();
+
+codeLab($('#lab'), {code: 'function bubble_sort(A) {\n  var B = [];\n  for (var k = 0; k < A.length; k = k + 1) { B.push(A[k]); }  // Kopie\n\n  for (var i = 0; i < B.length - 1; i = i + 1) {\n    for (var j = 0; j < B.length - 1 - i; j = j + 1) {\n      if (B[j] > B[j + 1]) {\n        var h = B[j];       // tauschen mit Hilfsvariable\n        B[j] = B[j + 1];\n        B[j + 1] = h;\n      }\n    }\n  }\n  return B;\n}\n\nvar A = [];\nfor (var i = 0; i < 15; i = i + 1) { A.push(randint(1, 99)); }\nvar S = bubble_sort(A);\nConsole.print("unsortiert:", A);\nConsole.print("sortiert:  ", S);\n\nCanvas.init([-1, S.length], [0, 100]);\nfor (var i = 0; i < S.length; i = i + 1) {\n  Canvas.rect(i, S[i] / 2, 0.7, S[i], {fill:"steelblue"});\n}', h: 18});
+taskSet($('#ts'), () => {
+  const A = shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]).slice(0, 5), B = A.slice();
+  for (let j = 0; j < B.length - 1; j++) if (B[j] > B[j + 1]) [B[j], B[j + 1]] = [B[j + 1], B[j]];
+  return {key: A.join(), tag: 'Bubblesort', q: `<span class="mono" style="font-size:1.1rem">[${A.join(', ')}]</span>`, fields: [{l: 'nach dem 1. Durchlauf', a: [B.join(', '), B.join(','), '[' + B.join(', ') + ']', B.join(' ')], wide: true}], hint: 'Von links nach rechts jeweils zwei Nachbarn vergleichen und tauschen. Das größte Element landet ganz rechts.'};
+}, {n: 3});
+</script>

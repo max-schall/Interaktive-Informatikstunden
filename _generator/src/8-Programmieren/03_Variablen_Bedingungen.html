@@ -1,0 +1,114 @@
+<!--
+title: Variablen und bedingte Anweisungen
+short: Variablen & if
+time: 2 Unterrichtsstunden
+q: Wie speichert ein Programm Werte und trifft Entscheidungen?
+facts: Variablen deklarieren (var), Namen, initialisieren und zuweisen | Datentypen Zahl und Zeichenkette, Rechnen mit + − * / und % | Vergleichsoperatoren &lt;, &gt;, &lt;=, &gt;=, ==, != | if und if-else, Verknüpfung mit && (und) und || (oder) | Zufallskreise einfärben
+inter: Zuweisungen nachverfolgen · Variablen im Code-Labor · Vergleiche auswerten · Zufallspunkte nach Bereichen färben · Bedingungen mit && und ||
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Programmieren mit Programmiersprachen</p>
+      <h1>Variablen und if<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Zwei Kreise mit demselben zufälligen Mittelpunkt? Dann muss sich das Programm die Koordinaten merken – in <b>Variablen</b>. Und nur rote Kreise links? Dafür braucht es <b>Bedingungen</b>.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welche Variablen und Bedingungen kennst du aus Scratch?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie speichert ein Programm Werte und trifft Entscheidungen?</p></div>
+      <div class="controls"><button class="btn primary" data-go="var">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="var" data-label="Variablen" data-yr="Erarbeitung" data-title="Variablen in JavaScript" data-sub="var, Datentypen, rechnen">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Variablen in JavaScript</p>
+      <h2>Behälter für Daten</h2>
+      <ul class="facts">
+        <li>Variablen sind wie Schubladen eines Apothekerschranks – nur mit Daten gefüllt.</li>
+        <li>Mit dem Schlüsselwort <code>var</code> wird eine Variable <b>deklariert</b> und meist gleich <b>initialisiert</b>: <code>var x = 5;</code></li>
+        <li>Der Name beginnt mit einem Buchstaben und darf Buchstaben, Ziffern und _ enthalten.</li>
+        <li>Datentypen: <b>Zahl</b> (<code>3.5</code>) und <b>Zeichenkette</b> (<code>"rot"</code>). Mit Zahlen rechnet man mit <code>+ − * /</code>; <code>%</code> liefert den Rest.</li>
+        <li><code>x = x + 1;</code> heißt: Nimm den alten Wert, addiere 1, speichere das Ergebnis wieder in x.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Zwei Kreise, ein Mittelpunkt</h3></div>
+      <div id="lab1"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="trace" data-label="Zuweisungen" data-yr="Übung" data-title="Zuweisungen verfolgen" data-sub="Werte berechnen">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Zuweisungen</p>
+    <h2>Welchen Wert hat die Variable?</h2>
+  </div>
+  <div id="ts1"></div>
+</section>
+
+<section class="station" id="if" data-label="if-else" data-yr="Erarbeitung" data-title="Bedingte Anweisungen" data-sub="if, else, &&, ||">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Bedingte Anweisungen</p>
+      <h2>if und else</h2>
+      <ul class="facts">
+        <li>Eine <b>Bedingung</b> ist ein Vergleich, der <b>wahr</b> oder <b>falsch</b> ergibt. Vergleichsoperatoren: <code>&lt; &gt; &lt;= &gt;= == !=</code>.</li>
+        <li><code>if (Bedingung) { … }</code> führt den Block nur aus, wenn die Bedingung wahr ist.</li>
+        <li><code>if … else</code> führt sonst den else-Block aus.</li>
+        <li><code>&amp;&amp;</code> (und): beide Vergleiche müssen wahr sein. <code>||</code> (oder): mindestens einer muss wahr sein.</li>
+      </ul>
+    </div>
+    <div class="vis"><div class="vis-head"><h3>Punkte färben</h3></div><div id="lab2"></div></div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Bereiche" data-yr="M1" data-title="Bereiche färben" data-sub="Bedingungen kombinieren">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Wahr oder falsch?</h2>
+    <p class="lead">Für <code>x = 4</code> und <code>y = 7</code>: Ist die Bedingung erfüllt?</p>
+  </div>
+  <div id="tf"></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Variablen und if</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Variablen und bedingte Anweisungen</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step><code>var name = wert;</code> deklariert und initialisiert eine Variable. Datentypen: Zahl, Zeichenkette.</li>
+        <li data-step>Zuweisung <code>x = x + 1;</code>: rechte Seite berechnen, Ergebnis in x speichern. <code>%</code> berechnet den Rest einer Division.</li>
+        <li data-step>Vergleichsoperatoren <code>&lt; &gt; &lt;= &gt;= == !=</code> liefern wahr oder falsch.</li>
+        <li data-step><code>if (…) { … } else { … }</code>; Verknüpfung mit <code>&amp;&amp;</code> (und) und <code>||</code> (oder).</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Code</span><p>Schreibe eine if-else-Anweisung, die „gerade“ oder „ungerade“ ausgibt (Tipp: <code>% 2</code>).</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Was wird ausgegeben?</h2></div>
+  <div id="ts"></div>
+</section>
+
+<script>
+codeLab($('#lab1'), {code: 'Canvas.init([0,20], [0,12]);\n\nvar x = random(4, 16);\nvar y = random(4, 8);\n\nCanvas.circle(x, y, 3, {fill:"orange"});\nCanvas.circle(x, y, 1.5, {fill:"red"});\nConsole.print("Mittelpunkt:", x, y);', h: 10});
+taskSet($('#ts1'), () => {
+  const a = randInt(2, 9), b = randInt(2, 6), op = pick(['+', '*', '-']);
+  const r = op === '+' ? a + b : op === '*' ? a * b : a - b;
+  return {key: `${a}${op}${b}`, tag: 'Zuweisung', q: `<span class="mono" style="font-size:.95rem">var a = ${a};<br>var b = ${b};<br>a = a ${op} b;<br>b = a + 1;</span>`, fields: [{l: 'a', a: r}, {l: 'b', a: r + 1}], hint: 'Zeile für Zeile: Bei b = a + 1 hat a schon den neuen Wert.'};
+}, {n: 4});
+codeLab($('#lab2'), {code: 'Canvas.init([0,20], [0,12]);\nCanvas.line(10, 0, 10, 12, {stroke:"grey"});\nCanvas.line(0, 6, 20, 6, {stroke:"grey"});\n\nfor (var i = 0; i < 150; i = i + 1) {\n  var x = random(0, 20);\n  var y = random(0, 12);\n  if (x < 10 && y > 6) {\n    Canvas.circle(x, y, 0.3, {fill:"red"});\n  } else {\n    Canvas.circle(x, y, 0.3, {fill:"blue"});\n  }\n}', h: 13, console: false});
+trueFalse($('#tf'), [
+  {t: '<code>x &lt; 5</code>', ok: true}, {t: '<code>y == 7</code>', ok: true}, {t: '<code>x &gt; 5 &amp;&amp; y &gt; 5</code>', ok: false, why: 'x > 5 ist falsch.'},
+  {t: '<code>x &gt; 5 || y &gt; 5</code>', ok: true, why: 'y > 5 reicht.'}, {t: '<code>x + y &gt;= 11</code>', ok: true, why: '4 + 7 = 11.'}, {t: '<code>y % 2 == 0</code>', ok: false, why: '7 ist ungerade.'}
+]);
+taskSet($('#ts'), () => {
+  const x = randInt(1, 20), t = randInt(5, 15);
+  return {key: `${x}${t}`, tag: 'if-else', q: `<span class="mono" style="font-size:.9rem">var x = ${x};<br>if (x &gt;= ${t}) {<br>&nbsp;&nbsp;Console.print("groß");<br>} else {<br>&nbsp;&nbsp;Console.print("klein");<br>}</span>`, fields: [{l: 'Ausgabe', a: x >= t ? 'groß' : 'klein'}]};
+}, {n: 4});
+</script>

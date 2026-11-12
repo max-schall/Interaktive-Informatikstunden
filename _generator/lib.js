@@ -1028,3 +1028,56 @@ function calliope(root, o = {}) {
   $('.cal-stop', root).onclick = () => { run++; note.textContent = 'Gestoppt.'; };
   return api;
 }
+
+/* ================= Code-Labor JavaScript (Klasse 8) =================
+   codeLab(root, {code, h, globals, examples: {Name: code}, console: true})
+   Im Code verfügbar: Canvas.init([xmin,xmax],[ymin,ymax],{width, background}) · Canvas.circle(x,y,r,{fill,stroke}) · Canvas.rect(x,y,b,h,{fill}) (Mittelpunkt)
+     Canvas.line(x1,y1,x2,y2,{stroke,width}) · Canvas.text(x,y,"…",{fill,size}) · Canvas.clear() · Console.print(…) · random(a,b) · randint(a,b)
+     Ereignisse: function on_frame(t) {…} (Animation) · function on_mouse_down(x,y) · function on_key_down(key) ("UP","DOWN","LEFT","RIGHT","SPACE", Buchstaben) */
+function codeLab(root, o = {}) {
+  root.classList.add('lab');
+  root.innerHTML = `<div class="lab-ed"><div class="lab-bar"><button class="btn primary lab-run">▶ Ausführen</button><button class="btn lab-stop">■ Stopp</button>${o.examples ? `<select class="lab-ex" aria-label="Beispiel"><option value="">Beispiel laden …</option>${Object.keys(o.examples).map(k => `<option>${k}</option>`).join('')}</select>` : ''}<button class="btn lab-reset" title="Ursprünglichen Code wiederherstellen">↺</button></div>
+    <textarea class="code-in lab-code" spellcheck="false" aria-label="JavaScript-Code"></textarea></div>
+    <div class="lab-out"><canvas class="lab-cv" tabindex="0"></canvas>${o.console === false ? '' : '<pre class="lab-con" aria-live="polite"></pre>'}</div>`;
+  const ta = $('.lab-code', root), cv = $('.lab-cv', root), con = $('.lab-con', root);
+  ta.value = o.code || ''; ta.style.minHeight = (o.h || 14) + 'rem';
+  ta.addEventListener('keydown', e => { if (e.key === 'Tab') { e.preventDefault(); const s = ta.selectionStart; ta.value = ta.value.slice(0, s) + '  ' + ta.value.slice(ta.selectionEnd); ta.selectionStart = ta.selectionEnd = s + 2; } });
+  let V = {x: [0, 20], y: [0, 12], bg: '#F3F4F6'}, run = 0, hooks = {};
+  const W = () => cv.width, H = () => cv.height;
+  const X = x => (x - V.x[0]) / (V.x[1] - V.x[0]) * W(), Y = y => H() - (y - V.y[0]) / (V.y[1] - V.y[0]) * H(), S = r => r / (V.x[1] - V.x[0]) * W();
+  const ctx = () => cv.getContext('2d');
+  const Canvas = {
+    init(xr = [0, 20], yr = [0, 12], opt = {}) { V = {x: xr, y: yr, bg: opt.background || '#F3F4F6'}; const w = opt.width || 480; cv.width = w; cv.height = Math.round(w * (yr[1] - yr[0]) / (xr[1] - xr[0])); Canvas.clear(); },
+    clear() { const c = ctx(); c.fillStyle = V.bg; c.fillRect(0, 0, W(), H()); },
+    circle(x, y, r, opt = {}) { const c = ctx(); c.beginPath(); c.arc(X(x), Y(y), Math.abs(S(r)), 0, 2 * Math.PI); c.fillStyle = opt.fill || 'black'; if (opt.fill !== 'none') c.fill(); if (opt.stroke) { c.strokeStyle = opt.stroke; c.lineWidth = opt.width || 2; c.stroke(); } },
+    rect(x, y, b, h, opt = {}) { const c = ctx(); c.save(); c.translate(X(x), Y(y)); if (opt.rotate) c.rotate(-opt.rotate * Math.PI / 180); c.fillStyle = opt.fill || 'black'; c.fillRect(-S(b) / 2, -S(h) / 2, S(b), S(h)); if (opt.stroke) { c.strokeStyle = opt.stroke; c.lineWidth = opt.width || 2; c.strokeRect(-S(b) / 2, -S(h) / 2, S(b), S(h)); } c.restore(); },
+    line(x1, y1, x2, y2, opt = {}) { const c = ctx(); c.beginPath(); c.moveTo(X(x1), Y(y1)); c.lineTo(X(x2), Y(y2)); c.strokeStyle = opt.stroke || opt.fill || 'black'; c.lineWidth = opt.width || 2; c.lineCap = 'round'; c.stroke(); },
+    text(x, y, t, opt = {}) { const c = ctx(); c.fillStyle = opt.fill || 'black'; c.font = `600 ${opt.size || 18}px "Atkinson Hyperlegible", sans-serif`; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText(String(t), X(x), Y(y)); },
+    pixel(x, y, rgb) { const c = ctx(), x0 = Math.floor(X(x)), x1 = Math.ceil(X(x + 1)), y0 = Math.floor(Y(y + 1)), y1 = Math.ceil(Y(y)); c.fillStyle = `rgb(${rgb.join(',')})`; c.fillRect(x0, y0, x1 - x0, y1 - y0); },
+    get width() { return V.x[1] - V.x[0]; }, get height() { return V.y[1] - V.y[0]; }, _cv: cv
+  };
+  const fmt = v => Array.isArray(v) ? '[' + v.map(fmt).join(', ') + ']' : typeof v === 'number' ? String(Math.round(v * 1000) / 1000) : typeof v === 'object' && v ? JSON.stringify(v) : String(v);
+  const Console = {print: (...a) => { if (con) { con.textContent += a.map(fmt).join(' ') + '\n'; con.scrollTop = con.scrollHeight; } }, clear: () => { if (con) con.textContent = ''; }};
+  const random = (a = 0, b = 1) => a + Math.random() * (b - a), randint = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
+  function exec() {
+    const id = ++run; hooks = {}; Console.clear(); Canvas.init();
+    const g = Object.assign({Canvas, Console, random, randint}, o.globals ? o.globals(Canvas) : {});
+    try {
+      const f = new Function(...Object.keys(g), `"use strict";\n${ta.value}\n;return {on_frame: typeof on_frame === 'function' ? on_frame : null, on_mouse_down: typeof on_mouse_down === 'function' ? on_mouse_down : null, on_key_down: typeof on_key_down === 'function' ? on_key_down : null};`);
+      hooks = f(...Object.values(g)) || {};
+    } catch (err) {
+      const m = String(err.stack || '').match(/<anonymous>:(\d+):\d+/); const line = m ? +m[1] - 3 : null;
+      Console.print('⚠ Fehler' + (line > 0 ? ` in Zeile ${line}` : '') + ': ' + err.message); return;
+    }
+    if (hooks.on_frame) { const t0 = performance.now(); const step = now => { if (id !== run) return; try { if (cv.offsetParent) hooks.on_frame((now - t0) / 1000); } catch (err) { Console.print('⚠ Fehler: ' + err.message); run++; return; } requestAnimationFrame(step); }; requestAnimationFrame(step); }
+  }
+  const pos = e => { const r = cv.getBoundingClientRect(); return [V.x[0] + (e.clientX - r.left) / r.width * (V.x[1] - V.x[0]), V.y[0] + (1 - (e.clientY - r.top) / r.height) * (V.y[1] - V.y[0])]; };
+  cv.addEventListener('pointerdown', e => { cv.focus(); if (hooks.on_mouse_down) try { hooks.on_mouse_down(...pos(e)); } catch (err) { Console.print('⚠ Fehler: ' + err.message); } });
+  cv.addEventListener('keydown', e => { if (!hooks.on_key_down) return; const k = {ArrowUp: 'UP', ArrowDown: 'DOWN', ArrowLeft: 'LEFT', ArrowRight: 'RIGHT', ' ': 'SPACE'}[e.key] || e.key.toUpperCase(); e.preventDefault(); e.stopPropagation(); try { hooks.on_key_down(k); } catch (err) { Console.print('⚠ Fehler: ' + err.message); } });
+  $('.lab-run', root).onclick = exec;
+  $('.lab-stop', root).onclick = () => { run++; Console.print('■ gestoppt'); };
+  $('.lab-reset', root).onclick = () => { ta.value = o.code || ''; exec(); };
+  const ex = $('.lab-ex', root); if (ex) ex.onchange = () => { if (ex.value) { ta.value = o.examples[ex.value]; exec(); } ex.value = ''; };
+  onShow.push(() => {}); requestAnimationFrame(exec);
+  return {exec, set code(c) { ta.value = c; }, get code() { return ta.value; }, Canvas};
+}

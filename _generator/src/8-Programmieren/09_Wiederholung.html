@@ -1,0 +1,105 @@
+<!--
+title: Wiederholung und Selbsttest
+short: Selbsttest
+time: 1–2 Unterrichtsstunden
+q: Was kann ich, und was sollte ich noch üben?
+facts: Zusammenfassung als Karteikarten | Trainer T1–T4: Syntax und Zeichenfläche, Schleifen und Bedingungen, Datenfelder und Funktionen, Sortieren und Bildverarbeitung | Abschlussprojekt im Code-Labor | Großes Quiz und „Ich kann …“-Liste
+inter: Karteikarten · Paare finden · Code-Ausgaben vorhersagen · Fehler finden · Projekt im Code-Labor · Quiz · Selbsteinschätzung
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Programmieren mit Programmiersprachen</p>
+      <h1>Wiederholung und Selbsttest<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Syntax, Zeichenfläche, Schleifen, Variablen, Bedingungen, Datenfelder, Funktionen, Animationen, Sortieren und Bildverarbeitung: Prüfe, was du sicher kannst.</p>
+      <div class="controls"><button class="btn primary" data-go="begriffe">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="begriffe" data-label="Begriffe" data-yr="Wiederholen" data-title="Zusammenfassung" data-sub="Fachbegriffe als Karteikarten">
+  <div class="section-head"><p class="eyebrow">Station 1 · Zusammenfassung</p><h2>Fachbegriffe</h2></div>
+  <div id="flip"></div>
+  <h3 class="mt">Paare finden</h3>
+  <div id="match"></div>
+</section>
+
+<section class="station" id="t1" data-label="T1 Syntax" data-yr="Trainer" data-title="T1 Syntax und Zeichenfläche" data-sub="Fehler finden">
+  <div class="section-head"><p class="eyebrow">Station 2 · Trainer T1</p><h2>Syntax und Zeichenfläche</h2></div>
+  <div id="t1-tf"></div>
+</section>
+
+<section class="station" id="t2" data-label="T2 Schleifen" data-yr="Trainer" data-title="T2 Schleifen und Bedingungen" data-sub="Ausgaben vorhersagen">
+  <div class="section-head"><p class="eyebrow">Station 3 · Trainer T2</p><h2>Schleifen und Bedingungen</h2></div>
+  <div id="t2-ts"></div>
+</section>
+
+<section class="station" id="t3" data-label="T3 Arrays" data-yr="Trainer" data-title="T3 Datenfelder und Funktionen" data-sub="Rückgabewerte">
+  <div class="section-head"><p class="eyebrow">Station 4 · Trainer T3</p><h2>Datenfelder und Funktionen</h2></div>
+  <div id="t3-ts"></div>
+</section>
+
+<section class="station" id="t4" data-label="T4 Projekt" data-yr="Trainer" data-title="T4 Abschlussprojekt" data-sub="Alles zusammen">
+  <div class="section-head"><p class="eyebrow">Station 5 · Trainer T4</p><h2>Abschlussprojekt: Sternenhimmel</h2><p class="lead">Datenfeld, Schleife, Funktion, Animation und Interaktion in einem Programm. Erweitere es: Sternschnuppen, ein Mond, Sterne per Klick hinzufügen …</p></div>
+  <div id="lab"></div>
+</section>
+
+<section class="station" id="quiz-st" data-label="Quiz" data-yr="Testen" data-title="Großes Quiz" data-sub="10 zufällige Fragen">
+  <div class="section-head"><p class="eyebrow">Station 6 · Quiz</p><h2>Großes Quiz</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<section class="station" id="uebungen" data-label="Ich kann …">
+  <div class="section-head"><p class="eyebrow">Selbsteinschätzung</p><h2>Ich kann …</h2></div>
+  <ol id="sc"></ol>
+</section>
+
+<script>
+const BEGRIFFE = [
+  ['Quellcode', 'Programm als lesbarer Text'], ['Syntax', 'Regeln einer Programmiersprache'], ['Kommentar', 'beginnt mit //, wird nicht ausgeführt'], ['optionaler Parameter', 'in geschweiften Klammern, z. B. {fill:"red"}'],
+  ['for-Schleife', 'Initialisierung; Bedingung; Zählschritt'], ['Variable', 'mit var deklarierter Behälter'], ['&&', 'und-Verknüpfung'], ['Datenfeld', 'Liste von Werten mit Index ab 0'],
+  ['Funktion', 'gibt mit return einen Wert zurück'], ['Rekursion', 'Befehl ruft sich selbst auf'], ['Bubblesort', 'Nachbarn vergleichen und tauschen'], ['RGB', 'additive Farbmischung, 0–255']
+];
+flipCards($('#flip'), BEGRIFFE);
+matcher($('#match'), shuffle(BEGRIFFE.slice()).slice(0, 7));
+trueFalse($('#t1-tf'), [
+  {t: '<code>Canvas.circle(5, 5, 2)</code> zeichnet einen schwarzen Kreis mit Radius 2.', ok: true}, {t: '<code>Canvas.text(3, 3, Hallo);</code> ist korrekt.', ok: false, why: 'Hallo muss in Anführungszeichen stehen.'},
+  {t: 'Der Ursprung der Zeichenfläche liegt oben links.', ok: false, why: 'Unten links.'}, {t: '<code>// Haus</code> ist ein Kommentar.', ok: true}, {t: '<code>canvas.rect(…)</code> funktioniert genauso wie <code>Canvas.rect(…)</code>.', ok: false, why: 'Groß-/Kleinschreibung zählt.'}
+]);
+taskSet($('#t2-ts'), i => {
+  if (i % 2) { const a = randInt(1, 3), b = randInt(5, 9); let s = 0; for (let k = a; k <= b; k++) s += k; return {key: `s${a}${b}`, tag: 'Schleife', q: `<span class="mono" style="font-size:.9rem">var s = 0;<br>for (var k = ${a}; k &lt;= ${b}; k = k + 1) { s = s + k; }<br>Console.print(s);</span>`, fields: [{l: 'Ausgabe', a: s}]}; }
+  const x = randInt(1, 20); return {key: 'x' + x, tag: 'Bedingung', q: `<span class="mono" style="font-size:.9rem">var x = ${x};<br>if (x % 2 == 0 &amp;&amp; x &gt; 10) { Console.print("A"); }<br>else { Console.print("B"); }</span>`, fields: [{l: 'Ausgabe', a: x % 2 === 0 && x > 10 ? 'A' : 'B'}]};
+}, {n: 4});
+taskSet($('#t3-ts'), i => {
+  const A = [...Array(5)].map(() => randInt(1, 20));
+  if (i % 2) return {key: A.join(), tag: 'Datenfeld', q: `<span class="mono" style="font-size:.9rem">var A = [${A.join(', ')}];<br>Console.print(A[1] + A[A.length - 1]);</span>`, fields: [{l: 'Ausgabe', a: A[1] + A[4]}]};
+  const n = randInt(2, 6); return {key: 'f' + n, tag: 'Funktion', q: `<span class="mono" style="font-size:.9rem">function q(n) { return n * n + 1; }<br>Console.print(q(${n}) + q(1));</span>`, fields: [{l: 'Ausgabe', a: n * n + 1 + 2}]};
+}, {n: 4});
+codeLab($('#lab'), {code: 'Canvas.init([0,20], [0,12], {background:"#0b1033"});\n\nvar sterne = [];\nfor (var i = 0; i < 60; i = i + 1) {\n  sterne.push([random(0,20), random(0,12), random(0.05, 0.15)]);\n}\n\nfunction stern(x, y, r, t) {\n  var hell = 150 + Math.round(100 * Math.sin(t * 3 + x));\n  Canvas.circle(x, y, r, {fill: "rgb(" + hell + "," + hell + ",255)"});\n}\n\nfunction on_frame(t) {\n  Canvas.clear();\n  for (var i = 0; i < sterne.length; i = i + 1) {\n    stern(sterne[i][0], sterne[i][1], sterne[i][2], t);\n  }\n}\n\nfunction on_mouse_down(x, y) {\n  sterne.push([x, y, 0.25]);\n}', h: 18, console: false});
+mcQuiz($('#quiz'), [
+  {q: 'Wie beginnt eine Anweisung, die eine Variable anlegt?', a: ['var', 'for', 'if', 'function'], ok: 0},
+  {q: 'Was gibt Console.print(7 % 3) aus?', a: ['1', '2', '3', '7'], ok: 0},
+  {q: 'Wie oft läuft for (var i = 0; i < 5; i = i + 1)?', a: ['5-mal', '4-mal', '6-mal', 'endlos'], ok: 0},
+  {q: 'Welcher Index hat das erste Element eines Datenfelds?', a: ['0', '1', '-1', 'A'], ok: 0},
+  {q: 'Was macht A.push(4)?', a: ['hängt 4 an das Datenfeld an', 'löscht 4', 'sortiert A', 'gibt A[4] aus'], ok: 0},
+  {q: 'Wozu braucht man beim Tauschen eine Hilfsvariable?', a: ['damit kein Wert verloren geht', 'damit es schneller geht', 'für die Farbe', 'gar nicht'], ok: 0},
+  {q: 'Was gibt eine Funktion mit return zurück?', a: ['einen Wert', 'nichts', 'eine Zeichenfläche', 'eine Taste'], ok: 0},
+  {q: 'Wie lässt man einen Ball am Rand abprallen?', a: ['Geschwindigkeit umkehren', 'Radius verdoppeln', 'Zeichenfläche löschen', 'Farbe ändern'], ok: 0},
+  {q: 'Was steht nach dem ersten Bubblesort-Durchlauf ganz rechts?', a: ['das größte Element', 'das kleinste Element', 'das erste Element', 'ein zufälliges Element'], ok: 0},
+  {q: 'Welche Farbe ist rgb(0, 0, 0)?', a: ['Schwarz', 'Weiß', 'Grau', 'Blau'], ok: 0},
+  {q: 'Wie berechnet man den Grauwert eines Pixels?', a: ['(r + g + b) / 3', 'r · g · b', '255 − r', 'r + g + b'], ok: 0}
+], {pick: 10});
+selfCheck($('#sc'), [
+  {t: 'Ich kann grafische und textbasierte Programmiersprachen unterscheiden und die Syntax-Regeln anwenden.', href: '01_Textbasiert.html#syntax'},
+  {t: 'Ich kann mit Canvas-Befehlen Figuren zeichnen.', href: '01_Textbasiert.html#m1'},
+  {t: 'Ich kann for-Schleifen und verschachtelte Schleifen schreiben.', href: '02_Schleifen.html#verschachtelt'},
+  {t: 'Ich kann Variablen nutzen und Bedingungen mit if, else, && und || formulieren.', href: '03_Variablen_Bedingungen.html#if'},
+  {t: 'Ich kann Datenfelder anlegen und mit Schleifen verarbeiten.', href: '04_Datenfelder.html#schleife'},
+  {t: 'Ich kenne Strategien zur Fehlersuche.', href: '04_Datenfelder.html#m1'},
+  {t: 'Ich kann eigene Befehle und Funktionen definieren und testen.', href: '05_Funktionen.html#m1'},
+  {t: 'Ich kann Animationen und Interaktionen programmieren.', href: '06_Animationen.html#animation'},
+  {t: 'Ich kann Bubblesort und Selectionsort erklären.', href: '07_Sortieren.html#bubble'},
+  {t: 'Ich kann Bildfilter mit RGB-Werten programmieren.', href: '08_Bildverarbeitung.html#m1'}
+]);
+</script>

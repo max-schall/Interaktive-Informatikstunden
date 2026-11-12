@@ -1,0 +1,90 @@
+<!--
+title: Befehle und Funktionen
+short: Funktionen
+time: 2 Unterrichtsstunden
+q: Wie definiert man eigene Befehle und Funktionen?
+facts: Eigene Befehle mit function, Name und Argumenten | Funktionen mit Rückgabewert (return) | Math-Paket: Math.sqrt, Math.sin, Math.round | Unterprogramme: Anforderungen definieren, implementieren, testen | Historische Softwarefehler (Ariane 5)
+inter: Smiley-Befehl mit Argumenten · Funktion mit Rückgabewert testen · Anforderungen und Testfälle · Funktionswerte vorhersagen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Programmieren mit Programmiersprachen</p>
+      <h1>Befehle und Funktionen<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Zehn Smileys zeichnen, jedes aus fünf Formen? Statt 50 Zeilen schreibt man einmal einen eigenen Befehl <code>smiley(x, y)</code> – und ruft ihn zehnmal auf.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Kennst du aus Scratch „Meine Blöcke“?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie definiert man eigene Befehle und Funktionen?</p></div>
+      <div class="controls"><button class="btn primary" data-go="befehl">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="befehl" data-label="Befehle" data-yr="Erarbeitung" data-title="Eigene Befehle" data-sub="function mit Argumenten">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Befehle definieren</p>
+    <h2>Ein Befehl für Smileys</h2>
+    <p class="lead">Mit dem Schlüsselwort <code>function</code>, einem eindeutigen <b>Namen</b> und <b>Argumenten</b> in runden Klammern wird ein Befehl definiert. Die Anweisungen stehen in geschweiften Klammern. Aufgerufen wird er mit Namen und Werten: <code>smiley(5, 6)</code>. Ergänze ein drittes Argument für die Farbe!</p>
+  </div>
+  <div id="lab1"></div>
+</section>
+
+<section class="station" id="funktion" data-label="Rückgabewert" data-yr="Erarbeitung" data-title="Funktionen" data-sub="return">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Funktionen</p>
+      <h2>Funktionen geben etwas zurück</h2>
+      <ul class="facts">
+        <li>Eine <b>Funktion</b> berechnet einen Wert in Abhängigkeit von Argumenten und gibt ihn mit <code>return</code> zurück.</li>
+        <li>Der Rückgabewert kann in einer Variablen gespeichert oder direkt weiterverwendet werden: <code>var a = flaeche(3, 4);</code></li>
+        <li>JavaScript bringt das <b>Math-Paket</b> mit: <code>Math.sqrt</code> (Wurzel), <code>Math.round</code> (runden), <code>Math.sin</code>, <code>Math.PI</code> …</li>
+      </ul>
+    </div>
+    <div class="vis"><div id="lab2"></div></div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Anforderungen" data-yr="M1" data-title="Unterprogramme und Anforderungen" data-sub="Spezifizieren und testen">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Methode: Unterprogramme und Anforderungen</p>
+    <h2>Erst beschreiben, dann programmieren, dann testen</h2>
+    <p class="lead">Befehle und Funktionen sind <b>Unterprogramme</b>. Zuerst werden <b>Anforderungen</b> festgelegt: Was soll es leisten, welche Argumente gibt es, was kommt heraus? Dann wird implementiert – und mit Testfällen geprüft. Ein Beispiel, wie wichtig das ist: 1996 zerstörte sich die Rakete <b>Ariane 5</b> 40 Sekunden nach dem Start, weil ein Unterprogramm aus der Vorgängerrakete nicht ausreichend für die neuen Werte getestet worden war.</p>
+  </div>
+  <div class="model">
+    <div class="box"><span class="tag info">Anforderung</span><p>Die Funktion <code>note(punkte)</code> bekommt die Punkte einer Arbeit (0–50) und gibt die Note zurück: ab 45 → 1, ab 38 → 2, ab 30 → 3, ab 22 → 4, ab 12 → 5, sonst 6. Bei Werten außerhalb 0–50 gibt sie −1 zurück.</p><p><b>Aufgabe:</b> Führe die Tests aus. Ein Test schlägt fehl – finde den Fehler in der Implementierung und behebe ihn.</p><div class="controls"><button class="btn" data-reveal="m1s" aria-expanded="false">Lösung</button></div><p class="solution" id="m1s" hidden>Grenzfall 12 Punkte: Die Bedingung <code>punkte &gt; 12</code> muss <code>punkte &gt;= 12</code> heißen, denn laut Anforderung gibt es ab 12 Punkten die Note 5.</p></div>
+    <div id="lab3"></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Funktionen</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Befehle und Funktionen</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step>Ein <b>Befehl</b> wird mit <code>function name(arg1, arg2) { … }</code> definiert und mit <code>name(wert1, wert2);</code> aufgerufen.</li>
+        <li data-step>Eine <b>Funktion</b> gibt mit <code>return</code> einen Wert zurück, der weiterverwendet werden kann.</li>
+        <li data-step>Befehle und Funktionen vermeiden Wiederholungen und machen Programme übersichtlich. Das Math-Paket liefert fertige Funktionen.</li>
+        <li data-step><b>Unterprogramme</b> entwickelt man in drei Schritten: Anforderungen definieren → implementieren → testen.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Code</span><p>Schreibe eine Funktion <code>umfang(r)</code>, die den Kreisumfang 2 · π · r zurückgibt.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Rückgabewerte vorhersagen</h2></div>
+  <div id="ts"></div>
+</section>
+
+<script>
+codeLab($('#lab1'), {code: 'Canvas.init([0,20], [0,12]);\n\nfunction smiley(x, y) {\n  Canvas.circle(x, y, 2, {fill:"gold"});          // Gesicht\n  Canvas.circle(x - 0.7, y + 0.6, 0.3);           // linkes Auge\n  Canvas.circle(x + 0.7, y + 0.6, 0.3);           // rechtes Auge\n  Canvas.line(x - 0.9, y - 0.6, x, y - 1.1);       // Mund links\n  Canvas.line(x, y - 1.1, x + 0.9, y - 0.6);       // Mund rechts\n}\n\nsmiley(5, 6);\nsmiley(15, 6);', h: 14, console: false,
+  examples: {'Mit Farbe (Lösung)': 'Canvas.init([0,20], [0,12]);\n\nfunction smiley(x, y, farbe) {\n  Canvas.circle(x, y, 2, {fill: farbe});\n  Canvas.circle(x - 0.7, y + 0.6, 0.3);\n  Canvas.circle(x + 0.7, y + 0.6, 0.3);\n  Canvas.line(x - 0.9, y - 0.6, x, y - 1.1);\n  Canvas.line(x, y - 1.1, x + 0.9, y - 0.6);\n}\n\nsmiley(4, 8, "gold");\nsmiley(10, 4, "orange");\nsmiley(16, 8, "lightgreen");', 'Viele Smileys': 'Canvas.init([0,20], [0,12]);\nfunction smiley(x, y, farbe) {\n  Canvas.circle(x, y, 1, {fill: farbe});\n  Canvas.circle(x - 0.35, y + 0.3, 0.15);\n  Canvas.circle(x + 0.35, y + 0.3, 0.15);\n  Canvas.line(x - 0.45, y - 0.3, x + 0.45, y - 0.3);\n}\nfor (var i = 0; i < 25; i = i + 1) {\n  smiley(random(1,19), random(1,11), "rgb(255," + randint(150,255) + ",0)");\n}'}});
+codeLab($('#lab2'), {code: 'function flaeche(a, b) {\n  return a * b;\n}\n\nfunction hypotenuse(a, b) {\n  return Math.sqrt(a * a + b * b);\n}\n\nConsole.print("Fläche 3 x 4:", flaeche(3, 4));\nConsole.print("Hypotenuse:", hypotenuse(3, 4));\nConsole.print("Pi gerundet:", Math.round(Math.PI * 100) / 100);', h: 11});
+codeLab($('#lab3'), {code: 'function note(punkte) {\n  if (punkte < 0 || punkte > 50) { return -1; }\n  if (punkte >= 45) { return 1; }\n  if (punkte >= 38) { return 2; }\n  if (punkte >= 30) { return 3; }\n  if (punkte >= 22) { return 4; }\n  if (punkte > 12) { return 5; }\n  return 6;\n}\n\n// Testfälle: Normalfälle, Grenzfälle, ungültige Werte\nvar tests = [[50, 1], [45, 1], [44, 2], [30, 3], [12, 5], [11, 6], [0, 6], [-3, -1], [51, -1]];\nfor (var i = 0; i < tests.length; i = i + 1) {\n  var ist = note(tests[i][0]);\n  Console.print(tests[i][0], "Punkte → erwartet", tests[i][1], " ist", ist, ist == tests[i][1] ? "✔" : "✘ FEHLER");\n}', h: 15});
+taskSet($('#ts'), () => {
+  const a = randInt(2, 9), b = randInt(2, 9), f = pick([['a * b + 1', (x, y) => x * y + 1], ['a + 2 * b', (x, y) => x + 2 * y], ['(a + b) * 2', (x, y) => (x + y) * 2], ['a * a - b', (x, y) => x * x - y]]);
+  return {key: `${a}${b}${f[0]}`, tag: 'Funktion', q: `<span class="mono" style="font-size:.9rem">function f(a, b) {<br>&nbsp;&nbsp;return ${f[0]};<br>}<br>Console.print(f(${a}, ${b}));</span>`, fields: [{l: 'Ausgabe', a: f[1](a, b)}]};
+}, {n: 4});
+</script>

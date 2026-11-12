@@ -1,0 +1,93 @@
+<!--
+title: Animationen, Interaktion und Rekursion
+short: Animationen
+time: 2–3 Unterrichtsstunden
+q: Wie bringt man Bewegung und Interaktion in ein Programm?
+facts: Animation: Bild für Bild neu zeichnen (on_frame) | Position und Geschwindigkeit in Variablen, Abprallen am Rand | Interaktion mit Maus (on_mouse_down) und Tastatur (on_key_down: UP, DOWN, LEFT, RIGHT, SPACE) | Rekursion: ein Befehl ruft sich selbst auf, Abbruchbedingung, Rekursionstiefe | Iteration und Rekursion
+inter: Hüpfender Ball · Klick-Kunst mit der Maus · Figur mit Pfeiltasten steuern · rekursive Ringe und Baum mit veränderbarer Tiefe
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Programmieren mit Programmiersprachen</p>
+      <h1>Animationen und Interaktion<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Ein Film besteht aus vielen Einzelbildern. Zeichnet ein Programm 60-mal pro Sekunde ein leicht verändertes Bild, entsteht Bewegung. Reagiert es auf Maus und Tastatur, wird daraus ein Spiel.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wie entsteht in einem Daumenkino die Bewegung?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie bringt man Bewegung und Interaktion in ein Programm?</p></div>
+      <div class="controls"><button class="btn primary" data-go="animation">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="animation" data-label="Animation" data-yr="Erarbeitung" data-title="Animationen" data-sub="Bild für Bild">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Animationen</p>
+    <h2>Ein hüpfender Ball</h2>
+    <p class="lead">Der Befehl <code>on_frame(t)</code> wird für jedes Bild aufgerufen (t = Zeit in Sekunden). Er löscht die Zeichenfläche, verändert die Position um die Geschwindigkeit und zeichnet neu. Berührt der Ball den Rand, wird die Geschwindigkeit umgekehrt. Ändere <code>vx</code>, <code>vy</code> und den Radius!</p>
+  </div>
+  <div id="lab1"></div>
+</section>
+
+<section class="station" id="interaktion" data-label="Interaktion" data-yr="Erarbeitung" data-title="Interaktionsmöglichkeiten" data-sub="Maus und Tastatur">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Expertenwissen: Interaktion</p>
+    <h2>Maus und Tastatur</h2>
+    <p class="lead"><code>on_mouse_down(x, y)</code> wird aufgerufen, wenn auf die Zeichenfläche geklickt wird – mit den Koordinaten des Mauszeigers. <code>on_key_down(key)</code> wird bei einem Tastendruck aufgerufen; die Taste kommt als Zeichenkette: <code>"UP"</code>, <code>"DOWN"</code>, <code>"LEFT"</code>, <code>"RIGHT"</code>, <code>"SPACE"</code>. Klicke zuerst auf die Zeichenfläche, dann nutze die Pfeiltasten.</p>
+  </div>
+  <div id="lab2"></div>
+</section>
+
+<section class="station" id="rekursion" data-label="Rekursion" data-yr="Vertiefung" data-title="Rekursion" data-sub="Ein Befehl ruft sich selbst auf">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Expertenwissen: Rekursion</p>
+      <h2>Ein Befehl ruft sich selbst auf</h2>
+      <ul class="facts">
+        <li>Farnblätter und Baumäste enthalten verkleinerte Kopien von sich selbst. Diese Idee nutzt die <b>Rekursion</b>: Ein Befehl ruft sich selbst auf – mit veränderten Argumenten.</li>
+        <li>Wichtig ist eine <b>Abbruchbedingung</b>, sonst ruft er sich endlos auf. Die Zahl der Ebenen heißt <b>Rekursionstiefe</b>.</li>
+        <li>Schleifen nennt man <b>Iteration</b>. Vieles lässt sich mit beiden lösen – Rekursion führt oft zu kürzerem, übersichtlicherem Code.</li>
+      </ul>
+    </div>
+    <div class="vis"><div id="lab3"></div></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Animationen</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Animationen, Interaktion und Rekursion</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step><b>Animation:</b> In jedem Bild wird gelöscht, die Position verändert (<code>x = x + vx</code>) und neu gezeichnet.</li>
+        <li data-step><b>Abprallen:</b> Erreicht die Figur den Rand, wird die Geschwindigkeit umgekehrt (<code>vx = -vx</code>).</li>
+        <li data-step><b>Interaktion:</b> <code>on_mouse_down(x, y)</code> reagiert auf Klicks, <code>on_key_down(key)</code> auf Tasten.</li>
+        <li data-step><b>Rekursion:</b> Ein Befehl ruft sich selbst auf. Er braucht eine <b>Abbruchbedingung</b>; die Zahl der Ebenen ist die <b>Rekursionstiefe</b>.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne, wie viele Ringe bei Rekursionstiefe 1, 2 und 3 entstehen.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Animationen</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+codeLab($('#lab1'), {code: 'Canvas.init([0,20], [0,12], {background:"#e8f4ff"});\n\nvar x = 10, y = 6;      // Position\nvar vx = 0.15, vy = 0.1; // Geschwindigkeit\nvar r = 1;\n\nfunction on_frame(t) {\n  Canvas.clear();\n  x = x + vx;\n  y = y + vy;\n  if (x > 20 - r || x < r) { vx = -vx; }\n  if (y > 12 - r || y < r) { vy = -vy; }\n  Canvas.circle(x, y, r, {fill:"crimson"});\n}', h: 15, console: false,
+  examples: {'Schwerkraft': 'Canvas.init([0,20], [0,12]);\nvar x = 2, y = 10, vx = 0.08, vy = 0, r = 0.8;\nfunction on_frame(t) {\n  Canvas.clear();\n  vy = vy - 0.01;          // Schwerkraft\n  x = x + vx; y = y + vy;\n  if (y < r) { y = r; vy = -vy * 0.85; }   // Boden: Ball verliert Energie\n  if (x > 20 - r || x < r) { vx = -vx; }\n  Canvas.circle(x, y, r, {fill:"orange"});\n}', 'Kreisbahn': 'Canvas.init([-10,10], [-6,6], {background:"black"});\nfunction on_frame(t) {\n  Canvas.clear();\n  Canvas.circle(0, 0, 1.5, {fill:"gold"});\n  Canvas.circle(5 * Math.cos(t), 5 * Math.sin(t), 0.5, {fill:"deepskyblue"});\n}'}});
+codeLab($('#lab2'), {code: 'Canvas.init([0,20], [0,12]);\nvar x = 10, y = 6;\n\nfunction zeichne() {\n  Canvas.clear();\n  Canvas.rect(x, y, 1, 1, {fill:"purple"});\n}\n\nfunction on_key_down(key) {\n  if (key == "UP")    { y = y + 1; }\n  if (key == "DOWN")  { y = y - 1; }\n  if (key == "LEFT")  { x = x - 1; }\n  if (key == "RIGHT") { x = x + 1; }\n  zeichne();\n  Console.print("Taste:", key, " Position:", x, y);\n}\n\nfunction on_mouse_down(mx, my) {\n  x = Math.round(mx); y = Math.round(my);\n  zeichne();\n}\n\nzeichne();', h: 16,
+  examples: {'Klick-Kunst': 'Canvas.init([0,20], [0,12], {background:"white"});\nfunction on_mouse_down(x, y) {\n  for (var i = 5; i > 0; i = i - 1) {\n    Canvas.circle(x, y, i * 0.3, {fill: "rgb(" + i*50 + ",80," + (255 - i*40) + ")"});\n  }\n}'}});
+codeLab($('#lab3'), {code: 'Canvas.init([0,20], [0,12]);\n\nfunction ringe(x, y, r, tiefe) {\n  if (tiefe == 0) { return; }          // Abbruchbedingung\n  Canvas.circle(x, y, r, {fill:"none", stroke:"teal"});\n  ringe(x - r / 2, y, r / 2, tiefe - 1);  // ruft sich selbst auf\n  ringe(x + r / 2, y, r / 2, tiefe - 1);\n}\n\nringe(10, 6, 5, 5);   // Rekursionstiefe 5', h: 12, console: false,
+  examples: {'Baum': 'Canvas.init([0,20], [0,12], {background:"#eef8ee"});\nfunction ast(x, y, laenge, winkel, tiefe) {\n  if (tiefe == 0) { return; }\n  var x2 = x + laenge * Math.cos(winkel);\n  var y2 = y + laenge * Math.sin(winkel);\n  Canvas.line(x, y, x2, y2, {stroke:"saddlebrown", width: tiefe});\n  ast(x2, y2, laenge * 0.7, winkel + 0.45, tiefe - 1);\n  ast(x2, y2, laenge * 0.7, winkel - 0.45, tiefe - 1);\n}\nast(10, 0, 3.5, Math.PI / 2, 9);'}});
+mcQuiz($('#quiz'), [
+  {q: 'Was passiert in on_frame bei jedem Bild?', a: ['löschen, Position verändern, neu zeichnen', 'nur einmal zeichnen', 'das Programm beenden', 'eine Taste drücken'], ok: 0},
+  {q: 'Wie lässt man den Ball am Rand abprallen?', a: ['vx = -vx', 'vx = 0', 'x = 0', 'r = -r'], ok: 0},
+  {q: 'Welcher Befehl reagiert auf Mausklicks?', a: ['on_mouse_down(x, y)', 'on_frame(t)', 'on_key_down(key)', 'Canvas.init'], ok: 0},
+  {q: 'Was bekommt on_key_down bei der Leertaste?', a: ['"SPACE"', '" "', '32', '"LEER"'], ok: 0},
+  {q: 'Was braucht jede Rekursion?', a: ['eine Abbruchbedingung', 'eine Animation', 'eine Maus', 'eine Farbe'], ok: 0},
+  {q: 'Wie viele Ringe zeichnet ringe(…, 3), wenn jeder Ring 2 neue aufruft?', a: ['7', '3', '6', '8'], ok: 0, why: '1 + 2 + 4 = 7'}
+]);
+</script>

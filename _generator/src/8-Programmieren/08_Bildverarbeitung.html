@@ -1,0 +1,134 @@
+<!--
+title: RGB-Farbraum und Bildverarbeitung
+short: Bildverarbeitung
+time: 2 Unterrichtsstunden
+q: Wie werden Farben gemischt – und wie verändert ein Programm ein Bild Pixel für Pixel?
+facts: RGB-Farbraum: additive Farbmischung aus Rot, Grün und Blau, Werte 0–255 | Farbwürfel: Schwarz (0,0,0), Weiß (255,255,255), Grautöne auf der Diagonalen | Bild als Raster von Pixeln mit RGB-Werten | Filter mit verschachtelten Schleifen: Graustufen, Negativ, Helligkeit, Schwarz-Weiß, Farbkanal, Spiegeln
+inter: Farben mischen mit drei Reglern · Farbwürfel-Ecken erkunden · Filter-Vorschau · Bildfilter selbst programmieren im Code-Labor · Farbwerte berechnen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Programmieren mit Programmiersprachen</p>
+      <h1>RGB und Bildverarbeitung<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Schwarz-Weiß-Filter, Sepia, „Negativ“: Foto-Apps verändern Bilder mit einem Klick. Dahinter steckt ein Programm, das <b>jedes einzelne Pixel</b> neu berechnet.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welche Filter nutzt du in Foto-Apps?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie werden Farben gemischt – und wie verändert ein Programm ein Bild Pixel für Pixel?</p></div>
+      <div class="controls"><button class="btn primary" data-go="rgb">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="rgb" data-label="RGB-Farbraum" data-yr="Erarbeitung" data-title="Der RGB-Farbraum" data-sub="Additive Farbmischung">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Der RGB-Farbraum</p>
+      <h2>Licht mischen</h2>
+      <ul class="facts">
+        <li>Bildschirme mischen Farben aus <b>rotem, grünem und blauem Licht</b> – <b>additive Farbmischung</b>: Je mehr Licht, desto heller.</li>
+        <li>Jeder Anteil hat einen Wert von <b>0</b> (aus) bis <b>255</b> (volle Stärke). Das sind 256³ ≈ 16,7 Millionen Farben.</li>
+        <li>Man kann sich alle Farben in einem <b>Würfel</b> vorstellen: Die Ecken sind Schwarz, Weiß, Rot, Grün, Blau, Gelb, Cyan und Magenta. Auf der Diagonalen von Schwarz nach Weiß liegen die Grautöne.</li>
+      </ul>
+      <div class="chips" id="corners"></div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Farbmischer</h3></div>
+      <div class="rgb-mix" id="mix"><span class="c r"></span><span class="c g"></span><span class="c b"></span></div>
+      <label class="slider-row">Rot <input id="m-r" type="range" min="0" max="255" value="255"><output id="m-ro" class="mono"></output></label>
+      <label class="slider-row">Grün <input id="m-g" type="range" min="0" max="255" value="255"><output id="m-go" class="mono"></output></label>
+      <label class="slider-row">Blau <input id="m-b" type="range" min="0" max="255" value="0"><output id="m-bo" class="mono"></output></label>
+      <div style="display:flex;gap:1rem;align-items:center;margin-top:.6rem"><div class="swatch" id="m-sw" style="width:5rem;height:5rem"></div><p class="mono" id="m-code"></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="filter" data-label="Filter" data-yr="Erarbeitung" data-title="Bildfilter" data-sub="Pixel für Pixel">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Bildverarbeitung</p>
+    <h2>Ein Filter rechnet jedes Pixel um</h2>
+    <p class="lead">Ein Bild ist ein Raster aus Pixeln, jedes mit einem RGB-Wert. Ein <b>Filter</b> durchläuft mit zwei verschachtelten Schleifen alle Pixel und berechnet aus dem alten einen neuen Farbwert. Wähle einen Filter und tippe auf ein Pixel.</p>
+  </div>
+  <div class="model">
+    <div class="vis"><div class="vis-head"><div id="f-seg"></div></div><canvas id="f-cv" width="320" height="240" style="width:100%;image-rendering:pixelated;border:1.5px solid var(--edge);cursor:crosshair"></canvas></div>
+    <div class="stack"><div class="box"><span class="tag">Formel</span><p class="mono" id="f-rule"></p></div><p class="status" id="f-st">Tippe auf ein Pixel.</p></div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Code" data-yr="M1" data-title="Filter programmieren" data-sub="Code-Labor">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Material M1</p>
+    <h2>Programmiere deinen eigenen Filter</h2>
+    <p class="lead">Das Objekt <code>Bild</code> enthält ein Testbild: <code>Bild.get(x, y)</code> liefert <code>[r, g, b]</code>, <code>Bild.set(x, y, [r, g, b])</code> setzt ein Pixel, <code>Bild.show()</code> zeigt das Bild an. Lade die Beispiele oder schreibe einen eigenen Filter (z. B. Sepia, nur Rotkanal, Spiegeln).</p>
+  </div>
+  <div id="lab"></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: RGB und Bildverarbeitung</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>RGB-Farbraum und Bildverarbeitung</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step><b>RGB:</b> Farben entstehen durch additive Mischung von Rot, Grün und Blau (je 0–255). (0,0,0) = Schwarz, (255,255,255) = Weiß, gleiche Werte = Grau.</li>
+        <li data-step>Ein digitales Bild ist ein <b>Raster aus Pixeln</b>; jedes Pixel hat einen RGB-Wert.</li>
+        <li data-step>Ein <b>Filter</b> durchläuft mit zwei verschachtelten Schleifen alle Pixel und berechnet neue Farbwerte.</li>
+        <li data-step>Beispiele: <b>Graustufen</b> g = (r + g + b) / 3 · <b>Negativ</b> 255 − Wert · <b>Helligkeit</b> Wert + 50 (höchstens 255) · <b>Schwarz-Weiß</b> mit Schwellenwert.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Rechnen</span><p>Berechne für das Pixel (200, 100, 30) den Grauwert und das Negativ.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Filter berechnen</h2></div>
+  <div id="ts"></div>
+</section>
+
+<script>
+/* ================= Farbmischer ================= */
+(() => {
+  const upd = () => { const [r, g, b] = ['r', 'g', 'b'].map(k => +$('#m-' + k).value); ['r', 'g', 'b'].forEach((k, i) => $(`#m-${k}o`).textContent = [r, g, b][i]); $('#mix .r').style.opacity = r / 255; $('#mix .g').style.opacity = g / 255; $('#mix .b').style.opacity = b / 255; $('#m-sw').style.background = `rgb(${r},${g},${b})`; $('#m-code').innerHTML = `rgb(${r}, ${g}, ${b})<br>#${[r, g, b].map(v => v.toString(16).toUpperCase().padStart(2, '0')).join('')}`; };
+  ['r', 'g', 'b'].forEach(k => $('#m-' + k).oninput = upd);
+  const C = [['Schwarz', 0, 0, 0], ['Weiß', 255, 255, 255], ['Rot', 255, 0, 0], ['Grün', 0, 255, 0], ['Blau', 0, 0, 255], ['Gelb', 255, 255, 0], ['Cyan', 0, 255, 255], ['Magenta', 255, 0, 255], ['Grau', 128, 128, 128]];
+  $('#corners').innerHTML = C.map(([n, r, g, b]) => `<button class="btn" data-c="${r},${g},${b}"><span style="display:inline-block;width:.9em;height:.9em;background:rgb(${r},${g},${b});border:1px solid #888;vertical-align:-.1em"></span> ${n}</button>`).join('');
+  $('#corners').addEventListener('click', e => { const b = e.target.closest('[data-c]'); if (!b) return; b.dataset.c.split(',').forEach((v, i) => $('#m-' + 'rgb'[i]).value = v); upd(); });
+  upd();
+})();
+
+/* ================= Testbild ================= */
+function testbild(W = 40, H = 30) {
+  const P = [];
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+    let c = [100 + y * 4, 170 + y * 2, 255];                               // Himmel
+    if ((x - 31) ** 2 + (y - 7) ** 2 < 20) c = [255, 210, 40];            // Sonne
+    if (y > 17 + 3 * Math.sin(x / 5)) c = [40 + (x * 3) % 40, 150 + (y % 3) * 15, 60];   // Wiese
+    if (x > 6 && x < 17 && y > 13 && y < 24) c = [230, 230, 220];         // Haus
+    if (y <= 13 && y > 7 && Math.abs(x - 11.5) < (y - 7) * 1.1) c = [170, 40, 40];  // Dach
+    if (x > 9 && x < 13 && y > 18 && y < 24) c = [120, 70, 30];           // Tür
+    P.push(c.map(v => Math.max(0, Math.min(255, Math.round(v)))));
+  }
+  return {width: W, height: H, P};
+}
+/* ================= Filter-Vorschau ================= */
+(() => {
+  const T = testbild(), cv = $('#f-cv'), c = cv.getContext('2d'), sx = cv.width / T.width, sy = cv.height / T.height;
+  const F = {orig: ['Original', p => p, 'neu = alt'], grau: ['Graustufen', ([r, g, b]) => { const m = Math.round((r + g + b) / 3); return [m, m, m]; }, 'grau = (r + g + b) / 3'], neg: ['Negativ', ([r, g, b]) => [255 - r, 255 - g, 255 - b], 'neu = 255 − alt'],
+    hell: ['Heller', p => p.map(v => Math.min(255, v + 60)), 'neu = min(255, alt + 60)'], sw: ['Schwarz-Weiß', ([r, g, b]) => (r + g + b) / 3 > 128 ? [255, 255, 255] : [0, 0, 0], 'Mittelwert > 128 ? weiß : schwarz'], rot: ['nur Rot', ([r]) => [r, 0, 0], 'neu = (r, 0, 0)']};
+  let f = 'orig';
+  const draw = () => { for (let y = 0; y < T.height; y++) for (let x = 0; x < T.width; x++) { const p = F[f][1](T.P[y * T.width + x]); c.fillStyle = `rgb(${p})`; c.fillRect(x * sx, y * sy, sx + .5, sy + .5); } $('#f-rule').textContent = F[f][2]; };
+  seg($('#f-seg'), Object.entries(F).map(([k, v]) => [k, v[0]]), k => { f = k; draw(); }, 'orig');
+  cv.addEventListener('click', e => { const r = cv.getBoundingClientRect(), x = Math.floor((e.clientX - r.left) / r.width * T.width), y = Math.floor((e.clientY - r.top) / r.height * T.height); const a = T.P[y * T.width + x], n = F[f][1](a); $('#f-st').innerHTML = `Pixel (${x} | ${y}): alt <span class="mono">(${a.join(', ')})</span> → neu <span class="mono">(${n.join(', ')})</span> <span style="display:inline-block;width:1em;height:1em;background:rgb(${n});border:1px solid #888;vertical-align:-.15em"></span>`; });
+})();
+
+/* ================= Code-Labor ================= */
+codeLab($('#lab'), {globals: Cv => { const T = testbild(); return {Bild: {width: T.width, height: T.height, get: (x, y) => T.P[y * T.width + x].slice(), set: (x, y, p) => { T.P[y * T.width + x] = p.map(v => Math.max(0, Math.min(255, Math.round(v)))); }, show: () => { for (let y = 0; y < T.height; y++) for (let x = 0; x < T.width; x++) Cv.pixel(x, T.height - 1 - y, T.P[y * T.width + x]); }}}; },
+  code: 'Canvas.init([0, Bild.width], [0, Bild.height], {width: 400});\n\n// Graustufen-Filter\nfor (var y = 0; y < Bild.height; y = y + 1) {\n  for (var x = 0; x < Bild.width; x = x + 1) {\n    var p = Bild.get(x, y);          // [r, g, b]\n    var grau = (p[0] + p[1] + p[2]) / 3;\n    Bild.set(x, y, [grau, grau, grau]);\n  }\n}\nBild.show();', h: 14, console: false,
+  examples: {'Original': 'Canvas.init([0, Bild.width], [0, Bild.height], {width: 400});\nBild.show();', 'Negativ': 'Canvas.init([0, Bild.width], [0, Bild.height], {width: 400});\nfor (var y = 0; y < Bild.height; y = y + 1) {\n  for (var x = 0; x < Bild.width; x = x + 1) {\n    var p = Bild.get(x, y);\n    Bild.set(x, y, [255 - p[0], 255 - p[1], 255 - p[2]]);\n  }\n}\nBild.show();', 'Sepia': 'Canvas.init([0, Bild.width], [0, Bild.height], {width: 400});\nfor (var y = 0; y < Bild.height; y = y + 1) {\n  for (var x = 0; x < Bild.width; x = x + 1) {\n    var p = Bild.get(x, y);\n    var m = (p[0] + p[1] + p[2]) / 3;\n    Bild.set(x, y, [m + 40, m + 20, m - 20]);\n  }\n}\nBild.show();', 'Spiegeln': 'Canvas.init([0, Bild.width], [0, Bild.height], {width: 400});\nfor (var y = 0; y < Bild.height; y = y + 1) {\n  for (var x = 0; x < Bild.width / 2; x = x + 1) {\n    var links = Bild.get(x, y);\n    var rechts = Bild.get(Bild.width - 1 - x, y);\n    Bild.set(x, y, rechts);\n    Bild.set(Bild.width - 1 - x, y, links);\n  }\n}\nBild.show();'}});
+taskSet($('#ts'), i => {
+  const p = [randInt(0, 255), randInt(0, 255), randInt(0, 255)];
+  if (i % 2) return {key: 'n' + p, tag: 'Negativ', q: `Pixel <span class="mono">(${p.join(', ')})</span>`, fields: ['r', 'g', 'b'].map((k, j) => ({l: k, a: 255 - p[j]}))};
+  const q = [randInt(0, 85) * 3, randInt(0, 85) * 3, randInt(0, 85) * 3]; return {key: 'g' + q, tag: 'Graustufen', q: `Pixel <span class="mono">(${q.join(', ')})</span>`, fields: [{l: 'Grauwert', a: (q[0] + q[1] + q[2]) / 3}]};
+}, {n: 4});
+</script>
