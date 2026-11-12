@@ -229,14 +229,21 @@ def build_overview(series, lessons, outdir, css):
     (outdir / '00_Uebersicht.html').write_text(page, encoding='utf-8')
 
 
+# Klassenstufen, die auf der Startseite unter einer gemeinsamen Kachel stehen
+GROUP = {'7': '7/8', '8': '7/8'}
+
+
+def ggroup(series):
+    return GROUP.get(series['grade'], series['grade'])
+
+
 def gkey(series):
-    """Klassenstufe als Anker: '5/6' -> 'klasse-5-6'."""
-    return 'klasse-' + series['grade'].replace('/', '-')
+    """Kachel der Startseite als Anker: '5/6' -> 'klasse-5-6', '7' -> 'klasse-7-8'."""
+    return 'klasse-' + ggroup(series).replace('/', '-')
 
 
 GRADE_INFO = {'5/6': 'Informationen, Computer, Algorithmen mit Scratch, Bilder, Präsentieren, Textverarbeitung und Kommunikation im Netz.',
-              '7': 'Netze und Internet, Codierung, Verschlüsselung, Informatik und Gesellschaft, Algorithmen mit Scratch.',
-              '8': 'Mikrocontroller, maschinelles Lernen, Programmieren mit JavaScript, Tabellen und Datenbanken.'}
+              '7/8': 'Netze, Codierung, Verschlüsselung, Informatik und Gesellschaft, Algorithmen, Mikrocontroller, maschinelles Lernen und Programmieren mit JavaScript.'}
 
 INDEX_CSS = '''.kitap-sub{font-style:italic;font-size:clamp(1rem,1.6vw,1.3rem);color:var(--ink-2);margin:-.2em 0 1.2rem}
 .hero h1 .cur{display:inline-block;width:.55em;height:.95em;background:var(--accent);vertical-align:-.12em;margin-left:.1em;animation:blink 1.1s steps(1) infinite}
@@ -248,6 +255,8 @@ INDEX_CSS = '''.kitap-sub{font-style:italic;font-size:clamp(1rem,1.6vw,1.3rem);c
 .crumbs [aria-current]{color:var(--led);padding:.1rem .3rem}
 .crumbs .sep{opacity:.6}
 .vh{font-size:1.35rem;margin:0 0 1rem}
+.vh2{font-size:1.1rem;margin:1.8rem 0 .8rem;font-family:var(--f-mono)}
+.vh+.vh2{margin-top:0}
 .grades{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.2rem}
 .grade{display:flex;flex-direction:column;gap:.3rem;padding:1.1rem 1.2rem 1rem;text-decoration:none;color:inherit;background:var(--surface);border:1.5px solid var(--edge);border-radius:6px;box-shadow:4px 4px 0 var(--edge-shadow);transition:transform .08s,box-shadow .08s}
 .grade:hover,.grade:focus-visible{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--edge-shadow)}
@@ -284,6 +293,8 @@ INDEX_JS = '''(() => {
   const views = [...document.querySelectorAll('.view')], crumbs = document.getElementById('crumbs'), home = document.getElementById('home');
   function show() {
     let h = decodeURIComponent(location.hash.slice(1));
+    const al = {'klasse-7': 'klasse-7-8', 'klasse-8': 'klasse-7-8'}, hp = h.split('/');
+    if (al[hp[0]]) { hp[0] = al[hp[0]]; h = hp.join('/'); history.replaceState(null, '', '#' + h); }
     if (!views.some(v => v.dataset.view === h)) h = '';
     views.forEach(v => v.hidden = v.dataset.view !== h);
     home.hidden = !h;
@@ -309,7 +320,7 @@ def build_index(css):
         if not files:
             continue
         s = dict(s, idx=k, lessons=[(f, parse_lesson(f)[0]) for f in files])
-        grades.setdefault(s['grade'], []).append(s)
+        grades.setdefault(ggroup(s), []).append(s)
     tiles, views, scss_l, scss_d, titles = [], [], [], [], {}
     for g, ss in grades.items():
         gk = gkey(ss[0])
@@ -322,13 +333,13 @@ def build_index(css):
       <span class="g-txt">{GRADE_INFO.get(g, '')}</span>
       <span class="g-leds" aria-hidden="true">{leds}</span>
     </a>''')
-        cards, sviews = [], []
+        cards, sviews = {}, []
         for s in ss:
             titles[f'{gk}/{s["folder"]}'] = s['name']
             scss_l.append(f'.ser{s["idx"]}{{--accent:{s["accent"][0]}}}')
             scss_d.append(f'.ser{s["idx"]}{{--accent:{s["accent"][1]}}}')
             ln = len(s['lessons'])
-            cards.append(f'''      <li class="lesson ser{s["idx"]}">
+            cards.setdefault(s['grade'], []).append(f'''      <li class="lesson ser{s["idx"]}">
         <div class="l-num">{s["chapter"]}</div>
         <div class="l-body"><p class="eyebrow">Kapitel {s["chapter"]} · {ln} Stunde{"n" if ln != 1 else ""} · ≈ {s["ue"]} Unterrichtsstunden</p><h2>{s["name"]}</h2><p class="l-q">{s["lead"]}</p></div>
         <div class="l-go"><a class="btn primary" href="#{gk}/{s["folder"]}">Stunden →</a><a class="btn" href="{s["folder"]}/00_Uebersicht.html">Übersicht</a></div>
@@ -338,7 +349,7 @@ def build_index(css):
                 rows.append(f'''        <li><a class="row" href="{s["folder"]}/{f.name}"><span class="no">{k2 + 1:02d}</span><span class="rt"><b>{m["title"]}</b><small>{m.get("q", "")}</small></span><span class="go">öffnen →</span></a><a class="ws" href="{s["folder"]}/{f.stem}.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>''')
             sviews.append(f'''  <section class="view ser{s["idx"]}" data-view="{gk}/{s["folder"]}" hidden>
     <div class="topic-head">
-      <div><p class="eyebrow">Klasse {g} · Kapitel {s["chapter"]}</p><h2>{s["name"]}</h2><p>{s["lead"]}</p></div>
+      <div><p class="eyebrow">Klasse {s["grade"]} · Kapitel {s["chapter"]}</p><h2>{s["name"]}</h2><p>{s["lead"]}</p></div>
       <a class="btn primary" href="{s["folder"]}/00_Uebersicht.html">Übersicht der Reihe →</a>
     </div>
     <ol class="rows">
@@ -347,9 +358,7 @@ def build_index(css):
   </section>''')
         views.append(f'''  <section class="view" data-view="{gk}" hidden>
     <h2 class="vh">Klasse {g}: Reihe wählen</h2>
-    <ol class="lessons">
-{chr(10).join(cards)}
-    </ol>
+{chr(10).join((f'    <h3 class="vh2">// Klasse {rg}</h3>' + chr(10) if len(cards) > 1 else '') + '    <ol class="lessons">' + chr(10) + chr(10).join(cs) + chr(10) + '    </ol>' for rg, cs in cards.items())}
   </section>''')
         views += sviews
     kcss = (''.join(scss_l) + '\n@media (prefers-color-scheme: dark){' + ''.join(':root:not([data-theme="light"]) ' + x for x in scss_d) + '}\n'

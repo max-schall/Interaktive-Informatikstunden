@@ -1426,6 +1426,8 @@ textarea.code-in{width:100%;min-height:9rem;font-family:var(--f-mono);font-size:
 .crumbs [aria-current]{color:var(--led);padding:.1rem .3rem}
 .crumbs .sep{opacity:.6}
 .vh{font-size:1.35rem;margin:0 0 1rem}
+.vh2{font-size:1.1rem;margin:1.8rem 0 .8rem;font-family:var(--f-mono)}
+.vh+.vh2{margin-top:0}
 .grades{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.2rem}
 .grade{display:flex;flex-direction:column;gap:.3rem;padding:1.1rem 1.2rem 1rem;text-decoration:none;color:inherit;background:var(--surface);border:1.5px solid var(--edge);border-radius:6px;box-shadow:4px 4px 0 var(--edge-shadow);transition:transform .08s,box-shadow .08s}
 .grade:hover,.grade:focus-visible{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--edge-shadow)}
@@ -1479,17 +1481,11 @@ textarea.code-in{width:100%;min-height:9rem;font-family:var(--f-mono);font-size:
       <span class="g-txt">Informationen, Computer, Algorithmen mit Scratch, Bilder, Präsentieren, Textverarbeitung und Kommunikation im Netz.</span>
       <span class="g-leds" aria-hidden="true"><i class="ser0" title="Informatiksysteme nutzen"></i><i class="ser1" title="Algorithmen und Problemlösen"></i><i class="ser2" title="Bilder und Videos"></i><i class="ser3" title="Recherchieren und Präsentieren"></i><i class="ser4" title="Textgestaltung"></i><i class="ser5" title="Kommunikation in der vernetzten Welt"></i></span>
     </a>
-    <a class="grade" href="#klasse-7">
-      <span class="g-lbl">Klasse</span><span class="g-num">7</span>
-      <span class="g-meta">5 Reihen · 39 Stunden</span>
-      <span class="g-txt">Netze und Internet, Codierung, Verschlüsselung, Informatik und Gesellschaft, Algorithmen mit Scratch.</span>
-      <span class="g-leds" aria-hidden="true"><i class="ser6" title="Informatiksysteme und Netze"></i><i class="ser7" title="Daten und ihre Codierung"></i><i class="ser8" title="Daten verschlüsseln"></i><i class="ser9" title="Informatik und Gesellschaft"></i><i class="ser10" title="Algorithmen und Problemlösen"></i></span>
-    </a>
-    <a class="grade" href="#klasse-8">
-      <span class="g-lbl">Klasse</span><span class="g-num">8</span>
-      <span class="g-meta">3 Reihen · 21 Stunden</span>
-      <span class="g-txt">Mikrocontroller, maschinelles Lernen, Programmieren mit JavaScript, Tabellen und Datenbanken.</span>
-      <span class="g-leds" aria-hidden="true"><i class="ser11" title="Einen Mikrocontroller programmieren"></i><i class="ser12" title="Maschinelles Lernen"></i><i class="ser13" title="Programmieren mit Programmiersprachen"></i></span>
+    <a class="grade" href="#klasse-7-8">
+      <span class="g-lbl">Klasse</span><span class="g-num">7/8</span>
+      <span class="g-meta">8 Reihen · 60 Stunden</span>
+      <span class="g-txt">Netze, Codierung, Verschlüsselung, Informatik und Gesellschaft, Algorithmen, Mikrocontroller, maschinelles Lernen und Programmieren mit JavaScript.</span>
+      <span class="g-leds" aria-hidden="true"><i class="ser6" title="Informatiksysteme und Netze"></i><i class="ser7" title="Daten und ihre Codierung"></i><i class="ser8" title="Daten verschlüsseln"></i><i class="ser9" title="Informatik und Gesellschaft"></i><i class="ser10" title="Algorithmen und Problemlösen"></i><i class="ser11" title="Einen Mikrocontroller programmieren"></i><i class="ser12" title="Maschinelles Lernen"></i><i class="ser13" title="Programmieren mit Programmiersprachen"></i></span>
     </a>
     </div>
   </section>
@@ -1634,37 +1630,56 @@ textarea.code-in{width:100%;min-height:9rem;font-family:var(--f-mono);font-size:
         <li><a class="row" href="6-Kommunikation/14_Wiederholung.html"><span class="no">14</span><span class="rt"><b>Wiederholung und Selbsttest</b><small>Was kann ich, und was sollte ich noch üben?</small></span><span class="go">öffnen →</span></a><a class="ws" href="6-Kommunikation/14_Wiederholung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
     </ol>
   </section>
-  <section class="view" data-view="klasse-7" hidden>
-    <h2 class="vh">Klasse 7: Reihe wählen</h2>
+  <section class="view" data-view="klasse-7-8" hidden>
+    <h2 class="vh">Klasse 7/8: Reihe wählen</h2>
+    <h3 class="vh2">// Klasse 7</h3>
     <ol class="lessons">
       <li class="lesson ser6">
         <div class="l-num">1</div>
         <div class="l-body"><p class="eyebrow">Kapitel 1 · 8 Stunden · ≈ 14 Unterrichtsstunden</p><h2>Informatiksysteme und Netze</h2><p class="l-q">Was ist Informatik überhaupt? Die Reihe zeigt, wie Informationen dargestellt werden, woraus Computer und Smartphones bestehen und wie sie nach dem EVA-Prinzip arbeiten. Danach geht es ins Netz: Netzwerke und Routing, das Internet mit seinen Diensten, das World Wide Web und die Cloud.</p></div>
-        <div class="l-go"><a class="btn primary" href="#klasse-7/7-Informatiksysteme_Netze">Stunden →</a><a class="btn" href="7-Informatiksysteme_Netze/00_Uebersicht.html">Übersicht</a></div>
+        <div class="l-go"><a class="btn primary" href="#klasse-7-8/7-Informatiksysteme_Netze">Stunden →</a><a class="btn" href="7-Informatiksysteme_Netze/00_Uebersicht.html">Übersicht</a></div>
       </li>
       <li class="lesson ser7">
         <div class="l-num">2</div>
         <div class="l-body"><p class="eyebrow">Kapitel 2 · 9 Stunden · ≈ 14 Unterrichtsstunden</p><h2>Daten und ihre Codierung</h2><p class="l-q">Wie werden Zahlen, Texte und Bilder im Computer gespeichert? Die Reihe führt vom Binärsystem über Bits und Bytes, Logikgatter und den ASCII-Code zur Codierung und Komprimierung von Bildern, zum Hexadezimalsystem, zu analogen und digitalen Daten und zu grafischen Codes wie Barcode und QR-Code.</p></div>
-        <div class="l-go"><a class="btn primary" href="#klasse-7/7-Daten_codieren">Stunden →</a><a class="btn" href="7-Daten_codieren/00_Uebersicht.html">Übersicht</a></div>
+        <div class="l-go"><a class="btn primary" href="#klasse-7-8/7-Daten_codieren">Stunden →</a><a class="btn" href="7-Daten_codieren/00_Uebersicht.html">Übersicht</a></div>
       </li>
       <li class="lesson ser8">
         <div class="l-num">3</div>
         <div class="l-body"><p class="eyebrow">Kapitel 3 · 7 Stunden · ≈ 10 Unterrichtsstunden</p><h2>Daten verschlüsseln</h2><p class="l-q">Von der Skytale über die Caesar-Scheibe bis zur Verschlüsselung im Messenger: Die Reihe zeigt, wie Nachrichten ver- und entschlüsselt werden, unterscheidet symmetrische und asymmetrische Verfahren, knackt Geheimtexte mit der Häufigkeitsanalyse und sucht zum Schluss den kürzesten Weg in einem Graphen.</p></div>
-        <div class="l-go"><a class="btn primary" href="#klasse-7/7-Verschluesselung">Stunden →</a><a class="btn" href="7-Verschluesselung/00_Uebersicht.html">Übersicht</a></div>
+        <div class="l-go"><a class="btn primary" href="#klasse-7-8/7-Verschluesselung">Stunden →</a><a class="btn" href="7-Verschluesselung/00_Uebersicht.html">Übersicht</a></div>
       </li>
       <li class="lesson ser9">
         <div class="l-num">4</div>
         <div class="l-body"><p class="eyebrow">Kapitel 4 · 6 Stunden · ≈ 10 Unterrichtsstunden</p><h2>Informatik und Gesellschaft</h2><p class="l-q">Das Internet hat Arbeit, Einkaufen und Kommunikation verändert. Die Reihe beleuchtet den digitalen Wandel, den Schutz personenbezogener Daten, Arten digitaler Kommunikation mit Wikis und Blogs, Risiken wie Phishing, Schadsoftware und Cybermobbing sowie freie Lizenzen mit Creative Commons.</p></div>
-        <div class="l-go"><a class="btn primary" href="#klasse-7/7-Gesellschaft">Stunden →</a><a class="btn" href="7-Gesellschaft/00_Uebersicht.html">Übersicht</a></div>
+        <div class="l-go"><a class="btn primary" href="#klasse-7-8/7-Gesellschaft">Stunden →</a><a class="btn" href="7-Gesellschaft/00_Uebersicht.html">Übersicht</a></div>
       </li>
       <li class="lesson ser10">
         <div class="l-num">5</div>
         <div class="l-body"><p class="eyebrow">Kapitel 5 · 9 Stunden · ≈ 18 Unterrichtsstunden</p><h2>Algorithmen und Problemlösen</h2><p class="l-q">Algorithmen begegnen uns überall. Die Reihe stellt sie als Text, Ablaufplan und Struktogramm dar und setzt sie in Scratch um: Wiederholungen, Verzweigungen, Variablen, Schleifen mit Abbruchbedingung, ein eigenes Spiel – und zum Schluss wird systematisch getestet.</p></div>
-        <div class="l-go"><a class="btn primary" href="#klasse-7/7-Algorithmen">Stunden →</a><a class="btn" href="7-Algorithmen/00_Uebersicht.html">Übersicht</a></div>
+        <div class="l-go"><a class="btn primary" href="#klasse-7-8/7-Algorithmen">Stunden →</a><a class="btn" href="7-Algorithmen/00_Uebersicht.html">Übersicht</a></div>
+      </li>
+    </ol>
+    <h3 class="vh2">// Klasse 8</h3>
+    <ol class="lessons">
+      <li class="lesson ser11">
+        <div class="l-num">1</div>
+        <div class="l-body"><p class="eyebrow">Kapitel 1 · 7 Stunden · ≈ 14 Unterrichtsstunden</p><h2>Einen Mikrocontroller programmieren</h2><p class="l-q">Ein Mikrocontroller steckt in Waschmaschine, Ampel und Fitnessarmband. Die Reihe programmiert den Calliope mini mit NEPO im Open Roberta Lab: LED-Matrix, Tasten, Variablen, Sensoren für Licht, Temperatur und Lage, Sensor-Aktor-Systeme und Funk zwischen mehreren Geräten.</p></div>
+        <div class="l-go"><a class="btn primary" href="#klasse-7-8/8-Mikrocontroller">Stunden →</a><a class="btn" href="8-Mikrocontroller/00_Uebersicht.html">Übersicht</a></div>
+      </li>
+      <li class="lesson ser12">
+        <div class="l-num">2</div>
+        <div class="l-body"><p class="eyebrow">Kapitel 2 · 5 Stunden · ≈ 10 Unterrichtsstunden</p><h2>Maschinelles Lernen</h2><p class="l-q">Vom Getränkeautomaten zum Sprachassistenten: Die Reihe beginnt bei Automaten mit Zuständen, klärt, was künstliche Intelligenz ist, zeigt überwachtes, unüberwachtes und bestärkendes Lernen und baut zum Schluss ein künstliches Neuron, das selbst lernt.</p></div>
+        <div class="l-go"><a class="btn primary" href="#klasse-7-8/8-Maschinelles_Lernen">Stunden →</a><a class="btn" href="8-Maschinelles_Lernen/00_Uebersicht.html">Übersicht</a></div>
+      </li>
+      <li class="lesson ser13">
+        <div class="l-num">3</div>
+        <div class="l-body"><p class="eyebrow">Kapitel 3 · 9 Stunden · ≈ 20 Unterrichtsstunden</p><h2>Programmieren mit Programmiersprachen</h2><p class="l-q">Von Blöcken zum Text: Die Reihe programmiert in JavaScript auf einer Canvas-Zeichenfläche. Schleifen, Variablen, Bedingungen, Arrays und Funktionen werden direkt im Browser ausprobiert. Danach entstehen Animationen, Sortierverfahren werden verglichen und Bilder Pixel für Pixel bearbeitet.</p></div>
+        <div class="l-go"><a class="btn primary" href="#klasse-7-8/8-Programmieren">Stunden →</a><a class="btn" href="8-Programmieren/00_Uebersicht.html">Übersicht</a></div>
       </li>
     </ol>
   </section>
-  <section class="view ser6" data-view="klasse-7/7-Informatiksysteme_Netze" hidden>
+  <section class="view ser6" data-view="klasse-7-8/7-Informatiksysteme_Netze" hidden>
     <div class="topic-head">
       <div><p class="eyebrow">Klasse 7 · Kapitel 1</p><h2>Informatiksysteme und Netze</h2><p>Was ist Informatik überhaupt? Die Reihe zeigt, wie Informationen dargestellt werden, woraus Computer und Smartphones bestehen und wie sie nach dem EVA-Prinzip arbeiten. Danach geht es ins Netz: Netzwerke und Routing, das Internet mit seinen Diensten, das World Wide Web und die Cloud.</p></div>
       <a class="btn primary" href="7-Informatiksysteme_Netze/00_Uebersicht.html">Übersicht der Reihe →</a>
@@ -1680,7 +1695,7 @@ textarea.code-in{width:100%;min-height:9rem;font-family:var(--f-mono);font-size:
         <li><a class="row" href="7-Informatiksysteme_Netze/08_Wiederholung.html"><span class="no">08</span><span class="rt"><b>Wiederholung und Selbsttest</b><small>Was kann ich, und was sollte ich noch üben?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Informatiksysteme_Netze/08_Wiederholung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
     </ol>
   </section>
-  <section class="view ser7" data-view="klasse-7/7-Daten_codieren" hidden>
+  <section class="view ser7" data-view="klasse-7-8/7-Daten_codieren" hidden>
     <div class="topic-head">
       <div><p class="eyebrow">Klasse 7 · Kapitel 2</p><h2>Daten und ihre Codierung</h2><p>Wie werden Zahlen, Texte und Bilder im Computer gespeichert? Die Reihe führt vom Binärsystem über Bits und Bytes, Logikgatter und den ASCII-Code zur Codierung und Komprimierung von Bildern, zum Hexadezimalsystem, zu analogen und digitalen Daten und zu grafischen Codes wie Barcode und QR-Code.</p></div>
       <a class="btn primary" href="7-Daten_codieren/00_Uebersicht.html">Übersicht der Reihe →</a>
@@ -1697,7 +1712,7 @@ textarea.code-in{width:100%;min-height:9rem;font-family:var(--f-mono);font-size:
         <li><a class="row" href="7-Daten_codieren/09_Wiederholung.html"><span class="no">09</span><span class="rt"><b>Wiederholung und Selbsttest</b><small>Was kann ich, und was sollte ich noch üben?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Daten_codieren/09_Wiederholung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
     </ol>
   </section>
-  <section class="view ser8" data-view="klasse-7/7-Verschluesselung" hidden>
+  <section class="view ser8" data-view="klasse-7-8/7-Verschluesselung" hidden>
     <div class="topic-head">
       <div><p class="eyebrow">Klasse 7 · Kapitel 3</p><h2>Daten verschlüsseln</h2><p>Von der Skytale über die Caesar-Scheibe bis zur Verschlüsselung im Messenger: Die Reihe zeigt, wie Nachrichten ver- und entschlüsselt werden, unterscheidet symmetrische und asymmetrische Verfahren, knackt Geheimtexte mit der Häufigkeitsanalyse und sucht zum Schluss den kürzesten Weg in einem Graphen.</p></div>
       <a class="btn primary" href="7-Verschluesselung/00_Uebersicht.html">Übersicht der Reihe →</a>
@@ -1712,7 +1727,7 @@ textarea.code-in{width:100%;min-height:9rem;font-family:var(--f-mono);font-size:
         <li><a class="row" href="7-Verschluesselung/07_Wiederholung.html"><span class="no">07</span><span class="rt"><b>Wiederholung und Selbsttest</b><small>Was kann ich, und was sollte ich noch üben?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Verschluesselung/07_Wiederholung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
     </ol>
   </section>
-  <section class="view ser9" data-view="klasse-7/7-Gesellschaft" hidden>
+  <section class="view ser9" data-view="klasse-7-8/7-Gesellschaft" hidden>
     <div class="topic-head">
       <div><p class="eyebrow">Klasse 7 · Kapitel 4</p><h2>Informatik und Gesellschaft</h2><p>Das Internet hat Arbeit, Einkaufen und Kommunikation verändert. Die Reihe beleuchtet den digitalen Wandel, den Schutz personenbezogener Daten, Arten digitaler Kommunikation mit Wikis und Blogs, Risiken wie Phishing, Schadsoftware und Cybermobbing sowie freie Lizenzen mit Creative Commons.</p></div>
       <a class="btn primary" href="7-Gesellschaft/00_Uebersicht.html">Übersicht der Reihe →</a>
@@ -1726,7 +1741,7 @@ textarea.code-in{width:100%;min-height:9rem;font-family:var(--f-mono);font-size:
         <li><a class="row" href="7-Gesellschaft/06_Wiederholung.html"><span class="no">06</span><span class="rt"><b>Wiederholung und Selbsttest</b><small>Was kann ich, und was sollte ich noch üben?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Gesellschaft/06_Wiederholung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
     </ol>
   </section>
-  <section class="view ser10" data-view="klasse-7/7-Algorithmen" hidden>
+  <section class="view ser10" data-view="klasse-7-8/7-Algorithmen" hidden>
     <div class="topic-head">
       <div><p class="eyebrow">Klasse 7 · Kapitel 5</p><h2>Algorithmen und Problemlösen</h2><p>Algorithmen begegnen uns überall. Die Reihe stellt sie als Text, Ablaufplan und Struktogramm dar und setzt sie in Scratch um: Wiederholungen, Verzweigungen, Variablen, Schleifen mit Abbruchbedingung, ein eigenes Spiel – und zum Schluss wird systematisch getestet.</p></div>
       <a class="btn primary" href="7-Algorithmen/00_Uebersicht.html">Übersicht der Reihe →</a>
@@ -1743,27 +1758,7 @@ textarea.code-in{width:100%;min-height:9rem;font-family:var(--f-mono);font-size:
         <li><a class="row" href="7-Algorithmen/09_Wiederholung.html"><span class="no">09</span><span class="rt"><b>Wiederholung und Selbsttest</b><small>Was kann ich, und was sollte ich noch üben?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Algorithmen/09_Wiederholung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
     </ol>
   </section>
-  <section class="view" data-view="klasse-8" hidden>
-    <h2 class="vh">Klasse 8: Reihe wählen</h2>
-    <ol class="lessons">
-      <li class="lesson ser11">
-        <div class="l-num">1</div>
-        <div class="l-body"><p class="eyebrow">Kapitel 1 · 7 Stunden · ≈ 14 Unterrichtsstunden</p><h2>Einen Mikrocontroller programmieren</h2><p class="l-q">Ein Mikrocontroller steckt in Waschmaschine, Ampel und Fitnessarmband. Die Reihe programmiert den Calliope mini mit NEPO im Open Roberta Lab: LED-Matrix, Tasten, Variablen, Sensoren für Licht, Temperatur und Lage, Sensor-Aktor-Systeme und Funk zwischen mehreren Geräten.</p></div>
-        <div class="l-go"><a class="btn primary" href="#klasse-8/8-Mikrocontroller">Stunden →</a><a class="btn" href="8-Mikrocontroller/00_Uebersicht.html">Übersicht</a></div>
-      </li>
-      <li class="lesson ser12">
-        <div class="l-num">2</div>
-        <div class="l-body"><p class="eyebrow">Kapitel 2 · 5 Stunden · ≈ 10 Unterrichtsstunden</p><h2>Maschinelles Lernen</h2><p class="l-q">Vom Getränkeautomaten zum Sprachassistenten: Die Reihe beginnt bei Automaten mit Zuständen, klärt, was künstliche Intelligenz ist, zeigt überwachtes, unüberwachtes und bestärkendes Lernen und baut zum Schluss ein künstliches Neuron, das selbst lernt.</p></div>
-        <div class="l-go"><a class="btn primary" href="#klasse-8/8-Maschinelles_Lernen">Stunden →</a><a class="btn" href="8-Maschinelles_Lernen/00_Uebersicht.html">Übersicht</a></div>
-      </li>
-      <li class="lesson ser13">
-        <div class="l-num">3</div>
-        <div class="l-body"><p class="eyebrow">Kapitel 3 · 9 Stunden · ≈ 20 Unterrichtsstunden</p><h2>Programmieren mit Programmiersprachen</h2><p class="l-q">Von Blöcken zum Text: Die Reihe programmiert in JavaScript auf einer Canvas-Zeichenfläche. Schleifen, Variablen, Bedingungen, Arrays und Funktionen werden direkt im Browser ausprobiert. Danach entstehen Animationen, Sortierverfahren werden verglichen und Bilder Pixel für Pixel bearbeitet.</p></div>
-        <div class="l-go"><a class="btn primary" href="#klasse-8/8-Programmieren">Stunden →</a><a class="btn" href="8-Programmieren/00_Uebersicht.html">Übersicht</a></div>
-      </li>
-    </ol>
-  </section>
-  <section class="view ser11" data-view="klasse-8/8-Mikrocontroller" hidden>
+  <section class="view ser11" data-view="klasse-7-8/8-Mikrocontroller" hidden>
     <div class="topic-head">
       <div><p class="eyebrow">Klasse 8 · Kapitel 1</p><h2>Einen Mikrocontroller programmieren</h2><p>Ein Mikrocontroller steckt in Waschmaschine, Ampel und Fitnessarmband. Die Reihe programmiert den Calliope mini mit NEPO im Open Roberta Lab: LED-Matrix, Tasten, Variablen, Sensoren für Licht, Temperatur und Lage, Sensor-Aktor-Systeme und Funk zwischen mehreren Geräten.</p></div>
       <a class="btn primary" href="8-Mikrocontroller/00_Uebersicht.html">Übersicht der Reihe →</a>
@@ -1778,7 +1773,7 @@ textarea.code-in{width:100%;min-height:9rem;font-family:var(--f-mono);font-size:
         <li><a class="row" href="8-Mikrocontroller/07_Wiederholung.html"><span class="no">07</span><span class="rt"><b>Wiederholung und Selbsttest</b><small>Was kann ich, und was sollte ich noch üben?</small></span><span class="go">öffnen →</span></a><a class="ws" href="8-Mikrocontroller/07_Wiederholung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
     </ol>
   </section>
-  <section class="view ser12" data-view="klasse-8/8-Maschinelles_Lernen" hidden>
+  <section class="view ser12" data-view="klasse-7-8/8-Maschinelles_Lernen" hidden>
     <div class="topic-head">
       <div><p class="eyebrow">Klasse 8 · Kapitel 2</p><h2>Maschinelles Lernen</h2><p>Vom Getränkeautomaten zum Sprachassistenten: Die Reihe beginnt bei Automaten mit Zuständen, klärt, was künstliche Intelligenz ist, zeigt überwachtes, unüberwachtes und bestärkendes Lernen und baut zum Schluss ein künstliches Neuron, das selbst lernt.</p></div>
       <a class="btn primary" href="8-Maschinelles_Lernen/00_Uebersicht.html">Übersicht der Reihe →</a>
@@ -1791,7 +1786,7 @@ textarea.code-in{width:100%;min-height:9rem;font-family:var(--f-mono);font-size:
         <li><a class="row" href="8-Maschinelles_Lernen/05_Wiederholung.html"><span class="no">05</span><span class="rt"><b>Wiederholung und Selbsttest</b><small>Was kann ich, und was sollte ich noch üben?</small></span><span class="go">öffnen →</span></a><a class="ws" href="8-Maschinelles_Lernen/05_Wiederholung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
     </ol>
   </section>
-  <section class="view ser13" data-view="klasse-8/8-Programmieren" hidden>
+  <section class="view ser13" data-view="klasse-7-8/8-Programmieren" hidden>
     <div class="topic-head">
       <div><p class="eyebrow">Klasse 8 · Kapitel 3</p><h2>Programmieren mit Programmiersprachen</h2><p>Von Blöcken zum Text: Die Reihe programmiert in JavaScript auf einer Canvas-Zeichenfläche. Schleifen, Variablen, Bedingungen, Arrays und Funktionen werden direkt im Browser ausprobiert. Danach entstehen Animationen, Sortierverfahren werden verglichen und Bilder Pixel für Pixel bearbeitet.</p></div>
       <a class="btn primary" href="8-Programmieren/00_Uebersicht.html">Übersicht der Reihe →</a>
@@ -1813,11 +1808,13 @@ textarea.code-in{width:100%;min-height:9rem;font-family:var(--f-mono);font-size:
 </main>
 </div>
 <script>
-const T = {"klasse-5-6": "Klasse 5/6", "klasse-5-6/1-Informatiksysteme": "Informatiksysteme nutzen", "klasse-5-6/2-Algorithmen": "Algorithmen und Problemlösen", "klasse-5-6/3-Bilder_Videos": "Bilder und Videos", "klasse-5-6/4-Recherchieren_Praesentieren": "Recherchieren und Präsentieren", "klasse-5-6/5-Textgestaltung": "Textgestaltung", "klasse-5-6/6-Kommunikation": "Kommunikation in der vernetzten Welt", "klasse-7": "Klasse 7", "klasse-7/7-Informatiksysteme_Netze": "Informatiksysteme und Netze", "klasse-7/7-Daten_codieren": "Daten und ihre Codierung", "klasse-7/7-Verschluesselung": "Daten verschlüsseln", "klasse-7/7-Gesellschaft": "Informatik und Gesellschaft", "klasse-7/7-Algorithmen": "Algorithmen und Problemlösen", "klasse-8": "Klasse 8", "klasse-8/8-Mikrocontroller": "Einen Mikrocontroller programmieren", "klasse-8/8-Maschinelles_Lernen": "Maschinelles Lernen", "klasse-8/8-Programmieren": "Programmieren mit Programmiersprachen"};
+const T = {"klasse-5-6": "Klasse 5/6", "klasse-5-6/1-Informatiksysteme": "Informatiksysteme nutzen", "klasse-5-6/2-Algorithmen": "Algorithmen und Problemlösen", "klasse-5-6/3-Bilder_Videos": "Bilder und Videos", "klasse-5-6/4-Recherchieren_Praesentieren": "Recherchieren und Präsentieren", "klasse-5-6/5-Textgestaltung": "Textgestaltung", "klasse-5-6/6-Kommunikation": "Kommunikation in der vernetzten Welt", "klasse-7-8": "Klasse 7/8", "klasse-7-8/7-Informatiksysteme_Netze": "Informatiksysteme und Netze", "klasse-7-8/7-Daten_codieren": "Daten und ihre Codierung", "klasse-7-8/7-Verschluesselung": "Daten verschlüsseln", "klasse-7-8/7-Gesellschaft": "Informatik und Gesellschaft", "klasse-7-8/7-Algorithmen": "Algorithmen und Problemlösen", "klasse-7-8/8-Mikrocontroller": "Einen Mikrocontroller programmieren", "klasse-7-8/8-Maschinelles_Lernen": "Maschinelles Lernen", "klasse-7-8/8-Programmieren": "Programmieren mit Programmiersprachen"};
 (() => {
   const views = [...document.querySelectorAll('.view')], crumbs = document.getElementById('crumbs'), home = document.getElementById('home');
   function show() {
     let h = decodeURIComponent(location.hash.slice(1));
+    const al = {'klasse-7': 'klasse-7-8', 'klasse-8': 'klasse-7-8'}, hp = h.split('/');
+    if (al[hp[0]]) { hp[0] = al[hp[0]]; h = hp.join('/'); history.replaceState(null, '', '#' + h); }
     if (!views.some(v => v.dataset.view === h)) h = '';
     views.forEach(v => v.hidden = v.dataset.view !== h);
     home.hidden = !h;
