@@ -1,0 +1,206 @@
+<!--
+title: Routing und das Internet
+short: Routing & Internet
+time: 2 Unterrichtsstunden
+q: Wie findet ein Datenpaket seinen Weg durch das Internet?
+facts: IP-Adresse aus vier Zahlenblöcken (0–255), Netzwerkanteil und Hostanteil, Subnetzmaske | Router als Netzwerkknoten, Routingtabellen mit Sprunganzahl | Paketvermittlung: Daten werden in Pakete zerlegt | Internet aus Glasfaser-, See- und Satellitenverbindungen, DNS | Energiebedarf des Internets
+inter: IP-Adressen zerlegen · Gleiches Netz? Übungen · Routing-Netz mit Routerausfall und Routingtabelle · Nachricht in Pakete zerlegen und zusammensetzen · CO₂-Tipps
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Informatiksysteme und Netze</p>
+      <h1>Routing und das Internet<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Ein Autobahnkreuz hat viele Auf- und Abfahrten. Im Internet übernehmen <b>Router</b> diese Aufgabe: An jedem Knoten wird entschieden, wohin ein Datenpaket weiterfährt.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Du schickst ein Foto an eine Freundin in Australien. Welchen Weg nimmt es?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie findet ein Datenpaket seinen Weg durch das Internet?</p></div>
+      <div class="controls"><button class="btn primary" data-go="ip">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="ip" data-label="IP-Adresse" data-yr="Erarbeitung" data-title="IP-Adressen" data-sub="Netzwerk- und Hostanteil">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Aufbau von IP-Adressen</p>
+      <h2>Die Anschrift im Netz</h2>
+      <ul class="facts">
+        <li>Jedes Gerät im Netzwerk hat eine <b>IP-Adresse</b> aus <b>vier Zahlenblöcken</b>. Jeder Block liegt zwischen 0 und 255 und besteht aus 8 Bit.</li>
+        <li>Die <b>Subnetzmaske</b> legt fest, welcher Teil der <b>Netzwerkanteil</b> ist. Bei <span class="mono">255.255.255.0</span> sind es die ersten drei Blöcke.</li>
+        <li>Der letzte Block ist der <b>Hostanteil</b> (1–254): die Nummer des einzelnen Geräts.</li>
+        <li>Geräte mit gleichem Netzwerkanteil gehören zum <b>selben Netzwerk</b>. Netze in <b>Subnetze</b> aufzuteilen hat Vorteile: Fehler bleiben auf ein Subnetz begrenzt und lassen sich schneller finden.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>IP-Adresse zerlegen</h3></div>
+      <input class="text-in mono" id="ip-in" value="192.168.100.17" aria-label="IP-Adresse" spellcheck="false">
+      <p class="ip" id="ip-out" style="margin:.8rem 0 .3rem"></p>
+      <p class="mono note" id="ip-bin"></p>
+      <p class="status" id="ip-status"></p>
+    </div>
+  </div>
+  <h3 class="mt">Gehören die Geräte zum selben Netzwerk? (Subnetzmaske 255.255.255.0)</h3>
+  <div id="ts"></div>
+</section>
+
+<section class="station" id="routing" data-label="Routing" data-yr="Erarbeitung" data-title="Routing in Netzwerken" data-sub="Routingtabellen">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Routing in Netzwerken</p>
+    <h2>Der Weg über die Knoten</h2>
+    <p class="lead">Router bilden die <b>Knoten</b> eines großen Netzes. Jeder Router hat eine <b>Routingtabelle</b>: Zum Ziel <b>Z</b> geht es über den Nachbarn <b>N</b> mit <b>H</b> Sprüngen (hops). Routingtabellen werden regelmäßig neu berechnet – fällt ein Router aus, wird ein anderer Weg gewählt.</p>
+  </div>
+  <div class="model">
+    <div class="vis">
+      <div class="vis-head"><h3>Tippe Start, dann Ziel</h3><button class="btn" id="rt-kill">💥 Router ausfallen lassen</button></div>
+      <svg id="rt"></svg>
+      <p class="status" id="rt-status"></p>
+    </div>
+    <div class="stack">
+      <div class="vis"><div class="vis-head"><h3>Routingtabelle von <span id="rt-name">A</span></h3></div><div class="table-wrap"><table class="cmp" id="rt-tab"></table></div></div>
+      <div class="task-card"><header><span class="no">A</span><h3>Gleich günstig</h3></header><p>Von A nach E gibt es zwei Wege mit drei Sprüngen. Nenne beide.</p>
+        <div class="controls"><button class="btn" data-reveal="ra" aria-expanded="false">Lösung</button></div><p class="solution" id="ra" hidden>A → B → D → E und A → C → D → E. In der Routingtabelle wird nur einer der gleich günstigen Wege eingetragen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="pakete" data-label="Pakete" data-yr="Erarbeitung" data-title="Paketvermittlung" data-sub="Daten in Paketen">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Funktionsweise des Internets</p>
+      <h2>In Paketen um die Welt</h2>
+      <ul class="facts">
+        <li>Das <b>Internet</b> ist ein globales Netz verbundener Computer, die nach einheitlichen Regeln (<b>Protokollen</b>) Daten austauschen.</li>
+        <li>Große Datenmengen werden in kleine <b>Pakete</b> zerteilt. Jedes Paket findet einzeln seinen Weg – oft auf unterschiedlichen Wegen – und am Ziel werden die Pakete wieder zusammengesetzt: <b>Paketvermittlung</b>.</li>
+        <li>Geht ein Paket verloren, wird nur dieses eine neu geschickt. Und keine Leitung wird von einer einzigen großen Datei blockiert.</li>
+        <li>Statt IP-Adressen tippen wir Namen ein. Das <b>DNS</b> (Domain Name System) übersetzt sie wie ein Telefonbuch: <b>Namensauflösung</b>.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Nachricht verschicken</h3></div>
+      <input class="text-in" id="pk-in" value="Treffen um 15 Uhr am Freibad!" maxlength="40" aria-label="Nachricht">
+      <div id="pk-step"></div>
+      <div id="pk" class="pk-stage"></div>
+      <p class="status" id="pk-status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Infrastruktur" data-yr="M1" data-title="Kabel, Satelliten, Energie" data-sub="Die Infrastruktur des Internets">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Kabel, Satelliten und Strom</h2>
+  </div>
+  <div class="cols-3">
+    <div class="box"><span class="tag info">Glasfaser</span><p>Für weltweite Vernetzung liegen <b>Glasfaserkabel</b> an Land und als <b>Seekabel</b> auf dem Meeresgrund. Sie übertragen Daten als Lichtsignale und haben riesige Kapazitäten. Über sie läuft fast der gesamte Datenverkehr.</p></div>
+    <div class="box"><span class="tag info">Satelliten</span><p>Netze aus Tausenden Satelliten in niedriger Umlaufbahn sollen auch abgelegene Gebiete versorgen. Ein <b>Terminal</b> mit drehbarer Antenne hält Kontakt; schon ein Baum kann die Sichtverbindung stören.</p></div>
+    <div class="box"><span class="tag lim">Energie</span><p>Rechenzentren laufen rund um die Uhr und müssen gekühlt werden. In Deutschland verbrauchte das Internet 2020 etwa 13 TWh Strom – rund das Vierfache aller Privathaushalte Berlins. Den größten Anteil hat <b>Videostreaming</b>.</p></div>
+  </div>
+  <div class="grid-2 mt">
+    <div>
+      <h3>Was spart CO₂? Sortiere.</h3>
+      <div id="sort-co2"></div>
+    </div>
+    <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Eigene Nutzung</h3></header><p>Bewerte deine eigene Internetnutzung. Nutzt du das Internet nachhaltig?</p>
+      <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Hinweise</button></div><p class="solution" id="m1a" hidden>Videos in niedrigerer Auflösung streamen, WLAN statt mobiler Daten nutzen, Autoplay ausschalten, Musik herunterladen statt immer wieder streamen, Geräte länger nutzen, Ökostrom.</p></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Routing und Internet</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Routing und das Internet</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step>Eine <b>IP-Adresse</b> besteht aus vier Zahlenblöcken (0–255, je 8 Bit). Die <b>Subnetzmaske</b> (z. B. 255.255.255.0) trennt <b>Netzwerkanteil</b> und <b>Hostanteil</b>.</li>
+        <li data-step>Gleicher Netzwerkanteil → gleiches Netzwerk. Große Netze werden in <b>Subnetze</b> aufgeteilt.</li>
+        <li data-step><b>Router</b> sind Knoten im Netz. Ihre <b>Routingtabelle</b> gibt an, über welchen Nachbarn ein Ziel mit wie vielen Sprüngen erreicht wird.</li>
+        <li data-step><b>Paketvermittlung:</b> Daten werden in Pakete zerlegt, die einzeln (oft auf verschiedenen Wegen) zum Ziel reisen und dort zusammengesetzt werden. Das <b>DNS</b> übersetzt Namen in IP-Adressen.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Schreibe 192.168.100.17 auf und markiere Netzwerkanteil und Hostanteil in zwei Farben.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Routing und Internet</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ================= IP zerlegen ================= */
+(() => {
+  function upd() {
+    const p = $('#ip-in').value.trim().split('.');
+    const ok = p.length === 4 && p.every(x => /^\d{1,3}$/.test(x) && +x <= 255);
+    if (!ok) { $('#ip-out').innerHTML = '<span class="bad">keine gültige IP-Adresse</span>'; $('#ip-bin').textContent = ''; $('#ip-status').textContent = 'Vier Blöcke von 0 bis 255, durch Punkte getrennt.'; return; }
+    $('#ip-out').innerHTML = `<span class="net">${p.slice(0, 3).join('.')}</span>.<span class="host">${p[3]}</span>`;
+    $('#ip-bin').innerHTML = p.map((x, i) => `<span style="color:${i < 3 ? 'var(--accent)' : 'var(--a)'}">${(+x).toString(2).padStart(8, '0')}</span>`).join(' . ');
+    $('#ip-status').innerHTML = `Netzwerkanteil <b>${p.slice(0, 3).join('.')}</b> · Hostanteil <b>${p[3]}</b> ${+p[3] === 0 || +p[3] === 255 ? '<span class="bad">(0 und 255 sind für Geräte nicht erlaubt)</span>' : ''} · Subnetzmaske 255.255.255.0`;
+  }
+  $('#ip-in').addEventListener('input', upd); upd();
+})();
+taskSet($('#ts'), () => {
+  const n1 = `192.${randInt(160, 170)}.${randInt(1, 250)}`, same = Math.random() < .5;
+  const n2 = same ? n1 : n1.replace(/\.(\d+)$/, (m, d) => '.' + ((+d + randInt(1, 4)) % 250));
+  const a = `${n1}.${randInt(2, 120)}`, b = `${n2}.${randInt(121, 250)}`;
+  return {key: a + b, tag: 'Netzwerk', q: `<span class="mono">${a}</span><br><span class="mono">${b}</span>`, fields: [{l: 'Gleiches Netz? (ja/nein)', a: same ? ['ja', 'j'] : ['nein', 'n']}], hint: 'Vergleiche die ersten drei Zahlenblöcke.'};
+}, {n: 4});
+
+/* ================= Routing ================= */
+(() => {
+  const N = {A: [50, 150, 'A'], B: [160, 60, 'B'], C: [160, 240, 'C'], D: [290, 150, 'D'], E: [410, 150, 'E'], F: [290, 270, 'F']};
+  const E = [['A', 'B', 1], ['A', 'C', 1], ['B', 'D', 1], ['C', 'D', 1], ['D', 'E', 1], ['C', 'F', 1], ['F', 'E', 1]];
+  let src = null, dead = [];
+  const g = graphView($('#rt'), N, E, {w: 460, h: 300, weights: false, onNode: id => {
+    if (dead.includes(id)) return;
+    if (!src || src && $('#rt-status').dataset.done) { src = id; $('#rt-status').dataset.done = ''; g.draw({on: [id], bad: dead}); $('#rt-status').innerHTML = `Start: <b>${id}</b>. Tippe jetzt das Ziel an.`; table(id); return; }
+    const r = g.path(src, id, dead);
+    if (!r) { $('#rt-status').innerHTML = 'Kein Weg möglich!'; return; }
+    g.draw({path: r.path, bad: dead, pkt: id});
+    $('#rt-status').innerHTML = `Weg: <b>${r.path.join(' → ')}</b> mit <b>${r.cost}</b> Sprüngen.`; $('#rt-status').dataset.done = 1;
+  }});
+  function table(id) {
+    $('#rt-name').textContent = id;
+    const {dist, prev} = g.dijkstra(id, dead);
+    const hop = z => { let n = z; while (prev[n] && prev[n] !== id) n = prev[n]; return n; };
+    $('#rt-tab').innerHTML = '<thead><tr><th>Ziel Z</th><th>Nachbar N</th><th>Sprünge H</th></tr></thead><tbody>' + Object.keys(N).filter(z => z !== id && !dead.includes(z)).map(z => `<tr><td>${z}</td><td>${dist[z] === Infinity ? '–' : hop(z)}</td><td>${dist[z] === Infinity ? '∞' : dist[z]}</td></tr>`).join('') + '</tbody>';
+  }
+  $('#rt-kill').onclick = () => { dead = dead.length ? [] : ['D']; $('#rt-kill').textContent = dead.length ? '🔧 Router D reparieren' : '💥 Router ausfallen lassen'; src = null; g.draw({bad: dead}); table('A'); $('#rt-status').innerHTML = dead.length ? 'Router <b>D</b> ist ausgefallen. Die Routingtabellen werden neu berechnet. Wähle einen neuen Start.' : 'Alle Router laufen wieder.'; };
+  g.draw(); table('A'); $('#rt-status').textContent = 'Tippe einen Start-Router an.';
+})();
+
+/* ================= Paketvermittlung ================= */
+(() => {
+  let packs = [], order = [];
+  const S = ['Die Nachricht liegt beim Sender.', 'Sie wird in Pakete zerlegt. Jedes Paket bekommt eine Nummer und die Zieladresse.', 'Die Pakete reisen einzeln über verschiedene Router – sie kommen durcheinander an.', 'Am Ziel werden sie nach ihren Nummern sortiert und zusammengesetzt.'];
+  function split() { const t = $('#pk-in').value || ' '; packs = t.match(/.{1,8}/g); order = shuffle(packs.map((p, i) => i)); if (order.every((v, i) => v === i) && order.length > 1) order.reverse(); }
+  const card = (i, cls = '') => `<span class="pk ${cls}"><b>#${i + 1}</b>${packs[i].replace(/ /g, '␣')}</span>`;
+  function draw(k) {
+    split();
+    const box = $('#pk');
+    if (k === 0) box.innerHTML = `<div class="pk-row"><span class="pk whole">${$('#pk-in').value}</span></div>`;
+    if (k === 1) box.innerHTML = `<div class="pk-row">${packs.map((p, i) => card(i)).join('')}</div>`;
+    if (k === 2) box.innerHTML = `<div class="pk-row">${order.map(i => card(i, 'travel')).join('')}</div>`;
+    if (k === 3) box.innerHTML = `<div class="pk-row">${packs.map((p, i) => card(i, 'ok')).join('')}</div><p class="big-num" style="font-size:1.2rem;margin-top:.6rem">✔ ${$('#pk-in').value}</p>`;
+    $('#pk-status').textContent = S[k];
+  }
+  const st = stepper($('#pk-step'), 4, draw);
+  $('#pk-in').addEventListener('input', () => draw(st.k));
+})();
+
+sorter($('#sort-co2'), [{id: 'gut', name: 'spart CO₂'}, {id: 'schlecht', name: 'kostet viel Energie'}], [
+  {t: 'Ökostrom-Tarif nutzen', c: 'gut'}, {t: 'WLAN statt mobiler Daten', c: 'gut'}, {t: 'Serien in 4K auf dem Handy streamen', c: 'schlecht'},
+  {t: 'Autoplay ausschalten', c: 'gut'}, {t: 'Dasselbe Lied 100-mal streamen', c: 'schlecht'}, {t: 'Energieeffiziente Geräte lange nutzen', c: 'gut'}
+]);
+
+mcQuiz($('#quiz'), [
+  {q: 'Aus wie vielen Zahlenblöcken besteht eine IP-Adresse (IPv4)?', a: ['4', '3', '6', '8'], ok: 0},
+  {q: 'Welcher Wert ist in einem Zahlenblock NICHT möglich?', a: ['300', '0', '168', '255'], ok: 0, why: 'Ein Block hat 8 Bit: 0 bis 255.'},
+  {q: 'Gehören 192.168.100.5 und 192.168.200.5 zum selben Netz (Maske 255.255.255.0)?', a: ['nein', 'ja', 'nur nachts', 'kann man nicht sagen'], ok: 0, why: 'Der dritte Block unterscheidet sich.'},
+  {q: 'Was steht in einer Routingtabelle?', a: ['Ziel, Nachbar und Anzahl der Sprünge', 'alle Passwörter', 'die Webseiten', 'die Uhrzeit'], ok: 0},
+  {q: 'Warum werden Daten in Pakete zerlegt?', a: ['Pakete können einzeln und auf verschiedenen Wegen reisen; bei Fehlern wird nur ein Paket neu geschickt.', 'damit sie kleiner werden', 'damit niemand sie lesen kann', 'weil Kabel nur Buchstaben übertragen'], ok: 0},
+  {q: 'Was macht das DNS?', a: ['Es übersetzt Namen wie schule.de in IP-Adressen.', 'Es verschlüsselt Daten.', 'Es kühlt Server.', 'Es verlegt Seekabel.'], ok: 0}
+]);
+</script>

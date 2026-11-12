@@ -1,0 +1,197 @@
+<!--
+title: Codes und das Binärsystem
+short: Binärsystem
+time: 2 Unterrichtsstunden
+q: Wie werden Informationen codiert – und wie rechnet man Zahlen ins Binärsystem um?
+facts: Codierung: Zeichen nach einer Vorschrift in andere Zeichen übersetzen (Brailleschrift, Morsecode, EAN, Erzeugercode) | Stellenwertsysteme: Dezimal- und Binärsystem | Dualzahl → Dezimalzahl über Stellenwerte | Dezimalzahl → Dualzahl mit dem Divisionsverfahren
+inter: Morse-Übersetzer · Braille-Zelle · Stellenwerttafel mit Lampen · Divisionsverfahren Schritt für Schritt · Umrechnungstraining in beide Richtungen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Daten und ihre Codierung</p>
+      <h1>Codes und das Binärsystem<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">„Привіт“, „· · · · / · −“, ⠓⠁⠇⠇⠕ und <span class="mono">01001000</span>: Alles kann „Hallo“ bedeuten – wenn man den <b>Code</b> kennt.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welche Codes begegnen dir beim Einkaufen?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie werden Informationen codiert – und wie rechnet man Zahlen ins Binärsystem um?</p></div>
+      <div class="controls"><button class="btn primary" data-go="codes">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="codes" data-label="Codes" data-yr="Einstieg" data-title="Daten codieren" data-sub="Morse, Braille, Barcodes">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Daten und ihre Codierung</p>
+    <h2>Ein Code ist eine Übersetzungsvorschrift</h2>
+    <p class="lead">Beim <b>Codieren</b> wird jedes Zeichen nach einer festen Vorschrift in ein anderes Zeichen oder Symbol umgewandelt – so, dass bestimmte Personen oder Maschinen es verstehen. Die Codierung erfüllt also einen <b>Zweck</b>.</p>
+  </div>
+  <div class="cols-2">
+    <div class="vis">
+      <div class="vis-head"><h3>Morsecode</h3><span class="note">Samuel Morse, 1837</span></div>
+      <input class="text-in" id="mo-in" value="Hallo" maxlength="20" aria-label="Text">
+      <p class="mono" id="mo-out" style="font-size:1.4rem;margin:.6rem 0;word-break:break-all"></p>
+      <p class="note">Kurzes Signal = Punkt, langes Signal = Strich. Elektrische Impulse über eine Leitung machten Nachrichten in Minuten möglich.</p>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Brailleschrift</h3><span class="note">Louis Braille, 1825</span></div>
+      <input class="text-in" id="br-in" value="Hallo" maxlength="12" aria-label="Text">
+      <div class="braille" id="br-out"></div>
+      <p class="note">Jeder Buchstabe besteht aus bis zu 6 Punkten in einem Rechteck. Die erhabenen Punkte werden ertastet.</p>
+    </div>
+  </div>
+  <h3 class="mt">Wer soll den Code lesen? Sortiere.</h3>
+  <div id="sort-code"></div>
+</section>
+
+<section class="station" id="binaer" data-label="Stellenwerte" data-yr="Erarbeitung" data-title="Das Binärsystem" data-sub="Stellenwerttafel">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Das Binärsystem</p>
+      <h2>Nur zwei Ziffern</h2>
+      <ul class="facts">
+        <li>Im <b>Dezimalsystem</b> gibt es 10 Ziffern (0–9) und die Stellenwerte 1, 10, 100, 1000 …</li>
+        <li>Computer arbeiten nur mit <b>0 (aus)</b> und <b>1 (an)</b> – einem <b>Bit</b>. Im <b>Binärsystem</b> (Dualsystem) haben die Stellen die Werte 1, 2, 4, 8, 16, 32, 64, 128 …</li>
+        <li>Eine <b>Dualzahl</b> erkennt man an der tiefgestellten 2: <b>11100₂</b>, gesprochen „Eins Eins Eins Null Null im Dualsystem“.</li>
+        <li><b>Dual → dezimal:</b> Jede Ziffer mit ihrem Stellenwert multiplizieren und addieren: 1·16 + 1·8 + 1·4 + 0·2 + 0·1 = <b>28</b>.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Lampen schalten</h3><button class="btn" id="pv-clear">Alle aus</button></div>
+      <div class="pv-row" id="pv"></div>
+      <p class="big-num" id="pv-out" style="margin:.8rem 0 0"></p>
+      <p class="status" id="pv-status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="division" data-label="Divisionsverfahren" data-yr="Erarbeitung" data-title="Dezimal → binär" data-sub="Das Divisionsverfahren">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Umrechnen ins Binärsystem</p>
+      <h2>Das Divisionsverfahren</h2>
+      <ol class="facts" style="list-style:decimal;padding-left:1.4rem">
+        <li>Teile die Dezimalzahl durch 2 und schreibe den <b>Rest</b> (0 oder 1) auf.</li>
+        <li>Teile das Ergebnis wieder durch 2 – so lange, bis 0 herauskommt.</li>
+        <li>Lies die Reste <b>von unten nach oben</b>: Das ist die Dualzahl.</li>
+      </ol>
+      <p class="note">Mit 8 Bit (1 Byte) lassen sich die Zahlen 0 bis 255 darstellen.</p>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Schritt für Schritt</h3><label class="mono">Zahl <input id="dv-in" type="number" min="1" max="1023" value="28" style="width:5rem;font:inherit;padding:.2rem .4rem"></label></div>
+      <div class="table-wrap"><table class="cmp" id="dv"></table></div>
+      <div id="dv-step"></div>
+      <p class="big-num" id="dv-out"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 LED-Anzeige" data-yr="M1" data-title="Zahlen mit LEDs" data-sub="Welche LEDs leuchten?">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Zahlen mit Leuchtdioden</h2>
+    <p class="lead">Eine Reihe aus 7 LEDs zeigt Zahlen im Binärsystem. Eine leuchtende LED bedeutet 1. Schalte die LEDs für die gesuchte Zahl.</p>
+  </div>
+  <div class="model">
+    <div class="vis">
+      <div class="vis-head"><h3>Ziel: <span class="big-num" id="led-goal"></span></h3><button class="btn" id="led-new">Neue Zahl</button></div>
+      <div class="pv-row" id="led"></div>
+      <p class="status" id="led-status"></p>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Begründen</h3></header><p>Welche LEDs müssen für 40, 33 und 17 leuchten? Begründe.</p>
+        <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution mono" id="m1a" hidden>40 = 32 + 8 → 0101000₂<br>33 = 32 + 1 → 0100001₂<br>17 = 16 + 1 → 0010001₂</p></div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Größte Zahl</h3></header><p>Welche ist die größte Zahl, die 7 LEDs darstellen können? Und 8 LEDs?</p>
+        <div class="controls"><button class="btn" data-reveal="m1b" aria-expanded="false">Lösung</button></div><p class="solution" id="m1b" hidden>7 LEDs: 1111111₂ = 127 (also 128 verschiedene Zahlen 0–127). 8 LEDs: 11111111₂ = 255 (256 Zahlen).</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Codes und Binärsystem</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Codes und das Binärsystem</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step>Ein <b>Code</b> ist eine Vorschrift, nach der Zeichen in andere Zeichen übersetzt werden (z. B. Morsecode, Brailleschrift, Barcode). Codierung erfüllt einen Zweck.</li>
+        <li data-step>Computer arbeiten im <b>Binärsystem</b> mit den Ziffern 0 und 1. Die Stellenwerte sind Zweierpotenzen: 1, 2, 4, 8, 16, 32, 64, 128.</li>
+        <li data-step><b>Dual → dezimal:</b> Ziffern mit Stellenwerten multiplizieren und addieren: 11100₂ = 16 + 8 + 4 = 28.</li>
+        <li data-step><b>Dezimal → dual:</b> immer wieder durch 2 teilen, die Reste von unten nach oben lesen: 28 = 11100₂.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Beispiel</span><p>Rechne 162 mit dem Divisionsverfahren um und prüfe mit der Stellenwerttafel.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Umrechnen</h2></div>
+  <div id="ts"></div>
+</section>
+
+<script>
+/* ================= Morse und Braille ================= */
+(() => {
+  const M = {A: '·−', B: '−···', C: '−·−·', D: '−··', E: '·', F: '··−·', G: '−−·', H: '····', I: '··', J: '·−−−', K: '−·−', L: '·−··', M: '−−', N: '−·', O: '−−−', P: '·−−·', Q: '−−·−', R: '·−·', S: '···', T: '−', U: '··−', V: '···−', W: '·−−', X: '−··−', Y: '−·−−', Z: '−−··', 0: '−−−−−', 1: '·−−−−', 2: '··−−−', 3: '···−−', 4: '····−', 5: '·····', 6: '−····', 7: '−−···', 8: '−−−··', 9: '−−−−·'};
+  const upd = () => $('#mo-out').textContent = [...$('#mo-in').value.toUpperCase()].map(c => c === ' ' ? '/' : M[c] || '?').join('  ');
+  $('#mo-in').addEventListener('input', upd); upd();
+  /* Braille: Punkte 1–6 (links 1,2,3 · rechts 4,5,6) */
+  const B = {a: '1', b: '12', c: '14', d: '145', e: '15', f: '124', g: '1245', h: '125', i: '24', j: '245', k: '13', l: '123', m: '134', n: '1345', o: '135', p: '1234', q: '12345', r: '1235', s: '234', t: '2345', u: '136', v: '1236', w: '2456', x: '1346', y: '13456', z: '1356'};
+  const cell = d => `<span class="br-c">${[1, 4, 2, 5, 3, 6].map(k => `<i class="${d.includes(k) ? 'on' : ''}"></i>`).join('')}</span>`;
+  const upb = () => $('#br-out').innerHTML = [...$('#br-in').value.toLowerCase()].map(c => B[c] ? `<span class="br-w">${cell(B[c])}<small>${c}</small></span>` : `<span class="br-w">${cell('')}<small>${c === ' ' ? '␣' : c}</small></span>`).join('');
+  $('#br-in').addEventListener('input', upb); upb();
+})();
+sorter($('#sort-code'), [{id: 'mensch', name: 'für bestimmte Menschen'}, {id: 'maschine', name: 'für Maschinen'}], [
+  {t: 'Brailleschrift', c: 'mensch', why: 'für blinde Menschen'}, {t: 'Kyrillische Schrift', c: 'mensch', why: 'für Menschen, die die Sprache können'}, {t: 'Erzeugercode auf Eiern', c: 'mensch', why: 'Herkunft und Haltung für Käufer'},
+  {t: 'EAN-Barcode', c: 'maschine', why: 'Scanner an der Kasse'}, {t: 'Code auf Pfandflaschen', c: 'maschine', why: 'Pfandautomat'}, {t: 'Binärcode 01001000', c: 'maschine', why: 'Computer'}
+]);
+
+/* ================= Stellenwerttafel ================= */
+(() => {
+  const V = [128, 64, 32, 16, 8, 4, 2, 1];
+  let on = [0, 0, 0, 1, 1, 1, 0, 0];
+  function draw() {
+    $('#pv').innerHTML = V.map((v, i) => `<div class="pv-c"><small>${v}</small><button class="pv-b ${on[i] ? 'on' : ''}" data-i="${i}">${on[i]}</button></div>`).join('');
+    const n = on.reduce((s, b, i) => s + b * V[i], 0), parts = V.filter((v, i) => on[i]);
+    $('#pv-out').textContent = `${on.join('')}₂ = ${n}`;
+    $('#pv-status').innerHTML = parts.length ? `${parts.join(' + ')} = <b>${n}</b>` : 'Alle Lampen aus: 0';
+  }
+  $('#pv').addEventListener('click', e => { const b = e.target.closest('[data-i]'); if (b) { on[+b.dataset.i] ^= 1; draw(); } });
+  $('#pv-clear').onclick = () => { on = on.map(() => 0); draw(); };
+  draw();
+})();
+
+/* ================= Divisionsverfahren ================= */
+(() => {
+  let rows = [], st;
+  function calc() {
+    let n = Math.max(1, Math.min(1023, Math.floor(+$('#dv-in').value || 1))); rows = [];
+    while (n > 0) { rows.push([n, Math.floor(n / 2), n % 2]); n = Math.floor(n / 2); }
+  }
+  function draw(k) {
+    $('#dv').innerHTML = '<thead><tr><th>Rechnung</th><th>Ergebnis</th><th>Rest</th></tr></thead><tbody>' + rows.map((r, i) => `<tr style="opacity:${i <= k ? 1 : .12}"><td class="mono">${r[0]} : 2</td><td class="mono">= ${r[1]}</td><td class="mono"><b>${r[2]}</b> ${i === rows.length - 1 && k >= i ? '↑' : ''}</td></tr>`).join('') + '</tbody>';
+    $('#dv-out').innerHTML = k >= rows.length - 1 ? `${rows[0][0]} = ${rows.map(r => r[2]).reverse().join('')}₂ <span class="note" style="font-size:.9rem">(Reste von unten nach oben)</span>` : '';
+  }
+  function init() { calc(); const el = $('#dv-step'), fresh = el.cloneNode(false); el.replaceWith(fresh); st = stepper(fresh, rows.length, draw); }
+  $('#dv-in').addEventListener('change', init); init();
+})();
+
+/* ================= LED-Aufgabe ================= */
+(() => {
+  const V = [64, 32, 16, 8, 4, 2, 1];
+  let on = V.map(() => 0), goal = 0;
+  function draw() {
+    $('#led').innerHTML = V.map((v, i) => `<div class="pv-c"><small>${v}</small><button class="pv-b ${on[i] ? 'on' : ''}" data-i="${i}">${on[i] ? '●' : '○'}</button></div>`).join('');
+    const n = on.reduce((s, b, i) => s + b * V[i], 0);
+    $('#led-status').innerHTML = n === goal ? `<b class="good">Richtig!</b> ${goal} = ${on.join('')}₂` : `Deine Lampen zeigen <b>${n}</b>. ${n < goal ? 'Noch zu wenig.' : 'Zu viel!'}`;
+  }
+  const neu = () => { goal = pick([40, 33, 17, 74, 58, 23, 100, 127, randInt(5, 120)]); $('#led-goal').textContent = goal; on = V.map(() => 0); draw(); };
+  $('#led').addEventListener('click', e => { const b = e.target.closest('[data-i]'); if (b) { on[+b.dataset.i] ^= 1; draw(); } });
+  $('#led-new').onclick = neu; neu();
+})();
+
+taskSet($('#ts'), i => {
+  if (i % 2) { const n = randInt(5, 255); return {key: 'd' + n, tag: 'dezimal → dual', q: `<span class="big">${n}</span>`, fields: [{l: 'Dualzahl', a: [n.toString(2), n.toString(2).padStart(8, '0')], unit: '₂'}], hint: 'Divisionsverfahren: durch 2 teilen, Reste von unten nach oben lesen.'}; }
+  const n = randInt(5, 255); return {key: 'b' + n, tag: 'dual → dezimal', q: `<span class="big">${n.toString(2)}₂</span>`, fields: [{l: 'Dezimalzahl', a: n}], hint: 'Stellenwerte von rechts: 1, 2, 4, 8, 16, 32, 64, 128.'};
+}, {n: 6});
+</script>

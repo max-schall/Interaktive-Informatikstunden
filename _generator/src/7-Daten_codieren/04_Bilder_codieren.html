@@ -1,0 +1,217 @@
+<!--
+title: Bilder codieren
+short: Bilder codieren
+time: 2 Unterrichtsstunden
+q: Wie wird ein Bild aus Pixeln als Binärcode gespeichert?
+facts: Rastergrafik aus Pixeln, Auflösung = Breite × Höhe | Schwarz-Weiß-Bild: 1 Bit pro Pixel | Graustufenbild: 8 Bit pro Pixel, 256 Graustufen (0 = schwarz, 255 = weiß) | RGB-Farbbild: 3 Byte pro Pixel | Dateigröße berechnen, Dateiformat PNM (P1, P2, P3)
+inter: Pixel-Editor mit Bitfolge · Bitfolge in Bild umwandeln · Graustufen-Regler · RGB-Pixel mischen · Dateigrößen-Rechner · PNM-Datei im Texteditor bearbeiten
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Daten und ihre Codierung</p>
+      <h1>Bilder codieren<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Ein Smartphone macht Fotos mit 12 Millionen Bildpunkten. Damit der Computer sie speichern kann, wird jeder Punkt als Zahl – und damit als Bitfolge – codiert.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Geh ganz nah an einen Bildschirm heran. Was siehst du?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie wird ein Bild aus Pixeln als Binärcode gespeichert?</p></div>
+      <div class="controls"><button class="btn primary" data-go="sw">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="sw" data-label="Schwarz-Weiß" data-yr="Erarbeitung" data-title="Schwarz-Weiß-Bilder" data-sub="1 Bit pro Pixel">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Rastergrafiken</p>
+      <h2>Ein Bit pro Pixel</h2>
+      <ul class="facts">
+        <li>Ein Bild wird in ein Raster aus Bildpunkten zerlegt: <b>Pixel</b>. So entsteht eine <b>Rastergrafik</b>.</li>
+        <li>Die <b>Bildgröße</b> (Auflösung) ist Breite × Höhe in Pixeln. Je mehr Pixel, desto höher die Auflösung.</li>
+        <li>Im <b>Schwarz-Weiß-Bild</b> reicht 1 Bit pro Pixel: hier <b>1 = weiß</b>, <b>0 = schwarz</b>.</li>
+        <li>Die Pixelwerte werden zeilenweise <b>von oben links nach unten rechts</b> als Bitfolge gespeichert.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Male ein 8 × 8-Bild</h3><button class="btn" id="sw-clear">Leeren</button></div>
+      <div class="cols-2" style="gap:.8rem">
+        <div id="sw-grid"></div>
+        <div class="pxcode mono" id="sw-code"></div>
+      </div>
+      <p class="status" id="sw-status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="decode" data-label="Bitfolge → Bild" data-yr="Übung" data-title="Bitfolge decodieren" data-sub="Welches Bild steckt darin?">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Bitfolge decodieren</p>
+    <h2>Welches Bild steckt in der Bitfolge?</h2>
+    <p class="lead">Das Bild ist 8 Pixel breit. Male die Pixel nach der Bitfolge aus (0 = schwarz) und prüfe dann.</p>
+  </div>
+  <div class="model">
+    <div class="vis">
+      <p class="mono" id="dc-bits" style="word-break:break-all;font-size:.95rem"></p>
+      <div class="controls"><button class="btn" id="dc-new">Anderes Bild</button></div>
+    </div>
+    <div class="vis">
+      <div id="dc-grid"></div>
+      <div class="controls"><button class="btn primary" id="dc-check">Prüfen</button><button class="btn" id="dc-solve">Lösung</button></div>
+      <p class="status" id="dc-status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="grau" data-label="Graustufen & RGB" data-yr="Erarbeitung" data-title="Grau und Farbe" data-sub="8 Bit und 24 Bit pro Pixel">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Graustufen- und Farbbilder</p>
+    <h2>Mehr Bits – mehr Farben</h2>
+  </div>
+  <div class="cols-2">
+    <div class="vis">
+      <div class="vis-head"><h3>Graustufen: 8 Bit</h3></div>
+      <p>Jedes Pixel bekommt 1 Byte: 2⁸ = <b>256 Graustufen</b>. 0 = schwarz, 255 = weiß.</p>
+      <label class="slider-row">Grauwert <input id="g-v" type="range" min="0" max="255" value="160"><output id="g-o" class="mono">160</output></label>
+      <div class="swatch" id="g-sw"></div>
+      <p class="mono" id="g-bin"></p>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Farbe: 3 × 8 Bit</h3></div>
+      <p>Im <b>RGB-Bild</b> hat jedes Pixel einen Rot-, Grün- und Blauwert (je 0–255): <b>3 Byte pro Pixel</b>, über 16 Millionen Farben.</p>
+      <label class="slider-row">Rot <input id="c-r" type="range" min="0" max="255" value="255"><output id="c-ro" class="mono"></output></label>
+      <label class="slider-row">Grün <input id="c-g" type="range" min="0" max="255" value="200"><output id="c-go" class="mono"></output></label>
+      <label class="slider-row">Blau <input id="c-b" type="range" min="0" max="255" value="0"><output id="c-bo" class="mono"></output></label>
+      <div class="swatch" id="c-sw"></div>
+      <p class="mono" id="c-bin" style="font-size:.85rem"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="groesse" data-label="Dateigröße" data-yr="Erarbeitung" data-title="Dateigröße berechnen" data-sub="Pixel × Farbtiefe">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 4 · Dateigröße</p>
+      <h2>Wie groß wird die Datei?</h2>
+      <div class="merke"><b>Dateigröße</b> = Breite × Höhe × Bit pro Pixel. Durch 8 geteilt ergibt das Byte.</div>
+      <p>Beispiel: Ein RGB-Foto mit 4000 × 3000 Pixeln hat 12 Millionen Pixel × 3 Byte = <b>36 MB</b> – ohne Kompression. Kompakte Formate wie JPEG oder PNG sind viel kleiner (nächste Stunde).</p>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Rechner</h3><div id="sz-seg"></div></div>
+      <label class="slider-row">Breite <input id="sz-w" type="range" min="8" max="4000" step="8" value="1920"><output id="sz-wo" class="mono"></output></label>
+      <label class="slider-row">Höhe <input id="sz-h" type="range" min="8" max="3000" step="8" value="1080"><output id="sz-ho" class="mono"></output></label>
+      <p class="status" id="sz-status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 PNM-Format" data-yr="M1" data-title="Das PNM-Format" data-sub="Bilder als Textdatei">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1</p>
+    <h2>Ein Bild im Texteditor</h2>
+    <p class="lead">Das Format <b>PNM</b> (Portable Anymap) speichert Bilder als einfachen Text. Der Kopf (Header) nennt den Typ (<b>P1</b> = Schwarz-Weiß, <b>P2</b> = Graustufen, <b>P3</b> = RGB), Breite und Höhe, bei P2/P3 auch den Maximalwert. Achtung: In P1 bedeutet <b>1 = schwarz</b>! Ändere die Datei.</p>
+  </div>
+  <div class="cols-2">
+    <textarea class="code-in" id="pnm-in" spellcheck="false" style="min-height:15rem" aria-label="PNM-Datei"></textarea>
+    <div class="vis">
+      <div class="vis-head"><h3>Vorschau</h3><div id="pnm-ex"></div></div>
+      <canvas id="pnm-cv" width="240" height="240" style="width:100%;max-width:18rem;image-rendering:pixelated;border:1.5px solid var(--edge);display:block;margin:auto;background:repeating-conic-gradient(var(--surface-2) 0 25%,var(--surface) 0 50%) 0 0/16px 16px"></canvas>
+      <p class="status" id="pnm-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Bilder codieren</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Bilder codieren</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step>Eine <b>Rastergrafik</b> besteht aus <b>Pixeln</b>. Die <b>Auflösung</b> ist Breite × Höhe in Pixeln.</li>
+        <li data-step><b>Schwarz-Weiß:</b> 1 Bit pro Pixel. <b>Graustufen:</b> 8 Bit (256 Stufen, 0 = schwarz, 255 = weiß). <b>RGB-Farbe:</b> 3 × 8 Bit = 3 Byte pro Pixel.</li>
+        <li data-step>Die Pixelwerte werden zeilenweise von oben links nach unten rechts als <b>Bitfolge</b> gespeichert.</li>
+        <li data-step><b>Dateigröße</b> (ohne Kompression) = Breite × Höhe × Bit pro Pixel : 8 (in Byte).</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne ein 8 × 8-Schwarz-Weiß-Bild deiner Wahl und schreibe die Bitfolge der ersten zwei Zeilen daneben.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Dateigrößen berechnen</h2></div>
+  <div id="ts"></div>
+</section>
+
+<script>
+/* ================= Schwarz-Weiß-Editor ================= */
+(() => {
+  const SMILE = ['11000011', '10111101', '01011010', '01111110', '01011010', '01100110', '10111101', '11000011'];
+  const g = pixelGrid($('#sw-grid'), {w: 8, h: 8, data: SMILE, code: $('#sw-code'), onChange: d => {
+    const z = d.join('').split('').filter(b => b === '0').length;
+    $('#sw-status').innerHTML = `64 Pixel = 64 Bit = <b>8 Byte</b> · ${z} schwarze, ${64 - z} weiße Pixel`;
+  }});
+  $('#sw-clear').onclick = () => g.clear();
+})();
+
+/* ================= Bitfolge decodieren ================= */
+(() => {
+  const IMGS = [['11100111', '11000011', '10000001', '00000000', '00000000', '10000001', '11000011', '11100111'], ['11111111', '10011001', '10011001', '11111111', '10111101', '11000011', '11111111', '11111111'], ['11101111', '11000111', '10000011', '00000001', '11101111', '11101111', '11101111', '11111111'], ['00000000', '01111110', '01000010', '01011010', '01011010', '01000010', '01111110', '00000000']];
+  let cur;
+  const g = pixelGrid($('#dc-grid'), {w: 8, h: 8});
+  const neu = () => { cur = pick(IMGS.filter(x => x !== cur)); $('#dc-bits').textContent = cur.join(''); g.clear(); $('#dc-status').textContent = 'Je 8 Bit bilden eine Zeile.'; };
+  $('#dc-new').onclick = neu;
+  $('#dc-check').onclick = () => { const d = g.get(), wrong = d.join('').split('').filter((b, i) => b !== cur.join('')[i]).length; $('#dc-status').innerHTML = wrong ? `<b>${wrong}</b> Pixel stimmen noch nicht.` : '<b class="good">Perfekt decodiert!</b>'; };
+  $('#dc-solve').onclick = () => { g.set(cur); $('#dc-status').textContent = 'So sieht das Bild aus.'; };
+  neu();
+})();
+
+/* ================= Grau und Farbe ================= */
+(() => {
+  const B8 = v => (+v).toString(2).padStart(8, '0');
+  const ug = () => { const v = $('#g-v').value; $('#g-o').textContent = v; $('#g-sw').style.background = `rgb(${v},${v},${v})`; $('#g-bin').textContent = `${v} = ${B8(v)}`; };
+  $('#g-v').oninput = ug; ug();
+  const uc = () => { const [r, g, b] = ['r', 'g', 'b'].map(k => $('#c-' + k).value); ['r', 'g', 'b'].forEach((k, i) => $(`#c-${k}o`).textContent = [r, g, b][i]); $('#c-sw').style.background = `rgb(${r},${g},${b})`; $('#c-bin').innerHTML = `<span style="color:#DC2626">${B8(r)}</span> <span style="color:#16A34A">${B8(g)}</span> <span style="color:#2563EB">${B8(b)}</span> = 24 Bit`; };
+  ['r', 'g', 'b'].forEach(k => $('#c-' + k).oninput = uc); uc();
+})();
+
+/* ================= Dateigröße ================= */
+(() => {
+  let bpp = 24;
+  const fmt = b => b >= 1e6 ? numDE(b / 1e6, 1) + ' MB' : b >= 1e3 ? numDE(b / 1e3, 1) + ' KB' : b + ' Byte';
+  const upd = () => { const w = +$('#sz-w').value, h = +$('#sz-h').value; $('#sz-wo').textContent = w + ' px'; $('#sz-ho').textContent = h + ' px'; const bits = w * h * bpp; $('#sz-status').innerHTML = `${w.toLocaleString('de-DE')} × ${h.toLocaleString('de-DE')} = ${(w * h).toLocaleString('de-DE')} Pixel × ${bpp} Bit = ${bits.toLocaleString('de-DE')} Bit = <b>${fmt(bits / 8)}</b>`; };
+  seg($('#sz-seg'), [[1, 'S/W 1 Bit'], [8, 'Grau 8 Bit'], [24, 'RGB 24 Bit']], v => { bpp = +v; upd(); }, 24);
+  $('#sz-w').oninput = upd; $('#sz-h').oninput = upd;
+})();
+
+/* ================= PNM ================= */
+(() => {
+  const EX = {
+    P1: 'P1\n# Herz, 1 = schwarz\n7 6\n0 1 1 0 1 1 0\n1 1 1 1 1 1 1\n1 1 1 1 1 1 1\n0 1 1 1 1 1 0\n0 0 1 1 1 0 0\n0 0 0 1 0 0 0',
+    P2: 'P2\n# Verlauf\n6 3\n255\n0 50 100 150 200 255\n255 200 150 100 50 0\n0 255 0 255 0 255',
+    P3: 'P3\n# Ampel\n1 3\n255\n255 0 0\n255 200 0\n0 180 0'
+  };
+  function render() {
+    const cv = $('#pnm-cv'), ctx = cv.getContext('2d');
+    const tok = $('#pnm-in').value.replace(/#.*$/gm, '').trim().split(/\s+/);
+    const t = tok.shift(), w = +tok.shift(), h = +tok.shift();
+    if (!['P1', 'P2', 'P3'].includes(t) || !(w > 0 && h > 0 && w <= 64 && h <= 64)) { ctx.clearRect(0, 0, cv.width, cv.height); $('#pnm-st').innerHTML = '<span class="bad">Header ungültig: Typ P1/P2/P3, dann Breite und Höhe (max. 64).</span>'; return; }
+    const max = t === 'P1' ? 1 : +tok.shift(), per = t === 'P3' ? 3 : 1, need = w * h * per;
+    cv.width = w; cv.height = h; const img = ctx.createImageData(w, h);
+    for (let i = 0; i < w * h; i++) {
+      let r, g, b;
+      const v = k => Math.round(255 * (+tok[i * per + k] || 0) / max);
+      if (t === 'P1') r = g = b = (+tok[i] ? 0 : 255); else if (t === 'P2') r = g = b = v(0); else { r = v(0); g = v(1); b = v(2); }
+      img.data.set([r, g, b, i * per < tok.length ? 255 : 0], i * 4);
+    }
+    ctx.putImageData(img, 0, 0);
+    $('#pnm-st').innerHTML = `Typ <b>${t}</b> (${{P1: 'Schwarz-Weiß', P2: 'Graustufen', P3: 'RGB'}[t]}), ${w} × ${h} Pixel, ${tok.length} von ${need} Werten ${tok.length < need ? '<span class="bad">– es fehlen Werte</span>' : ''}`;
+  }
+  $('#pnm-in').addEventListener('input', render);
+  seg($('#pnm-ex'), [['P1', 'P1'], ['P2', 'P2'], ['P3', 'P3']], k => { $('#pnm-in').value = EX[k]; render(); }, 'P1');
+})();
+
+taskSet($('#ts'), () => {
+  const t = pick([[1, 'Schwarz-Weiß'], [8, 'Graustufen'], [24, 'RGB']]), w = pick([8, 16, 20, 40, 100, 200]), h = pick([8, 10, 16, 50, 100]);
+  return {key: `${w}${h}${t[0]}`, tag: t[1], q: `${t[1]}-Bild, ${w} × ${h} Pixel`, fields: [{l: 'Dateigröße in Byte', a: w * h * t[0] / 8, unit: 'Byte'}], hint: `Breite × Höhe × ${t[0]} Bit, dann durch 8.`};
+}, {n: 6});
+</script>

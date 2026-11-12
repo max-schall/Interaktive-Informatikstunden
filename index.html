@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>KITAP – Informatik</title>
+<meta name="description" content="Interaktive Präsentationen mit Arbeitsblättern für den Informatikunterricht der Klassen 5 bis 8.">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{
@@ -1043,60 +1044,418 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
 @media (max-width:700px){.mf-row{grid-template-columns:4rem 1fr}.prob{grid-template-columns:5rem 1fr 2.6rem}}
 .cmp select{font:inherit;font-size:.9rem;padding:.15rem .3rem;border:1.5px solid var(--edge);border-radius:4px;background:var(--surface);color:var(--ink)}.cmp select.ok{border-color:var(--good);background:color-mix(in srgb,var(--good) 15%,var(--surface))}.cmp select.err{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 15%,var(--surface))}
 
-.lesson.k1{--accent:#0B7A80}.lesson.k2{--accent:#6D28D9}.lesson.k3{--accent:#C2410C}.lesson.k4{--accent:#1D4ED8}.lesson.k5{--accent:#15803D}.lesson.k6{--accent:#BE123C}
-.lesson .l-num{color:var(--accent)}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .lesson.k1{--accent:#2DD4BF}:root:not([data-theme="light"]) .lesson.k2{--accent:#A78BFA}:root:not([data-theme="light"]) .lesson.k3{--accent:#FB923C}:root:not([data-theme="light"]) .lesson.k4{--accent:#60A5FA}:root:not([data-theme="light"]) .lesson.k5{--accent:#4ADE80}:root:not([data-theme="light"]) .lesson.k6{--accent:#FB7185}}
-:root[data-theme="dark"] .lesson.k1{--accent:#2DD4BF}:root[data-theme="dark"] .lesson.k2{--accent:#A78BFA}:root[data-theme="dark"] .lesson.k3{--accent:#FB923C}:root[data-theme="dark"] .lesson.k4{--accent:#60A5FA}:root[data-theme="dark"] .lesson.k5{--accent:#4ADE80}:root[data-theme="dark"] .lesson.k6{--accent:#FB7185}
+/* ================= Klasse 7/8 ================= */
+.graph .node circle{fill:var(--surface);stroke:var(--edge);stroke-width:1.8}
+.graph .node{cursor:pointer}
+.graph .node:hover circle{stroke:var(--accent)}
+.graph .node.on circle{fill:color-mix(in srgb,var(--accent) 28%,var(--surface));stroke:var(--accent);stroke-width:3}
+.graph .node.done circle{fill:color-mix(in srgb,var(--good) 22%,var(--surface));stroke:var(--good)}
+.graph .node.onpath circle{fill:var(--accent);stroke:var(--edge)}
+.graph .node.onpath text.nm,.graph .node.onpath text.ic{fill:var(--accent-ink)}
+.graph .node.bad circle{fill:color-mix(in srgb,var(--bad) 25%,var(--surface));stroke:var(--bad);stroke-dasharray:4 3}
+.graph text.nm{font-weight:600;font-size:13px}
+.graph text.ic{font-size:17px}
+.graph text.lb{font-size:10px;fill:var(--ink-2)}
+.graph text.sub{font-size:11px;font-weight:700;fill:var(--accent)}
+.graph .edge.dead{stroke-dasharray:5 5;opacity:.35}
+.graph .wt rect{fill:var(--surface-2);stroke:var(--line)}
+.graph .wt text{font-size:11px;font-weight:600}
+.graph .wt.on rect{fill:var(--accent);stroke:var(--accent)}
+.graph .wt.on text{fill:var(--accent-ink)}
+.graph .pkt{fill:#DC2626;stroke:#fff;stroke-width:1}
+.codeview{display:block;font-family:var(--f-mono);font-size:.9rem;line-height:1.55;background:var(--bar);color:var(--bar-ink);border:1.5px solid var(--edge);border-radius:6px;box-shadow:4px 4px 0 var(--edge-shadow);padding:.6rem 0;overflow-x:auto;white-space:pre}
+.codeview .cl{display:block;padding:0 .9rem 0 0}
+.codeview .cl i{display:inline-block;width:2.4rem;text-align:right;margin-right:.8rem;font-style:normal;color:var(--bar-ink-2);opacity:.6;user-select:none}
+.codeview .cl.hl{background:color-mix(in srgb,var(--led) 22%,transparent)}
+.repr{min-height:13rem}
+.repr table.cmp{font-size:.95rem}
+.chart-svg{width:100%;height:auto;display:block}
+.chart-svg text{font-family:var(--f-mono);font-size:11px;fill:var(--ink-2)}
+.chart-svg .ax{stroke:var(--ink-2);stroke-width:1}
+.chart-svg .gl{stroke:var(--line);stroke-width:1;stroke-dasharray:3 3}
+.chart-svg .ln{fill:none;stroke:var(--accent);stroke-width:3}
+.chart-svg .pt{fill:var(--accent);stroke:var(--surface);stroke-width:2}
+.chart-svg .bar{fill:var(--accent)}
+.chart-svg .bar.b2{fill:var(--ink-2)}
+.tree{display:flex;flex-direction:column;align-items:center;gap:.9rem;font-size:.9rem}
+.tree .gen{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center}
+.tree .p{background:var(--surface);border:1.5px solid var(--edge);border-radius:4px;padding:.25rem .6rem;box-shadow:2px 2px 0 var(--edge-shadow);font-family:var(--f-mono);font-size:.8rem}
+.tree .p.couple{border-color:var(--accent)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:.25rem .9rem;margin:0}
+.kv dt{font-family:var(--f-mono);font-weight:600;color:var(--accent)}
+.kv dd{margin:0}
+.ticket{font-family:var(--f-mono);font-size:.85rem;background:#FFFDF5;color:#111;border:1px dashed #999;padding:.8rem 1rem;max-width:20rem;box-shadow:3px 3px 0 rgba(0,0,0,.15);white-space:pre;line-height:1.35}
+.big-num{font-family:var(--f-mono);font-size:clamp(1.6rem,3.6vw,2.4rem);font-weight:600;color:var(--accent)}
+.pill{display:inline-block;font-family:var(--f-mono);font-size:.78rem;padding:.1rem .5rem;border-radius:99px;border:1.5px solid var(--edge);background:var(--surface-2)}
+.pill.ok{background:var(--good);color:#fff;border-color:var(--good)}.pill.err{background:var(--bad);color:#fff;border-color:var(--bad)}
+.layer-stack{display:flex;flex-direction:column;gap:.35rem}
+.layer-stack > div{display:grid;grid-template-columns:9rem 1fr;gap:.8rem;align-items:center;background:var(--surface);border:1.5px solid var(--edge);border-radius:5px;padding:.5rem .8rem;box-shadow:2px 2px 0 var(--edge-shadow)}
+.layer-stack b{font-family:var(--f-mono)}
+.layer-stack > div.on{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 14%,var(--surface))}
+.ip{font-family:var(--f-mono);font-size:clamp(1.2rem,3vw,1.9rem);font-weight:600;letter-spacing:.02em}
+.ip .net{color:var(--accent)}.ip .host{color:var(--a)}
+.browser{background:var(--surface);border:1.5px solid var(--edge);border-radius:6px;box-shadow:4px 4px 0 var(--edge-shadow);overflow:hidden}
+.browser .bar{display:flex;gap:.5rem;align-items:center;background:var(--surface-2);padding:.4rem .6rem;border-bottom:1.5px solid var(--edge)}
+.browser .bar .dots{display:flex;gap:.25rem}.browser .bar .dots i{width:.6rem;height:.6rem;border-radius:50%;background:var(--line)}
+.browser .url{flex:1;font-family:var(--f-mono);font-size:.82rem;background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:.2rem .7rem;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.browser .page{padding:1rem;min-height:9rem;background:#fff;color:#111}
+.browser .page h1{font-family:Georgia,serif;font-size:1.5rem;margin:0 0 .4rem}
+.browser .page a{color:#1D4ED8}
+.url-part{display:inline-block;padding:.15rem .3rem;border-radius:3px;cursor:pointer;border:1.5px solid transparent}
+.url-part:hover,.url-part.on{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 15%,transparent)}
+textarea.code-in{width:100%;min-height:9rem;font-family:var(--f-mono);font-size:.9rem;line-height:1.5;padding:.6rem .8rem;border:1.5px solid var(--edge);border-radius:6px;background:var(--bar);color:var(--bar-ink);resize:vertical;tab-size:2}
+.lap-svg{width:100%;height:auto;display:block}
+.lap-svg text{font-family:var(--f-mono);font-size:12px;font-weight:600;fill:var(--ink);pointer-events:none}
+.lap-case{fill:var(--surface-2);stroke:var(--edge);stroke-width:2}
+.lap-svg .lp{fill:var(--surface);stroke:var(--edge);stroke-width:1.5}
+.lap-svg .lp-board{fill:color-mix(in srgb,var(--good) 18%,var(--surface))}
+.lap-svg .lp.on{fill:color-mix(in srgb,var(--accent) 30%,var(--surface))}
+.pk-stage{min-height:7rem;margin-top:.6rem}
+.pk-row{display:flex;flex-wrap:wrap;gap:.45rem}
+.pk{display:inline-flex;flex-direction:column;font-family:var(--f-mono);font-size:.9rem;background:var(--surface-2);border:1.5px solid var(--edge);border-radius:4px;padding:.3rem .5rem;box-shadow:2px 2px 0 var(--edge-shadow);white-space:pre}
+.pk b{font-size:.7rem;color:var(--accent)}
+.pk.whole{font-family:var(--f-body);font-size:1.05rem;white-space:normal}
+.pk.travel{animation:pkwob 1.2s ease-in-out infinite alternate}
+.pk.travel:nth-child(2n){animation-delay:.3s}.pk.travel:nth-child(3n){animation-delay:.6s}
+@keyframes pkwob{from{transform:translateY(-4px) rotate(-2deg)}to{transform:translateY(4px) rotate(2deg)}}
+@media (prefers-reduced-motion: reduce){.pk.travel{animation:none}}
+.pk.ok{border-color:var(--good)}
+.sync-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.9rem}
+.sync-cloud{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;justify-content:center;padding:.8rem;border:2px dashed var(--accent);border-radius:30px;background:color-mix(in srgb,var(--accent) 8%,var(--surface))}
+.sync-cloud b{font-family:var(--f-mono);margin-right:.5rem}
+.sync-dev{background:var(--surface);border:1.5px solid var(--edge);border-radius:6px;box-shadow:3px 3px 0 var(--edge-shadow);padding:.7rem .8rem}
+.sync-dev b{display:block;font-family:var(--f-mono);margin-bottom:.4rem}
+.sync-dev.off{opacity:.65;background:repeating-linear-gradient(45deg,var(--surface) 0 8px,var(--surface-2) 8px 16px)}
+.sync-dev .controls{margin-top:.5rem}.sync-dev .btn{font-size:.75rem;padding:.3rem .5rem}
+@media (max-width:700px){.sync-grid{grid-template-columns:minmax(0,1fr)}}
+.chat-box{display:flex;flex-direction:column;gap:.5rem;background:var(--surface-2);border:1.5px solid var(--edge);border-radius:6px;padding:.8rem}
+.chat-box .msg{max-width:85%;background:var(--surface);border:1.5px solid var(--edge);border-radius:10px 10px 10px 2px;padding:.45rem .7rem}
+.chat-box .msg.me{align-self:flex-end;border-radius:10px 10px 2px 10px;background:color-mix(in srgb,var(--accent) 14%,var(--surface))}
+.chat-box .msg b{font-family:var(--f-mono);font-size:.75rem;color:var(--accent)}
+.chat-box .msg p{margin:0}
+.braille{display:flex;flex-wrap:wrap;gap:.5rem;margin:.7rem 0}
+.br-w{display:flex;flex-direction:column;align-items:center;gap:.2rem}
+.br-w small{font-family:var(--f-mono);font-size:.8rem;color:var(--ink-2)}
+.br-c{display:grid;grid-template-columns:repeat(2,.8rem);gap:.25rem;padding:.35rem;border:1.5px solid var(--edge);border-radius:4px;background:var(--surface)}
+.br-c i{width:.8rem;height:.8rem;border-radius:50%;border:1.5px solid var(--line)}
+.br-c i.on{background:var(--ink);border-color:var(--ink)}
+.combos{display:flex;flex-wrap:wrap;gap:.3rem;min-height:3rem;margin-top:.6rem}
+.cpu-regs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem}
+.cpu-regs div{background:var(--bar);color:var(--bar-ink);border-radius:5px;padding:.5rem .7rem;display:flex;flex-direction:column}
+.cpu-regs small{font-family:var(--f-mono);font-size:.68rem;color:var(--bar-ink-2);text-transform:uppercase}
+.cpu-regs b{font-family:var(--f-mono);font-size:1.4rem;color:var(--led)}
+.mem td.cell{display:flex;gap:.8rem;align-items:baseline;justify-content:space-between}
+.mem td.cell small{color:var(--ink-2);font-size:.8rem}
+.mem tr.pc th{background:var(--accent);color:var(--accent-ink)}
+.mem tr.hl td{background:color-mix(in srgb,var(--v) 22%,var(--surface))}
+.ascii-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(2.2rem,1fr));gap:3px}
+.ascii-grid button{font-family:var(--f-mono);font-size:1rem;aspect-ratio:1;border:1.5px solid var(--line);border-radius:3px;background:var(--surface);cursor:pointer;padding:0}
+.ascii-grid button:hover{border-color:var(--accent)}
+.ascii-grid button.on{background:var(--accent);color:var(--accent-ink);border-color:var(--edge)}
+.kf-bars{display:flex;flex-direction:column;gap:.4rem;margin:.8rem 0}
+.kf-bars i{display:block;height:1.4rem;border-radius:3px;background:var(--ink-2);transition:width .2s}
+.kf-bars i+i{background:var(--accent)}
+.nibbles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+.nib{display:flex;flex-direction:column;align-items:center;gap:.3rem;padding:.6rem;border:1.5px dashed var(--accent);border-radius:6px}
+.nib-bits{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.25rem;width:100%}
+.nib-bits .pv-b{font-size:1.1rem}
+.nib small{color:var(--ink-2)}
+.clocks{display:flex;gap:1.5rem;align-items:center;justify-content:center;flex-wrap:wrap}
+.clock{width:9rem;height:9rem}
+.digi{font-size:2.4rem;font-weight:600;background:#0B1416;color:#3DF2C4;padding:.4rem .9rem;border-radius:6px;letter-spacing:.06em}
+.bitrow{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:.2rem;margin:.4rem 0}
+.bitrow .pv-b{font-size:1rem;aspect-ratio:1/1.2}
+.bitrow .pv-b.par{outline:2px dashed var(--a);outline-offset:1px}
+.bitrow .pv-b.err{background:var(--bad);color:#fff}
+
+.s0{--accent:#0B7A80}.s1{--accent:#6D28D9}.s2{--accent:#C2410C}.s3{--accent:#1D4ED8}.s4{--accent:#15803D}.s5{--accent:#BE123C}.s6{--accent:#0E7490}.s7{--accent:#4338CA}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .s0{--accent:#2DD4BF}:root:not([data-theme="light"]) .s1{--accent:#A78BFA}:root:not([data-theme="light"]) .s2{--accent:#FB923C}:root:not([data-theme="light"]) .s3{--accent:#60A5FA}:root:not([data-theme="light"]) .s4{--accent:#4ADE80}:root:not([data-theme="light"]) .s5{--accent:#FB7185}:root:not([data-theme="light"]) .s6{--accent:#22D3EE}:root:not([data-theme="light"]) .s7{--accent:#818CF8}}
+:root[data-theme="dark"] .s0{--accent:#2DD4BF}:root[data-theme="dark"] .s1{--accent:#A78BFA}:root[data-theme="dark"] .s2{--accent:#FB923C}:root[data-theme="dark"] .s3{--accent:#60A5FA}:root[data-theme="dark"] .s4{--accent:#4ADE80}:root[data-theme="dark"] .s5{--accent:#FB7185}:root[data-theme="dark"] .s6{--accent:#22D3EE}:root[data-theme="dark"] .s7{--accent:#818CF8}
 .kitap-sub{font-style:italic;font-size:clamp(1rem,1.6vw,1.3rem);color:var(--ink-2);margin:-.2em 0 1.2rem}
+.hero h1 .cur{display:inline-block;width:.55em;height:.95em;background:var(--accent);vertical-align:-.12em;margin-left:.1em;animation:blink 1.1s steps(1) infinite}
+@media (prefers-reduced-motion: reduce){.hero h1 .cur{animation:none}}
+.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:.2rem;margin:2rem 0 1.2rem;padding:.5rem .8rem;background:var(--bar);color:var(--bar-ink-2);border-radius:4px;font-family:var(--f-mono);font-size:.85rem;scroll-margin-top:5rem}
+.crumbs::before{content:"$ cd";color:var(--led);margin-right:.4rem;font-weight:600}
+.crumbs a{color:var(--bar-ink);text-decoration:none;padding:.1rem .3rem;border-radius:3px}
+.crumbs a:hover{background:var(--bar-2);color:var(--led)}
+.crumbs [aria-current]{color:var(--led);padding:.1rem .3rem}
+.crumbs .sep{opacity:.6}
+.vh{font-size:1.35rem;margin:0 0 1rem}
+.grades{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.2rem}
+.grade{display:flex;flex-direction:column;gap:.3rem;padding:1.1rem 1.2rem 1rem;text-decoration:none;color:inherit;background:var(--surface);border:1.5px solid var(--edge);border-radius:6px;box-shadow:4px 4px 0 var(--edge-shadow);transition:transform .08s,box-shadow .08s}
+.grade:hover,.grade:focus-visible{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--edge-shadow)}
+.grade:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--edge-shadow)}
+.g-lbl{font-family:var(--f-mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-2)}
+.g-num{font-family:var(--f-mono);font-weight:600;font-size:clamp(3rem,8vw,4.6rem);line-height:1;color:var(--accent)}
+.g-num::before{content:">";opacity:.35;margin-right:.1em}
+.g-meta{font-family:var(--f-mono);font-size:.82rem;font-weight:600}
+.g-txt{font-size:.9rem;color:var(--ink-2)}
+.g-leds{display:flex;gap:.3rem;margin-top:auto;padding-top:.6rem}
+.g-leds i{flex:1;height:.5rem;border-radius:2px;background:var(--accent)}
+.lesson .l-num{color:var(--accent)}
+.lesson{border-left:8px solid var(--accent)}
+.topic-head{display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:flex-end;justify-content:space-between;margin-bottom:1.2rem}
+.topic-head h2{margin:0 0 .3rem}
+.topic-head p{margin:0;color:var(--ink-2);max-width:64ch}
+.topic-head .eyebrow{margin-bottom:.4rem}
+.rows{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.55rem}
+.rows li{display:flex;gap:.55rem}
+.row{flex:1;display:flex;align-items:center;gap:1rem;text-decoration:none;color:inherit;background:var(--surface);border:1.5px solid var(--edge);border-radius:5px;box-shadow:3px 3px 0 var(--edge-shadow);padding:.65rem .9rem;min-width:0}
+.row:hover,.ws:hover{background:var(--surface-2)}
+.row .no{font-family:var(--f-mono);font-weight:600;background:var(--accent);color:var(--accent-ink);border-radius:3px;padding:.15rem .45rem;flex:none}
+.row .rt{flex:1;min-width:0;display:flex;flex-direction:column}
+.row .rt small{color:var(--ink-2);font-size:.85rem}
+.row .go{font-family:var(--f-mono);font-size:.8rem;color:var(--accent);font-weight:600;flex:none}
+.ws{flex:none;display:grid;place-items:center;width:3.2rem;font-family:var(--f-mono);font-weight:600;font-size:.8rem;text-decoration:none;color:var(--ink);background:var(--surface);border:1.5px solid var(--edge);border-radius:5px;box-shadow:3px 3px 0 var(--edge-shadow)}
 .site-foot{margin-top:3rem;color:var(--ink-2);font-size:.82rem}
 .site-foot a{color:inherit}
 .site-foot a:hover{color:var(--accent)}
+@media (max-width:600px){.row .go{display:none}.grade{display:grid;grid-template-columns:auto 1fr;column-gap:1rem;align-items:center}.g-num{grid-row:1/4;grid-column:1}.g-txt,.g-leds{grid-column:1/-1}}
 </style>
 </head>
 <body>
 <div class="app">
-<header class="top"><div class="brand"><b>KITAP</b><span>Informatik · interaktiv</span></div><span style="flex:1"></span></header>
+<header class="top"><div class="brand"><b>KITAP</b><span>Informatik · interaktiv</span></div><span style="flex:1"></span><a class="icon-btn" href="#" id="home" hidden>⌂ Klassen</a></header>
 <main>
 <section class="ov">
-  <p class="eyebrow">Interaktive Präsentationen</p>
-  <h1>KITAP</h1>
-  <p class="kitap-sub">Klassenfertige Inhalte – Thematisch Aufbereitet und Präsentationsbereit</p>
-  <p class="lead">Präsentationen für Informatik und Medienbildung (Klasse 5/6). Jede Stunde mit Stationen, Aufgaben, Hefteintrag, Übungen und Arbeitsblatt.</p>
-  <ol class="lessons">
-    <li class="lesson k1">
-      <div class="l-num">1</div>
-      <div class="l-body"><p class="eyebrow">Kapitel 1 · Klasse 5/6 · 7 Stunden</p><h2>Informatiksysteme nutzen</h2><p class="l-q">Was sind Informationen und Daten? Woraus besteht ein Informatiksystem und wie arbeitet es nach dem EVA-Prinzip? Die Reihe öffnet den Computer, zeigt Programme, Dateien und Ordner, erklärt Speichermedien und Backups und wirft einen Blick auf die Geschichte der Kommunikation und der Computerspiele.</p></div>
-      <div class="l-go"><a class="btn primary" href="1-Informatiksysteme/00_Uebersicht.html">Zur Reihe →</a></div>
-    </li>
-    <li class="lesson k2">
-      <div class="l-num">2</div>
-      <div class="l-body"><p class="eyebrow">Kapitel 2 · Klasse 5/6 · 11 Stunden</p><h2>Algorithmen und Problemlösen</h2><p class="l-q">Computer kennen nur 0 und 1. Die Reihe zeigt das Binärsystem, Bits und Bytes und wie Daten codiert werden. Danach geht es um Algorithmen im Alltag, ihre Darstellung und das Programmieren mit Scratch: Wiederholungen, bedingte Anweisungen, Sequenzen und eigene Projekte.</p></div>
-      <div class="l-go"><a class="btn primary" href="2-Algorithmen/00_Uebersicht.html">Zur Reihe →</a></div>
-    </li>
-    <li class="lesson k3">
-      <div class="l-num">3</div>
-      <div class="l-body"><p class="eyebrow">Kapitel 3 · Klasse 5/6 · 9 Stunden</p><h2>Bilder und Videos</h2><p class="l-q">Wie wird ein Bild im Computer gespeichert, wie lassen sich Daten komprimieren und wie entstehen Farben am Bildschirm? Die Reihe führt von Pixeln und dem RGB-Modell über Bildbearbeitung bis zur eigenen Produktion von Erklärvideos und Podcasts.</p></div>
-      <div class="l-go"><a class="btn primary" href="3-Bilder_Videos/00_Uebersicht.html">Zur Reihe →</a></div>
-    </li>
-    <li class="lesson k4">
-      <div class="l-num">4</div>
-      <div class="l-body"><p class="eyebrow">Kapitel 4 · Klasse 5/6 · 9 Stunden</p><h2>Recherchieren und Präsentieren</h2><p class="l-q">Wie sucht man gezielt im Internet und prüft Quellen? Wie wird eine Präsentation wirkungsvoll – mit Texten, Abbildungen, Audios und Videos? Und welche Bilder darf man überhaupt verwenden? Die Reihe begleitet vom Recherchieren bis zum fertigen Vortrag.</p></div>
-      <div class="l-go"><a class="btn primary" href="4-Recherchieren_Praesentieren/00_Uebersicht.html">Zur Reihe →</a></div>
-    </li>
-    <li class="lesson k5">
-      <div class="l-num">5</div>
-      <div class="l-body"><p class="eyebrow">Kapitel 5 · Klasse 5/6 · 8 Stunden</p><h2>Textgestaltung</h2><p class="l-q">Texte eingeben, kopieren und verschieben, Zeichen formatieren, Bilder und Textfelder einfügen, Tabellen anlegen und Texte überarbeiten: Die Reihe macht fit für die Textverarbeitung – inklusive Shortcuts und einem Blick auf Objekte und Klassen.</p></div>
-      <div class="l-go"><a class="btn primary" href="5-Textgestaltung/00_Uebersicht.html">Zur Reihe →</a></div>
-    </li>
-    <li class="lesson k6">
-      <div class="l-num">6</div>
-      <div class="l-body"><p class="eyebrow">Kapitel 6 · Klasse 5/6 · 14 Stunden</p><h2>Kommunikation in der vernetzten Welt</h2><p class="l-q">E-Mails, Messenger und soziale Netzwerke gehören zum Alltag. Die Reihe zeigt, wie man fair und sicher kommuniziert, sichere Passwörter wählt, Werbung und Fake News erkennt, die eigenen Daten schützt – und wie Netzwerke und künstliche Intelligenz funktionieren.</p></div>
-      <div class="l-go"><a class="btn primary" href="6-Kommunikation/00_Uebersicht.html">Zur Reihe →</a></div>
-    </li>
-  </ol>
+  <div class="hero">
+    <p class="eyebrow">Interaktive Präsentationen · Klassen 5–8</p>
+    <h1>KITAP<span class="cur" aria-hidden="true"></span></h1>
+    <p class="kitap-sub">Klassenfertige Inhalte – Thematisch Aufbereitet und Präsentationsbereit</p>
+    <p class="lead">Präsentationen für Informatik und Medienbildung. Jede Stunde mit Stationen, Aufgaben, Hefteintrag, Übungen und Arbeitsblatt. Wähle zuerst die Klassenstufe, dann die Reihe.</p>
+  </div>
+  <nav class="crumbs" aria-label="Navigation" id="crumbs"><span aria-current="page">~/klassen</span></nav>
+  <section class="view" data-view="">
+    <h2 class="vh">Klassenstufe wählen</h2>
+    <div class="grades">
+    <a class="grade" href="#klasse-5-6">
+      <span class="g-lbl">Klasse</span><span class="g-num">5/6</span>
+      <span class="g-meta">6 Reihen · 58 Stunden</span>
+      <span class="g-txt">Informationen, Computer, Algorithmen mit Scratch, Bilder, Präsentieren, Textverarbeitung und Kommunikation im Netz.</span>
+      <span class="g-leds" aria-hidden="true"><i class="s0" title="Informatiksysteme nutzen"></i><i class="s1" title="Algorithmen und Problemlösen"></i><i class="s2" title="Bilder und Videos"></i><i class="s3" title="Recherchieren und Präsentieren"></i><i class="s4" title="Textgestaltung"></i><i class="s5" title="Kommunikation in der vernetzten Welt"></i></span>
+    </a>
+    <a class="grade" href="#klasse-7">
+      <span class="g-lbl">Klasse</span><span class="g-num">7</span>
+      <span class="g-meta">2 Reihen · 17 Stunden</span>
+      <span class="g-txt">Netze und Internet, Codierung, Verschlüsselung, Informatik und Gesellschaft, Algorithmen mit Scratch.</span>
+      <span class="g-leds" aria-hidden="true"><i class="s6" title="Informatiksysteme und Netze"></i><i class="s7" title="Daten und ihre Codierung"></i></span>
+    </a>
+    </div>
+  </section>
+  <section class="view" data-view="klasse-5-6" hidden>
+    <h2 class="vh">Klasse 5/6: Reihe wählen</h2>
+    <ol class="lessons">
+      <li class="lesson s0">
+        <div class="l-num">1</div>
+        <div class="l-body"><p class="eyebrow">Kapitel 1 · 7 Stunden · ≈ 12 Unterrichtsstunden</p><h2>Informatiksysteme nutzen</h2><p class="l-q">Was sind Informationen und Daten? Woraus besteht ein Informatiksystem und wie arbeitet es nach dem EVA-Prinzip? Die Reihe öffnet den Computer, zeigt Programme, Dateien und Ordner, erklärt Speichermedien und Backups und wirft einen Blick auf die Geschichte der Kommunikation und der Computerspiele.</p></div>
+        <div class="l-go"><a class="btn primary" href="#klasse-5-6/1-Informatiksysteme">Stunden →</a><a class="btn" href="1-Informatiksysteme/00_Uebersicht.html">Übersicht</a></div>
+      </li>
+      <li class="lesson s1">
+        <div class="l-num">2</div>
+        <div class="l-body"><p class="eyebrow">Kapitel 2 · 11 Stunden · ≈ 14 Unterrichtsstunden</p><h2>Algorithmen und Problemlösen</h2><p class="l-q">Computer kennen nur 0 und 1. Die Reihe zeigt das Binärsystem, Bits und Bytes und wie Daten codiert werden. Danach geht es um Algorithmen im Alltag, ihre Darstellung und das Programmieren mit Scratch: Wiederholungen, bedingte Anweisungen, Sequenzen und eigene Projekte.</p></div>
+        <div class="l-go"><a class="btn primary" href="#klasse-5-6/2-Algorithmen">Stunden →</a><a class="btn" href="2-Algorithmen/00_Uebersicht.html">Übersicht</a></div>
+      </li>
+      <li class="lesson s2">
+        <div class="l-num">3</div>
+        <div class="l-body"><p class="eyebrow">Kapitel 3 · 9 Stunden · ≈ 12 Unterrichtsstunden</p><h2>Bilder und Videos</h2><p class="l-q">Wie wird ein Bild im Computer gespeichert, wie lassen sich Daten komprimieren und wie entstehen Farben am Bildschirm? Die Reihe führt von Pixeln und dem RGB-Modell über Bildbearbeitung bis zur eigenen Produktion von Erklärvideos und Podcasts.</p></div>
+        <div class="l-go"><a class="btn primary" href="#klasse-5-6/3-Bilder_Videos">Stunden →</a><a class="btn" href="3-Bilder_Videos/00_Uebersicht.html">Übersicht</a></div>
+      </li>
+      <li class="lesson s3">
+        <div class="l-num">4</div>
+        <div class="l-body"><p class="eyebrow">Kapitel 4 · 9 Stunden · ≈ 12 Unterrichtsstunden</p><h2>Recherchieren und Präsentieren</h2><p class="l-q">Wie sucht man gezielt im Internet und prüft Quellen? Wie wird eine Präsentation wirkungsvoll – mit Texten, Abbildungen, Audios und Videos? Und welche Bilder darf man überhaupt verwenden? Die Reihe begleitet vom Recherchieren bis zum fertigen Vortrag.</p></div>
+        <div class="l-go"><a class="btn primary" href="#klasse-5-6/4-Recherchieren_Praesentieren">Stunden →</a><a class="btn" href="4-Recherchieren_Praesentieren/00_Uebersicht.html">Übersicht</a></div>
+      </li>
+      <li class="lesson s4">
+        <div class="l-num">5</div>
+        <div class="l-body"><p class="eyebrow">Kapitel 5 · 8 Stunden · ≈ 12 Unterrichtsstunden</p><h2>Textgestaltung</h2><p class="l-q">Texte eingeben, kopieren und verschieben, Zeichen formatieren, Bilder und Textfelder einfügen, Tabellen anlegen und Texte überarbeiten: Die Reihe macht fit für die Textverarbeitung – inklusive Shortcuts und einem Blick auf Objekte und Klassen.</p></div>
+        <div class="l-go"><a class="btn primary" href="#klasse-5-6/5-Textgestaltung">Stunden →</a><a class="btn" href="5-Textgestaltung/00_Uebersicht.html">Übersicht</a></div>
+      </li>
+      <li class="lesson s5">
+        <div class="l-num">6</div>
+        <div class="l-body"><p class="eyebrow">Kapitel 6 · 14 Stunden · ≈ 20 Unterrichtsstunden</p><h2>Kommunikation in der vernetzten Welt</h2><p class="l-q">E-Mails, Messenger und soziale Netzwerke gehören zum Alltag. Die Reihe zeigt, wie man fair und sicher kommuniziert, sichere Passwörter wählt, Werbung und Fake News erkennt, die eigenen Daten schützt – und wie Netzwerke und künstliche Intelligenz funktionieren.</p></div>
+        <div class="l-go"><a class="btn primary" href="#klasse-5-6/6-Kommunikation">Stunden →</a><a class="btn" href="6-Kommunikation/00_Uebersicht.html">Übersicht</a></div>
+      </li>
+    </ol>
+  </section>
+  <section class="view s0" data-view="klasse-5-6/1-Informatiksysteme" hidden>
+    <div class="topic-head">
+      <div><p class="eyebrow">Klasse 5/6 · Kapitel 1</p><h2>Informatiksysteme nutzen</h2><p>Was sind Informationen und Daten? Woraus besteht ein Informatiksystem und wie arbeitet es nach dem EVA-Prinzip? Die Reihe öffnet den Computer, zeigt Programme, Dateien und Ordner, erklärt Speichermedien und Backups und wirft einen Blick auf die Geschichte der Kommunikation und der Computerspiele.</p></div>
+      <a class="btn primary" href="1-Informatiksysteme/00_Uebersicht.html">Übersicht der Reihe →</a>
+    </div>
+    <ol class="rows">
+        <li><a class="row" href="1-Informatiksysteme/01_Informationen_Medien.html"><span class="no">01</span><span class="rt"><b>Informationen und Medien im Alltag</b><small>Wie werden Informationen dargestellt – und wann kommen sie richtig beim Empfänger an?</small></span><span class="go">öffnen →</span></a><a class="ws" href="1-Informatiksysteme/01_Informationen_Medien.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="1-Informatiksysteme/02_Informatiksysteme.html"><span class="no">02</span><span class="rt"><b>Informatiksysteme und das EVA-Prinzip</b><small>Wie verarbeitet ein Computer Daten – und seit wann kommunizieren Menschen über Geräte?</small></span><span class="go">öffnen →</span></a><a class="ws" href="1-Informatiksysteme/02_Informatiksysteme.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="1-Informatiksysteme/03_Aufbau_Computer.html"><span class="no">03</span><span class="rt"><b>Aufbau eines Computers</b><small>Aus welchen Teilen besteht ein Computer – und wie arbeiten sie zusammen?</small></span><span class="go">öffnen →</span></a><a class="ws" href="1-Informatiksysteme/03_Aufbau_Computer.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="1-Informatiksysteme/04_Programme_Dateien.html"><span class="no">04</span><span class="rt"><b>Programme und Dateien</b><small>Wie startet man ein Programm und speichert den Arbeitsfortschritt?</small></span><span class="go">öffnen →</span></a><a class="ws" href="1-Informatiksysteme/04_Programme_Dateien.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="1-Informatiksysteme/05_Datenspeicherung.html"><span class="no">05</span><span class="rt"><b>Datenspeicherung</b><small>Wie werden Daten gespeichert – und wie schützt man sie vor Verlust?</small></span><span class="go">öffnen →</span></a><a class="ws" href="1-Informatiksysteme/05_Datenspeicherung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="1-Informatiksysteme/06_Computerspiele.html"><span class="no">06</span><span class="rt"><b>Computerspiele – Geschichte, Entwicklung, Fähigkeiten</b><small>Wie haben sich Computerspiele entwickelt – und was können sie fördern?</small></span><span class="go">öffnen →</span></a><a class="ws" href="1-Informatiksysteme/06_Computerspiele.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="1-Informatiksysteme/07_Wiederholung.html"><span class="no">07</span><span class="rt"><b>Wiederholung und Selbsttest</b><small>Was kann ich, und was sollte ich noch üben?</small></span><span class="go">öffnen →</span></a><a class="ws" href="1-Informatiksysteme/07_Wiederholung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+    </ol>
+  </section>
+  <section class="view s1" data-view="klasse-5-6/2-Algorithmen" hidden>
+    <div class="topic-head">
+      <div><p class="eyebrow">Klasse 5/6 · Kapitel 2</p><h2>Algorithmen und Problemlösen</h2><p>Computer kennen nur 0 und 1. Die Reihe zeigt das Binärsystem, Bits und Bytes und wie Daten codiert werden. Danach geht es um Algorithmen im Alltag, ihre Darstellung und das Programmieren mit Scratch: Wiederholungen, bedingte Anweisungen, Sequenzen und eigene Projekte.</p></div>
+      <a class="btn primary" href="2-Algorithmen/00_Uebersicht.html">Übersicht der Reihe →</a>
+    </div>
+    <ol class="rows">
+        <li><a class="row" href="2-Algorithmen/01_Binaersystem.html"><span class="no">01</span><span class="rt"><b>Das Binärsystem</b><small>Wie lassen sich unsere Zahlen ins Binärsystem umrechnen?</small></span><span class="go">öffnen →</span></a><a class="ws" href="2-Algorithmen/01_Binaersystem.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="2-Algorithmen/02_Bits_Bytes.html"><span class="no">02</span><span class="rt"><b>Bits und Bytes</b><small>Was versteht man unter Bits und Bytes – und wie lange dauert ein Download?</small></span><span class="go">öffnen →</span></a><a class="ws" href="2-Algorithmen/02_Bits_Bytes.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="2-Algorithmen/03_Codierung.html"><span class="no">03</span><span class="rt"><b>Codierung von Daten</b><small>Wie können Daten codiert werden?</small></span><span class="go">öffnen →</span></a><a class="ws" href="2-Algorithmen/03_Codierung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="2-Algorithmen/04_Algorithmen_Alltag.html"><span class="no">04</span><span class="rt"><b>Algorithmen im Alltag</b><small>Was hat ein Pfannkuchenrezept mit Informatik zu tun?</small></span><span class="go">öffnen →</span></a><a class="ws" href="2-Algorithmen/04_Algorithmen_Alltag.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="2-Algorithmen/05_Algorithmen_darstellen.html"><span class="no">05</span><span class="rt"><b>Darstellung von Algorithmen</b><small>Wie stellt man einen Algorithmus so dar, dass ihn jeder – auch ein Computer – ausführen kann?</small></span><span class="go">öffnen →</span></a><a class="ws" href="2-Algorithmen/05_Algorithmen_darstellen.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="2-Algorithmen/06_Scratch_Umgebung.html"><span class="no">06</span><span class="rt"><b>Programmierumgebung Scratch</b><small>Wie genau funktioniert die Programmiersprache Scratch?</small></span><span class="go">öffnen →</span></a><a class="ws" href="2-Algorithmen/06_Scratch_Umgebung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="2-Algorithmen/07_Wiederholungen.html"><span class="no">07</span><span class="rt"><b>Wiederholungen in Scratch</b><small>Gibt es auch in der Programmierung Wiederholungen – wie bei Liegestützen?</small></span><span class="go">öffnen →</span></a><a class="ws" href="2-Algorithmen/07_Wiederholungen.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="2-Algorithmen/08_Bedingungen.html"><span class="no">08</span><span class="rt"><b>Bedingte Anweisungen in Scratch</b><small>Wann führt ein Programm eine Anweisung aus – und wann nicht?</small></span><span class="go">öffnen →</span></a><a class="ws" href="2-Algorithmen/08_Bedingungen.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="2-Algorithmen/09_Sequenzen.html"><span class="no">09</span><span class="rt"><b>Sequenzen in Scratch</b><small>Aus welchen Zutaten besteht eine Sequenz in Scratch?</small></span><span class="go">öffnen →</span></a><a class="ws" href="2-Algorithmen/09_Sequenzen.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="2-Algorithmen/10_Projekte.html"><span class="no">10</span><span class="rt"><b>Projekte in Scratch</b><small>Wie plant und programmiert man ein eigenes Scratch-Projekt?</small></span><span class="go">öffnen →</span></a><a class="ws" href="2-Algorithmen/10_Projekte.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="2-Algorithmen/11_Wiederholung.html"><span class="no">11</span><span class="rt"><b>Wiederholung und Selbsttest</b><small>Was kann ich, und was sollte ich noch üben?</small></span><span class="go">öffnen →</span></a><a class="ws" href="2-Algorithmen/11_Wiederholung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+    </ol>
+  </section>
+  <section class="view s2" data-view="klasse-5-6/3-Bilder_Videos" hidden>
+    <div class="topic-head">
+      <div><p class="eyebrow">Klasse 5/6 · Kapitel 3</p><h2>Bilder und Videos</h2><p>Wie wird ein Bild im Computer gespeichert, wie lassen sich Daten komprimieren und wie entstehen Farben am Bildschirm? Die Reihe führt von Pixeln und dem RGB-Modell über Bildbearbeitung bis zur eigenen Produktion von Erklärvideos und Podcasts.</p></div>
+      <a class="btn primary" href="3-Bilder_Videos/00_Uebersicht.html">Übersicht der Reihe →</a>
+    </div>
+    <ol class="rows">
+        <li><a class="row" href="3-Bilder_Videos/01_Pixel_Rastergrafiken.html"><span class="no">01</span><span class="rt"><b>Pixel und Rastergrafiken</b><small>Wie wird ein Bild im Computer gespeichert?</small></span><span class="go">öffnen →</span></a><a class="ws" href="3-Bilder_Videos/01_Pixel_Rastergrafiken.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="3-Bilder_Videos/02_Komprimieren.html"><span class="no">02</span><span class="rt"><b>Daten komprimieren</b><small>Wie kann man Daten verkleinern?</small></span><span class="go">öffnen →</span></a><a class="ws" href="3-Bilder_Videos/02_Komprimieren.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="3-Bilder_Videos/03_Farben_RGB.html"><span class="no">03</span><span class="rt"><b>Farbmischung und RGB-Modell</b><small>Wie werden Farben gemischt und dargestellt?</small></span><span class="go">öffnen →</span></a><a class="ws" href="3-Bilder_Videos/03_Farben_RGB.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="3-Bilder_Videos/04_Bilder_bearbeiten.html"><span class="no">04</span><span class="rt"><b>Bilder bearbeiten</b><small>Welche Möglichkeiten gibt es, Bilder zu bearbeiten?</small></span><span class="go">öffnen →</span></a><a class="ws" href="3-Bilder_Videos/04_Bilder_bearbeiten.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="3-Bilder_Videos/05_Bildmanipulation.html"><span class="no">05</span><span class="rt"><b>Bildmanipulation und Bildbearbeitungsprogramme</b><small>Wann ist ein bearbeitetes Bild noch echt – und wie arbeiten Profis?</small></span><span class="go">öffnen →</span></a><a class="ws" href="3-Bilder_Videos/05_Bildmanipulation.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="3-Bilder_Videos/06_Erklaervideos.html"><span class="no">06</span><span class="rt"><b>Erklärvideos nutzen</b><small>Welche Arten von Erklärvideos gibt es – und welche passt zu meinem Thema?</small></span><span class="go">öffnen →</span></a><a class="ws" href="3-Bilder_Videos/06_Erklaervideos.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="3-Bilder_Videos/07_Videoproduktion.html"><span class="no">07</span><span class="rt"><b>Videoproduktion und Rechte</b><small>Wie dreht man ein gutes Video – und was darf man veröffentlichen?</small></span><span class="go">öffnen →</span></a><a class="ws" href="3-Bilder_Videos/07_Videoproduktion.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="3-Bilder_Videos/08_Podcast.html"><span class="no">08</span><span class="rt"><b>Einen Podcast erstellen</b><small>Wie entsteht ein Podcast – von der Idee bis zur MP3-Datei?</small></span><span class="go">öffnen →</span></a><a class="ws" href="3-Bilder_Videos/08_Podcast.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="3-Bilder_Videos/09_Wiederholung.html"><span class="no">09</span><span class="rt"><b>Wiederholung und Selbsttest</b><small>Was kann ich, und was sollte ich noch üben?</small></span><span class="go">öffnen →</span></a><a class="ws" href="3-Bilder_Videos/09_Wiederholung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+    </ol>
+  </section>
+  <section class="view s3" data-view="klasse-5-6/4-Recherchieren_Praesentieren" hidden>
+    <div class="topic-head">
+      <div><p class="eyebrow">Klasse 5/6 · Kapitel 4</p><h2>Recherchieren und Präsentieren</h2><p>Wie sucht man gezielt im Internet und prüft Quellen? Wie wird eine Präsentation wirkungsvoll – mit Texten, Abbildungen, Audios und Videos? Und welche Bilder darf man überhaupt verwenden? Die Reihe begleitet vom Recherchieren bis zum fertigen Vortrag.</p></div>
+      <a class="btn primary" href="4-Recherchieren_Praesentieren/00_Uebersicht.html">Übersicht der Reihe →</a>
+    </div>
+    <ol class="rows">
+        <li><a class="row" href="4-Recherchieren_Praesentieren/01_Recherchieren.html"><span class="no">01</span><span class="rt"><b>Im Internet recherchieren</b><small>Wie kannst du im Internet nach richtigen Informationen suchen?</small></span><span class="go">öffnen →</span></a><a class="ws" href="4-Recherchieren_Praesentieren/01_Recherchieren.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="4-Recherchieren_Praesentieren/02_Suchoperatoren.html"><span class="no">02</span><span class="rt"><b>Präzise suchen mit Operatoren</b><small>Wie findet man schneller genau die Informationen, die man braucht?</small></span><span class="go">öffnen →</span></a><a class="ws" href="4-Recherchieren_Praesentieren/02_Suchoperatoren.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="4-Recherchieren_Praesentieren/03_Praesentieren.html"><span class="no">03</span><span class="rt"><b>Sinnvoll präsentieren</b><small>Was macht eine Präsentation wirkungsvoll?</small></span><span class="go">öffnen →</span></a><a class="ws" href="4-Recherchieren_Praesentieren/03_Praesentieren.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="4-Recherchieren_Praesentieren/04_Folien_gestalten.html"><span class="no">04</span><span class="rt"><b>Eine digitale Präsentation gestalten</b><small>Wie erstellt man eine gute foliengestützte Präsentation?</small></span><span class="go">öffnen →</span></a><a class="ws" href="4-Recherchieren_Praesentieren/04_Folien_gestalten.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="4-Recherchieren_Praesentieren/05_Texte_Folien.html"><span class="no">05</span><span class="rt"><b>Texte in Präsentationen einfügen</b><small>Wie lassen sich Texte sinnvoll in eine Präsentation einfügen?</small></span><span class="go">öffnen →</span></a><a class="ws" href="4-Recherchieren_Praesentieren/05_Texte_Folien.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="4-Recherchieren_Praesentieren/06_Abbildungen.html"><span class="no">06</span><span class="rt"><b>Abbildungen in Präsentationen einfügen</b><small>Wie lassen sich Bilder und Diagramme in eine Präsentation einfügen?</small></span><span class="go">öffnen →</span></a><a class="ws" href="4-Recherchieren_Praesentieren/06_Abbildungen.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="4-Recherchieren_Praesentieren/07_Audio_Video.html"><span class="no">07</span><span class="rt"><b>Audios und Videos in Präsentationen</b><small>Wie bindet man Töne, Musik und Videos sinnvoll in eine Präsentation ein?</small></span><span class="go">öffnen →</span></a><a class="ws" href="4-Recherchieren_Praesentieren/07_Audio_Video.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="4-Recherchieren_Praesentieren/08_Urheberrecht.html"><span class="no">08</span><span class="rt"><b>Urheberrecht und Bildrechte</b><small>Woher weiß man, welche Fotos man verwenden darf?</small></span><span class="go">öffnen →</span></a><a class="ws" href="4-Recherchieren_Praesentieren/08_Urheberrecht.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="4-Recherchieren_Praesentieren/09_Wiederholung.html"><span class="no">09</span><span class="rt"><b>Wiederholung und Selbsttest</b><small>Was kann ich, und was sollte ich noch üben?</small></span><span class="go">öffnen →</span></a><a class="ws" href="4-Recherchieren_Praesentieren/09_Wiederholung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+    </ol>
+  </section>
+  <section class="view s4" data-view="klasse-5-6/5-Textgestaltung" hidden>
+    <div class="topic-head">
+      <div><p class="eyebrow">Klasse 5/6 · Kapitel 5</p><h2>Textgestaltung</h2><p>Texte eingeben, kopieren und verschieben, Zeichen formatieren, Bilder und Textfelder einfügen, Tabellen anlegen und Texte überarbeiten: Die Reihe macht fit für die Textverarbeitung – inklusive Shortcuts und einem Blick auf Objekte und Klassen.</p></div>
+      <a class="btn primary" href="5-Textgestaltung/00_Uebersicht.html">Übersicht der Reihe →</a>
+    </div>
+    <ol class="rows">
+        <li><a class="row" href="5-Textgestaltung/01_Texte_eingeben.html"><span class="no">01</span><span class="rt"><b>Texte eingeben, kopieren und verschieben</b><small>Welche Funktionen helfen dir, Texte wie Spielsteine an andere Stellen zu verschieben?</small></span><span class="go">öffnen →</span></a><a class="ws" href="5-Textgestaltung/01_Texte_eingeben.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="5-Textgestaltung/02_Textfelder_Bilder.html"><span class="no">02</span><span class="rt"><b>Texte mit Textfeldern und Bildern</b><small>Wie kann man Texte ansprechend mit Bildern in einem Textverarbeitungsprogramm gestalten?</small></span><span class="go">öffnen →</span></a><a class="ws" href="5-Textgestaltung/02_Textfelder_Bilder.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="5-Textgestaltung/03_Zeichen_formatieren.html"><span class="no">03</span><span class="rt"><b>Zeichen formatieren</b><small>Wie können Texte übersichtlich gestaltet werden?</small></span><span class="go">öffnen →</span></a><a class="ws" href="5-Textgestaltung/03_Zeichen_formatieren.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="5-Textgestaltung/04_Shortcuts_Symbolleiste.html"><span class="no">04</span><span class="rt"><b>Shortcuts und Symbolleiste</b><small>Wie arbeitet man mit Tastenkombinationen und der Symbolleiste schneller?</small></span><span class="go">öffnen →</span></a><a class="ws" href="5-Textgestaltung/04_Shortcuts_Symbolleiste.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="5-Textgestaltung/05_Objekte_Klassen.html"><span class="no">05</span><span class="rt"><b>Objekte und Klassen in Zeichen</b><small>Wie „denkt“ ein Textverarbeitungsprogramm über Zeichen, Absätze und Abschnitte?</small></span><span class="go">öffnen →</span></a><a class="ws" href="5-Textgestaltung/05_Objekte_Klassen.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="5-Textgestaltung/06_Texte_ueberarbeiten.html"><span class="no">06</span><span class="rt"><b>Texte überarbeiten und optimieren</b><small>Welche Funktionen eines Textverarbeitungsprogramms helfen dir, einen Text zu überarbeiten und zu optimieren?</small></span><span class="go">öffnen →</span></a><a class="ws" href="5-Textgestaltung/06_Texte_ueberarbeiten.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="5-Textgestaltung/07_Tabellen.html"><span class="no">07</span><span class="rt"><b>Tabellen einfügen</b><small>Wie kann man Tabellen in einem Textdokument einfügen?</small></span><span class="go">öffnen →</span></a><a class="ws" href="5-Textgestaltung/07_Tabellen.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="5-Textgestaltung/08_Wiederholung.html"><span class="no">08</span><span class="rt"><b>Wiederholung und Selbsttest</b><small>Was kann ich, und was sollte ich noch üben?</small></span><span class="go">öffnen →</span></a><a class="ws" href="5-Textgestaltung/08_Wiederholung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+    </ol>
+  </section>
+  <section class="view s5" data-view="klasse-5-6/6-Kommunikation" hidden>
+    <div class="topic-head">
+      <div><p class="eyebrow">Klasse 5/6 · Kapitel 6</p><h2>Kommunikation in der vernetzten Welt</h2><p>E-Mails, Messenger und soziale Netzwerke gehören zum Alltag. Die Reihe zeigt, wie man fair und sicher kommuniziert, sichere Passwörter wählt, Werbung und Fake News erkennt, die eigenen Daten schützt – und wie Netzwerke und künstliche Intelligenz funktionieren.</p></div>
+      <a class="btn primary" href="6-Kommunikation/00_Uebersicht.html">Übersicht der Reihe →</a>
+    </div>
+    <ol class="rows">
+        <li><a class="row" href="6-Kommunikation/01_Digitale_Kommunikation.html"><span class="no">01</span><span class="rt"><b>Digitale Kommunikation</b><small>Auf welche Weisen werden bei der Kommunikation Informationen übermittelt?</small></span><span class="go">öffnen →</span></a><a class="ws" href="6-Kommunikation/01_Digitale_Kommunikation.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="6-Kommunikation/02_Mediennutzung.html"><span class="no">02</span><span class="rt"><b>Eigene Mediennutzung überprüfen</b><small>Wie viel Zeit verbringe ich mit Medien – und ist das gut so?</small></span><span class="go">öffnen →</span></a><a class="ws" href="6-Kommunikation/02_Mediennutzung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="6-Kommunikation/03_E_Mails.html"><span class="no">03</span><span class="rt"><b>E-Mails schreiben</b><small>Wie formuliert man eine E-Mail richtig?</small></span><span class="go">öffnen →</span></a><a class="ws" href="6-Kommunikation/03_E_Mails.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="6-Kommunikation/04_Chatten.html"><span class="no">04</span><span class="rt"><b>Chatten in Messenger-Diensten</b><small>Welche Regeln gibt es beim Chatten?</small></span><span class="go">öffnen →</span></a><a class="ws" href="6-Kommunikation/04_Chatten.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="6-Kommunikation/05_Posten.html"><span class="no">05</span><span class="rt"><b>Bilder, Reels und Videos posten</b><small>Was sollte man beachten, bevor man etwas postet?</small></span><span class="go">öffnen →</span></a><a class="ws" href="6-Kommunikation/05_Posten.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="6-Kommunikation/06_Passwoerter.html"><span class="no">06</span><span class="rt"><b>Sichere Passwörter nutzen</b><small>Wie schützt man seine Daten am besten?</small></span><span class="go">öffnen →</span></a><a class="ws" href="6-Kommunikation/06_Passwoerter.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="6-Kommunikation/07_Werbung.html"><span class="no">07</span><span class="rt"><b>Werbung beeinflusst uns</b><small>Welchen Einfluss hat Werbung auf uns?</small></span><span class="go">öffnen →</span></a><a class="ws" href="6-Kommunikation/07_Werbung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="6-Kommunikation/08_Datenschutz.html"><span class="no">08</span><span class="rt"><b>Daten und Datenschutz</b><small>Wie geht man mit persönlichen Daten im Internet um?</small></span><span class="go">öffnen →</span></a><a class="ws" href="6-Kommunikation/08_Datenschutz.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="6-Kommunikation/09_Gefahren.html"><span class="no">09</span><span class="rt"><b>Gefahren im Internet</b><small>Welche Gefahren können bei der Nutzung des Internets auftreten?</small></span><span class="go">öffnen →</span></a><a class="ws" href="6-Kommunikation/09_Gefahren.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="6-Kommunikation/10_Fake_News.html"><span class="no">10</span><span class="rt"><b>Fake News und verstörende Inhalte</b><small>Wie erkennt man Fake News – und was tut man, wenn einen Inhalte verstören?</small></span><span class="go">öffnen →</span></a><a class="ws" href="6-Kommunikation/10_Fake_News.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="6-Kommunikation/11_Netzwerke.html"><span class="no">11</span><span class="rt"><b>Lokale und globale Netzwerke</b><small>Wie sind die verschiedenen Netzwerke aufgebaut?</small></span><span class="go">öffnen →</span></a><a class="ws" href="6-Kommunikation/11_Netzwerke.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="6-Kommunikation/12_KI.html"><span class="no">12</span><span class="rt"><b>Künstliche Intelligenz</b><small>Was ist eine künstliche Intelligenz?</small></span><span class="go">öffnen →</span></a><a class="ws" href="6-Kommunikation/12_KI.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="6-Kommunikation/13_Generative_KI.html"><span class="no">13</span><span class="rt"><b>Generative KI-Anwendungen nutzen</b><small>Wie nutzt man generative KI-Anwendungen richtig?</small></span><span class="go">öffnen →</span></a><a class="ws" href="6-Kommunikation/13_Generative_KI.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="6-Kommunikation/14_Wiederholung.html"><span class="no">14</span><span class="rt"><b>Wiederholung und Selbsttest</b><small>Was kann ich, und was sollte ich noch üben?</small></span><span class="go">öffnen →</span></a><a class="ws" href="6-Kommunikation/14_Wiederholung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+    </ol>
+  </section>
+  <section class="view" data-view="klasse-7" hidden>
+    <h2 class="vh">Klasse 7: Reihe wählen</h2>
+    <ol class="lessons">
+      <li class="lesson s6">
+        <div class="l-num">1</div>
+        <div class="l-body"><p class="eyebrow">Kapitel 1 · 8 Stunden · ≈ 14 Unterrichtsstunden</p><h2>Informatiksysteme und Netze</h2><p class="l-q">Was ist Informatik überhaupt? Die Reihe zeigt, wie Informationen dargestellt werden, woraus Computer und Smartphones bestehen und wie sie nach dem EVA-Prinzip arbeiten. Danach geht es ins Netz: Netzwerke und Routing, das Internet mit seinen Diensten, das World Wide Web und die Cloud.</p></div>
+        <div class="l-go"><a class="btn primary" href="#klasse-7/7-Informatiksysteme_Netze">Stunden →</a><a class="btn" href="7-Informatiksysteme_Netze/00_Uebersicht.html">Übersicht</a></div>
+      </li>
+      <li class="lesson s7">
+        <div class="l-num">2</div>
+        <div class="l-body"><p class="eyebrow">Kapitel 2 · 9 Stunden · ≈ 14 Unterrichtsstunden</p><h2>Daten und ihre Codierung</h2><p class="l-q">Wie werden Zahlen, Texte und Bilder im Computer gespeichert? Die Reihe führt vom Binärsystem über Bits und Bytes, Logikgatter und den ASCII-Code zur Codierung und Komprimierung von Bildern, zum Hexadezimalsystem, zu analogen und digitalen Daten und zu grafischen Codes wie Barcode und QR-Code.</p></div>
+        <div class="l-go"><a class="btn primary" href="#klasse-7/7-Daten_codieren">Stunden →</a><a class="btn" href="7-Daten_codieren/00_Uebersicht.html">Übersicht</a></div>
+      </li>
+    </ol>
+  </section>
+  <section class="view s6" data-view="klasse-7/7-Informatiksysteme_Netze" hidden>
+    <div class="topic-head">
+      <div><p class="eyebrow">Klasse 7 · Kapitel 1</p><h2>Informatiksysteme und Netze</h2><p>Was ist Informatik überhaupt? Die Reihe zeigt, wie Informationen dargestellt werden, woraus Computer und Smartphones bestehen und wie sie nach dem EVA-Prinzip arbeiten. Danach geht es ins Netz: Netzwerke und Routing, das Internet mit seinen Diensten, das World Wide Web und die Cloud.</p></div>
+      <a class="btn primary" href="7-Informatiksysteme_Netze/00_Uebersicht.html">Übersicht der Reihe →</a>
+    </div>
+    <ol class="rows">
+        <li><a class="row" href="7-Informatiksysteme_Netze/01_Informatik.html"><span class="no">01</span><span class="rt"><b>Informationen und Informatik</b><small>Wie werden Informationen dargestellt – und womit beschäftigt sich die Informatik?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Informatiksysteme_Netze/01_Informatik.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="7-Informatiksysteme_Netze/02_EVA_Hardware.html"><span class="no">02</span><span class="rt"><b>Informatiksysteme und das EVA-Prinzip</b><small>Woraus besteht ein Informatiksystem und wie verarbeitet es Daten?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Informatiksysteme_Netze/02_EVA_Hardware.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="7-Informatiksysteme_Netze/03_Datenspeicherung.html"><span class="no">03</span><span class="rt"><b>Datenspeicherung und Backups</b><small>Wie werden Daten gespeichert – und wie schützt man sie vor Verlust?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Informatiksysteme_Netze/03_Datenspeicherung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="7-Informatiksysteme_Netze/04_Netzwerke.html"><span class="no">04</span><span class="rt"><b>Netzwerke</b><small>Wie sind Netzwerke aufgebaut und welche Aufgaben haben die Netzwerkkomponenten?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Informatiksysteme_Netze/04_Netzwerke.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="7-Informatiksysteme_Netze/05_Routing_Internet.html"><span class="no">05</span><span class="rt"><b>Routing und das Internet</b><small>Wie findet ein Datenpaket seinen Weg durch das Internet?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Informatiksysteme_Netze/05_Routing_Internet.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="7-Informatiksysteme_Netze/06_Internetdienste_WWW.html"><span class="no">06</span><span class="rt"><b>Internetdienste und das World Wide Web</b><small>Welche Dienste bietet das Internet – und was passiert, wenn man eine Webseite aufruft?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Informatiksysteme_Netze/06_Internetdienste_WWW.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="7-Informatiksysteme_Netze/07_Cloud.html"><span class="no">07</span><span class="rt"><b>Die Cloud</b><small>Wie funktioniert eine Cloud – und sollte man ihr seine Daten anvertrauen?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Informatiksysteme_Netze/07_Cloud.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="7-Informatiksysteme_Netze/08_Wiederholung.html"><span class="no">08</span><span class="rt"><b>Wiederholung und Selbsttest</b><small>Was kann ich, und was sollte ich noch üben?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Informatiksysteme_Netze/08_Wiederholung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+    </ol>
+  </section>
+  <section class="view s7" data-view="klasse-7/7-Daten_codieren" hidden>
+    <div class="topic-head">
+      <div><p class="eyebrow">Klasse 7 · Kapitel 2</p><h2>Daten und ihre Codierung</h2><p>Wie werden Zahlen, Texte und Bilder im Computer gespeichert? Die Reihe führt vom Binärsystem über Bits und Bytes, Logikgatter und den ASCII-Code zur Codierung und Komprimierung von Bildern, zum Hexadezimalsystem, zu analogen und digitalen Daten und zu grafischen Codes wie Barcode und QR-Code.</p></div>
+      <a class="btn primary" href="7-Daten_codieren/00_Uebersicht.html">Übersicht der Reihe →</a>
+    </div>
+    <ol class="rows">
+        <li><a class="row" href="7-Daten_codieren/01_Codes_Binaersystem.html"><span class="no">01</span><span class="rt"><b>Codes und das Binärsystem</b><small>Wie werden Informationen codiert – und wie rechnet man Zahlen ins Binärsystem um?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Daten_codieren/01_Codes_Binaersystem.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="7-Daten_codieren/02_Bits_Bytes_Rechner.html"><span class="no">02</span><span class="rt"><b>Bits, Bytes und die Arbeitsweise eines Computers</b><small>Wie groß sind Daten – und wie arbeitet ein Computer ein Programm ab?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Daten_codieren/02_Bits_Bytes_Rechner.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="7-Daten_codieren/03_ASCII.html"><span class="no">03</span><span class="rt"><b>Texte codieren – der ASCII-Code</b><small>Wie werden Buchstaben und Zeichen im Computer gespeichert?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Daten_codieren/03_ASCII.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="7-Daten_codieren/04_Bilder_codieren.html"><span class="no">04</span><span class="rt"><b>Bilder codieren</b><small>Wie wird ein Bild aus Pixeln als Binärcode gespeichert?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Daten_codieren/04_Bilder_codieren.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="7-Daten_codieren/05_Komprimieren.html"><span class="no">05</span><span class="rt"><b>Daten komprimieren</b><small>Wie lassen sich Datenmengen verkleinern – und was geht dabei verloren?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Daten_codieren/05_Komprimieren.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="7-Daten_codieren/06_Hexadezimal.html"><span class="no">06</span><span class="rt"><b>Das Hexadezimalsystem</b><small>Warum nutzt die Informatik das Hexadezimalsystem – und wie beschreibt es Farben?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Daten_codieren/06_Hexadezimal.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="7-Daten_codieren/07_Analog_Digital.html"><span class="no">07</span><span class="rt"><b>Analoge und digitale Daten</b><small>Wie wird aus einem analogen Signal eine Folge von Nullen und Einsen?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Daten_codieren/07_Analog_Digital.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="7-Daten_codieren/08_Grafische_Codes.html"><span class="no">08</span><span class="rt"><b>Grafische Codes und Prüfziffern</b><small>Wie codieren Barcodes und QR-Codes Daten – und wie werden Fehler erkannt?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Daten_codieren/08_Grafische_Codes.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="7-Daten_codieren/09_Wiederholung.html"><span class="no">09</span><span class="rt"><b>Wiederholung und Selbsttest</b><small>Was kann ich, und was sollte ich noch üben?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Daten_codieren/09_Wiederholung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+    </ol>
+  </section>
   <footer class="site-foot">KITAP · freie Unterrichtsmaterialien · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></footer>
 </section>
 </main>
 </div>
+<script>
+const T = {"klasse-5-6": "Klasse 5/6", "klasse-5-6/1-Informatiksysteme": "Informatiksysteme nutzen", "klasse-5-6/2-Algorithmen": "Algorithmen und Problemlösen", "klasse-5-6/3-Bilder_Videos": "Bilder und Videos", "klasse-5-6/4-Recherchieren_Praesentieren": "Recherchieren und Präsentieren", "klasse-5-6/5-Textgestaltung": "Textgestaltung", "klasse-5-6/6-Kommunikation": "Kommunikation in der vernetzten Welt", "klasse-7": "Klasse 7", "klasse-7/7-Informatiksysteme_Netze": "Informatiksysteme und Netze", "klasse-7/7-Daten_codieren": "Daten und ihre Codierung"};
+(() => {
+  const views = [...document.querySelectorAll('.view')], crumbs = document.getElementById('crumbs'), home = document.getElementById('home');
+  function show() {
+    let h = decodeURIComponent(location.hash.slice(1));
+    if (!views.some(v => v.dataset.view === h)) h = '';
+    views.forEach(v => v.hidden = v.dataset.view !== h);
+    home.hidden = !h;
+    const parts = h ? h.split('/') : [];
+    let out = parts.length ? '<a href="#">~/klassen</a>' : '<span aria-current="page">~/klassen</span>';
+    parts.forEach((p, i) => {
+      const key = parts.slice(0, i + 1).join('/'), name = T[key] || p;
+      out += '<span class="sep">/</span>' + (i === parts.length - 1 ? `<span aria-current="page">${name}</span>` : `<a href="#${key}">${name}</a>`);
+    });
+    crumbs.innerHTML = out;
+    document.title = (h ? T[h] + ' – ' : '') + 'KITAP – Informatik';
+  }
+  addEventListener('hashchange', () => { show(); if (location.hash) crumbs.scrollIntoView({block: 'start', behavior: 'smooth'}); });
+  show();
+})();
+</script>
 </body>
 </html>

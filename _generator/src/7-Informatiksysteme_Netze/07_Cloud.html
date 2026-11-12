@@ -1,0 +1,165 @@
+<!--
+title: Die Cloud
+short: Cloud
+time: 1 Unterrichtsstunde
+q: Wie funktioniert eine Cloud – und sollte man ihr seine Daten anvertrauen?
+facts: Cloud: Netz verbundener Server in Serverfarmen, Zugriff über das Internet | Beispiel Musik-App: Daten liegen auf dem Server | Private und kommerzielle Nutzung, Synchronisation mehrerer Geräte | Vor- und Nachteile: Verfügbarkeit, Datensicherung, Internetabhängigkeit, Datenschutz, Passwortschutz
+inter: Musik-App: Weg der Daten · Synchronisation zwischen drei Geräten · Nutzungszwecke als Diagramm · Dialog Alina und Henry · Vor- und Nachteile sortieren
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Informatiksysteme und Netze</p>
+      <h1>Die Cloud<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Fotos, die automatisch aufs Tablet wandern, Lieder, die nicht auf dem Handy gespeichert sind, Dokumente, die man gemeinsam bearbeitet: Das alles liegt „in der Wolke“ – der <b>Cloud</b>.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wo liegt eigentlich ein Lied, das du in einer Musik-App hörst?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie funktioniert eine Cloud – und sollte man ihr seine Daten anvertrauen?</p></div>
+      <div class="controls"><button class="btn primary" data-go="aufbau">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="aufbau" data-label="Aufbau" data-yr="Erarbeitung" data-title="Aufbau einer Cloud" data-sub="Serverfarm und Internet">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Aufbau einer Cloud</p>
+      <h2>Keine Wolke, sondern Server</h2>
+      <ul class="facts">
+        <li>Eine <b>Cloud</b> ist ein Netz miteinander verbundener <b>Server</b>. In <b>Serverfarmen</b> sind sehr viele Server zusammengeschaltet – sie brauchen viel Strom.</li>
+        <li><b>Telekommunikationsfirmen</b> stellen die Verbindung zwischen Nutzern und Cloud-Anbietern her.</li>
+        <li><b>Private Nutzer</b> greifen mit Computer, Handy oder Tablet auf ihre Daten zu und synchronisieren sie.</li>
+        <li><b>Unternehmen</b> mieten Speicher nach Bedarf und sparen eigene Server und Räume.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>🎵 Ein Lied abspielen</h3></div>
+      <svg id="cl"></svg>
+      <div id="cl-step"></div>
+      <p class="status" id="cl-status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="sync" data-label="Synchronisation" data-yr="Erarbeitung" data-title="Synchronisieren" data-sub="Ein Konto, viele Geräte">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Synchronisation</p>
+    <h2>Ein Konto – alle Geräte</h2>
+    <p class="lead">Auf einen privaten Cloudspeicher können mehrere Geräte zugreifen. Speicherst du auf einem Gerät etwas, erscheint es nach dem Hochladen überall. Probiere es aus – auch ohne Internet!</p>
+  </div>
+  <div class="vis">
+    <div class="sync-grid" id="sync-box"></div>
+    <p class="status" id="sync-status"></p>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Nutzung" data-yr="M1" data-title="Nutzungsverhalten" data-sub="Wofür Clouds genutzt werden">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Material M1</p>
+      <h2>Wofür nutzen Menschen die Cloud?</h2>
+      <p>Eine Umfrage unter privaten Cloud-Nutzern (Beispielwerte, Mehrfachnennungen möglich):</p>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Diagramm beschreiben</h3></header><p>Beschreibe mit dem Diagramm, wofür Clouds privat am meisten genutzt werden.</p>
+        <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Am häufigsten werden Fotos und Videos gespeichert (78 %), gefolgt von Dokumenten (64 %) und Backups (51 %). Gemeinsames Bearbeiten und Musik/Spielstände sind seltener.</p></div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Eigene Erfahrungen</h3></header><p>Beschreibe deine Erfahrungen mit Clouds. Welche Dienste nutzt du – vielleicht ohne es zu merken?</p>
+        <div class="controls"><button class="btn" data-reveal="m1b" aria-expanded="false">Ideen</button></div><p class="solution" id="m1b" hidden>Foto-Backup des Handys, Lernplattform der Schule, gemeinsame Dokumente, Spielstände in Konsolenspielen, Chat-Verläufe, Musik- und Videostreaming.</p></div>
+    </div>
+    <div class="vis"><svg class="chart-svg" id="chart" viewBox="0 0 420 240"></svg></div>
+  </div>
+</section>
+
+<section class="station" id="m2" data-label="M2 Kritik" data-yr="M2" data-title="Kritik an Clouds" data-sub="Ein Dialog">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M2</p>
+    <h2>Alina und Henry diskutieren</h2>
+  </div>
+  <div class="cols-2">
+    <div class="chat-box" id="dlg"></div>
+    <div>
+      <h3>Vorteil oder Nachteil? Sortiere.</h3>
+      <div id="sort-pc"></div>
+    </div>
+  </div>
+  <div class="task-card mt"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Stellung nehmen</h3></header><p>Alina sagt: „Ich habe nichts zu verbergen.“ Nimm Stellung.</p>
+    <div class="controls"><button class="btn" data-reveal="m2a" aria-expanded="false">Lösungsidee</button></div><p class="solution" id="m2a" hidden>Auch wer „nichts zu verbergen“ hat, hat private Fotos, Adressen, Nachrichten und Passwörter. Gelangen sie in fremde Hände, können sie missbraucht werden (Erpressung, Identitätsdiebstahl, Werbung). Viele Anbieter sitzen außerhalb der EU, wo die strengen europäischen Datenschutzregeln nicht gelten. Wichtig sind ein sicheres Passwort, Zwei-Faktor-Anmeldung und ein vertrauenswürdiger Anbieter.</p></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Die Cloud</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Die Cloud</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step>Eine <b>Cloud</b> ist ein Netz verbundener <b>Server</b> in Serverfarmen, auf die man über das <b>Internet</b> zugreift.</li>
+        <li data-step>Daten (Musik, Fotos, Dokumente) liegen auf dem Server. Mehrere Geräte können darauf zugreifen und werden <b>synchronisiert</b>.</li>
+        <li data-step><b>Vorteile:</b> Zugriff von überall, Schutz vor Datenverlust bei defektem Gerät, gemeinsames Bearbeiten, kein eigener Speicher nötig.</li>
+        <li data-step><b>Nachteile:</b> Internetverbindung nötig, <b>Datenschutz</b> (Anbieter oft außerhalb der EU), Gefahr durch Hacker – deshalb sicheres Passwort; hoher Stromverbrauch.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Tabelle</span><p>Lege eine Tabelle mit je drei Vor- und Nachteilen der Cloud an.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Stimmt das?</h2></div>
+  <div id="tf"></div>
+</section>
+
+<script>
+/* ================= Musik-App ================= */
+(() => {
+  const N = {ph: [60, 150, 'Handy', '📱'], tk: [200, 150, 'Telekom-Netz', '📡'], s1: [360, 70, 'Server 1', '🗄'], s2: [360, 150, 'Server 2', '🗄'], s3: [360, 230, 'Server 3', '🗄']};
+  const E = [['ph', 'tk'], ['tk', 's1'], ['tk', 's2'], ['tk', 's3'], ['s1', 's2'], ['s2', 's3']];
+  const g = graphView($('#cl'), N, E, {w: 440, h: 300, weights: false});
+  const S = [[{on: ['ph']}, 'Du startest die Musik-App und suchst ein Lied.'], [{path: ['ph', 'tk', 's2'], pkt: 's2'}, 'Das Handy verbindet sich über das Netz der Telekommunikationsfirma mit den Cloud-Servern.'], [{on: ['s2', 's1', 's3'], edgeOn: [['s1', 's2'], ['s2', 's3']]}, 'In der Serverfarm wird das Lied gefunden. Es liegt sicherheitshalber auf mehreren Servern.'], [{path: ['s2', 'tk', 'ph'], pkt: 'ph'}, 'Der Server schickt das Lied in Paketen zurück – so schnell, dass kaum Wartezeit entsteht. Es wird abgespielt, aber nicht dauerhaft gespeichert.']];
+  stepper($('#cl-step'), S.length, k => { g.draw(S[k][0]); $('#cl-status').textContent = S[k][1]; });
+})();
+
+/* ================= Synchronisation ================= */
+(() => {
+  const D = [['💻', 'Laptop'], ['📱', 'Handy'], ['📟', 'Tablet']];
+  let cloud = ['Referat.docx'], local = [['Referat.docx'], ['Referat.docx'], ['Referat.docx']], online = [true, true, true], n = 1;
+  function draw() {
+    $("#sync-box").innerHTML = `<div class="sync-cloud"><b>☁ Cloud</b>${cloud.map(f => `<span class="pill">${f}</span>`).join('')}</div>` + D.map(([i, name], k) => `<div class="sync-dev ${online[k] ? '' : 'off'}"><b>${i} ${name}</b>
+      <div class="chips">${local[k].map(f => `<span class="pill ${cloud.includes(f) ? 'ok' : ''}">${f}</span>`).join('')}</div>
+      <div class="controls"><button class="btn" data-a="new" data-k="${k}">+ Foto</button><button class="btn" data-a="net" data-k="${k}">${online[k] ? '✈ Offline' : '📶 Online'}</button></div></div>`).join('');
+  }
+  function sync(msg) {
+    online.forEach((on, k) => { if (on) local[k].forEach(f => { if (!cloud.includes(f)) cloud.push(f); }); });
+    online.forEach((on, k) => { if (on) local[k] = cloud.slice(); });
+    draw(); $('#sync-status').innerHTML = msg;
+  }
+  $("#sync-box").addEventListener('click', e => {
+    const b = e.target.closest('[data-a]'); if (!b) return; const k = +b.dataset.k;
+    if (b.dataset.a === 'new') { const f = `Foto_${++n}.jpg`; local[k].push(f); sync(online[k] ? `${D[k][1]} lädt <b>${f}</b> in die Cloud – alle Online-Geräte bekommen es.` : `${D[k][1]} ist offline: <b>${f}</b> bleibt vorerst nur lokal.`); }
+    else { online[k] = !online[k]; sync(online[k] ? `${D[k][1]} ist wieder online und gleicht sich mit der Cloud ab.` : `${D[k][1]} hat keine Internetverbindung mehr.`); }
+  });
+  draw(); $('#sync-status').textContent = 'Füge auf einem Gerät ein Foto hinzu oder schalte ein Gerät offline.';
+})();
+
+/* ================= Diagramm ================= */
+(() => {
+  const D = [['Fotos/Videos', 78], ['Dokumente', 64], ['Backups', 51], ['gemeinsam bearbeiten', 33], ['Musik/Spielstände', 27]];
+  let s = '';
+  D.forEach(([n, v], i) => { const y = 20 + i * 42; s += `<text x="0" y="${y + 17}">${n}</text><rect class="bar" x="160" y="${y}" width="${v * 2.4}" height="26" rx="3"/><text x="${166 + v * 2.4}" y="${y + 18}" style="fill:var(--ink);font-weight:600">${v} %</text>`; });
+  $('#chart').innerHTML = s;
+})();
+
+/* ================= Dialog ================= */
+$('#dlg').innerHTML = [['Alina', 'Ich speichere fast alles in der Cloud. Meine Daten kann ich mit allen Geräten von überall abrufen.'], ['Henry', 'Aber nur, wenn du eine Internetverbindung hast.'], ['Alina', 'Stimmt. In der Cloud sind meine Daten aber vor Datenverlust geschützt – auch wenn mein Handy kaputtgeht.'], ['Henry', 'Und wenn jemand den Anbieter hackt? Das kannst du nicht verhindern, wenn du deine Daten auf dem PC speicherst.'], ['Alina', 'Solche Hacks passieren selten. Und was wollen die schon mit meinen Daten? Ich habe nichts zu verbergen.']]
+  .map(([w, t]) => `<div class="msg ${w === 'Alina' ? 'me' : ''}"><b>${w}</b><p>${t}</p></div>`).join('');
+sorter($('#sort-pc'), [{id: 'v', name: 'Vorteil'}, {id: 'n', name: 'Nachteil'}], [
+  {t: 'Zugriff von überall', c: 'v'}, {t: 'Schutz bei Geräteverlust', c: 'v'}, {t: 'Gemeinsam an Dokumenten arbeiten', c: 'v'},
+  {t: 'Ohne Internet kein Zugriff', c: 'n'}, {t: 'Anbieter außerhalb der EU', c: 'n'}, {t: 'Gefahr durch Hackerangriffe', c: 'n'}, {t: 'Hoher Stromverbrauch der Serverfarmen', c: 'n'}
+]);
+
+trueFalse($('#tf'), [
+  {t: 'Die Cloud ist ein Netz aus Servern.', ok: true},
+  {t: 'Daten in der Cloud liegen auf dem eigenen Handy.', ok: false, why: 'Sie liegen auf Servern des Anbieters.'},
+  {t: 'Ohne Internetverbindung kann man nicht auf Cloud-Daten zugreifen, die nicht lokal gespeichert sind.', ok: true},
+  {t: 'Für alle Cloud-Anbieter gilt automatisch der europäische Datenschutz.', ok: false, why: 'Viele Anbieter sitzen im außereuropäischen Ausland.'},
+  {t: 'Ein sicheres Passwort schützt den Cloudzugang vor Unbefugten.', ok: true},
+  {t: 'Unternehmen können Speicher in der Cloud nach Bedarf mieten.', ok: true}
+]);
+</script>

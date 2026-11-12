@@ -1,0 +1,203 @@
+<!--
+title: Grafische Codes und Prüfziffern
+short: Grafische Codes
+time: 2 Unterrichtsstunden
+q: Wie codieren Barcodes und QR-Codes Daten – und wie werden Fehler erkannt?
+facts: Grafische Codes werden mit optischen Geräten eingelesen | EAN-Barcode: 13-stellige Artikelnummer mit Prüfziffer | QR-Code: Positionsmarkierungen, Synchronisationslinien, Ausrichtungsmarkierung, Datenfeld | Fehlererkennende Codes: Prüfziffer (ISBN, EAN) und Paritätsbit als Redundanz
+inter: EAN-13-Generator mit Strichen · Prüfziffer berechnen · Zahlendreher erkennen · QR-Code-Bereiche erkunden · Paritätsbit-Spiel Sender – Übermittler – Empfänger
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Daten und ihre Codierung</p>
+      <h1>Grafische Codes<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Piep – an der Kasse liest ein Scanner Striche, am Bahnhof scannt das Handy ein Muster aus Quadraten. Und wenn beim Lesen ein Fehler passiert? Dann merkt es der Code selbst.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wo hast du heute schon einen Barcode oder QR-Code gesehen?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie codieren Barcodes und QR-Codes Daten – und wie werden Fehler erkannt?</p></div>
+      <div class="controls"><button class="btn primary" data-go="ean">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="ean" data-label="Barcode" data-yr="Erarbeitung" data-title="Der EAN-Barcode" data-sub="13 Ziffern in Strichen">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Barcodes</p>
+      <h2>Der EAN-Barcode</h2>
+      <ul class="facts">
+        <li>Grafische Codes werden mit <b>optischen Geräten</b> wie Scannern oder dem Smartphone eingelesen und automatisch interpretiert.</li>
+        <li>Ein <b>Barcode</b> (Strichcode) besteht aus schwarzen und weißen Streifen unterschiedlicher Breite. Der Computer decodiert ihn in einen <b>Binärcode</b>.</li>
+        <li>Supermärkte nutzen den <b>EAN</b>-Code (European Article Number): eine <b>13-stellige</b> Artikelnummer mit Ländercode, Herstellernummer, Artikelnummer und einer <b>Prüfziffer</b> am Ende.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Barcode-Generator</h3></div>
+      <input class="text-in mono" id="ean-in" value="400638133393" maxlength="12" inputmode="numeric" aria-label="12 Ziffern">
+      <svg id="ean-svg" viewBox="0 0 230 110" style="width:100%;max-width:26rem;background:#fff;display:block;margin:.8rem auto 0;border:1.5px solid var(--edge)"></svg>
+      <p class="status" id="ean-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="pruef" data-label="Prüfziffer" data-yr="Erarbeitung" data-title="Die Prüfziffer" data-sub="Fehler erkennen">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Fehlererkennende Codes</p>
+    <h2>Die Prüfziffer</h2>
+    <p class="lead">Beim Eintippen oder Scannen passieren leicht Fehler, z. B. ein <b>Zahlendreher</b>. Die 13. Ziffer bei EAN und ISBN ist eine <b>Prüfziffer</b>: Sie wird aus den ersten 12 Ziffern berechnet. Sie enthält keine neue Information – sie ist <b>Redundanz</b>, mit der man Fehler erkennt.</p>
+  </div>
+  <div class="model">
+    <div class="vis">
+      <div class="vis-head"><h3>So wird gerechnet</h3></div>
+      <input class="text-in mono" id="pz-in" value="978314149717" maxlength="12" aria-label="12 Ziffern">
+      <div class="table-wrap" style="margin-top:.6rem"><table class="cmp" id="pz-tab"></table></div>
+      <p class="status" id="pz-st"></p>
+    </div>
+    <div class="stack">
+      <div class="box"><span class="tag">Rechenweg</span><ol style="margin:0;padding-left:1.2rem"><li>Ziffern abwechselnd mit <b>1 und 3</b> multiplizieren.</li><li>Alle Produkte addieren.</li><li>Differenz zur nächsthöheren durch 10 teilbaren Zahl = Prüfziffer (bei 10 → 0).</li></ol></div>
+      <div class="vis"><div class="vis-head"><h3>Fehler gefunden?</h3></div><input class="text-in mono" id="ck-in" value="9783141497179" maxlength="13" aria-label="13 Ziffern"><p class="status" id="ck-st"></p><p class="note">Vertausche zwei benachbarte Ziffern oder ändere eine – die Prüfung schlägt an.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="qr" data-label="QR-Code" data-yr="Erarbeitung" data-title="Der QR-Code" data-sub="Aufbau erkunden">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · QR-Codes</p>
+      <h2>Ein zweidimensionaler Code</h2>
+      <ul class="facts">
+        <li><b>QR</b> = quick response („schnelle Antwort“). Der QR-Code ist ein <b>zweidimensionaler</b> grafischer Code aus schwarzen und weißen Zellen.</li>
+        <li>Er hat bis zu 177 × 177 Zellen und kann bis zu 4296 Zeichen speichern – zum Beispiel eine Internetadresse.</li>
+        <li>Tippe die Bereiche an oder wechsle in den Modus „Finden“.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Aufbau</h3><div id="qr-mode"></div></div>
+      <svg id="qr-svg" viewBox="-2 -2 29 29" style="width:100%;max-width:20rem;display:block;margin:auto;background:#fff"></svg>
+      <div class="box xp-panel" id="qr-info"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Paritätsbit" data-yr="M1" data-title="Das Paritätsbit" data-sub="Sender, Übermittler, Empfänger">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Das Paritätsbit</h2>
+    <p class="lead">Auch bei der Übertragung von Binärcodes können Störungen Bits verfälschen. Deshalb hängt der Sender ein <b>Paritätsbit</b> an: Ist die Anzahl der Einsen <b>gerade</b>, lautet es <b>0</b>, sonst <b>1</b>. Der Empfänger rechnet nach. Spielt die drei Rollen!</p>
+  </div>
+  <div class="cols-3 parity">
+    <div class="vis"><div class="vis-head"><h3>1 · Sender</h3></div><p class="note">Tippe Bits an.</p><div class="bitrow" id="pa-send"></div><p class="status" id="pa-s"></p></div>
+    <div class="vis"><div class="vis-head"><h3>2 · Übermittler</h3></div><p class="note">Willst du ein Bit „stören“? Tippe es an.</p><div class="bitrow" id="pa-mid"></div><p class="status" id="pa-m"></p></div>
+    <div class="vis"><div class="vis-head"><h3>3 · Empfänger</h3></div><div class="controls" style="margin-top:0"><button class="btn primary" id="pa-check">Prüfen</button></div><div class="bitrow" id="pa-recv"></div><p class="status" id="pa-r"></p></div>
+  </div>
+  <div class="task-card mt"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Grenzen</h3></header><p>Der Übermittler verfälscht zwei Bits. Was passiert? Erkläre.</p>
+    <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Werden zwei Bits verfälscht, bleibt die Anzahl der Einsen gerade bzw. ungerade – das Paritätsbit stimmt wieder. Der Fehler wird nicht erkannt. Ein Paritätsbit erkennt nur eine ungerade Zahl von Fehlern und kann nicht sagen, welches Bit falsch ist.</p></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Grafische Codes</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Grafische Codes und Prüfziffern</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step><b>Grafische Codes</b> wie Barcode und QR-Code werden mit optischen Geräten eingelesen und in Binärcode decodiert.</li>
+        <li data-step>Der <b>EAN-Barcode</b> codiert eine 13-stellige Artikelnummer. Der <b>QR-Code</b> ist zweidimensional: Positionsmarkierungen (Ausrichtung), Synchronisationslinien (Größe), Ausrichtungsmarkierung, Datenfeld.</li>
+        <li data-step><b>Prüfziffer</b> (EAN, ISBN): Ziffern abwechselnd mit 1 und 3 multiplizieren, addieren, Differenz zur nächsten Zehnerzahl. Erkennt Tippfehler und Zahlendreher.</li>
+        <li data-step><b>Paritätsbit</b>: 0 bei gerader, 1 bei ungerader Anzahl von Einsen. Prüfziffer und Paritätsbit sind <b>Redundanz</b>: Sie vergrößern den Code, ermöglichen aber das Erkennen von Fehlern.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Beispiel</span><p>Berechne die Prüfziffer der ISBN 978-3-14-149724-? und schreibe den Rechenweg auf.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Prüfziffern und Paritätsbits</h2></div>
+  <div id="ts"></div>
+</section>
+
+<script>
+const checkDigit = s => { const sum = [...s].reduce((a, d, i) => a + (+d) * (i % 2 ? 3 : 1), 0); return (10 - sum % 10) % 10; };
+/* ================= EAN-13 ================= */
+(() => {
+  const L = ['0001101', '0011001', '0010011', '0111101', '0100011', '0110001', '0101111', '0111011', '0110111', '0001011'];
+  const G = ['0100111', '0110011', '0011011', '0100001', '0011101', '0111001', '0000101', '0010001', '0001001', '0010111'];
+  const R = ['1110010', '1100110', '1101100', '1000010', '1011100', '1001110', '1010000', '1000100', '1001000', '1110100'];
+  const P = ['LLLLLL', 'LLGLGG', 'LLGGLG', 'LLGGGL', 'LGLLGG', 'LGGLLG', 'LGGGLL', 'LGLGLG', 'LGLGGL', 'LGGLGL'];
+  function draw() {
+    const s = $('#ean-in').value.replace(/\D/g, '').slice(0, 12);
+    if (s.length < 12) { $('#ean-svg').innerHTML = ''; $('#ean-st').textContent = `Noch ${12 - s.length} Ziffer(n) eingeben.`; return; }
+    const c = checkDigit(s), d = (s + c).split('').map(Number);
+    let bits = '101' + d.slice(1, 7).map((x, i) => (P[d[0]][i] === 'L' ? L : G)[x]).join('') + '01010' + d.slice(7).map(x => R[x]).join('') + '101';
+    const guard = new Set([0, 1, 2, 45, 46, 47, 48, 49, 92, 93, 94]);
+    let svg = ''; [...bits].forEach((b, i) => { if (b === '1') svg += `<rect x="${20 + i * 2}" y="8" width="2" height="${guard.has(i) ? 84 : 76}" fill="#000"/>`; });
+    svg += `<text x="10" y="104" font-family="monospace" font-size="12" fill="#000">${d[0]}</text><text x="${20 + 24 * 2}" y="104" font-family="monospace" font-size="12" text-anchor="middle" fill="#000" letter-spacing="2">${d.slice(1, 7).join('')}</text><text x="${20 + 70 * 2}" y="104" font-family="monospace" font-size="12" text-anchor="middle" fill="#000" letter-spacing="2">${d.slice(7).join('')}</text>`;
+    $('#ean-svg').innerHTML = svg;
+    $('#ean-st').innerHTML = `Ländercode <b>${s.slice(0, 3)}</b> (${/^40|^41|^42|^43|^44/.test(s) ? 'Deutschland' : s.startsWith('978') ? 'Buch (ISBN)' : 'anderes Land'}) · Hersteller und Artikel <b>${s.slice(3)}</b> · Prüfziffer <b>${c}</b> · 95 Module`;
+  }
+  $('#ean-in').addEventListener('input', draw); draw();
+})();
+
+/* ================= Prüfziffer ================= */
+(() => {
+  const upd = () => {
+    const s = $('#pz-in').value.replace(/\D/g, '').slice(0, 12);
+    if (s.length < 12) { $('#pz-tab').innerHTML = ''; $('#pz-st').textContent = `Noch ${12 - s.length} Ziffer(n).`; return; }
+    const pr = [...s].map((d, i) => +d * (i % 2 ? 3 : 1)), sum = pr.reduce((a, b) => a + b, 0), c = (10 - sum % 10) % 10;
+    $('#pz-tab').innerHTML = `<tbody><tr><th>Ziffer</th>${[...s].map(d => `<td class="mono">${d}</td>`).join('')}</tr><tr><th>· Faktor</th>${[...s].map((d, i) => `<td class="mono">${i % 2 ? 3 : 1}</td>`).join('')}</tr><tr><th>=</th>${pr.map(p => `<td class="mono"><b>${p}</b></td>`).join('')}</tr></tbody>`;
+    $('#pz-st').innerHTML = `Summe ${pr.join(' + ')} = <b>${sum}</b> · nächste Zehnerzahl ${Math.ceil(sum / 10) * 10} · Prüfziffer <b>${c}</b>`;
+  };
+  $('#pz-in').addEventListener('input', upd); upd();
+  const ck = () => { const s = $('#ck-in').value.replace(/\D/g, ''); if (s.length !== 13) { $('#ck-st').textContent = '13 Ziffern eingeben.'; return; } const ok = checkDigit(s.slice(0, 12)) === +s[12]; $('#ck-st').innerHTML = ok ? '<b class="good">✔ gültig</b> – die Prüfziffer passt.' : `<b class="bad">✘ fehlerhaft</b> – berechnet wäre ${checkDigit(s.slice(0, 12))}, angegeben ist ${s[12]}.`; };
+  $('#ck-in').addEventListener('input', ck); ck();
+})();
+
+/* ================= QR-Code ================= */
+(() => {
+  const N = 25, cells = [];
+  const finder = (x0, y0) => { for (let y = -1; y < 8; y++) for (let x = -1; x < 8; x++) { const X = x0 + x, Y = y0 + y; if (X < 0 || Y < 0 || X >= N || Y >= N) continue; const ring = Math.max(Math.abs(x - 3), Math.abs(y - 3)); cells.push([X, Y, ring === 3 || ring <= 1 ? 1 : 0, 'pos']); } };
+  finder(0, 0); finder(N - 7, 0); finder(0, N - 7);
+  const used = new Set(cells.map(c => c[0] + ',' + c[1]));
+  for (let i = 8; i < N - 8; i++) { cells.push([i, 6, i % 2 ? 0 : 1, 'sync']); cells.push([6, i, i % 2 ? 0 : 1, 'sync']); used.add(i + ',6'); used.add('6,' + i); }
+  for (let y = -2; y <= 2; y++) for (let x = -2; x <= 2; x++) { const r = Math.max(Math.abs(x), Math.abs(y)); cells.push([18 + x, 18 + y, r === 1 ? 0 : 1, 'align']); used.add((18 + x) + ',' + (18 + y)); }
+  for (let i = 0; i < 9; i++) { if (!used.has(i + ',8') && i !== 6) { cells.push([i, 8, (i * 7) % 3 ? 1 : 0, 'fmt']); used.add(i + ',8'); } if (!used.has('8,' + i) && i !== 6) { cells.push([8, i, (i * 5) % 3 ? 0 : 1, 'fmt']); used.add('8,' + i); } }
+  let seed = 7; const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) if (!used.has(x + ',' + y)) cells.push([x, y, rnd() < .48 ? 1 : 0, 'data']);
+  const parts = ['pos', 'sync', 'align', 'fmt', 'data'];
+  $('#qr-svg').innerHTML = parts.map(p => `<g data-part="${p}">${cells.filter(c => c[3] === p).map(([x, y, v]) => `<rect x="${x}" y="${y}" width="1.02" height="1.02" fill="${v ? '#111' : '#fff'}"/>`).join('')}<rect class="qr-hit" x="0" y="0" width="0" height="0"/></g>`).join('');
+  explorer($('#qr-svg'), $('#qr-info'), [
+    {id: 'pos', n: 'Positionsmarkierungen', t: 'In drei Ecken. Daran erkennt der Scanner, wie der Code gedreht ist – unten rechts fehlt eine solche Markierung.'},
+    {id: 'sync', n: 'Synchronisationslinien', t: 'Abwechselnd schwarz-weiß gepunktete Linien zwischen den Positionsmarkierungen. Sie zeigen dem Scanner die Größe des Datenfeldes (Anzahl der Zellen).'},
+    {id: 'align', n: 'Ausrichtungsmarkierung', t: 'Unten rechts. Zusätzliche Orientierung für den Scanner, vor allem bei großen oder verbogenen QR-Codes.'},
+    {id: 'fmt', n: 'Formatinformation', t: 'Codiert das Datenformat und die Stufe der Fehlerkorrektur.'},
+    {id: 'data', n: 'Datenfeld', t: 'Hier stehen die eigentlichen Daten als Muster aus Zellen (schwarz = 1). Je 8 Zellen ergeben 1 Byte. Ein Teil ist Redundanz: Auch ein leicht beschädigter Code bleibt lesbar.'}
+  ], {modeRoot: $('#qr-mode'), intro: 'Tippe einen Bereich an.', label: 'Bereich'});
+})();
+
+/* ================= Paritätsbit ================= */
+(() => {
+  let data = [1, 0, 1, 1, 0, 0, 1], sent = [], recv = [];
+  const par = a => a.reduce((s, b) => s + b, 0) % 2;
+  const row = (a, cls) => a.map((b, i) => `<button class="pv-b ${b ? 'on' : ''} ${i === a.length - 1 ? 'par' : ''} ${cls && cls[i] ? cls[i] : ''}" data-i="${i}">${b}</button>`).join('');
+  function sync() {
+    sent = [...data, par(data)]; recv = sent.slice();
+    $('#pa-send').innerHTML = row(sent); $('#pa-mid').innerHTML = row(recv); $('#pa-recv').innerHTML = '';
+    $('#pa-s').innerHTML = `${data.reduce((s, b) => s + b, 0)} Einsen → ${par(data) ? 'ungerade' : 'gerade'} → Paritätsbit <b>${par(data)}</b>`;
+    $('#pa-m').textContent = 'Übertragung unverändert.'; $('#pa-r').textContent = 'Warte auf Prüfung …';
+  }
+  $('#pa-send').addEventListener('click', e => { const b = e.target.closest('[data-i]'); if (b && +b.dataset.i < data.length) { data[+b.dataset.i] ^= 1; sync(); } });
+  $('#pa-mid').addEventListener('click', e => { const b = e.target.closest('[data-i]'); if (!b) return; recv[+b.dataset.i] ^= 1; const diff = recv.map((v, i) => v !== sent[i] ? 'err' : ''); $('#pa-mid').innerHTML = row(recv, diff); $('#pa-m').innerHTML = `${diff.filter(Boolean).length} Bit(s) gestört.`; });
+  $('#pa-check').onclick = () => {
+    const d = recv.slice(0, -1), p = recv[recv.length - 1], ok = par(d) === p;
+    $('#pa-recv').innerHTML = row(recv);
+    $('#pa-r').innerHTML = `Daten haben ${d.reduce((s, b) => s + b, 0)} Einsen → erwartet ${par(d)}, empfangen ${p}: ${ok ? '<b class="good">kein Fehler erkannt</b>' : '<b class="bad">Fehler erkannt! Bitte neu senden.</b>'}`;
+  };
+  sync();
+})();
+
+taskSet($('#ts'), i => {
+  if (i % 2) { const b = [...Array(7)].map(() => randInt(0, 1)); return {key: b.join(''), tag: 'Paritätsbit', q: `<span class="big mono" style="font-size:1.3rem">${b.join('')}</span>`, fields: [{l: 'Paritätsbit', a: b.reduce((s, x) => s + x, 0) % 2}], hint: 'Zähle die Einsen: gerade → 0, ungerade → 1.'}; }
+  const s = '978' + [...Array(9)].map(() => randInt(0, 9)).join('');
+  return {key: s, tag: 'Prüfziffer', q: `<span class="mono" style="font-size:1.1rem">${s}?</span>`, fields: [{l: 'Prüfziffer', a: checkDigit(s)}], hint: 'Abwechselnd · 1 und · 3, addieren, bis zur nächsten Zehnerzahl ergänzen.'};
+}, {n: 6});
+</script>

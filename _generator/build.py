@@ -124,7 +124,7 @@ def build_lesson(series, idx, lessons, outdir, css, js):
 {chr(10).join(tl)}
     </ol>
   </nav>
-  <a class="icon-btn" href="../index.html" title="Startseite: alle Reihen">⌂ Start</a>
+  <a class="icon-btn" href="../index.html#{gkey(series)}" title="Startseite: alle Reihen der Klassenstufe">⌂ Start</a>
   <a class="icon-btn" href="{path.stem}.pdf" target="_blank" rel="noopener" title="Arbeitsblatt zur Stunde (PDF)">Arbeitsblatt</a>
   <a class="icon-btn" href="00_Uebersicht.html" title="Zur Übersicht der Reihe">Übersicht</a>
   <button class="icon-btn" id="fs" title="Vollbild (F)">Vollbild</button>
@@ -190,7 +190,7 @@ def build_overview(series, lessons, outdir, css):
 <header class="top">
   <div class="brand"><b>{series["name"]}</b><span>{subj} · Klasse {grade}</span></div>
   <span style="flex:1"></span>
-  <a class="icon-btn" href="../index.html">⌂ Start</a>{links}
+  <a class="icon-btn" href="../index.html#{gkey(series)}">⌂ Start</a>{links}
   <a class="icon-btn" href="#hinweise">Hinweise für Lehrkräfte</a>
 </header>
 <main>
@@ -229,55 +229,170 @@ def build_overview(series, lessons, outdir, css):
     (outdir / '00_Uebersicht.html').write_text(page, encoding='utf-8')
 
 
+def gkey(series):
+    """Klassenstufe als Anker: '5/6' -> 'klasse-5-6'."""
+    return 'klasse-' + series['grade'].replace('/', '-')
+
+
+GRADE_INFO = {'5/6': 'Informationen, Computer, Algorithmen mit Scratch, Bilder, Präsentieren, Textverarbeitung und Kommunikation im Netz.',
+              '7': 'Netze und Internet, Codierung, Verschlüsselung, Informatik und Gesellschaft, Algorithmen mit Scratch.',
+              '8': 'Mikrocontroller, maschinelles Lernen, Programmieren mit JavaScript, Tabellen und Datenbanken.'}
+
+INDEX_CSS = '''.kitap-sub{font-style:italic;font-size:clamp(1rem,1.6vw,1.3rem);color:var(--ink-2);margin:-.2em 0 1.2rem}
+.hero h1 .cur{display:inline-block;width:.55em;height:.95em;background:var(--accent);vertical-align:-.12em;margin-left:.1em;animation:blink 1.1s steps(1) infinite}
+@media (prefers-reduced-motion: reduce){.hero h1 .cur{animation:none}}
+.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:.2rem;margin:2rem 0 1.2rem;padding:.5rem .8rem;background:var(--bar);color:var(--bar-ink-2);border-radius:4px;font-family:var(--f-mono);font-size:.85rem;scroll-margin-top:5rem}
+.crumbs::before{content:"$ cd";color:var(--led);margin-right:.4rem;font-weight:600}
+.crumbs a{color:var(--bar-ink);text-decoration:none;padding:.1rem .3rem;border-radius:3px}
+.crumbs a:hover{background:var(--bar-2);color:var(--led)}
+.crumbs [aria-current]{color:var(--led);padding:.1rem .3rem}
+.crumbs .sep{opacity:.6}
+.vh{font-size:1.35rem;margin:0 0 1rem}
+.grades{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.2rem}
+.grade{display:flex;flex-direction:column;gap:.3rem;padding:1.1rem 1.2rem 1rem;text-decoration:none;color:inherit;background:var(--surface);border:1.5px solid var(--edge);border-radius:6px;box-shadow:4px 4px 0 var(--edge-shadow);transition:transform .08s,box-shadow .08s}
+.grade:hover,.grade:focus-visible{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--edge-shadow)}
+.grade:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--edge-shadow)}
+.g-lbl{font-family:var(--f-mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-2)}
+.g-num{font-family:var(--f-mono);font-weight:600;font-size:clamp(3rem,8vw,4.6rem);line-height:1;color:var(--accent)}
+.g-num::before{content:">";opacity:.35;margin-right:.1em}
+.g-meta{font-family:var(--f-mono);font-size:.82rem;font-weight:600}
+.g-txt{font-size:.9rem;color:var(--ink-2)}
+.g-leds{display:flex;gap:.3rem;margin-top:auto;padding-top:.6rem}
+.g-leds i{flex:1;height:.5rem;border-radius:2px;background:var(--accent)}
+.lesson .l-num{color:var(--accent)}
+.lesson{border-left:8px solid var(--accent)}
+.topic-head{display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:flex-end;justify-content:space-between;margin-bottom:1.2rem}
+.topic-head h2{margin:0 0 .3rem}
+.topic-head p{margin:0;color:var(--ink-2);max-width:64ch}
+.topic-head .eyebrow{margin-bottom:.4rem}
+.rows{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.55rem}
+.rows li{display:flex;gap:.55rem}
+.row{flex:1;display:flex;align-items:center;gap:1rem;text-decoration:none;color:inherit;background:var(--surface);border:1.5px solid var(--edge);border-radius:5px;box-shadow:3px 3px 0 var(--edge-shadow);padding:.65rem .9rem;min-width:0}
+.row:hover,.ws:hover{background:var(--surface-2)}
+.row .no{font-family:var(--f-mono);font-weight:600;background:var(--accent);color:var(--accent-ink);border-radius:3px;padding:.15rem .45rem;flex:none}
+.row .rt{flex:1;min-width:0;display:flex;flex-direction:column}
+.row .rt small{color:var(--ink-2);font-size:.85rem}
+.row .go{font-family:var(--f-mono);font-size:.8rem;color:var(--accent);font-weight:600;flex:none}
+.ws{flex:none;display:grid;place-items:center;width:3.2rem;font-family:var(--f-mono);font-weight:600;font-size:.8rem;text-decoration:none;color:var(--ink);background:var(--surface);border:1.5px solid var(--edge);border-radius:5px;box-shadow:3px 3px 0 var(--edge-shadow)}
+.site-foot{margin-top:3rem;color:var(--ink-2);font-size:.82rem}
+.site-foot a{color:inherit}
+.site-foot a:hover{color:var(--accent)}
+@media (max-width:600px){.row .go{display:none}.grade{display:grid;grid-template-columns:auto 1fr;column-gap:1rem;align-items:center}.g-num{grid-row:1/4;grid-column:1}.g-txt,.g-leds{grid-column:1/-1}}
+'''
+
+INDEX_JS = '''(() => {
+  const views = [...document.querySelectorAll('.view')], crumbs = document.getElementById('crumbs'), home = document.getElementById('home');
+  function show() {
+    let h = decodeURIComponent(location.hash.slice(1));
+    if (!views.some(v => v.dataset.view === h)) h = '';
+    views.forEach(v => v.hidden = v.dataset.view !== h);
+    home.hidden = !h;
+    const parts = h ? h.split('/') : [];
+    let out = parts.length ? '<a href="#">~/klassen</a>' : '<span aria-current="page">~/klassen</span>';
+    parts.forEach((p, i) => {
+      const key = parts.slice(0, i + 1).join('/'), name = T[key] || p;
+      out += '<span class="sep">/</span>' + (i === parts.length - 1 ? `<span aria-current="page">${name}</span>` : `<a href="#${key}">${name}</a>`);
+    });
+    crumbs.innerHTML = out;
+    document.title = (h ? T[h] + ' – ' : '') + 'KITAP – Informatik';
+  }
+  addEventListener('hashchange', () => { show(); if (location.hash) crumbs.scrollIntoView({block: 'start', behavior: 'smooth'}); });
+  show();
+})();'''
+
+
 def build_index(css):
-    cards = []
-    for s in SERIES:
-        src = HERE / 'src' / s['folder']
-        n = len(list(src.glob('[0-9][0-9]_*.html')))
-        if not n:
+    """Startseite: Klassenstufe wählen → Reihe wählen → Stunde wählen (wie bei Chemie, Ansichten über #Anker)."""
+    grades = {}
+    for k, s in enumerate(SERIES):
+        files = sorted((HERE / 'src' / s['folder']).glob('[0-9][0-9]_*.html'))
+        if not files:
             continue
-        cards.append(f'''    <li class="lesson k{s["chapter"]}">
-      <div class="l-num">{s["chapter"]}</div>
-      <div class="l-body"><p class="eyebrow">Kapitel {s["chapter"]} · Klasse {s["grade"]} · {n} Stunde{"n" if n != 1 else ""}</p><h2>{s["name"]}</h2><p class="l-q">{s["lead"]}</p></div>
-      <div class="l-go"><a class="btn primary" href="{s["folder"]}/00_Uebersicht.html">Zur Reihe →</a></div>
-    </li>''')
-    # jede Kapitelkarte in ihrer Kapitelfarbe (hell / dunkel)
-    lt = ''.join(f'.lesson.k{s["chapter"]}{{--accent:{s["accent"][0]}}}' for s in SERIES)
-    dk = ''.join(f'.lesson.k{s["chapter"]}{{--accent:{s["accent"][1]}}}' for s in SERIES)
-    kcss = (lt + '\n.lesson .l-num{color:var(--accent)}\n'
-            + '@media (prefers-color-scheme: dark){' + dk.replace('.lesson', ':root:not([data-theme="light"]) .lesson') + '}\n'
-            + dk.replace('.lesson', ':root[data-theme="dark"] .lesson') + '\n')
+        s = dict(s, idx=k, lessons=[(f, parse_lesson(f)[0]) for f in files])
+        grades.setdefault(s['grade'], []).append(s)
+    tiles, views, scss_l, scss_d, titles = [], [], [], [], {}
+    for g, ss in grades.items():
+        gk = gkey(ss[0])
+        titles[gk] = f'Klasse {g}'
+        n = sum(len(s['lessons']) for s in ss)
+        leds = ''.join(f'<i class="s{s["idx"]}" title="{html.escape(s["name"])}"></i>' for s in ss)
+        tiles.append(f'''    <a class="grade" href="#{gk}">
+      <span class="g-lbl">Klasse</span><span class="g-num">{g}</span>
+      <span class="g-meta">{len(ss)} Reihen · {n} Stunden</span>
+      <span class="g-txt">{GRADE_INFO.get(g, '')}</span>
+      <span class="g-leds" aria-hidden="true">{leds}</span>
+    </a>''')
+        cards, sviews = [], []
+        for s in ss:
+            titles[f'{gk}/{s["folder"]}'] = s['name']
+            scss_l.append(f'.s{s["idx"]}{{--accent:{s["accent"][0]}}}')
+            scss_d.append(f'.s{s["idx"]}{{--accent:{s["accent"][1]}}}')
+            ln = len(s['lessons'])
+            cards.append(f'''      <li class="lesson s{s["idx"]}">
+        <div class="l-num">{s["chapter"]}</div>
+        <div class="l-body"><p class="eyebrow">Kapitel {s["chapter"]} · {ln} Stunde{"n" if ln != 1 else ""} · ≈ {s["ue"]} Unterrichtsstunden</p><h2>{s["name"]}</h2><p class="l-q">{s["lead"]}</p></div>
+        <div class="l-go"><a class="btn primary" href="#{gk}/{s["folder"]}">Stunden →</a><a class="btn" href="{s["folder"]}/00_Uebersicht.html">Übersicht</a></div>
+      </li>''')
+            rows = []
+            for k2, (f, m) in enumerate(s['lessons']):
+                rows.append(f'''        <li><a class="row" href="{s["folder"]}/{f.name}"><span class="no">{k2 + 1:02d}</span><span class="rt"><b>{m["title"]}</b><small>{m.get("q", "")}</small></span><span class="go">öffnen →</span></a><a class="ws" href="{s["folder"]}/{f.stem}.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>''')
+            sviews.append(f'''  <section class="view s{s["idx"]}" data-view="{gk}/{s["folder"]}" hidden>
+    <div class="topic-head">
+      <div><p class="eyebrow">Klasse {g} · Kapitel {s["chapter"]}</p><h2>{s["name"]}</h2><p>{s["lead"]}</p></div>
+      <a class="btn primary" href="{s["folder"]}/00_Uebersicht.html">Übersicht der Reihe →</a>
+    </div>
+    <ol class="rows">
+{chr(10).join(rows)}
+    </ol>
+  </section>''')
+        views.append(f'''  <section class="view" data-view="{gk}" hidden>
+    <h2 class="vh">Klasse {g}: Reihe wählen</h2>
+    <ol class="lessons">
+{chr(10).join(cards)}
+    </ol>
+  </section>''')
+        views += sviews
+    kcss = (''.join(scss_l) + '\n@media (prefers-color-scheme: dark){' + ''.join(':root:not([data-theme="light"]) ' + x for x in scss_d) + '}\n'
+            + ''.join(':root[data-theme="dark"] ' + x for x in scss_d) + '\n')
     page = f'''<!doctype html>
 <html lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>KITAP – Informatik</title>
+<meta name="description" content="Interaktive Präsentationen mit Arbeitsblättern für den Informatikunterricht der Klassen 5 bis 8.">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
 {palette_css()}{css}
-{kcss}.kitap-sub{{font-style:italic;font-size:clamp(1rem,1.6vw,1.3rem);color:var(--ink-2);margin:-.2em 0 1.2rem}}
-.site-foot{{margin-top:3rem;color:var(--ink-2);font-size:.82rem}}
-.site-foot a{{color:inherit}}
-.site-foot a:hover{{color:var(--accent)}}
-</style>
+{kcss}{INDEX_CSS}</style>
 </head>
 <body>
 <div class="app">
-<header class="top"><div class="brand"><b>KITAP</b><span>Informatik · interaktiv</span></div><span style="flex:1"></span></header>
+<header class="top"><div class="brand"><b>KITAP</b><span>Informatik · interaktiv</span></div><span style="flex:1"></span><a class="icon-btn" href="#" id="home" hidden>⌂ Klassen</a></header>
 <main>
 <section class="ov">
-  <p class="eyebrow">Interaktive Präsentationen</p>
-  <h1>KITAP</h1>
-  <p class="kitap-sub">Klassenfertige Inhalte – Thematisch Aufbereitet und Präsentationsbereit</p>
-  <p class="lead">Präsentationen für Informatik und Medienbildung (Klasse 5/6). Jede Stunde mit Stationen, Aufgaben, Hefteintrag, Übungen und Arbeitsblatt.</p>
-  <ol class="lessons">
-{chr(10).join(cards)}
-  </ol>
+  <div class="hero">
+    <p class="eyebrow">Interaktive Präsentationen · Klassen 5–8</p>
+    <h1>KITAP<span class="cur" aria-hidden="true"></span></h1>
+    <p class="kitap-sub">Klassenfertige Inhalte – Thematisch Aufbereitet und Präsentationsbereit</p>
+    <p class="lead">Präsentationen für Informatik und Medienbildung. Jede Stunde mit Stationen, Aufgaben, Hefteintrag, Übungen und Arbeitsblatt. Wähle zuerst die Klassenstufe, dann die Reihe.</p>
+  </div>
+  <nav class="crumbs" aria-label="Navigation" id="crumbs"><span aria-current="page">~/klassen</span></nav>
+  <section class="view" data-view="">
+    <h2 class="vh">Klassenstufe wählen</h2>
+    <div class="grades">
+{chr(10).join(tiles)}
+    </div>
+  </section>
+{chr(10).join(views)}
   <footer class="site-foot">KITAP · freie Unterrichtsmaterialien · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></footer>
 </section>
 </main>
 </div>
+<script>
+const T = {json.dumps(titles, ensure_ascii=False)};
+{INDEX_JS}
+</script>
 </body>
 </html>
 '''

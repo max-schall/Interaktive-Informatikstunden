@@ -843,3 +843,62 @@ function keyboard(root, o = {}) {
   };
   return api;
 }
+
+/* ================= Klasse 7/8 ================= */
+/* Graph mit (gewichteten) Kanten für Netzwerke, Routing und kürzeste Wege.
+   nodes: {id: [x, y, name, icon]}, edges: [[a, b, gewicht], …]
+   draw(st): st = {on: [ids], done: [ids], path: [ids], bad: [ids], sub: {id: text}, edgeOn: [[a,b], …], pkt: id}
+   o: {w, h, weights: true, onNode(id), r} */
+function graphView(svg, nodes, edges, o = {}) {
+  const W = o.w || 460, H = o.h || 300, R = o.r || 22;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.classList.add('net-svg', 'graph');
+  const key = (a, b) => [a, b].sort().join('|');
+  function draw(st = {}) {
+    const on = new Set(st.on || []), done = new Set(st.done || []), bad = new Set(st.bad || []);
+    const pe = new Set((st.edgeOn || []).map(([a, b]) => key(a, b)));
+    (st.path || []).forEach((id, i, p) => { if (i) pe.add(key(p[i - 1], id)); });
+    const deadE = new Set((st.deadEdges || []).map(([a, b]) => key(a, b)));
+    let s = '';
+    for (const [a, b, w] of edges) {
+      const [x1, y1] = nodes[a], [x2, y2] = nodes[b], k = key(a, b), dead = bad.has(a) || bad.has(b) || deadE.has(k);
+      s += `<line class="edge${pe.has(k) ? ' on' : ''}${dead ? ' dead' : ''}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`;
+      if (o.weights !== false && w !== undefined) {
+        const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+        s += `<g class="wt${pe.has(k) ? ' on' : ''}"><rect x="${mx - 11}" y="${my - 9}" width="22" height="18" rx="3"/><text x="${mx}" y="${my + 4}" text-anchor="middle">${w}</text></g>`;
+      }
+    }
+    for (const [id, [x, y, name, icon]] of Object.entries(nodes)) {
+      const cls = ['node', on.has(id) && 'on', done.has(id) && 'done', bad.has(id) && 'bad', (st.path || []).includes(id) && 'onpath'].filter(Boolean).join(' ');
+      s += `<g class="${cls}" data-n="${id}" tabindex="0" role="button" aria-label="${name || id}"><circle cx="${x}" cy="${y}" r="${R}"/>`
+        + `<text x="${x}" y="${y + (icon ? 6 : 5)}" text-anchor="middle" class="${icon ? 'ic' : 'nm'}">${icon || name || id}</text>`
+        + (icon && name ? `<text x="${x}" y="${y + R + 14}" text-anchor="middle" class="lb">${name}</text>` : '')
+        + (st.sub && st.sub[id] !== undefined ? `<text x="${x + R - 2}" y="${y - R + 2}" class="sub">${st.sub[id]}</text>` : '') + '</g>';
+    }
+    if (st.pkt && nodes[st.pkt]) { const [x, y] = nodes[st.pkt]; s += `<rect class="pkt" x="${x - 7}" y="${y - R - 12}" width="14" height="10" rx="2"/>`; }
+    svg.innerHTML = s;
+  }
+  if (o.onNode) {
+    svg.addEventListener('click', e => { const g = e.target.closest('[data-n]'); if (g) o.onNode(g.dataset.n); });
+    svg.addEventListener('keydown', e => { const g = e.target.closest('[data-n]'); if (g && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); o.onNode(g.dataset.n); } });
+  }
+  /* kürzester Weg (Dijkstra) – liefert {dist, prev, order} */
+  function dijkstra(src, skip = []) {
+    const dist = {}, prev = {}, seen = new Set(skip), order = [];
+    Object.keys(nodes).forEach(n => dist[n] = Infinity); dist[src] = 0;
+    while (true) {
+      let u = null; for (const n in dist) if (!seen.has(n) && dist[n] < Infinity && (u === null || dist[n] < dist[u])) u = n;
+      if (u === null) break; seen.add(u); order.push(u);
+      for (const [a, b, w] of edges) { const v = a === u ? b : b === u ? a : null; if (v && !seen.has(v) && dist[u] + (w ?? 1) < dist[v]) { dist[v] = dist[u] + (w ?? 1); prev[v] = u; } }
+    }
+    return {dist, prev, order};
+  }
+  function path(src, dst, skip = []) { const {dist, prev} = dijkstra(src, skip); if (dist[dst] === Infinity) return null; const p = [dst]; while (p[0] !== src) p.unshift(prev[p[0]]); return {path: p, cost: dist[dst]}; }
+  draw();
+  return {draw, dijkstra, path};
+}
+
+/* Mini-Fenster mit Code (nur Anzeige), Zeilen werden nummeriert. hl: Zeilennummern zum Hervorheben */
+function codeView(root, code, hl = []) {
+  root.classList.add('codeview');
+  root.innerHTML = code.split('\n').map((l, i) => `<span class="cl${hl.includes(i + 1) ? ' hl' : ''}"><i>${i + 1}</i>${l.replace(/&/g, '&amp;').replace(/</g, '&lt;') || ' '}</span>`).join('');
+}

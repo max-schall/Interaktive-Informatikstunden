@@ -1,0 +1,181 @@
+<!--
+title: Texte codieren – der ASCII-Code
+short: ASCII-Code
+time: 1–2 Unterrichtsstunden
+q: Wie werden Buchstaben und Zeichen im Computer gespeichert?
+facts: Computer brauchen eine Codierungsvorschrift für Zeichen | ASCII: 128 Zeichen mit 7 Bit (95 druckbare, 33 Steuerzeichen) | Erweiterter ASCII-Code mit 8 Bit (256 Zeichen) für Umlaute | Feste Bitlänge: Der Computer erkennt Anfang und Ende eines Zeichens | Unicode für alle Schriften und Emojis
+inter: ASCII-Tabelle erkunden · Text ↔ Binärcode übersetzen · Geheimbotschaften decodieren · Warum führende Nullen? · Unicode-Zeichen untersuchen · Codierungstraining
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Daten und ihre Codierung</p>
+      <h1>Der ASCII-Code<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Ein Computer versteht keine Buchstaben – nur Nullen und Einsen. Damit „Hallo“ auf dem Bildschirm erscheint, braucht er eine <b>Codierungsvorschrift</b>, die jedem Zeichen ein Bitmuster zuordnet.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p><span class="mono">01001000 01101001</span> – was könnte das heißen?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie werden Buchstaben und Zeichen im Computer gespeichert?</p></div>
+      <div class="controls"><button class="btn primary" data-go="ascii">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="ascii" data-label="ASCII-Tabelle" data-yr="Erarbeitung" data-title="Die ASCII-Tabelle" data-sub="128 Zeichen mit 7 Bit">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Was ist der ASCII-Code?</p>
+    <h2>128 Zeichen, je 7 Bit</h2>
+    <p class="lead"><b>ASCII</b> (American Standard Code for Information Interchange) ordnet 128 Zeichen ein 7-Bit-Muster zu: <b>95 druckbare</b> Zeichen (Buchstaben, Ziffern, Satzzeichen) und <b>33 Steuerzeichen</b> wie Zeilenumbruch. Tippe ein Zeichen an.</p>
+  </div>
+  <div class="model">
+    <div class="ascii-grid" id="agrid"></div>
+    <div class="stack">
+      <div class="box" id="ainfo"><p>Tippe ein Zeichen an.</p></div>
+      <div class="box"><span class="tag">Bereiche</span><p class="mono" style="font-size:.88rem">0–31 Steuerzeichen · 32 Leerzeichen · 48–57 Ziffern · 65–90 Großbuchstaben · 97–122 Kleinbuchstaben</p><p class="note">Groß- und Kleinbuchstaben unterscheiden sich um genau 32 – also nur in einem Bit!</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="uebersetzen" data-label="Übersetzer" data-yr="Erarbeitung" data-title="Text ↔ Binärcode" data-sub="Codieren und decodieren">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Codieren und Decodieren</p>
+    <h2>Text ↔ Binärcode</h2>
+    <p class="lead">Jedes Zeichen wird mit <b>8 Bit</b> gespeichert. Weil alle Zeichen gleich lang sind, weiß der Computer genau, wo ein Zeichen anfängt und aufhört.</p>
+  </div>
+  <div class="cols-2">
+    <div class="vis">
+      <div class="vis-head"><h3>Codieren</h3></div>
+      <input class="text-in" id="enc-in" value="POST" maxlength="20" aria-label="Text">
+      <div class="enc" id="enc"></div>
+      <p class="status" id="enc-st"></p>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Decodieren</h3></div>
+      <textarea class="code-in" id="dec-in" style="min-height:5rem" spellcheck="false" aria-label="Bitfolge">01001001 01001110 01000110 01001111</textarea>
+      <p class="big-num" id="dec-out" style="margin:.6rem 0 0"></p>
+      <p class="status" id="dec-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="nullen" data-label="Führende Nullen" data-yr="Vertiefung" data-title="Warum führende Nullen?" data-sub="Feste Länge">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Warum führende Nullen?</p>
+      <h2>Ohne feste Länge: Chaos</h2>
+      <p>Lässt man die führenden Nullen weg, sind die Bitfolgen unterschiedlich lang. Dann ist nicht mehr klar, wo ein Zeichen endet. Schalte um und vergleiche.</p>
+      <div class="merke">Deshalb werden <b>führende Nullen mitgeschrieben</b>: Jedes Zeichen hat genau 8 Bit.</div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>„AB“ ohne Lücken</h3><div id="nl-seg"></div></div>
+      <p class="mono" id="nl-bits" style="font-size:1.3rem;word-break:break-all"></p>
+      <p class="status" id="nl-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="unicode" data-label="Umlaute & Unicode" data-yr="Vertiefung" data-title="Erweiterungen" data-sub="8 Bit und Unicode">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 4 · Erweiterung des ASCII-Codes</p>
+      <h2>Ä, ö, ü – und 😀</h2>
+      <ul class="facts">
+        <li>ASCII wurde für <b>englische</b> Texte entwickelt: Umlaute, Akzente oder andere Alphabete fehlten.</li>
+        <li>Der <b>erweiterte ASCII-Code</b> nutzt 8 Bit: 2⁸ = <b>256 Zeichen</b>, z. B. ä = 228.</li>
+        <li>Für alle Schriften der Welt reicht das nicht. <b>Unicode</b> umfasst heute über 150 000 Zeichen – auch Emojis. Bei der Speicherung (UTF-8) braucht ein Zeichen 1 bis 4 Byte.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Zeichen untersuchen</h3></div>
+      <input class="text-in" id="uc-in" value="Aä€😀" maxlength="12" aria-label="Zeichen">
+      <div class="table-wrap" style="margin-top:.6rem"><table class="cmp" id="uc"></table></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Geheimbotschaft" data-yr="M1" data-title="Geheimbotschaften" data-sub="Binärcode decodieren">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1</p>
+    <h2>Botschaften im Binärcode</h2>
+    <p class="lead">Decodiere die Nachrichten mit der ASCII-Tabelle. Prüfe dann deine Lösung.</p>
+  </div>
+  <div id="m1-ts"></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Der ASCII-Code</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Texte codieren – der ASCII-Code</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step>Damit ein Computer Zeichen darstellen kann, braucht er eine <b>Codierungsvorschrift</b>, die jedem Zeichen ein Bitmuster zuordnet.</li>
+        <li data-step><b>ASCII</b> codiert 128 Zeichen mit <b>7 Bit</b>: 95 druckbare Zeichen und 33 Steuerzeichen. Beispiel: A = 65 = 01000001.</li>
+        <li data-step>Der <b>erweiterte ASCII-Code</b> nutzt 8 Bit (256 Zeichen, z. B. Umlaute). <b>Unicode</b> enthält Zeichen aller Schriften und Emojis.</li>
+        <li data-step>Jedes Zeichen hat eine <b>feste Länge</b> von 8 Bit (führende Nullen werden mitgeschrieben), damit der Computer Anfang und Ende eines Zeichens erkennt.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Beispiel</span><p>Codiere deinen Vornamen im ASCII-Code.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Codieren üben</h2></div>
+  <div id="ts"></div>
+</section>
+
+<script>
+const B8 = c => c.toString(2).padStart(8, '0');
+/* ================= ASCII-Tabelle ================= */
+(() => {
+  $('#agrid').innerHTML = [...Array(95)].map((_, i) => { const c = 32 + i; return `<button data-c="${c}" title="${c}">${c === 32 ? '␣' : String.fromCharCode(c)}</button>`; }).join('');
+  $('#agrid').addEventListener('click', e => {
+    const b = e.target.closest('[data-c]'); if (!b) return; const c = +b.dataset.c;
+    $$('#agrid button').forEach(x => x.classList.toggle('on', x === b));
+    const ch = c === 32 ? 'Leerzeichen' : String.fromCharCode(c);
+    const other = c >= 65 && c <= 90 ? `Kleinbuchstabe ${String.fromCharCode(c + 32)} = ${c + 32} = <span class="mono">${B8(c + 32)}</span>` : c >= 97 && c <= 122 ? `Großbuchstabe ${String.fromCharCode(c - 32)} = ${c - 32} = <span class="mono">${B8(c - 32)}</span>` : '';
+    $('#ainfo').innerHTML = `<span class="tag info">${ch}</span><dl class="kv"><dt>dezimal</dt><dd>${c}</dd><dt>binär</dt><dd class="mono">${B8(c)}</dd><dt>hex</dt><dd class="mono">${c.toString(16).toUpperCase()}</dd></dl>${other ? `<p class="note" style="margin-top:.5rem">${other}</p>` : ''}`;
+  });
+})();
+
+/* ================= Codieren / Decodieren ================= */
+(() => {
+  const upd = () => {
+    const t = [...$('#enc-in').value];
+    $('#enc').innerHTML = t.map(ch => { const c = ch.codePointAt(0); return `<div class="enc-c"><b>${ch === ' ' ? '␣' : ch}</b><span class="mono">${c < 256 ? B8(c) : '(Unicode)'}</span><small class="mono">${c}</small></div>`; }).join('');
+    $('#enc-st').innerHTML = `${t.length} Zeichen · ${t.length} Byte · ${t.length * 8} Bit`;
+  };
+  $('#enc-in').addEventListener('input', upd); upd();
+  const dec = () => {
+    const raw = $('#dec-in').value.replace(/[^01]/g, '');
+    const parts = raw.match(/.{1,8}/g) || [];
+    $('#dec-out').textContent = parts.map(p => p.length === 8 ? String.fromCharCode(parseInt(p, 2)) : '?').join('');
+    $('#dec-st').innerHTML = raw.length % 8 ? `<span class="bad">${raw.length} Bit – nicht durch 8 teilbar, das letzte Zeichen ist unvollständig.</span>` : `${parts.length} Zeichen erkannt.`;
+  };
+  $('#dec-in').addEventListener('input', dec); dec();
+})();
+
+/* ================= Führende Nullen ================= */
+seg($('#nl-seg'), [['mit', 'mit Nullen (8 Bit)'], ['ohne', 'ohne führende Nullen']], v => {
+  if (v === 'mit') { $('#nl-bits').innerHTML = '<span style="color:var(--accent)">01000001</span><span style="color:var(--a)">01000010</span>'; $('#nl-st').innerHTML = 'Immer 8 Bit abzählen: 01000001 = A, 01000010 = B. Eindeutig!'; }
+  else { $('#nl-bits').innerHTML = '<span style="color:var(--accent)">1000001</span><span style="color:var(--a)">1000010</span>'; $('#nl-st').innerHTML = '<span class="mono">10000011000010</span> – ist das 1000001|1000010 („AB“), 100000|11000010, 10|0000110|00010 …? Der Computer kann es nicht wissen.'; }
+}, 'mit');
+
+/* ================= Unicode ================= */
+(() => {
+  const upd = () => {
+    const enc = new TextEncoder();
+    $('#uc').innerHTML = '<thead><tr><th>Zeichen</th><th>Nummer</th><th>Byte (UTF-8)</th><th>ASCII?</th></tr></thead><tbody>' + [...$('#uc-in').value].map(ch => { const c = ch.codePointAt(0), b = enc.encode(ch).length; return `<tr><td style="font-size:1.3rem">${ch}</td><td class="mono">${c}</td><td class="mono">${b}</td><td>${c < 128 ? '<span class="yes">ja</span>' : c < 256 ? 'erweitert' : '<span class="no">nein</span>'}</td></tr>`; }).join('') + '</tbody>';
+  };
+  $('#uc-in').addEventListener('input', upd); upd();
+})();
+
+/* ================= Geheimbotschaften ================= */
+(() => {
+  const W = ['INFO', 'CODE', 'BIT', 'HALLO', 'PIXEL', 'TOR', 'LOL'];
+  taskSet($('#m1-ts'), () => { const w = pick(W); return {key: w, tag: 'decodieren', q: `<span class="mono" style="font-size:.95rem">${[...w].map(c => B8(c.charCodeAt(0))).join(' ')}</span>`, fields: [{l: 'Wort', a: w}], hint: 'Rechne jedes Byte in eine Dezimalzahl um und schlage in der Tabelle nach (65 = A).'}; }, {n: 4});
+})();
+taskSet($('#ts'), i => {
+  if (i % 2) { const c = pick('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')); return {key: 'e' + c, tag: 'codieren', q: `<span class="big">${c}</span>`, fields: [{l: 'Binärcode (8 Bit)', a: B8(c.charCodeAt(0))}], hint: 'A = 65. Zähle weiter und rechne ins Binärsystem um.'}; }
+  const c = randInt(97, 122); return {key: 'd' + c, tag: 'decodieren', q: `<span class="big mono" style="font-size:1.2rem">${B8(c)}</span>`, fields: [{l: 'Zeichen', a: String.fromCharCode(c)}], hint: 'Kleinbuchstaben beginnen bei 97 = a.'};
+}, {n: 6});
+</script>

@@ -1,0 +1,228 @@
+<!--
+title: Informationen und Informatik
+short: Informatik
+time: 2 Unterrichtsstunden
+q: Wie werden Informationen dargestellt – und womit beschäftigt sich die Informatik?
+facts: Informationen sind Daten mit einem für Menschen verständlichen Inhalt | Darstellungsformen: Sprache, Text, Liste, Abbildung, Baum, Graph | Informatik: Darstellung, Speicherung, Übertragung und Verarbeitung von Informationen | Teilbereiche: theoretische, technische, praktische und angewandte Informatik | Navigationsgerät und Supermarktkasse als Beispiele
+inter: Eine Information – fünf Darstellungen · Darstellungen zuordnen · Reiseverbindung strukturieren · Navi-Karteikarten · Teilbereiche sortieren · Kassenvorgang ordnen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Informatiksysteme und Netze</p>
+      <h1>Informationen und Informatik<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Fahrplan, Einkaufszettel, Wetterbericht, Stammbaum: Wir sind ständig auf Informationen angewiesen. Die Informatik sorgt dafür, dass sie dargestellt, gespeichert, übertragen und verarbeitet werden können.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welche Informationen hast du heute schon gebraucht – und in welcher Form lagen sie vor?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie werden Informationen dargestellt – und womit beschäftigt sich die Informatik?</p></div>
+      <div class="controls"><button class="btn primary" data-go="darstellen">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="darstellen" data-label="Darstellung" data-yr="Einstieg" data-title="Informationen darstellen" data-sub="Text, Liste, Tabelle, Graph, Baum">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Informationen darstellen</p>
+      <h2>Eine Information – viele Formen</h2>
+      <ul class="facts">
+        <li><b>Informationen</b> sind Daten mit einem für Menschen verständlichen Inhalt.</li>
+        <li>Die üblichste Form ist <b>Sprache</b>: Wir fragen nach dem Weg, das Radio sendet Audiodaten.</li>
+        <li>Am häufigsten werden Daten als <b>Text</b> dargestellt – fortlaufend oder übersichtlich als <b>Liste</b> (Einkaufszettel, Anzeigetafel).</li>
+        <li><b>Abbildungen</b> reduzieren auf das Wesentliche (Karte statt Satellitenfoto). <b>Graphen</b> zeigen Veränderungen über die Zeit, <b>Baumstrukturen</b> zeigen Beziehungen (Stammbaum).</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Das Wetter der Woche</h3><div id="rep-seg"></div></div>
+      <div class="repr" id="rep"></div>
+      <p class="status" id="rep-status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="zuordnen" data-label="Zuordnen" data-yr="Übung" data-title="Welche Form passt?" data-sub="Darstellungen zuordnen">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Welche Form passt?</p>
+    <h2>Die passende Darstellung wählen</h2>
+    <p class="lead">Nicht jede Form passt zu jeder Information. Sortiere die Beispiele nach ihrer typischen Darstellung.</p>
+  </div>
+  <div id="sort-rep"></div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Reise" data-yr="M1" data-title="Wegbeschreibung" data-sub="Eine Verbindung strukturieren">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Material M1</p>
+    <h2>Eine Reise zur Buchmesse</h2>
+    <p class="lead">Jonas fährt im Frühjahr mit Bus und Bahn zur Buchmesse. Seine Verbindung ist als Text aufgeschrieben – unübersichtlich. Bringe die Schritte in die richtige Reihenfolge.</p>
+  </div>
+  <div class="model">
+    <div id="trip"></div>
+    <div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Struktur wählen</h3></header><p>Wähle eine geeignete Struktur für die Verbindung und stelle sie dar.</p>
+        <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösungsidee</button></div><p class="solution" id="m1a" hidden>Eine <b>Liste</b> oder <b>Tabelle</b> mit Uhrzeit, Verkehrsmittel, Abfahrt und Ziel ist übersichtlich, z. B. 08:12 Bus 21 Dorfplatz → Hauptbahnhof · 08:41 S-Bahn S1 → Messe · 09:20 Fußweg → Halle 3.</p></div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Medien ergänzen</h3></header><p>Nenne Medien, die deine Beschreibung verständlicher machen.</p>
+        <div class="controls"><button class="btn" data-reveal="m1b" aria-expanded="false">Lösung</button></div><p class="solution" id="m1b" hidden>Ein Lageplan des Messegeländes, ein Foto vom Treffpunkt, eine Karte mit eingezeichnetem Fußweg, ein Screenshot der Verbindung aus der App.</p></div>
+      <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Selbst recherchieren</h3></header><p>Suche mit der App oder Webseite eines Verkehrsunternehmens eine Verbindung von deinem Wohnort zu einem Ziel deiner Wahl.</p>
+        <div class="controls"><button class="btn" data-reveal="m1c" aria-expanded="false">Hinweis</button></div><p class="solution" id="m1c" hidden>Achte darauf, welche Darstellungen die App nutzt: Liste der Verbindungen, Karte, Symbole für Verkehrsmittel, Zeitleiste mit Umstiegen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="informatik" data-label="Informatik" data-yr="Erarbeitung" data-title="Was ist Informatik?" data-sub="Das Navigationsgerät">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 4 · Was ist Informatik?</p>
+      <h2>Ohne Informatik kein Navi</h2>
+      <p>Ein Navigationsgerät berechnet aus Start und Ziel eine Route, die Fahrtzeit und sogar Staus. Während der Fahrt werden die Daten ständig angepasst und eine Stimme sagt die Abzweigungen an.</p>
+      <div class="merke"><b>Informatik</b> ist die Wissenschaft, die sich mit der <b>Darstellung, Speicherung, Übertragung und Verarbeitung</b> von Informationen beschäftigt. In der Informatik nennt man Informationen <b>Daten</b>.</div>
+      <p class="note">Tippe die Karten an: Was leistet die Informatik im Navi?</p>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Informatik im Navi …</h3></div>
+      <div id="navi"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="teilbereiche" data-label="Teilbereiche" data-yr="Erarbeitung" data-title="Teilbereiche der Informatik" data-sub="Theoretisch, technisch, praktisch, angewandt">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Teilbereiche der Informatik</p>
+    <h2>Vier Bereiche, eng verknüpft</h2>
+  </div>
+  <div class="grid-2">
+    <div class="box"><span class="tag info">Theoretische Informatik</span><p>Fragt, welche Probleme sich überhaupt mit Computern lösen lassen, und entwickelt Grundlagen für Datenstrukturen und Programmiersprachen.</p></div>
+    <div class="box"><span class="tag info">Technische Informatik</span><p>Entwirft und betreibt technische Bauteile wie Prozessoren, Speicher und Sensoren, die in elektrischen Geräten gebraucht werden.</p></div>
+    <div class="box"><span class="tag info">Praktische Informatik</span><p>Entwickelt Programme, die ein Problem lösen. In einem Programm werden Regeln zur Verarbeitung von Daten festgelegt.</p></div>
+    <div class="box"><span class="tag info">Angewandte Informatik</span><p>Nutzt Informatik in anderen Fachgebieten, z. B. Medizin (Röntgenbilder auswerten), Biologie oder Verkehr.</p></div>
+  </div>
+  <h3 class="mt">Wer macht was? Sortiere.</h3>
+  <div id="sort-tb"></div>
+</section>
+
+<section class="station" id="m2" data-label="M2 Kasse" data-yr="M2" data-title="Informatik an der Kasse" data-sub="Der Bezahlvorgang">
+  <div class="section-head">
+    <p class="eyebrow">Station 6 · Material M2</p>
+    <h2>Informatik an der Supermarktkasse</h2>
+    <p class="lead">Beim Bezahlen laufen im Hintergrund viele Schritte ab. Bringe sie in die richtige Reihenfolge.</p>
+  </div>
+  <div class="model">
+    <div id="kasse"></div>
+    <div class="stack">
+      <div class="ticket" id="bon">FRISCHMARKT
+--------------------------
+Äpfel 1 kg          2,49
+Vollkornbrot        2,79
+Milch 1 l           1,19
+--------------------------
+SUMME EUR           6,47
+Bar                10,00
+Rückgeld            3,53
+12.03. 17:42  Kasse 2</div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Bezahlen heute</h3></header><p>Beschreibe in eigenen Worten, wie die Informatik den Bezahlvorgang prägt.</p>
+        <div class="controls"><button class="btn" data-reveal="m2a" aria-expanded="false">Lösung</button></div><p class="solution" id="m2a" hidden>Der Scanner liest den Strichcode, der Kassenrechner fragt den Preis im zentralen Rechner ab, addiert alle Preise, speichert die Verkäufe und druckt den Bon. Niemand muss Preise eintippen oder im Kopf rechnen.</p></div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Datenverwaltung</h3></header><p>Erkläre, welche Bedeutung eine gut organisierte Datenverwaltung für die Inhaberin eines Supermarkts hat.</p>
+        <div class="controls"><button class="btn" data-reveal="m2b" aria-expanded="false">Lösung</button></div><p class="solution" id="m2b" hidden>Sie weiß jederzeit, was verkauft wurde und was nachbestellt werden muss, kennt die Tageseinnahmen, kann Preise zentral ändern und erkennt, welche Waren beliebt sind.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Informationen und Informatik</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Informationen und Informatik</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step><b>Informationen</b> sind Daten mit einem für Menschen verständlichen Inhalt.</li>
+        <li data-step>Darstellungsformen: <b>Sprache</b>, <b>Text</b> (auch als <b>Liste</b>), <b>Abbildung</b>, <b>Graph</b> (Veränderung über die Zeit) und <b>Baumstruktur</b> (Beziehungen).</li>
+        <li data-step><b>Informatik</b> ist die Wissenschaft von der <b>Darstellung, Speicherung, Übertragung und Verarbeitung</b> von Informationen (Daten).</li>
+        <li data-step>Teilbereiche: <b>theoretische</b> (Lösbarkeit, Grundlagen), <b>technische</b> (Bauteile), <b>praktische</b> (Programme) und <b>angewandte</b> Informatik (Einsatz in anderen Fächern).</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Beispiel</span><p>Notiere zum Navi je ein Beispiel für Darstellung, Speicherung, Übertragung und Verarbeitung von Daten.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Begriffe und Quiz</h2></div>
+  <div id="match"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ================= Eine Information, fünf Darstellungen ================= */
+(() => {
+  const D = [['Mo', 9], ['Di', 11], ['Mi', 14], ['Do', 13], ['Fr', 16], ['Sa', 18], ['So', 15]];
+  const R = {
+    sprache: ['🔊 Sprache', `<div class="box"><p><i>„Und nun das Wetter: Die Woche beginnt kühl mit 9 Grad. Bis Samstag wird es täglich wärmer, am Samstag erreichen wir 18 Grad. Am Sonntag kühlt es leicht ab.“</i></p></div>`, 'So klingt es im Radio: gut zum Zuhören, aber schwer, sich alle Zahlen zu merken.'],
+    text: ['Text', `<div class="box"><p>Am Montag werden 9 °C erwartet, am Dienstag 11 °C, am Mittwoch 14 °C, am Donnerstag 13 °C, am Freitag 16 °C, am Samstag 18 °C und am Sonntag 15 °C.</p></div>`, 'Fortlaufender Text enthält alle Werte – man muss aber genau lesen, um zu vergleichen.'],
+    liste: ['Tabelle', `<table class="cmp"><thead><tr>${D.map(d => `<th>${d[0]}</th>`).join('')}</tr></thead><tbody><tr>${D.map(d => `<td class="mono">${d[1]} °C</td>`).join('')}</tr></tbody></table>`, 'Strukturiert als Tabelle: Jeder Wert ist sofort zu finden.'],
+    graph: ['Graph', '', 'Der Graph zeigt die <b>Veränderung über die Zeit</b>: Man sieht auf einen Blick, dass es wärmer wird.'],
+    baum: ['Baum', `<div class="tree"><div class="gen"><span class="p">Woche</span></div><div class="gen"><span class="p couple">Werktage</span><span class="p couple">Wochenende</span></div><div class="gen">${D.map(d => `<span class="p">${d[0]}: ${d[1]} °C</span>`).join('')}</div></div>`, 'Eine Baumstruktur zeigt <b>Beziehungen</b> und Gliederungen – beim Wetter eher ungewöhnlich, beim Stammbaum ideal.']
+  };
+  function graph() {
+    const W = 420, H = 200, x = i => 40 + i * 60, y = v => 170 - v * 8;
+    let s = `<svg class="chart-svg" viewBox="0 0 ${W} ${H}">`;
+    [0, 5, 10, 15, 20].forEach(v => s += `<line class="gl" x1="35" x2="${W - 10}" y1="${y(v)}" y2="${y(v)}"/><text x="28" y="${y(v) + 4}" text-anchor="end">${v}</text>`);
+    s += `<line class="ax" x1="35" x2="35" y1="10" y2="170"/><line class="ax" x1="35" x2="${W - 10}" y1="170" y2="170"/>`;
+    s += `<polyline class="ln" points="${D.map((d, i) => `${x(i)},${y(d[1])}`).join(' ')}"/>`;
+    D.forEach((d, i) => s += `<circle class="pt" cx="${x(i)}" cy="${y(d[1])}" r="5"/><text x="${x(i)}" y="188" text-anchor="middle">${d[0]}</text>`);
+    return s + '<text x="40" y="12">°C</text></svg>';
+  }
+  seg($('#rep-seg'), Object.entries(R).map(([k, v]) => [k, v[0]]), k => {
+    $('#rep').innerHTML = k === 'graph' ? graph() : R[k][1];
+    $('#rep-status').innerHTML = R[k][2];
+  }, 'text');
+})();
+
+sorter($('#sort-rep'), [{id: 'liste', name: 'Liste / Tabelle'}, {id: 'graph', name: 'Graph (Diagramm)'}, {id: 'baum', name: 'Baumstruktur'}, {id: 'bild', name: 'Abbildung'}], [
+  {t: 'Einkaufszettel', c: 'liste', why: 'Einzelne Punkte untereinander.'},
+  {t: 'Abfahrtstafel am Bahnhof', c: 'liste', why: 'Zeilen mit Zeit, Zug, Ziel.'},
+  {t: 'Aktienkurs der letzten Monate', c: 'graph', why: 'Veränderung über die Zeit.'},
+  {t: 'Temperaturverlauf eines Tages', c: 'graph', why: 'Veränderung über die Zeit.'},
+  {t: 'Stammbaum einer Familie', c: 'baum', why: 'Verwandtschaftsbeziehungen.'},
+  {t: 'Ordnerstruktur auf dem Computer', c: 'baum', why: 'Ordner enthalten Unterordner.'},
+  {t: 'Lageplan des Schulgebäudes', c: 'bild', why: 'Auf das Wesentliche reduzierte Abbildung.'},
+  {t: 'Foto vom Treffpunkt', c: 'bild', why: 'Zeigt, wie der Ort aussieht.'}
+]);
+
+orderSteps($('#trip'), ['08:12 Bus 21 ab Dorfplatz', '08:30 an Hauptbahnhof, umsteigen', '08:41 S-Bahn S1 ab Gleis 2', '09:08 an Haltestelle Messe', '09:10 Fußweg zum Eingang Ost', '09:20 Ankunft in Halle 3'], {label: 'Verbindung als Liste'});
+
+flipCards($('#navi'), [
+  ['… strukturiert', 'Das Straßennetz wird in einer <b>digitalen Karte</b> abgebildet und geordnet gespeichert.'],
+  ['… befolgt Regeln', 'Eine Handlungsanweisung (Algorithmus) ermittelt den <b>kürzesten oder schnellsten</b> Weg.'],
+  ['… kommuniziert', 'Die Position wird ständig über <b>Satelliten</b> ermittelt, Staumeldungen kommen über Mobilfunk.'],
+  ['… ist kreativ', 'Entwickler haben Programme mit einer <b>Programmiersprache</b> geschrieben, die auf die Karte zugreifen.']
+]);
+
+sorter($('#sort-tb'), [{id: 'th', name: 'Theoretisch'}, {id: 'te', name: 'Technisch'}, {id: 'pr', name: 'Praktisch'}, {id: 'an', name: 'Angewandt'}], [
+  {t: 'Neuen, schnelleren Prozessor entwerfen', c: 'te'},
+  {t: 'Sensor für ein Fitnessarmband bauen', c: 'te'},
+  {t: 'App für den Busfahrplan programmieren', c: 'pr'},
+  {t: 'Neue Programmiersprache entwickeln', c: 'th'},
+  {t: 'Untersuchen, ob ein Problem überhaupt lösbar ist', c: 'th'},
+  {t: 'Röntgenbilder per Computer auswerten', c: 'an'},
+  {t: 'Wettermodelle für die Klimaforschung berechnen', c: 'an'},
+  {t: 'Software für die Supermarktkasse schreiben', c: 'pr'}
+]);
+
+orderSteps($('#kasse'), ['Strichcode wird gescannt und identifiziert die Ware', 'Einzelpreise werden im zentralen Rechner abgefragt', 'Einzelpreise werden addiert', 'Gesamtsumme wird für die Tageseinnahmen gespeichert', 'Verkaufte Waren werden als Warenausgang gespeichert', 'Bon mit Artikeln, Preisen, Datum und Rückgeld wird gedruckt'], {label: 'Ablauf an der Kasse'});
+
+matcher($('#match'), [
+  ['Information', 'Daten mit verständlichem Inhalt'],
+  ['Graph', 'zeigt Veränderung über die Zeit'],
+  ['Baumstruktur', 'zeigt Beziehungen, z. B. Stammbaum'],
+  ['Informatik', 'Wissenschaft von der Verarbeitung von Informationen'],
+  ['Technische Informatik', 'entwirft Bauteile'],
+  ['Angewandte Informatik', 'Informatik in anderen Fachgebieten']
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Was sind Informationen?', a: ['Daten mit einem für Menschen verständlichen Inhalt', 'nur Zahlen', 'nur Texte im Internet', 'Bauteile eines Computers'], ok: 0},
+  {q: 'Welche Darstellung eignet sich für einen Aktienkurs über mehrere Monate?', a: ['Graph', 'Stammbaum', 'Einkaufsliste', 'Fließtext'], ok: 0, why: 'Ein Graph zeigt Veränderungen über die Zeit.'},
+  {q: 'Womit beschäftigt sich die Informatik NICHT vorrangig?', a: ['mit dem Anbau von Pflanzen', 'mit der Speicherung von Daten', 'mit der Übertragung von Daten', 'mit der Verarbeitung von Daten'], ok: 0},
+  {q: 'Wozu braucht das Navi eine Satellitenverbindung?', a: ['um die aktuelle Position zu bestimmen', 'um Strom zu sparen', 'um die Lautstärke zu regeln', 'um Musik abzuspielen'], ok: 0},
+  {q: 'Welcher Teilbereich entwickelt Programme zur Lösung eines Problems?', a: ['praktische Informatik', 'technische Informatik', 'theoretische Informatik', 'keiner'], ok: 0},
+  {q: 'Was passiert an der Kasse direkt nach dem Scannen?', a: ['Der Preis wird im zentralen Rechner abgefragt.', 'Der Bon wird gedruckt.', 'Das Rückgeld wird berechnet.', 'Die Ware wird nachbestellt.'], ok: 0}
+]);
+</script>

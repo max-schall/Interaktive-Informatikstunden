@@ -1,0 +1,173 @@
+<!--
+title: Das Hexadezimalsystem
+short: Hexadezimal
+time: 1–2 Unterrichtsstunden
+q: Warum nutzt die Informatik das Hexadezimalsystem – und wie beschreibt es Farben?
+facts: Stellenwertsysteme mit Basis 2, 10 und 16 | Hexadezimal: 16 Ziffern 0–9 und A–F, Stellenwerte 1, 16, 256, 4096 | Eine Hex-Ziffer = 4 Bit, zwei Hex-Ziffern = 1 Byte | Umrechnen dezimal ↔ hexadezimal ↔ binär | Farben in HTML als #RRGGBB
+inter: Zahlensysteme im Vergleich (Zähler) · Hex-Stellenwerttafel · Binär in 4er-Gruppen · Farbmischer mit Hex-Code · Farben erraten · Umrechnungstraining
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Daten und ihre Codierung</p>
+      <h1>Das Hexadezimalsystem<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead"><span class="mono">1000 1111 0100</span> – lange Binärzahlen sind unübersichtlich. Kürzer geht's mit <span class="mono">8F4</span>. Und auf Webseiten heißt Orange einfach <span class="mono">#FFA500</span>.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wie könnte man Zahlen schreiben, wenn man 16 Finger hätte?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Warum nutzt die Informatik das Hexadezimalsystem – und wie beschreibt es Farben?</p></div>
+      <div class="controls"><button class="btn primary" data-go="systeme">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="systeme" data-label="Zahlensysteme" data-yr="Erarbeitung" data-title="Stellenwertsysteme" data-sub="Basis 2, 10, 16">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Stellenwertsysteme</p>
+      <h2>Basis 2, 10 und 16</h2>
+      <ul class="facts">
+        <li><b>Dezimalsystem</b>: 10 Ziffern (0–9), Basis 10.</li>
+        <li><b>Binärsystem</b>: 2 Ziffern (0, 1), Basis 2 – lange, unübersichtliche Zahlen.</li>
+        <li><b>Hexadezimalsystem</b> (griech. <i>hexa</i> = sechs, lat. <i>decem</i> = zehn): <b>16 Ziffern</b> 0–9 und <b>A=10, B=11, C=12, D=13, E=14, F=15</b>. Basis 16.</li>
+        <li>Buchstaben sind nötig, weil „10“ sonst nicht eindeutig wäre.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Zähler</h3><div class="controls" style="margin:0"><button class="btn" id="cnt-m">−1</button><button class="btn primary" id="cnt-p">+1</button><button class="btn" id="cnt-r">0</button></div></div>
+      <div class="table-wrap"><table class="cmp" id="cnt"></table></div>
+      <label class="slider-row">Zahl <input id="cnt-s" type="range" min="0" max="300" value="15"></label>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="umrechnen" data-label="Umrechnen" data-yr="Erarbeitung" data-title="Umrechnen" data-sub="Stellenwerte 1, 16, 256">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Umrechnen</p>
+    <h2>Hex ↔ dezimal ↔ binär</h2>
+  </div>
+  <div class="cols-2">
+    <div class="vis">
+      <div class="vis-head"><h3>Hex-Stellenwerttafel</h3></div>
+      <input class="text-in mono" id="hx-in" value="8F4" maxlength="4" aria-label="Hexadezimalzahl">
+      <div class="table-wrap" style="margin-top:.6rem"><table class="cmp" id="hx-tab"></table></div>
+      <p class="status" id="hx-st"></p>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Binär ↔ hex: 4er-Gruppen</h3></div>
+      <p>Eine Hex-Ziffer entspricht genau <b>4 Bit</b>. Zwei Hex-Ziffern sind <b>1 Byte</b> (00 bis FF = 0 bis 255).</p>
+      <div class="nibbles" id="nb"></div>
+      <p class="note">Tippe auf die Bits, um sie umzuschalten.</p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="farben" data-label="Farben" data-yr="Erarbeitung" data-title="Farben in HTML" data-sub="#RRGGBB">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Farben hexadezimal darstellen</p>
+      <h2>#RRGGBB</h2>
+      <ul class="facts">
+        <li>Auf dem Bildschirm entstehen Farben aus <b>Rot, Grün und Blau</b>, je 0 bis 255.</li>
+        <li>HTML schreibt Farben mit <b>sechs Hex-Stellen</b>: die ersten zwei für Rot, die mittleren zwei für Grün, die letzten zwei für Blau.</li>
+        <li><span class="mono">#000000</span> ist Schwarz, <span class="mono">#FFFFFF</span> ist Weiß, <span class="mono">#FF0000</span> ist Rot.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Farbmischer</h3></div>
+      <label class="slider-row">Rot <input id="f-r" type="range" min="0" max="255" value="255"><output id="f-ro" class="mono"></output></label>
+      <label class="slider-row">Grün <input id="f-g" type="range" min="0" max="255" value="165"><output id="f-go" class="mono"></output></label>
+      <label class="slider-row">Blau <input id="f-b" type="range" min="0" max="255" value="0"><output id="f-bo" class="mono"></output></label>
+      <div style="display:flex;gap:1rem;align-items:center"><div class="swatch" id="f-sw"></div><input class="text-in mono" id="f-hex" maxlength="7" style="max-width:9rem" aria-label="Hex-Farbcode"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Farben raten" data-yr="M1" data-title="Farbcodes lesen" data-sub="Welche Farbe ist das?">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Farbcodes lesen</h2>
+    <p class="lead">Welche Farbe steckt hinter dem Code? Überlege zuerst: Welcher Anteil ist groß (nahe FF), welcher klein (nahe 00)?</p>
+  </div>
+  <div id="guess"></div>
+  <div class="task-card mt"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Vermutungen</h3></header><p>Um welche Farben handelt es sich bei <span class="mono">#00008B</span>, <span class="mono">#FCFCFC</span> und <span class="mono">#00EE00</span>?</p>
+    <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden><span class="mono">#00008B</span> = nur Blau (139) → <span style="color:#00008B;font-weight:700">Dunkelblau</span> · <span class="mono">#FCFCFC</span> = alle fast 255 → fast Weiß · <span class="mono">#00EE00</span> = nur Grün (238) → <span style="color:#00AA00;font-weight:700">kräftiges Grün</span></p></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Das Hexadezimalsystem</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Das Hexadezimalsystem</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step>Das <b>Hexadezimalsystem</b> ist ein Stellenwertsystem zur <b>Basis 16</b> mit den Ziffern 0–9 und A–F (A = 10 … F = 15). Stellenwerte: 1, 16, 256, 4096.</li>
+        <li data-step>Hex → dezimal: 8F4₁₆ = 8 · 256 + 15 · 16 + 4 · 1 = 2292.</li>
+        <li data-step>Eine Hex-Ziffer = <b>4 Bit</b>, zwei Hex-Ziffern = <b>1 Byte</b>. So werden lange Binärzahlen übersichtlich: 1000 1111 0100₂ = 8F4₁₆.</li>
+        <li data-step>In HTML werden Farben als <b>#RRGGBB</b> angegeben, z. B. #FF0000 = Rot, #000000 = Schwarz, #FFFFFF = Weiß.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Tabelle</span><p>Lege eine Tabelle dezimal | binär | hex für die Zahlen 0 bis 16 an.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Umrechnen</h2></div>
+  <div id="ts"></div>
+</section>
+
+<script>
+const HX = n => n.toString(16).toUpperCase();
+/* ================= Zähler ================= */
+(() => {
+  let n = 15;
+  const upd = () => { n = clamp(n, 0, 300); $('#cnt-s').value = n; $('#cnt').innerHTML = `<thead><tr><th>System</th><th>Darstellung</th></tr></thead><tbody><tr><th>dezimal</th><td class="mono big-num" style="font-size:1.5rem">${n}</td></tr><tr><th>binär</th><td class="mono big-num" style="font-size:1.5rem">${n.toString(2)}</td></tr><tr><th>hexadezimal</th><td class="mono big-num" style="font-size:1.5rem">${HX(n)}</td></tr></tbody>`; };
+  $('#cnt-p').onclick = () => { n++; upd(); }; $('#cnt-m').onclick = () => { n--; upd(); }; $('#cnt-r').onclick = () => { n = 0; upd(); }; $('#cnt-s').oninput = () => { n = +$('#cnt-s').value; upd(); };
+  upd();
+})();
+
+/* ================= Hex-Stellenwerttafel ================= */
+(() => {
+  const upd = () => {
+    const s = $('#hx-in').value.toUpperCase().replace(/[^0-9A-F]/g, '').slice(0, 4);
+    if (!s) { $('#hx-tab').innerHTML = ''; $('#hx-st').textContent = 'Gib eine Hexadezimalzahl ein (0–9, A–F).'; return; }
+    const d = s.split(''), W = d.map((_, i) => 16 ** (d.length - 1 - i)), v = d.map(c => parseInt(c, 16));
+    $('#hx-tab').innerHTML = `<thead><tr>${W.map(w => `<th>${w}</th>`).join('')}</tr></thead><tbody><tr>${d.map((c, i) => `<td class="mono big-num" style="font-size:1.4rem">${c}</td>`).join('')}</tr><tr>${d.map((c, i) => `<td class="mono">${v[i]} · ${W[i]}</td>`).join('')}</tr></tbody>`;
+    const tot = v.reduce((s2, x, i) => s2 + x * W[i], 0);
+    $('#hx-st').innerHTML = `${d.map((c, i) => `${v[i]}·${W[i]}`).join(' + ')} = <b>${tot}</b> · binär: <span class="mono">${tot.toString(2).padStart(d.length * 4, '0').replace(/(.{4})/g, '$1 ').trim()}</span>`;
+  };
+  $('#hx-in').addEventListener('input', upd); upd();
+})();
+
+/* ================= Nibbles ================= */
+(() => {
+  let bits = '10001111'.split('').map(Number);
+  const draw = () => {
+    const g = [bits.slice(0, 4), bits.slice(4)];
+    $('#nb').innerHTML = g.map((q, k) => `<div class="nib"><div class="nib-bits">${q.map((b, i) => `<button class="pv-b ${b ? 'on' : ''}" data-i="${k * 4 + i}">${b}</button>`).join('')}</div><b class="big-num">${HX(parseInt(q.join(''), 2))}</b><small class="mono">${[8, 4, 2, 1].filter((w, i) => q[i]).join('+') || '0'} = ${parseInt(q.join(''), 2)}</small></div>`).join('') + `<p class="status" style="grid-column:1/-1">${bits.join('')}₂ = <b>${HX(parseInt(bits.join(''), 2)).padStart(2, '0')}</b>₁₆ = ${parseInt(bits.join(''), 2)}</p>`;
+  };
+  $('#nb').addEventListener('click', e => { const b = e.target.closest('[data-i]'); if (b) { bits[+b.dataset.i] ^= 1; draw(); } });
+  draw();
+})();
+
+/* ================= Farbmischer ================= */
+(() => {
+  const H2 = v => (+v).toString(16).toUpperCase().padStart(2, '0');
+  const fromSl = () => { const [r, g, b] = ['r', 'g', 'b'].map(k => $('#f-' + k).value); ['r', 'g', 'b'].forEach((k, i) => $(`#f-${k}o`).textContent = `${[r, g, b][i]} = ${H2([r, g, b][i])}`); const hex = '#' + H2(r) + H2(g) + H2(b); $('#f-sw').style.background = hex; if (document.activeElement !== $('#f-hex')) $('#f-hex').value = hex; };
+  ['r', 'g', 'b'].forEach(k => $('#f-' + k).oninput = fromSl);
+  $('#f-hex').addEventListener('input', () => { const m = $('#f-hex').value.match(/^#?([0-9a-f]{6})$/i); if (!m) return; [0, 2, 4].forEach((i, k) => $('#f-' + 'rgb'[k]).value = parseInt(m[1].slice(i, i + 2), 16)); fromSl(); });
+  fromSl();
+})();
+
+/* ================= Farben raten ================= */
+mcQuiz($('#guess'), [
+  ['#FF0000', 'Rot', ['Grün', 'Blau', 'Gelb']], ['#00FF00', 'Grün', ['Rot', 'Blau', 'Schwarz']], ['#0000FF', 'Blau', ['Rot', 'Weiß', 'Grün']], ['#FFFF00', 'Gelb', ['Lila', 'Türkis', 'Schwarz']],
+  ['#000000', 'Schwarz', ['Weiß', 'Grau', 'Rot']], ['#808080', 'Grau', ['Weiß', 'Schwarz', 'Rot']], ['#FF00FF', 'Magenta (Pink-Lila)', ['Gelb', 'Grün', 'Türkis']], ['#00FFFF', 'Cyan (Türkis)', ['Rot', 'Orange', 'Braun']], ['#FFA500', 'Orange', ['Blau', 'Lila', 'Grau']]
+].map(([c, ok, no]) => ({q: `<span class="mono">${c}</span>`, a: [ok, ...no], ok: 0, why: `<span style="display:inline-block;width:1.2em;height:1.2em;background:${c};border:1px solid var(--edge);vertical-align:-.2em"></span> R=${parseInt(c.slice(1, 3), 16)}, G=${parseInt(c.slice(3, 5), 16)}, B=${parseInt(c.slice(5), 16)}`})), {pick: 6});
+
+taskSet($('#ts'), i => {
+  const n = randInt(10, 255);
+  if (i % 3 === 0) return {key: 'd' + n, tag: 'dezimal → hex', q: `<span class="big">${n}</span>`, fields: [{l: 'hexadezimal', a: [HX(n), HX(n).padStart(2, '0')], unit: '₁₆'}], hint: 'Teile durch 16: Ergebnis = erste Ziffer, Rest = zweite Ziffer.'};
+  if (i % 3 === 1) return {key: 'h' + n, tag: 'hex → dezimal', q: `<span class="big">${HX(n)}₁₆</span>`, fields: [{l: 'dezimal', a: n}], hint: 'Erste Ziffer · 16 + zweite Ziffer. A = 10, F = 15.'};
+  return {key: 'b' + n, tag: 'binär → hex', q: `<span class="big mono" style="font-size:1.2rem">${n.toString(2).padStart(8, '0').replace(/(.{4})/, '$1 ')}</span>`, fields: [{l: 'hexadezimal', a: [HX(n), HX(n).padStart(2, '0')]}], hint: 'Jede 4er-Gruppe ergibt eine Hex-Ziffer.'};
+}, {n: 6});
+</script>

@@ -1,0 +1,227 @@
+<!--
+title: Daten komprimieren
+short: Komprimieren
+time: 2 Unterrichtsstunden
+q: Wie lassen sich Datenmengen verkleinern – und was geht dabei verloren?
+facts: Datenkompression mit Packprogrammen, z. B. für E-Mail-Anhänge | Verlustfreie und verlustbehaftete Kompression | Lauflängencodierung bei Text und Binärbildern | Kompressionsfaktor = komprimierte Datenmenge : ursprüngliche Datenmenge | Bildformate JPEG, PNG, GIF, TIFF, PNM
+inter: Lauflängen-Codierer für Text · Binärbild mit Lauflängen und 3-Bit-Codierung · Kompressionsfaktor berechnen · JPEG-Qualitätsregler · Formate zuordnen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Daten und ihre Codierung</p>
+      <h1>Daten komprimieren<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">„Der Anhang ist zu groß.“ – Wer viele Urlaubsfotos per E-Mail schicken will, stößt schnell an Grenzen. Packprogramme verkleinern Daten. Doch wie geht das, ohne etwas wegzuwerfen?</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wie würdest du „AAAAAAAAAABBBBB“ kürzer aufschreiben?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie lassen sich Datenmengen verkleinern – und was geht dabei verloren?</p></div>
+      <div class="controls"><button class="btn primary" data-go="rle">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="rle" data-label="Lauflängen" data-yr="Erarbeitung" data-title="Lauflängencodierung" data-sub="Wiederholungen zählen">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Datenmenge verkleinern</p>
+      <h2>Lauflängencodierung</h2>
+      <ul class="facts">
+        <li>Beim Komprimieren werden Datenmengen mit bestimmten Verfahren verkleinert: <b>Datenkompression</b>. Packprogramme (z. B. ZIP) fassen viele Dateien in einem kleinen <b>Archiv</b> zusammen.</li>
+        <li>Die <b>Lauflängencodierung</b> speichert nicht jedes Zeichen einzeln, sondern das Zeichen und die Anzahl seiner Wiederholungen – die <b>Lauflänge</b>.</li>
+        <li>Sie ist <b>verlustfrei</b>: Beim Decodieren entsteht genau das Original.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Probier es aus</h3></div>
+      <input class="text-in mono" id="rl-in" value="AAAAAAAAAABBBBBCCCD" aria-label="Text">
+      <p class="big-num" id="rl-out" style="margin:.7rem 0 .2rem;word-break:break-all"></p>
+      <p class="status" id="rl-st"></p>
+      <div class="chips" id="rl-ex"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="binbild" data-label="Binärbild" data-yr="Erarbeitung" data-title="Binärbild komprimieren" data-sub="Lauflängen mit 3 Bit">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Ein Binärbild komprimieren</p>
+    <h2>Pixel zählen statt speichern</h2>
+    <p class="lead">Die Pixel werden zeilenweise gelesen. Gespeichert wird abwechselnd, wie viele weiße und schwarze Pixel aufeinander folgen (Start mit Weiß). Jede Lauflänge wird mit 3 Bit codiert (0–7). Male und vergleiche!</p>
+  </div>
+  <div class="model">
+    <div class="vis"><div id="bb-grid"></div><div class="controls"><button class="btn" id="bb-chaos">Zufallsmuster</button><button class="btn" id="bb-reset">Beispiel</button></div></div>
+    <div class="stack">
+      <div class="box"><span class="tag">Lauflängen</span><p class="mono" id="bb-runs" style="word-break:break-all"></p></div>
+      <div class="box"><span class="tag">3-Bit-Codierung</span><p class="mono" id="bb-bits" style="word-break:break-all;font-size:.85rem"></p></div>
+      <p class="status" id="bb-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="faktor" data-label="Kompressionsfaktor" data-yr="Erarbeitung" data-title="Kompressionsfaktor" data-sub="Wie stark komprimiert?">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Kompressionsfaktor</p>
+      <h2>Wie stark wurde komprimiert?</h2>
+      <div class="merke"><b>Kompressionsfaktor</b> = komprimierte Datenmenge : ursprüngliche Datenmenge</div>
+      <p>Beispiel: Eine Bitfolge von 24 Bit wird auf 18 Bit reduziert: 18 : 24 = <b>0,75</b> – die komprimierten Daten haben 75 % der ursprünglichen Größe. Je kleiner der Faktor, desto stärker die Kompression. Ein Faktor über 1 bedeutet: Die „Kompression“ hat die Daten sogar vergrößert!</p>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Rechner</h3></div>
+      <label class="slider-row">Original <input id="kf-o" type="range" min="1" max="100" value="24"><output id="kf-oo" class="mono"></output></label>
+      <label class="slider-row">Komprimiert <input id="kf-k" type="range" min="1" max="100" value="18"><output id="kf-ko" class="mono"></output></label>
+      <div class="kf-bars"><i id="kf-b1"></i><i id="kf-b2"></i></div>
+      <p class="status" id="kf-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="verlust" data-label="Verlust" data-yr="Erarbeitung" data-title="Verlustbehaftet" data-sub="JPEG und Co.">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 4 · Verluste der Datenkompression</p>
+      <h2>Weglassen, was kaum auffällt</h2>
+      <ul class="facts">
+        <li>Bei <b>verlustbehafteter</b> Kompression kann das Original nicht wieder genau hergestellt werden. Unwichtige Informationen wie feine Bilddetails werden weggelassen.</li>
+        <li>Das bekannteste Format ist <b>JPEG</b>. Mit zunehmender Kompression sinkt die Bild- oder Tonqualität (Blöckchen, Farbsäume).</li>
+        <li>Bei <b>verlustfreier</b> Kompression (PNG, ZIP, Lauflängen) geht nichts verloren.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>JPEG-Qualität</h3></div>
+      <canvas id="jp" style="width:100%;aspect-ratio:4/3;display:block;image-rendering:pixelated;border:1.5px solid var(--edge)"></canvas>
+      <label class="slider-row">Qualität <input id="jp-q" type="range" min="1" max="6" value="6"><output id="jp-o" class="mono"></output></label>
+      <p class="status" id="jp-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Formate" data-yr="M1" data-title="Dateiformate für Bilder" data-sub="JPEG, PNG, GIF, TIFF">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1</p>
+    <h2>Welches Format wofür?</h2>
+  </div>
+  <div class="table-wrap">
+    <table class="cmp" id="fmt">
+      <thead><tr><th>Format</th><th>Kompression</th><th>geeignet für</th><th>Besonderheit</th></tr></thead>
+      <tbody>
+        <tr><th>JPEG (.jpg)</th><td class="q"><span>verlustbehaftet</span></td><td class="q"><span>Fotos</span></td><td class="q"><span>sehr klein, bei starker Kompression Blöckchen</span></td></tr>
+        <tr><th>PNG (.png)</th><td class="q"><span>verlustfrei</span></td><td class="q"><span>Grafiken, Screenshots, Logos</span></td><td class="q"><span>Transparenz möglich</span></td></tr>
+        <tr><th>GIF (.gif)</th><td class="q"><span>verlustfrei, max. 256 Farben</span></td><td class="q"><span>einfache Grafiken, Animationen</span></td><td class="q"><span>Farbpalette</span></td></tr>
+        <tr><th>TIFF (.tif)</th><td class="q"><span>keine oder verlustfrei</span></td><td class="q"><span>Druck, Archiv</span></td><td class="q"><span>sehr große Dateien</span></td></tr>
+        <tr><th>PNM (.pbm …)</th><td class="q"><span>keine</span></td><td class="q"><span>Lernen, einfache Programme</span></td><td class="q"><span>als Text lesbar, sehr groß</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cmp-tools"><button class="btn" id="fmt-q">Felder verdecken (Quiz)</button><button class="btn" id="fmt-a">Alle aufdecken</button></div>
+  <h3 class="mt">Welches Format würdest du wählen?</h3>
+  <div id="fmt-sort"></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Daten komprimieren</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Daten komprimieren</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step><b>Datenkompression</b> verkleinert Datenmengen mit bestimmten Verfahren, z. B. in Packprogrammen.</li>
+        <li data-step><b>Verlustfrei</b>: Das Original kann genau wiederhergestellt werden (Lauflängencodierung, PNG, ZIP). <b>Verlustbehaftet</b>: Unwichtige Details werden weggelassen (JPEG, MP3).</li>
+        <li data-step><b>Lauflängencodierung:</b> Ein Zeichen und die Anzahl seiner Wiederholungen werden gespeichert: AAAAABB → 5A2B. Gut bei Binärbildern mit großen Flächen.</li>
+        <li data-step><b>Kompressionsfaktor</b> = komprimierte Datenmenge : ursprüngliche Datenmenge (z. B. 18 : 24 = 0,75).</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Beispiel</span><p>Codiere „WWWWWWSSSWWWW“ mit Lauflängen und berechne den Kompressionsfaktor (1 Zeichen = 1 Byte).</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Lauflängen üben</h2></div>
+  <div id="ts"></div>
+</section>
+
+<script>
+/* ================= RLE Text ================= */
+(() => {
+  const upd = () => {
+    const s = $('#rl-in').value, r = rle(s);
+    $('#rl-out').textContent = r || '–';
+    const f = s.length ? r.length / s.length : 0;
+    $('#rl-st').innerHTML = `${s.length} Zeichen → ${r.length} Zeichen · Kompressionsfaktor ${numDE(f, 2)} ${f > 1 ? '<span class="bad">– länger als vorher!</span>' : f < 1 ? '<span class="good">– kleiner</span>' : ''}`;
+  };
+  $('#rl-in').addEventListener('input', upd);
+  const EX = ['WWWWWWWWSSSSWWWW', 'ABCDEFG', 'Hallo', '0000000011111111'];
+  $('#rl-ex').innerHTML = EX.map(e => `<button class="btn" data-e="${e}">${e}</button>`).join('');
+  $('#rl-ex').addEventListener('click', e => { const b = e.target.closest('[data-e]'); if (b) { $('#rl-in').value = b.dataset.e; upd(); } });
+  upd();
+})();
+
+/* ================= Binärbild RLE ================= */
+(() => {
+  const EX = ['11111111', '11000011', '11000011', '11111111', '11111111', '11000011', '11000011', '11111111'];
+  function runs(bits) {
+    const out = []; let cur = '1', n = 0;
+    for (const b of bits) { if (b === cur && n < 7) n++; else if (b === cur) { out.push(7, 0); n = 1; } else { out.push(n); cur = b; n = 1; } }
+    out.push(n); return out;
+  }
+  const g = pixelGrid($('#bb-grid'), {w: 8, h: 8, data: EX, onChange: d => {
+    const bits = d.join(''), r = runs(bits), enc = r.map(x => x.toString(2).padStart(3, '0'));
+    $('#bb-runs').textContent = r.join(', ');
+    $('#bb-bits').textContent = enc.join(' ');
+    const k = enc.length * 3, f = k / 64;
+    $('#bb-st').innerHTML = `Original: 64 Bit · komprimiert: ${r.length} Lauflängen × 3 Bit = <b>${k} Bit</b> · Faktor <b>${numDE(f, 2)}</b> ${f > 1 ? '<span class="bad">(größer! Viele Wechsel lohnen sich nicht)</span>' : ''}`;
+  }});
+  $('#bb-chaos').onclick = () => g.set([...Array(8)].map(() => [...Array(8)].map(() => Math.random() < .5 ? '0' : '1').join('')));
+  $('#bb-reset').onclick = () => g.set(EX);
+})();
+
+/* ================= Kompressionsfaktor ================= */
+(() => {
+  const upd = () => {
+    const o = +$('#kf-o').value, k = +$('#kf-k').value, f = k / o;
+    $('#kf-oo').textContent = o + ' Bit'; $('#kf-ko').textContent = k + ' Bit';
+    $('#kf-b1').style.width = '100%'; $('#kf-b2').style.width = Math.min(100, 100 * f) + '%';
+    $('#kf-st').innerHTML = `${k} : ${o} = <b>${numDE(f, 2)}</b> → die komprimierten Daten haben <b>${numDE(f * 100, 0)} %</b> der ursprünglichen Größe.`;
+  };
+  $('#kf-o').oninput = upd; $('#kf-k').oninput = upd; upd();
+})();
+
+/* ================= JPEG ================= */
+(() => {
+  const cv = $('#jp'), Q = [[24, 'sehr stark komprimiert', 3], [16, 'stark', 6], [10, 'mittel', 14], [6, 'leicht', 30], [3, 'kaum', 60], [1, 'Original', 100]];
+  function scene(ctx, w, h) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h); sky.addColorStop(0, '#60A5FA'); sky.addColorStop(1, '#FDE68A'); ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = '#F59E0B'; ctx.beginPath(); ctx.arc(w * .75, h * .3, h * .12, 0, 7); ctx.fill();
+    ctx.fillStyle = '#15803D'; ctx.beginPath(); ctx.moveTo(0, h); ctx.lineTo(w * .3, h * .45); ctx.lineTo(w * .6, h); ctx.fill();
+    ctx.fillStyle = '#166534'; ctx.beginPath(); ctx.moveTo(w * .35, h); ctx.lineTo(w * .7, h * .55); ctx.lineTo(w, h); ctx.fill();
+    ctx.fillStyle = '#111'; ctx.font = `bold ${h * .09}px sans-serif`; ctx.fillText('Urlaub 2026', w * .05, h * .15);
+  }
+  function draw() {
+    const k = +$('#jp-q').value - 1, [blk, name, kb] = Q[k];
+    const w = 320, h = 240; cv.width = w; cv.height = h;
+    const ctx = cv.getContext('2d'); scene(ctx, w, h);
+    if (blk > 1) {
+      const sm = document.createElement('canvas'); sm.width = Math.ceil(w / blk); sm.height = Math.ceil(h / blk);
+      const s = sm.getContext('2d'); s.imageSmoothingEnabled = true; s.drawImage(cv, 0, 0, sm.width, sm.height);
+      const d = s.getImageData(0, 0, sm.width, sm.height), step = blk * 3;
+      for (let i = 0; i < d.data.length; i += 4) for (let c = 0; c < 3; c++) d.data[i + c] = Math.round(d.data[i + c] / step) * step;
+      s.putImageData(d, 0, 0); ctx.imageSmoothingEnabled = false; ctx.drawImage(sm, 0, 0, w, h);
+    }
+    $('#jp-o').textContent = name; $('#jp-st').innerHTML = `Qualität „${name}“ · Dateigröße etwa <b>${kb} %</b> des Originals${blk > 6 ? ' – Blöckchen und Farbstufen werden sichtbar.' : ''}`;
+  }
+  $('#jp-q').oninput = draw; draw();
+})();
+
+quizTable($('#fmt'), $('#fmt-q'), $('#fmt-a'));
+$$('#fmt td.q').forEach(td => td.classList.add('shown'));
+sorter($('#fmt-sort'), [{id: 'jpg', name: 'JPEG'}, {id: 'png', name: 'PNG'}, {id: 'gif', name: 'GIF'}], [
+  {t: 'Urlaubsfoto per Messenger verschicken', c: 'jpg'}, {t: 'Handyfoto vom Sonnenuntergang', c: 'jpg'}, {t: 'Logo mit durchsichtigem Hintergrund', c: 'png'},
+  {t: 'Screenshot mit Text', c: 'png'}, {t: 'Kleine animierte Grafik', c: 'gif'}
+]);
+
+taskSet($('#ts'), i => {
+  const ch = ['A', 'B', 'W', 'S'], parts = [...Array(randInt(2, 4))].map((_, k) => [randInt(2, 9), ch[(k + i) % 4]]);
+  const s = parts.map(([n, c]) => c.repeat(n)).join(''), r = rle(s);
+  return i % 2 ? {key: s, tag: 'decodieren', q: `<span class="big mono" style="font-size:1.2rem">${r}</span>`, fields: [{l: 'Original', a: s, wide: true}], hint: 'Zahl = Anzahl der Wiederholungen des folgenden Zeichens.'}
+    : {key: s, tag: 'codieren', q: `<span class="mono" style="font-size:1.05rem;word-break:break-all">${s}</span>`, fields: [{l: 'Lauflängencode', a: r, wide: true}], hint: 'Zähle, wie oft jedes Zeichen hintereinander vorkommt.'};
+}, {n: 6});
+</script>

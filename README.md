@@ -14,6 +14,10 @@ Interaktive HTML-Präsentationen für den Informatikunterricht – gleicher Aufb
     cd _generator
     python3 build.py                                    # Präsentationen, Übersichten, Startseite
     cd arbeitsblaetter && python3 render.py 7-Informatiksysteme   # Arbeitsblätter (PDF)
+    python3 scorm.py                                    # SCORM-Paket mit allen Reihen → ../_scorm/
+    python3 scorm.py 1-Informatiksysteme                # SCORM-Paket nur für eine Reihe
+
+In den SCORM-Paketen steht neben jedem Button „Arbeitsblatt“ zusätzlich „Lösungsblatt“ (online nicht).
 
 Die Inhalte einer Stunde stehen in `_generator/src/<Reihe>/NN_Name.html` (Kopfkommentar mit Metadaten, Stationen als
 `<section class="station">`, Skript am Ende). Design: `_generator/style.css`, Bausteine: `_generator/lib.js`,

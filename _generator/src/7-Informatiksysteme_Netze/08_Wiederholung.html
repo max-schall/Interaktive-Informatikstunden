@@ -1,0 +1,136 @@
+<!--
+title: Wiederholung und Selbsttest
+short: Selbsttest
+time: 1–2 Unterrichtsstunden
+q: Was kann ich, und was sollte ich noch üben?
+facts: Zusammenfassung als Karteikarten | Trainer T1–T4: Informatiksysteme, Speicher, Netzwerke und Routing, Internet und WWW | Großes Quiz und „Ich kann …“-Liste mit Links zurück in die Stunden
+inter: Karteikarten · Paare finden · EVA und Komponenten sortieren · Backup-Fragen · Netzwerk-Paare · IP-Training · Webseitenaufruf ordnen · Quiz (10 zufällige Fragen) · Selbsteinschätzung
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Informatiksysteme und Netze</p>
+      <h1>Wiederholung und Selbsttest<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Informatik, Informatiksysteme, Speicher, Netzwerke, Routing, Internetdienste, WWW und Cloud: Prüfe, was du sicher kannst.</p>
+      <div class="controls"><button class="btn primary" data-go="begriffe">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="begriffe" data-label="Begriffe" data-yr="Wiederholen" data-title="Zusammenfassung" data-sub="Fachbegriffe als Karteikarten">
+  <div class="section-head"><p class="eyebrow">Station 1 · Zusammenfassung</p><h2>Fachbegriffe</h2></div>
+  <div id="flip"></div>
+  <h3 class="mt">Paare finden</h3>
+  <div id="match"></div>
+</section>
+
+<section class="station" id="t1" data-label="T1 Systeme" data-yr="Trainer" data-title="T1 Informatiksysteme" data-sub="EVA und Komponenten">
+  <div class="section-head"><p class="eyebrow">Station 2 · Trainer T1</p><h2>Informatiksysteme</h2><p class="lead">Ordne die Geräte und Bauteile dem EVA-Prinzip zu.</p></div>
+  <div id="eva-sort"></div>
+</section>
+
+<section class="station" id="t2" data-label="T2 Speicher" data-yr="Trainer" data-title="T2 Datenspeicherung" data-sub="Speicher und Backups">
+  <div class="section-head"><p class="eyebrow">Station 3 · Trainer T2</p><h2>Speicher und Backups</h2></div>
+  <div id="t2-tf"></div>
+</section>
+
+<section class="station" id="t3" data-label="T3 Netze" data-yr="Trainer" data-title="T3 Netzwerke und Routing" data-sub="Komponenten und IP-Adressen">
+  <div class="section-head"><p class="eyebrow">Station 4 · Trainer T3</p><h2>Netzwerke und Routing</h2></div>
+  <div class="cols-2">
+    <div><h3>Komponenten</h3><div id="t3-match"></div></div>
+    <div><h3>Kürzester Weg (Sprünge)</h3><svg id="t3-g"></svg><p class="status" id="t3-status">Wie viele Sprünge braucht ein Paket mindestens von A nach F? Tippe die Router des Weges der Reihe nach an.</p></div>
+  </div>
+  <h3 class="mt">Netzwerk- und Hostanteil (Maske 255.255.255.0)</h3>
+  <div id="t3-ts"></div>
+</section>
+
+<section class="station" id="t4" data-label="T4 Internet" data-yr="Trainer" data-title="T4 Internet und WWW" data-sub="Dienste, Webseiten, Cloud">
+  <div class="section-head"><p class="eyebrow">Station 5 · Trainer T4</p><h2>Internet, WWW und Cloud</h2></div>
+  <div class="cols-2">
+    <div><h3>Eine Webseite aufrufen</h3><div id="t4-order"></div></div>
+    <div><h3>Dienst und Protokoll</h3><div id="t4-sort"></div></div>
+  </div>
+</section>
+
+<section class="station" id="quiz-st" data-label="Quiz" data-yr="Testen" data-title="Großes Quiz" data-sub="10 zufällige Fragen">
+  <div class="section-head"><p class="eyebrow">Station 6 · Quiz</p><h2>Großes Quiz</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<section class="station" id="uebungen" data-label="Ich kann …">
+  <div class="section-head"><p class="eyebrow">Selbsteinschätzung</p><h2>Ich kann …</h2></div>
+  <ol id="sc"></ol>
+</section>
+
+<script>
+const BEGRIFFE = [
+  ['Information', 'Daten mit verständlichem Inhalt'], ['Informatik', 'Wissenschaft von Darstellung, Speicherung, Übertragung und Verarbeitung von Informationen'],
+  ['EVA-Prinzip', 'Eingabe → Verarbeitung → Ausgabe'], ['CPU', 'Prozessor, steuert alle Abläufe'], ['RAM', 'flüchtiger Arbeitsspeicher'],
+  ['SSD', 'elektronischer, dauerhafter Speicher'], ['inkrementelles Backup', 'sichert Änderungen seit dem letzten Backup'], ['Router', 'verbindet Netzwerke, leitet Pakete weiter'],
+  ['Switch', 'verteilt Daten gezielt an das Zielgerät'], ['IP-Adresse', 'Anschrift eines Geräts im Netz'], ['DNS', 'übersetzt Namen in IP-Adressen'],
+  ['Paketvermittlung', 'Daten reisen in einzelnen Paketen'], ['HTTP', 'Protokoll für Webseiten'], ['HTML', 'Auszeichnungssprache für Webseiten'], ['Cloud', 'Netz von Servern, erreichbar über das Internet']
+];
+flipCards($('#flip'), BEGRIFFE);
+matcher($('#match'), shuffle(BEGRIFFE.slice()).slice(0, 7));
+sorter($('#eva-sort'), [{id: 'e', name: 'Eingabe'}, {id: 'v', name: 'Verarbeitung'}, {id: 'a', name: 'Ausgabe'}, {id: 's', name: 'Speicherung'}], [
+  {t: 'Tastatur', c: 'e'}, {t: 'Scanner', c: 'e'}, {t: 'Mikrofon', c: 'e'}, {t: 'Prozessor', c: 'v'}, {t: 'Grafikkarte', c: 'v'},
+  {t: 'Monitor', c: 'a'}, {t: 'Drucker', c: 'a'}, {t: 'SSD', c: 's'}, {t: 'USB-Stick', c: 's'}
+]);
+trueFalse($('#t2-tf'), [
+  {t: 'Eine HDD speichert Daten magnetisch.', ok: true}, {t: 'Der RAM behält seine Daten nach dem Ausschalten.', ok: false, why: 'Er ist flüchtig.'},
+  {t: 'Eine Blu-ray wird mit einem Laser gelesen.', ok: true}, {t: 'Ein differentielles Backup sichert alle Änderungen seit dem letzten Vollbackup.', ok: true},
+  {t: 'Für die Wiederherstellung aus inkrementellen Backups braucht man nur das letzte Backup.', ok: false, why: 'Man braucht das Vollbackup und alle inkrementellen Backups danach.'},
+  {t: 'Eine SSD hat bewegliche Teile.', ok: false, why: 'Sie speichert elektronisch.'}
+]);
+matcher($('#t3-match'), [['Router', 'verbindet Netzwerke'], ['Modem', 'Verbindung zum Provider'], ['Hub', 'schickt an alle'], ['Switch', 'schickt gezielt'], ['Repeater', 'verstärkt Funk'], ['Firewall', 'kontrolliert Zugriffe']]);
+(() => {
+  const N = {A: [40, 150, 'A'], B: [140, 60, 'B'], C: [140, 240, 'C'], D: [250, 150, 'D'], E: [350, 60, 'E'], F: [420, 200, 'F']};
+  const E = [['A', 'B'], ['A', 'C'], ['B', 'D'], ['C', 'D'], ['B', 'E'], ['D', 'F'], ['E', 'F'], ['C', 'F']];
+  let path = ['A'];
+  const g = graphView($('#t3-g'), N, E, {w: 460, h: 300, weights: false, onNode: id => {
+    const last = path[path.length - 1];
+    if (id === 'A') { path = ['A']; g.draw({path}); $('#t3-status').textContent = 'Neu: Start bei A.'; return; }
+    if (!E.some(([a, b]) => (a === last && b === id) || (b === last && a === id))) { $('#t3-status').innerHTML = `<b class="bad">${last} und ${id} sind nicht direkt verbunden.</b>`; return; }
+    path.push(id); g.draw({path});
+    if (id === 'F') { const best = g.path('A', 'F').cost, n = path.length - 1; $('#t3-status').innerHTML = n === best ? `<b class="good">Kürzester Weg!</b> ${path.join(' → ')} mit ${n} Sprüngen.` : `${path.join(' → ')} hat ${n} Sprünge – es geht mit ${best}. Tippe A für einen neuen Versuch.`; }
+    else $('#t3-status').textContent = 'Weg bisher: ' + path.join(' → ');
+  }});
+  g.draw({path});
+})();
+taskSet($('#t3-ts'), () => {
+  const ip = [randInt(10, 223), randInt(0, 255), randInt(0, 255), randInt(1, 254)];
+  return {key: ip.join('.'), tag: 'IP-Adresse', q: `<span class="mono big" style="font-size:1.2rem">${ip.join('.')}</span>`, fields: [{l: 'Netzwerkanteil', a: ip.slice(0, 3).join('.')}, {l: 'Hostanteil', a: ip[3]}], hint: 'Die ersten drei Blöcke bilden den Netzwerkanteil.'};
+}, {n: 3});
+orderSteps($('#t4-order'), ['URL eingeben', 'DNS liefert die IP-Adresse', 'HTTP-Anfrage an den Webserver', 'Statuscode 200 und HTML-Dokument kommen zurück', 'Browser zeigt die Seite an']);
+sorter($('#t4-sort'), [{id: 'http', name: 'HTTP(S)'}, {id: 'smtp', name: 'SMTP'}, {id: 'ftp', name: 'FTP'}, {id: 'voip', name: 'VoIP'}], [
+  {t: 'Webseite öffnen', c: 'http'}, {t: 'Onlineshop', c: 'http'}, {t: 'E-Mail senden', c: 'smtp'}, {t: 'Dateien auf Server laden', c: 'ftp'}, {t: 'Internettelefonat', c: 'voip'}
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Welche Darstellung zeigt Veränderungen über die Zeit?', a: ['Graph', 'Baum', 'Liste', 'Fließtext'], ok: 0},
+  {q: 'Welcher Teilbereich entwirft Bauteile?', a: ['technische Informatik', 'theoretische Informatik', 'angewandte Informatik', 'praktische Informatik'], ok: 0},
+  {q: 'Was ist das „Kurzzeitgedächtnis“ des Computers?', a: ['RAM', 'SSD', 'CD', 'Netzteil'], ok: 0},
+  {q: 'Welches Gerät ist Ein- und Ausgabegerät?', a: ['Touchscreen', 'Drucker', 'Maus', 'Beamer'], ok: 0},
+  {q: 'Was verbindet das Heimnetz mit dem Internet?', a: ['Router', 'Switch', 'Repeater', 'Drucker'], ok: 0},
+  {q: 'Was ist ein Peer-to-Peer-Netz?', a: ['Alle Rechner sind gleichberechtigt.', 'Ein Server bedient alle Clients.', 'Ein Netz nur aus Druckern.', 'Ein Netz ohne Kabel.'], ok: 0},
+  {q: 'Welche IP-Adresse ist ungültig?', a: ['192.168.1.300', '10.0.0.1', '172.16.5.20', '192.168.100.17'], ok: 0},
+  {q: 'Was steht in einer Routingtabelle?', a: ['Ziel, Nachbar, Sprünge', 'Name, Passwort, Alter', 'Datei, Größe, Datum', 'Farbe, Form, Größe'], ok: 0},
+  {q: 'Wofür steht URL?', a: ['Uniform Resource Locator', 'Universal Router Link', 'User Read List', 'Unique Remote Line'], ok: 0},
+  {q: 'Was macht ein HTML-Tag?', a: ['Er beschreibt die Struktur der Seite.', 'Er verschlüsselt die Seite.', 'Er beschleunigt den Router.', 'Er speichert Passwörter.'], ok: 0},
+  {q: 'Was ist ein Nachteil der Cloud?', a: ['Ohne Internet kein Zugriff', 'Zugriff von überall', 'Schutz vor Geräteverlust', 'Gemeinsames Arbeiten'], ok: 0},
+  {q: 'Woraus bestehen Seekabel für das Internet?', a: ['Glasfaser', 'Holz', 'Gummi', 'Papier'], ok: 0}
+], {pick: 10});
+selfCheck($('#sc'), [
+  {t: 'Ich kann Darstellungsformen von Informationen nennen und passend wählen.', href: '01_Informatik.html#darstellen'},
+  {t: 'Ich kann erklären, was Informatik ist, und ihre Teilbereiche nennen.', href: '01_Informatik.html#teilbereiche'},
+  {t: 'Ich kann das EVA-Prinzip und die Komponenten eines Computers erklären.', href: '02_EVA_Hardware.html#komponenten'},
+  {t: 'Ich kann Speicherarten unterscheiden und Backup-Strategien erklären.', href: '03_Datenspeicherung.html#backup'},
+  {t: 'Ich kann die Aufgaben von Router, Switch, Hub, Modem und Repeater nennen.', href: '04_Netzwerke.html#verteiler'},
+  {t: 'Ich kann Client-Server und Peer-to-Peer vergleichen.', href: '04_Netzwerke.html#architektur'},
+  {t: 'Ich kann Netzwerk- und Hostanteil einer IP-Adresse bestimmen.', href: '05_Routing_Internet.html#ip'},
+  {t: 'Ich kann eine Routingtabelle lesen und die Paketvermittlung erklären.', href: '05_Routing_Internet.html#routing'},
+  {t: 'Ich kann Internetdienste und ihre Protokolle nennen.', href: '06_Internetdienste_WWW.html#dienste'},
+  {t: 'Ich kann den Aufruf einer Webseite beschreiben und einfache HTML-Tags nutzen.', href: '06_Internetdienste_WWW.html#aufruf'},
+  {t: 'Ich kann Vor- und Nachteile der Cloud abwägen.', href: '07_Cloud.html#m2'}
+]);
+</script>

@@ -1,0 +1,221 @@
+<!--
+title: Datenspeicherung und Backups
+short: Speicherung
+time: 1–2 Unterrichtsstunden
+q: Wie werden Daten gespeichert – und wie schützt man sie vor Verlust?
+facts: Beim Speichern werden Dokumente in Binärcode übersetzt und als Datei gespeichert | Magnetische, optische und elektronische Speicherung | Flüchtige und permanente Speicher, intern und extern | Backup-Strategien: Vollbackup, differentielles und inkrementelles Backup
+inter: Speichermedien sortieren · Vergleichstabelle zum Aufdecken · Funktionsweise von Festplatte, CD und SSD · Backup-Simulator über eine Woche · Wiederherstellung nach Datenverlust
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Informatiksysteme und Netze</p>
+      <h1>Datenspeicherung und Backups<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Referat fertig, Laptop fällt runter – alles weg? Damit das nicht passiert, muss man wissen, wo und wie Daten gespeichert werden und wie man sie sichert.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wo sind deine Fotos gespeichert? Und gibt es davon eine Kopie?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie werden Daten gespeichert – und wie schützt man sie vor Verlust?</p></div>
+      <div class="controls"><button class="btn primary" data-go="arten">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="arten" data-label="Speicherarten" data-yr="Erarbeitung" data-title="Speicherarten" data-sub="Magnetisch, optisch, elektronisch">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Wie werden Daten gespeichert?</p>
+    <h2>Drei Arten der Speicherung</h2>
+    <p class="lead">Beim Speichern wird ein Dokument in eine Abfolge aus 0 und 1 übersetzt (<b>Binärcode</b>) und als <b>Datei</b> auf einem Speichermedium abgelegt. Wie die 0 und 1 festgehalten werden, ist unterschiedlich:</p>
+  </div>
+  <div class="vis">
+    <div class="vis-head"><h3>So werden 0 und 1 gespeichert</h3><div id="art-seg"></div></div>
+    <div class="cols-2">
+      <canvas id="art-cv" style="width:100%;height:14rem;display:block"></canvas>
+      <div id="art-txt"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="vergleich" data-label="Vergleich" data-yr="Erarbeitung" data-title="Speicher vergleichen" data-sub="flüchtig, permanent, intern, extern">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Speicher vergleichen</p>
+    <h2>Flüchtig oder permanent?</h2>
+    <p class="lead"><b>Flüchtige</b> Speicher (RAM) verlieren ihre Daten ohne Strom. <b>Permanente</b> Speicher behalten sie. Daten können <b>intern</b> auf dem Gerät oder <b>extern</b> (USB-Stick, externe Festplatte) gespeichert werden – extern sind sie mobil, können aber verloren gehen oder in fremde Hände geraten.</p>
+  </div>
+  <div class="table-wrap">
+    <table class="cmp" id="cmp">
+      <thead><tr><th>Speicher</th><th>Art</th><th>flüchtig?</th><th>typische Größe</th><th>Besonderheit</th></tr></thead>
+      <tbody>
+        <tr><th>Arbeitsspeicher (RAM)</th><td class="q"><span>elektronisch</span></td><td class="q"><span class="yes">ja</span></td><td class="q"><span>8–32 GB</span></td><td class="q"><span>sehr schnell</span></td></tr>
+        <tr><th>Festplatte (HDD)</th><td class="q"><span>magnetisch</span></td><td class="q"><span class="no">nein</span></td><td class="q"><span>1–20 TB</span></td><td class="q"><span>bewegliche Teile, stoßempfindlich</span></td></tr>
+        <tr><th>SSD</th><td class="q"><span>elektronisch</span></td><td class="q"><span class="no">nein</span></td><td class="q"><span>256 GB–4 TB</span></td><td class="q"><span>schnell, leise, robust</span></td></tr>
+        <tr><th>USB-Stick / Speicherkarte</th><td class="q"><span>elektronisch</span></td><td class="q"><span class="no">nein</span></td><td class="q"><span>16–512 GB</span></td><td class="q"><span>klein, mobil, leicht verlierbar</span></td></tr>
+        <tr><th>CD / DVD / Blu-ray</th><td class="q"><span>optisch</span></td><td class="q"><span class="no">nein</span></td><td class="q"><span>0,7–100 GB</span></td><td class="q"><span>kratzempfindlich</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cmp-tools"><button class="btn" id="cmp-q">Felder verdecken (Quiz)</button><button class="btn" id="cmp-a">Alle aufdecken</button></div>
+  <h3 class="mt">Sortiere die Speichermedien</h3>
+  <div id="sort-art"></div>
+</section>
+
+<section class="station" id="backup" data-label="Backup" data-yr="Erarbeitung" data-title="Backup-Strategien" data-sub="Voll, differentiell, inkrementell">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Backup-Strategien</p>
+    <h2>Eine Woche Datensicherung</h2>
+    <p class="lead">Ein <b>Backup</b> ist eine Sicherheitskopie. Am Sonntag gibt es ein <b>Vollbackup</b> aller Daten. Danach ändern sich jeden Tag ein paar Dateien. Wähle eine Strategie und vergleiche.</p>
+  </div>
+  <div class="vis">
+    <div class="vis-head"><h3>Backup-Simulator</h3><div id="bk-seg"></div></div>
+    <div class="table-wrap"><table class="cmp" id="bk"></table></div>
+    <p class="status" id="bk-status"></p>
+  </div>
+  <div class="cols-3 mt">
+    <div class="box"><span class="tag info">Vollbackup</span><p>Sichert <b>alle</b> Daten. Braucht viel Platz und Zeit, Wiederherstellung ist einfach.</p></div>
+    <div class="box"><span class="tag info">Differentiell</span><p>Sichert alles, was sich <b>seit dem letzten Vollbackup</b> geändert hat. Wiederherstellen: Vollbackup + letztes differentielles.</p></div>
+    <div class="box"><span class="tag info">Inkrementell</span><p>Sichert nur, was sich <b>seit dem letzten Backup</b> (egal welcher Art) geändert hat. Wenig Platz, aber zum Wiederherstellen braucht man alle Teile.</p></div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Datenverlust" data-yr="M1" data-title="Datenverlust!" data-sub="Wiederherstellen">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Freitagabend: Der Laptop ist kaputt</h2>
+    <p class="lead">Welche Backups brauchst du, um den Stand von Donnerstagabend wiederherzustellen? Tippe sie an.</p>
+  </div>
+  <div class="model">
+    <div class="vis">
+      <div class="vis-head"><h3>Wiederherstellung</h3><div id="rs-seg"></div></div>
+      <div class="chips" id="rs"></div>
+      <div class="controls"><button class="btn primary" id="rs-check">Prüfen</button></div>
+      <p class="status" id="rs-status"></p>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Täglich Vollbackup?</h3></header><p>Erkläre, ob es sinnvoll ist, bei jeder Gelegenheit ein Vollbackup zu erstellen.</p>
+        <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Es ist sehr sicher und leicht wiederherzustellen, braucht aber viel Speicherplatz und Zeit, weil auch unveränderte Dateien jedes Mal kopiert werden. Meist kombiniert man ein regelmäßiges Vollbackup (z. B. wöchentlich) mit differentiellen oder inkrementellen Backups.</p></div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Eigene Strategie</h3></header><p>Entwickle eine eigene Backupstrategie: Wie oft, welche Backupart, welche Speichermedien?</p>
+        <div class="controls"><button class="btn" data-reveal="m1b" aria-expanded="false">Beispiel</button></div><p class="solution" id="m1b" hidden>Sonntags Vollbackup auf eine externe Festplatte, die zu Hause im Schrank liegt; werktags inkrementelles Backup in eine Cloud. Wichtig: Backup nicht am selben Ort wie das Gerät aufbewahren (3-2-1-Regel: 3 Kopien, 2 Medien, 1 außer Haus).</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Datenspeicherung</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Datenspeicherung und Backups</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step>Beim Speichern wird ein Dokument in <b>Binärcode</b> übersetzt und als <b>Datei</b> auf einem Speichermedium abgelegt.</li>
+        <li data-step><b>Magnetisch</b> (Festplatte HDD: Schreib-Lese-Kopf), <b>optisch</b> (CD/DVD: Laser und Reflexion), <b>elektronisch</b> (SSD, USB-Stick, Speicherkarte, RAM).</li>
+        <li data-step><b>Flüchtige</b> Speicher (RAM) verlieren ihre Daten ohne Strom, <b>permanente</b> behalten sie. Speicher können <b>intern</b> oder <b>extern</b> sein.</li>
+        <li data-step><b>Backup</b> = Sicherheitskopie. <b>Vollbackup:</b> alle Daten. <b>Differentiell:</b> Änderungen seit dem letzten Vollbackup. <b>Inkrementell:</b> Änderungen seit dem letzten Backup.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne für Mo–Do, welche Dateien das differentielle und das inkrementelle Backup jeweils sichern.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Stimmt das?</h2></div>
+  <div id="tf"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ================= Speicherarten ================= */
+(() => {
+  const bits = [1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1];
+  const A = {
+    mag: ['Magnetisch', '<span class="tag">Festplatte (HDD), Magnetband</span><p>Auf einer drehenden Scheibe sind winzige Bereiche <b>magnetisiert</b> – in die eine oder andere Richtung (1 oder 0). Ein <b>Schreib-Lese-Kopf</b> schwebt über der Scheibe und liest oder ändert die Magnetisierung.</p>'],
+    opt: ['Optisch', '<span class="tag">CD, DVD, Blu-ray</span><p>Auf der Oberfläche gibt es Vertiefungen (<i>Pits</i>) und Flächen (<i>Lands</i>). Ein <b>Laserstrahl</b> wird unterschiedlich stark reflektiert – daraus entstehen 0 und 1. Kratzer stören die Reflexion, dann ist die CD nicht mehr lesbar.</p>'],
+    ele: ['Elektronisch', '<span class="tag">SSD, USB-Stick, Speicherkarte</span><p>In winzigen <b>Speicherzellen</b> wird elektrische Ladung eingeschlossen (geladen = 0, leer = 1 oder umgekehrt). Keine beweglichen Teile – deshalb schnell, leise und robust.</p>']
+  };
+  let mode = 'mag';
+  seg($('#art-seg'), Object.entries(A).map(([k, v]) => [k, v[0]]), k => { mode = k; $('#art-txt').innerHTML = A[k][1]; }, 'mag');
+  loopCanvas($('#art-cv'), 'arten', (c, w, h, t) => {
+    const n = bits.length, cw = (w - 20) / n, cy = h / 2;
+    c.font = '600 13px "IBM Plex Mono",monospace'; c.textAlign = 'center';
+    const head = (t * 1.6) % n;
+    bits.forEach((b, i) => {
+      const x = 10 + i * cw;
+      if (mode === 'mag') {
+        c.fillStyle = b ? '#B91C1C' : '#1D4ED8'; c.fillRect(x + 2, cy - 18, cw / 2 - 2, 36); c.fillStyle = b ? '#1D4ED8' : '#B91C1C'; c.fillRect(x + cw / 2, cy - 18, cw / 2 - 2, 36);
+        c.fillStyle = '#fff'; c.fillText(b ? 'N S' : 'S N', x + cw / 2, cy + 5);
+      } else if (mode === 'opt') {
+        c.fillStyle = '#A3A3A3'; c.fillRect(x, cy, cw, 16); if (!b) { c.fillStyle = '#525252'; c.fillRect(x + 4, cy, cw - 8, 8); }
+      } else {
+        c.strokeStyle = '#888'; c.strokeRect(x + 3, cy - 18, cw - 6, 36); if (!b) { for (let k = 0; k < 5; k++) { c.fillStyle = '#F59E0B'; c.beginPath(); c.arc(x + 8 + (k % 3) * (cw - 16) / 2, cy - 8 + Math.floor(k / 3) * 16, 3, 0, 7); c.fill(); } }
+      }
+      c.fillStyle = Math.floor(head) === i ? '#DC2626' : 'rgba(120,120,120,.9)'; c.fillText(b, x + cw / 2, cy + 44);
+    });
+    const hx = 10 + head * cw;
+    if (mode === 'mag') { c.fillStyle = '#374151'; c.fillRect(hx, cy - 50, 16, 26); c.fillRect(hx + 6, cy - 90, 4, 40); }
+    if (mode === 'opt') { c.strokeStyle = '#EF4444'; c.lineWidth = 3; c.beginPath(); c.moveTo(hx + 8, cy - 70); c.lineTo(hx + 8, cy); c.stroke(); c.lineWidth = 1; }
+    if (mode === 'ele') { c.fillStyle = '#DC2626'; c.beginPath(); c.moveTo(hx + cw / 2, cy - 30); c.lineTo(hx + cw / 2 - 7, cy - 42); c.lineTo(hx + cw / 2 + 7, cy - 42); c.fill(); }
+  });
+})();
+
+quizTable($('#cmp'), $('#cmp-q'), $('#cmp-a'));
+$$('#cmp td.q').forEach(td => td.classList.add('shown'));
+sorter($('#sort-art'), [{id: 'm', name: 'magnetisch'}, {id: 'o', name: 'optisch'}, {id: 'e', name: 'elektronisch'}], [
+  {t: 'Festplatte (HDD)', c: 'm'}, {t: 'Magnetband', c: 'm'}, {t: 'CD', c: 'o'}, {t: 'Blu-ray', c: 'o'},
+  {t: 'SSD', c: 'e'}, {t: 'USB-Stick', c: 'e'}, {t: 'Speicherkarte der Kamera', c: 'e'}, {t: 'Arbeitsspeicher', c: 'e'}
+]);
+
+/* ================= Backup-Simulator ================= */
+const BK = (() => {
+  const days = ['So', 'Mo', 'Di', 'Mi', 'Do'], files = ['Referat', 'Fotos', 'Musik', 'Mathe', 'Notizen'];
+  const ch = {Mo: ['Referat'], Di: ['Mathe'], Mi: ['Referat', 'Notizen'], Do: ['Fotos']};
+  function plan(type) {
+    const out = {So: files.slice()};
+    let since = new Set();
+    days.slice(1).forEach(d => {
+      ch[d].forEach(f => since.add(f));
+      if (type === 'voll') out[d] = files.slice();
+      else if (type === 'diff') out[d] = files.filter(f => since.has(f));
+      else { out[d] = ch[d].slice(); }
+    });
+    return out;
+  }
+  function show(type) {
+    const p = plan(type), total = Object.values(p).reduce((s, x) => s + x.length, 0);
+    $('#bk').innerHTML = `<thead><tr><th>Datei</th>${days.map(d => `<th>${d}${d === 'So' ? ' (voll)' : ''}</th>`).join('')}</tr></thead><tbody>` +
+      files.map(f => `<tr><th>${f}</th>${days.map(d => `<td>${(ch[d] || []).includes(f) ? '✏️ ' : ''}${p[d].includes(f) ? '<span class="pill ok">gesichert</span>' : '–'}</td>`).join('')}</tr>`).join('') + '</tbody>';
+    const need = type === 'voll' ? 'nur das Backup von Do' : type === 'diff' ? 'Vollbackup So + differentielles Backup Do' : 'Vollbackup So + alle inkrementellen Backups Mo, Di, Mi, Do';
+    $('#bk-status').innerHTML = `✏️ = an diesem Tag geändert. Gespeicherte Dateikopien insgesamt: <b>${total}</b>. Zum Wiederherstellen von Donnerstag brauchst du: <b>${need}</b>.`;
+  }
+  seg($('#bk-seg'), [['voll', 'Vollbackup täglich'], ['diff', 'Differentiell'], ['inkr', 'Inkrementell']], show, 'diff');
+  return {days};
+})();
+
+/* ================= Wiederherstellung ================= */
+(() => {
+  const need = {diff: ['So', 'Do'], inkr: ['So', 'Mo', 'Di', 'Mi', 'Do']};
+  let type = 'diff';
+  const build = () => { $('#rs').innerHTML = ['So (voll)', 'Mo', 'Di', 'Mi', 'Do'].map(d => `<button class="btn" data-d="${d.slice(0, 2)}" aria-pressed="false">${d}</button>`).join(''); $('#rs-status').textContent = 'Wähle die nötigen Backups aus.'; };
+  seg($('#rs-seg'), [['diff', 'differentiell'], ['inkr', 'inkrementell']], v => { type = v; build(); }, 'diff');
+  $('#rs').addEventListener('click', e => { const b = e.target.closest('[data-d]'); if (b) { const on = b.getAttribute('aria-pressed') !== 'true'; b.setAttribute('aria-pressed', on); b.classList.toggle('primary', on); } });
+  $('#rs-check').onclick = () => {
+    const sel = $$('#rs [aria-pressed="true"]').map(b => b.dataset.d), ok = sel.length === need[type].length && need[type].every(d => sel.includes(d));
+    $('#rs-status').innerHTML = ok ? `<b class="good">Richtig!</b> ${type === 'diff' ? 'Das differentielle Backup vom Donnerstag enthält alle Änderungen seit Sonntag.' : 'Jedes inkrementelle Backup enthält nur die Änderungen eines Tages – du brauchst die ganze Kette.'}`
+      : `<b class="bad">Noch nicht.</b> ${type === 'diff' ? 'Tipp: Das differentielle Backup sammelt alle Änderungen seit dem Vollbackup.' : 'Tipp: Fehlt ein Glied der Kette, fehlen Änderungen.'}`;
+  };
+})();
+
+trueFalse($('#tf'), [
+  {t: 'Der Arbeitsspeicher ist ein flüchtiger Speicher.', ok: true},
+  {t: 'Eine CD speichert Daten magnetisch.', ok: false, why: 'Sie wird optisch mit einem Laser gelesen.'},
+  {t: 'Eine SSD hat keine beweglichen Teile.', ok: true},
+  {t: 'Ein inkrementelles Backup sichert alle Daten.', ok: false, why: 'Nur die Änderungen seit dem letzten Backup.'},
+  {t: 'Ein Backup auf einem USB-Stick in derselben Tasche wie der Laptop ist sehr sicher.', ok: false, why: 'Bei Diebstahl ist beides weg. Backups getrennt aufbewahren!'},
+  {t: 'Beim Speichern wird ein Dokument in Binärcode übersetzt.', ok: true}
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Womit liest eine Festplatte (HDD) die Daten?', a: ['mit einem Schreib-Lese-Kopf', 'mit einem Laser', 'mit einer Kamera', 'mit einem Mikrofon'], ok: 0},
+  {q: 'Was sichert ein differentielles Backup?', a: ['alle Änderungen seit dem letzten Vollbackup', 'alle Daten', 'nur die Änderungen seit gestern', 'nur Fotos'], ok: 0},
+  {q: 'Welcher Speicher ist extern?', a: ['USB-Stick', 'Arbeitsspeicher', 'eingebaute SSD', 'Prozessor-Cache'], ok: 0},
+  {q: 'Warum kann eine zerkratzte CD unlesbar werden?', a: ['Der Laser wird nicht mehr richtig reflektiert.', 'Die Magnetisierung geht verloren.', 'Die Ladung entweicht.', 'Der Akku ist leer.'], ok: 0},
+  {q: 'Welche Backup-Art braucht am wenigsten Speicherplatz?', a: ['inkrementell', 'Vollbackup', 'differentiell', 'alle gleich'], ok: 0}
+]);
+</script>

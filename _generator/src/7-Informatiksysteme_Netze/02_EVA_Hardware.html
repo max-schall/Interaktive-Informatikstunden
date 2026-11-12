@@ -1,0 +1,237 @@
+<!--
+title: Informatiksysteme und das EVA-Prinzip
+short: EVA & Hardware
+time: 2 Unterrichtsstunden
+q: Woraus besteht ein Informatiksystem und wie verarbeitet es Daten?
+facts: Informatiksystem: Hardware, Software, Netzwerkkomponenten | EVA-Prinzip: Eingabe, Verarbeitung, Ausgabe (+ Speicherung) | Tastatur und Touchscreen als Eingabegeräte, LCD und OLED | Komponenten: Prozessor (CPU), Arbeitsspeicher (RAM), Festplatte/SSD, Grafikkarte, Hauptplatine, Netzteil
+inter: Hardware oder Software? · EVA-Fließband mit Alltagsbeispielen · Tastendruck Schritt für Schritt · Touchscreen-Simulation · Laptop zerlegen (Erkunden/Finden) · Programm starten: Weg der Daten
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Informatiksysteme und Netze</p>
+      <h1>Informatiksysteme und EVA<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Smartphone, Laptop, Spielekonsole und Tablet sehen verschieden aus – sie sind aber alle <b>Informatiksysteme</b> und arbeiten nach demselben Prinzip.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Ist ein Wasserhahn ein Informatiksystem? Und ein Fernseher?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Woraus besteht ein Informatiksystem und wie verarbeitet es Daten?</p></div>
+      <div class="controls"><button class="btn primary" data-go="system">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="system" data-label="Informatiksystem" data-yr="Einstieg" data-title="Informatiksysteme" data-sub="Hardware, Software, Netzwerk">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Informatiksysteme</p>
+    <h2>Drei Bestandteile</h2>
+    <p class="lead">Jedes Informatiksystem soll Aufgaben für seine Nutzer lösen. Dafür braucht es <b>Hardware</b> und <b>Software</b> – und oft <b>Netzwerkkomponenten</b>.</p>
+  </div>
+  <div class="cols-3">
+    <div class="box"><span class="tag info">Hardware</span><p>Das Gerät mit seinen Bauteilen: außen Gehäuse, Bildschirm, Tasten, Anschlüsse; innen Prozessor, Arbeitsspeicher, Akku, Grafikkarte … Hardware kann man <b>anfassen</b>.</p></div>
+    <div class="box"><span class="tag info">Software</span><p>Alle Programme: Spiele, Browser, Textverarbeitung. Eine besondere Software ist das <b>Betriebssystem</b>, das beim Start geladen wird. Software <b>steuert</b> die Hardware und kann nicht angefasst werden.</p></div>
+    <div class="box"><span class="tag info">Netzwerkkomponenten</span><p>Netzwerkkarte, WLAN- oder Mobilfunkmodul verbinden Geräte zu einem <b>Netzwerk</b>. Das größte Netzwerk ist das <b>Internet</b>.</p></div>
+  </div>
+  <h3 class="mt">Hardware, Software oder Netzwerk? Sortiere.</h3>
+  <div id="sort-hs"></div>
+</section>
+
+<section class="station" id="eva" data-label="EVA-Prinzip" data-yr="Erarbeitung" data-title="Das EVA-Prinzip" data-sub="Eingabe – Verarbeitung – Ausgabe">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Das EVA-Prinzip</p>
+    <h2>Eingabe → Verarbeitung → Ausgabe</h2>
+    <p class="lead">Computer arbeiten nach dem <b>EVA-Prinzip</b>. Ohne Eingabe können die Folgeschritte nicht ablaufen; die Ausgabe kann erst nach der Verarbeitung erfolgen. Zusätzlich werden Daten oft <b>gespeichert</b>.</p>
+  </div>
+  <div class="vis">
+    <div class="vis-head"><h3>EVA-Fließband</h3><div id="eva-seg"></div></div>
+    <div id="pipe"></div>
+    <p class="status" id="pipe-status"></p>
+  </div>
+</section>
+
+<section class="station" id="eingabe" data-label="Tastatur & Touch" data-yr="Vertiefung" data-title="Eingabegeräte" data-sub="Tastatur und Touchscreen">
+  <div class="section-head"><p class="eyebrow">Station 3 · Eingabegeräte</p><h2>Tastatur und Touchscreen</h2></div>
+  <div class="cols-2">
+    <div class="vis">
+      <div class="vis-head"><h3>⌨ Was passiert beim Tastendruck?</h3></div>
+      <svg viewBox="0 0 320 170" class="net-svg" id="key-svg"></svg>
+      <div id="key-step"></div>
+      <p class="status" id="key-status"></p>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>👆 Touchscreen</h3><span class="note">Tippe auf das Raster</span></div>
+      <canvas id="touch" style="width:100%;height:12rem;display:block;border:1.5px solid var(--edge);border-radius:4px;cursor:crosshair;touch-action:none"></canvas>
+      <p class="status" id="touch-status">Unter dem Glas liegt ein Raster aus Leiterbahnen. Der Finger ist leitfähig und verändert die Ladung an den Kreuzungspunkten.</p>
+    </div>
+  </div>
+  <div class="grid-2 mt">
+    <div class="box"><span class="tag">LCD</span><p>Flüssigkristalle vor einer Hintergrundbeleuchtung drehen sich bei Spannung und lassen mehr oder weniger Licht in Rot, Grün und Blau durch.</p></div>
+    <div class="box"><span class="tag">OLED</span><p>Jeder Bildpunkt ist eine eigene Leuchtdiode – keine Hintergrundbeleuchtung nötig, sattes Schwarz, sehr dünn. Die Farben können mit der Zeit nachlassen.</p></div>
+  </div>
+</section>
+
+<section class="station" id="komponenten" data-label="Komponenten" data-yr="Erarbeitung" data-title="Der Computer" data-sub="Komponenten eines Laptops">
+  <div class="section-head"><p class="eyebrow">Station 4 · Der Computer</p><h2>Ein Laptop von innen</h2><p class="lead">Die Hardware-Bauteile eines Computers heißen <b>Komponenten</b>. Tippe sie an.</p></div>
+  <div class="model">
+    <div class="vis">
+      <div class="vis-head"><h3>Laptop von innen</h3><div id="lap-mode"></div></div>
+      <svg viewBox="0 0 400 260" class="lap-svg" id="lap">
+        <rect x="10" y="10" width="380" height="240" rx="12" class="lap-case"/>
+        <rect data-part="board" x="30" y="30" width="230" height="150" rx="6" class="lp lp-board"/>
+        <rect data-part="cpu" x="60" y="55" width="54" height="54" rx="4" class="lp"/><text x="87" y="87" text-anchor="middle">CPU</text>
+        <circle data-part="fan" cx="200" cy="80" r="34" class="lp"/><text x="200" y="85" text-anchor="middle">Lüfter</text>
+        <rect data-part="ram" x="130" y="125" width="110" height="22" rx="3" class="lp"/><text x="185" y="140" text-anchor="middle">RAM</text>
+        <rect data-part="gpu" x="60" y="125" width="54" height="40" rx="3" class="lp"/><text x="87" y="150" text-anchor="middle">GPU</text>
+        <rect data-part="ssd" x="280" y="40" width="90" height="34" rx="3" class="lp"/><text x="325" y="62" text-anchor="middle">SSD</text>
+        <rect data-part="wlan" x="280" y="90" width="90" height="28" rx="3" class="lp"/><text x="325" y="109" text-anchor="middle">WLAN</text>
+        <rect data-part="akku" x="30" y="195" width="340" height="40" rx="5" class="lp"/><text x="200" y="220" text-anchor="middle">Akku</text>
+        <rect data-part="port" x="280" y="135" width="90" height="40" rx="3" class="lp"/><text x="325" y="160" text-anchor="middle">USB/HDMI</text>
+      </svg>
+    </div>
+    <div class="stack">
+      <div class="box" id="lap-info" aria-live="polite"></div>
+      <div class="box"><span class="tag">Peripherie</span><p>Geräte, die von außen angeschlossen werden (Maus, Monitor, Drucker, Kopfhörer), heißen <b>Peripheriegeräte</b>. Beim Laptop sind Tastatur, Bildschirm und Webcam fest eingebaut.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Programm starten" data-yr="M1" data-title="Ein Programm starten" data-sub="Zusammenspiel der Komponenten">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1</p>
+    <h2>Was passiert beim Doppelklick?</h2>
+    <p class="lead">Beim Öffnen eines Programms arbeiten die Komponenten zusammen. Schritt für Schritt:</p>
+  </div>
+  <div class="model">
+    <div class="vis">
+      <div class="flow-line" id="run-flow"></div>
+      <div id="run-step"></div>
+      <p class="status" id="run-status"></p>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Zusammenspiel</h3></header><p>Beschreibe, wie die Komponenten beim Aufrufen eines Programms zusammenarbeiten.</p>
+        <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Die Maus meldet den Doppelklick, der Prozessor lädt das Programm von der SSD in den Arbeitsspeicher, holt sich dort die Anweisungen und führt sie aus. Die Grafikkarte berechnet das Bild, der Monitor zeigt das Programmfenster an.</p></div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Warum RAM?</h3></header><p>Erkläre, warum Daten im Arbeitsspeicher schneller abgerufen werden können als von der Festplatte.</p>
+        <div class="controls"><button class="btn" data-reveal="m1b" aria-expanded="false">Lösung</button></div><p class="solution" id="m1b" hidden>Der RAM ist das „Kurzzeitgedächtnis“: Er enthält nur die Daten, mit denen der Prozessor gerade arbeitet, und ist direkt mit ihm verbunden. Auf der Festplatte („Langzeitgedächtnis“) müssen die Daten erst aus einem großen Lager herausgesucht werden.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Informatiksysteme</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Informatiksysteme und das EVA-Prinzip</h3><span>Informatik · Klasse 7</span></div>
+      <div class="eva-mini"><span class="e">E<small>Eingabe</small></span><i>→</i><span class="v">V<small>Verarbeitung</small></span><i>→</i><span class="a">A<small>Ausgabe</small></span></div>
+      <ol>
+        <li data-step>Ein <b>Informatiksystem</b> besteht aus <b>Hardware</b> (anfassbar), <b>Software</b> (Programme, Betriebssystem) und oft <b>Netzwerkkomponenten</b>.</li>
+        <li data-step><b>EVA-Prinzip:</b> Daten werden <b>eingegeben</b> (Tastatur, Touchscreen, Mikrofon), <b>verarbeitet</b> (Prozessor) und <b>ausgegeben</b> (Bildschirm, Lautsprecher, Drucker); zusätzlich oft gespeichert.</li>
+        <li data-step><b>Prozessor (CPU):</b> steuert alle Abläufe und rechnet. <b>Arbeitsspeicher (RAM):</b> schnelles Kurzzeitgedächtnis, wird beim Ausschalten gelöscht.</li>
+        <li data-step><b>Festplatte/SSD:</b> Langzeitgedächtnis. <b>Grafikkarte:</b> berechnet Bilder. <b>Hauptplatine:</b> verbindet alle Komponenten. <b>Netzteil/Akku:</b> Stromversorgung.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Beispiel</span><p>Zerlege „Ich suche mit der Karten-App einen Ort“ in Eingabe, Verarbeitung und Ausgabe.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Ein- oder Ausgabe? Und das Quiz</h2></div>
+  <div id="sort-ea"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+sorter($('#sort-hs'), [{id: 'h', name: 'Hardware'}, {id: 's', name: 'Software'}, {id: 'n', name: 'Netzwerkkomponente'}], [
+  {t: 'Prozessor', c: 'h'}, {t: 'Controller der Spielekonsole', c: 'h'}, {t: 'Akku', c: 'h'},
+  {t: 'Betriebssystem', c: 's'}, {t: 'Internetbrowser', c: 's'}, {t: 'Fußballspiel', c: 's'},
+  {t: 'WLAN-Modul', c: 'n'}, {t: 'Netzwerkkarte', c: 'n'}
+]);
+
+pipeline($('#pipe'), $('#eva-seg'), $('#pipe-status'), [
+  {name: 'Karten-App', e: ['👆', 'Touchscreen', 'Ortsname „Freibad“'], v: ['🧠', 'Prozessor', 'sucht Ort, berechnet Route'], a: ['🗺', 'Bildschirm', 'Karte mit Route'], text: 'Du tippst den Ort ein, die App sucht ihn und zeigt die Route an.'},
+  {name: 'Sprachnachricht', e: ['🎤', 'Mikrofon', 'deine Stimme'], v: ['🧠', 'Prozessor', 'wandelt in Audiodatei um'], a: ['🔊', 'Lautsprecher', 'Nachricht beim Empfänger'], text: 'Die Stimme wird digitalisiert, verschickt und beim Empfänger ausgegeben.'},
+  {name: 'Kassenscanner', e: ['▮▯▮', 'Scanner', 'Strichcode'], v: ['🖥', 'Kassenrechner', 'Preis suchen, addieren'], a: ['🧾', 'Drucker + Display', 'Bon und Summe'], text: 'Der Strichcode wird eingelesen, der Preis gesucht und auf dem Bon ausgegeben.'},
+  {name: 'Videocall', e: ['📷', 'Kamera + Mikrofon', 'Bild und Ton'], v: ['🧠', 'Prozessor', 'komprimiert, verschickt'], a: ['🖥', 'Bildschirm + Lautsprecher', 'die anderen sehen dich'], text: 'Headset und Touchscreen sind Ein- und Ausgabegerät zugleich.'}
+]);
+
+/* ================= Tastendruck ================= */
+(() => {
+  const S = [
+    ['Taste in Ruheposition', 'Eine Gumminoppe hält die Taste oben. Die zwei Folien mit Leiterbahnen berühren sich nicht.', 0],
+    ['Taste wird gedrückt', 'Die Taste drückt die beiden Folien durch ein Loch in der Zwischenfolie zusammen.', 1],
+    ['Stromkreis geschlossen', 'Die Leiterbahnen berühren sich, der Stromkreis schließt sich.', 2],
+    ['Signal an den Computer', 'Ein Chip erkennt, welche Taste gedrückt wurde, und sendet eine eindeutige Zahl (Scancode) an den Computer.', 3]
+  ];
+  function draw(k) {
+    const d = k >= 1 ? 16 : 0;
+    $('#key-svg').innerHTML = `<rect x="110" y="${20 + d}" width="100" height="36" rx="6" fill="var(--surface-2)" stroke="var(--edge)" stroke-width="2"/><text x="160" y="${44 + d}" text-anchor="middle" style="font-size:16px;font-weight:700">A</text>
+      <rect x="148" y="${56 + d}" width="24" height="${30 - d}" rx="6" fill="#6B7280"/>
+      <line x1="40" x2="280" y1="${k >= 2 ? 100 : 92}" y2="${k >= 2 ? 100 : 92}" stroke="${k >= 2 ? 'var(--good)' : 'var(--ink-2)'}" stroke-width="4"/>
+      <line x1="40" x2="280" y1="104" y2="104" stroke="${k >= 2 ? 'var(--good)' : 'var(--ink-2)'}" stroke-width="4"/>
+      <text x="40" y="84">obere Folie</text><text x="40" y="122">untere Folie</text>
+      ${k >= 3 ? '<rect x="230" y="130" width="80" height="28" rx="4" fill="var(--accent)"/><text x="270" y="149" text-anchor="middle" style="fill:var(--accent-ink);font-weight:700">0x1E →</text>' : ''}`;
+    $('#key-status').innerHTML = `<b>${S[k][0]}:</b> ${S[k][1]}`;
+  }
+  stepper($('#key-step'), S.length, draw);
+})();
+
+/* ================= Touchscreen ================= */
+(() => {
+  const cv = $('#touch'); let hit = null;
+  loopCanvas(cv, 'eingabe', (ctx, w, h, t) => {
+    const n = 12, gx = w / n, gy = h / 6;
+    ctx.lineWidth = 1;
+    for (let i = 0; i <= n; i++) { ctx.strokeStyle = 'rgba(100,140,150,.45)'; ctx.beginPath(); ctx.moveTo(i * gx, 0); ctx.lineTo(i * gx, h); ctx.stroke(); }
+    for (let j = 0; j <= 6; j++) { ctx.strokeStyle = 'rgba(180,120,60,.45)'; ctx.beginPath(); ctx.moveTo(0, j * gy); ctx.lineTo(w, j * gy); ctx.stroke(); }
+    if (hit) {
+      const [x, y] = hit;
+      for (let i = 0; i <= n; i++) for (let j = 0; j <= 6; j++) {
+        const d = Math.hypot(i * gx - x, j * gy - y); if (d < 45) { ctx.fillStyle = `rgba(220,38,38,${1 - d / 45})`; ctx.beginPath(); ctx.arc(i * gx, j * gy, 5, 0, 7); ctx.fill(); }
+      }
+      ctx.strokeStyle = '#DC2626'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(x, y, 8 + 4 * Math.sin(t * 6), 0, 7); ctx.stroke();
+    }
+  });
+  cv.addEventListener('pointerdown', e => {
+    const r = cv.getBoundingClientRect(); hit = [e.clientX - r.left, e.clientY - r.top];
+    $('#touch-status').innerHTML = `An den rot markierten Kreuzungen ändert sich die Ladung. Der Mikroprozessor berechnet daraus das Zentrum der Fingerspitze: <b>x = ${Math.round(hit[0] / r.width * 1080)}, y = ${Math.round(hit[1] / r.height * 600)}</b>.`;
+  });
+})();
+
+/* ================= Laptop ================= */
+explorer($('#lap'), $('#lap-info'), [
+  {id: 'cpu', n: 'Prozessor (CPU)', t: '<b>Central Processing Unit</b> – das „Herz“ des Computers. Er steuert alle Abläufe, rechnet und gibt Anweisungen an die anderen Komponenten. Je leistungsstärker, desto schneller laufen Prozesse ab.'},
+  {id: 'fan', n: 'Lüfter', t: 'Der Prozessor setzt viel Wärme frei. Der Lüfter kühlt ihn, damit die Temperatur nicht zu stark ansteigt.'},
+  {id: 'ram', n: 'Arbeitsspeicher (RAM)', t: '<b>Random Access Memory</b> – das Kurzzeitgedächtnis. Enthält die Daten, mit denen der Prozessor gerade arbeitet. Sehr schneller Zugriff; beim Herunterfahren wird alles gelöscht.'},
+  {id: 'gpu', n: 'Grafikeinheit', t: 'Berechnet die Bilder für den Bildschirm. In Laptops ist oft keine eigene Grafikkarte, sondern eine kleinere Grafikeinheit auf der Hauptplatine verbaut.'},
+  {id: 'ssd', n: 'SSD (Festplatte)', t: 'Das Langzeitgedächtnis (<b>Solid State Drive</b>, früher HDD). Große Speicherkapazität; Daten bleiben nach dem Ausschalten erhalten.'},
+  {id: 'wlan', n: 'WLAN-Modul', t: 'Die Netzwerkkomponente: organisiert das Senden und Empfangen von Daten per Funk.'},
+  {id: 'board', n: 'Hauptplatine', t: 'Verbindet über Leiterbahnen alle Komponenten miteinander und hat Steckplätze und Anschlüsse.'},
+  {id: 'akku', n: 'Akku', t: 'Versorgt den Laptop unterwegs mit elektrischer Energie; geladen wird er über ein externes Netzteil.'},
+  {id: 'port', n: 'Anschlüsse', t: 'USB, HDMI, Kopfhörer: Hier werden Peripheriegeräte angeschlossen.'}
+], {modeRoot: $('#lap-mode'), intro: 'Tippe eine Komponente an.', label: 'Komponente'});
+
+/* ================= Programm starten ================= */
+(() => {
+  const B = [['🖱', 'Maus'], ['🧠', 'CPU'], ['💽', 'SSD'], ['▤', 'RAM'], ['🎨', 'GPU'], ['🖥', 'Monitor']];
+  $('#run-flow').innerHTML = B.map(([i, n], k) => `<div class="fl-box" data-k="${k}" style="flex:1 1 5rem;align-items:center"><b style="font-size:1.5rem">${i}</b><small>${n}</small></div>`).join('');
+  const S = [[0, 'Doppelklick: Die Maus meldet „Programm öffnen“ an den Computer.'], [1, 'Der Prozessor erhält den Befehl und fordert das Programm an.'], [2, 'Das Programm wird von der SSD gelesen …'], [3, '… und als Kopie in den Arbeitsspeicher geladen.'], [1, 'Der Prozessor holt sich die Programmanweisungen aus dem RAM und führt sie aus.'], [4, 'Die Grafikeinheit berechnet das Bild des Programmfensters.'], [5, 'Der Monitor stellt das Programm dar.']];
+  stepper($('#run-step'), S.length, k => {
+    $$('#run-flow .fl-box').forEach(b => b.classList.toggle('acc', +b.dataset.k === S[k][0]));
+    $('#run-status').textContent = S[k][1];
+  });
+})();
+
+sorter($('#sort-ea'), [{id: 'e', name: 'Eingabegerät'}, {id: 'a', name: 'Ausgabegerät'}, {id: 'ea', name: 'Ein- und Ausgabe'}], [
+  {t: 'Tastatur', c: 'e'}, {t: 'Mikrofon', c: 'e'}, {t: 'Webcam', c: 'e'}, {t: 'Scanner', c: 'e'},
+  {t: 'Drucker', c: 'a'}, {t: 'Lautsprecher', c: 'a'}, {t: 'Beamer', c: 'a'},
+  {t: 'Touchscreen', c: 'ea', why: 'Tippen und Anzeigen'}, {t: 'Headset', c: 'ea', why: 'Mikrofon und Kopfhörer'}
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Wofür steht EVA?', a: ['Eingabe, Verarbeitung, Ausgabe', 'Erfassen, Verschicken, Anzeigen', 'Einschalten, Verbinden, Ausschalten', 'Eingabe, Verbindung, Antwort'], ok: 0},
+  {q: 'Welche Komponente steuert alle Abläufe im Computer?', a: ['der Prozessor (CPU)', 'der Arbeitsspeicher', 'der Akku', 'die Hauptplatine'], ok: 0},
+  {q: 'Was passiert mit den Daten im RAM beim Ausschalten?', a: ['Sie werden gelöscht.', 'Sie bleiben erhalten.', 'Sie wandern in die Cloud.', 'Sie werden gedruckt.'], ok: 0},
+  {q: 'Was gehört zur Software?', a: ['das Betriebssystem', 'die Grafikkarte', 'das Gehäuse', 'der Lüfter'], ok: 0},
+  {q: 'Wie erkennt ein Touchscreen den Finger?', a: ['Der leitfähige Finger verändert die Ladung im Leiterbahn-Raster.', 'Durch eine eingebaute Kamera.', 'Durch die Wärme des Fingers.', 'Durch Druck auf eine Waage.'], ok: 0},
+  {q: 'Was ist ein Peripheriegerät?', a: ['ein von außen angeschlossenes Gerät, z. B. Maus', 'ein Teil der Hauptplatine', 'ein Programm', 'ein Speicherchip'], ok: 0}
+]);
+</script>

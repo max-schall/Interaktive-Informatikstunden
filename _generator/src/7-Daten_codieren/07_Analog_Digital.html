@@ -1,0 +1,180 @@
+<!--
+title: Analoge und digitale Daten
+short: Analog & digital
+time: 1–2 Unterrichtsstunden
+q: Wie wird aus einem analogen Signal eine Folge von Nullen und Einsen?
+facts: Analoge Signale sind kontinuierlich, digitale Signale haben diskrete Werte | Digitalisierung: Abtasten in festen Zeitabständen (Abtastrate in Hz) und Messwerte als Dualzahlen speichern | Mehr Messpunkte und mehr Bits → näher am Original, aber mehr Speicher | Audioformate WAV und MP3 | Analoge und digitale Geräte im Alltag
+inter: Schwingung abtasten mit Reglern für Abtastrate und Bittiefe · Messwerte als Binärzahlen · Speicherbedarf einer Aufnahme berechnen · Analog oder digital? sortieren
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Daten und ihre Codierung</p>
+      <h1>Analoge und digitale Daten<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Im Tonstudio singt jemand ins Mikrofon. Die Stimme ist eine Schwingung der Luft – der Computer speichert aber nur Nullen und Einsen. Wie passt das zusammen?</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Uhr mit Zeigern oder Digitaluhr – was ist der Unterschied?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie wird aus einem analogen Signal eine Folge von Nullen und Einsen?</p></div>
+      <div class="controls"><button class="btn primary" data-go="signale">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="signale" data-label="Signale" data-yr="Erarbeitung" data-title="Analog und digital" data-sub="Kontinuierlich und diskret">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Analoge und digitale Signale</p>
+    <h2>Fließend oder in Stufen</h2>
+  </div>
+  <div class="cols-2">
+    <div class="box"><span class="tag info">Analog</span><p>Töne entstehen durch Schwingungen: Druckschwankungen der Luft. Das Signal verändert sich <b>gleichmäßig</b> und kann jeden Zwischenwert annehmen: Es ist <b>kontinuierlich</b>. Ein Kassettenrekorder zeichnete solche Signale analog auf.</p></div>
+    <div class="box"><span class="tag info">Digital</span><p>Ein Computer hat nur endlich viele Bits. Er kann nur eine <b>zählbare Anzahl</b> von Werten speichern – sogenannte <b>diskrete Werte</b>. Zwischen zwei Werten gibt es nichts.</p></div>
+  </div>
+  <h3 class="mt">Analog oder digital? Sortiere.</h3>
+  <div id="sort-ad"></div>
+</section>
+
+<section class="station" id="abtasten" data-label="Abtasten" data-yr="Erarbeitung" data-title="Digitalisieren" data-sub="Abtastrate und Bittiefe">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Daten digitalisieren</p>
+      <h2>Messen, runden, speichern</h2>
+      <ol class="facts" style="list-style:decimal;padding-left:1.4rem">
+        <li><b>Abtasten:</b> In festen Zeitabständen wird der Wert des Signals gemessen. Die <b>Abtastrate</b> wird in Hertz angegeben (1 Hz = 1 Messung pro Sekunde). CD-Qualität: 44 100 Hz.</li>
+        <li><b>Runden:</b> Jeder Messwert wird auf eine der verfügbaren Stufen gerundet. Die Anzahl der Stufen hängt von der <b>Bittiefe</b> ab (3 Bit → 8 Stufen).</li>
+        <li><b>Codieren:</b> Jede Stufe wird als Dualzahl gespeichert.</li>
+      </ol>
+      <p>Die Werte zwischen den Messpunkten gehen verloren. Je mehr Messpunkte und Stufen, desto näher am Original.</p>
+    </div>
+    <div class="vis">
+      <canvas id="ad" style="width:100%;height:15rem;display:block"></canvas>
+      <label class="slider-row">Messpunkte <input id="ad-n" type="range" min="4" max="64" value="12"><output id="ad-no" class="mono"></output></label>
+      <label class="slider-row">Bittiefe <input id="ad-b" type="range" min="1" max="6" value="3"><output id="ad-bo" class="mono"></output></label>
+      <p class="mono note" id="ad-bits" style="word-break:break-all;font-size:.8rem"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="speicher" data-label="Speicherbedarf" data-yr="Erarbeitung" data-title="Speicherbedarf" data-sub="WAV und MP3">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Speicherbedarf</p>
+      <h2>Qualität kostet Speicher</h2>
+      <div class="merke">Speicherbedarf = Abtastrate × Bittiefe × Kanäle × Dauer (in Sekunden), dann durch 8 → Byte.</div>
+      <ul class="facts">
+        <li>Eine <b>WAV</b>-Datei speichert alle Messwerte unkomprimiert.</li>
+        <li>Eine <b>MP3</b>-Datei ist verlustbehaftet komprimiert und braucht nur etwa <b>ein Zehntel</b> des Speicherplatzes. Kleinere Abweichungen fallen kaum auf, weil unsere Wahrnehmung begrenzt ist.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Speicherrechner</h3></div>
+      <label class="slider-row">Abtastrate <select id="sp-r" class="text-in" style="font-size:1rem"><option value="8000">8 000 Hz (Telefon)</option><option value="22050">22 050 Hz (Radio)</option><option value="44100" selected>44 100 Hz (CD)</option><option value="96000">96 000 Hz (Studio)</option></select></label>
+      <label class="slider-row">Bittiefe <select id="sp-b" class="text-in" style="font-size:1rem"><option>8</option><option selected>16</option><option>24</option></select></label>
+      <label class="slider-row">Kanäle <select id="sp-k" class="text-in" style="font-size:1rem"><option value="1">1 (Mono)</option><option value="2" selected>2 (Stereo)</option></select></label>
+      <label class="slider-row">Dauer <input id="sp-d" type="range" min="10" max="600" step="10" value="240"><output id="sp-do" class="mono"></output></label>
+      <p class="status" id="sp-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Geräte" data-yr="M1" data-title="Analog oder digital?" data-sub="Geräte vergleichen">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Viele Geräte gibt es zweimal</h2>
+    <p class="lead">Uhr, Thermometer, Waage, Kamera: Viele Geräte gibt es mit analoger und mit digitaler Anzeige.</p>
+  </div>
+  <div class="grid-2">
+    <div class="vis"><div class="vis-head"><h3>Zwei Uhren</h3></div><div class="clocks"><svg viewBox="0 0 120 120" id="clk-a" class="clock"></svg><div class="digi mono" id="clk-d"></div></div><p class="note">Die analoge Uhr zeigt die Zeit kontinuierlich, die digitale springt in Schritten.</p></div>
+    <div class="stack">
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Vor- und Nachteile</h3></header><p>Beschreibe Vor- und Nachteile analoger und digitaler Anzeigen.</p>
+        <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Analog: Tendenzen und Zwischenwerte schnell erkennbar, keine Batterie nötig (bei mechanischen Geräten), aber Ablesen ungenauer. Digital: exakt ablesbar, Werte speicherbar und weiterverarbeitbar, aber nur in Stufen und meist mit Strom.</p></div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Messpunkte</h3></header><p>Begründe, weshalb die Zahl der Messpunkte Einfluss auf die Qualität des digitalen Signals hat.</p>
+        <div class="controls"><button class="btn" data-reveal="m1b" aria-expanded="false">Lösung</button></div><p class="solution" id="m1b" hidden>Zwischen den Messpunkten gehen die Werte verloren. Bei wenigen Messpunkten werden schnelle Änderungen (hohe Töne) nicht erfasst und die Kurve wird eckig. Mit mehr Messpunkten kommt das digitale Signal dem Original näher – braucht aber mehr Speicher.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Analog und digital</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Analoge und digitale Daten</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step><b>Analoge Signale</b> verändern sich kontinuierlich und können jeden Zwischenwert annehmen. <b>Digitale Signale</b> haben nur endlich viele, <b>diskrete</b> Werte.</li>
+        <li data-step><b>Digitalisieren:</b> Das Signal wird in festen Abständen <b>abgetastet</b> (Abtastrate in Hz), jeder Messwert auf eine Stufe gerundet und als <b>Dualzahl</b> gespeichert.</li>
+        <li data-step>Mehr Messpunkte und mehr Bits pro Wert → bessere Qualität, aber mehr Speicherbedarf. Werte zwischen den Messpunkten gehen verloren.</li>
+        <li data-step>WAV speichert unkomprimiert, MP3 verlustbehaftet komprimiert (ca. ein Zehntel der Größe).</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne eine Schwingung und darunter die gestufte digitale Version mit 8 Messpunkten.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Analog und digital</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+sorter($('#sort-ad'), [{id: 'a', name: 'analog'}, {id: 'd', name: 'digital'}], [
+  {t: 'Schallwelle in der Luft', c: 'a'}, {t: 'Zeigeruhr', c: 'a'}, {t: 'Schallplatte', c: 'a'}, {t: 'Quecksilber-Thermometer', c: 'a'},
+  {t: 'MP3-Datei', c: 'd'}, {t: 'Handyfoto', c: 'd'}, {t: 'Digitalwaage', c: 'd'}, {t: 'Streaming-Video', c: 'd'}
+]);
+
+/* ================= Abtasten ================= */
+(() => {
+  const cv = $('#ad'), sig = t => .55 * Math.sin(2 * Math.PI * t * 1.5) + .3 * Math.sin(2 * Math.PI * t * 4 + 1);
+  function draw() {
+    const n = +$('#ad-n').value, bits = +$('#ad-b').value, L = 2 ** bits;
+    $('#ad-no').textContent = n; $('#ad-bo').textContent = `${bits} Bit = ${L} Stufen`;
+    const dpr = Math.min(devicePixelRatio || 1, 2), w = cv.clientWidth || 400, h = cv.clientHeight || 240;
+    cv.width = w * dpr; cv.height = h * dpr; const c = cv.getContext('2d'); c.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const css = getComputedStyle(document.documentElement), ink = css.getPropertyValue('--ink-2'), acc = css.getPropertyValue('--accent'), line = css.getPropertyValue('--line');
+    const X = t => 10 + t * (w - 20), Y = v => h / 2 - v * (h / 2 - 12);
+    c.strokeStyle = line; c.lineWidth = 1;
+    for (let k = 0; k <= L; k++) { const y = Y(-1 + 2 * k / L); c.beginPath(); c.moveTo(10, y); c.lineTo(w - 10, y); c.stroke(); }
+    c.strokeStyle = ink; c.lineWidth = 2; c.beginPath(); for (let i = 0; i <= 300; i++) { const t = i / 300; i ? c.lineTo(X(t), Y(sig(t))) : c.moveTo(X(t), Y(sig(t))); } c.stroke();
+    const q = v => { const k = clamp(Math.round((v + 1) / 2 * (L - 1)), 0, L - 1); return [k, -1 + 2 * k / (L - 1)]; };
+    const pts = [...Array(n)].map((_, i) => { const t = i / (n - 1); return [t, ...q(sig(t))]; });
+    c.strokeStyle = acc; c.lineWidth = 3; c.beginPath(); pts.forEach(([t, k, v], i) => { const x = X(t); if (!i) c.moveTo(x, Y(v)); else { c.lineTo(x, Y(pts[i - 1][2])); c.lineTo(x, Y(v)); } }); c.stroke();
+    c.fillStyle = acc; pts.forEach(([t, k, v]) => { c.beginPath(); c.arc(X(t), Y(v), 4, 0, 7); c.fill(); });
+    $('#ad-bits').textContent = pts.map(p => p[1].toString(2).padStart(bits, '0')).join(' ') + `  →  ${n * bits} Bit`;
+  }
+  $('#ad-n').oninput = draw; $('#ad-b').oninput = draw; onShow.push(id => id === "abtasten" && draw());
+  new ResizeObserver(draw).observe(cv); draw();
+})();
+
+/* ================= Speicherrechner ================= */
+(() => {
+  const upd = () => {
+    const r = +$('#sp-r').value, b = +$('#sp-b').value, k = +$('#sp-k').value, d = +$('#sp-d').value;
+    $('#sp-do').textContent = `${Math.floor(d / 60)}:${String(d % 60).padStart(2, '0')} min`;
+    const byte = r * b * k * d / 8;
+    $('#sp-st').innerHTML = `${r.toLocaleString('de-DE')} × ${b} × ${k} × ${d} : 8 = <b>${numDE(byte / 1e6, 1)} MB</b> als WAV · als MP3 etwa <b>${numDE(byte / 1e7, 1)} MB</b>`;
+  };
+  ['sp-r', 'sp-b', 'sp-k'].forEach(id => $('#' + id).onchange = upd); $('#sp-d').oninput = upd; upd();
+})();
+
+/* ================= Uhren ================= */
+(() => {
+  const a = $('#clk-a');
+  function tick() {
+    const d = new Date(), s = d.getSeconds() + d.getMilliseconds() / 1000, m = d.getMinutes() + s / 60, h = d.getHours() % 12 + m / 60;
+    const hand = (ang, len, wd, col) => `<line x1="60" y1="60" x2="${60 + len * Math.sin(ang)}" y2="${60 - len * Math.cos(ang)}" stroke="${col}" stroke-width="${wd}" stroke-linecap="round"/>`;
+    a.innerHTML = `<circle cx="60" cy="60" r="55" fill="var(--surface)" stroke="var(--edge)" stroke-width="3"/>` + [...Array(12)].map((_, i) => { const t = i * Math.PI / 6; return `<line x1="${60 + 46 * Math.sin(t)}" y1="${60 - 46 * Math.cos(t)}" x2="${60 + 52 * Math.sin(t)}" y2="${60 - 52 * Math.cos(t)}" stroke="var(--ink)" stroke-width="2"/>`; }).join('')
+      + hand(h * Math.PI / 6, 28, 4, 'var(--ink)') + hand(m * Math.PI / 30, 40, 3, 'var(--ink)') + hand(s * Math.PI / 30, 46, 1.5, '#DC2626');
+    $('#clk-d').textContent = d.toLocaleTimeString('de-DE');
+    if (STATIONS[cur] === 'm1') requestAnimationFrame(tick); else setTimeout(tick, 500);
+  }
+  tick();
+})();
+
+mcQuiz($('#quiz'), [
+  {q: 'Was bedeutet „kontinuierlich“?', a: ['Das Signal kann jeden Zwischenwert annehmen.', 'Das Signal hat nur 0 und 1.', 'Das Signal ist komprimiert.', 'Das Signal ist verschlüsselt.'], ok: 0},
+  {q: 'Was gibt die Abtastrate an?', a: ['wie oft pro Sekunde gemessen wird', 'wie laut der Ton ist', 'wie viele Kanäle es gibt', 'wie groß die Datei ist'], ok: 0},
+  {q: 'Wie viele Stufen gibt es bei 4 Bit Bittiefe?', a: ['16', '4', '8', '32'], ok: 0},
+  {q: 'Was passiert bei mehr Messpunkten?', a: ['bessere Qualität, mehr Speicherbedarf', 'schlechtere Qualität', 'weniger Speicher', 'nichts'], ok: 0},
+  {q: 'Wie viel Speicher braucht eine MP3 im Vergleich zur WAV?', a: ['etwa ein Zehntel', 'genauso viel', 'doppelt so viel', 'gar keinen'], ok: 0},
+  {q: 'Welches Gerät arbeitet analog?', a: ['Schallplattenspieler', 'Smartphone', 'Digitalkamera', 'Streaming-Box'], ok: 0}
+]);
+</script>

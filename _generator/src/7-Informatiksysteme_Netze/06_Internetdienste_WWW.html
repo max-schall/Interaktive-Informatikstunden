@@ -1,0 +1,197 @@
+<!--
+title: Internetdienste und das World Wide Web
+short: Dienste & WWW
+time: 2 Unterrichtsstunden
+q: Welche Dienste bietet das Internet – und was passiert, wenn man eine Webseite aufruft?
+facts: Internetdienste: WWW, E-Mail, Dateiübertragung, Streaming, Internettelefonie, Onlinespiele | Protokolle als Regeln der Kommunikation (HTTP(S), SMTP, FTP, VoIP, TCP/IP) | WWW seit 1991 (CERN), Webseiten, Links, URL, Browser | HTML-Tags, HTTP-Anfrage und Statuscode, HTTPS
+inter: Dienst und Protokoll zuordnen · URL zerlegen · Webseite aufrufen Schritt für Schritt · HTML-Editor mit Live-Vorschau · Statuscodes · HTTP oder HTTPS?
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Informatiksysteme und Netze</p>
+      <h1>Internetdienste und das WWW<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Fußball im Livestream, Onlinespiele mit Freunden, E-Mails, Webseiten: Das Internet stellt nur die Infrastruktur bereit. Was wir damit tun, sind <b>Internetdienste</b>.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wofür hast du das Internet in den letzten 24 Stunden genutzt?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Welche Dienste bietet das Internet – und was passiert, wenn man eine Webseite aufruft?</p></div>
+      <div class="controls"><button class="btn primary" data-go="dienste">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="dienste" data-label="Dienste" data-yr="Erarbeitung" data-title="Internetdienste" data-sub="Regeln: Protokolle">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Internetdienste und Protokolle</p>
+    <h2>Dienste brauchen Regeln</h2>
+    <p class="lead">Im Gespräch reden nicht alle gleichzeitig – sonst entsteht Chaos. Auch Computer brauchen Regeln, damit Datenpakete zuverlässig ankommen und richtig zusammengesetzt werden. Diese Regeln heißen <b>Protokolle</b>. Unter jedem Dienst liegen <b>TCP/IP</b> (Transport und Adressen).</p>
+  </div>
+  <div class="layer-stack" id="layers"></div>
+  <h3 class="mt">Welches Protokoll gehört zu welchem Dienst?</h3>
+  <div id="match"></div>
+</section>
+
+<section class="station" id="url" data-label="URL" data-yr="Erarbeitung" data-title="Das World Wide Web" data-sub="Webseiten und URL">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Das World Wide Web</p>
+      <h2>Ein Netz aus Milliarden Seiten</h2>
+      <ul class="facts">
+        <li>Das <b>World Wide Web (WWW)</b> ist ein Dienst des Internets zur Übertragung von Webseiten. Die erste Webseite entstand <b>1991</b> am Forschungszentrum CERN.</li>
+        <li>Webseiten sind über <b>Links</b> verkettet. Man ruft sie mit einem <b>Browser</b> auf.</li>
+        <li>Jede Seite hat eine eigene Adresse, die <b>URL</b> (Uniform Resource Locator). Tippe die Teile der URL an.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Eine URL zerlegen</h3></div>
+      <p class="mono" style="font-size:1.05rem;word-break:break-all" id="url-parts"></p>
+      <div class="box" id="url-info" aria-live="polite"><p>Tippe einen Teil an.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="aufruf" data-label="Seite aufrufen" data-yr="Erarbeitung" data-title="Eine Webseite aufrufen" data-sub="DNS, HTTP, HTML">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Webseiten aufrufen</p>
+    <h2>Vom Tippen bis zur fertigen Seite</h2>
+  </div>
+  <div class="model">
+    <div class="vis">
+      <svg id="ws"></svg>
+      <div id="ws-step"></div>
+    </div>
+    <div class="stack">
+      <div class="box" id="ws-info" aria-live="polite"></div>
+      <div class="box"><span class="tag">Statuscodes</span><p class="mono" style="font-size:.9rem"><b>200</b> OK · <b>301</b> umgezogen · <b>404</b> nicht gefunden · <b>500</b> Serverfehler</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="html" data-label="HTML" data-yr="Vertiefung" data-title="HTML" data-sub="Die Auszeichnungssprache">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Die Auszeichnungssprache HTML</p>
+    <h2>HTML-Tags beschreiben die Struktur</h2>
+    <p class="lead">Der Browser bekommt vom Server ein <b>HTML-Dokument</b> (HyperText Markup Language). <b>Tags</b> klammern Bereiche ein und sagen dem Browser, was sie sind: <code>&lt;b&gt;fett&lt;/b&gt;</code>. Ändere den Code!</p>
+  </div>
+  <div class="cols-2">
+    <textarea class="code-in" id="html-in" spellcheck="false" aria-label="HTML-Code"></textarea>
+    <div class="browser"><div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">https://www.meine-seite.example/index.html</span></div><div class="page" id="html-out"></div></div>
+  </div>
+  <div class="grid-2 mt">
+    <div class="box"><span class="tag">Wichtige Tags</span><p class="mono" style="font-size:.88rem">&lt;h1&gt; Überschrift · &lt;p&gt; Absatz · &lt;b&gt; fett · &lt;i&gt; kursiv · &lt;ul&gt;&lt;li&gt; Liste · &lt;a href="…"&gt; Link · &lt;img src="…"&gt; Bild</p></div>
+    <div class="controls" style="margin:0" id="html-ex"></div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 HTTPS" data-yr="M1" data-title="HTTP oder HTTPS?" data-sub="Sicher surfen">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1</p>
+    <h2>Wer liest mit?</h2>
+    <p class="lead">Bei <b>HTTP</b> reisen die Daten lesbar durchs Netz. Bei <b>HTTPS</b> (S = secure) werden sie <b>verschlüsselt</b>. Gib ein Passwort ein und schau, was ein Lauscher im WLAN sieht.</p>
+  </div>
+  <div class="model">
+    <div class="vis">
+      <div class="vis-head"><h3>Anmeldung</h3><div id="https-seg"></div></div>
+      <label class="slider-row" style="display:block"><span class="note">Passwort</span><input class="text-in" id="pw" value="Sommer2025!" aria-label="Passwort"></label>
+      <p class="status" id="sniff"></p>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Begründen</h3></header><p>Begründe, warum es in bestimmten Fällen sinnvoll ist, HTTPS zu nutzen.</p>
+        <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Bei Anmeldungen, Onlinebanking, Einkäufen oder persönlichen Nachrichten werden vertrauliche Daten übertragen. Ohne Verschlüsselung könnte sie jeder mitlesen, der die Datenpakete abfängt (z. B. im offenen WLAN). Heute nutzen fast alle Webseiten HTTPS – erkennbar am Schloss in der Adresszeile.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Internetdienste und WWW</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Internetdienste und das WWW</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step>Ein <b>Internetdienst</b> ist eine Anwendung des Internets: WWW, E-Mail, Dateiübertragung, Streaming, Internettelefonie, Onlinespiele.</li>
+        <li data-step><b>Protokolle</b> sind Regeln für die Kommunikation: HTTP(S) für Webseiten, SMTP für E-Mails, FTP für Dateien, VoIP für Telefonie; darunter TCP/IP.</li>
+        <li data-step>Das <b>WWW</b> (seit 1991) besteht aus verlinkten Webseiten. Jede hat eine <b>URL</b>. Der <b>Browser</b> fragt per DNS die IP-Adresse ab und fordert die Seite per <b>HTTP</b> an; der Server antwortet mit Statuscode und <b>HTML</b>-Dokument.</li>
+        <li data-step><b>HTML-Tags</b> beschreiben die Struktur einer Seite. <b>HTTPS</b> verschlüsselt die Übertragung.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne den Weg: Browser → DNS-Server → Webserver → Browser, mit Pfeilen und Beschriftung.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Schritte ordnen und Quiz</h2></div>
+  <div id="order"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ================= Dienste & Protokolle ================= */
+(() => {
+  const L = [['WWW', 'HTTP / HTTPS', 'Webseiten abrufen'], ['E-Mail', 'SMTP (senden), IMAP', 'Nachrichten verschicken'], ['Dateien', 'FTP', 'Dateien hoch- und herunterladen'], ['Telefonie', 'VoIP', 'Telefonieren übers Internet'], ['Streaming', 'z. B. HLS über HTTPS', 'Videos direkt abspielen, ohne Speichern'], ['Transport', 'TCP / UDP', 'Pakete zuverlässig bzw. schnell übertragen'], ['Adressen', 'IP', 'jedes Gerät hat eine IP-Adresse']];
+  $('#layers').innerHTML = L.map(([a, b, c], i) => `<div class="${i >= 5 ? 'on' : ''}"><b>${a}</b><span><span class="mono">${b}</span> – ${c}</span></div>`).join('');
+})();
+matcher($('#match'), [['World Wide Web', 'HTTP / HTTPS'], ['E-Mail versenden', 'SMTP'], ['Dateien auf einen Server laden', 'FTP'], ['Internettelefonie', 'VoIP'], ['Adressierung aller Geräte', 'IP']]);
+
+/* ================= URL ================= */
+(() => {
+  const P = [['https', 'Protokoll', 'Regeln für die Übertragung. https = verschlüsselt.'], ['://', 'Trenner', 'trennt das Protokoll vom Rest.'], ['www', 'Subdomain', 'oft „www“; kann auch fehlen oder z. B. „shop“ heißen.'], ['.', '', ''], ['schule-musterstadt', 'Domain', 'der Name der Webseite. Er wird im DNS in eine IP-Adresse übersetzt.'], ['.de', 'Top-Level-Domain', 'Endung, z. B. .de für Deutschland, .org, .com.'], ['/klasse7/', 'Pfad', 'Ordner auf dem Webserver.'], ['stundenplan.html', 'Datei', 'die angeforderte Seite, ein HTML-Dokument.']];
+  $('#url-parts').innerHTML = P.map(([t, n], i) => n ? `<span class="url-part" data-i="${i}" tabindex="0" role="button">${t}</span>` : t).join('');
+  $('#url-parts').addEventListener('click', e => { const s = e.target.closest('[data-i]'); if (!s) return; $$('.url-part').forEach(x => x.classList.toggle('on', x === s)); const p = P[+s.dataset.i]; $('#url-info').innerHTML = `<span class="tag info">${p[1]}</span><p><b class="mono">${p[0]}</b> – ${p[2]}</p>`; });
+})();
+
+/* ================= Webseite aufrufen ================= */
+(() => {
+  const N = {br: [60, 150, 'Browser', '💻'], rt: [180, 150, 'Router', '📶'], dns: [330, 50, 'DNS-Server', '📖'], web: [330, 250, 'Webserver', '🗄']};
+  const E = [['br', 'rt'], ['rt', 'dns'], ['rt', 'web']];
+  const g = graphView($('#ws'), N, E, {w: 440, h: 300, weights: false});
+  const S = [
+    [{on: ['br']}, 'Eingabe', 'Du tippst <span class="mono">www.schule-musterstadt.de</span> in die Adresszeile.'],
+    [{path: ['br', 'rt', 'dns'], pkt: 'dns'}, 'DNS-Anfrage', 'Der Browser fragt den <b>DNS-Server</b>: Welche IP-Adresse gehört zu diesem Namen?'],
+    [{path: ['dns', 'rt', 'br'], pkt: 'br'}, 'DNS-Antwort', 'Antwort: <span class="mono">203.0.113.25</span> (Namensauflösung).'],
+    [{path: ['br', 'rt', 'web'], pkt: 'web'}, 'HTTP-Anfrage', 'Der Browser schickt an diese IP-Adresse: <span class="mono">GET /index.html</span>'],
+    [{path: ['web', 'rt', 'br'], pkt: 'br'}, 'HTTP-Antwort', 'Der Server antwortet mit dem Statuscode <b>200 OK</b> und dem HTML-Dokument. Bilder werden in weiteren Anfragen geholt.'],
+    [{on: ['br'], done: ['dns', 'web']}, 'Darstellung', 'Der Browser liest die HTML-Tags und stellt die Seite als lesbaren Text mit Bildern dar.']
+  ];
+  stepper($('#ws-step'), S.length, k => { g.draw(S[k][0]); $('#ws-info').innerHTML = `<span class="tag info">${k + 1}. ${S[k][1]}</span><p>${S[k][2]}</p>`; });
+})();
+
+/* ================= HTML-Editor ================= */
+(() => {
+  const EX = {
+    start: '<h1>Unsere Klasse 7b</h1>\n<p>Wir sind <b>28</b> Schülerinnen und Schüler.</p>\n<p>Unser Lieblingsfach ist <i>Informatik</i>.</p>',
+    liste: '<h1>Einkaufsliste</h1>\n<ul>\n  <li>Äpfel</li>\n  <li>Brot</li>\n  <li>Milch</li>\n</ul>',
+    link: '<h1>Links</h1>\n<p>Hier geht es zum <a href="#">Stundenplan</a>.</p>\n<p>Ohne schließenden Tag wird <b>alles fett …</p>'
+  };
+  const clean = s => s.replace(/<\s*(script|style|iframe|object|embed)[^>]*>[\s\S]*?(<\/\s*\1\s*>|$)/gi, '').replace(/\son\w+\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi, '').replace(/javascript:/gi, '');
+  const upd = () => $('#html-out').innerHTML = clean($('#html-in').value);
+  $('#html-in').addEventListener('input', upd);
+  $('#html-ex').innerHTML = Object.keys(EX).map(k => `<button class="btn" data-ex="${k}">Beispiel: ${k}</button>`).join('');
+  $('#html-ex').addEventListener('click', e => { const b = e.target.closest('[data-ex]'); if (b) { $('#html-in').value = EX[b.dataset.ex]; upd(); } });
+  $('#html-in').value = EX.start; upd();
+})();
+
+/* ================= HTTPS ================= */
+(() => {
+  let mode = 'http';
+  const upd = () => {
+    const pw = $('#pw').value;
+    const enc = [...('user=lena&pw=' + pw)].map(c => ((c.charCodeAt(0) * 37 + 11) % 256).toString(16).padStart(2, '0')).join(' ');
+    $('#sniff').innerHTML = mode === 'http' ? `👂 Lauscher sieht: <span class="mono bad">POST /login user=lena&amp;pw=${pw.replace(/</g, '&lt;')}</span>` : `👂 Lauscher sieht: <span class="mono">${enc.slice(0, 120)}…</span> – nur Zeichensalat 🔒`;
+  };
+  seg($('#https-seg'), [['http', 'http://'], ['https', 'https:// 🔒']], v => { mode = v; upd(); }, 'http');
+  $('#pw').addEventListener('input', upd);
+})();
+
+orderSteps($('#order'), ['URL im Browser eingeben', 'DNS-Server liefert die IP-Adresse', 'Browser schickt HTTP-Anfrage an den Webserver', 'Server antwortet mit Statuscode und HTML-Dokument', 'Browser stellt die Seite dar']);
+mcQuiz($('#quiz'), [
+  {q: 'Was ist ein Protokoll im Internet?', a: ['eine Sammlung von Regeln für die Kommunikation', 'ein Verlauf der besuchten Seiten', 'ein Virenscanner', 'ein Kabel'], ok: 0},
+  {q: 'Wann entstand die erste Webseite?', a: ['1991', '1969', '2004', '1837'], ok: 0},
+  {q: 'Welcher Teil von https://www.beispiel.de/info.html ist die Top-Level-Domain?', a: ['.de', 'https', 'www', 'info.html'], ok: 0},
+  {q: 'Was bedeutet der Statuscode 404?', a: ['Seite nicht gefunden', 'alles in Ordnung', 'Server überlastet', 'Seite verschlüsselt'], ok: 0},
+  {q: 'Welcher HTML-Tag macht Text fett?', a: ['&lt;b&gt;', '&lt;p&gt;', '&lt;h1&gt;', '&lt;li&gt;'], ok: 0},
+  {q: 'Was macht HTTPS anders als HTTP?', a: ['Es verschlüsselt die Übertragung.', 'Es ist schneller.', 'Es braucht kein DNS.', 'Es zeigt nur Bilder.'], ok: 0},
+  {q: 'Beim Streaming werden die Daten …', a: ['direkt abgespielt und nicht dauerhaft gespeichert.', 'immer zuerst komplett heruntergeladen.', 'per Post verschickt.', 'nur über FTP übertragen.'], ok: 0}
+]);
+</script>

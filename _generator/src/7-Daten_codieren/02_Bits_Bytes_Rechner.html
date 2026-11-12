@@ -1,0 +1,214 @@
+<!--
+title: Bits, Bytes und die Arbeitsweise eines Computers
+short: Bits & Rechner
+time: 2 Unterrichtsstunden
+q: Wie groß sind Daten – und wie arbeitet ein Computer ein Programm ab?
+facts: Bit als kleinste Informationseinheit, Byte = 8 Bit, 2⁸ = 256 Kombinationen | Speichereinheiten KB, MB, GB, TB (Faktor 1000, früher 1024), Übertragung in Bit/s | Von-Neumann-Rechner: Steuerwerk, Rechenwerk, Speicher (RAM/ROM), Ein-/Ausgabewerk, Bus-System | Programme als Maschinenbefehle im Speicher, Befehl für Befehl abgearbeitet
+inter: Wie viele Kombinationen? · Einheiten-Rechner 1000 vs. 1024 · Dateigrößen schätzen · Von-Neumann-Modell erkunden · Mini-Computer: Programm Schritt für Schritt ausführen · Umrechnungstraining
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Daten und ihre Codierung</p>
+      <h1>Bits, Bytes und der Prozessor<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Die Festplatte zeigt Gigabytes, der Internetanbieter wirbt mit Megabit pro Sekunde. Und im Inneren arbeitet ein Prozessor Befehl für Befehl ab – mit nichts als Nullen und Einsen.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wie viel Speicher braucht ein Lied, ein Foto, ein Film?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie groß sind Daten – und wie arbeitet ein Computer ein Programm ab?</p></div>
+      <div class="controls"><button class="btn primary" data-go="bits">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="bits" data-label="Bits" data-yr="Erarbeitung" data-title="Bits und Bytes" data-sub="2ⁿ Kombinationen">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Bits und Bytes</p>
+      <h2>Jedes Bit verdoppelt</h2>
+      <ul class="facts">
+        <li>Das <b>Bit</b> (binary digit) ist die kleinste Informationseinheit: 1 = an/wahr, 0 = aus/falsch.</li>
+        <li>Mit <b>n</b> Bits gibt es <b>2ⁿ</b> Kombinationen. Jedes weitere Bit verdoppelt die Möglichkeiten.</li>
+        <li><b>8 Bit = 1 Byte (B)</b> mit 2⁸ = <b>256</b> Kombinationen, z. B. die Zahlen 0 bis 255.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Wie viele Kombinationen?</h3></div>
+      <label class="slider-row">Anzahl Bits <input id="nb" type="range" min="1" max="16" value="3"><output id="nb-o" class="mono">3</output></label>
+      <div class="combos mono" id="combos"></div>
+      <p class="status" id="nb-status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="einheiten" data-label="Einheiten" data-yr="Erarbeitung" data-title="Speichereinheiten" data-sub="1000 oder 1024?">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Speichereinheiten</p>
+    <h2>Kilo, Mega, Giga, Tera</h2>
+    <p class="lead">Früher rechnete man in Zweierschritten bis <b>1024</b> (2¹⁰). Heute ist für KB, MB, GB, TB der Faktor <b>1000</b> festgelegt; die 1024er-Einheiten heißen KiB, MiB, GiB. Deshalb zeigt der Computer bei einer „1-TB-Festplatte“ nur etwa 931 GiB an.</p>
+  </div>
+  <div class="cols-2">
+    <div class="vis">
+      <div class="vis-head"><h3>Einheiten-Rechner</h3></div>
+      <div class="ideas-in"><input class="text-in" id="u-val" value="1" style="max-width:7rem" aria-label="Wert"><select id="u-unit" class="text-in" style="max-width:8rem" aria-label="Einheit"><option>TB</option><option>GB</option><option>MB</option><option>KB</option><option>B</option></select></div>
+      <div class="table-wrap mt" style="margin-top:.8rem"><table class="cmp" id="u-tab"></table></div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Schätze die Dateigröße</h3></div>
+      <div id="size-quiz"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="neumann" data-label="Von-Neumann" data-yr="Erarbeitung" data-title="Grundmodell eines Computers" data-sub="Der Von-Neumann-Rechner">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Arbeitsweise eines Computers</p>
+    <h2>Das Grundmodell: der Von-Neumann-Rechner</h2>
+    <p class="lead">Fast alle Computer folgen einem Bauplan, den John von Neumann 1945 beschrieb: <b>Programme und Daten liegen gemeinsam im Speicher</b>. Tippe die Bauteile an.</p>
+  </div>
+  <div class="model">
+    <div class="vis">
+      <svg viewBox="0 0 440 300" class="lap-svg" id="vn">
+        <rect x="20" y="20" width="250" height="150" rx="8" class="lap-case"/><text x="145" y="40" text-anchor="middle">Prozessor (CPU)</text>
+        <rect data-part="steuer" x="35" y="55" width="105" height="95" rx="5" class="lp"/><text x="87" y="107" text-anchor="middle">Steuerwerk</text>
+        <rect data-part="rechen" x="150" y="55" width="105" height="95" rx="5" class="lp"/><text x="202" y="107" text-anchor="middle">Rechenwerk</text>
+        <rect data-part="speicher" x="300" y="20" width="120" height="150" rx="5" class="lp"/><text x="360" y="90" text-anchor="middle">Speicher</text><text x="360" y="108" text-anchor="middle" style="font-weight:400;font-size:10px">RAM + ROM</text>
+        <rect data-part="io" x="20" y="235" width="400" height="45" rx="5" class="lp"/><text x="220" y="262" text-anchor="middle">Ein-/Ausgabewerk → Maus, Tastatur, Drucker, Festplatte</text>
+        <rect data-part="bus" x="20" y="190" width="400" height="28" rx="4" class="lp" style="fill:color-mix(in srgb,var(--v) 30%,var(--surface))"/><text x="220" y="209" text-anchor="middle">Bus-System</text>
+        <line x1="145" y1="170" x2="145" y2="190" stroke="var(--edge)" stroke-width="3"/><line x1="360" y1="170" x2="360" y2="190" stroke="var(--edge)" stroke-width="3"/><line x1="220" y1="218" x2="220" y2="235" stroke="var(--edge)" stroke-width="3"/>
+      </svg>
+    </div>
+    <div class="box xp-panel" id="vn-info"></div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Mini-Computer" data-yr="M1" data-title="Ein Programm ausführen" data-sub="Befehl für Befehl">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Ein Mini-Computer rechnet</h2>
+    <p class="lead">Im Speicher stehen Befehle und Zahlen als Bitfolgen. Das <b>Steuerwerk</b> holt einen Befehl, entschlüsselt ihn und lässt ihn vom <b>Rechenwerk</b> ausführen. Dann kommt der nächste Befehl.</p>
+  </div>
+  <div class="model">
+    <div class="vis">
+      <div class="vis-head"><h3>Speicher</h3><div id="mc-seg"></div></div>
+      <div class="table-wrap"><table class="cmp mem" id="mem"></table></div>
+    </div>
+    <div class="stack">
+      <div class="vis">
+        <div class="cpu-regs"><div><small>Befehlszähler</small><b id="r-pc">0</b></div><div><small>Akku (Rechenwerk)</small><b id="r-acc">0</b></div><div><small>Bus</small><b id="r-bus">–</b></div></div>
+        <div class="controls"><button class="btn primary" id="mc-step">▶ Nächster Takt</button><button class="btn" id="mc-reset">↺ Neu starten</button></div>
+        <p class="status" id="mc-status"></p>
+      </div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Flaschenhals</h3></header><p>Alle Befehle und Daten müssen durch denselben Bus. Erkläre, warum man vom „Von-Neumann-Flaschenhals“ spricht.</p>
+        <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Der Prozessor ist sehr schnell, muss aber jeden Befehl und jede Zahl einzeln über den Bus aus dem Speicher holen. Der Bus ist eine Engstelle wie der Hals einer Flasche: Je schneller der Bus, desto schneller der Rechner.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Bits, Bytes und Prozessor</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Bits, Bytes und die Arbeitsweise eines Computers</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step><b>1 Bit</b> = 0 oder 1. Mit n Bits gibt es 2ⁿ Kombinationen. <b>1 Byte = 8 Bit</b> → 256 Kombinationen.</li>
+        <li data-step>1 KB = 1000 B, 1 MB = 1000 KB, 1 GB = 1000 MB, 1 TB = 1000 GB (früher 1024). Übertragungsraten in Bit/s.</li>
+        <li data-step><b>Von-Neumann-Rechner:</b> <b>Steuerwerk</b> (holt und entschlüsselt Befehle, koordiniert), <b>Rechenwerk</b> (Rechnen und Vergleichen), <b>Speicher</b> (RAM: Programme und Daten; ROM: feste Befehle), <b>Ein-/Ausgabewerk</b> (Schnittstelle zu Geräten).</li>
+        <li data-step>Das <b>Bus-System</b> (Daten-, Adress-, Steuerbus) verbindet alle Teile. Programme liegen als <b>Maschinenbefehle</b> im Speicher und werden Befehl für Befehl abgearbeitet.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne das Von-Neumann-Modell mit Steuerwerk, Rechenwerk, Speicher, Ein-/Ausgabewerk und Bus.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Umrechnen und Quiz</h2></div>
+  <div id="ts"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ================= Kombinationen ================= */
+(() => {
+  function upd() {
+    const n = +$('#nb').value, c = 2 ** n; $('#nb-o').textContent = n;
+    $('#combos').innerHTML = n <= 4 ? [...Array(c)].map((_, i) => `<span class="pill">${i.toString(2).padStart(n, '0')}</span>`).join('') : `<span class="note">${c.toLocaleString('de-DE')} Kombinationen – zu viele zum Anzeigen</span>`;
+    $('#nb-status').innerHTML = `${n} Bit → 2<sup>${n}</sup> = <b>${c.toLocaleString('de-DE')}</b> Kombinationen${n === 8 ? ' = 1 Byte' : ''}${n === 16 ? ' (z. B. für viele Unicode-Zeichen)' : ''}`;
+  }
+  $('#nb').oninput = upd; upd();
+})();
+
+/* ================= Einheiten ================= */
+(() => {
+  const U = ['B', 'KB', 'MB', 'GB', 'TB'];
+  function upd() {
+    const v = parseNum($('#u-val').value) || 0, k = U.indexOf($('#u-unit').value);
+    $('#u-tab').innerHTML = '<thead><tr><th>Einheit</th><th>Faktor 1000</th><th>Faktor 1024 (KiB, MiB …)</th></tr></thead><tbody>' + U.map((u, i) => `<tr><th>${u}</th><td class="mono">${numDE(v * 1000 ** (k - i), 3)}</td><td class="mono">${numDE(v * 1000 ** k / 1024 ** i, 3)}</td></tr>`).join('') + '</tbody>';
+  }
+  $('#u-val').oninput = upd; $('#u-unit').onchange = upd; upd();
+})();
+mcQuiz($('#size-quiz'), [
+  {q: 'Eine SMS mit 160 Zeichen', a: ['ca. 160 Byte', 'ca. 160 KB', 'ca. 16 MB', 'ca. 1 GB'], ok: 0, why: '1 Zeichen ≈ 1 Byte.'},
+  {q: 'Ein Handyfoto', a: ['ca. 3–5 MB', 'ca. 3 KB', 'ca. 3 GB', 'ca. 3 TB'], ok: 0},
+  {q: 'Ein MP3-Song (4 Minuten)', a: ['ca. 4–8 MB', 'ca. 400 B', 'ca. 4 GB', 'ca. 40 TB'], ok: 0},
+  {q: 'Ein Kinofilm in HD', a: ['ca. 4–8 GB', 'ca. 4 MB', 'ca. 40 KB', 'ca. 4 B'], ok: 0}
+]);
+
+/* ================= Von-Neumann ================= */
+explorer($('#vn'), $('#vn-info'), [
+  {id: 'steuer', n: 'Steuerwerk', t: 'Lädt die Befehle aus dem Speicher, entschlüsselt sie und überwacht ihre Ausführung. Es koordiniert die Zusammenarbeit von Rechenwerk und den anderen Komponenten.'},
+  {id: 'rechen', n: 'Rechenwerk', t: 'Führt mathematische Operationen (z. B. Addition) und logische Verknüpfungen (Vergleiche, Wenn-Dann) aus.'},
+  {id: 'speicher', n: 'Speicher', t: '<b>RAM</b> (Random Access Memory): Hier werden alle Programme und Daten während der Arbeit geladen. Jede Speicherzelle hat eine eigene <b>Adresse</b>. <b>ROM</b> (Read Only Memory): Festwertspeicher mit unveränderbaren Befehlen, z. B. zum Starten.'},
+  {id: 'io', n: 'Ein-/Ausgabewerk', t: 'Schnittstelle für den Datentransfer zu allen angeschlossenen (peripheren) Geräten wie Maus, Tastatur, Drucker und Festplatte.'},
+  {id: 'bus', n: 'Bus-System', t: '<b>B</b>inary <b>U</b>nit <b>S</b>ystem: Leiterbahnen für den Datenaustausch. Der <b>Adressbus</b> sagt, welche Speicherzelle gemeint ist, der <b>Datenbus</b> transportiert die Daten, der <b>Steuerbus</b> sagt, ob gelesen oder geschrieben wird. Engstelle: Alle Daten müssen hindurch.'}
+], {intro: 'Tippe ein Bauteil an.', label: 'Bauteil'});
+
+/* ================= Mini-Computer ================= */
+(() => {
+  const OPS = {LADE: '001', ADD: '010', SUB: '011', SPEICHERE: '100', HALT: '111'};
+  const PROGS = {
+    add: [['LADE', 6], ['ADD', 7], ['SPEICHERE', 5], ['HALT'], null, 0, 12, 30],
+    sub: [['LADE', 6], ['SUB', 7], ['SUB', 7], ['SPEICHERE', 5], ['HALT'], 0, 50, 15]
+  };
+  let mem, pc, acc, phase, halted, prog = 'add';
+  const bin = v => (v ?? 0).toString(2).padStart(8, '0');
+  function reset() { mem = PROGS[prog].map(x => Array.isArray(x) ? x.slice() : x); pc = 0; acc = 0; phase = 0; halted = false; draw('Bereit. Der Befehlszähler zeigt auf Zelle 0.', '–', -1); }
+  function cellTxt(x) { return Array.isArray(x) ? `<span class="mono">${OPS[x[0]]}${x[1] !== undefined ? ' ' + x[1].toString(2).padStart(5, '0') : ' 00000'}</span><small>${x[0]}${x[1] !== undefined ? ' Zelle ' + x[1] : ''}</small>` : x === null ? '<span class="mono">–</span>' : `<span class="mono">${bin(x)}</span><small>Zahl ${x}</small>`; }
+  function draw(msg, bus, hl) {
+    $('#mem').innerHTML = '<thead><tr><th>Adresse</th><th>Inhalt</th></tr></thead><tbody>' + mem.map((x, i) => `<tr class="${i === pc && !halted ? 'pc' : ''} ${i === hl ? 'hl' : ''}"><th class="mono">${i}</th><td class="cell">${cellTxt(x)}</td></tr>`).join('') + '</tbody>';
+    $('#r-pc').textContent = pc; $('#r-acc').textContent = acc; $('#r-bus').textContent = bus; $('#mc-status').innerHTML = msg;
+  }
+  function step() {
+    if (halted) return;
+    const ins = mem[pc];
+    if (phase === 0) { phase = 1; return draw(`<b>Holen:</b> Das Steuerwerk legt Adresse ${pc} auf den Adressbus und holt den Befehl <b>${ins[0]}</b> über den Datenbus.`, 'Adressbus ' + pc, pc); }
+    phase = 0;
+    const [op, a] = ins;
+    if (op === 'HALT') { halted = true; return draw('<b>HALT:</b> Das Programm ist beendet. ' + (prog === 'add' ? `In Zelle 5 steht jetzt ${mem[5]} = 12 + 30.` : `In Zelle 5 steht jetzt ${mem[5]} = 50 − 15 − 15.`), '–', 5); }
+    if (op === 'LADE') acc = mem[a];
+    if (op === 'ADD') acc += mem[a];
+    if (op === 'SUB') acc -= mem[a];
+    if (op === 'SPEICHERE') mem[a] = acc;
+    const txt = {LADE: `lädt die Zahl aus Zelle ${a} (${mem[a]}) in den Akku.`, ADD: `addiert die Zahl aus Zelle ${a} zum Akku.`, SUB: `zieht die Zahl aus Zelle ${a} vom Akku ab.`, SPEICHERE: `schreibt den Akku (${acc}) in Zelle ${a}.`}[op];
+    pc++;
+    draw(`<b>Ausführen:</b> Das Rechenwerk ${txt} Der Befehlszähler springt auf ${pc}.`, 'Datenbus ' + (op === 'SPEICHERE' ? acc : mem[a]), a);
+  }
+  seg($('#mc-seg'), [['add', '12 + 30'], ['sub', '50 − 15 − 15']], v => { prog = v; reset(); }, 'add');
+  $('#mc-step').onclick = step; $('#mc-reset').onclick = reset;
+})();
+
+taskSet($('#ts'), () => {
+  const T = [() => { const n = randInt(2, 9); return [`${n} GB = ? MB`, n * 1000, 'MB']; }, () => { const n = randInt(2, 16); return [`${n} Byte = ? Bit`, n * 8, 'Bit']; }, () => { const n = randInt(1, 10); return [`${n} Bit → wie viele Kombinationen?`, 2 ** n, '']; }, () => { const n = randInt(2, 9) * 1000; return [`${n.toLocaleString('de-DE')} KB = ? MB`, n / 1000, 'MB']; }];
+  const [q, a, u] = pick(T)();
+  return {key: q, tag: 'Einheiten', q: `<span class="big" style="font-size:1.2rem">${q}</span>`, fields: [{l: 'Ergebnis', a, unit: u}], hint: 'Faktor 1000 zwischen den Einheiten, Faktor 8 zwischen Bit und Byte, 2ⁿ Kombinationen.'};
+}, {n: 6});
+mcQuiz($('#quiz'), [
+  {q: 'Wie viele Kombinationen gibt es mit 4 Bit?', a: ['16', '8', '4', '32'], ok: 0},
+  {q: 'Welche Aufgabe hat das Steuerwerk?', a: ['Befehle holen, entschlüsseln und koordinieren', 'nur addieren', 'Daten dauerhaft speichern', 'Strom liefern'], ok: 0},
+  {q: 'Was führt das Rechenwerk aus?', a: ['Rechnungen und logische Vergleiche', 'das Laden des Betriebssystems', 'die Kühlung', 'die Bildausgabe'], ok: 0},
+  {q: 'Was ist das ROM?', a: ['ein Festwertspeicher mit unveränderbaren Befehlen', 'der Arbeitsspeicher', 'eine Grafikkarte', 'ein USB-Anschluss'], ok: 0},
+  {q: 'Was transportiert der Adressbus?', a: ['die Nummer der Speicherzelle', 'die Daten selbst', 'Strom', 'Bilder'], ok: 0},
+  {q: 'Wo liegen beim Von-Neumann-Rechner Programme und Daten?', a: ['gemeinsam im Speicher', 'nur auf der Festplatte', 'im Bus', 'im Bildschirm'], ok: 0}
+]);
+</script>

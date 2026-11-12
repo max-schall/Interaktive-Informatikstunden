@@ -2,3 +2,4 @@ __pycache__/
 *.pyc
 _generator/shots/
 .DS_Store
+_scorm/

@@ -1,0 +1,205 @@
+<!--
+title: Netzwerke
+short: Netzwerke
+time: 2 Unterrichtsstunden
+q: Wie sind Netzwerke aufgebaut und welche Aufgaben haben die Netzwerkkomponenten?
+facts: Lokale Netzwerke (LAN, WLAN), Heimnetzwerk und Schulnetzwerk | Netzwerkkomponenten: Router, Modem, Switch, Hub, Access Point, Repeater | Client-Server- und Peer-to-Peer-Architektur | Firewall mit Whitelist und Blacklist
+inter: Heimnetzwerk erkunden · Hub und Switch im Vergleich (Datenpaket verfolgen) · Komponenten und Aufgaben zuordnen · Client-Server oder Peer-to-Peer umschalten · Firewall-Regeln testen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Informatiksysteme und Netze</p>
+      <h1>Netzwerke<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Im Computerraum stehen viele Rechner, zu Hause hängen Handy, Laptop, Fernseher und Drucker im WLAN. Wie werden all diese Geräte miteinander verbunden?</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wie viele Geräte sind bei dir zu Hause mit dem Internet verbunden? Schätze!</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie sind Netzwerke aufgebaut und welche Aufgaben haben die Netzwerkkomponenten?</p></div>
+      <div class="controls"><button class="btn primary" data-go="lokal">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="lokal" data-label="Heimnetzwerk" data-yr="Erarbeitung" data-title="Lokale Netzwerke" data-sub="Das Heimnetzwerk">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Lokale Netzwerke</p>
+      <h2>Das Heimnetzwerk</h2>
+      <ul class="facts">
+        <li>Das Internet ist ein „<b>Netzwerk aus Netzwerken</b>“. Die kleinsten heißen <b>lokale Netzwerke</b>: Heimnetzwerk, Schulnetzwerk, Firmennetzwerk.</li>
+        <li>Ein <b>LAN</b> (local area network) ist kabelgebunden, im <b>WLAN</b> (wireless LAN) funken die Geräte.</li>
+        <li>Im Mittelpunkt steht der <b>Router</b>: Er verbindet die Geräte untereinander und das Heimnetz mit dem Internet.</li>
+        <li>Das <b>Modem</b> übersetzt die Signale für die Leitung zum Internetanbieter (Provider): Glasfaser, Kabel, DSL oder LTE. Meist ist es im Router eingebaut.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Tippe die Geräte an</h3></div>
+      <svg id="home"></svg>
+      <div class="box" id="home-info" aria-live="polite"><p>Tippe auf ein Gerät.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="verteiler" data-label="Hub & Switch" data-yr="Erarbeitung" data-title="Verteiler" data-sub="Hub oder Switch?">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Verteiler im Computerraum</p>
+      <h2>Hub oder Switch?</h2>
+      <ul class="facts">
+        <li>Die Anschlüsse am Router reichen für einen Computerraum nicht aus. Ein <b>Verteiler</b> schafft mehr Anschlüsse.</li>
+        <li>Ein <b>Hub</b> schickt jedes Signal an <b>alle</b> angeschlossenen Computer.</li>
+        <li>Ein <b>Switch</b> leitet ein Signal <b>gezielt</b> nur an den Empfänger weiter. Dadurch können mehr Daten gleichzeitig übertragen werden. Switches sind teurer, werden aber meist bevorzugt.</li>
+        <li>Ein <b>Repeater</b> verstärkt Funksignale und vergrößert die Reichweite des WLANs; ein <b>Access Point</b> ist ein „Switch per Funk“.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>PC 1 sendet an PC 4</h3><div id="hs-seg"></div></div>
+      <svg id="hs"></svg>
+      <div class="controls"><button class="btn primary" id="hs-go">▶ Senden</button></div>
+      <p class="status" id="hs-status"></p>
+    </div>
+  </div>
+  <h3 class="mt">Wer macht was?</h3>
+  <div id="match"></div>
+</section>
+
+<section class="station" id="architektur" data-label="Client-Server" data-yr="Erarbeitung" data-title="Netzwerkarchitekturen" data-sub="Client-Server und Peer-to-Peer">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Netzwerkarchitekturen</p>
+      <h2>Kunde und Diener – oder alle gleich?</h2>
+      <ul class="facts">
+        <li><b>Client-Server:</b> Ein <b>Server</b> („Diener“) stellt zentral Dienste bereit, z. B. Speicherplatz für alle Schüler. Die <b>Clients</b> („Kunden“) schicken Anfragen, der Server antwortet. Der Client muss die Adresse des Servers kennen.</li>
+        <li><b>Peer-to-Peer (P2P):</b> Alle Rechner sind <b>gleichberechtigt</b> und geben Dateien direkt weiter. Jeder ist selbst verantwortlich, was er freigibt.</li>
+        <li>Das <b>World Wide Web</b> ist nach dem Client-Server-Prinzip aufgebaut.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Architektur</h3><div id="ar-seg"></div></div>
+      <svg id="ar"></svg>
+      <div class="controls"><button class="btn primary" id="ar-go">▶ Datei anfordern</button></div>
+      <p class="status" id="ar-status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Firewall" data-yr="M1" data-title="Die Firewall" data-sub="Whitelist und Blacklist">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Die Firewall der Schule</h2>
+    <p class="lead">Zwischen Internet und Schulnetz sitzt eine <b>Firewall</b>. Sie kontrolliert mit Regeln den Datenverkehr. Bei einer <b>Whitelist</b> sind nur die eingetragenen Seiten erlaubt, bei einer <b>Blacklist</b> sind die eingetragenen Seiten gesperrt.</p>
+  </div>
+  <div class="model">
+    <div class="vis">
+      <div class="vis-head"><h3>Firewall-Test</h3><div id="fw-seg"></div></div>
+      <p class="note" id="fw-list"></p>
+      <ol class="facts" id="fw"></ol>
+    </div>
+    <div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Vergleichen</h3></header><p>Vergleiche Whitelist und Blacklist. Welche ist strenger?</p>
+        <div class="controls"><button class="btn" data-reveal="fa" aria-expanded="false">Lösung</button></div><p class="solution" id="fa" hidden>Die Whitelist ist strenger: Alles, was nicht ausdrücklich erlaubt ist, wird blockiert. Bei der Blacklist ist alles erlaubt, was nicht ausdrücklich verboten ist – neue gefährliche Seiten rutschen leicht durch.</p></div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Diskutieren</h3></header><p>Diskutiert, welche Adressen auf die Whitelist der Grundschule und welche auf die Blacklist eurer Schule gehören.</p>
+        <div class="controls"><button class="btn" data-reveal="fb" aria-expanded="false">Ideen</button></div><p class="solution" id="fb" hidden>Whitelist: Lernplattform, Online-Lexikon, Kindersuchmaschine. Blacklist: Glücksspiel, Seiten mit Gewalt, bekannte Betrugsseiten. Je jünger die Nutzer, desto eher eine Whitelist.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Netzwerke</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Netzwerke</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step>Ein <b>lokales Netzwerk</b> verbindet Geräte in kleiner Umgebung (Haus, Schule) – per Kabel (<b>LAN</b>) oder Funk (<b>WLAN</b>).</li>
+        <li data-step><b>Router:</b> verbindet Netzwerke, z. B. Heimnetz mit Internet. <b>Modem:</b> überträgt Signale zum Provider. <b>Switch:</b> verteilt Daten gezielt an den Empfänger, <b>Hub:</b> an alle. <b>Repeater:</b> verstärkt Funksignale.</li>
+        <li data-step><b>Client-Server:</b> Clients fragen an, ein zentraler Server antwortet. <b>Peer-to-Peer:</b> alle Rechner sind gleichberechtigt.</li>
+        <li data-step>Eine <b>Firewall</b> kontrolliert den Zugriff von außen mit Regeln: <b>Whitelist</b> = nur Erlaubtes, <b>Blacklist</b> = Verbotenes wird gesperrt.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Skizziere dein Heimnetzwerk mit Router, Modem und allen Endgeräten.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Netzwerke</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ================= Heimnetzwerk ================= */
+(() => {
+  const N = {inet: [230, 30, 'Internet', '🌐'], prov: [100, 30, 'Provider', '🏢'], rt: [230, 120, 'Router+Modem', '📶'], sw: [100, 200, 'Switch', '🔀'], rep: [370, 120, 'Repeater', '📡'],
+    pc: [40, 265, 'PC', '🖥'], dr: [160, 265, 'Drucker', '🖨'], tv: [250, 230, 'Fernseher', '📺'], ph: [330, 250, 'Handy', '📱'], lap: [420, 220, 'Laptop', '💻']};
+  const E = [['inet', 'prov'], ['prov', 'rt'], ['rt', 'sw'], ['sw', 'pc'], ['sw', 'dr'], ['rt', 'tv'], ['rt', 'rep'], ['rep', 'ph'], ['rep', 'lap']];
+  const T = {inet: 'Das weltweite Netzwerk aus Netzwerken.', prov: 'Der Internetdienstanbieter verbindet das Heimnetz gegen Bezahlung mit dem Internet.',
+    rt: 'Mittelpunkt des Heimnetzes. Verbindet die Geräte untereinander (z. B. PC → Drucker) und mit dem Internet. Das eingebaute <b>Modem</b> überträgt die Signale über Glasfaser, Kabel, DSL oder LTE.',
+    sw: 'Verteiler mit 5 bis 24 LAN-Anschlüssen. Leitet Daten gezielt an das richtige Gerät.', rep: 'Verstärkt das WLAN-Signal, damit es auch im Kinderzimmer ankommt. Der Standort muss gut gewählt sein.',
+    pc: 'Endgerät, per LAN-Kabel angeschlossen.', dr: 'Endgerät. Der PC schickt Druckaufträge über das Heimnetz, nicht über das Internet.', tv: 'Endgerät im WLAN, streamt Filme aus dem Internet.', ph: 'Endgerät im WLAN.', lap: 'Endgerät im WLAN.'};
+  const g = graphView($('#home'), N, E, {w: 460, h: 300, weights: false, onNode: id => { g.draw({on: [id], edgeOn: E.filter(e => e.includes(id))}); $('#home-info').innerHTML = `<span class="tag info">${N[id][2]}</span><p>${T[id]}</p>`; }});
+})();
+
+/* ================= Hub vs Switch ================= */
+(() => {
+  const N = {v: [230, 140, 'Verteiler', '🔀'], p1: [60, 50, 'PC 1', '🖥'], p2: [60, 230, 'PC 2', '🖥'], p3: [400, 50, 'PC 3', '🖥'], p4: [400, 230, 'PC 4', '🖥'], p5: [230, 265, 'PC 5', '🖥']};
+  const E = [['v', 'p1'], ['v', 'p2'], ['v', 'p3'], ['v', 'p4'], ['v', 'p5']];
+  const g = graphView($('#hs'), N, E, {w: 460, h: 300, weights: false});
+  let mode = 'hub', tm = [];
+  seg($('#hs-seg'), [['hub', 'Hub'], ['switch', 'Switch']], v => { mode = v; tm.forEach(clearTimeout); g.draw(); $('#hs-status').textContent = 'Drücke „Senden“.'; }, 'hub');
+  $('#hs-go').onclick = () => {
+    tm.forEach(clearTimeout); tm = [];
+    g.draw({on: ['p1'], pkt: 'p1', edgeOn: [['p1', 'v']]});
+    tm.push(setTimeout(() => {
+      const tgt = mode === 'hub' ? ['p2', 'p3', 'p4', 'p5'] : ['p4'];
+      g.draw({on: ['p1', ...tgt], edgeOn: [['p1', 'v'], ...tgt.map(t => ['v', t])], pkt: 'p4'});
+      $('#hs-status').innerHTML = mode === 'hub' ? 'Der <b>Hub</b> schickt das Paket an <b>alle</b> PCs. PC 2, 3 und 5 müssen es verwerfen – die Leitungen sind unnötig belegt.' : 'Der <b>Switch</b> merkt sich, an welchem Anschluss PC 4 hängt, und schickt das Paket <b>nur dorthin</b>. Die anderen Leitungen bleiben frei.';
+    }, RM.matches ? 0 : 700));
+  };
+})();
+
+matcher($('#match'), [
+  ['Router', 'verbindet verschiedene Netzwerke, z. B. Heimnetz und Internet'],
+  ['Modem', 'überträgt Signale zum Internetanbieter'],
+  ['Switch', 'verteilt Daten gezielt an das Zielgerät'],
+  ['Hub', 'verteilt Daten an alle angeschlossenen Geräte'],
+  ['Repeater', 'verstärkt Funksignale'],
+  ['Access Point', 'verbindet Geräte per Funk mit dem Netz']
+]);
+
+/* ================= Client-Server / P2P ================= */
+(() => {
+  const CS = {s: [230, 150, 'Server', '🗄'], a: [80, 50, 'Client', '💻'], b: [380, 50, 'Client', '💻'], c: [80, 250, 'Client', '💻'], d: [380, 250, 'Client', '💻']};
+  const P2 = {a: [80, 50, 'Peer A', '💻'], b: [380, 50, 'Peer B', '💻'], c: [80, 250, 'Peer C', '💻'], d: [380, 250, 'Peer D', '💻']};
+  let g, mode;
+  seg($('#ar-seg'), [['cs', 'Client-Server'], ['p2p', 'Peer-to-Peer']], v => {
+    mode = v;
+    g = v === 'cs' ? graphView($('#ar'), CS, [['s', 'a'], ['s', 'b'], ['s', 'c'], ['s', 'd']], {w: 460, h: 300, weights: false})
+      : graphView($('#ar'), P2, [['a', 'b'], ['a', 'c'], ['a', 'd'], ['b', 'c'], ['b', 'd'], ['c', 'd']], {w: 460, h: 300, weights: false});
+    $('#ar-status').textContent = v === 'cs' ? 'Alle Clients sind nur mit dem Server verbunden.' : 'Jeder Rechner kann mit jedem anderen direkt Daten tauschen.';
+  }, 'cs');
+  $('#ar-go').onclick = () => {
+    if (mode === 'cs') { g.draw({on: ['c', 's'], path: ['c', 's'], pkt: 's'}); $('#ar-status').innerHTML = 'Der <b>Client</b> schickt eine Anfrage an die bekannte Adresse des <b>Servers</b>. Der Server prüft die Anfrage und schickt die Datei zurück. Fällt der Server aus, geht nichts mehr.'; }
+    else { g.draw({on: ['c', 'b'], path: ['c', 'b'], pkt: 'b'}); $('#ar-status').innerHTML = '<b>Peer C</b> holt die Datei direkt bei <b>Peer B</b>, der sie freigegeben hat. Kein zentraler Rechner nötig – aber jeder ist für seine Freigaben selbst verantwortlich.'; }
+  };
+})();
+
+/* ================= Firewall ================= */
+(() => {
+  const SITES = [['lernplattform.schule.de', 'ok'], ['lexikon.example.org', 'ok'], ['kindersuche.example', 'ok'], ['gewinnspiel-sofort.example', 'bad'], ['videoportal.example', 'neu'], ['phishing-bank.example', 'bad'], ['neue-seite.example', 'neu']];
+  const WL = ['lernplattform.schule.de', 'lexikon.example.org', 'kindersuche.example'], BL = ['gewinnspiel-sofort.example', 'phishing-bank.example'];
+  seg($('#fw-seg'), [['wl', 'Whitelist'], ['bl', 'Blacklist']], v => {
+    const L = v === 'wl' ? WL : BL;
+    $('#fw-list').innerHTML = `<b>${v === 'wl' ? 'Erlaubt' : 'Gesperrt'}:</b> ${L.join(', ')}`;
+    $('#fw').innerHTML = SITES.map(([s]) => { const allow = v === 'wl' ? L.includes(s) : !L.includes(s); return `<li><span class="mono">${s}</span> → <span class="pill ${allow ? 'ok' : 'err'}">${allow ? 'durchgelassen' : 'blockiert'}</span></li>`; }).join('');
+  }, 'wl');
+})();
+
+mcQuiz($('#quiz'), [
+  {q: 'Was bedeutet WLAN?', a: ['kabelloses lokales Netzwerk', 'weltweites Netzwerk', 'Wireless Laptop', 'eine Art Kabel'], ok: 0},
+  {q: 'Welches Gerät verbindet das Heimnetz mit dem Internet?', a: ['Router', 'Hub', 'Drucker', 'Repeater'], ok: 0},
+  {q: 'Was unterscheidet einen Switch von einem Hub?', a: ['Der Switch schickt Daten gezielt nur an den Empfänger.', 'Der Switch ist kabellos.', 'Der Hub ist schneller.', 'Es gibt keinen Unterschied.'], ok: 0},
+  {q: 'Wozu dient ein Repeater?', a: ['Er verstärkt Funksignale.', 'Er speichert Webseiten.', 'Er blockiert Viren.', 'Er druckt Dokumente.'], ok: 0},
+  {q: 'In welcher Architektur gibt es einen zentralen Rechner, der Dienste bereitstellt?', a: ['Client-Server', 'Peer-to-Peer', 'beides', 'keine'], ok: 0},
+  {q: 'Eine Firewall mit Whitelist …', a: ['lässt nur ausdrücklich erlaubte Seiten zu.', 'sperrt nur bekannte schlechte Seiten.', 'beschleunigt das Internet.', 'ersetzt den Router.'], ok: 0}
+]);
+</script>

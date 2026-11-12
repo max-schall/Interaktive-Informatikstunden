@@ -1,0 +1,121 @@
+<!--
+title: Wiederholung und Selbsttest
+short: Selbsttest
+time: 1–2 Unterrichtsstunden
+q: Was kann ich, und was sollte ich noch üben?
+facts: Zusammenfassung als Karteikarten | Trainer T1–T4: Zahlensysteme, Texte codieren, Bilder und Kompression, Codes und Fehlererkennung | Großes Quiz und „Ich kann …“-Liste mit Links zurück in die Stunden
+inter: Karteikarten · Paare finden · Umrechnen zwischen drei Zahlensystemen · ASCII decodieren · Bildgröße und Lauflängen · Prüfziffer und Parität · Quiz (10 zufällige Fragen) · Selbsteinschätzung
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Daten und ihre Codierung</p>
+      <h1>Wiederholung und Selbsttest<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Binärsystem, Bits und Bytes, ASCII, Bilder, Kompression, Hexadezimalsystem, Digitalisierung und grafische Codes: Prüfe, was du sicher kannst.</p>
+      <div class="controls"><button class="btn primary" data-go="begriffe">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="begriffe" data-label="Begriffe" data-yr="Wiederholen" data-title="Zusammenfassung" data-sub="Fachbegriffe als Karteikarten">
+  <div class="section-head"><p class="eyebrow">Station 1 · Zusammenfassung</p><h2>Fachbegriffe</h2></div>
+  <div id="flip"></div>
+  <h3 class="mt">Paare finden</h3>
+  <div id="match"></div>
+</section>
+
+<section class="station" id="t1" data-label="T1 Zahlen" data-yr="Trainer" data-title="T1 Zahlensysteme" data-sub="dezimal, binär, hex">
+  <div class="section-head"><p class="eyebrow">Station 2 · Trainer T1</p><h2>Zahlensysteme</h2><p class="lead">Ergänze die fehlenden Darstellungen.</p></div>
+  <div id="t1-ts"></div>
+</section>
+
+<section class="station" id="t2" data-label="T2 Text" data-yr="Trainer" data-title="T2 Texte codieren" data-sub="ASCII">
+  <div class="section-head"><p class="eyebrow">Station 3 · Trainer T2</p><h2>Texte codieren</h2><p class="lead">Decodiere mit dem ASCII-Code (A = 65 = 01000001, a = 97).</p></div>
+  <div id="t2-ts"></div>
+</section>
+
+<section class="station" id="t3" data-label="T3 Bilder" data-yr="Trainer" data-title="T3 Bilder und Kompression" data-sub="Größe, Lauflängen, Formate">
+  <div class="section-head"><p class="eyebrow">Station 4 · Trainer T3</p><h2>Bilder und Kompression</h2></div>
+  <div id="t3-tf"></div>
+  <h3 class="mt">Rechnen</h3>
+  <div id="t3-ts"></div>
+</section>
+
+<section class="station" id="t4" data-label="T4 Codes" data-yr="Trainer" data-title="T4 Codes und Fehler" data-sub="Prüfziffer, Parität, QR">
+  <div class="section-head"><p class="eyebrow">Station 5 · Trainer T4</p><h2>Codes und Fehlererkennung</h2></div>
+  <div id="t4-match"></div>
+  <h3 class="mt">Prüfen</h3>
+  <div id="t4-ts"></div>
+</section>
+
+<section class="station" id="quiz-st" data-label="Quiz" data-yr="Testen" data-title="Großes Quiz" data-sub="10 zufällige Fragen">
+  <div class="section-head"><p class="eyebrow">Station 6 · Quiz</p><h2>Großes Quiz</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<section class="station" id="uebungen" data-label="Ich kann …">
+  <div class="section-head"><p class="eyebrow">Selbsteinschätzung</p><h2>Ich kann …</h2></div>
+  <ol id="sc"></ol>
+</section>
+
+<script>
+const BEGRIFFE = [
+  ['Code', 'Vorschrift zur Übersetzung von Zeichen'], ['Bit', 'kleinste Informationseinheit: 0 oder 1'], ['Byte', '8 Bit, 256 Kombinationen'],
+  ['Steuerwerk', 'holt und entschlüsselt Befehle'], ['Rechenwerk', 'rechnet und vergleicht'], ['ASCII', '128 Zeichen mit 7 Bit'],
+  ['Pixel', 'Bildpunkt einer Rastergrafik'], ['RGB', '3 Byte pro Pixel: Rot, Grün, Blau'], ['Lauflängencodierung', 'Zeichen + Anzahl der Wiederholungen'],
+  ['verlustbehaftet', 'Original nicht genau wiederherstellbar, z. B. JPEG'], ['Hexadezimal', 'Basis 16, Ziffern 0–9 und A–F'], ['Abtastrate', 'Messungen pro Sekunde in Hz'],
+  ['Prüfziffer', 'erkennt Tippfehler, z. B. bei EAN und ISBN'], ['Paritätsbit', '0 bei gerader, 1 bei ungerader Zahl von Einsen'], ['Redundanz', 'zusätzliche Information zum Erkennen von Fehlern']
+];
+flipCards($('#flip'), BEGRIFFE);
+matcher($('#match'), shuffle(BEGRIFFE.slice()).slice(0, 7));
+taskSet($('#t1-ts'), i => {
+  const n = randInt(10, 255), k = i % 3, H = n.toString(16).toUpperCase(), B = n.toString(2);
+  const show = [`<b>${n}</b>₁₀`, `<b>${B}</b>₂`, `<b>${H}</b>₁₆`][k];
+  const f = [{l: 'dezimal', a: n}, {l: 'binär', a: [B, B.padStart(8, '0')]}, {l: 'hex', a: [H, H.padStart(2, '0')]}].filter((x, j) => j !== k);
+  return {key: n + '' + k, tag: 'umrechnen', q: `<span class="mono" style="font-size:1.3rem">${show}</span>`, fields: f, hint: 'Binär: Stellenwerte 1, 2, 4 … · Hex: 4 Bit je Ziffer, A = 10 … F = 15.'};
+}, {n: 6});
+taskSet($('#t2-ts'), () => { const w = pick(['BIT', 'CODE', 'RGB', 'HEX', 'Info', 'Byte', 'QR']); return {key: w, tag: 'ASCII', q: `<span class="mono" style="font-size:.95rem">${[...w].map(c => c.charCodeAt(0).toString(2).padStart(8, '0')).join(' ')}</span>`, fields: [{l: 'Wort', a: w}], hint: 'Jedes Byte in eine Dezimalzahl umrechnen.'}; }, {n: 3});
+trueFalse($('#t3-tf'), [
+  {t: 'Ein Schwarz-Weiß-Pixel braucht 1 Bit.', ok: true}, {t: 'Ein RGB-Pixel braucht 3 Bit.', ok: false, why: '3 Byte = 24 Bit.'},
+  {t: 'PNG komprimiert verlustfrei.', ok: true}, {t: 'Ein Kompressionsfaktor von 1,2 bedeutet eine Verkleinerung.', ok: false, why: 'Die Daten sind größer geworden.'},
+  {t: 'Die Lauflängencodierung lohnt sich bei Bildern mit großen einfarbigen Flächen.', ok: true}
+]);
+taskSet($('#t3-ts'), i => {
+  if (i % 2) { const s = 'W'.repeat(randInt(3, 8)) + 'S'.repeat(randInt(2, 6)) + 'W'.repeat(randInt(2, 7)); return {key: s, tag: 'Lauflängen', q: `<span class="mono">${s}</span>`, fields: [{l: 'Lauflängencode', a: rle(s)}], hint: 'Anzahl + Zeichen.'}; }
+  const w = pick([10, 20, 50, 100]), h = pick([10, 20, 40]), b = pick([1, 8, 24]); return {key: `${w}${h}${b}`, tag: 'Bildgröße', q: `${w} × ${h} Pixel, ${b} Bit pro Pixel`, fields: [{l: 'Byte', a: w * h * b / 8}], hint: 'Breite × Höhe × Bit : 8.'};
+}, {n: 4});
+matcher($('#t4-match'), [['Positionsmarkierung', 'zeigt die Ausrichtung des QR-Codes'], ['Synchronisationslinie', 'zeigt die Größe des Datenfeldes'], ['EAN', '13-stellige Artikelnummer'], ['Prüfziffer', 'letzte Ziffer der ISBN'], ['Paritätsbit', 'angehängtes Bit zur Fehlererkennung']]);
+taskSet($('#t4-ts'), i => {
+  if (i % 2) { const b = [...Array(7)].map(() => randInt(0, 1)); return {key: b.join(''), tag: 'Parität', q: `<span class="mono" style="font-size:1.2rem">${b.join('')}</span>`, fields: [{l: 'Paritätsbit', a: b.reduce((s, x) => s + x, 0) % 2}]}; }
+  const s = '400' + [...Array(9)].map(() => randInt(0, 9)).join(''), c = (10 - [...s].reduce((a, d, j) => a + (+d) * (j % 2 ? 3 : 1), 0) % 10) % 10;
+  return {key: s, tag: 'EAN-Prüfziffer', q: `<span class="mono">${s}?</span>`, fields: [{l: 'Prüfziffer', a: c}], hint: 'Abwechselnd · 1 und · 3.'};
+}, {n: 4});
+mcQuiz($('#quiz'), [
+  {q: 'Wie lautet 13 im Binärsystem?', a: ['1101', '1011', '1110', '1001'], ok: 0},
+  {q: 'Wie viele Kombinationen hat ein Byte?', a: ['256', '8', '128', '1024'], ok: 0},
+  {q: 'Welche Aufgabe hat der Bus?', a: ['Datenaustausch zwischen den Komponenten', 'Kühlung', 'Bilder berechnen', 'Strom erzeugen'], ok: 0},
+  {q: 'Wie viele Zeichen hat der ASCII-Code (7 Bit)?', a: ['128', '256', '26', '1000'], ok: 0},
+  {q: 'Warum werden führende Nullen mitgeschrieben?', a: ['damit jedes Zeichen gleich lang ist', 'damit die Datei größer wird', 'weil Nullen schwarz sind', 'zur Verschlüsselung'], ok: 0},
+  {q: 'Wie groß ist ein unkomprimiertes RGB-Bild mit 100 × 100 Pixeln?', a: ['30 000 Byte', '10 000 Byte', '3 000 Byte', '300 Byte'], ok: 0},
+  {q: 'Was ergibt die Lauflängencodierung von „AAABBBBC“?', a: ['3A4B1C', 'A3B4C1', '3A3B1C', 'ABC'], ok: 0},
+  {q: 'Welcher Hex-Wert entspricht 255?', a: ['FF', 'F5', '1F', '99'], ok: 0},
+  {q: 'Was ist #00FF00?', a: ['Grün', 'Rot', 'Blau', 'Schwarz'], ok: 0},
+  {q: 'Was gehört zur Digitalisierung eines Tons?', a: ['Abtasten, Runden, als Dualzahl speichern', 'nur lauter machen', 'auf Kassette aufnehmen', 'komprimieren mit RLE'], ok: 0},
+  {q: 'Wozu dient eine Prüfziffer?', a: ['Fehler wie Zahlendreher erkennen', 'den Preis berechnen', 'Daten verschlüsseln', 'Speicher sparen'], ok: 0},
+  {q: 'Wie lautet das Paritätsbit für 1011001?', a: ['0', '1', '2', '4'], ok: 0, why: 'Vier Einsen → gerade → 0.'}
+], {pick: 10});
+selfCheck($('#sc'), [
+  {t: 'Ich kann erklären, was ein Code ist, und Beispiele nennen.', href: '01_Codes_Binaersystem.html#codes'},
+  {t: 'Ich kann Zahlen zwischen Dezimal- und Binärsystem umrechnen.', href: '01_Codes_Binaersystem.html#division'},
+  {t: 'Ich kann mit Bits, Bytes und Speichereinheiten rechnen.', href: '02_Bits_Bytes_Rechner.html#einheiten'},
+  {t: 'Ich kann das Von-Neumann-Modell beschreiben.', href: '02_Bits_Bytes_Rechner.html#neumann'},
+  {t: 'Ich kann Texte mit dem ASCII-Code codieren und decodieren.', href: '03_ASCII.html#uebersetzen'},
+  {t: 'Ich kann erklären, wie Schwarz-Weiß-, Graustufen- und RGB-Bilder codiert werden.', href: '04_Bilder_codieren.html#grau'},
+  {t: 'Ich kann die Dateigröße eines Bildes berechnen.', href: '04_Bilder_codieren.html#groesse'},
+  {t: 'Ich kann die Lauflängencodierung anwenden und den Kompressionsfaktor berechnen.', href: '05_Komprimieren.html#faktor'},
+  {t: 'Ich kann Zahlen ins Hexadezimalsystem umrechnen und Farbcodes lesen.', href: '06_Hexadezimal.html#farben'},
+  {t: 'Ich kann erklären, wie ein analoges Signal digitalisiert wird.', href: '07_Analog_Digital.html#abtasten'},
+  {t: 'Ich kann Prüfziffern berechnen und Paritätsbits bestimmen.', href: '08_Grafische_Codes.html#pruef'}
+]);
+</script>
