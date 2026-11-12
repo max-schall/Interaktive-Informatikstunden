@@ -1,0 +1,198 @@
+<!--
+title: Wie Maschinen lernen
+short: Maschinelles Lernen
+time: 2–3 Unterrichtsstunden
+q: Wie kann eine Maschine aus Daten eigene Regeln lernen?
+facts: Lernfähige Systeme: EVA mit Erfahrungsschatz, der sich verändert | Trainingsdatensatz, Muster erkennen, neue Daten einordnen | Entscheidungsbaum mit Attributen und Knoten | Lernarten: überwacht, unüberwacht, teilüberwacht, verstärkend | Beispiele: Empfehlungen im Webshop, Saugroboter, Filmportal
+inter: Entscheidungsbaum für Früchte durchlaufen und verbessern · Überwachtes Lernen: Äpfel und Birnen klassifizieren · Unüberwachtes Lernen: Gruppen finden · Verstärkendes Lernen: Roboter lernt durch Belohnung · Lernarten zuordnen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Maschinelles Lernen</p>
+      <h1>Wie Maschinen lernen<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Nach ein paar Suchanfragen schlägt der Webshop passende Produkte vor. Niemand hat dafür eine feste Regel programmiert – das System hat sie aus Daten <b>gelernt</b>.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wie hast du als Kind gelernt, einen Hund von einer Katze zu unterscheiden?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie kann eine Maschine aus Daten eigene Regeln lernen?</p></div>
+      <div class="controls"><button class="btn primary" data-go="eva">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="eva" data-label="Lernen" data-yr="Einstieg" data-title="Maschinelles Lernen" data-sub="EVA mit Erfahrungsschatz">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Maschinelles Lernen</p>
+    <h2>Feste Regeln oder Erfahrung?</h2>
+  </div>
+  <div class="grid-2">
+    <div class="box"><span class="tag">klassisches Programm</span><p>Eingabe → <b>festgelegter Verarbeitungsprozess</b> → Ausgabe. Der Algorithmus löst ein vorher festgelegtes Problem auf immer gleiche Weise.</p></div>
+    <div class="box"><span class="tag info">lernfähiges System</span><p>Der Algorithmus gibt keinen festen Lösungsweg vor. Das System entwickelt eigene Regeln und greift auf einen <b>Erfahrungsschatz</b> zurück, der sich jederzeit verändern und erweitern kann: <b>maschinelles Lernen</b>.</p></div>
+  </div>
+  <div class="flow-line mt">
+    <div class="fl-box"><span class="tag">1</span><b>Trainingsdaten</b><small>z. B. viele Fotos von Tieren</small></div><div class="fl-arrow">→</div>
+    <div class="fl-box acc"><span class="tag info">2</span><b>Muster erkennen</b><small>Algorithmus baut Regeln, z. B. einen Entscheidungsbaum</small></div><div class="fl-arrow">→</div>
+    <div class="fl-box"><span class="tag">3</span><b>Neue Daten einordnen</b><small>„Das ist eine Giraffe.“</small></div>
+  </div>
+</section>
+
+<section class="station" id="baum" data-label="Entscheidungsbaum" data-yr="Erarbeitung" data-title="Entscheidungsbäume" data-sub="Attribute und Knoten">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Entscheidungsbäume</p>
+    <h2>Welche Frucht ist das?</h2>
+    <p class="lead">Um Informationen zu strukturieren, schaut der Algorithmus immer ein <b>Attribut</b> an, das nur zwei Zustände zulässt (ja/nein) – wie beim Binärcode. Jeder <b>Knoten</b> verzweigt sich in zwei Richtungen. Wähle eine Frucht und gehe den Baum durch.</p>
+  </div>
+  <div class="vis"><div class="chips" id="fr"></div><div class="dtree" id="dt"></div></div>
+  <div class="grid-2 mt"><p class="status" id="dt-st"></p>
+      <div class="task-card"><header><span class="no">M1</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Baum optimieren</h3></header><p>Die Kiwi wird falsch erkannt. Welches Attribut würdest du ergänzen?</p>
+        <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Beim Knoten „gelb?“ → nein → „rot?“ → nein steht nur „Birne“. Ein zusätzlicher Knoten „behaarte Schale?“ trennt Kiwi (ja) und Birne (nein). So wird der Entscheidungsbaum mit jedem neuen Beispiel verbessert.</p></div>
+  </div>
+</section>
+
+<section class="station" id="ueberwacht" data-label="Überwacht" data-yr="Erarbeitung" data-title="Überwachtes Lernen" data-sub="Mit Lösungen trainieren">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Überwachtes Lernen</p>
+    <h2>Lernen mit Beispielen und Lösungen</h2>
+    <p class="lead">Beim <b>überwachten Lernen</b> enthält der Trainingsdatensatz die <b>richtige Lösung</b>: Fotos von Obst mit dem Namen. Hier: Äpfel 🍎 und Birnen 🍐, beschrieben durch Rundheit und Größe. Tippe in das Feld – das System ordnet den neuen Punkt nach seinen nächsten Nachbarn ein. Du kannst auch neue Trainingsdaten hinzufügen.</p>
+  </div>
+  <div class="model">
+    <div class="vis"><svg viewBox="0 0 300 220" class="ml-svg" id="knn"></svg><div class="controls"><span class="note">Neue Trainingsdaten:</span><div id="knn-seg"></div></div></div>
+    <p class="status" id="knn-st"></p>
+  </div>
+</section>
+
+<section class="station" id="unueberwacht" data-label="Unüberwacht" data-yr="Erarbeitung" data-title="Unüberwachtes Lernen" data-sub="Gruppen selbst finden">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Unüberwachtes Lernen</p>
+    <h2>Gruppen ohne Vorgabe</h2>
+    <p class="lead">Beim <b>unüberwachten Lernen</b> enthält der Datensatz <b>keine Lösungen</b>. Das System erkennt selbst Muster und bildet <b>Gruppen</b> ähnlicher Daten – ohne zu wissen, wie sie heißen. Starte den Algorithmus Schritt für Schritt.</p>
+  </div>
+  <div class="model">
+    <div class="vis"><svg viewBox="0 0 300 220" class="ml-svg" id="km"></svg><div class="controls"><button class="btn primary" id="km-step">▶ Schritt</button><button class="btn" id="km-new">Neue Daten</button></div></div>
+    <p class="status" id="km-st"></p>
+  </div>
+</section>
+
+<section class="station" id="verstaerkt" data-label="Verstärkend" data-yr="Erarbeitung" data-title="Verstärkendes Lernen" data-sub="Lernen durch Belohnung">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Verstärkendes Lernen</p>
+    <h2>Versuch und Rückmeldung</h2>
+    <p class="lead">Beim <b>verstärkenden Lernen</b> gibt es keinen Trainingsdatensatz. Das System probiert etwas aus und bekommt eine <b>positive oder negative Rückmeldung</b>. So lernt ein Saugroboter, welcher Weg gut ist. Hier lernt ein Roboter, hinter welcher Tür meistens ein Akku zum Aufladen liegt.</p>
+  </div>
+  <div class="model">
+    <div class="vis"><div class="doors" id="dr"></div><div class="controls"><button class="btn primary" id="dr-1">1 Versuch</button><button class="btn" id="dr-50">50 Versuche</button><button class="btn" id="dr-r">Neu</button></div></div>
+    <p class="status" id="dr-st"></p>
+  </div>
+</section>
+
+<section class="station" id="m2" data-label="M2 Lernarten" data-yr="M2" data-title="Lernende Systeme" data-sub="Lernarten zuordnen">
+  <div class="section-head">
+    <p class="eyebrow">Station 6 · Material M2</p>
+    <h2>Welche Lernart steckt dahinter?</h2>
+    <p class="lead">Eine Mischform ist das <b>teilüberwachte Lernen</b>: Nur ein kleiner Teil der Daten hat eine Lösung. Ordne zu.</p>
+  </div>
+  <div id="sort-la"></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Maschinelles Lernen</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Wie Maschinen lernen</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step>Beim <b>maschinellen Lernen</b> entwickelt ein System aus <b>Trainingsdaten</b> eigene Regeln und nutzt einen veränderbaren <b>Erfahrungsschatz</b>.</li>
+        <li data-step>Ein <b>Entscheidungsbaum</b> fragt an jedem Knoten ein Attribut mit zwei Möglichkeiten ab. Er wird mit neuen Beispielen verbessert.</li>
+        <li data-step><b>Überwacht:</b> Trainingsdaten mit Lösungen. <b>Unüberwacht:</b> ohne Lösungen, das System bildet Gruppen. <b>Teilüberwacht:</b> nur wenige Daten mit Lösung.</li>
+        <li data-step><b>Verstärkend:</b> ohne Trainingsdaten, Lernen durch positive oder negative Rückmeldung der Umwelt.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne einen Entscheidungsbaum, der Apfel, Banane, Erdbeere, Birne und Kiwi unterscheidet.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Maschinelles Lernen</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ================= Entscheidungsbaum ================= */
+(() => {
+  const F = {Banane: {gelb: 1, rot: 0, klein: 0, haar: 0}, Zitrone: {gelb: 1, rot: 0, klein: 1, haar: 0}, Erdbeere: {gelb: 0, rot: 1, klein: 1, haar: 0}, Apfel: {gelb: 0, rot: 1, klein: 0, haar: 0}, Birne: {gelb: 0, rot: 0, klein: 0, haar: 0}, Kiwi: {gelb: 0, rot: 0, klein: 1, haar: 1}};
+  const I = {Banane: '🍌', Zitrone: '🍋', Erdbeere: '🍓', Apfel: '🍎', Birne: '🍐', Kiwi: '🥝'};
+  const T = {q: 'gelb', t: 'Ist die Frucht gelb?', y: {q: 'klein', t: 'Ist sie klein (passt in die Faust)?', y: {l: 'Zitrone'}, n: {l: 'Banane'}}, n: {q: 'rot', t: 'Ist sie rot?', y: {q: 'klein', t: 'Ist sie klein?', y: {l: 'Erdbeere'}, n: {l: 'Apfel'}}, n: {l: 'Birne'}}};
+  const R = (node, path) => node.l ? `<div class="dt-leaf ${path.includes(node) ? 'on' : ''}">${I[node.l]} ${node.l}</div>` : `<div class="dt-node"><div class="dt-q ${path.includes(node) ? 'on' : ''}">${node.t}</div><div class="dt-kids"><div><small>ja</small>${R(node.y, path)}</div><div><small>nein</small>${R(node.n, path)}</div></div></div>`;
+  function run(f) {
+    const path = []; let n = T; while (n) { path.push(n); if (n.l) break; n = F[f][n.q] ? n.y : n.n; }
+    $('#dt').innerHTML = R(T, path); const res = path[path.length - 1].l;
+    $('#dt-st').innerHTML = `${I[f]} ${f}: ${path.filter(p => p.t).map(p => `${p.t} <b>${F[f][p.q] ? 'ja' : 'nein'}</b>`).join(' → ')} → Ergebnis: <b>${res}</b> ${res === f ? '<span class="good">✔ richtig</span>' : '<span class="bad">✘ falsch – der Baum muss verbessert werden!</span>'}`;
+  }
+  $('#fr').innerHTML = Object.keys(F).map(f => `<button class="btn" data-f="${f}">${I[f]} ${f}</button>`).join('');
+  $('#fr').addEventListener('click', e => { const b = e.target.closest('[data-f]'); if (b) run(b.dataset.f); });
+  run('Apfel');
+})();
+
+/* ================= kNN ================= */
+(() => {
+  let data = [], add = 'a', q = null;
+  const base = () => { data = []; for (let i = 0; i < 9; i++) { data.push([randInt(170, 280), randInt(20, 110), 'a']); data.push([randInt(20, 130), randInt(100, 200), 'b']); } };
+  const svg = $('#knn');
+  const knn = (x, y) => { const s = data.map(d => [Math.hypot(d[0] - x, d[1] - y), d]).sort((a, b) => a[0] - b[0]).slice(0, 3); const a = s.filter(z => z[1][2] === 'a').length; return {c: a >= 2 ? 'a' : 'b', nb: s.map(z => z[1])}; };
+  function draw() {
+    let s = `<line x1="20" y1="205" x2="290" y2="205" class="ax"/><line x1="20" y1="205" x2="20" y2="10" class="ax"/><text x="155" y="219" text-anchor="middle">Rundheit →</text><text x="12" y="110" transform="rotate(-90 12 110)" text-anchor="middle">← Größe</text>`;
+    if (q) { const r = knn(q[0], q[1]); r.nb.forEach(d => s += `<line x1="${q[0]}" y1="${q[1]}" x2="${d[0]}" y2="${d[1]}" class="nbl"/>`); s += `<text x="${q[0]}" y="${q[1] + 7}" text-anchor="middle" class="emo big">${r.c === 'a' ? '🍎' : '🍐'}</text><circle cx="${q[0]}" cy="${q[1]}" r="15" class="qring"/>`; $('#knn-st').innerHTML = `Neuer Punkt: Die 3 nächsten Nachbarn sind ${r.nb.map(d => d[2] === 'a' ? '🍎' : '🍐').join(' ')} → das System sagt: <b>${r.c === 'a' ? 'Apfel' : 'Birne'}</b>. Je mehr Trainingsdaten, desto sicherer.`; }
+    s += data.map(([x, y, c]) => `<text x="${x}" y="${y + 6}" text-anchor="middle" class="emo">${c === 'a' ? '🍎' : '🍐'}</text>`).join('');
+    svg.innerHTML = s;
+  }
+  svg.addEventListener('click', e => { const r = svg.getBoundingClientRect(), x = (e.clientX - r.left) / r.width * 300, y = (e.clientY - r.top) / r.height * 220; if (add === 'q') q = [x, y]; else data.push([x, y, add]); draw(); });
+  seg($('#knn-seg'), [['q', '❓ neue Frucht testen'], ['a', '+ 🍎'], ['b', '+ 🍐']], v => { add = v; }, 'q');
+  base(); draw(); $('#knn-st').textContent = 'Tippe in das Feld, um eine unbekannte Frucht einzuordnen.';
+})();
+
+/* ================= k-Means ================= */
+(() => {
+  let pts = [], cen = [], step = 0;
+  const COL = ['#DC2626', '#2563EB', '#16A34A'];
+  const neu = () => { pts = []; [[70, 60], [220, 70], [150, 170]].forEach(([cx, cy]) => { for (let i = 0; i < 10; i++) pts.push([cx + randInt(-35, 35), cy + randInt(-30, 30), -1]); }); cen = [[randInt(20, 280), randInt(20, 200)], [randInt(20, 280), randInt(20, 200)], [randInt(20, 280), randInt(20, 200)]]; step = 0; draw(); $('#km-st').textContent = 'Daten ohne Lösungen. Drei Gruppenmittelpunkte (Kreuze) sind zufällig gesetzt.'; };
+  const draw = () => $('#km').innerHTML = pts.map(([x, y, c]) => `<circle cx="${x}" cy="${y}" r="6" fill="${c < 0 ? '#9CA3AF' : COL[c]}" stroke="#111" stroke-width=".8"/>`).join('') + cen.map(([x, y], i) => `<path d="M${x - 9},${y - 9}L${x + 9},${y + 9}M${x + 9},${y - 9}L${x - 9},${y + 9}" stroke="${COL[i]}" stroke-width="4"/>`).join('');
+  $('#km-step').onclick = () => {
+    if (step % 2 === 0) { pts.forEach(p => { let b = 0, bd = 1e9; cen.forEach(([x, y], i) => { const d = Math.hypot(p[0] - x, p[1] - y); if (d < bd) { bd = d; b = i; } }); p[2] = b; }); $('#km-st').innerHTML = `Schritt ${step + 1}: Jeder Punkt wird der <b>nächsten</b> Gruppe zugeordnet.`; }
+    else { const old = JSON.stringify(cen); cen = cen.map((c, i) => { const m = pts.filter(p => p[2] === i); return m.length ? [m.reduce((s, p) => s + p[0], 0) / m.length, m.reduce((s, p) => s + p[1], 0) / m.length] : c; }); $('#km-st').innerHTML = `Schritt ${step + 1}: Jeder Mittelpunkt wandert in die <b>Mitte</b> seiner Gruppe. ${old === JSON.stringify(cen) ? '<b class="good">Nichts ändert sich mehr – drei Gruppen gefunden!</b>' : ''}`; }
+    step++; draw();
+  };
+  $('#km-new').onclick = neu; neu();
+})();
+
+/* ================= Verstärkendes Lernen ================= */
+(() => {
+  const P = [.2, .75, .4];
+  let val, cnt, tries, reward;
+  const reset = () => { val = [0, 0, 0]; cnt = [0, 0, 0]; tries = 0; reward = 0; draw(-1, null); $('#dr-st').textContent = 'Der Roboter weiß noch nichts. Er probiert aus.'; };
+  const draw = (k, ok) => $('#dr').innerHTML = P.map((p, i) => `<div class="door ${k === i ? (ok ? 'win' : 'lose') : ''}"><b>🚪 ${i + 1}</b><span>${k === i ? (ok ? '🔋 +1' : '✖ 0') : ''}</span><small>Erfahrung: ${cnt[i] ? numDE(val[i] * 100, 0) + ' %' : '?'}</small><div class="hbar-t"><i class="me" style="width:${val[i] * 100}%;top:0;bottom:0"></i></div><small>${cnt[i]} Versuche</small></div>`).join('');
+  const one = () => {
+    const explore = Math.random() < .2 || cnt.some(c => c === 0);
+    const k = explore ? randInt(0, 2) : val.indexOf(Math.max(...val));
+    const ok = Math.random() < P[k]; cnt[k]++; val[k] += ((ok ? 1 : 0) - val[k]) / cnt[k]; tries++; if (ok) reward++;
+    return [k, ok, explore];
+  };
+  $('#dr-1').onclick = () => { const [k, ok, ex] = one(); draw(k, ok); $('#dr-st').innerHTML = `Versuch ${tries}: Tür ${k + 1} (${ex ? 'ausprobieren' : 'beste bisherige Wahl'}) → ${ok ? '<b class="good">Belohnung</b>' : '<b class="bad">keine Belohnung</b>'} · Belohnungen gesamt: ${reward}`; };
+  $('#dr-50').onclick = () => { let k, ok; for (let i = 0; i < 50; i++) [k, ok] = one(); draw(k, ok); const best = val.indexOf(Math.max(...val)); $('#dr-st').innerHTML = `${tries} Versuche, ${reward} Belohnungen. Der Roboter hat gelernt: <b>Tür ${best + 1}</b> lohnt sich am meisten. Ab und zu probiert er trotzdem andere Türen aus.`; };
+  $('#dr-r').onclick = reset; reset();
+})();
+
+sorter($('#sort-la'), [{id: 'u', name: 'überwacht'}, {id: 'uu', name: 'unüberwacht'}, {id: 't', name: 'teilüberwacht'}, {id: 'v', name: 'verstärkend'}], [
+  {t: 'Tausende Tierfotos mit Namen werden eingegeben.', c: 'u'}, {t: 'Spam-Filter lernt aus Mails, die als Spam markiert wurden.', c: 'u'},
+  {t: 'Kunden werden nach ähnlichem Kaufverhalten gruppiert.', c: 'uu'}, {t: 'Filmportal sortiert Filme in Gruppen, ohne Genres zu kennen.', c: 'uu'},
+  {t: 'Nur 100 von 10 000 Fotos sind beschriftet.', c: 't'},
+  {t: 'Saugroboter lernt durch Zusammenstöße und freie Wege.', c: 'v'}, {t: 'Ein Kleinkind lernt laufen: Hinfallen und Erfolg.', c: 'v'}
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Was braucht ein lernfähiges System zuerst?', a: ['einen Datensatz', 'einen Lautsprecher', 'ein festes Ergebnis', 'nichts'], ok: 0},
+  {q: 'Was hat ein Knoten im Entscheidungsbaum?', a: ['ein Attribut mit zwei Möglichkeiten', 'beliebig viele Ergebnisse', 'eine Zufallszahl', 'kein Attribut'], ok: 0},
+  {q: 'Welche Lernart nutzt Trainingsdaten mit Lösungen?', a: ['überwachtes Lernen', 'unüberwachtes Lernen', 'verstärkendes Lernen', 'gar keine'], ok: 0},
+  {q: 'Was gibt unüberwachtes Lernen aus?', a: ['Gruppen ähnlicher Daten', 'Namen der Daten', 'Belohnungen', 'nichts'], ok: 0},
+  {q: 'Wie lernt ein System beim verstärkenden Lernen?', a: ['durch positive oder negative Rückmeldung', 'durch beschriftete Fotos', 'durch Gruppieren', 'gar nicht'], ok: 0},
+  {q: 'Was ist teilüberwachtes Lernen?', a: ['Nur ein kleiner Teil der Daten hat eine Lösung.', 'Alle Daten haben eine Lösung.', 'Keine Daten haben eine Lösung.', 'Lernen ohne Daten'], ok: 0}
+]);
+</script>

@@ -1,0 +1,144 @@
+<!--
+title: Künstliche Intelligenz
+short: KI
+time: 2 Unterrichtsstunden
+q: Was ist künstliche Intelligenz – und wo begegnet sie uns?
+facts: Künstliche Intelligenz: Maschinen mit der Fähigkeit, Probleme zu lösen und Entscheidungen zu treffen | Schwache KI (spezialisiert, mit Mustern trainiert) und starke KI (gibt es noch nicht) | KI im Alltag: Sprachassistent, Smart Home und Internet der Dinge, Schachprogramm, Empfehlungen | KI beim Autofahren: Stufen vom assistierten zum autonomen Fahren | Chancen und Risiken
+inter: KI oder nicht? sortieren · schwach oder stark? · Smart Home erkunden · Stufen des autonomen Fahrens ordnen · Chancen und Risiken diskutieren (Umfrage)
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Maschinelles Lernen</p>
+      <h1>Künstliche Intelligenz<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Viele denken bei künstlicher Intelligenz an Roboter, die wie Menschen handeln. Im echten Leben begegnet uns KI eher versteckt: im Sprachassistenten, in der Navi-App, bei Filmempfehlungen oder im Schachprogramm.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wo hattest du heute vielleicht schon mit KI zu tun?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Was ist künstliche Intelligenz – und wo begegnet sie uns?</p></div>
+      <div class="controls"><button class="btn primary" data-go="was">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="was" data-label="Was ist KI?" data-yr="Erarbeitung" data-title="Was ist KI?" data-sub="Schwach und stark">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Künstliche Intelligenz</p>
+    <h2>Schwache und starke KI</h2>
+    <p class="lead">Haben Maschinen die Fähigkeit, Probleme zu lösen und Entscheidungen zu treffen, spricht man von <b>künstlicher Intelligenz (KI)</b>. Ein Schachprogramm berechnet viele mögliche Züge und wählt den mit der besten Gewinnchance.</p>
+  </div>
+  <div class="grid-2">
+    <div class="box"><span class="tag info">Schwache KI</span><p>Ist auf <b>eine Aufgabe spezialisiert</b> (Schach, Spracherkennung, Gesichtserkennung) und muss mit vorgegebenen Mustern trainiert werden. Alle heutigen KI-Systeme sind schwache KI.</p></div>
+    <div class="box"><span class="tag info">Starke KI</span><p>Soll wie ein Mensch <b>neue Aufgaben eigenständig</b> lösen, kreativ denken und emotional und sozial handeln können. Eine starke KI gibt es <b>bisher nicht</b>.</p></div>
+  </div>
+  <h3 class="mt">KI oder einfacher Automat?</h3>
+  <div id="sort-ki"></div>
+</section>
+
+<section class="station" id="smarthome" data-label="Smart Home" data-yr="Erarbeitung" data-title="Internet der Dinge" data-sub="Das Smart Home">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Internet der Dinge</p>
+      <h2>Das Smart Home</h2>
+      <ul class="facts">
+        <li>Nicht nur Computer und Smartphones sind vernetzt: Auch Lampen, Heizung, Kühlschrank und Staubsauger tauschen Daten aus – das <b>Internet der Dinge</b> (Internet of Things).</li>
+        <li>Ein Haushalt, dessen Geräte per App oder Sprache gesteuert werden, heißt <b>Smart Home</b> (smart = clever).</li>
+        <li>Manche Systeme lernen das Verhalten der Bewohner und passen sich an.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Sag dem Sprachassistenten …</h3></div>
+      <div class="chips" id="sh-cmd"></div>
+      <div class="home-grid" id="sh"></div>
+      <p class="status" id="sh-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="auto" data-label="Autofahren" data-yr="Erarbeitung" data-title="KI beim Autofahren" data-sub="Vom Assistenten zum Robotaxi">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Material M1</p>
+    <h2>KI beim Autofahren</h2>
+    <p class="lead">Beim <b>assistierten Fahren</b> unterstützt KI den Fahrer bei einzelnen Aufgaben, z. B. Spurhalten oder Abstand halten. Beim <b>autonomen Fahren</b> fährt das Auto ganz allein. Ordne die Stufen.</p>
+  </div>
+  <div id="order"></div>
+</section>
+
+<section class="station" id="m2" data-label="M2 Chancen/Risiken" data-yr="M2" data-title="Chancen und Risiken" data-sub="Eine Umfrage">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M2</p>
+    <h2>Wo soll KI eingesetzt werden?</h2>
+    <p class="lead">Manche Menschen sehen KI kritisch. Wie stehst du dazu? Stimme ab und vergleiche mit einer Beispielumfrage (Zustimmung in %).</p>
+  </div>
+  <div class="model">
+    <div id="poll"></div>
+    <div><h3>Chance oder Risiko?</h3><div id="sort-cr"></div></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Künstliche Intelligenz</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Künstliche Intelligenz</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step><b>Künstliche Intelligenz (KI):</b> Maschinen können Probleme lösen und Entscheidungen treffen.</li>
+        <li data-step><b>Schwache KI</b> ist auf eine Aufgabe spezialisiert und wird mit Mustern trainiert. <b>Starke KI</b> könnte wie ein Mensch beliebige Aufgaben lösen – sie gibt es noch nicht.</li>
+        <li data-step>Im <b>Internet der Dinge</b> tauschen Alltagsgeräte Daten aus; im <b>Smart Home</b> werden sie per App oder Sprache gesteuert.</li>
+        <li data-step><b>Chancen:</b> Routineaufgaben, bessere Diagnosen, mehr Sicherheit. <b>Risiken:</b> Arbeitsplätze, Datenschutz, Kontrollverlust, Verantwortung bei Fehlern.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Tabelle</span><p>Lege eine Tabelle mit je drei Chancen und Risiken von KI an.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: KI</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+sorter($('#sort-ki'), [{id: 'ki', name: 'KI (lernt aus Daten)'}, {id: 'au', name: 'einfacher Automat'}], [
+  {t: 'Sprachassistent versteht Fragen', c: 'ki'}, {t: 'Gesichtserkennung am Handy', c: 'ki'}, {t: 'Filmempfehlungen im Streamingportal', c: 'ki'}, {t: 'Schachprogramm', c: 'ki'},
+  {t: 'Kaugummi-Automat', c: 'au'}, {t: 'Wasserkocher schaltet bei 100 °C ab', c: 'au'}, {t: 'Fußgängerampel mit Knopf', c: 'au'}
+]);
+
+/* ================= Smart Home ================= */
+(() => {
+  const D = {licht: ['💡', 'Licht', false], heiz: ['🔥', 'Heizung', false], rollo: ['🪟', 'Rollladen', true], saug: ['🧹', 'Saugroboter', false], tv: ['📺', 'Fernseher', false]};
+  const C = [['„Mach das Licht an“', 'licht', true], ['„Es ist kalt hier“', 'heiz', true], ['„Gute Nacht“', null, 'nacht'], ['„Ich gehe aus dem Haus“', null, 'weg'], ['„Starte den Saugroboter“', 'saug', true]];
+  const draw = () => $('#sh').innerHTML = Object.entries(D).map(([k, [i, n, on]]) => `<div class="hg ${on ? 'on' : ''}"><b>${i}</b><span>${n}</span><small>${on ? (k === 'rollo' ? 'oben' : 'an') : (k === 'rollo' ? 'unten' : 'aus')}</small></div>`).join('');
+  $('#sh-cmd').innerHTML = C.map(([t], i) => `<button class="btn" data-c="${i}">🗣 ${t}</button>`).join('');
+  $('#sh-cmd').addEventListener('click', e => {
+    const b = e.target.closest('[data-c]'); if (!b) return; const [t, k, v] = C[+b.dataset.c];
+    if (k) D[k][2] = v;
+    if (v === 'nacht') { D.licht[2] = false; D.tv[2] = false; D.rollo[2] = false; D.heiz[2] = false; }
+    if (v === 'weg') { Object.values(D).forEach(d => d[2] = false); D.saug[2] = true; }
+    draw(); $('#sh-st').innerHTML = `Der Assistent erkennt die Sprache, versteht die Absicht und schickt Befehle an die vernetzten Geräte: ${t}`;
+  });
+  draw(); $('#sh-st').textContent = 'Wähle einen Sprachbefehl.';
+})();
+
+orderSteps($('#order'), ['Stufe 0: Der Mensch fährt allein, keine Assistenz', 'Stufe 1: Assistiert – z. B. Abstandsregeltempomat', 'Stufe 2: Teilautomatisiert – Auto lenkt und bremst, Fahrer überwacht ständig', 'Stufe 3: Hochautomatisiert – Fahrer darf sich zeitweise abwenden', 'Stufe 4: Vollautomatisiert – in bestimmten Bereichen ohne Fahrer', 'Stufe 5: Autonom – kein Lenkrad mehr nötig'], {label: 'Von Stufe 0 bis 5'});
+
+/* ================= Umfrage ================= */
+(() => {
+  const Q = [['in der Medizin (Diagnosen)', 68], ['in Fabriken (Routinearbeit)', 72], ['im Straßenverkehr (autonome Autos)', 41], ['in der Schule (Lernhilfen)', 46], ['bei Gerichtsurteilen', 14]];
+  const me = Q.map(() => null);
+  const draw = () => $('#poll').innerHTML = Q.map(([q, p], i) => `<div class="poll-row"><span>KI ${q}</span><span class="seg" data-i="${i}"><button data-v="1" aria-pressed="${me[i] === 1}">dafür</button><button data-v="0" aria-pressed="${me[i] === 0}">dagegen</button></span>${me[i] !== null ? `<div class="hbar-t"><i class="ref" style="width:${p}%"></i></div><small class="mono">${p} % dafür</small>` : ''}</div>`).join('');
+  $('#poll').addEventListener('click', e => { const b = e.target.closest('[data-v]'); if (!b) return; me[+b.parentElement.dataset.i] = +b.dataset.v; draw(); });
+  draw();
+})();
+sorter($('#sort-cr'), [{id: 'c', name: 'Chance'}, {id: 'r', name: 'Risiko'}], [
+  {t: 'Roboter erledigen Routineaufgaben', c: 'c'}, {t: 'Krankheiten werden besser erkannt', c: 'c'}, {t: 'höhere Produktivität', c: 'c'},
+  {t: 'Arbeitsplätze werden ersetzt', c: 'r'}, {t: 'Wer ist bei Fehlern verantwortlich?', c: 'r'}, {t: 'Das Menschliche geht verloren', c: 'r'}, {t: 'Viele persönliche Daten werden gesammelt', c: 'r'}
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Was zeichnet eine schwache KI aus?', a: ['Sie ist auf eine Aufgabe spezialisiert.', 'Sie kann alles wie ein Mensch.', 'Sie hat Gefühle.', 'Sie braucht keine Daten.'], ok: 0},
+  {q: 'Gibt es heute schon eine starke KI?', a: ['Nein', 'Ja, in jedem Handy', 'Ja, nur in Schachcomputern', 'Ja, in Ampeln'], ok: 0},
+  {q: 'Was ist das Internet der Dinge?', a: ['ein Netzwerk aus Alltagsgeräten, die Daten austauschen', 'ein neues Betriebssystem', 'eine Suchmaschine', 'ein Kabel'], ok: 0},
+  {q: 'Welche Stufe bezeichnet vollständig autonomes Fahren?', a: ['Stufe 5', 'Stufe 1', 'Stufe 2', 'Stufe 0'], ok: 0},
+  {q: 'Was ist ein Risiko von KI?', a: ['unklare Verantwortung bei Fehlern', 'bessere Diagnosen', 'Routineaufgaben werden übernommen', 'höhere Produktivität'], ok: 0},
+  {q: 'Wie wählt ein Schachprogramm seinen Zug?', a: ['Es berechnet viele mögliche Züge und wählt den besten.', 'zufällig', 'Es fragt den Gegner.', 'Es spielt immer denselben Zug.'], ok: 0}
+]);
+</script>

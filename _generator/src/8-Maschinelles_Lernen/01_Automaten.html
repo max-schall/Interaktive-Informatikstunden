@@ -1,0 +1,200 @@
+<!--
+title: Automaten im Alltag
+short: Automaten
+time: 2 Unterrichtsstunden
+q: Wie kann man die Funktionsweise von Automaten beschreiben?
+facts: Automaten führen vorbestimmte Abläufe selbsttätig aus (EVA-Prinzip) | Gültige Eingaben bewirken Zustandswechsel und Ausgaben | Zustandsdiagramm: Startzustand, Zustände, Übergänge, Endzustand | Alternativwege und Schleifen (Snack-, Pfandautomat) | Zustandstabelle einer Ampel
+inter: Kaugummi-Automat bedienen · Zustandsdiagramm mit Eingabefolge durchlaufen · gültige und ungültige Eingaben · Pfandautomat mit Schleife · Fußgängerampel als Zustandstabelle und Animation
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Maschinelles Lernen</p>
+      <h1>Automaten im Alltag<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Snackautomat, Fahrkartenautomat, Fahrstuhl, Ampel, Spülmaschine: Automaten führen vorbestimmte Abläufe selbsttätig aus. Sie sind die Vorstufe zu Maschinen, die lernen können.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Was passiert, wenn du in einen Snackautomaten die falsche Münze wirfst?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie kann man die Funktionsweise von Automaten beschreiben?</p></div>
+      <div class="controls"><button class="btn primary" data-go="kaugummi">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="kaugummi" data-label="Kaugummi" data-yr="Einstieg" data-title="Der Kaugummi-Automat" data-sub="Zustände und Eingaben">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Automaten im Alltag</p>
+      <h2>Der Kaugummi-Automat</h2>
+      <ul class="facts">
+        <li>Ein Automat kann nur mit bestimmten, <b>gültigen Eingaben</b> bedient werden – in der richtigen Reihenfolge.</li>
+        <li>Durch eine Eingabe wechselt er in einen anderen <b>Zustand</b>. Zu Beginn wartet er im <b>Startzustand</b>.</li>
+        <li>Am Ende steht eine <b>Ausgabe</b> (Kaugummi) im <b>Endzustand</b> – danach geht es zurück zum Start.</li>
+        <li>Automaten arbeiten nach dem <b>EVA-Prinzip</b>.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Bediene den Automaten</h3></div>
+      <svg id="kg"></svg>
+      <div class="controls"><button class="btn" data-in="muenze">🪙 Münze einwerfen</button><button class="btn" data-in="drehen">🔄 Griff drehen</button><button class="btn" data-in="nehmen">✋ Kaugummi nehmen</button></div>
+      <p class="status" id="kg-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="diagramm" data-label="Zustandsdiagramm" data-yr="Erarbeitung" data-title="Zustandsdiagramme" data-sub="Eingabefolgen prüfen">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Zustandsdiagramme</p>
+    <h2>Welcher Zustand nach A-B-A-B?</h2>
+    <p class="lead">In einem <b>Zustandsdiagramm</b> sind die Zustände Kreise, die Übergänge Pfeile mit der Eingabe. Der Startzustand hat einen Pfeil „von außen“, der Endzustand einen doppelten Rand. Gib eine Eingabefolge ein.</p>
+  </div>
+  <div class="model">
+    <div class="vis"><svg id="zd"></svg></div>
+    <div class="vis">
+      <div class="vis-head"><h3>Eingabefolge</h3></div>
+      <input class="text-in mono" id="zd-in" value="ABAB" aria-label="Eingabefolge aus A und B">
+      <ol class="facts" id="zd-log" style="list-style:decimal;padding-left:1.4rem"></ol>
+      <p class="status" id="zd-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="pfand" data-label="Pfand & Snack" data-yr="Erarbeitung" data-title="Schleifen und Alternativen" data-sub="Pfand- und Snackautomat">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Schleifen und Alternativwege</p>
+    <h2>Der Pfandautomat</h2>
+    <p class="lead">Beim Pfandautomaten ändert eine eingeworfene Flasche den Zustand <b>nicht</b> – der Automat bleibt im selben Zustand, nur der Betrag wird addiert: eine <b>Schleife</b>. Erst die Taste wechselt den Zustand. Beim Snackautomaten gibt es <b>Alternativwege</b>: zweimal 1 € oder einmal 2 €.</p>
+  </div>
+  <div class="model">
+    <div class="vis">
+      <svg id="pf"></svg>
+      <div class="controls"><button class="btn" data-pf="f">🍾 Flasche (0,25 €)</button><button class="btn" data-pf="d">🥫 Dose (0,25 €)</button><button class="btn primary" data-pf="t">🧾 Taste: Bon drucken</button></div>
+      <p class="status" id="pf-st"></p>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Snackautomat (2 €)</h3></div>
+      <svg id="sn"></svg>
+      <div class="controls"><button class="btn" data-sn="1">1 €</button><button class="btn" data-sn="2">2 €</button><button class="btn" data-sn="50">50 ct</button></div>
+      <p class="status" id="sn-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Ampel" data-yr="M1" data-title="Die Fußgängerampel" data-sub="Zustandstabelle">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Die Fußgängerampel vor der Schule</h2>
+    <p class="lead">Die Ampel ist rot, bis der Knopf gedrückt wird. Danach dauert es 3 Sekunden bis Grün. Die Grünphase dauert 10 Sekunden, dabei ertönt ein Hinweisgeräusch. Danach ist sie wieder rot.</p>
+  </div>
+  <div class="model">
+    <div class="table-wrap"><table class="cmp" id="amp-tab"><thead><tr><th>Zustand</th><th>Eingabe / Ereignis</th><th>Folgezustand</th><th>Ausgabe</th></tr></thead><tbody>
+      <tr><td>Rot (Start)</td><td class="q"><span>Knopf gedrückt</span></td><td class="q"><span>Warten</span></td><td class="q"><span>Anzeige „Signal kommt“</span></td></tr>
+      <tr><td>Warten</td><td class="q"><span>3 Sekunden vergangen</span></td><td class="q"><span>Grün</span></td><td class="q"><span>grünes Licht, Ton an</span></td></tr>
+      <tr><td>Grün</td><td class="q"><span>10 Sekunden vergangen</span></td><td class="q"><span>Rot</span></td><td class="q"><span>rotes Licht, Ton aus</span></td></tr>
+    </tbody></table><div class="cmp-tools"><button class="btn" id="amp-q">Felder verdecken</button><button class="btn" id="amp-a">Alle aufdecken</button></div></div>
+    <div class="vis">
+      <div class="ped-light"><span class="r on"></span><span class="g"></span></div>
+      <div class="controls" style="justify-content:center"><button class="btn primary" id="amp-btn">🔘 Knopf drücken</button></div>
+      <p class="status" id="amp-st">Zustand: Rot (Startzustand)</p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Automaten</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Automaten im Alltag</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step>Ein <b>Automat</b> führt vorbestimmte Abläufe selbsttätig aus. Er arbeitet nach dem EVA-Prinzip und akzeptiert nur <b>gültige Eingaben</b>.</li>
+        <li data-step>Eine Eingabe bewirkt einen Wechsel in einen anderen <b>Zustand</b>; dabei kann eine <b>Ausgabe</b> entstehen.</li>
+        <li data-step><b>Zustandsdiagramm:</b> Zustände als Kreise, Übergänge als Pfeile mit Eingabe. <b>Startzustand</b> (Pfeil von außen), <b>Endzustand</b> (doppelter Kreis).</li>
+        <li data-step>Es gibt <b>Alternativwege</b> (verschiedene Eingaben führen zum Ziel) und <b>Schleifen</b> (Eingabe ohne Zustandswechsel). Abläufe lassen sich auch als <b>Zustandstabelle</b> darstellen.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne das Zustandsdiagramm des Kaugummi-Automaten.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Gültige Eingaben</h2></div>
+  <div id="tf"></div>
+</section>
+
+<script>
+/* Zustandsdiagramm zeichnen: S {id: [x, y, name, end]}, T [[von, nach, label, bogen]] */
+function stateDiagram(svg, S, T, o = {}) {
+  svg.setAttribute('viewBox', `0 0 ${o.w || 440} ${o.h || 220}`); svg.classList.add('sd');
+  return cur => {
+    let s = `<defs><marker id="sda" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="currentColor"/></marker></defs>`;
+    const st = Object.keys(S)[0], [sx, sy] = S[st];
+    s += `<line class="tr" x1="${sx - 70}" y1="${sy}" x2="${sx - 32}" y2="${sy}" marker-end="url(#sda)"/>`;
+    T.forEach(([a, b, lab, bend = 0]) => {
+      const [x1, y1] = S[a], [x2, y2] = S[b];
+      if (a === b) { s += `<path class="tr" d="M${x1 - 12},${y1 - 28} C${x1 - 40},${y1 - 80} ${x1 + 40},${y1 - 80} ${x1 + 12},${y1 - 28}" fill="none" marker-end="url(#sda)"/><text class="tl" x="${x1}" y="${y1 - 68}" text-anchor="middle">${lab}</text>`; return; }
+      const dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy), ux = dx / L, uy = dy / L, mx = (x1 + x2) / 2 - uy * bend, my = (y1 + y2) / 2 + ux * bend;
+      s += `<path class="tr" d="M${x1 + ux * 30},${y1 + uy * 30} Q${mx},${my} ${x2 - ux * 32},${y2 - uy * 32}" fill="none" marker-end="url(#sda)"/><text class="tl" x="${mx - uy * 8}" y="${my + ux * 8 - 4}" text-anchor="middle">${lab}</text>`;
+    });
+    Object.entries(S).forEach(([k, [x, y, n, end]]) => { s += `<g class="st ${k === cur ? 'on' : ''}"><circle cx="${x}" cy="${y}" r="28"/>${end ? `<circle cx="${x}" cy="${y}" r="23" class="end"/>` : ''}<text x="${x}" y="${y + 4}" text-anchor="middle">${n}</text></g>`; });
+    svg.innerHTML = s;
+  };
+}
+
+/* ================= Kaugummi ================= */
+(() => {
+  const draw = stateDiagram($('#kg'), {z0: [80, 110, 'warten'], z1: [220, 110, 'frei'], z2: [360, 110, 'Ausgabe', true]}, [['z0', 'z1', 'Münze', 0], ['z1', 'z2', 'drehen', 0], ['z2', 'z0', 'nehmen', -70]]);
+  let z = 'z0';
+  const NEXT = {z0: {muenze: 'z1'}, z1: {drehen: 'z2'}, z2: {nehmen: 'z0'}};
+  const MSG = {z0: 'Startzustand: Der Automat wartet auf eine Münze.', z1: 'Münze erkannt – der Drehgriff ist freigegeben.', z2: 'Endzustand: Ein Kaugummi fällt heraus (Ausgabe). 🍬'};
+  draw(z); $('#kg-st').textContent = MSG[z];
+  document.addEventListener('click', e => { const b = e.target.closest('[data-in]'); if (!b) return; const n = NEXT[z][b.dataset.in]; if (n) { z = n; draw(z); $('#kg-st').textContent = MSG[z]; } else $('#kg-st').innerHTML = `<b class="bad">Ungültige Eingabe!</b> Im Zustand „${{z0: 'warten', z1: 'frei', z2: 'Ausgabe'}[z]}“ passiert dabei nichts.`; });
+})();
+
+/* ================= Diagramm A/B ================= */
+(() => {
+  const S = {q0: [70, 110, 'q0'], q1: [200, 50, 'q1'], q2: [200, 170, 'q2'], q3: [350, 110, 'q3', true]};
+  const T = [['q0', 'q1', 'A', 0], ['q0', 'q2', 'B', 0], ['q1', 'q2', 'A', 25], ['q2', 'q1', 'B', 25], ['q1', 'q3', 'B', 0], ['q2', 'q3', 'A', 0], ['q3', 'q3', 'A,B']];
+  const D = {}; T.forEach(([a, b, l]) => l.split(',').forEach(x => (D[a] = D[a] || {})[x] = b));
+  const draw = stateDiagram($('#zd'), S, T);
+  const run = () => {
+    const w = $('#zd-in').value.toUpperCase().replace(/[^AB]/g, ''); let z = 'q0'; const log = [];
+    for (const c of w) { const n = D[z][c]; log.push(`${z} —${c}→ ${n}`); z = n; }
+    draw(z); $('#zd-log').innerHTML = log.map(l => `<li class="mono">${l}</li>`).join('');
+    $('#zd-st').innerHTML = `Nach „${w || '(leer)'}“ ist der Automat in <b>${z}</b>${S[z][3] ? ' – einem Endzustand.' : '.'}`;
+  };
+  $('#zd-in').addEventListener('input', run); run();
+})();
+
+/* ================= Pfand & Snack ================= */
+(() => {
+  const draw = stateDiagram($('#pf'), {a: [110, 140, 'sammeln'], b: [320, 140, 'Bon', true]}, [['a', 'a', 'Flasche'], ['a', 'b', 'Taste', 0], ['b', 'a', 'Bon nehmen', -60]], {h: 210});
+  let sum = 0; draw('a'); $('#pf-st').textContent = 'Wirf Flaschen oder Dosen ein.';
+  document.addEventListener('click', e => { const b = e.target.closest('[data-pf]'); if (!b) return; if (b.dataset.pf === 't') { draw('b'); $('#pf-st').innerHTML = `🧾 Bon über <b>${numDE(sum, 2)} €</b> gedruckt. Zustandswechsel!`; sum = 0; setTimeout(() => draw('a'), 1500); } else { sum += .25; draw('a'); $('#pf-st').innerHTML = `Schleife: Zustand bleibt „sammeln“, Betrag <b>${numDE(sum, 2)} €</b>`; } });
+  const dS = stateDiagram($('#sn'), {s0: [70, 110, '0 €'], s1: [210, 50, '1 €'], s2: [350, 110, 'Snack', true]}, [['s0', 's1', '1 €', 0], ['s1', 's2', '1 €', 0], ['s0', 's2', '2 €', 30]]);
+  let z = 's0'; dS(z); $('#sn-st').textContent = 'Der Snack kostet 2 €.';
+  document.addEventListener('click', e => { const b = e.target.closest('[data-sn]'); if (!b) return; const v = b.dataset.sn;
+    const n = z === 's0' ? (v === '1' ? 's1' : v === '2' ? 's2' : null) : z === 's1' ? (v === '1' ? 's2' : null) : null;
+    if (!n) { $('#sn-st').innerHTML = `<b class="bad">Ungültige Eingabe</b> – die Münze fällt wieder heraus.`; return; }
+    z = n; dS(z); $('#sn-st').innerHTML = z === 's2' ? '🍫 Snack ausgegeben! (Alternativweg über ' + (v === '2' ? '2 €' : '1 € + 1 €') + ')' : 'Noch 1 € fehlt.'; if (z === 's2') setTimeout(() => { z = 's0'; dS(z); }, 1600); });
+})();
+
+/* ================= Fußgängerampel ================= */
+(() => {
+  quizTable($('#amp-tab'), $('#amp-q'), $('#amp-a'));
+  let busy = false;
+  const set = (r, g, t) => { $('.ped-light .r').classList.toggle('on', r); $('.ped-light .g').classList.toggle('on', g); $('#amp-st').innerHTML = t; };
+  $('#amp-btn').onclick = () => {
+    if (busy) return; busy = true; set(true, false, 'Zustand: <b>Warten</b> (Knopf gedrückt, „Signal kommt“)');
+    setTimeout(() => { set(false, true, 'Zustand: <b>Grün</b> – tick, tick, tick … 🔊'); let k = 10; const iv = setInterval(() => { k--; $('#amp-st').innerHTML = `Zustand: <b>Grün</b> – noch ${k} s 🔊`; if (k <= 0) { clearInterval(iv); set(true, false, 'Zustand: <b>Rot</b> (Startzustand)'); busy = false; } }, RM.matches ? 50 : 1000); }, RM.matches ? 50 : 3000);
+  };
+})();
+
+trueFalse($('#tf'), [
+  {t: 'Beim Kaugummi-Automaten ist „Griff drehen“ im Startzustand eine gültige Eingabe.', ok: false, why: 'Erst muss eine Münze eingeworfen werden.'},
+  {t: 'Beim Pfandautomaten bleibt der Zustand beim Einwerfen einer Flasche gleich.', ok: true, why: 'Das ist eine Schleife.'},
+  {t: 'Der Snackautomat für 2 € akzeptiert zwei 1-€-Münzen oder eine 2-€-Münze.', ok: true, why: 'Alternativwege.'},
+  {t: 'Ein Endzustand wird im Zustandsdiagramm mit einem doppelten Kreis gezeichnet.', ok: true},
+  {t: 'Automaten können selbst neue Regeln lernen.', ok: false, why: 'Sie führen nur vorbestimmte Abläufe aus.'},
+  {t: 'Auch ein Fahrstuhl kann als Automat beschrieben werden.', ok: true}
+]);
+</script>

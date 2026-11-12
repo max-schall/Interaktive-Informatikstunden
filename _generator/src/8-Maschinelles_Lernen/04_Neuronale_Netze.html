@@ -1,0 +1,176 @@
+<!--
+title: Neuronale Netze
+short: Neuronale Netze
+time: 2–3 Unterrichtsstunden
+q: Wie sind künstliche neuronale Netze aufgebaut und wie lernen sie?
+facts: Vorbild Gehirn: etwa 100 Milliarden Neuronen, Lernen verstärkt Verbindungen | Künstliches Neuron: Eingaben × Gewichte, Summe, Schwellenwert, Ausgabe | Schichten: Eingabeschicht, verborgene Schicht(en), Ausgabeschicht | Lernen = Gewichte anpassen | Anwendung Bilderkennung, Gesichtserkennung, Fehlerquellen
+inter: Ein Neuron entscheidet: Freibad ja oder nein? · Netz mit drei Schichten durchleuchten · Perzeptron lernt Katzen und Hunde zu unterscheiden · Bilderkennung Schicht für Schicht · Fehler bei der Bilderkennung
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Maschinelles Lernen</p>
+      <h1>Neuronale Netze<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Ein Blick in die Kamera – und das Smartphone ist entsperrt. Dahinter steckt ein <b>künstliches neuronales Netz</b>, das dein Gesicht erkennt. Sein Vorbild ist das menschliche Gehirn.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Woran erkennst du ein Gesicht – sogar mit Sonnenbrille?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie sind künstliche neuronale Netze aufgebaut und wie lernen sie?</p></div>
+      <div class="controls"><button class="btn primary" data-go="neuron">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="neuron" data-label="Neuron" data-yr="Erarbeitung" data-title="Ein künstliches Neuron" data-sub="Gewichte und Schwellenwert">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Gehirn als Vorbild</p>
+      <h2>Ein künstliches Neuron</h2>
+      <ul class="facts">
+        <li>Das Gehirn besteht aus etwa <b>100 Milliarden Nervenzellen</b> (Neuronen), die untereinander verbunden sind. Beim Lernen werden Verbindungen verstärkt oder neu angelegt.</li>
+        <li>Ein <b>künstliches Neuron</b> rechnet wie ein Taschenrechner: Es multipliziert jede Eingabe mit einem <b>Gewicht</b>, addiert alles und vergleicht die Summe mit einem <b>Schwellenwert</b>.</li>
+        <li>Ist die Summe größer, „feuert“ das Neuron (Ausgabe 1), sonst nicht (0).</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Gehe ich ins Freibad?</h3></div>
+      <div id="nr"></div>
+      <p class="status" id="nr-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="schichten" data-label="Schichten" data-yr="Erarbeitung" data-title="Aufbau eines Netzes" data-sub="Eingabe, verborgen, Ausgabe">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Aufbau eines neuronalen Netzes</p>
+      <h2>Drei Arten von Schichten</h2>
+      <ul class="facts">
+        <li>Die <b>Eingabeschicht</b> versorgt das Netz mit Informationen, z. B. den Helligkeitswerten der Pixel.</li>
+        <li>In der <b>verborgenen Schicht</b> (oft sind es viele) werden die Informationen verarbeitet. Die Neuronen tauschen ihre Ergebnisse aus.</li>
+        <li>Die <b>Ausgabeschicht</b> berechnet die Endwerte, z. B. „Katze: 92 %“.</li>
+        <li>Die Stärke jeder Verbindung ist ein <b>Gewicht</b>. Lernen heißt: die Gewichte so anpassen, dass die Ausgabe stimmt.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Signal durchs Netz</h3><button class="btn primary" id="nn-go">▶ Bild eingeben</button></div>
+      <svg viewBox="0 0 360 240" id="nn" class="nn-svg"></svg>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="lernen" data-label="Lernen" data-yr="Vertiefung" data-title="Ein Neuron lernt" data-sub="Das Perzeptron">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Ein Neuron lernt</p>
+    <h2>Katze oder Hund?</h2>
+    <p class="lead">Ein einzelnes Neuron (<b>Perzeptron</b>) soll Tiere nach Größe und Gewicht einordnen. Am Anfang sind seine Gewichte zufällig – die Trennlinie liegt falsch. Bei jedem Fehler werden die Gewichte ein kleines Stück korrigiert. Trainiere es!</p>
+  </div>
+  <div class="model">
+    <div class="vis"><svg viewBox="0 0 300 220" class="ml-svg" id="pc"></svg><div class="controls"><button class="btn primary" id="pc-1">1 Trainingsrunde</button><button class="btn" id="pc-10">10 Runden</button><button class="btn" id="pc-r">Neu (zufällige Gewichte)</button></div></div>
+    <p class="status" id="pc-st"></p>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Bilderkennung" data-yr="M1" data-title="Bilderkennung" data-sub="Schicht für Schicht">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Wie ein Netz ein Bild erkennt</h2>
+    <p class="lead">Die Bilderkennung ist ein typisches Anwendungsbeispiel. Jede Schicht erkennt etwas Komplexeres. Gehe die Schichten durch.</p>
+  </div>
+  <div class="model">
+    <div class="vis"><div class="layers-demo" id="ld"></div><div id="ld-step"></div></div>
+    <div class="stack">
+      <p class="status" id="ld-st"></p>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Fehlerquellen</h3></header><p>Erkläre, warum es bei der Bilderkennung zu Fehlern kommen kann.</p>
+        <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Das Netz kann nur erkennen, was in den Trainingsdaten vorkam. Ungewöhnliche Perspektiven, schlechtes Licht, verdeckte Objekte oder einseitige Trainingsdaten (z. B. nur Hunde auf Wiesen) führen zu Fehlern. Das Netz „versteht“ nicht, was es sieht, sondern vergleicht Muster.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Neuronale Netze</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Neuronale Netze</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step><b>Künstliche neuronale Netze</b> sind Algorithmen nach dem Vorbild des Gehirns. Sie bestehen aus verbundenen <b>künstlichen Neuronen</b> (Knoten).</li>
+        <li data-step>Ein Neuron multipliziert seine Eingaben mit <b>Gewichten</b>, addiert sie und gibt ein Signal weiter, wenn die Summe den <b>Schwellenwert</b> überschreitet.</li>
+        <li data-step>Schichten: <b>Eingabeschicht</b> → <b>verborgene Schicht(en)</b> → <b>Ausgabeschicht</b>.</li>
+        <li data-step>Beim <b>Lernen</b> werden die Gewichte so lange angepasst, bis die Ausgaben stimmen. Anwendungen: Bild-, Gesichts- und Spracherkennung.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne ein Netz mit 3 Eingabe-, 4 verborgenen und 2 Ausgabe-Neuronen und beschrifte die Schichten.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Neuronen berechnen</h2></div>
+  <div id="ts"></div>
+</section>
+
+<script>
+/* ================= Ein Neuron ================= */
+(() => {
+  const IN = [['☀ Sonne scheint', 3], ['🌡 über 25 °C', 4], ['👫 Freunde gehen mit', 2], ['📚 Klassenarbeit morgen', -5]];
+  const x = [1, 1, 0, 0], TH = 5;
+  function draw() {
+    const sum = IN.reduce((s, [, w], i) => s + w * x[i], 0), fire = sum > TH;
+    $('#nr').innerHTML = `<div class="neuron">${IN.map(([n, w], i) => `<div class="nin"><button class="btn ${x[i] ? 'primary' : ''}" data-i="${i}">${n}: ${x[i]}</button><span class="mono">· ${w >= 0 ? '+' : ''}${w}</span></div>`).join('')}<div class="nbody ${fire ? 'fire' : ''}"><b>Σ = ${sum}</b><small>Schwelle ${TH}</small></div><div class="nout">${fire ? '🏊 JA (1)' : '🏠 NEIN (0)'}</div></div>`;
+    $('#nr-st').innerHTML = `${IN.map(([, w], i) => `${x[i]}·${w}`).join(' + ')} = <b>${sum}</b> ${fire ? '&gt;' : '≤'} ${TH} → Ausgabe <b>${fire ? 1 : 0}</b>. Das Gewicht −5 wirkt wie eine Bremse.`;
+  }
+  $('#nr').addEventListener('click', e => { const b = e.target.closest('[data-i]'); if (b) { x[+b.dataset.i] ^= 1; draw(); } });
+  draw();
+})();
+
+/* ================= Schichten ================= */
+(() => {
+  const L = [[4, 60, 'Eingabe'], [5, 180, 'verborgen'], [2, 300, 'Ausgabe']];
+  const pos = L.map(([n, x]) => [...Array(n)].map((_, i) => [x, 30 + (i + .5) * (190 / n)]));
+  let lit = -1;
+  const draw = () => {
+    let s = '';
+    for (let l = 0; l < 2; l++) pos[l].forEach(([x1, y1]) => pos[l + 1].forEach(([x2, y2]) => s += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" class="syn ${lit > l ? 'on' : ''}" stroke-width="${.6 + ((x1 * 7 + y2 * 3) % 5) * .5}"/>`));
+    pos.forEach((ly, l) => ly.forEach(([x, y], i) => s += `<circle cx="${x}" cy="${y}" r="13" class="neu ${lit >= l ? 'on' : ''}"/>`));
+    L.forEach(([, x, n]) => s += `<text x="${x}" y="232" text-anchor="middle">${n}</text>`);
+    if (lit >= 2) s += `<text x="330" y="${pos[2][0][1] + 4}">🐱 92 %</text><text x="330" y="${pos[2][1][1] + 4}">🐶 8 %</text>`;
+    $('#nn').innerHTML = s;
+  };
+  $('#nn-go').onclick = () => { lit = -1; draw(); [0, 1, 2].forEach(k => setTimeout(() => { lit = k; draw(); }, RM.matches ? 0 : 500 * (k + 1))); };
+  draw();
+})();
+
+/* ================= Perzeptron ================= */
+(() => {
+  let D = [], w, b, round = 0;
+  const gen = () => { D = []; for (let i = 0; i < 10; i++) D.push([randInt(20, 120), randInt(20, 100), 0]); for (let i = 0; i < 10; i++) D.push([randInt(150, 280), randInt(110, 200), 1]); };
+  const init = () => { w = [Math.random() - .5, Math.random() - .5]; b = Math.random() - .5; round = 0; };
+  const out = (x, y) => w[0] * x / 300 + w[1] * y / 220 + b > 0 ? 1 : 0;
+  function draw() {
+    let s = `<line x1="20" y1="205" x2="290" y2="205" class="ax"/><line x1="20" y1="205" x2="20" y2="10" class="ax"/><text x="155" y="219" text-anchor="middle">Größe →</text><text x="12" y="110" transform="rotate(-90 12 110)" text-anchor="middle">Gewicht →</text>`;
+    const yAt = x => -(w[0] * x / 300 + b) / w[1] * 220, toS = (x, y) => [x, 220 - y];
+    if (Math.abs(w[1]) > 1e-6) { const [ax, ay] = toS(0, yAt(0)), [bx, by] = toS(300, yAt(300)); s += `<line x1="${ax}" y1="${ay}" x2="${bx}" y2="${by}" stroke="var(--accent)" stroke-width="3"/>`; }
+    let err = 0;
+    D.forEach(([x, y, c]) => { const [sx, sy] = toS(x, y), ok = out(x, y) === c; if (!ok) err++; s += `<text x="${sx}" y="${sy + 6}" text-anchor="middle" class="emo">${c ? '🐶' : '🐱'}</text>${ok ? '' : `<circle cx="${sx}" cy="${sy}" r="11" fill="none" stroke="#DC2626" stroke-width="2"/>`}`; });
+    $('#pc').innerHTML = s;
+    $('#pc-st').innerHTML = `Runde ${round}: <b>${err}</b> von ${D.length} Tieren falsch eingeordnet (rot umkreist). Gewichte: w₁ = ${numDE(w[0], 2)}, w₂ = ${numDE(w[1], 2)}, Schwelle = ${numDE(-b, 1)}${err === 0 ? ' – <b class="good">alles richtig gelernt!</b>' : ''}`;
+  }
+  const train = n => { for (let r = 0; r < n; r++) { round++; shuffle(D).forEach(([x, y, c]) => { const e = c - out(x, y); if (e) { w[0] += .3 * e * x / 300; w[1] += .3 * e * y / 220; b += .3 * e; } }); } draw(); };
+  $('#pc-1').onclick = () => train(1); $('#pc-10').onclick = () => train(10); $('#pc-r').onclick = () => { init(); draw(); };
+  gen(); init(); draw();
+})();
+
+/* ================= Bilderkennung ================= */
+(() => {
+  const S = [['Eingabeschicht', 'Das Foto wird in Pixel zerlegt. Jedes Eingabe-Neuron bekommt einen Helligkeitswert.', '<div class="ld-px">' + [...Array(64)].map((_, i) => `<i style="opacity:${[18, 19, 20, 21, 26, 29, 34, 37, 42, 45, 10, 13, 50, 53].includes(i) ? .9 : .12}"></i>`).join('') + '</div>'],
+    ['1. verborgene Schicht', 'Neuronen erkennen einfache Bildelemente: Kanten und Linien.', '<div class="ld-big">╱ ╲ │ ─</div>'],
+    ['2. verborgene Schicht', 'Aus Kanten werden geometrische Formen: Kreise, Dreiecke, Bögen.', '<div class="ld-big">◯ △ ◡</div>'],
+    ['3. verborgene Schicht', 'Aus Formen werden Teile: Ohren, Augen, Schnauze.', '<div class="ld-big">👂 👁 👃</div>'],
+    ['Ausgabeschicht', 'Die Ausgabe-Neuronen berechnen Wahrscheinlichkeiten.', '<div class="ld-big">🐱 92 % · 🐶 8 %</div>']];
+  stepper($('#ld-step'), S.length, k => { $('#ld').innerHTML = S[k][2]; $('#ld-st').innerHTML = `<b>${S[k][0]}:</b> ${S[k][1]}`; });
+})();
+
+taskSet($('#ts'), () => {
+  const x = [randInt(0, 1), randInt(0, 1), randInt(0, 1)], w = [randInt(-3, 5), randInt(-3, 5), randInt(-3, 5)], t = randInt(1, 5), s = x.reduce((a, v, i) => a + v * w[i], 0);
+  return {key: x.join('') + w.join(), tag: 'Neuron', q: `Eingaben ${x.join(', ')} · Gewichte ${w.join(', ')} · Schwelle ${t}`, fields: [{l: 'Summe', a: s}, {l: 'Ausgabe (0/1)', a: s > t ? 1 : 0}], hint: 'Summe = Eingabe₁·Gewicht₁ + … ; Ausgabe 1, wenn die Summe größer als die Schwelle ist.'};
+}, {n: 4});
+</script>

@@ -1,0 +1,104 @@
+<!--
+title: Wiederholung und Selbsttest
+short: Selbsttest
+time: 1 Unterrichtsstunde
+q: Was kann ich, und was sollte ich noch üben?
+facts: Zusammenfassung als Karteikarten | Trainer T1–T4: Automaten, KI, Lernarten und Entscheidungsbäume, neuronale Netze | Großes Quiz und „Ich kann …“-Liste mit Links zurück in die Stunden
+inter: Karteikarten · Paare finden · Zustandsfolgen · KI-Begriffe · Lernarten sortieren · Neuron berechnen · Quiz · Selbsteinschätzung
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Maschinelles Lernen</p>
+      <h1>Wiederholung und Selbsttest<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Automaten, künstliche Intelligenz, maschinelles Lernen und neuronale Netze: Prüfe, was du sicher kannst.</p>
+      <div class="controls"><button class="btn primary" data-go="begriffe">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="begriffe" data-label="Begriffe" data-yr="Wiederholen" data-title="Zusammenfassung" data-sub="Fachbegriffe als Karteikarten">
+  <div class="section-head"><p class="eyebrow">Station 1 · Zusammenfassung</p><h2>Fachbegriffe</h2></div>
+  <div id="flip"></div>
+  <h3 class="mt">Paare finden</h3>
+  <div id="match"></div>
+</section>
+
+<section class="station" id="t1" data-label="T1 Automaten" data-yr="Trainer" data-title="T1 Automaten" data-sub="Zustände">
+  <div class="section-head"><p class="eyebrow">Station 2 · Trainer T1</p><h2>Automaten</h2><p class="lead">Kaugummi-Automat: Zustände <b>warten</b> → (Münze) → <b>frei</b> → (drehen) → <b>Ausgabe</b> → (nehmen) → <b>warten</b>. Ungültige Eingaben ändern nichts.</p></div>
+  <div id="t1-ts"></div>
+</section>
+
+<section class="station" id="t2" data-label="T2 KI" data-yr="Trainer" data-title="T2 Künstliche Intelligenz" data-sub="Begriffe">
+  <div class="section-head"><p class="eyebrow">Station 3 · Trainer T2</p><h2>Künstliche Intelligenz</h2></div>
+  <div id="t2-tf"></div>
+</section>
+
+<section class="station" id="t3" data-label="T3 Lernen" data-yr="Trainer" data-title="T3 Maschinelles Lernen" data-sub="Lernarten">
+  <div class="section-head"><p class="eyebrow">Station 4 · Trainer T3</p><h2>Lernarten</h2></div>
+  <div id="t3-sort"></div>
+</section>
+
+<section class="station" id="t4" data-label="T4 Netze" data-yr="Trainer" data-title="T4 Neuronale Netze" data-sub="Ein Neuron berechnen">
+  <div class="section-head"><p class="eyebrow">Station 5 · Trainer T4</p><h2>Neuronale Netze</h2></div>
+  <div id="t4-ts"></div>
+</section>
+
+<section class="station" id="quiz-st" data-label="Quiz" data-yr="Testen" data-title="Großes Quiz" data-sub="10 zufällige Fragen">
+  <div class="section-head"><p class="eyebrow">Station 6 · Quiz</p><h2>Großes Quiz</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<section class="station" id="uebungen" data-label="Ich kann …">
+  <div class="section-head"><p class="eyebrow">Selbsteinschätzung</p><h2>Ich kann …</h2></div>
+  <ol id="sc"></ol>
+</section>
+
+<script>
+const BEGRIFFE = [
+  ['Automat', 'führt vorbestimmte Abläufe selbsttätig aus'], ['Zustand', 'Situation, in der sich ein Automat befindet'], ['Startzustand', 'Zustand zu Beginn, Pfeil von außen'], ['Schleife (Automat)', 'Eingabe ohne Zustandswechsel'],
+  ['schwache KI', 'auf eine Aufgabe spezialisiert'], ['starke KI', 'könnte alles wie ein Mensch – gibt es nicht'], ['Internet der Dinge', 'vernetzte Alltagsgeräte'], ['Entscheidungsbaum', 'Knoten mit Ja/Nein-Fragen'],
+  ['überwachtes Lernen', 'Trainingsdaten mit Lösungen'], ['unüberwachtes Lernen', 'Gruppen ohne Vorgabe'], ['verstärkendes Lernen', 'Lernen durch Belohnung'], ['Gewicht', 'Stärke einer Verbindung im Netz'], ['verborgene Schicht', 'verarbeitet Informationen im Netz']
+];
+flipCards($('#flip'), BEGRIFFE);
+matcher($('#match'), shuffle(BEGRIFFE.slice()).slice(0, 7));
+taskSet($('#t1-ts'), () => {
+  const E = ['Münze', 'drehen', 'nehmen'], seq = [...Array(randInt(2, 5))].map(() => pick(E)), N = {warten: {Münze: 'frei'}, frei: {drehen: 'Ausgabe'}, Ausgabe: {nehmen: 'warten'}};
+  let z = 'warten'; seq.forEach(e => z = N[z][e] || z);
+  return {key: seq.join(), tag: 'Zustand', q: `Eingaben: <b>${seq.join(' → ')}</b>`, fields: [{l: 'Zustand am Ende', a: z}], hint: 'Ungültige Eingaben ändern den Zustand nicht.'};
+}, {n: 3});
+trueFalse($('#t2-tf'), [
+  {t: 'Ein Sprachassistent ist eine schwache KI.', ok: true}, {t: 'Es gibt bereits starke KI, die alles kann wie ein Mensch.', ok: false},
+  {t: 'Im Smart Home werden Geräte per App oder Sprache gesteuert.', ok: true}, {t: 'Beim autonomen Fahren der Stufe 5 braucht man kein Lenkrad mehr.', ok: true},
+  {t: 'Bei KI-Fehlern ist die Verantwortung immer eindeutig geregelt.', ok: false, why: 'Das ist eine offene Frage – ein Risiko.'}
+]);
+sorter($('#t3-sort'), [{id: 'u', name: 'überwacht'}, {id: 'uu', name: 'unüberwacht'}, {id: 'v', name: 'verstärkend'}], [
+  {t: 'Fotos mit Namen trainieren', c: 'u'}, {t: 'Spamfilter mit markierten Mails', c: 'u'}, {t: 'Kunden in Gruppen einteilen', c: 'uu'}, {t: 'ähnliche Lieder gruppieren', c: 'uu'}, {t: 'Roboter lernt durch Belohnung', c: 'v'}, {t: 'Spielfigur lernt durch Punkte', c: 'v'}
+]);
+taskSet($('#t4-ts'), () => { const x = [randInt(0, 1), randInt(0, 1), randInt(0, 1)], w = [randInt(-2, 4), randInt(-2, 4), randInt(-2, 4)], t = randInt(1, 4), s = x.reduce((a, v, i) => a + v * w[i], 0); return {key: x.join('') + w.join(), tag: 'Neuron', q: `Eingaben ${x.join(', ')} · Gewichte ${w.join(', ')} · Schwelle ${t}`, fields: [{l: 'Summe', a: s}, {l: 'Ausgabe', a: s > t ? 1 : 0}]}; }, {n: 3});
+mcQuiz($('#quiz'), [
+  {q: 'Was bewirkt eine gültige Eingabe bei einem Automaten?', a: ['einen Zustandswechsel', 'nichts', 'einen Absturz', 'das Lernen neuer Regeln'], ok: 0},
+  {q: 'Wie wird ein Endzustand gezeichnet?', a: ['als doppelter Kreis', 'als Raute', 'als Pfeil', 'als Rechteck'], ok: 0},
+  {q: 'Was ist ein Alternativweg beim Snackautomaten?', a: ['2 € oder zweimal 1 €', 'Flasche einwerfen', 'Bon drucken', 'Automat ausschalten'], ok: 0},
+  {q: 'Welche KI gibt es heute?', a: ['schwache KI', 'starke KI', 'beide', 'keine'], ok: 0},
+  {q: 'Was ist ein Smart Home?', a: ['ein Haushalt mit vernetzten, steuerbaren Geräten', 'ein Haus aus Glas', 'ein Computerspiel', 'eine Lernplattform'], ok: 0},
+  {q: 'Wie viele Möglichkeiten hat ein Knoten im Entscheidungsbaum?', a: ['zwei', 'eine', 'drei', 'beliebig viele'], ok: 0},
+  {q: 'Welche Lernart bildet Gruppen ohne Lösungen?', a: ['unüberwachtes Lernen', 'überwachtes Lernen', 'verstärkendes Lernen', 'teilüberwachtes Lernen'], ok: 0},
+  {q: 'Was passiert beim Lernen eines neuronalen Netzes?', a: ['Die Gewichte werden angepasst.', 'Neuronen werden gelöscht.', 'Der Strom wird erhöht.', 'Die Eingaben werden geändert.'], ok: 0},
+  {q: 'Welche Schicht liefert das Ergebnis?', a: ['Ausgabeschicht', 'Eingabeschicht', 'verborgene Schicht', 'keine'], ok: 0},
+  {q: 'Wie viele Nervenzellen hat das menschliche Gehirn ungefähr?', a: ['100 Milliarden', '100 Tausend', '100', '1 Million'], ok: 0},
+  {q: 'Warum kann Bilderkennung Fehler machen?', a: ['Sie kann nur erkennen, was in den Trainingsdaten vorkam.', 'Kameras sind immer kaputt.', 'Neuronale Netze rechnen nicht.', 'Bilder haben keine Pixel.'], ok: 0}
+], {pick: 10});
+selfCheck($('#sc'), [
+  {t: 'Ich kann Automaten mit Zuständen und Eingaben beschreiben.', href: '01_Automaten.html#kaugummi'},
+  {t: 'Ich kann Zustandsdiagramme lesen und zeichnen.', href: '01_Automaten.html#diagramm'},
+  {t: 'Ich kann eine Zustandstabelle anlegen.', href: '01_Automaten.html#m1'},
+  {t: 'Ich kann schwache und starke KI unterscheiden.', href: '02_KI.html#was'},
+  {t: 'Ich kann Chancen und Risiken von KI abwägen.', href: '02_KI.html#m2'},
+  {t: 'Ich kann einen Entscheidungsbaum anwenden und verbessern.', href: '03_Maschinen_lernen.html#baum'},
+  {t: 'Ich kann überwachtes, unüberwachtes und verstärkendes Lernen unterscheiden.', href: '03_Maschinen_lernen.html#m2'},
+  {t: 'Ich kann den Aufbau eines neuronalen Netzes beschreiben.', href: '04_Neuronale_Netze.html#schichten'},
+  {t: 'Ich kann die Ausgabe eines künstlichen Neurons berechnen.', href: '04_Neuronale_Netze.html#neuron'}
+]);
+</script>
