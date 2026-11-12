@@ -315,7 +315,7 @@ def build_index(css):
         gk = gkey(ss[0])
         titles[gk] = f'Klasse {g}'
         n = sum(len(s['lessons']) for s in ss)
-        leds = ''.join(f'<i class="s{s["idx"]}" title="{html.escape(s["name"])}"></i>' for s in ss)
+        leds = ''.join(f'<i class="ser{s["idx"]}" title="{html.escape(s["name"])}"></i>' for s in ss)
         tiles.append(f'''    <a class="grade" href="#{gk}">
       <span class="g-lbl">Klasse</span><span class="g-num">{g}</span>
       <span class="g-meta">{len(ss)} Reihen · {n} Stunden</span>
@@ -325,10 +325,10 @@ def build_index(css):
         cards, sviews = [], []
         for s in ss:
             titles[f'{gk}/{s["folder"]}'] = s['name']
-            scss_l.append(f'.s{s["idx"]}{{--accent:{s["accent"][0]}}}')
-            scss_d.append(f'.s{s["idx"]}{{--accent:{s["accent"][1]}}}')
+            scss_l.append(f'.ser{s["idx"]}{{--accent:{s["accent"][0]}}}')
+            scss_d.append(f'.ser{s["idx"]}{{--accent:{s["accent"][1]}}}')
             ln = len(s['lessons'])
-            cards.append(f'''      <li class="lesson s{s["idx"]}">
+            cards.append(f'''      <li class="lesson ser{s["idx"]}">
         <div class="l-num">{s["chapter"]}</div>
         <div class="l-body"><p class="eyebrow">Kapitel {s["chapter"]} · {ln} Stunde{"n" if ln != 1 else ""} · ≈ {s["ue"]} Unterrichtsstunden</p><h2>{s["name"]}</h2><p class="l-q">{s["lead"]}</p></div>
         <div class="l-go"><a class="btn primary" href="#{gk}/{s["folder"]}">Stunden →</a><a class="btn" href="{s["folder"]}/00_Uebersicht.html">Übersicht</a></div>
@@ -336,7 +336,7 @@ def build_index(css):
             rows = []
             for k2, (f, m) in enumerate(s['lessons']):
                 rows.append(f'''        <li><a class="row" href="{s["folder"]}/{f.name}"><span class="no">{k2 + 1:02d}</span><span class="rt"><b>{m["title"]}</b><small>{m.get("q", "")}</small></span><span class="go">öffnen →</span></a><a class="ws" href="{s["folder"]}/{f.stem}.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>''')
-            sviews.append(f'''  <section class="view s{s["idx"]}" data-view="{gk}/{s["folder"]}" hidden>
+            sviews.append(f'''  <section class="view ser{s["idx"]}" data-view="{gk}/{s["folder"]}" hidden>
     <div class="topic-head">
       <div><p class="eyebrow">Klasse {g} · Kapitel {s["chapter"]}</p><h2>{s["name"]}</h2><p>{s["lead"]}</p></div>
       <a class="btn primary" href="{s["folder"]}/00_Uebersicht.html">Übersicht der Reihe →</a>
