@@ -1,0 +1,206 @@
+<!--
+title: Vigenère und One-Time-Pad
+short: Vigenère & OTP
+time: 2 Unterrichtsstunden
+q: Wie werden Verschlüsselungen sicherer als bei Caesar?
+facts: Vigenère-Verschlüsselung: Schlüsselwort bestimmt die Verschiebung jedes Buchstabens | Polyalphabetisches Substitutionsverfahren, Vigenère-Quadrat | One-Time-Pad: zufälliger Schlüssel so lang wie der Klartext, nur einmal verwendet | Fleißnersche Schablone als Transposition
+inter: Vigenère-Quadrat mit Hervorhebung · Schritt-für-Schritt-Verschlüsselung · Vigenère-Werkzeug · One-Time-Pad mit Zufallsschlüssel · Fleißnersche Schablone drehen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Daten verschlüsseln</p>
+      <h1>Vigenère und One-Time-Pad<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Caesar hat nur 25 mögliche Schlüssel – die kann man schnell durchprobieren. Im 16. Jahrhundert kam eine bessere Idee: Jeder Buchstabe wird <b>unterschiedlich weit</b> verschoben.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wie lange brauchst du, um eine Caesar-Nachricht ohne Schlüssel zu knacken?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie werden Verschlüsselungen sicherer als bei Caesar?</p></div>
+      <div class="controls"><button class="btn primary" data-go="idee">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="idee" data-label="Schlüsselwort" data-yr="Erarbeitung" data-title="Vigenère-Verschlüsselung" data-sub="Ein Schlüsselwort">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Vigenère-Verschlüsselung</p>
+      <h2>Ein Wort als Schlüssel</h2>
+      <ul class="facts">
+        <li>Statt einer Zahl gibt es ein <b>Schlüsselwort</b>, z. B. <span class="mono">KEY</span>. Es wird so oft wiederholt, bis es so lang ist wie der Klartext.</li>
+        <li>Jeder Schlüsselbuchstabe gibt die Verschiebung an: A = 0, B = 1, … K = 10, E = 4, Y = 24.</li>
+        <li>Weil viele verschiedene Alphabete genutzt werden, ist es ein <b>polyalphabetisches</b> Substitutionsverfahren (poly = viele). Je länger das Schlüsselwort, desto sicherer.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Schritt für Schritt</h3></div>
+      <div class="table-wrap"><table class="cmp vg-steps" id="vs"></table></div>
+      <div id="vs-step"></div>
+      <p class="status" id="vs-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="quadrat" data-label="Quadrat" data-yr="Erarbeitung" data-title="Das Vigenère-Quadrat" data-sub="26 Alphabete">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Das Vigenère-Quadrat</p>
+    <h2>26 Alphabete in einem Quadrat</h2>
+    <p class="lead">Jede Zeile ist ein um eine Stelle weiter verschobenes Alphabet. Suche oben den <b>Klartextbuchstaben</b>, links den <b>Schlüsselbuchstaben</b> – im Kreuzungspunkt steht der <b>Geheimtextbuchstabe</b>. Tippe ein Feld an.</p>
+  </div>
+  <div class="model">
+    <div class="vq-wrap"><table class="vq" id="vq"></table></div>
+    <div class="stack"><div class="box" id="vq-info"><p>Tippe ein Feld an.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="werkzeug" data-label="Werkzeug" data-yr="Übung" data-title="Vigenère-Werkzeug" data-sub="Ver- und entschlüsseln">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Das Werkzeug</p>
+    <h2>Vigenère ver- und entschlüsseln</h2>
+  </div>
+  <div class="vis">
+    <div class="vis-head"><h3>Schlüsselwort</h3><input class="text-in mono" id="vw-k" value="SCHULE" style="max-width:14rem" aria-label="Schlüsselwort"><div id="vw-dir"></div></div>
+    <div class="cols-2">
+      <label><span class="note">Eingabe</span><textarea class="code-in" id="vw-in" style="min-height:5rem;background:var(--surface-2);color:var(--ink)">INFORMATIK WIRD AN UNSERER SCHULE GELEHRT</textarea></label>
+      <label><span class="note">Ausgabe</span><textarea class="code-in" id="vw-out" style="min-height:5rem" readonly></textarea></label>
+    </div>
+    <p class="status" id="vw-st"></p>
+  </div>
+</section>
+
+<section class="station" id="otp" data-label="One-Time-Pad" data-yr="Erarbeitung" data-title="One-Time-Pad" data-sub="Absolut sicher – wenn …">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 4 · Das One-Time-Pad</p>
+      <h2>Ein Schlüssel für nur eine Nachricht</h2>
+      <ul class="facts">
+        <li>Beim <b>One-Time-Pad</b> (OTP) ist der Schlüssel eine <b>zufällige</b> Zeichenfolge, <b>genauso lang wie der Klartext</b>.</li>
+        <li>Er darf <b>nur ein einziges Mal</b> verwendet werden – weder ganz noch teilweise wieder.</li>
+        <li>Dann gilt das Verfahren als <b>absolut sicher</b>: Ohne Schlüssel könnte der Geheimtext jeder beliebige Text gleicher Länge sein.</li>
+        <li>Nachteil: Für jede Nachricht muss ein neuer, ebenso langer Schlüssel erzeugt und sicher übergeben werden – sehr aufwendig.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>One-Time-Pad</h3><button class="btn" id="otp-new">🎲 Neuer Zufallsschlüssel</button></div>
+      <input class="text-in mono" id="otp-in" value="ANGRIFF" maxlength="20" aria-label="Klartext">
+      <div class="table-wrap" style="margin-top:.6rem"><table class="cmp" id="otp-tab"></table></div>
+      <p class="status" id="otp-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Schablone" data-yr="M1" data-title="Die Fleißnersche Schablone" data-sub="Transposition mit Löchern">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1</p>
+    <h2>Die Fleißnersche Schablone</h2>
+    <p class="lead">Eine Schablone mit Löchern liegt auf einem 4 × 4-Raster. Durch die Löcher schreibt man 4 Buchstaben, dann dreht man die Schablone um 90° und schreibt weiter – vier Mal. Eine <b>Transposition</b>: Die Buchstaben werden nur umgestellt.</p>
+  </div>
+  <div class="model">
+    <div class="vis">
+      <input class="text-in mono" id="fl-in" value="TREFFENUMVIERUHR" maxlength="16" aria-label="16 Buchstaben">
+      <div class="fl-grid" id="fl"></div>
+      <div id="fl-step"></div>
+    </div>
+    <div class="stack">
+      <div class="box"><span class="tag">Geheimtext (zeilenweise)</span><p class="mono big-num" id="fl-out" style="font-size:1.2rem;word-break:break-all"></p></div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Vergleichen</h3></header><p>Vergleiche Schablone, Caesar und Vigenère. Welche Verfahren sind Substitutionen, welche Transpositionen?</p>
+        <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Schablone und Skytale: Transposition (die Buchstaben bleiben, nur die Reihenfolge ändert sich). Caesar (monoalphabetisch) und Vigenère (polyalphabetisch): Substitution (Buchstaben werden ersetzt).</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Vigenère und OTP</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Vigenère und One-Time-Pad</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step><b>Vigenère:</b> Ein <b>Schlüsselwort</b> wird über den Klartext geschrieben. Jeder Schlüsselbuchstabe gibt die Verschiebung an (A = 0, B = 1 …).</li>
+        <li data-step>Es werden viele Alphabete genutzt: <b>polyalphabetisches</b> Substitutionsverfahren. Hilfsmittel: das <b>Vigenère-Quadrat</b>. Je länger das Schlüsselwort, desto sicherer.</li>
+        <li data-step><b>One-Time-Pad:</b> zufälliger Schlüssel, so lang wie der Klartext, nur einmal verwendet → absolut sicher, aber aufwendig.</li>
+        <li data-step><b>Fleißnersche Schablone:</b> Transposition durch Drehen einer Lochschablone.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Beispiel</span><p>Verschlüssele „HALLO“ mit dem Schlüsselwort „KEY“ und schreibe die Zwischenschritte auf.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Vigenère üben</h2></div>
+  <div id="ts"></div>
+</section>
+
+<script>
+const AB = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const clean = s => s.toUpperCase().replace(/Ä/g, 'AE').replace(/Ö/g, 'OE').replace(/Ü/g, 'UE').replace(/ß/g, 'SS');
+function vig(text, key, dir = 1) {
+  const k = clean(key).replace(/[^A-Z]/g, '') || 'A'; let j = 0;
+  return [...clean(text)].map(c => { const i = AB.indexOf(c); if (i < 0) return c; const s = AB.indexOf(k[j++ % k.length]); return AB[(i + dir * s + 26) % 26]; }).join('');
+}
+
+/* ================= Schritt für Schritt ================= */
+(() => {
+  const P = 'HALLO', K = 'KEY';
+  stepper($('#vs-step'), P.length + 1, s => {
+    $('#vs').innerHTML = `<tbody><tr><th>Klartext</th>${[...P].map((c, i) => `<td class="${i === s - 1 ? 'hl' : ''}">${c}</td>`).join('')}</tr><tr><th>Schlüssel</th>${[...P].map((c, i) => `<td class="${i === s - 1 ? 'hl' : ''}">${K[i % 3]}</td>`).join('')}</tr><tr><th>Verschiebung</th>${[...P].map((c, i) => `<td>${i < s ? AB.indexOf(K[i % 3]) : ''}</td>`).join('')}</tr><tr><th>Geheimtext</th>${[...P].map((c, i) => `<td><b>${i < s ? vig(P, K)[i] : ''}</b></td>`).join('')}</tr></tbody>`;
+    $('#vs-st').innerHTML = s === 0 ? 'Das Schlüsselwort KEY wird wiederholt: KEYKE.' : `${P[s - 1]} + ${K[(s - 1) % 3]} (${AB.indexOf(K[(s - 1) % 3])} Stellen) → <b>${vig(P, K)[s - 1]}</b>${s === 4 ? ' – das zweite L wird anders verschlüsselt als das erste!' : ''}`;
+  });
+})();
+
+/* ================= Quadrat ================= */
+(() => {
+  $('#vq').innerHTML = `<thead><tr><th></th>${[...AB].map(c => `<th data-c="${c}">${c}</th>`).join('')}</tr></thead><tbody>${[...AB].map((r, i) => `<tr><th data-r="${r}">${r}</th>${[...AB].map((c, j) => `<td data-i="${i}" data-j="${j}">${AB[(i + j) % 26]}</td>`).join('')}</tr>`).join('')}</tbody>`;
+  $('#vq').addEventListener('click', e => {
+    const td = e.target.closest('td[data-i]'); if (!td) return; const i = +td.dataset.i, j = +td.dataset.j;
+    $$('#vq td, #vq th').forEach(x => x.classList.remove('row', 'col', 'hit'));
+    $$(`#vq td[data-i="${i}"]`).forEach(x => { if (+x.dataset.j <= j) x.classList.add('row'); }); $$(`#vq td[data-j="${j}"]`).forEach(x => { if (+x.dataset.i <= i) x.classList.add('col'); });
+    td.classList.add('hit');
+    $('#vq-info').innerHTML = `<span class="tag info">Kreuzung</span><p>Klartext <b>${AB[j]}</b> (oben) + Schlüssel <b>${AB[i]}</b> (links) = Geheimtext <b class="big-num" style="font-size:1.4rem">${AB[(i + j) % 26]}</b></p><p class="note">Entschlüsseln: In der Zeile des Schlüsselbuchstabens den Geheimtextbuchstaben suchen und oben ablesen.</p>`;
+  });
+})();
+
+/* ================= Werkzeug ================= */
+(() => {
+  let dir = 1;
+  const upd = () => { const out = vig($('#vw-in').value, $('#vw-k').value, dir); $('#vw-out').value = out; $('#vw-st').innerHTML = `Schlüsselwort <b>${clean($('#vw-k').value).replace(/[^A-Z]/g, '') || 'A'}</b> → Verschiebungen ${[...(clean($('#vw-k').value).replace(/[^A-Z]/g, '') || 'A')].map(c => AB.indexOf(c)).join(', ')}`; };
+  seg($('#vw-dir'), [[1, 'verschlüsseln'], [-1, 'entschlüsseln']], v => { dir = +v; upd(); }, 1);
+  $('#vw-k').addEventListener('input', upd); $('#vw-in').addEventListener('input', upd); upd();
+})();
+
+/* ================= OTP ================= */
+(() => {
+  let key = '';
+  const upd = () => {
+    const p = clean($('#otp-in').value).replace(/[^A-Z]/g, '');
+    while (key.length < p.length) key += AB[Math.floor(Math.random() * 26)];
+    const k = key.slice(0, p.length), c = vig(p, k);
+    $('#otp-tab').innerHTML = `<tbody><tr><th>Klartext</th>${[...p].map(x => `<td>${x}</td>`).join('')}</tr><tr><th>Zufallsschlüssel</th>${[...k].map(x => `<td class="mono" style="color:var(--a)">${x}</td>`).join('')}</tr><tr><th>Geheimtext</th>${[...c].map(x => `<td><b>${x}</b></td>`).join('')}</tr></tbody>`;
+    const decoy = ['FRIEDEN', 'RUECKZUG', 'WARTEN', 'TEE', 'NEIN', 'PAUSE', 'HALT', 'KUCHEN'].find(w => w.length === p.length) || 'X'.repeat(p.length);
+    const alt = [...c].map((x, i) => AB[(AB.indexOf(x) - AB.indexOf(decoy[i]) + 26) % 26]).join('');
+    $('#otp-st').innerHTML = p.length ? `Mit dem Schlüssel <span class="mono">${alt}</span> würde derselbe Geheimtext <b>${decoy}</b> bedeuten. Ohne den echten Schlüssel kann man nicht wissen, was gemeint ist.` : 'Gib einen Klartext ein.';
+  };
+  $('#otp-new').onclick = () => { key = ''; upd(); };
+  $('#otp-in').addEventListener('input', upd); upd();
+})();
+
+/* ================= Fleißnersche Schablone ================= */
+(() => {
+  const HOLES = [[0, 0], [1, 3], [2, 2], [3, 1]];
+  const rot = ([r, c]) => [c, 3 - r];
+  const holesAt = n => HOLES.map(h => { let p = h; for (let i = 0; i < n; i++) p = rot(p); return p; });
+  function fill(s) { const g = [...Array(4)].map(() => Array(4).fill('')); let t = 0; for (let n = 0; n < 4; n++) holesAt(n).sort((a, b) => a[0] - b[0] || a[1] - b[1]).forEach(([r, c]) => g[r][c] = s[t++] || 'X'); return g; }
+  stepper($('#fl-step'), 5, n => {
+    const s = clean($('#fl-in').value).replace(/[^A-Z]/g, '').padEnd(16, 'X'), g = fill(s), shown = new Set();
+    for (let k = 0; k < n; k++) holesAt(k).forEach(([r, c]) => shown.add(r + ',' + c));
+    const open = n < 4 ? new Set(holesAt(n).map(([r, c]) => r + ',' + c)) : new Set();
+    $('#fl').innerHTML = g.map((row, r) => row.map((ch, c) => `<span class="${open.has(r + ',' + c) ? 'hole' : n < 4 ? 'cover' : ''}">${shown.has(r + ',' + c) ? ch : ''}</span>`).join('')).join('');
+    $('#fl-out').textContent = n === 4 ? g.map(r => r.join('')).join('') : '… noch nicht fertig (' + n * 4 + ' von 16 Buchstaben)';
+  }, {next: 'Schreiben & drehen'});
+})();
+
+taskSet($('#ts'), i => {
+  const W = ['HALLO', 'GEHEIM', 'SCHULE', 'TREFFEN', 'CODE'], K = ['KEY', 'AB', 'ICH', 'BOX'], w = pick(W), k = pick(K);
+  return i % 2 ? {key: w + k, tag: `entschlüsseln, Schlüsselwort ${k}`, q: `<span class="big mono">${vig(w, k)}</span>`, fields: [{l: 'Klartext', a: w}], hint: 'Ziehe die Verschiebung jedes Schlüsselbuchstabens ab.'}
+    : {key: w + k, tag: `verschlüsseln, Schlüsselwort ${k}`, q: `<span class="big mono">${w}</span>`, fields: [{l: 'Geheimtext', a: vig(w, k)}], hint: 'A = 0, B = 1, C = 2 … Schlüsselwort wiederholen.'};
+}, {n: 6});
+</script>

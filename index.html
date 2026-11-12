@@ -1167,10 +1167,61 @@ textarea.code-in{width:100%;min-height:9rem;font-family:var(--f-mono);font-size:
 .bitrow .pv-b{font-size:1rem;aspect-ratio:1/1.2}
 .bitrow .pv-b.par{outline:2px dashed var(--a);outline-offset:1px}
 .bitrow .pv-b.err{background:var(--bad);color:#fff}
+.sk-wrap{display:grid;grid-template-columns:repeat(var(--c),minmax(0,1.8rem));gap:2px;margin:.6rem 0;background:linear-gradient(90deg,#B45309,#D97706);padding:.4rem;border-radius:4px;width:max-content;max-width:100%;overflow-x:auto}
+.sk-wrap span{font-family:var(--f-mono);font-weight:600;background:#FDF6E3;color:#111;text-align:center;padding:.15rem 0}
+.disc{width:100%;max-width:22rem;display:block;margin:auto;touch-action:none;cursor:grab;user-select:none}
+.disc .outer{fill:var(--surface);stroke:var(--edge);stroke-width:2}
+.disc .inner{fill:color-mix(in srgb,var(--accent) 18%,var(--surface));stroke:var(--edge);stroke-width:2}
+.disc .hub{fill:var(--surface);stroke:var(--edge);stroke-width:1.5}
+.disc .sep{stroke:var(--line);stroke-width:1}
+.disc text{font-family:var(--f-mono);font-weight:600;fill:var(--ink);pointer-events:none}
+.disc text.o{font-size:15px}.disc text.i{font-size:14px;fill:var(--accent)}
+.disc text.k{font-size:26px}
+.disc .ptr{fill:var(--bad)}
+.alpha{overflow-x:auto}
+.alpha div{display:grid;grid-template-columns:4.5rem repeat(26,minmax(1.3rem,1fr));gap:1px;min-width:38rem}
+.alpha b{font-size:.75rem;align-self:center;color:var(--ink-2)}
+.alpha span{text-align:center;background:var(--surface-2);padding:.15rem 0;font-weight:600}
+.alpha span.g{background:var(--accent);color:var(--accent-ink)}
+.vg-steps td{font-family:var(--f-mono);text-align:center;font-weight:600;min-width:2rem}
+.vg-steps td.hl,.vq td.hit{background:var(--accent);color:var(--accent-ink)}
+.vq-wrap{overflow:auto;max-height:28rem}
+.vq{border-collapse:collapse;font-family:var(--f-mono);font-size:.72rem}
+.vq th,.vq td{width:1.35rem;height:1.35rem;text-align:center;border:1px solid var(--line)}
+.vq th{background:var(--ink);color:var(--bg)}
+.vq td{cursor:pointer;background:var(--surface)}
+.vq td.row,.vq td.col{background:color-mix(in srgb,var(--accent) 22%,var(--surface))}
+.fl-grid{display:grid;grid-template-columns:repeat(4,3rem);gap:3px;margin:.8rem auto;width:max-content}
+.fl-grid span{height:3rem;display:grid;place-items:center;font-family:var(--f-mono);font-weight:600;font-size:1.3rem;border:1.5px solid var(--edge);background:var(--surface)}
+.fl-grid span.cover{background:repeating-linear-gradient(45deg,#9CA3AF 0 6px,#D1D5DB 6px 12px)}
+.fl-grid span.hole{background:var(--surface);outline:3px solid var(--accent);outline-offset:-4px}
+.hops{display:flex;align-items:stretch;gap:.3rem;flex-wrap:wrap}
+.hop{flex:1 1 6rem;display:flex;flex-direction:column;gap:.2rem;align-items:center;text-align:center;padding:.5rem .4rem;border:1.5px solid var(--edge);border-radius:6px;background:var(--surface);min-height:7.5rem;transition:background .2s}
+.hop b{font-size:1.5rem}.hop small{font-size:.75rem;color:var(--ink-2)}
+.hop span{font-size:.72rem;word-break:break-all}
+.hop.on{background:color-mix(in srgb,var(--accent) 12%,var(--surface))}
+.hop.leak{background:color-mix(in srgb,var(--bad) 18%,var(--surface));border-color:var(--bad)}
+.hop-ar{align-self:center;font-style:normal;font-family:var(--f-mono);color:var(--ink-2)}
+@media (max-width:700px){.hop-ar{display:none}}
+.actors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem;align-items:start}
+.actor{display:flex;flex-direction:column;align-items:center;gap:.25rem;padding:.6rem .4rem;border:1.5px solid var(--edge);border-radius:6px;background:var(--surface);min-height:8rem}
+.actor > b{font-size:2rem}.actor > span{font-family:var(--f-mono);font-weight:600}
+.actor.on{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 30%,transparent)}
+.actor .inv{display:flex;flex-direction:column;gap:.25rem;align-items:center}
+.actor .pill{font-size:.72rem}
+.wire-msg{grid-column:1/-1;text-align:center;font-family:var(--f-mono);font-weight:600;padding:.4rem;border-top:3px dashed var(--line);color:var(--accent)}
+.hy-steps{margin:0 0 .6rem;padding-left:1.4rem;display:flex;flex-direction:column;gap:.35rem}
+.hy-steps li{padding:.4rem .7rem;border-radius:5px;opacity:.35;transition:opacity .2s}
+.hy-steps li.done{opacity:.8}
+.hy-steps li.on{opacity:1;background:color-mix(in srgb,var(--accent) 16%,var(--surface));border-left:5px solid var(--accent)}
+.bf-list{margin:.4rem 0 0;padding-left:0;list-style:none;columns:2;font-size:.85rem;max-height:20rem;overflow:auto}
+.bf-list li{white-space:pre;padding:.05rem .3rem}
+.bf-list li.hit{background:var(--good);color:#fff;font-weight:700;border-radius:3px}
+.cmp tr.hl td,.cmp tr.hl th{background:color-mix(in srgb,var(--accent) 20%,var(--surface))}
 
-.s0{--accent:#0B7A80}.s1{--accent:#6D28D9}.s2{--accent:#C2410C}.s3{--accent:#1D4ED8}.s4{--accent:#15803D}.s5{--accent:#BE123C}.s6{--accent:#0E7490}.s7{--accent:#4338CA}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .s0{--accent:#2DD4BF}:root:not([data-theme="light"]) .s1{--accent:#A78BFA}:root:not([data-theme="light"]) .s2{--accent:#FB923C}:root:not([data-theme="light"]) .s3{--accent:#60A5FA}:root:not([data-theme="light"]) .s4{--accent:#4ADE80}:root:not([data-theme="light"]) .s5{--accent:#FB7185}:root:not([data-theme="light"]) .s6{--accent:#22D3EE}:root:not([data-theme="light"]) .s7{--accent:#818CF8}}
-:root[data-theme="dark"] .s0{--accent:#2DD4BF}:root[data-theme="dark"] .s1{--accent:#A78BFA}:root[data-theme="dark"] .s2{--accent:#FB923C}:root[data-theme="dark"] .s3{--accent:#60A5FA}:root[data-theme="dark"] .s4{--accent:#4ADE80}:root[data-theme="dark"] .s5{--accent:#FB7185}:root[data-theme="dark"] .s6{--accent:#22D3EE}:root[data-theme="dark"] .s7{--accent:#818CF8}
+.s0{--accent:#0B7A80}.s1{--accent:#6D28D9}.s2{--accent:#C2410C}.s3{--accent:#1D4ED8}.s4{--accent:#15803D}.s5{--accent:#BE123C}.s6{--accent:#0E7490}.s7{--accent:#4338CA}.s8{--accent:#B45309}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .s0{--accent:#2DD4BF}:root:not([data-theme="light"]) .s1{--accent:#A78BFA}:root:not([data-theme="light"]) .s2{--accent:#FB923C}:root:not([data-theme="light"]) .s3{--accent:#60A5FA}:root:not([data-theme="light"]) .s4{--accent:#4ADE80}:root:not([data-theme="light"]) .s5{--accent:#FB7185}:root:not([data-theme="light"]) .s6{--accent:#22D3EE}:root:not([data-theme="light"]) .s7{--accent:#818CF8}:root:not([data-theme="light"]) .s8{--accent:#FBBF24}}
+:root[data-theme="dark"] .s0{--accent:#2DD4BF}:root[data-theme="dark"] .s1{--accent:#A78BFA}:root[data-theme="dark"] .s2{--accent:#FB923C}:root[data-theme="dark"] .s3{--accent:#60A5FA}:root[data-theme="dark"] .s4{--accent:#4ADE80}:root[data-theme="dark"] .s5{--accent:#FB7185}:root[data-theme="dark"] .s6{--accent:#22D3EE}:root[data-theme="dark"] .s7{--accent:#818CF8}:root[data-theme="dark"] .s8{--accent:#FBBF24}
 .kitap-sub{font-style:italic;font-size:clamp(1rem,1.6vw,1.3rem);color:var(--ink-2);margin:-.2em 0 1.2rem}
 .hero h1 .cur{display:inline-block;width:.55em;height:.95em;background:var(--accent);vertical-align:-.12em;margin-left:.1em;animation:blink 1.1s steps(1) infinite}
 @media (prefers-reduced-motion: reduce){.hero h1 .cur{animation:none}}
@@ -1236,9 +1287,9 @@ textarea.code-in{width:100%;min-height:9rem;font-family:var(--f-mono);font-size:
     </a>
     <a class="grade" href="#klasse-7">
       <span class="g-lbl">Klasse</span><span class="g-num">7</span>
-      <span class="g-meta">2 Reihen · 17 Stunden</span>
+      <span class="g-meta">3 Reihen · 24 Stunden</span>
       <span class="g-txt">Netze und Internet, Codierung, Verschlüsselung, Informatik und Gesellschaft, Algorithmen mit Scratch.</span>
-      <span class="g-leds" aria-hidden="true"><i class="s6" title="Informatiksysteme und Netze"></i><i class="s7" title="Daten und ihre Codierung"></i></span>
+      <span class="g-leds" aria-hidden="true"><i class="s6" title="Informatiksysteme und Netze"></i><i class="s7" title="Daten und ihre Codierung"></i><i class="s8" title="Daten verschlüsseln"></i></span>
     </a>
     </div>
   </section>
@@ -1396,6 +1447,11 @@ textarea.code-in{width:100%;min-height:9rem;font-family:var(--f-mono);font-size:
         <div class="l-body"><p class="eyebrow">Kapitel 2 · 9 Stunden · ≈ 14 Unterrichtsstunden</p><h2>Daten und ihre Codierung</h2><p class="l-q">Wie werden Zahlen, Texte und Bilder im Computer gespeichert? Die Reihe führt vom Binärsystem über Bits und Bytes, Logikgatter und den ASCII-Code zur Codierung und Komprimierung von Bildern, zum Hexadezimalsystem, zu analogen und digitalen Daten und zu grafischen Codes wie Barcode und QR-Code.</p></div>
         <div class="l-go"><a class="btn primary" href="#klasse-7/7-Daten_codieren">Stunden →</a><a class="btn" href="7-Daten_codieren/00_Uebersicht.html">Übersicht</a></div>
       </li>
+      <li class="lesson s8">
+        <div class="l-num">3</div>
+        <div class="l-body"><p class="eyebrow">Kapitel 3 · 7 Stunden · ≈ 10 Unterrichtsstunden</p><h2>Daten verschlüsseln</h2><p class="l-q">Von der Skytale über die Caesar-Scheibe bis zur Verschlüsselung im Messenger: Die Reihe zeigt, wie Nachrichten ver- und entschlüsselt werden, unterscheidet symmetrische und asymmetrische Verfahren, knackt Geheimtexte mit der Häufigkeitsanalyse und sucht zum Schluss den kürzesten Weg in einem Graphen.</p></div>
+        <div class="l-go"><a class="btn primary" href="#klasse-7/7-Verschluesselung">Stunden →</a><a class="btn" href="7-Verschluesselung/00_Uebersicht.html">Übersicht</a></div>
+      </li>
     </ol>
   </section>
   <section class="view s6" data-view="klasse-7/7-Informatiksysteme_Netze" hidden>
@@ -1431,12 +1487,27 @@ textarea.code-in{width:100%;min-height:9rem;font-family:var(--f-mono);font-size:
         <li><a class="row" href="7-Daten_codieren/09_Wiederholung.html"><span class="no">09</span><span class="rt"><b>Wiederholung und Selbsttest</b><small>Was kann ich, und was sollte ich noch üben?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Daten_codieren/09_Wiederholung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
     </ol>
   </section>
+  <section class="view s8" data-view="klasse-7/7-Verschluesselung" hidden>
+    <div class="topic-head">
+      <div><p class="eyebrow">Klasse 7 · Kapitel 3</p><h2>Daten verschlüsseln</h2><p>Von der Skytale über die Caesar-Scheibe bis zur Verschlüsselung im Messenger: Die Reihe zeigt, wie Nachrichten ver- und entschlüsselt werden, unterscheidet symmetrische und asymmetrische Verfahren, knackt Geheimtexte mit der Häufigkeitsanalyse und sucht zum Schluss den kürzesten Weg in einem Graphen.</p></div>
+      <a class="btn primary" href="7-Verschluesselung/00_Uebersicht.html">Übersicht der Reihe →</a>
+    </div>
+    <ol class="rows">
+        <li><a class="row" href="7-Verschluesselung/01_Caesar.html"><span class="no">01</span><span class="rt"><b>Nachrichten verschlüsseln</b><small>Wie kann man Nachrichten so verschlüsseln, dass nur der Empfänger sie lesen kann?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Verschluesselung/01_Caesar.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="7-Verschluesselung/02_Vigenere.html"><span class="no">02</span><span class="rt"><b>Vigenère und One-Time-Pad</b><small>Wie werden Verschlüsselungen sicherer als bei Caesar?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Verschluesselung/02_Vigenere.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="7-Verschluesselung/03_Daten_verschluesseln.html"><span class="no">03</span><span class="rt"><b>Daten in der digitalen Welt verschlüsseln</b><small>Wie werden Nachrichten im Internet und in Messengern geschützt?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Verschluesselung/03_Daten_verschluesseln.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="7-Verschluesselung/04_Verschluesselungsarten.html"><span class="no">04</span><span class="rt"><b>Symmetrisch, asymmetrisch, hybrid</b><small>Wie kann man verschlüsseln, ohne vorher einen geheimen Schlüssel auszutauschen?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Verschluesselung/04_Verschluesselungsarten.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="7-Verschluesselung/05_Kryptoanalyse.html"><span class="no">05</span><span class="rt"><b>Nachrichten entschlüsseln – Kryptoanalyse</b><small>Wie kann man eine Verschlüsselung ohne Schlüssel knacken – und wie schützt man sich?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Verschluesselung/05_Kryptoanalyse.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="7-Verschluesselung/06_Kuerzester_Weg.html"><span class="no">06</span><span class="rt"><b>Der kürzeste Weg</b><small>Wie berechnet ein Navigationsgerät den kürzesten Weg?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Verschluesselung/06_Kuerzester_Weg.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="7-Verschluesselung/07_Wiederholung.html"><span class="no">07</span><span class="rt"><b>Wiederholung und Selbsttest</b><small>Was kann ich, und was sollte ich noch üben?</small></span><span class="go">öffnen →</span></a><a class="ws" href="7-Verschluesselung/07_Wiederholung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+    </ol>
+  </section>
   <footer class="site-foot">KITAP · freie Unterrichtsmaterialien · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></footer>
 </section>
 </main>
 </div>
 <script>
-const T = {"klasse-5-6": "Klasse 5/6", "klasse-5-6/1-Informatiksysteme": "Informatiksysteme nutzen", "klasse-5-6/2-Algorithmen": "Algorithmen und Problemlösen", "klasse-5-6/3-Bilder_Videos": "Bilder und Videos", "klasse-5-6/4-Recherchieren_Praesentieren": "Recherchieren und Präsentieren", "klasse-5-6/5-Textgestaltung": "Textgestaltung", "klasse-5-6/6-Kommunikation": "Kommunikation in der vernetzten Welt", "klasse-7": "Klasse 7", "klasse-7/7-Informatiksysteme_Netze": "Informatiksysteme und Netze", "klasse-7/7-Daten_codieren": "Daten und ihre Codierung"};
+const T = {"klasse-5-6": "Klasse 5/6", "klasse-5-6/1-Informatiksysteme": "Informatiksysteme nutzen", "klasse-5-6/2-Algorithmen": "Algorithmen und Problemlösen", "klasse-5-6/3-Bilder_Videos": "Bilder und Videos", "klasse-5-6/4-Recherchieren_Praesentieren": "Recherchieren und Präsentieren", "klasse-5-6/5-Textgestaltung": "Textgestaltung", "klasse-5-6/6-Kommunikation": "Kommunikation in der vernetzten Welt", "klasse-7": "Klasse 7", "klasse-7/7-Informatiksysteme_Netze": "Informatiksysteme und Netze", "klasse-7/7-Daten_codieren": "Daten und ihre Codierung", "klasse-7/7-Verschluesselung": "Daten verschlüsseln"};
 (() => {
   const views = [...document.querySelectorAll('.view')], crumbs = document.getElementById('crumbs'), home = document.getElementById('home');
   function show() {

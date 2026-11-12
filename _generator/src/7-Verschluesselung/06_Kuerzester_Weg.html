@@ -1,0 +1,192 @@
+<!--
+title: Der kürzeste Weg
+short: Kürzester Weg
+time: 2 Unterrichtsstunden
+q: Wie berechnet ein Navigationsgerät den kürzesten Weg?
+facts: Straßennetz als Graph: Knoten (Kreuzungen) und Kanten (Straßen) mit Kosten | Brute Force: alle Wege ausprobieren – bei großen Netzen zu aufwendig | Algorithmus von Dijkstra: Kosten, Vorgänger, besuchte Knoten | Kürzesten Weg rückwärts über die Vorgänger ablesen
+inter: Selbst den kürzesten Weg suchen · Dijkstra Schritt für Schritt mit Tabelle · Kosten verändern · Anzahl möglicher Wege · Übung mit neuem Graphen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Daten verschlüsseln</p>
+      <h1>Der kürzeste Weg<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Viele Wege führen zum Supermarkt – aber nur einer ist der kürzeste. Ein Navi findet ihn in Sekundenbruchteilen, auch bei Millionen von Straßen. Wie macht es das?</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wie findest du den schnellsten Weg von zu Hause zur Schule?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie berechnet ein Navigationsgerät den kürzesten Weg?</p></div>
+      <div class="controls"><button class="btn primary" data-go="graph">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="graph" data-label="Graph" data-yr="Einstieg" data-title="Wege als Graph" data-sub="Knoten, Kanten, Kosten">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Wege als Graph</p>
+      <h2>Knoten und Kanten</h2>
+      <ul class="facts">
+        <li>Das Straßennetz wird in einen <b>Graphen</b> übersetzt: Kreuzungen werden zu <b>Knoten</b>, Straßen zu <b>Kanten</b>.</li>
+        <li>Jede Kante bekommt <b>Kosten</b>: z. B. die Länge in km oder die Fahrzeit.</li>
+        <li>Finde selbst den kürzesten Weg von <b>S</b> nach <b>Z</b>: Tippe die Knoten nacheinander an.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Deine Route</h3><button class="btn" id="g-reset">Neu</button></div>
+      <svg id="g1"></svg>
+      <p class="status" id="g1-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="brute" data-label="Brute Force" data-yr="Erarbeitung" data-title="Alle Wege ausprobieren?" data-sub="Brute Force beim Routing">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Alle Wege ausprobieren?</p>
+      <h2>Brute Force wird schnell zu viel</h2>
+      <p>Man könnte jeden möglichen Weg von Anfang bis Ende durchrechnen und den kürzesten nehmen. In kleinen Graphen klappt das, aber mit jeder Kreuzung <b>explodiert</b> die Zahl der Wege.</p>
+      <div class="merke">In einem Gitter-Stadtplan mit n × n Blöcken gibt es schon bei n = 10 über <b>184 000</b> kürzeste Wege – und noch viel mehr Umwege.</div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Wege im Stadtplan zählen</h3></div>
+      <label class="slider-row">Blöcke n × n <input id="bf-n" type="range" min="1" max="20" value="3"><output id="bf-no" class="mono"></output></label>
+      <svg id="bf-grid" viewBox="0 0 200 200" style="width:100%;max-width:14rem;display:block;margin:auto"></svg>
+      <p class="status" id="bf-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="dijkstra" data-label="Dijkstra" data-yr="Erarbeitung" data-title="Der Algorithmus von Dijkstra" data-sub="Schritt für Schritt">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Der Algorithmus von Dijkstra</p>
+    <h2>Systematisch statt alles ausprobieren</h2>
+  </div>
+  <div class="model">
+    <div class="vis">
+      <svg id="g2"></svg>
+      <div id="dj-step"></div>
+      <p class="status" id="dj-st"></p>
+    </div>
+    <div class="stack">
+      <div class="table-wrap"><table class="cmp" id="dj-tab"></table></div>
+      <div class="box"><span class="tag">Ablauf</span><ol style="margin:0;padding-left:1.2rem;font-size:.92rem"><li>Start bekommt Kosten 0, alle anderen ∞.</li><li>Wähle den <b>unbesuchten Knoten mit den geringsten Kosten</b>.</li><li>Berechne für seine unbesuchten Nachbarn: Kosten + Kantenwert. Ist das kleiner, <b>ersetze</b> die Kosten und notiere den <b>Vorgänger</b>.</li><li>Markiere den Knoten als besucht. Wiederhole ab 2.</li><li>Lies den Weg <b>rückwärts</b> vom Ziel über die Vorgänger ab.</li></ol></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Übung" data-yr="M1" data-title="Selbst rechnen" data-sub="Dijkstra anwenden">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Rechne selbst</h2>
+    <p class="lead">Bestimme mit Dijkstra die kürzesten Kosten von S zu jedem Knoten. Prüfe dann.</p>
+  </div>
+  <div class="model">
+    <div class="vis"><svg id="g3"></svg><div class="controls"><button class="btn" id="g3-new">Neue Kantenwerte</button></div></div>
+    <div id="m1-ts"></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Der kürzeste Weg</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Der kürzeste Weg</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step>Ein Straßennetz wird als <b>Graph</b> dargestellt: <b>Knoten</b> (Kreuzungen) und <b>Kanten</b> (Straßen) mit <b>Kosten</b> (km, Minuten).</li>
+        <li data-step><b>Brute Force</b> (alle Wege durchrechnen) ist bei großen Netzen viel zu aufwendig.</li>
+        <li data-step><b>Dijkstra:</b> Start = 0, Rest = ∞. Immer den unbesuchten Knoten mit den geringsten Kosten wählen, Kosten der Nachbarn aktualisieren und Vorgänger notieren.</li>
+        <li data-step>Am Ende wird der kürzeste Weg <b>rückwärts</b> vom Ziel über die Vorgänger abgelesen.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Tabelle</span><p>Lege die Dijkstra-Tabelle (Knoten | Kosten | Vorgänger | besucht) für den Graphen aus Station 3 an.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Kürzester Weg</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ================= Eigene Route ================= */
+(() => {
+  const N = {S: [40, 150, 'S'], A: [150, 50, 'A'], B: [150, 250, 'B'], C: [270, 150, 'C'], D: [300, 40, 'D'], Z: [420, 160, 'Z']};
+  const E = [['S', 'A', 4], ['S', 'B', 2], ['A', 'B', 1], ['A', 'C', 5], ['A', 'D', 8], ['B', 'C', 8], ['C', 'D', 2], ['C', 'Z', 6], ['D', 'Z', 3]];
+  let path = ['S'];
+  const g = graphView($('#g1'), N, E, {w: 460, h: 300, onNode: id => {
+    const last = path[path.length - 1], e = E.find(([a, b]) => (a === last && b === id) || (b === last && a === id));
+    if (!e || path.includes(id)) { $('#g1-st').innerHTML = '<span class="bad">Keine direkte Verbindung oder schon besucht.</span>'; return; }
+    path.push(id);
+    const cost = path.slice(1).reduce((s, n, i) => s + E.find(([a, b]) => (a === path[i] && b === n) || (b === path[i] && a === n))[2], 0);
+    g.draw({path, sub: {[id]: cost}});
+    if (id === 'Z') { const best = g.path('S', 'Z'); $('#g1-st').innerHTML = cost === best.cost ? `<b class="good">Kürzester Weg gefunden!</b> ${path.join(' → ')} = ${cost}` : `${path.join(' → ')} kostet ${cost}. Es geht noch kürzer (${best.cost}).`; }
+    else $('#g1-st').textContent = `${path.join(' → ')} · bisher ${cost}`;
+  }});
+  $('#g-reset').onclick = () => { path = ['S']; g.draw({path}); $('#g1-st').textContent = 'Start bei S. Tippe den nächsten Knoten an.'; };
+  $('#g-reset').onclick();
+})();
+
+/* ================= Gitter zählen ================= */
+(() => {
+  const binom = (n, k) => { let r = 1; for (let i = 1; i <= k; i++) r = r * (n - k + i) / i; return Math.round(r); };
+  const upd = () => {
+    const n = +$('#bf-n').value, c = 180 / n; $('#bf-no').textContent = n + ' × ' + n;
+    let s = ''; for (let i = 0; i <= n; i++) s += `<line x1="10" y1="${10 + i * c}" x2="190" y2="${10 + i * c}" stroke="var(--line)" stroke-width="2"/><line x1="${10 + i * c}" y1="10" x2="${10 + i * c}" y2="190" stroke="var(--line)" stroke-width="2"/>`;
+    s += `<circle cx="10" cy="190" r="7" fill="var(--accent)"/><circle cx="190" cy="10" r="7" fill="var(--bad)"/>`;
+    $('#bf-grid').innerHTML = s;
+    const w = binom(2 * n, n);
+    $('#bf-st').innerHTML = `Kürzeste Wege (nur rechts und hoch) von unten links nach oben rechts: <b>${w.toLocaleString('de-DE')}</b>`;
+  };
+  $('#bf-n').oninput = upd; upd();
+})();
+
+/* ================= Dijkstra schrittweise ================= */
+(() => {
+  const N = {S: [40, 150, 'S'], A: [170, 50, 'A'], C: [170, 250, 'C'], B: [300, 150, 'B'], D: [420, 70, 'D'], Z: [420, 240, 'Z']};
+  const E = [['S', 'A', 20], ['S', 'C', 10], ['C', 'A', 30], ['C', 'B', 50], ['A', 'B', 20], ['A', 'D', 50], ['B', 'D', 20], ['B', 'Z', 40], ['D', 'Z', 10]];
+  const g = graphView($('#g2'), N, E, {w: 460, h: 300});
+  const ids = Object.keys(N), steps = [];
+  let cost = Object.fromEntries(ids.map(i => [i, Infinity])), prev = {}, seen = new Set(); cost.S = 0;
+  steps.push({cost: {...cost}, prev: {...prev}, seen: [], on: null, msg: 'Start: S bekommt die Kosten 0, alle anderen Knoten ∞.'});
+  while (seen.size < ids.length) {
+    const u = ids.filter(i => !seen.has(i)).sort((a, b) => cost[a] - cost[b])[0];
+    const changes = [];
+    for (const [a, b, w] of E) { const v = a === u ? b : b === u ? a : null; if (v && !seen.has(v)) { const nc = cost[u] + w; if (nc < cost[v]) { changes.push(`${v}: ${cost[v] === Infinity ? '∞' : cost[v]} → <b>${nc}</b>`); cost[v] = nc; prev[v] = u; } else changes.push(`${v}: ${nc} ist nicht kleiner als ${cost[v]}`); } }
+    seen.add(u);
+    steps.push({cost: {...cost}, prev: {...prev}, seen: [...seen], on: u, msg: `Unbesuchter Knoten mit den geringsten Kosten: <b>${u}</b> (${cost[u]}). ${changes.length ? 'Nachbarn: ' + changes.join(' · ') : 'Keine unbesuchten Nachbarn.'} ${u} gilt als besucht.`});
+  }
+  const p = ['Z']; while (p[0] !== 'S') p.unshift(prev[p[0]]);
+  steps.push({cost, prev, seen: ids, on: null, path: p, msg: `Rückwärts vom Ziel: Z ← ${p.slice(0, -1).reverse().join(' ← ')}. Kürzester Weg <b>${p.join(' → ')}</b> mit Kosten <b>${cost.Z}</b>.`});
+  stepper($('#dj-step'), steps.length, k => {
+    const st = steps[k];
+    g.draw({on: st.on ? [st.on] : [], done: st.seen, path: st.path, sub: Object.fromEntries(ids.map(i => [i, st.cost[i] === Infinity ? '∞' : st.cost[i]]))});
+    $('#dj-tab').innerHTML = '<thead><tr><th>Knoten</th><th>Kosten</th><th>Vorgänger</th><th>besucht</th></tr></thead><tbody>' + ids.map(i => `<tr class="${st.on === i ? 'hl' : ''}"><th>${i}</th><td class="mono">${st.cost[i] === Infinity ? '∞' : st.cost[i]}</td><td class="mono">${st.prev[i] || '–'}</td><td>${st.seen.includes(i) ? '✔' : ''}</td></tr>`).join('') + '</tbody>';
+    $('#dj-st').innerHTML = st.msg;
+  });
+})();
+
+/* ================= Übung ================= */
+(() => {
+  const N = {S: [40, 150, 'S'], A: [180, 50, 'A'], B: [180, 250, 'B'], C: [320, 150, 'C'], Z: [430, 150, 'Z']};
+  const pairs = [['S', 'A'], ['S', 'B'], ['A', 'B'], ['A', 'C'], ['B', 'C'], ['C', 'Z'], ['A', 'Z']];
+  let g, ts;
+  function neu() {
+    const E = pairs.map(([a, b]) => [a, b, randInt(1, 9)]);
+    g = graphView($('#g3'), N, E, {w: 460, h: 300});
+    const {dist} = g.dijkstra('S');
+    $('#m1-ts').innerHTML = '';
+    taskSet($('#m1-ts'), () => ({key: 'x', tag: 'Dijkstra', q: 'Kürzeste Kosten von S nach …', fields: ['A', 'B', 'C', 'Z'].map(k => ({l: k, a: dist[k]})), hint: 'Immer den unbesuchten Knoten mit den geringsten Kosten weiterverfolgen.'}), {n: 1, fixed: true});
+  }
+  $('#g3-new').onclick = neu; neu();
+})();
+
+mcQuiz($('#quiz'), [
+  {q: 'Was sind in einem Straßengraphen die Knoten?', a: ['Kreuzungen', 'Straßen', 'Autos', 'Ampeln'], ok: 0},
+  {q: 'Was geben die Kosten einer Kante an?', a: ['z. B. Länge oder Fahrzeit der Straße', 'den Preis des Autos', 'die Anzahl der Kreuzungen', 'die Farbe der Straße'], ok: 0},
+  {q: 'Welchen Knoten wählt Dijkstra als nächsten?', a: ['den unbesuchten mit den geringsten Kosten', 'den mit den meisten Nachbarn', 'zufällig einen', 'immer das Ziel'], ok: 0},
+  {q: 'Mit welchen Kosten startet der Startknoten?', a: ['0', '∞', '1', '10'], ok: 0},
+  {q: 'Wie liest man am Ende den kürzesten Weg ab?', a: ['rückwärts vom Ziel über die Vorgänger', 'vorwärts über die höchsten Kosten', 'alphabetisch', 'gar nicht'], ok: 0},
+  {q: 'Warum ist Brute Force für ein Navi ungeeignet?', a: ['Es gibt viel zu viele mögliche Wege.', 'Brute Force findet nie einen Weg.', 'Navis können nicht rechnen.', 'Es ist verboten.'], ok: 0}
+]);
+</script>

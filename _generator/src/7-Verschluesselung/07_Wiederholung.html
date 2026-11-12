@@ -1,0 +1,110 @@
+<!--
+title: Wiederholung und Selbsttest
+short: Selbsttest
+time: 1–2 Unterrichtsstunden
+q: Was kann ich, und was sollte ich noch üben?
+facts: Zusammenfassung als Karteikarten | Trainer T1–T4: klassische Verfahren, Verschlüsselung im Netz, Kryptoanalyse, kürzester Weg | Großes Quiz und „Ich kann …“-Liste mit Links zurück in die Stunden
+inter: Karteikarten · Paare finden · Caesar und Vigenère entschlüsseln · P2P/E2E und symmetrisch/asymmetrisch sortieren · Geheimtext knacken · Dijkstra-Aufgabe · Quiz · Selbsteinschätzung
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Daten verschlüsseln</p>
+      <h1>Wiederholung und Selbsttest<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Skytale, Caesar, Vigenère, One-Time-Pad, Ende-zu-Ende, Public Key, Häufigkeitsanalyse und Dijkstra: Prüfe, was du sicher kannst.</p>
+      <div class="controls"><button class="btn primary" data-go="begriffe">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="begriffe" data-label="Begriffe" data-yr="Wiederholen" data-title="Zusammenfassung" data-sub="Fachbegriffe als Karteikarten">
+  <div class="section-head"><p class="eyebrow">Station 1 · Zusammenfassung</p><h2>Fachbegriffe</h2></div>
+  <div id="flip"></div>
+  <h3 class="mt">Paare finden</h3>
+  <div id="match"></div>
+</section>
+
+<section class="station" id="t1" data-label="T1 Verfahren" data-yr="Trainer" data-title="T1 Klassische Verfahren" data-sub="Caesar und Vigenère">
+  <div class="section-head"><p class="eyebrow">Station 2 · Trainer T1</p><h2>Klassische Verfahren</h2></div>
+  <div id="t1-ts"></div>
+</section>
+
+<section class="station" id="t2" data-label="T2 Im Netz" data-yr="Trainer" data-title="T2 Verschlüsselung im Netz" data-sub="E2E und Public Key">
+  <div class="section-head"><p class="eyebrow">Station 3 · Trainer T2</p><h2>Verschlüsselung im Netz</h2></div>
+  <div id="t2-sort"></div>
+</section>
+
+<section class="station" id="t3" data-label="T3 Knacken" data-yr="Trainer" data-title="T3 Kryptoanalyse" data-sub="Ohne Schlüssel">
+  <div class="section-head"><p class="eyebrow">Station 4 · Trainer T3</p><h2>Kryptoanalyse</h2><p class="lead">Der häufigste Buchstabe des Geheimtextes steht für E. Bestimme den Schlüssel.</p></div>
+  <div id="t3-ts"></div>
+</section>
+
+<section class="station" id="t4" data-label="T4 Wege" data-yr="Trainer" data-title="T4 Kürzester Weg" data-sub="Dijkstra">
+  <div class="section-head"><p class="eyebrow">Station 5 · Trainer T4</p><h2>Kürzester Weg</h2></div>
+  <div class="model"><div class="vis"><svg id="t4-g"></svg><div class="controls"><button class="btn" id="t4-new">Neue Kantenwerte</button></div></div><div id="t4-ts"></div></div>
+</section>
+
+<section class="station" id="quiz-st" data-label="Quiz" data-yr="Testen" data-title="Großes Quiz" data-sub="10 zufällige Fragen">
+  <div class="section-head"><p class="eyebrow">Station 6 · Quiz</p><h2>Großes Quiz</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<section class="station" id="uebungen" data-label="Ich kann …">
+  <div class="section-head"><p class="eyebrow">Selbsteinschätzung</p><h2>Ich kann …</h2></div>
+  <ol id="sc"></ol>
+</section>
+
+<script>
+const AB = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const caesar = (s, k) => [...s].map(c => { const i = AB.indexOf(c); return i < 0 ? c : AB[(i + k + 26) % 26]; }).join('');
+const vig = (s, key, d = 1) => [...s].map((c, i) => AB[(AB.indexOf(c) + d * AB.indexOf(key[i % key.length]) + 26) % 26]).join('');
+const BEGRIFFE = [
+  ['Klartext', 'die lesbare Nachricht'], ['Geheimtext', 'die verschlüsselte Nachricht'], ['Transposition', 'Buchstaben werden umgestellt'], ['Substitution', 'Buchstaben werden ersetzt'],
+  ['Caesar', 'Verschiebung um eine feste Zahl, monoalphabetisch'], ['Vigenère', 'Schlüsselwort, polyalphabetisch'], ['One-Time-Pad', 'zufälliger Einmalschlüssel, so lang wie der Text'],
+  ['Ende-zu-Ende', 'nur Sender und Empfänger können lesen'], ['symmetrisch', 'ein gemeinsamer Schlüssel'], ['öffentlicher Schlüssel', 'verschlüsselt, darf jeder haben'], ['privater Schlüssel', 'entschlüsselt, bleibt geheim'],
+  ['Häufigkeitsanalyse', 'häufigster Buchstabe = E'], ['Brute Force', 'alle Schlüssel ausprobieren'], ['Dijkstra', 'Algorithmus für den kürzesten Weg']
+];
+flipCards($('#flip'), BEGRIFFE);
+matcher($('#match'), shuffle(BEGRIFFE.slice()).slice(0, 7));
+taskSet($('#t1-ts'), i => {
+  const w = pick(['SCHULE', 'TREFFEN', 'GEHEIM', 'PAUSE', 'INFORMATIK']);
+  if (i % 2) { const k = randInt(1, 25); return {key: w + k, tag: `Caesar, Schlüssel ${k}`, q: `<span class="big mono">${caesar(w, k)}</span>`, fields: [{l: 'Klartext', a: w}]}; }
+  const key = pick(['AB', 'KEY', 'ICH']); return {key: w + key, tag: `Vigenère, Schlüsselwort ${key}`, q: `<span class="big mono">${vig(w, key)}</span>`, fields: [{l: 'Klartext', a: w}]};
+}, {n: 4});
+sorter($('#t2-sort'), [{id: 'p', name: 'Punkt-zu-Punkt'}, {id: 'e', name: 'Ende-zu-Ende'}, {id: 's', name: 'symmetrisch'}, {id: 'a', name: 'asymmetrisch'}], [
+  {t: 'Server entschlüsselt zwischendurch', c: 'p'}, {t: 'Anbieter sieht nur Zeichensalat', c: 'e'}, {t: 'ein gemeinsamer Schlüssel', c: 's'}, {t: 'Schlüsselverteilungsproblem', c: 's'}, {t: 'öffentlicher und privater Schlüssel', c: 'a'}, {t: 'Briefkasten-Modell', c: 'a'}
+]);
+taskSet($('#t3-ts'), () => { const k = randInt(2, 23), t = caesar('DIE ENTE SEHNT SICH NACH SEE', k); return {key: 'k' + k, tag: 'Häufigkeit', q: `<span class="mono">${t}</span>`, fields: [{l: 'Schlüssel', a: k}], hint: 'Zähle die Buchstaben. Abstand vom E zum häufigsten Buchstaben = Schlüssel.'}; }, {n: 2});
+(() => {
+  const N = {S: [40, 150, 'S'], A: [170, 50, 'A'], B: [170, 250, 'B'], C: [310, 150, 'C'], Z: [430, 150, 'Z']};
+  const P = [['S', 'A'], ['S', 'B'], ['A', 'B'], ['A', 'C'], ['B', 'C'], ['C', 'Z'], ['B', 'Z']];
+  const neu = () => { const g = graphView($('#t4-g'), N, P.map(([a, b]) => [a, b, randInt(1, 9)]), {w: 460, h: 300}); const r = g.path('S', 'Z'); $('#t4-ts').innerHTML = ''; taskSet($('#t4-ts'), () => ({key: 'x', tag: 'Dijkstra', q: 'Kürzester Weg von S nach Z', fields: [{l: 'Kosten', a: r.cost}, {l: 'Weg (z. B. SABZ)', a: [r.path.join(''), r.path.join('-'), r.path.join(' ')]}]}), {n: 1, fixed: true}); };
+  $('#t4-new').onclick = neu; neu();
+})();
+mcQuiz($('#quiz'), [
+  {q: 'Was ist bei der Skytale der Schlüssel?', a: ['der Umfang des Stabes', 'eine Zahl zum Verschieben', 'ein Schlüsselwort', 'ein Passwort'], ok: 0},
+  {q: 'Wie lautet A mit Caesar-Schlüssel 3?', a: ['D', 'C', 'X', 'B'], ok: 0},
+  {q: 'Warum ist Vigenère sicherer als Caesar?', a: ['Gleiche Buchstaben werden unterschiedlich verschlüsselt.', 'Es nutzt nur Zahlen.', 'Es ist kürzer.', 'Es braucht keinen Schlüssel.'], ok: 0},
+  {q: 'Wann ist das One-Time-Pad absolut sicher?', a: ['zufälliger Schlüssel, so lang wie der Text, nur einmal benutzt', 'wenn der Schlüssel kurz ist', 'wenn man ihn oft benutzt', 'nie'], ok: 0},
+  {q: 'Bei welcher Verschlüsselung liegt die Nachricht auf dem Server im Klartext?', a: ['Punkt-zu-Punkt', 'Ende-zu-Ende', 'One-Time-Pad', 'keine'], ok: 0},
+  {q: 'Womit wird bei Public Key entschlüsselt?', a: ['mit dem privaten Schlüssel', 'mit dem öffentlichen Schlüssel', 'mit dem Session-Key des Angreifers', 'gar nicht'], ok: 0},
+  {q: 'Was löst die hybride Verschlüsselung?', a: ['das Schlüsselverteilungsproblem bei hoher Geschwindigkeit', 'das Problem der langen Passwörter', 'den kürzesten Weg', 'die Komprimierung'], ok: 0},
+  {q: 'Was zeigt die Häufigkeitsanalyse?', a: ['welcher Geheimbuchstabe wohl für E steht', 'wie lang das Passwort ist', 'wer die Nachricht geschickt hat', 'wie schnell der Computer ist'], ok: 0},
+  {q: 'Was macht eine Brute-Force-Attacke?', a: ['Sie probiert alle Schlüssel aus.', 'Sie löscht Daten.', 'Sie verschlüsselt doppelt.', 'Sie verschickt Spam.'], ok: 0},
+  {q: 'Welcher Knoten wird bei Dijkstra als Nächstes besucht?', a: ['der unbesuchte mit den geringsten Kosten', 'der mit den höchsten Kosten', 'immer das Ziel', 'der alphabetisch erste'], ok: 0},
+  {q: 'Was ist ein monoalphabetisches Verfahren?', a: ['Es nutzt nur ein Geheimalphabet.', 'Es nutzt viele Alphabete.', 'Es nutzt keine Buchstaben.', 'Es stellt Buchstaben nur um.'], ok: 0}
+], {pick: 10});
+selfCheck($('#sc'), [
+  {t: 'Ich kann Klartext, Geheimtext und Schlüssel erklären.', href: '01_Caesar.html#begriffe'},
+  {t: 'Ich kann Transposition und Substitution unterscheiden.', href: '01_Caesar.html#skytale'},
+  {t: 'Ich kann mit Caesar ver- und entschlüsseln.', href: '01_Caesar.html#werkzeug'},
+  {t: 'Ich kann mit Vigenère ver- und entschlüsseln.', href: '02_Vigenere.html#quadrat'},
+  {t: 'Ich kann erklären, wann das One-Time-Pad sicher ist.', href: '02_Vigenere.html#otp'},
+  {t: 'Ich kann Punkt-zu-Punkt- und Ende-zu-Ende-Verschlüsselung vergleichen.', href: '03_Daten_verschluesseln.html#wege'},
+  {t: 'Ich kann symmetrische, asymmetrische und hybride Verschlüsselung erklären.', href: '04_Verschluesselungsarten.html#asym'},
+  {t: 'Ich kann einen Caesar-Text mit der Häufigkeitsanalyse knacken.', href: '05_Kryptoanalyse.html#haeufigkeit'},
+  {t: 'Ich weiß, wie man sich vor Brute-Force-Angriffen schützt.', href: '05_Kryptoanalyse.html#schutz'},
+  {t: 'Ich kann mit Dijkstra den kürzesten Weg bestimmen.', href: '06_Kuerzester_Weg.html#dijkstra'}
+]);
+</script>

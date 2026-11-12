@@ -1,0 +1,189 @@
+<!--
+title: Nachrichten entschlüsseln – Kryptoanalyse
+short: Kryptoanalyse
+time: 2 Unterrichtsstunden
+q: Wie kann man eine Verschlüsselung ohne Schlüssel knacken – und wie schützt man sich?
+facts: Kryptologie = Kryptografie (sicher verschlüsseln) + Kryptoanalyse (Verschlüsselungen knacken) | Häufigkeitsanalyse: E ist in deutschen Texten der häufigste Buchstabe | Brute-Force-Attacke: alle Schlüssel ausprobieren | Schutz: lange Schlüssel, komplexe Passwörter, begrenzte Fehlversuche
+inter: Buchstaben zählen und mit der deutschen Häufigkeit vergleichen · Caesar-Text per Häufigkeitsanalyse knacken · Brute-Force: alle 25 Schlüssel durchprobieren · Passwort-Knackzeit schätzen · Geheimwort entschlüsseln
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Daten verschlüsseln</p>
+      <h1>Kryptoanalyse<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead"><span class="mono">Lxaxg ngl Fbmmphva …</span> – Du hast einen Geheimtext, aber keinen Schlüssel. Hoffnungslos? Keineswegs! Sprache hat Muster, und Computer sind schnell.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welcher Buchstabe kommt in deutschen Texten wohl am häufigsten vor?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie kann man eine Verschlüsselung ohne Schlüssel knacken – und wie schützt man sich?</p></div>
+      <div class="controls"><button class="btn primary" data-go="kryptologie">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="kryptologie" data-label="Kryptologie" data-yr="Einstieg" data-title="Felder der Kryptologie" data-sub="Kryptografie und Kryptoanalyse">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Kryptologie</p>
+    <h2>Verschlüsseln und Knacken</h2>
+    <p class="lead">Die <b>Kryptologie</b> ist das Teilgebiet der Informatik, das sich mit der sicheren Übertragung und Speicherung von Daten beschäftigt.</p>
+  </div>
+  <div class="grid-2">
+    <div class="box"><span class="tag info">Kryptografie</span><p>Entwickelt <b>Verfahren</b>, mit denen Daten sicher verschlüsselt werden und der Datenfluss in Netzwerken geschützt ist.</p></div>
+    <div class="box"><span class="tag info">Kryptoanalyse</span><p>Untersucht, wie verschlüsselte Daten <b>ohne Kenntnis des Schlüssels</b> zugänglich gemacht werden können. Kriminelle nutzen das – aber auch Fachleute, um die Sicherheit von Systemen zu prüfen.</p></div>
+  </div>
+  <p class="lead mt">Darum müssen ständig neue, sicherere Verfahren entwickelt werden: Was heute sicher ist, kann morgen geknackt sein.</p>
+</section>
+
+<section class="station" id="haeufigkeit" data-label="Häufigkeit" data-yr="Erarbeitung" data-title="Häufigkeitsanalyse" data-sub="Das E verrät alles">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Häufigkeitsanalyse</p>
+    <h2>Buchstaben zählen</h2>
+    <p class="lead">In deutschen Texten kommen Buchstaben unterschiedlich oft vor: <b>E</b> am häufigsten, dann N, I, S, R … und X am seltensten. Bei einer monoalphabetischen Verschlüsselung bleibt das Muster erhalten – es ist nur verschoben!</p>
+  </div>
+  <div class="vis">
+    <div class="vis-head"><h3>Geheimtext analysieren</h3><div id="hf-seg"></div></div>
+    <textarea class="code-in" id="hf-in" style="min-height:4.5rem" spellcheck="false" aria-label="Text"></textarea>
+    <svg class="chart-svg" id="hf-chart" viewBox="0 0 560 190"></svg>
+    <div class="controls"><label class="slider-row" style="flex:1;max-width:26rem">Verschiebung testen <input id="hf-k" type="range" min="0" max="25" value="0"><output id="hf-ko" class="mono"></output></label></div>
+    <p class="status" id="hf-st"></p>
+  </div>
+</section>
+
+<section class="station" id="brute" data-label="Brute Force" data-yr="Erarbeitung" data-title="Brute-Force-Attacke" data-sub="Alles ausprobieren">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Brute-Force-Attacke</p>
+      <h2>Mit roher Gewalt</h2>
+      <ul class="facts">
+        <li>Bei einer <b>Brute-Force-Attacke</b> (engl. „rohe Gewalt“) probieren Programme automatisch <b>alle möglichen Schlüssel</b> oder Passwörter aus.</li>
+        <li>Jeder Schlüssel lässt sich so knacken – die Frage ist nur, <b>wie lange</b> es dauert.</li>
+        <li>Bei Caesar gibt es nur 25 Schlüssel: Das schafft man sogar von Hand.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Alle 25 Schlüssel</h3><button class="btn primary" id="bf-go">▶ Angriff starten</button></div>
+      <p class="mono">Geheimwort: <b id="bf-word"></b></p>
+      <ol class="bf-list mono" id="bf"></ol>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="schutz" data-label="Schutz" data-yr="Vertiefung" data-title="Sich schützen" data-sub="Lange Schlüssel, starke Passwörter">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 4 · Schutz vor Brute Force</p>
+      <h2>Länger ist sicherer</h2>
+      <ul class="facts">
+        <li><b>Lange, komplexe</b> Passwörter und Schlüssel vervielfachen die Zahl der Möglichkeiten.</li>
+        <li>Logins <b>begrenzen die Fehlversuche</b> (z. B. Sperre nach 3 falschen Eingaben).</li>
+        <li>Moderne Verfahren nutzen Schlüssel mit 128 oder 256 Bit: 2²⁵⁶ Möglichkeiten – mehr als Atome im Universum.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Wie lange dauert das Knacken?</h3></div>
+      <label class="slider-row">Länge <input id="pw-l" type="range" min="4" max="16" value="8"><output id="pw-lo" class="mono"></output></label>
+      <div class="chips" id="pw-set"></div>
+      <p class="status" id="pw-st"></p>
+      <p class="note">Annahme: 10 Milliarden Versuche pro Sekunde, ohne Sperre. Werte sind Schätzungen.</p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Knacken" data-yr="M1" data-title="Geheimtexte knacken" data-sub="Ohne Schlüssel">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1</p>
+    <h2>Knackt die Geheimtexte!</h2>
+    <p class="lead">Die Wörter sind mit Caesar verschlüsselt, der Schlüssel ist unbekannt. Tipp: Suche den häufigsten Buchstaben – oder probiere alle Schlüssel.</p>
+  </div>
+  <div id="m1-ts"></div>
+  <div class="task-card mt"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Begründen</h3></header><p>Begründe, warum die Häufigkeitsanalyse bei Caesar-Verschlüsselungen einfach anzuwenden ist – und warum sie bei Vigenère schwieriger wird.</p>
+    <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Bei Caesar wird jeder Buchstabe immer gleich ersetzt: Der häufigste Geheimbuchstabe ist vermutlich E, daraus folgt direkt der Schlüssel. Bei Vigenère wird derselbe Buchstabe je nach Position unterschiedlich verschlüsselt; die Häufigkeiten verwischen. Man muss erst die Schlüssellänge herausfinden.</p></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Kryptoanalyse</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Nachrichten entschlüsseln – Kryptoanalyse</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step><b>Kryptologie</b> = <b>Kryptografie</b> (sichere Verfahren entwickeln) + <b>Kryptoanalyse</b> (Verschlüsselungen ohne Schlüssel knacken).</li>
+        <li data-step><b>Häufigkeitsanalyse:</b> In deutschen Texten ist E der häufigste Buchstabe. Bei monoalphabetischer Verschlüsselung entspricht der häufigste Geheimbuchstabe vermutlich dem E.</li>
+        <li data-step><b>Brute-Force-Attacke:</b> Alle möglichen Schlüssel oder Passwörter werden automatisch ausprobiert.</li>
+        <li data-step><b>Schutz:</b> lange Schlüssel, komplexe Passwörter, Begrenzung der Fehlversuche, regelmäßig neue Verfahren.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Beispiel</span><p>Knacke das Geheimwort IVHFIIVKIPII (Tipp: ein Fruchtaufstrich) und notiere, wie du vorgegangen bist.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Kryptoanalyse</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+const AB = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const caesar = (s, k) => [...s.toUpperCase()].map(c => { const i = AB.indexOf(c); return i < 0 ? c : AB[(i + k + 26) % 26]; }).join('');
+const DE = {E: 17.4, N: 9.8, I: 7.6, S: 7.3, R: 7.0, A: 6.5, T: 6.2, D: 5.1, H: 4.8, U: 4.4, L: 3.4, C: 3.1, G: 3.0, M: 2.5, O: 2.5, B: 1.9, W: 1.9, F: 1.7, K: 1.2, Z: 1.1, P: 0.8, V: 0.7, J: 0.3, Y: 0.04, X: 0.03, Q: 0.02};
+/* ================= Häufigkeitsanalyse ================= */
+(() => {
+  const PLAIN = 'Die Kryptoanalyse untersucht verschluesselte Texte. Wer die Haeufigkeit der Buchstaben kennt, findet den Schluessel oft sehr schnell. Der Buchstabe E ist in deutschen Texten mit Abstand am haeufigsten, danach folgen N, I, S und R.';
+  const SECRET = caesar(PLAIN, 19);
+  function draw() {
+    const t = $('#hf-in').value.toUpperCase().replace(/Ä/g, 'AE').replace(/Ö/g, 'OE').replace(/Ü/g, 'UE'), k = +$('#hf-k').value; $('#hf-ko').textContent = k;
+    const cnt = {}; let n = 0; for (const c of t) if (AB.includes(c)) { cnt[c] = (cnt[c] || 0) + 1; n++; }
+    const W = 560, bw = W / 26, y0 = 160, sc = 6;
+    let s = '';
+    [...AB].forEach((c, i) => {
+      const p = n ? 100 * (cnt[c] || 0) / n : 0, ref = DE[AB[(i + 26 - k) % 26]];
+      s += `<rect class="bar b2" x="${i * bw + 2}" y="${y0 - ref * sc}" width="${bw / 2 - 2}" height="${ref * sc}" opacity=".45"/><rect class="bar" x="${i * bw + bw / 2}" y="${y0 - p * sc}" width="${bw / 2 - 2}" height="${p * sc}"/><text x="${i * bw + bw / 2}" y="${y0 + 14}" text-anchor="middle">${c}</text><text x="${i * bw + bw / 2}" y="${y0 + 27}" text-anchor="middle" style="fill:var(--accent);font-weight:600">${AB[(i + 26 - k) % 26].toLowerCase()}</text>`;
+    });
+    $('#hf-chart').innerHTML = s;
+    const top = Object.entries(cnt).sort((a, b) => b[1] - a[1])[0];
+    $('#hf-st').innerHTML = `Häufigster Buchstabe im Text: <b>${top ? top[0] : '–'}</b>${top ? ` → Vermutung: ${top[0]} = E, also Schlüssel ${(AB.indexOf(top[0]) - 4 + 26) % 26}` : ''}. Grau = deutsche Häufigkeit (um ${k} verschoben). Entschlüsselt mit ${k}: <span class="mono">${caesar(t.slice(0, 60), -k)}…</span>`;
+  }
+  seg($('#hf-seg'), [['geheim', 'Geheimtext'], ['eigen', 'eigener Text']], v => { $('#hf-in').value = v === 'geheim' ? SECRET : PLAIN; $('#hf-k').value = 0; draw(); }, 'geheim');
+  $('#hf-in').addEventListener('input', draw); $('#hf-k').oninput = draw;
+})();
+
+/* ================= Brute Force ================= */
+(() => {
+  const W = ['KONFITUERE', 'GEHEIMNIS', 'SCHATZKARTE', 'PASSWORT'];
+  let word, tm = [];
+  const neu = () => { const w = pick(W), k = randInt(3, 22); word = caesar(w, k); $('#bf-word').textContent = word; $('#bf').innerHTML = ''; };
+  $('#bf-go').onclick = () => {
+    if ($('#bf').children.length) neu();
+    tm.forEach(clearTimeout); tm = []; $('#bf').innerHTML = '';
+    for (let k = 1; k <= 25; k++) tm.push(setTimeout(() => {
+      const p = caesar(word, -k), real = W.includes(p);
+      $('#bf').insertAdjacentHTML('beforeend', `<li class="${real ? 'hit' : ''}">${String(k).padStart(2, ' ')}: ${p}${real ? '  ← sinnvolles Wort!' : ''}</li>`);
+    }, RM.matches ? 0 : k * 120));
+  };
+  neu();
+})();
+
+/* ================= Passwortstärke ================= */
+(() => {
+  const SETS = [['k', 'Kleinbuchstaben', 26], ['g', 'Großbuchstaben', 26], ['z', 'Ziffern', 10], ['s', 'Sonderzeichen', 33]];
+  const on = new Set(['k']);
+  $('#pw-set').innerHTML = SETS.map(([id, n]) => `<button class="btn ${on.has(id) ? 'primary' : ''}" data-s="${id}" aria-pressed="${on.has(id)}">${n}</button>`).join('');
+  const fmt = s => s < 1 ? 'sofort' : s < 60 ? `${Math.round(s)} Sekunden` : s < 3600 ? `${Math.round(s / 60)} Minuten` : s < 86400 ? `${Math.round(s / 3600)} Stunden` : s < 3.15e7 ? `${Math.round(s / 86400)} Tage` : s < 3.15e10 ? `${numDE(s / 3.15e7, 0)} Jahre` : `${(s / 3.15e7).toExponential(1).replace('e+', ' · 10^')} Jahre`;
+  function upd() {
+    const L = +$('#pw-l').value, n = SETS.filter(s => on.has(s[0])).reduce((a, s) => a + s[2], 0) || 1, comb = n ** L;
+    $('#pw-lo').textContent = L + ' Zeichen';
+    $('#pw-st').innerHTML = `${n} mögliche Zeichen, ${L} Stellen → ${n}<sup>${L}</sup> ≈ <b>${comb.toExponential(1).replace('e+', ' · 10^')}</b> Kombinationen → Knackzeit: <b>${fmt(comb / 1e10 / 2)}</b>`;
+  }
+  $('#pw-set').addEventListener('click', e => { const b = e.target.closest('[data-s]'); if (!b) return; const id = b.dataset.s; on.has(id) ? on.delete(id) : on.add(id); b.classList.toggle('primary', on.has(id)); b.setAttribute('aria-pressed', on.has(id)); upd(); });
+  $('#pw-l').oninput = upd; upd();
+})();
+
+taskSet($('#m1-ts'), () => { const w = pick(['KONFITUERE', 'ERDBEERE', 'SCHOKOLADE', 'INFORMATIK', 'GEHEIMDIENST', 'NACHRICHT']), k = randInt(2, 23); return {key: w, tag: 'Schlüssel unbekannt', q: `<span class="big mono" style="font-size:1.3rem">${caesar(w, k)}</span>`, fields: [{l: 'Klartext', a: w}, {l: 'Schlüssel', a: k}], hint: 'Häufigster Buchstabe = E? Oder Brute Force mit dem Caesar-Werkzeug.'}; }, {n: 3});
+mcQuiz($('#quiz'), [
+  {q: 'Welcher Buchstabe ist in deutschen Texten am häufigsten?', a: ['E', 'A', 'S', 'X'], ok: 0},
+  {q: 'Im Geheimtext ist H am häufigsten (Caesar). Welcher Schlüssel ist wahrscheinlich?', a: ['3', '7', '4', '8'], ok: 0, why: 'E + 3 = H.'},
+  {q: 'Was ist eine Brute-Force-Attacke?', a: ['Alle Schlüssel werden automatisch ausprobiert.', 'Der Computer wird zerstört.', 'Man fragt nach dem Passwort.', 'Man zählt Buchstaben.'], ok: 0},
+  {q: 'Wie viele sinnvolle Schlüssel hat Caesar?', a: ['25', '2', '1000', 'unendlich viele'], ok: 0},
+  {q: 'Was schützt am besten vor Brute Force?', a: ['lange, komplexe Passwörter und begrenzte Fehlversuche', 'kurze Passwörter', 'immer dasselbe Passwort', 'Passwort auf einem Zettel am Bildschirm'], ok: 0},
+  {q: 'Womit beschäftigt sich die Kryptografie?', a: ['mit sicheren Verschlüsselungsverfahren', 'mit dem Knacken von Codes', 'mit Grafikkarten', 'mit Fotos'], ok: 0}
+]);
+</script>

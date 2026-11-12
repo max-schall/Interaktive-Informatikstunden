@@ -1,0 +1,155 @@
+<!--
+title: Symmetrisch, asymmetrisch, hybrid
+short: Verschlüsselungsarten
+time: 2 Unterrichtsstunden
+q: Wie kann man verschlüsseln, ohne vorher einen geheimen Schlüssel auszutauschen?
+facts: Symmetrische Verschlüsselung: ein gemeinsamer Schlüssel, schnell, aber Problem der Schlüsselverteilung | Asymmetrische Verschlüsselung (Public Key): öffentlicher Schlüssel zum Verschlüsseln, privater Schlüssel zum Entschlüsseln | Hybride Verschlüsselung: Session-Key symmetrisch, Austausch asymmetrisch | E-Mail-Verschlüsselung
+inter: Schlüsselübergabe abfangen (symmetrisch) · Briefkasten-Modell Public Key · Rollenspiel Anna, Ben und die Lauscherin Eva · Hybride Verschlüsselung Schritt für Schritt · Merkmale sortieren
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Daten verschlüsseln</p>
+      <h1>Verschlüsselungsarten<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Bei einem einzigen Hackerangriff wurden schon Hunderte Millionen E-Mails von Servern gestohlen. Wären sie verschlüsselt gewesen, hätten die Angreifer nur Zeichensalat. Aber wie verschlüsselt man eine Mail an jemanden, mit dem man nie einen geheimen Schlüssel vereinbart hat?</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wie würdest du einem Freund in einem anderen Land einen geheimen Schlüssel schicken?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie kann man verschlüsseln, ohne vorher einen geheimen Schlüssel auszutauschen?</p></div>
+      <div class="controls"><button class="btn primary" data-go="sym">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="sym" data-label="Symmetrisch" data-yr="Erarbeitung" data-title="Symmetrische Verschlüsselung" data-sub="Ein Schlüssel für beide">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Symmetrische Verschlüsselung</p>
+      <h2>Ein Schlüssel für beide</h2>
+      <ul class="facts">
+        <li>Sender und Empfänger nutzen <b>denselben Schlüssel</b> zum Ver- und Entschlüsseln (z. B. Caesar, Vigenère).</li>
+        <li><b>Vorteil:</b> einfach und <b>schnell</b> – wichtig bei großen Datenmengen.</li>
+        <li><b>Nachteil:</b> Der Schlüssel muss genau wie die Nachricht übertragen werden. Fängt ihn jemand ab, kann er alles entschlüsseln: das <b>Schlüsselverteilungsproblem</b>.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Anna → Ben, Eva lauscht</h3></div>
+      <div class="actors" id="sy"></div>
+      <div id="sy-step"></div>
+      <p class="status" id="sy-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="asym" data-label="Asymmetrisch" data-yr="Erarbeitung" data-title="Asymmetrische Verschlüsselung" data-sub="Öffentlicher und privater Schlüssel">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Public-Key-Verschlüsselung</p>
+      <h2>Zwei Schlüssel, die zusammengehören</h2>
+      <ul class="facts">
+        <li>Der Empfänger besitzt ein <b>Schlüsselpaar</b>: einen <b>öffentlichen Schlüssel</b> (public key), den jeder haben darf, und einen <b>privaten Schlüssel</b> (private key), der nur bei ihm bleibt.</li>
+        <li>Mit dem öffentlichen Schlüssel wird <b>verschlüsselt</b> – entschlüsseln kann man nur mit dem <b>privaten</b>.</li>
+        <li>Die beiden Schlüssel sind verschieden, aber mathematisch miteinander verbunden: <b>asymmetrische</b> Verschlüsselung.</li>
+        <li>Wie ein <b>Briefkasten</b>: Einwerfen kann jeder, öffnen nur, wer den Schlüssel hat.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Anna → Ben, Eva lauscht</h3></div>
+      <div class="actors" id="as"></div>
+      <div id="as-step"></div>
+      <p class="status" id="as-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="hybrid" data-label="Hybrid" data-yr="Vertiefung" data-title="Hybride Verschlüsselung" data-sub="Das Beste aus beiden">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Hybride Verschlüsselung</p>
+    <h2>Das Beste aus beiden Welten</h2>
+    <p class="lead">Asymmetrische Verfahren sind sicher, aber <b>langsam</b>. Deshalb kombiniert man: Die Nachricht wird schnell <b>symmetrisch</b> verschlüsselt, nur der Schlüssel <b>asymmetrisch</b>. So funktionieren HTTPS und viele Messenger.</p>
+  </div>
+  <div class="vis">
+    <ol class="hy-steps" id="hy"></ol>
+    <div id="hy-step"></div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Vergleich" data-yr="M1" data-title="Vergleich" data-sub="Merkmale sortieren">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Symmetrisch oder asymmetrisch?</h2>
+  </div>
+  <div id="sort-sa"></div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Unterschied</h3></header><p>Beschreibe den Unterschied zwischen symmetrischer und asymmetrischer Verschlüsselung.</p>
+      <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Symmetrisch: ein gemeinsamer Schlüssel zum Ver- und Entschlüsseln; er muss ausgetauscht werden. Asymmetrisch: Schlüsselpaar – öffentlicher Schlüssel verschlüsselt, nur der private entschlüsselt; kein geheimer Austausch nötig.</p></div>
+    <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>E-Mails schützen</h3></header><p>Erkläre, wie E-Mails vor Dritten besser geschützt werden können.</p>
+      <div class="controls"><button class="btn" data-reveal="m1b" aria-expanded="false">Lösung</button></div><p class="solution" id="m1b" hidden>Mit einer Ende-zu-Ende-Verschlüsselung per Public Key: Der Sender verschlüsselt mit dem öffentlichen Schlüssel des Empfängers. Auf allen Servern liegt die Mail nur verschlüsselt; selbst bei einem Hack können die Angreifer sie ohne den privaten Schlüssel nicht lesen.</p></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Verschlüsselungsarten</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Verschlüsselungsarten</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step><b>Symmetrisch:</b> Sender und Empfänger nutzen denselben Schlüssel. Schnell, aber der Schlüssel muss sicher übertragen werden (Schlüsselverteilungsproblem).</li>
+        <li data-step><b>Asymmetrisch (Public Key):</b> Der Empfänger hat ein Schlüsselpaar. Mit dem <b>öffentlichen Schlüssel</b> wird verschlüsselt, nur mit dem <b>privaten Schlüssel</b> entschlüsselt.</li>
+        <li data-step>Asymmetrisch ist sicherer, weil kein geheimer Schlüssel übertragen werden muss, aber langsamer.</li>
+        <li data-step><b>Hybrid:</b> Die Nachricht wird mit einem zufälligen <b>Session-Key</b> symmetrisch verschlüsselt; der Session-Key wird asymmetrisch mit dem öffentlichen Schlüssel des Empfängers verschlüsselt.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne das Briefkasten-Modell: Wer wirft ein, wer öffnet? Beschrifte öffentlichen und privaten Schlüssel.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Verschlüsselungsarten</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+function actors(root, st) {
+  const P = [['anna', '👩', 'Anna'], ['eva', '🕵️', 'Eva'], ['ben', '👦', 'Ben']];
+  root.innerHTML = P.map(([id, ic, n]) => `<div class="actor ${st.hl === id ? 'on' : ''}"><b>${ic}</b><span>${n}</span><div class="inv">${(st[id] || []).map(x => `<span class="pill ${x.c || ''}">${x.t}</span>`).join('')}</div></div>`).join('') + `<div class="wire-msg">${st.wire || '&nbsp;'}</div>`;
+}
+/* ================= Symmetrisch ================= */
+(() => {
+  const S = [
+    [{anna: [{t: '🔑 Schlüssel 7'}, {t: '📄 Nachricht'}]}, 'Anna will Ben eine Nachricht schicken. Sie verschlüsselt sie mit dem Schlüssel 7.'],
+    [{anna: [{t: '🔑 Schlüssel 7'}, {t: '🔒 Geheimtext'}], wire: '🔑 Schlüssel 7 →', eva: [{t: '🔑 Schlüssel 7', c: 'err'}], ben: [{t: '🔑 Schlüssel 7'}], hl: 'eva'}, 'Ben braucht den Schlüssel. Anna schickt ihn über das Netz – Eva fängt ihn ab und kopiert ihn!'],
+    [{anna: [{t: '🔑 7'}], wire: '🔒 Geheimtext →', eva: [{t: '🔑 7', c: 'err'}, {t: '🔒 Geheimtext'}], ben: [{t: '🔑 7'}, {t: '🔒 Geheimtext'}]}, 'Jetzt schickt Anna den Geheimtext. Eva kopiert auch ihn.'],
+    [{anna: [{t: '🔑 7'}], eva: [{t: '📄 Klartext!', c: 'err'}], ben: [{t: '📄 Klartext', c: 'ok'}], hl: 'eva'}, 'Ben entschlüsselt – aber Eva auch. Das ist das <b>Schlüsselverteilungsproblem</b>.']
+  ];
+  stepper($('#sy-step'), S.length, k => { actors($('#sy'), S[k][0]); $('#sy-st').innerHTML = S[k][1]; });
+})();
+/* ================= Asymmetrisch ================= */
+(() => {
+  const S = [
+    [{ben: [{t: '🔓 öffentlich'}, {t: '🗝 privat', c: 'ok'}]}, 'Ben erzeugt ein Schlüsselpaar. Der private Schlüssel verlässt nie sein Gerät.'],
+    [{ben: [{t: '🔓 öffentlich'}, {t: '🗝 privat', c: 'ok'}], wire: '← 🔓 öffentlicher Schlüssel', anna: [{t: '🔓 Bens öffentlicher'}], eva: [{t: '🔓 Bens öffentlicher'}], hl: 'eva'}, 'Ben veröffentlicht den öffentlichen Schlüssel. Eva darf ihn ruhig haben.'],
+    [{anna: [{t: '🔒 Geheimtext'}], ben: [{t: '🗝 privat', c: 'ok'}], eva: [{t: '🔓 Bens öffentlicher'}]}, 'Anna verschlüsselt ihre Nachricht mit Bens öffentlichem Schlüssel – wie ein Brief, der in Bens Briefkasten geworfen wird.'],
+    [{wire: '🔒 Geheimtext →', ben: [{t: '🗝 privat', c: 'ok'}, {t: '🔒 Geheimtext'}], eva: [{t: '🔓 öffentlich'}, {t: '🔒 Geheimtext'}], hl: 'eva'}, 'Eva fängt den Geheimtext ab. Mit dem öffentlichen Schlüssel kann sie ihn aber <b>nicht</b> entschlüsseln.'],
+    [{ben: [{t: '📄 Klartext', c: 'ok'}], eva: [{t: '❓ Zeichensalat'}], hl: 'ben'}, 'Nur Ben kann mit seinem <b>privaten</b> Schlüssel entschlüsseln. Kein geheimer Schlüssel musste übertragen werden!']
+  ];
+  stepper($('#as-step'), S.length, k => { actors($('#as'), S[k][0]); $('#as-st').innerHTML = S[k][1]; });
+})();
+/* ================= Hybrid ================= */
+(() => {
+  const S = ['Anna wählt einen zufälligen, symmetrischen <b>Session-Key</b> 🔑.', 'Sie verschlüsselt die (große) Nachricht <b>symmetrisch</b> mit dem Session-Key – das geht schnell.', 'Den Session-Key verschlüsselt sie <b>asymmetrisch</b> mit Bens <b>öffentlichem</b> Schlüssel 🔓.', 'Beides wird übertragen: verschlüsselte Nachricht + verschlüsselter Session-Key.', 'Ben entschlüsselt den Session-Key mit seinem <b>privaten</b> Schlüssel 🗝 …', '… und damit die Nachricht. Schlüsselverteilungsproblem gelöst, Geschwindigkeit erhalten!'];
+  stepper($('#hy-step'), S.length, k => $('#hy').innerHTML = S.map((s, i) => `<li class="${i < k ? 'done' : i === k ? 'on' : ''}">${s}</li>`).join(''));
+})();
+sorter($('#sort-sa'), [{id: 's', name: 'symmetrisch'}, {id: 'a', name: 'asymmetrisch'}], [
+  {t: 'ein gemeinsamer Schlüssel', c: 's'}, {t: 'sehr schnell', c: 's'}, {t: 'Schlüssel muss geheim übertragen werden', c: 's'}, {t: 'Caesar und Vigenère', c: 's'},
+  {t: 'öffentlicher und privater Schlüssel', c: 'a'}, {t: 'Public-Key-Verfahren', c: 'a'}, {t: 'kein geheimer Schlüsselaustausch nötig', c: 'a'}, {t: 'langsamer', c: 'a'}
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Womit verschlüsselt Anna eine Nachricht an Ben (Public Key)?', a: ['mit Bens öffentlichem Schlüssel', 'mit Bens privatem Schlüssel', 'mit ihrem privaten Schlüssel', 'ohne Schlüssel'], ok: 0},
+  {q: 'Wer kann die Nachricht entschlüsseln?', a: ['nur Ben mit seinem privaten Schlüssel', 'jeder mit dem öffentlichen Schlüssel', 'Anna und Eva', 'niemand'], ok: 0},
+  {q: 'Was ist das Problem der symmetrischen Verschlüsselung?', a: ['Der Schlüssel muss sicher übertragen werden.', 'Sie ist zu langsam.', 'Sie braucht zwei Schlüssel.', 'Sie funktioniert nur bei Bildern.'], ok: 0},
+  {q: 'Was ist ein Session-Key?', a: ['ein zufälliger symmetrischer Schlüssel für eine Sitzung', 'ein Passwort für das WLAN', 'ein privater Schlüssel', 'ein Hausschlüssel'], ok: 0},
+  {q: 'Warum nutzt man hybride Verschlüsselung?', a: ['sicherer Schlüsselaustausch und trotzdem schnell', 'weil sie gar keinen Schlüssel braucht', 'damit Eva mitlesen kann', 'weil sie kürzer ist'], ok: 0},
+  {q: 'Welches Bild passt zur asymmetrischen Verschlüsselung?', a: ['ein Briefkasten', 'ein Fahrrad', 'eine Brille', 'ein Spiegel'], ok: 0}
+]);
+</script>

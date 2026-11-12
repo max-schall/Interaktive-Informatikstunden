@@ -1,0 +1,161 @@
+<!--
+title: Daten in der digitalen Welt verschlüsseln
+short: Daten verschlüsseln
+time: 1–2 Unterrichtsstunden
+q: Wie werden Nachrichten im Internet und in Messengern geschützt?
+facts: Verschlüsselungsalgorithmen arbeiten automatisch im Hintergrund (HTTPS, Messenger) | Personenbezogene Daten sollten verschlüsselt übertragen werden | Punkt-zu-Punkt-Verschlüsselung: Zwischenstationen entschlüsseln | Ende-zu-Ende-Verschlüsselung: nur Sender und Empfänger können lesen | Moderne Verfahren kombinieren Substitution und Transposition
+inter: Nachricht durchs Netz schicken – was sieht der Server? · Punkt-zu-Punkt oder Ende-zu-Ende umschalten · Beispiele zuordnen · Substitution und Transposition kombinieren
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Daten verschlüsseln</p>
+      <h1>Daten verschlüsseln<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">„Nachrichten und Anrufe sind Ende-zu-Ende-verschlüsselt“ – diesen Hinweis zeigen viele Messenger. Und im Browser erscheint ein kleines Schloss. Was steckt dahinter?</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wer könnte deine Chatnachrichten auf dem Weg zum Empfänger mitlesen?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie werden Nachrichten im Internet und in Messengern geschützt?</p></div>
+      <div class="controls"><button class="btn primary" data-go="automatisch">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="automatisch" data-label="Im Alltag" data-yr="Einstieg" data-title="Verschlüsselung im Alltag" data-sub="Automatisch im Hintergrund">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Verschlüsselung im Alltag</p>
+    <h2>Unsichtbar, aber überall</h2>
+    <p class="lead">Beim Surfen und Chatten werden Daten meist <b>automatisch</b> von Programmen verschlüsselt – mit <b>Verschlüsselungsalgorithmen</b>. Im Browser zeigt das <b>Schloss</b> bei HTTPS einen verschlüsselten Datenaustausch an. Vor allem <b>personenbezogene Daten</b> wie Name, Adresse, Passwörter, Telefonnummern und Bilder sollten verschlüsselt übertragen werden.</p>
+  </div>
+  <div class="grid-2">
+    <div class="browser"><div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">🔒 https://bank.example/login</span></div><div class="page"><h1>Anmeldung</h1><p>Benutzername: lena07<br>Passwort: ••••••••</p><p style="color:#15803D">Verbindung ist sicher</p></div></div>
+    <div><h3>Sollte das verschlüsselt werden?</h3><div id="sort-pd"></div></div>
+  </div>
+</section>
+
+<section class="station" id="wege" data-label="P2P vs. E2E" data-yr="Erarbeitung" data-title="Punkt-zu-Punkt und Ende-zu-Ende" data-sub="Wer kann mitlesen?">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Punkt-zu-Punkt und Ende-zu-Ende</p>
+    <h2>Wer kann unterwegs mitlesen?</h2>
+    <p class="lead">Clients und Server sind selten direkt verbunden: Die Nachricht läuft über Router und Server. Schalte um und verfolge, wo die Nachricht als Klartext vorliegt.</p>
+  </div>
+  <div class="model">
+    <div class="vis">
+      <div class="vis-head"><h3>Lena → Tom</h3><div id="ee-seg"></div></div>
+      <div class="hops" id="hops"></div>
+      <div class="controls"><button class="btn primary" id="ee-go">▶ Nachricht senden</button></div>
+      <p class="status" id="ee-st"></p>
+    </div>
+    <div class="stack">
+      <div class="box"><span class="tag info">Punkt-zu-Punkt</span><p>Verschlüsselt wird nur zwischen zwei Stationen. Jede Zwischenstation (z. B. der Server des Anbieters) <b>entschlüsselt</b> die Daten, sie liegen dort als <b>Klartext</b> vor, und verschlüsselt sie neu für die nächste Strecke.</p></div>
+      <div class="box"><span class="tag info">Ende-zu-Ende</span><p>Die Daten bleiben über <b>alle Zwischenstationen</b> verschlüsselt. Nur die Kommunikationspartner an den Enden haben den Schlüssel. Deutlich sicherer.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Zuordnen" data-yr="M1" data-title="Welche Verschlüsselung?" data-sub="Beispiele zuordnen">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Material M1</p>
+    <h2>Punkt-zu-Punkt oder Ende-zu-Ende?</h2>
+  </div>
+  <div id="sort-ee"></div>
+  <div class="task-card mt"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Begründen</h3></header><p>Begründe, warum die Ende-zu-Ende-Verschlüsselung sicherer ist als die Punkt-zu-Punkt-Verschlüsselung.</p>
+    <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Bei Punkt-zu-Punkt liegen die Daten auf jeder Zwischenstation als Klartext vor. Wer dort Zugriff hat (Anbieter, Hacker, Behörden), kann sie lesen. Bei Ende-zu-Ende kann nur der Empfänger mit seinem Schlüssel entschlüsseln – auch der Anbieter des Dienstes sieht nur Zeichensalat.</p></div>
+</section>
+
+<section class="station" id="kombi" data-label="Kombinieren" data-yr="Vertiefung" data-title="Verfahren kombinieren" data-sub="Substitution + Transposition">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 4 · Verschlüsselungen kombinieren</p>
+      <h2>Doppelt hält besser</h2>
+      <ul class="facts">
+        <li>Caesar und Vigenère sind die Grundlage heutiger Verfahren. Moderne Verschlüsselungen beruhen auf <b>Substitutions-</b> und <b>Transpositionsverfahren</b>.</li>
+        <li>Oft wird mehrfach hintereinander verschlüsselt (<b>Überverschlüsselung</b>), viele Runden lang.</li>
+        <li>Probiere es aus: erst Caesar (ersetzen), dann rückwärts lesen und in Blöcke umstellen (umstellen).</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Zwei Runden</h3></div>
+      <input class="text-in mono" id="kb-in" value="TREFFEN UM ACHT" aria-label="Klartext">
+      <label class="slider-row">Caesar-Schlüssel <input id="kb-k" type="range" min="1" max="25" value="5"><output id="kb-ko" class="mono"></output></label>
+      <ol class="facts" id="kb-out" style="list-style:decimal;padding-left:1.4rem"></ol>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Daten verschlüsseln</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Daten verschlüsseln</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step>Im Internet werden Daten meist automatisch mit <b>Verschlüsselungsalgorithmen</b> verschlüsselt, z. B. bei <b>HTTPS</b> (Schloss im Browser) oder in Messengern.</li>
+        <li data-step><b>Personenbezogene Daten</b> (Name, Adresse, Passwörter, Bilder) sollten immer verschlüsselt übertragen werden.</li>
+        <li data-step><b>Punkt-zu-Punkt-Verschlüsselung:</b> Zwischenstationen entschlüsseln die Daten (Klartext auf dem Server) und verschlüsseln sie neu.</li>
+        <li data-step><b>Ende-zu-Ende-Verschlüsselung:</b> Die Daten bleiben auf dem ganzen Weg verschlüsselt; nur Sender und Empfänger können sie lesen. Sie ist sicherer.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne den Weg Lena → Server → Tom zweimal: einmal Punkt-zu-Punkt, einmal Ende-zu-Ende. Markiere, wo Klartext vorliegt.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Stimmt das?</h2></div>
+  <div id="tf"></div>
+</section>
+
+<script>
+const AB = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const caesar = (s, k) => [...s.toUpperCase()].map(c => { const i = AB.indexOf(c); return i < 0 ? c : AB[(i + k + 26) % 26]; }).join('');
+sorter($('#sort-pd'), [{id: 'ja', name: 'unbedingt verschlüsseln'}, {id: 'egal', name: 'öffentlich, nicht nötig'}], [
+  {t: 'Passwort beim Login', c: 'ja'}, {t: 'Wohnadresse im Onlineshop', c: 'ja'}, {t: 'Private Fotos im Chat', c: 'ja'}, {t: 'Telefonnummer', c: 'ja'},
+  {t: 'Wetterbericht abrufen', c: 'egal'}, {t: 'Fahrplan der Buslinie', c: 'egal'}
+]);
+
+/* ================= P2P vs E2E ================= */
+(() => {
+  const H = [['📱', 'Lena'], ['📶', 'Router'], ['🗄', 'Server des Anbieters'], ['📶', 'Router'], ['📱', 'Tom']];
+  const MSG = 'Wir treffen uns um 3!', ENC = 'x7#Kq!9zP@m2…';
+  let mode = 'p2p', tm = [];
+  function draw(k = -1) {
+    $('#hops').innerHTML = H.map(([i, n], j) => {
+      const plain = j === 0 || j === 4 || (mode === 'p2p' && j === 2);
+      const txt = k < j ? '' : plain ? MSG : ENC;
+      return `<div class="hop ${k >= j ? 'on' : ''} ${k >= j && plain && j > 0 && j < 4 ? 'leak' : ''}"><b>${i}</b><small>${n}</small><span class="mono">${txt}</span></div>`;
+    }).join('<i class="hop-ar">→</i>');
+  }
+  function go() {
+    tm.forEach(clearTimeout); tm = [];
+    for (let j = 0; j < 5; j++) tm.push(setTimeout(() => draw(j), RM.matches ? 0 : j * 550));
+    tm.push(setTimeout(() => $('#ee-st').innerHTML = mode === 'p2p' ? '⚠ Auf dem <b>Server des Anbieters</b> liegt die Nachricht als <b>Klartext</b> vor – wer dort Zugriff hat, kann sie lesen.' : '🔒 Auf dem ganzen Weg nur Zeichensalat. Erst Toms Gerät entschlüsselt die Nachricht.', RM.matches ? 0 : 2800));
+  }
+  seg($('#ee-seg'), [['p2p', 'Punkt-zu-Punkt'], ['e2e', 'Ende-zu-Ende']], v => { mode = v; draw(); $('#ee-st').textContent = 'Drücke „Senden“.'; }, 'p2p');
+  $('#ee-go').onclick = go;
+})();
+
+sorter($('#sort-ee'), [{id: 'p', name: 'Punkt-zu-Punkt'}, {id: 'e', name: 'Ende-zu-Ende'}], [
+  {t: 'A: Der E-Mail-Anbieter kann die Mails im Postfach lesen und nach Spam durchsuchen.', c: 'p'},
+  {t: 'B: Der Messenger-Anbieter sieht nur verschlüsselte Daten.', c: 'e'},
+  {t: 'C: Nur das Handy des Empfängers besitzt den Schlüssel.', c: 'e'},
+  {t: 'D: Die Nachricht wird auf jedem Server entschlüsselt und neu verschlüsselt.', c: 'p'}
+]);
+
+/* ================= Kombinieren ================= */
+(() => {
+  const upd = () => {
+    const t = $('#kb-in').value.toUpperCase().replace(/[^A-Z]/g, ''), k = +$('#kb-k').value; $('#kb-ko').textContent = k;
+    const s1 = caesar(t, k), s2 = [...s1].reverse().join(''), s3 = s2.replace(/(.{4})/g, '$1 ').trim();
+    $('#kb-out').innerHTML = `<li>Klartext: <span class="mono">${t}</span></li><li>Substitution (Caesar ${k}): <span class="mono">${s1}</span></li><li>Transposition (rückwärts): <span class="mono">${s2}</span></li><li>in 4er-Blöcken: <b class="mono">${s3}</b></li>`;
+  };
+  $('#kb-in').addEventListener('input', upd); $('#kb-k').oninput = upd; upd();
+})();
+
+trueFalse($('#tf'), [
+  {t: 'Bei HTTPS werden die Daten zwischen Browser und Webserver verschlüsselt.', ok: true},
+  {t: 'Bei der Punkt-zu-Punkt-Verschlüsselung liegen die Daten auf Zwischenstationen als Klartext vor.', ok: true},
+  {t: 'Bei der Ende-zu-Ende-Verschlüsselung kann der Server-Anbieter alles mitlesen.', ok: false, why: 'Er sieht nur verschlüsselte Daten.'},
+  {t: 'Moderne Verschlüsselungen kombinieren Substitution und Transposition.', ok: true},
+  {t: 'Verschlüsseln muss man im Internet immer selbst von Hand.', ok: false, why: 'Programme verschlüsseln meist automatisch.'},
+  {t: 'Eigene Fotos sollten verschlüsselt übertragen werden.', ok: true}
+]);
+</script>

@@ -1,0 +1,191 @@
+<!--
+title: Nachrichten verschlüsseln
+short: Caesar & Skytale
+time: 2 Unterrichtsstunden
+q: Wie kann man Nachrichten so verschlüsseln, dass nur der Empfänger sie lesen kann?
+facts: Klartext, Geheimtext, Schlüssel, Sender und Empfänger | Transposition: Skytale (Buchstaben werden umgestellt) | Substitution: Caesar-Verschlüsselung (Buchstaben werden ersetzt, monoalphabetisch) | Caesar-Scheibe zum Ver- und Entschlüsseln
+inter: Skytale mit veränderbarem Stabumfang · drehbare Caesar-Scheibe · Caesar-Werkzeug mit beiden Alphabeten · Geheimbotschaften entschlüsseln · Partnerarbeit mit Schlüsseln
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Daten verschlüsseln</p>
+      <h1>Nachrichten verschlüsseln<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">„Greift im Morgengrauen an!“ – Wenn ein Bote mit diesem Befehl abgefangen wird, ist die Überraschung dahin. Schon vor über 2000 Jahren haben Menschen ihre Nachrichten deshalb <b>verschlüsselt</b>.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Habt ihr schon einmal eine Geheimschrift benutzt? Wie funktionierte sie?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie kann man Nachrichten so verschlüsseln, dass nur der Empfänger sie lesen kann?</p></div>
+      <div class="controls"><button class="btn primary" data-go="begriffe">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="begriffe" data-label="Begriffe" data-yr="Einstieg" data-title="Vertrauliche Nachrichten" data-sub="Klartext, Geheimtext, Schlüssel">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Vertrauliche Nachrichten</p>
+    <h2>Klartext, Geheimtext, Schlüssel</h2>
+    <p class="lead">Daten und Nachrichten sollen oft nicht von allen gelesen werden. Damit ein Dritter sie nicht versteht, werden sie <b>verschlüsselt</b>. Das klappt nur, wenn sich Sender und Empfänger vorher auf ein <b>Verfahren</b> und einen <b>Schlüssel</b> geeinigt haben.</p>
+  </div>
+  <div class="flow-line">
+    <div class="fl-box"><span class="tag">Sender</span><b>Klartext</b><small>GREIFT AN</small></div>
+    <div class="fl-arrow">verschlüsseln<br>🔑 Schlüssel →</div>
+    <div class="fl-box acc"><span class="tag info">Übertragung</span><b>Geheimtext</b><small class="mono">JUHLIW DQ</small><small>👀 Ein Dritter versteht nichts.</small></div>
+    <div class="fl-arrow">entschlüsseln<br>🔑 Schlüssel →</div>
+    <div class="fl-box"><span class="tag">Empfänger</span><b>Klartext</b><small>GREIFT AN</small></div>
+  </div>
+  <div class="grid-2 mt">
+    <div class="box"><span class="tag info">Transposition</span><p>Die Buchstaben bleiben gleich, aber ihre <b>Reihenfolge</b> wird verändert (umgestellt). Beispiel: Skytale.</p></div>
+    <div class="box"><span class="tag info">Substitution</span><p>Jeder Buchstabe wird durch einen <b>anderen ersetzt</b>. Beispiel: Caesar-Verschlüsselung.</p></div>
+  </div>
+</section>
+
+<section class="station" id="skytale" data-label="Skytale" data-yr="Erarbeitung" data-title="Die Skytale" data-sub="Transposition">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Transposition</p>
+      <h2>Die Skytale</h2>
+      <ul class="facts">
+        <li>Ein Lederstreifen wird um einen <b>Stab</b> gewickelt und längs beschrieben.</li>
+        <li>Abgewickelt sieht man nur Buchstabensalat. Nur wer einen Stab mit <b>gleichem Umfang</b> hat, kann die Nachricht lesen.</li>
+        <li>Der Schlüssel ist der Umfang: Wie viele Buchstaben passen auf eine Umdrehung?</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Skytale</h3></div>
+      <input class="text-in" id="sk-in" value="TREFFEN UM ACHT AM TOR" maxlength="40" aria-label="Klartext">
+      <label class="slider-row">Stabumfang <input id="sk-n" type="range" min="2" max="8" value="4"><output id="sk-no" class="mono"></output></label>
+      <div class="sk-wrap" id="sk-grid"></div>
+      <p class="note">Abgewickelter Streifen (wird spaltenweise gelesen):</p>
+      <p class="mono big-num" id="sk-out" style="font-size:1.1rem;word-break:break-all"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="caesar" data-label="Caesar-Scheibe" data-yr="Erarbeitung" data-title="Caesar-Verschlüsselung" data-sub="Substitution mit Verschiebung">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Caesar-Verschlüsselung</p>
+      <h2>Die Caesar-Scheibe</h2>
+      <ul class="facts">
+        <li>Kaiser Caesar schickte seinen Soldaten verschlüsselte Befehle: Jeder Buchstabe wurde um eine feste Zahl von Stellen <b>verschoben</b>.</li>
+        <li>Diese Zahl ist der <b>Schlüssel</b>. Bei Schlüssel 3 wird aus A ein D, aus B ein E …</li>
+        <li>Es wird nur <b>ein</b> Schlüsselalphabet genutzt: ein <b>monoalphabetisches Substitutionsverfahren</b> (mono = einzig).</li>
+        <li>Drehe die innere Scheibe!</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Schlüssel <span class="big-num" id="cs-k" style="font-size:1.4rem"></span></h3><div class="controls" style="margin:0"><button class="btn" id="cs-m">↺</button><button class="btn" id="cs-p">↻</button></div></div>
+      <svg viewBox="-150 -150 300 300" id="disc" class="disc"></svg>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="werkzeug" data-label="Werkzeug" data-yr="Übung" data-title="Ver- und entschlüsseln" data-sub="Caesar-Werkzeug">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Ver- und entschlüsseln</p>
+    <h2>Das Caesar-Werkzeug</h2>
+  </div>
+  <div class="vis">
+    <div class="vis-head"><h3>Schlüssel</h3><label class="slider-row" style="flex:1;max-width:24rem"><input id="cw-k" type="range" min="0" max="25" value="3"><output id="cw-ko" class="mono"></output></label><div id="cw-dir"></div></div>
+    <div class="alpha mono" id="cw-alpha"></div>
+    <div class="cols-2" style="margin-top:.8rem">
+      <label><span class="note">Eingabe</span><textarea class="code-in" id="cw-in" style="min-height:5rem;background:var(--surface-2);color:var(--ink)">INFORMATIK MACHT SPASS</textarea></label>
+      <label><span class="note">Ausgabe</span><textarea class="code-in" id="cw-out" style="min-height:5rem" readonly></textarea></label>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Botschaften" data-yr="M1" data-title="Geheime Botschaften" data-sub="Mit Schlüssel entschlüsseln">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1</p>
+    <h2>Geheime Botschaften</h2>
+    <p class="lead">Entschlüssele die Nachrichten. Der Schlüssel ist angegeben. Nutze die Caesar-Scheibe oder das Werkzeug.</p>
+  </div>
+  <div id="m1-ts"></div>
+  <div class="task-card mt"><header><span class="no">P</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Partnerarbeit</h3></header><p>Arbeitet zu zweit. Einigt euch auf einen Schlüssel und die Drehrichtung. Verschlüsselt abwechselnd eine Nachricht und lasst sie vom anderen entschlüsseln.</p></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Nachrichten verschlüsseln</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Nachrichten verschlüsseln</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step>Beim <b>Verschlüsseln</b> wird aus einem <b>Klartext</b> mit einem <b>Schlüssel</b> ein <b>Geheimtext</b>. Sender und Empfänger müssen Verfahren und Schlüssel kennen.</li>
+        <li data-step><b>Transposition:</b> Die Buchstaben werden umgestellt (z. B. Skytale; Schlüssel = Stabumfang).</li>
+        <li data-step><b>Substitution:</b> Die Buchstaben werden ersetzt. Bei der <b>Caesar-Verschlüsselung</b> wird jeder Buchstabe um die gleiche Zahl von Stellen verschoben (Schlüssel).</li>
+        <li data-step>Caesar ist <b>monoalphabetisch</b>: Es gibt nur ein Geheimalphabet. Zum Entschlüsseln verschiebt man um den Schlüssel zurück.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Beispiel</span><p>Schreibe beide Alphabete für den Schlüssel 3 untereinander und verschlüssele deinen Namen.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Verschlüsseln üben</h2></div>
+  <div id="ts"></div>
+</section>
+
+<script>
+const AB = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const norm = s => s.toUpperCase().replace(/Ä/g, 'AE').replace(/Ö/g, 'OE').replace(/Ü/g, 'UE').replace(/ß/g, 'SS');
+const caesar = (s, k) => [...norm(s)].map(c => { const i = AB.indexOf(c); return i < 0 ? c : AB[(i + k + 260) % 26]; }).join('');
+
+/* ================= Skytale ================= */
+(() => {
+  const upd = () => {
+    const n = +$('#sk-n').value, t = norm($('#sk-in').value).replace(/[^A-Z]/g, '');
+    $('#sk-no').textContent = n + ' Zeilen';
+    const cols = Math.ceil(t.length / n), pad = t.padEnd(cols * n, 'X');
+    const grid = [...Array(n)].map((_, r) => pad.slice(r * cols, r * cols + cols));
+    $('#sk-grid').style.setProperty('--c', cols);
+    $('#sk-grid').innerHTML = grid.map(r => [...r].map(c => `<span>${c}</span>`).join('')).join('');
+    let out = ''; for (let c = 0; c < cols; c++) for (let r = 0; r < n; r++) out += grid[r][c];
+    $('#sk-out').textContent = out;
+  };
+  $('#sk-in').addEventListener('input', upd); $('#sk-n').oninput = upd; upd();
+})();
+
+/* ================= Caesar-Scheibe ================= */
+(() => {
+  let k = 3;
+  const svg = $('#disc');
+  const ring = (r, txt, cls) => [...AB].map((c, i) => { const a = (i / 26) * 2 * Math.PI - Math.PI / 2; return `<text x="${(r * Math.cos(a)).toFixed(1)}" y="${(r * Math.sin(a) + 5).toFixed(1)}" text-anchor="middle" class="${cls}">${txt ? txt[i] : c}</text>`; }).join('');
+  const sep = [...Array(26)].map((_, i) => { const a = ((i + .5) / 26) * 2 * Math.PI - Math.PI / 2; return `<line x1="${(100 * Math.cos(a)).toFixed(1)}" y1="${(100 * Math.sin(a)).toFixed(1)}" x2="${(140 * Math.cos(a)).toFixed(1)}" y2="${(140 * Math.sin(a)).toFixed(1)}" class="sep"/>`; }).join('');
+  function draw() {
+    const inner = AB.slice(k) + AB.slice(0, k);
+    svg.innerHTML = `<circle r="142" class="outer"/>${sep}${ring(122, null, 'o')}<circle r="100" class="inner" id="inner"/>${ring(82, inner.toLowerCase(), 'i')}<circle r="55" class="hub"/><text y="6" text-anchor="middle" class="k">${k}</text><path d="M0,-148 l-6,-10 h12z" class="ptr"/>`;
+    $('#cs-k').textContent = `${k}: A → ${AB[k]}`;
+  }
+  $('#cs-p').onclick = () => { k = (k + 1) % 26; draw(); }; $('#cs-m').onclick = () => { k = (k + 25) % 26; draw(); };
+  let drag = null;
+  svg.addEventListener('pointerdown', e => { drag = Math.atan2(e.offsetY - svg.clientHeight / 2, e.offsetX - svg.clientWidth / 2); svg.setPointerCapture(e.pointerId); });
+  svg.addEventListener('pointermove', e => { if (drag === null) return; const a = Math.atan2(e.offsetY - svg.clientHeight / 2, e.offsetX - svg.clientWidth / 2), step = 2 * Math.PI / 26; let d = a - drag; if (d > Math.PI) d -= 2 * Math.PI; if (d < -Math.PI) d += 2 * Math.PI; if (Math.abs(d) > step) { k = (k + (d > 0 ? -1 : 1) + 26) % 26; drag = a; draw(); } });
+  svg.addEventListener('pointerup', () => drag = null);
+  draw();
+})();
+
+/* ================= Werkzeug ================= */
+(() => {
+  let dir = 1;
+  const upd = () => {
+    const k = +$('#cw-k').value; $('#cw-ko').textContent = k;
+    $('#cw-alpha').innerHTML = `<div><b>Klar</b>${[...AB].map(c => `<span>${c}</span>`).join('')}</div><div><b>Geheim</b>${[...AB].map((c, i) => `<span class="g">${AB[(i + k) % 26]}</span>`).join('')}</div>`;
+    $('#cw-out').value = caesar($('#cw-in').value, dir * k);
+  };
+  seg($('#cw-dir'), [[1, 'verschlüsseln'], [-1, 'entschlüsseln']], v => { dir = +v; upd(); }, 1);
+  $('#cw-k').oninput = upd; $('#cw-in').addEventListener('input', upd); upd();
+})();
+
+/* ================= Botschaften ================= */
+(() => {
+  const M = ['TREFFPUNKT SCHULHOF', 'DAS PASSWORT IST GEHEIM', 'MORGEN KEINE HAUSAUFGABEN', 'INFORMATIK IST TOLL', 'CAESAR WAR HIER'];
+  taskSet($('#m1-ts'), () => { const m = pick(M), k = randInt(1, 12); return {key: m, tag: `Schlüssel ${k}`, q: `<span class="mono">${caesar(m, k)}</span>`, fields: [{l: 'Klartext', a: [m, m.replace(/ /g, '')], wide: true}], hint: `Verschiebe jeden Buchstaben um ${k} Stellen zurück.`}; }, {n: 3});
+})();
+taskSet($('#ts'), i => {
+  const W = ['HALLO', 'KLASSE', 'PIXEL', 'ROUTER', 'BYTE', 'SCHULE'], w = pick(W), k = randInt(1, 25);
+  return i % 2 ? {key: w + k, tag: `entschlüsseln, Schlüssel ${k}`, q: `<span class="big mono">${caesar(w, k)}</span>`, fields: [{l: 'Klartext', a: w}]}
+    : {key: w + k, tag: `verschlüsseln, Schlüssel ${k}`, q: `<span class="big mono">${w}</span>`, fields: [{l: 'Geheimtext', a: caesar(w, k)}]};
+}, {n: 6});
+</script>
