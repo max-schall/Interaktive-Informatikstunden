@@ -40,6 +40,7 @@ def gaps(s, sol=False):
         w = max(2.2, len(m.group(1)) * 0.62 + 1.2)
         return f'<span class="gap" style="width:{w:.1f}em"></span>'
     s = esc(s)
+    s = re.sub(r'`(.+?)`', r'<code>\1</code>', s)
     s = re.sub(r'\[\[(.*?)\]\]', g, s)
     s = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', s)
     return s
@@ -69,6 +70,12 @@ def ans(loes):
 def A(text, n=2, loes=''):
     """Offene Frage mit n Schreiblinien."""
     return ('A', text, lines(n), ans(loes))
+
+
+def CODE(text, code, n=2, loes=''):
+    """Frage zu einem Programmausschnitt (Zeilen mit \\n); im Code sind Lücken [[…]] möglich."""
+    pre = lambda sol: '<pre class="code">' + gaps(code, sol).replace('<code>', '').replace('</code>', '') + '</pre>'
+    return ('A', text, pre(False) + lines(n), pre(True) + (ans(loes) if loes or n else ''))
 
 
 def L(text, intro='Ergänze die Lücken.'):
@@ -282,6 +289,8 @@ h1 { font-family: "IBM Plex Mono", "DejaVu Sans Mono", monospace; font-weight: 6
 .task .no { font-weight: 700; color: var(--ac) }
 .task .q > p:first-child { margin: 0 }
 .info { margin: 1.4mm 0 0 8.5mm; padding: 1.2mm 2.5mm; background: #f4f4f4; border-radius: 1mm; font-size: 9.3pt }
+code { font-family: "IBM Plex Mono", "DejaVu Sans Mono", monospace; font-size: .92em; background: #f1f1f1; border-radius: .5mm; padding: 0 .6mm }
+pre.code { font-family: "IBM Plex Mono", "DejaVu Sans Mono", monospace; font-size: 8.6pt; line-height: 1.75; background: #f6f6f6; border-left: 1mm solid var(--ac); border-radius: .8mm; padding: 1mm 2.5mm; margin: 1.2mm 0 .6mm; white-space: pre-wrap }
 .ln { height: 8mm; border-bottom: .5pt solid #8a8a8a }
 .hl .ln { border-color: #b0b0b0 }
 .gap { display: inline-block; border-bottom: .7pt solid #333; height: 1.05em; vertical-align: -0.25em; margin: 0 .5mm }

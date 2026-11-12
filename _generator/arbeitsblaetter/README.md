@@ -28,7 +28,10 @@ Aufgabentypen (Lösungen werden immer mitgegeben):
 | `BOX(text, höhe_mm, loes=…)` / `BOXES(text, labels, höhe, loes=[…])` | Zeichenfelder |
 | `ZU(text, links, rechts, loes=[…])` | Zuordnung; je rechtem Eintrag die passende Nummer links |
 | `SORT(text, begriffe, kategorien, loes=[[…], …])` | Begriffe sortieren |
+| `CODE(text, code, zeilen, loes)` | Programmausschnitt (Zeilen mit `\n`), Lücken `[[…]]` im Code möglich; `zeilen=0` ohne Schreiblinien |
 | `INFO(text)` | Hinweiskasten ohne Nummer |
+
+In allen Texten wird `` `code` `` als Code gesetzt. Enthält eine Lücke selbst `]`, vor `]]` ein Leerzeichen setzen: `[[A[0] ]]`.
 
 Das Skript meldet Abschnitte ohne Aufgaben, Aufgaben ohne Lösungstext und Blätter,
 bei denen der Platz für den Heftaufschrieb zu klein wird (`<-- PRÜFEN`).
