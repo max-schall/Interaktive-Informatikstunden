@@ -1,0 +1,150 @@
+<!--
+title: Risiken bei der Nutzung des Internets
+short: Risiken
+time: 2 Unterrichtsstunden
+q: Welche Risiken bringt das Internet mit sich – und wie schützt man sich?
+facts: Chancen und Risiken digitaler Kommunikation | Cybermobbing, üble Nachrede und Verleumdung (StGB §§ 186, 187), Hilfsangebote | Cybergrooming: falsches Vertrauen durch Fremde | Phishing erkennen: gefälschter Absender, Druck, Links, Datenabfrage, Sprachfehler | Malware: Viren, Würmer, Trojaner, Spyware, Adware, Ransomware
+inter: Chancen oder Risiken sortieren · Phishing-Mail untersuchen (Merkmale anklicken) · Echt oder Phishing? · Malware-Arten zuordnen · Was tun bei Cybermobbing?
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Informatik und Gesellschaft</p>
+      <h1>Risiken im Internet<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Videochat mit Oma, Unterricht von zu Hause, Freunde auf der ganzen Welt – das Internet eröffnet riesige Chancen. Aber auch Betrüger, Mobber und Schadprogramme sind online unterwegs.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Hast du schon einmal eine merkwürdige Nachricht oder E-Mail bekommen?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Welche Risiken bringt das Internet mit sich – und wie schützt man sich?</p></div>
+      <div class="controls"><button class="btn primary" data-go="chancen">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="chancen" data-label="Chancen & Risiken" data-yr="Einstieg" data-title="Chancen und Risiken" data-sub="Zwei Seiten einer Medaille">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Chancen und Risiken</p>
+    <h2>Zwei Seiten einer Medaille</h2>
+  </div>
+  <div id="sort-cr"></div>
+</section>
+
+<section class="station" id="mobbing" data-label="Cybermobbing" data-yr="Erarbeitung" data-title="Cybermobbing und Cybergrooming" data-sub="Wenn das Netz verletzt">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Cybermobbing</p>
+      <h2>Beleidigen im Internet</h2>
+      <ul class="facts">
+        <li>Beim <b>Cybermobbing</b> werden Menschen im Internet beleidigt, bloßgestellt oder bedroht – oft mit <b>Fake-Profilen</b>, gefälschten Informationen oder manipulierten, peinlichen Bildern.</li>
+        <li>Täter fühlen sich anonym und sicher. Doch üble Nachrede und Verleumdung sind <b>Straftaten</b> (Strafgesetzbuch §§ 186, 187).</li>
+        <li>Beim <b>Cybergrooming</b> sprechen Erwachsene Kinder gezielt an, bauen falsches Vertrauen auf und wollen sie zu Treffen überreden.</li>
+      </ul>
+      <div class="box"><span class="tag lim">Hilfe holen</span><p>Vertrauenslehrkraft, Eltern, <b>Nummer gegen Kummer 116 111</b>, Online-Beratung von Jugendlichen für Jugendliche (z. B. juuuport.de).</p></div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Was tun? Bringe in eine sinnvolle Reihenfolge.</h3></div>
+      <div id="mob-order"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="phishing" data-label="Phishing" data-yr="Erarbeitung" data-title="Phishing erkennen" data-sub="Passwort-Fischen">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Phishing</p>
+    <h2>Die Merkmale einer Phishing-Mail</h2>
+    <p class="lead"><b>Phishing</b> (von „password fishing“): Betrüger verschicken massenhaft E-Mails, die aussehen, als kämen sie von einer Bank oder einem Shop. Wer auf den Link klickt und sich einloggt, schickt seine Daten direkt an die Angreifer. Finde die fünf Warnzeichen – tippe sie an.</p>
+  </div>
+  <div class="model">
+    <div class="mail-fake" id="mail">
+      <div class="mf-h"><span>Von: <b class="ph" data-k="abs">Musterbank Kundenservice &lt;service@musterbnak-sicher.example&gt;</b></span><span>An: Florina Scheffer</span><span>Betreff: <b>Ihr Konto wurde gesperrt!!!</b></span></div>
+      <div class="mf-b"><p><span class="ph" data-k="sprache">Sehr geehrter Kunde ,</span></p><p>da es zurzeit zu Betrügerein kommt, haben wir Ihr Konto vorübergehend gesperrt. <span class="ph" data-k="druck">Wenn Sie nicht innerhalb von 24 Stunden reagieren, wird Ihr Konto endgültig gelöscht.</span></p><p><span class="ph" data-k="daten">Bitte bestätigen Sie Ihre PIN und TAN</span> über folgenden Link:</p><p><span class="ph" data-k="link" style="color:#1D4ED8;text-decoration:underline">https://musterbank.de.konto-check.example/login</span></p><p>Mit freundlichen Grüßen<br>Ihr Kundenservice</p></div>
+    </div>
+    <div class="stack">
+      <div class="box" id="ph-info"><p>Tippe verdächtige Stellen in der Mail an.</p></div>
+      <p class="score" id="ph-score"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="echt" data-label="Echt oder Fake?" data-yr="Übung" data-title="Echt oder Phishing?" data-sub="Nachrichten beurteilen">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Echt oder Phishing?</p>
+    <h2>Würdest du klicken?</h2>
+  </div>
+  <div id="tf-ph"></div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Malware" data-yr="M1" data-title="Arten von Malware" data-sub="Schadprogramme">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1</p>
+    <h2>Arten von Malware</h2>
+    <p class="lead"><b>Malware</b> (malicious software) sind Schadprogramme. Sie gelangen oft über Anhänge, Links oder infizierte Webseiten auf den Computer. Ordne zu.</p>
+  </div>
+  <div id="match-mw"></div>
+  <div class="grid-2 mt">
+    <div class="box"><span class="tag info">Schutz</span><p>Betriebssystem und Apps aktuell halten · Virenschutz nutzen · keine unbekannten Anhänge öffnen · Links prüfen · Backups anlegen · Passwörter nie weitergeben.</p></div>
+    <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Erklären</h3></header><p>Erkläre, wie man sich vor gezielten Phishing-Angriffen schützen kann.</p>
+      <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Absender genau prüfen, nie über Links in Mails einloggen, sondern die Seite selbst aufrufen; Banken fragen nie nach PIN/TAN per Mail; bei Zweifel beim Unternehmen anrufen; Zwei-Faktor-Anmeldung nutzen; verdächtige Mails löschen.</p></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Risiken im Internet</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Risiken bei der Nutzung des Internets</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step><b>Cybermobbing:</b> Beleidigen, Bloßstellen, Bedrohen im Internet – strafbar als üble Nachrede oder Verleumdung. Beweise sichern, blockieren, melden, Hilfe holen.</li>
+        <li data-step><b>Cybergrooming:</b> Fremde bauen gezielt Vertrauen zu Kindern auf. Keine Treffen mit Online-Bekanntschaften ohne Erwachsene.</li>
+        <li data-step><b>Phishing</b> erkennen: gefälschter Absender, Zeitdruck, Abfrage vertraulicher Daten, Links zu gefälschten Seiten, Sprachfehler.</li>
+        <li data-step><b>Malware:</b> Viren (infizieren Dateien), Würmer (verbreiten sich selbst), Trojaner (getarnt), Spyware (spioniert), Adware (Werbung), Ransomware (Erpressung).</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Merkhilfe</span><p>Notiere die fünf Warnzeichen einer Phishing-Mail als Checkliste.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Risiken</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+sorter($('#sort-cr'), [{id: 'c', name: 'Chance'}, {id: 'r', name: 'Risiko'}], [
+  {t: 'Videochat mit Verwandten im Ausland', c: 'c'}, {t: 'Unterricht per Online-Konferenz', c: 'c'}, {t: 'Wissen für alle frei verfügbar', c: 'c'}, {t: 'An Ereignissen online teilhaben', c: 'c'},
+  {t: 'Beleidigungen in Gruppenchats', c: 'r'}, {t: 'Gefälschte E-Mails von „der Bank“', c: 'r'}, {t: 'Schadprogramme in Anhängen', c: 'r'}, {t: 'Fremde mit falschen Absichten', c: 'r'}
+]);
+orderSteps($('#mob-order'), ['Nicht antworten oder zurückbeleidigen', 'Beweise sichern (Screenshots)', 'Täter blockieren und beim Netzwerk melden', 'Mit einer Vertrauensperson sprechen', 'Gegebenenfalls Anzeige bei der Polizei erstatten'], {label: 'Was tun bei Cybermobbing?'});
+
+/* ================= Phishing-Mail ================= */
+(() => {
+  const K = {abs: ['Gefälschte Absender-Adresse', '„musterbnak-sicher.example“ – Buchstaben vertauscht, die Adresse gehört nicht zur Bank.'], sprache: ['Sprachliche Ungenauigkeiten', 'Unpersönliche Anrede, Leerzeichen vor dem Komma, Rechtschreibfehler („Betrügerein“).'], druck: ['Vorgetäuschter Zeitdruck', 'Drohung mit Kontolöschung in 24 Stunden – man soll ohne Nachdenken handeln.'], daten: ['Abfrage vertraulicher Daten', 'Banken fragen nie per E-Mail nach PIN oder TAN!'], link: ['Link zu gefälschter Webseite', 'Die echte Domain steht ganz rechts vor dem Pfad: „konto-check.example“ – nicht die Bank.']};
+  const found = new Set();
+  $('#mail').addEventListener('click', e => {
+    const s = e.target.closest('.ph'); if (!s) return; const k = s.dataset.k; found.add(k); s.classList.add('found');
+    $('#ph-info').innerHTML = `<span class="tag lim">${K[k][0]}</span><p>${K[k][1]}</p>`;
+    $('#ph-score').innerHTML = `Gefunden: <b>${found.size}</b> / 5${found.size === 5 ? ' – <b class="good">alle Warnzeichen entdeckt!</b>' : ''}`;
+  });
+  $('#ph-score').innerHTML = 'Gefunden: <b>0</b> / 5';
+})();
+
+trueFalse($('#tf-ph'), [
+  {t: '„Ihr Paket konnte nicht zugestellt werden. Zahlen Sie 1,99 € Gebühr über diesen Link.“ (SMS von unbekannter Nummer) – Das ist vermutlich Phishing.', ok: true, why: 'Typische Masche: kleine Summe, Link, Zeitdruck.'},
+  {t: 'Deine Schule schreibt über die bekannte Lernplattform: „Neue Aufgabe in Mathe.“ – Das ist vermutlich Phishing.', ok: false, why: 'Bekannter Absender, keine Datenabfrage. Trotzdem lieber direkt auf der Plattform nachsehen.'},
+  {t: '„Du hast ein Handy gewonnen! Gib nur noch deine Adresse und Bankdaten ein.“ – Das ist vermutlich Phishing.', ok: true, why: 'Gewinnversprechen + Datenabfrage.'},
+  {t: '„Dein Streaming-Konto läuft ab, bestätige jetzt dein Passwort“ von abo-service@str3am.example – Das ist vermutlich Phishing.', ok: true, why: 'Verdächtige Adresse und Passwortabfrage.'},
+  {t: 'Eine echte Bank fragt per E-Mail nach PIN und TAN.', ok: false, why: 'Das tun Banken niemals.'}
+]);
+matcher($('#match-mw'), [
+  ['Virus', 'infiziert Programme und Dateien und beschädigt sie'], ['Wurm', 'verbreitet sich selbstständig über Netzwerke'], ['Trojaner', 'tarnt sich als nützliches Programm'],
+  ['Spyware', 'spioniert Daten und Nutzerverhalten aus'], ['Adware', 'erzeugt Einnahmen durch Werbung'], ['Ransomware', 'verschlüsselt Daten und fordert Lösegeld']
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Was ist Phishing?', a: ['Betrüger versuchen, mit gefälschten Nachrichten an Zugangsdaten zu kommen.', 'ein Angelspiel', 'eine Art Verschlüsselung', 'ein Virenscanner'], ok: 0},
+  {q: 'Welches Merkmal deutet NICHT auf Phishing hin?', a: ['persönliche Anrede und keine Datenabfrage', 'Zeitdruck', 'Rechtschreibfehler', 'Abfrage der PIN'], ok: 0},
+  {q: 'Was solltest du bei Cybermobbing zuerst tun?', a: ['nicht zurückschreiben und Beweise sichern', 'zurückbeleidigen', 'das Handy wegwerfen', 'nichts erzählen'], ok: 0},
+  {q: 'Welche Malware tarnt sich als nützliches Programm?', a: ['Trojaner', 'Wurm', 'Adware', 'Spyware'], ok: 0},
+  {q: 'Was macht Ransomware?', a: ['Sie verschlüsselt Daten und erpresst Lösegeld.', 'Sie zeigt Werbung.', 'Sie beschleunigt den PC.', 'Sie macht Backups.'], ok: 0},
+  {q: 'Welche Telefonnummer hilft Kindern und Jugendlichen kostenlos?', a: ['116 111', '110 110', '0800 000', '112 112'], ok: 0}
+]);
+</script>

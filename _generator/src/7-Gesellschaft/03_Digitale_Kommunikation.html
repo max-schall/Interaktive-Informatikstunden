@@ -1,0 +1,133 @@
+<!--
+title: Arten digitaler Kommunikation
+short: Kommunikation
+time: 2 Unterrichtsstunden
+q: Welche Arten digitaler Kommunikation gibt es – und wie verhält man sich dort richtig?
+facts: E-Mail: elektronischer Brief, seriöse E-Mail-Adresse | Instant Messenger mit Ende-zu-Ende-Verschlüsselung, Gruppenchats | Soziale Netzwerke und Profile | Kollaborative Webanwendungen: Foren (Posting, Thread), Wikis, Blogs und Vlogs | Netiquette: Regeln für respektvolle Kommunikation
+inter: Kommunikationsformen vergleichen · Seriöse E-Mail-Adressen erkennen · Wiki gemeinsam bearbeiten (Versionsgeschichte) · Forenbeitrag verbessern · Netiquette-Regeln sortieren
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Informatik und Gesellschaft</p>
+      <h1>Digitale Kommunikation<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">E-Mail an die Lehrerin, Sprachnachricht in den Klassenchat, Kommentar unter einem Video, Frage in einem Forum: Wir kommunizieren auf vielen digitalen Wegen – und für jeden gelten eigene Regeln.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wie viele Nachrichten hast du heute schon verschickt – und auf welchen Wegen?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Welche Arten digitaler Kommunikation gibt es – und wie verhält man sich dort richtig?</p></div>
+      <div class="controls"><button class="btn primary" data-go="arten">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="arten" data-label="Überblick" data-yr="Erarbeitung" data-title="Kommunikationsformen" data-sub="E-Mail, Messenger, Netzwerke">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Arten digitaler Kommunikation</p>
+    <h2>E-Mail, Messenger, soziale Netzwerke</h2>
+  </div>
+  <div class="cols-3">
+    <div class="box"><span class="tag info">E-Mail</span><p>Der <b>elektronische Brief</b>. Man braucht ein Postfach mit eigener E-Mail-Adresse. Für Bewerbungen, Schule, Behörden fast unverzichtbar – deshalb sollte die Adresse <b>seriös</b> sein.</p></div>
+    <div class="box"><span class="tag info">Instant Messenger</span><p><i>Instant</i> = sofort. Nachrichten, Bilder und Sprachnachrichten werden in Echtzeit ausgetauscht, oft <b>Ende-zu-Ende-verschlüsselt</b>. Gruppen können Hunderte Mitglieder haben – leider auch mit Beleidigungen und Fake News.</p></div>
+    <div class="box"><span class="tag info">Soziale Netzwerke</span><p>Plattformen zum Austausch von Informationen, Bildern und Videos. Man legt ein <b>Profil</b> an, das jeder auf der Welt sehen kann – darum wenig persönliche Daten preisgeben.</p></div>
+  </div>
+  <h3 class="mt">Seriöse E-Mail-Adresse?</h3>
+  <div id="sort-mail"></div>
+</section>
+
+<section class="station" id="kollab" data-label="Foren, Wikis, Blogs" data-yr="Erarbeitung" data-title="Kollaborative Webanwendungen" data-sub="Foren, Wikis, Blogs">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Kollaborative Webanwendungen</p>
+    <h2>Gemeinsam an Inhalten arbeiten</h2>
+    <p class="lead">Bei <b>kollaborativen Webanwendungen</b> erstellen und diskutieren viele Menschen gemeinsam Inhalte.</p>
+  </div>
+  <div class="cols-3">
+    <div class="box"><span class="tag">Forum</span><p>Eine Frage wird eingetragen, andere antworten: <b>Postings</b>. Ein Gesprächsstrang heißt <b>Thread</b>. Es gibt Diskussionsforen, Bewertungsforen, Produkt- und Supportforen.</p></div>
+    <div class="box"><span class="tag">Wiki</span><p>Eine Webseite, die <b>jeder Nutzer bearbeiten</b> kann (hawaiisch <i>wiki</i> = schnell). Das bekannteste ist ein Online-Lexikon. Jede Änderung wird in einer <b>Versionsgeschichte</b> gespeichert.</p></div>
+    <div class="box"><span class="tag">Blog / Vlog</span><p><b>Weblog</b> = „Tagebuch im Internet“. Privatpersonen oder Firmen teilen Interessen und Gedanken, Leser kommentieren. Mit Videos: <b>Vlog</b>. Reise-, Food- und Lifestyle-Blogs sind verbreitet.</p></div>
+  </div>
+</section>
+
+<section class="station" id="wiki" data-label="Wiki" data-yr="Übung" data-title="Ein Wiki bearbeiten" data-sub="Versionsgeschichte">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Expertenwissen: Wikis</p>
+    <h2>Unser Klassen-Wiki</h2>
+    <p class="lead">Bearbeite den Artikel und speichere. Jede Version bleibt erhalten – falsche Änderungen kann man zurücksetzen.</p>
+  </div>
+  <div class="model">
+    <div class="vis">
+      <div class="vis-head"><h3>Artikel: Igel</h3><div class="controls" style="margin:0"><button class="btn primary" id="wk-save">Speichern</button><button class="btn" id="wk-vandal">😈 Vandalismus</button></div></div>
+      <textarea class="code-in" id="wk-in" style="min-height:8rem;background:var(--surface-2);color:var(--ink);font-family:var(--f-body)"></textarea>
+      <input class="text-in" id="wk-who" value="Mia (7b)" style="font-size:.9rem;margin-top:.4rem" aria-label="Name">
+    </div>
+    <div class="vis"><div class="vis-head"><h3>Versionsgeschichte</h3></div><ol class="wk-hist" id="wk-hist"></ol></div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Netiquette" data-yr="M1" data-title="Netiquette" data-sub="Regeln für gute Kommunikation">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Netiquette: höflich auch im Netz</h2>
+    <p class="lead">Die <b>Netiquette</b> (Netz + Etikette) sind Verhaltensregeln für die digitale Kommunikation. Welcher Forenbeitrag hält sich daran? Sortiere die Regeln.</p>
+  </div>
+  <div id="sort-net"></div>
+  <div class="grid-2 mt">
+    <div class="chat-box"><div class="msg"><b>gamer_xx</b><p>WIE GEHT DAS??? ich check gar nix, eure anleitung is müll</p></div><div class="msg me"><b>Lena_7b</b><p>Hallo zusammen, ich komme beim Installieren an Schritt 3 nicht weiter. Hat jemand einen Tipp? Danke!</p></div></div>
+    <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Verbessern</h3></header><p>Schreibe den Beitrag von gamer_xx so um, dass er die Netiquette einhält.</p>
+      <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Beispiel</button></div><p class="solution" id="m1a" hidden>„Hallo zusammen, ich verstehe die Anleitung leider nicht ganz. An welcher Stelle muss ich das Update starten? Vielen Dank für eure Hilfe!“ – mit Begrüßung, ohne Großbuchstaben-Geschrei, sachlich, mit Dank.</p></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Digitale Kommunikation</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Arten digitaler Kommunikation</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step><b>E-Mail:</b> elektronischer Brief, braucht ein Postfach; die Adresse sollte seriös sein.</li>
+        <li data-step><b>Instant Messenger:</b> Nachrichten in Echtzeit, oft Ende-zu-Ende-verschlüsselt. <b>Soziale Netzwerke:</b> Austausch über Profile – wenig persönliche Daten preisgeben.</li>
+        <li data-step><b>Kollaborative Webanwendungen:</b> <b>Forum</b> (Postings in Threads), <b>Wiki</b> (jeder kann bearbeiten, Versionsgeschichte), <b>Blog/Vlog</b> (Tagebuch im Internet).</li>
+        <li data-step><b>Netiquette:</b> höflich und sachlich bleiben, nicht in Großbuchstaben schreiben, andere Meinungen respektieren, vor dem Absenden lesen.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Regeln</span><p>Schreibe fünf Netiquette-Regeln für euren Klassenchat auf.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Begriffe und Quiz</h2></div>
+  <div id="match"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+sorter($('#sort-mail'), [{id: 'ok', name: 'seriös'}, {id: 'no', name: 'eher nicht seriös'}], [
+  {t: 'lena.schmidt@mail.example', c: 'ok'}, {t: 'l.schmidt2011@post.example', c: 'ok'}, {t: 'lena.s@schule.example', c: 'ok'},
+  {t: 'zuckerschnecke99@mail.example', c: 'no', why: 'unpassend für Bewerbungen'}, {t: 'killer_lena@mail.example', c: 'no', why: 'wirkt aggressiv'}, {t: 'xXxLeNaXxX@mail.example', c: 'no', why: 'schwer zu lesen'}
+]);
+
+/* ================= Wiki ================= */
+(() => {
+  let hist = [{who: 'Tom (7b)', t: 'Der Igel ist ein Säugetier. Er hat Stacheln und frisst Insekten.', msg: 'Artikel angelegt'}];
+  const draw = () => { $('#wk-hist').innerHTML = hist.map((h, i) => `<li class="${i === hist.length - 1 ? 'cur' : ''}"><b>Version ${i + 1}</b> · ${h.who} · <i>${h.msg}</i><br><span class="note">${h.t.slice(0, 80)}${h.t.length > 80 ? '…' : ''}</span>${i < hist.length - 1 ? ` <button class="btn" data-v="${i}" style="font-size:.7rem;padding:.15rem .4rem">wiederherstellen</button>` : ''}</li>`).reverse().join(''); $('#wk-in').value = hist[hist.length - 1].t; };
+  $('#wk-save').onclick = () => { const t = $('#wk-in').value.trim(); if (t && t !== hist[hist.length - 1].t) { hist.push({who: $('#wk-who').value || 'anonym', t, msg: 'bearbeitet'}); draw(); } };
+  $('#wk-vandal').onclick = () => { hist.push({who: 'unbekannt', t: 'IGEL SIND DOOF lol', msg: 'Inhalt ersetzt'}); draw(); };
+  $('#wk-hist').addEventListener('click', e => { const b = e.target.closest('[data-v]'); if (b) { hist.push({who: $('#wk-who').value || 'anonym', t: hist[+b.dataset.v].t, msg: `Version ${+b.dataset.v + 1} wiederhergestellt`}); draw(); } });
+  draw();
+})();
+
+sorter($('#sort-net'), [{id: 'do', name: '✔ so ist es gut'}, {id: 'dont', name: '✘ lieber nicht'}], [
+  {t: 'Mit einer Begrüßung beginnen', c: 'do'}, {t: 'Höflich und taktvoll bleiben', c: 'do'}, {t: 'Andere Meinungen respektieren', c: 'do'}, {t: 'Vor dem Absenden noch einmal lesen', c: 'do'}, {t: 'Kurz fassen', c: 'do'},
+  {t: 'IN GROSSBUCHSTABEN SCHREIBEN', c: 'dont', why: 'wirkt wie Schreien'}, {t: 'Andere beleidigen', c: 'dont'}, {t: 'Private Daten anderer posten', c: 'dont'}
+]);
+matcher($('#match'), [['Posting', 'Beitrag in einem Forum'], ['Thread', 'Gesprächsstrang im Forum'], ['Wiki', 'Webseite, die jeder bearbeiten kann'], ['Blog', 'Tagebuch im Internet'], ['Vlog', 'Blog mit Videos'], ['Netiquette', 'Verhaltensregeln im Netz']]);
+mcQuiz($('#quiz'), [
+  {q: 'Was bedeutet „Instant“ bei Instant Messaging?', a: ['sofort', 'sicher', 'kostenlos', 'langsam'], ok: 0},
+  {q: 'Warum sollte eine E-Mail-Adresse seriös sein?', a: ['Sie wird z. B. für Bewerbungen und die Schule genutzt.', 'Weil sie sonst nicht funktioniert.', 'Weil sie dann schneller ist.', 'Das ist egal.'], ok: 0},
+  {q: 'Was speichert ein Wiki bei jeder Änderung?', a: ['eine neue Version in der Versionsgeschichte', 'nichts', 'nur die Uhrzeit', 'ein Foto des Bearbeiters'], ok: 0},
+  {q: 'Was ist ein Supportforum?', a: ['Ein Hersteller bietet Hilfe zu seinen Produkten an.', 'Ein Chat mit Freunden', 'Ein Blog über Reisen', 'Ein Online-Shop'], ok: 0},
+  {q: 'Was gilt als unhöflich im Netz?', a: ['in Großbuchstaben schreiben', 'grüßen', 'sich bedanken', 'sachlich bleiben'], ok: 0},
+  {q: 'Welche Gefahr gibt es in großen Gruppenchats?', a: ['Beleidigungen und Fake News werden verbreitet.', 'Die Nachrichten sind zu kurz.', 'Es gibt keine Emojis.', 'Man kann keine Bilder senden.'], ok: 0}
+]);
+</script>

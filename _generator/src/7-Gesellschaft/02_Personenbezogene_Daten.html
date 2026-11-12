@@ -1,0 +1,164 @@
+<!--
+title: Umgang mit personenbezogenen Daten
+short: Persönliche Daten
+time: 2 Unterrichtsstunden
+q: Wie geht man sicher mit personenbezogenen Daten im Internet um?
+facts: Personenbezogene Daten: allgemeine Daten, Bankdaten, Onlinedaten, physische Merkmale | Datenschutz-Grundverordnung (DSGVO) seit 2018 in der EU | Datenspuren: IP-Adresse, Profile, Cookies | Tipps: so wenig wie möglich preisgeben, Einstellungen anpassen, Passwörter | Cookies, Inkognito-Modus, App-Berechtigungen
+inter: Daten-Kategorien sortieren · Profil erstellen: Was ist nötig? · Cookie-Banner (notwendig vs. optional) · App-Berechtigungen prüfen · Tipps zuordnen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Informatik und Gesellschaft</p>
+      <h1>Personenbezogene Daten<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Name, Adresse, Geburtsdatum, Bankverbindung – im Online-Shop wird viel abgefragt. Wer im Internet unterwegs ist, hinterlässt immer <b>Spuren</b>. Und manche wollen mit diesen Daten Geld verdienen.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welche Daten über dich findet man im Internet?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie geht man sicher mit personenbezogenen Daten im Internet um?</p></div>
+      <div class="controls"><button class="btn primary" data-go="arten">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="arten" data-label="Datenarten" data-yr="Erarbeitung" data-title="Personenbezogene Daten" data-sub="Was gehört dazu?">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Personenbezogene Daten</p>
+    <h2>Daten, die zu dir führen</h2>
+    <p class="lead"><b>Personenbezogene Daten</b> sind alle Angaben, mit denen man eine Person erkennen kann. Ihr Schutz ist gesetzlich geregelt: Seit <b>2018</b> gilt in der ganzen EU die <b>Datenschutz-Grundverordnung (DSGVO)</b> mit strengen Vorgaben für das Sammeln, Aufbewahren und Weitergeben.</p>
+  </div>
+  <div id="sort-arten"></div>
+</section>
+
+<section class="station" id="profil" data-label="Profil" data-yr="Erarbeitung" data-title="Ein Profil anlegen" data-sub="Nur das Nötigste">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Sicher im Internet</p>
+      <h2>Ein Profil anlegen</h2>
+      <ul class="facts">
+        <li>Im Internet kann man sich kaum anonym bewegen: Geräte tauschen <b>IP-Adressen</b> aus, Profile speichern Benutzernamen und weitere Angaben.</li>
+        <li>Darum: <b>so wenig personenbezogene Daten wie möglich</b> veröffentlichen.</li>
+        <li>Profile, E-Mail-Postfach und Onlinebanking mit <b>sicheren Passwörtern</b> schützen – für jeden Dienst ein anderes.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Anmeldung bei „PixTalk“</h3></div>
+      <p class="note">Hake an, was du angeben würdest. Pflichtfelder sind mit * markiert.</p>
+      <div class="checklist" id="pf"></div>
+      <p class="status" id="pf-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="cookies" data-label="Cookies" data-yr="Erarbeitung" data-title="Cookies" data-sub="Kleine Datensätze mit großer Wirkung">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Cookies</p>
+      <h2>Cookies – nützlich oder neugierig?</h2>
+      <ul class="facts">
+        <li><b>Cookies</b> (engl. Kekse) sind kleine Datensätze, die beim Besuch einer Webseite auf deinem Gerät gespeichert werden.</li>
+        <li><b>Nützlich:</b> Sie merken sich z. B. den Warenkorb, auch wenn du die Seite versehentlich schließt.</li>
+        <li><b>Problematisch:</b> Unternehmen können damit dein <b>Surfverhalten</b> aufzeichnen und dir personalisierte Werbung zeigen.</li>
+        <li>Der <b>Inkognito-Modus</b> des Browsers löscht Cookies nach dem Schließen und gibt weniger Daten weiter.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="browser"><div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">https://shop.example</span></div><div class="page" style="position:relative;min-height:16rem">
+        <h1>Sneaker-Shop</h1><p>🛒 Warenkorb: <b id="ck-cart">2 Artikel</b></p><p id="ck-ad" style="padding:.4rem;background:#FEF3C7;border-radius:4px"></p>
+        <div class="cookie-banner" id="ck-banner"><b>Wir verwenden Cookies 🍪</b><label><input type="checkbox" checked disabled> notwendig (Warenkorb, Anmeldung)</label><label><input type="checkbox" id="ck-stat"> Statistik</label><label><input type="checkbox" id="ck-ads"> Marketing / personalisierte Werbung</label><div class="controls" style="margin-top:.4rem"><button class="btn" id="ck-sel">Auswahl speichern</button><button class="btn primary" id="ck-all">Alle akzeptieren</button></div></div>
+      </div></div>
+      <p class="status" id="ck-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 App-Rechte" data-yr="M1" data-title="Berechtigungen von Apps" data-sub="Was darf die App?">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Was darf die Taschenlampen-App?</h2>
+    <p class="lead">In den Einstellungen des Smartphones kann man für jede App festlegen, auf welche Daten sie <b>immer, nur bei Nutzung oder nie</b> zugreifen darf. Welche Berechtigungen braucht eine App wirklich?</p>
+  </div>
+  <div class="model">
+    <div class="vis">
+      <div class="vis-head"><h3>App wählen</h3><div id="app-seg"></div></div>
+      <div class="table-wrap"><table class="cmp" id="app"></table></div>
+      <div class="controls"><button class="btn primary" id="app-check">Prüfen</button></div>
+      <p class="status" id="app-st"></p>
+    </div>
+    <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Begründen</h3></header><p>Begründe, warum man App-Berechtigungen regelmäßig prüfen sollte.</p>
+      <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Viele Apps fragen mehr Rechte ab, als sie brauchen. Mit Zugriff auf Standort, Kontakte oder Mikrofon können sie Daten sammeln und weitergeben. Wer nur nötige Rechte erteilt, schützt seine Privatsphäre.</p></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Personenbezogene Daten</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Umgang mit personenbezogenen Daten</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step><b>Personenbezogene Daten</b> machen eine Person erkennbar: allgemeine Daten (Name, Adresse), Bankdaten, Onlinedaten (E-Mail-Adresse, IP-Adresse), physische Merkmale (Größe, Augenfarbe).</li>
+        <li data-step>Die <b>DSGVO</b> (seit 2018, EU-weit) regelt streng, wie Daten gesammelt, gespeichert und weitergegeben werden dürfen.</li>
+        <li data-step><b>Tipps:</b> Überlege, was du veröffentlichst · gib nur das Nötigste an · passe die Einstellungen an · nutze sichere, verschiedene Passwörter · öffne keine unbekannten Anhänge.</li>
+        <li data-step><b>Cookies</b> speichern Daten auf deinem Gerät (Warenkorb), können aber auch dein Surfverhalten verraten. Nur notwendige Cookies zulassen, App-Berechtigungen prüfen.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Check</span><p>Prüfe die Berechtigungen von drei Apps auf deinem Handy und notiere, was du geändert hast.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Stimmt das?</h2></div>
+  <div id="tf"></div>
+</section>
+
+<script>
+sorter($('#sort-arten'), [{id: 'allg', name: 'allgemeine Daten'}, {id: 'bank', name: 'Bankdaten'}, {id: 'online', name: 'Onlinedaten'}, {id: 'phys', name: 'physische Merkmale'}], [
+  {t: 'Name', c: 'allg'}, {t: 'Geburtsdatum', c: 'allg'}, {t: 'Wohnadresse', c: 'allg'}, {t: 'Kontonummer (IBAN)', c: 'bank'}, {t: 'Kreditkartennummer', c: 'bank'},
+  {t: 'E-Mail-Adresse', c: 'online'}, {t: 'IP-Adresse', c: 'online'}, {t: 'Benutzername', c: 'online'}, {t: 'Körpergröße', c: 'phys'}, {t: 'Augenfarbe', c: 'phys'}
+]);
+
+/* ================= Profil ================= */
+(() => {
+  const F = [['Benutzername*', 1, 0], ['E-Mail-Adresse*', 1, 0], ['Passwort*', 1, 0], ['echter Vor- und Nachname', 0, 1], ['Geburtsdatum', 0, 1], ['Wohnort', 0, 1], ['Schule und Klasse', 0, 2], ['Handynummer', 0, 2], ['Profilbild mit Gesicht', 0, 1], ['Hobbys', 0, 0]];
+  $('#pf').innerHTML = F.map(([n, req], i) => `<label class="${req ? 'req' : ''}"><input type="checkbox" data-i="${i}" ${req ? 'checked disabled' : ''}> ${n}</label>`).join('');
+  const upd = () => {
+    const sel = $$('#pf input').filter(x => x.checked).map(x => F[+x.dataset.i]);
+    const risk = sel.reduce((s, f) => s + f[2], 0);
+    $('#pf-st').innerHTML = risk === 0 ? '<b class="good">Sehr gut!</b> Du gibst nur an, was nötig ist.' : risk <= 2 ? `Risiko: <b>gering</b>. Überlege, ob du ${sel.filter(f => f[2]).map(f => f[0]).join(', ')} wirklich brauchst.` : `<b class="bad">Risiko: hoch.</b> Mit ${sel.filter(f => f[2]).map(f => f[0]).join(', ')} kann man dich leicht finden. Gib nur das Nötigste an!`;
+  };
+  $('#pf').addEventListener('change', upd); upd();
+})();
+
+/* ================= Cookies ================= */
+(() => {
+  const ad = on => $('#ck-ad').innerHTML = on ? '📢 <b>Nur für dich:</b> Die Sneaker, die du gestern auf drei anderen Seiten angeschaut hast – jetzt 10 % günstiger!' : '📢 Allgemeine Werbung: Sommer-Sale im ganzen Shop.';
+  const save = (stat, ads) => { $('#ck-banner').hidden = true; ad(ads); $('#ck-st').innerHTML = `Gespeichert: notwendige Cookies${stat ? ', Statistik' : ''}${ads ? ', <b>Marketing</b>' : ''}. ${ads ? 'Dein Surfverhalten wird über viele Seiten hinweg verfolgt – die Werbung ist personalisiert.' : 'Der Warenkorb funktioniert trotzdem!'} <button class="btn" id="ck-reset" style="margin-left:.4rem">Banner erneut zeigen</button>`; };
+  $('#ck-sel').onclick = () => save($('#ck-stat').checked, $('#ck-ads').checked);
+  $('#ck-all').onclick = () => save(true, true);
+  $('#ck-st').addEventListener('click', e => { if (e.target.id === 'ck-reset') { $('#ck-banner').hidden = false; $('#ck-st').textContent = 'Wähle aus, welche Cookies du erlaubst.'; ad(false); } });
+  ad(false); $('#ck-st').textContent = 'Wähle aus, welche Cookies du erlaubst.';
+})();
+
+/* ================= App-Berechtigungen ================= */
+(() => {
+  const P = ['Kamera', 'Mikrofon', 'Standort', 'Kontakte', 'Fotos'];
+  const APPS = {lampe: ['🔦 Taschenlampe', [1, 0, 0, 0, 0]], karte: ['🗺 Karten-App', [0, 0, 1, 0, 0]], chat: ['💬 Messenger', [1, 1, 0, 1, 1]], scan: ['📄 Dokumenten-Scanner', [1, 0, 0, 0, 1]]};
+  let cur;
+  const draw = k => { cur = k; $('#app').innerHTML = `<thead><tr><th>Berechtigung</th><th>erlauben?</th></tr></thead><tbody>${P.map((p, i) => `<tr><th>${p}</th><td><select data-i="${i}"><option value="0">nie</option><option value="1">bei Nutzung</option></select></td></tr>`).join('')}</tbody>`; $('#app-st').textContent = 'Stelle ein und prüfe.'; };
+  seg($('#app-seg'), Object.entries(APPS).map(([k, v]) => [k, v[0]]), draw, 'lampe');
+  $('#app-check').onclick = () => {
+    const need = APPS[cur][1]; let ok = 0;
+    $$('#app select').forEach(s => { const g = +s.value === need[+s.dataset.i]; s.className = g ? 'ok' : 'err'; if (g) ok++; });
+    $('#app-st').innerHTML = `${ok} von ${P.length} sinnvoll eingestellt. Nötig: ${P.filter((p, i) => need[i]).join(', ') || 'nichts'}${cur === 'lampe' ? ' (der Blitz der Kamera ist die Lampe)' : ''}.`;
+  };
+})();
+
+trueFalse($('#tf'), [
+  {t: 'Die IP-Adresse ist ein personenbezogenes Datum.', ok: true},
+  {t: 'Die DSGVO gilt nur in Deutschland.', ok: false, why: 'Sie gilt in der ganzen EU.'},
+  {t: 'Im Internet kann man sich völlig anonym bewegen.', ok: false, why: 'Man hinterlässt immer Spuren, z. B. die IP-Adresse.'},
+  {t: 'Notwendige Cookies merken sich z. B. den Warenkorb.', ok: true},
+  {t: 'Man sollte für alle Dienste dasselbe Passwort nutzen.', ok: false, why: 'Wird eins geknackt, sind alle Konten offen.'},
+  {t: 'Eine Taschenlampen-App braucht Zugriff auf die Kontakte.', ok: false, why: 'Nur auf die Kamera (Blitz).'}
+]);
+</script>

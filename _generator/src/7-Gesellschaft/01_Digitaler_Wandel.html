@@ -1,0 +1,153 @@
+<!--
+title: Digitaler Wandel durch das Internet
+short: Digitaler Wandel
+time: 2 Unterrichtsstunden
+q: Wie hat das Internet Kommunikation, Einkaufen und Arbeiten verändert?
+facts: Entwicklung der Medien: Buchdruck, Fotografie, Telefon, Radio, Fernsehen, Handy, Instant Messaging | Digitale Transformation in Alltag, Schule und Beruf | Internetnutzung Jugendlicher | Online-Handel: Vor- und Nachteile | Industrie 4.0: vernetzte Produktion, Chancen und Risiken
+inter: Medien-Zeitstrahl ordnen · Eigene Internetnutzung schätzen und mit Studie vergleichen · Laden oder online? Vor- und Nachteile sortieren · Smarte Fabrik erkunden
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Informatik und Gesellschaft</p>
+      <h1>Digitaler Wandel<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Nachrichten an Freunde, Musik, Videos, Hausaufgaben, Einkaufen: Vieles, was früher Briefe, Läden und Bibliotheken brauchte, passiert heute über das Internet. Man spricht von <b>digitaler Transformation</b>.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wie würde dein Tag ohne Internet aussehen?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie hat das Internet Kommunikation, Einkaufen und Arbeiten verändert?</p></div>
+      <div class="controls"><button class="btn primary" data-go="medien">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="medien" data-label="Medien" data-yr="Einstieg" data-title="Medien im Wandel" data-sub="Vom Buchdruck zum Messenger">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Veränderung der Kommunikation</p>
+    <h2>Vom Buchdruck zum Messenger</h2>
+    <p class="lead">Mit jeder neuen Erfindung wurde Kommunikation schneller und erreichte mehr Menschen. Mit dem Internet entstand ein Massenmedium für den weltweiten Austausch. Bringe die Erfindungen in die richtige Reihenfolge.</p>
+  </div>
+  <div id="order"></div>
+  <div class="task-card mt"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Diskutieren</h3></header><p>Wählt zwei Medien aus. Bewertet, wie sie Alltag und Kommunikation verändert haben. Welche Erfindung hat die Welt am meisten verändert?</p>
+    <div class="controls"><button class="btn" data-reveal="m0" aria-expanded="false">Ideen</button></div><p class="solution" id="m0" hidden>Buchdruck: Wissen wurde für viele Menschen verfügbar. Telefon: Gespräche über große Entfernungen in Echtzeit. Smartphone/Messenger: Jeder kann jederzeit Texte, Bilder und Videos an viele verschicken – Kommunikation ist ständig und überall möglich.</p></div>
+</section>
+
+<section class="station" id="jugend" data-label="Internetnutzung" data-yr="Erarbeitung" data-title="Jugendliche und das Internet" data-sub="Wie lange, wofür?">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Jugendliche und das Internet</p>
+      <h2>Wofür nutzen Jugendliche das Internet?</h2>
+      <p>Nachrichten schreiben, Musik hören, Videos streamen, spielen: Viele Jugendliche verbringen täglich mehrere Stunden online. Schätze zuerst deine eigene Nutzung und vergleiche dann mit einer Studie (Beispielwerte nach typischen Jugendstudien).</p>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Vergleichen</h3></header><p>Vergleiche deine Internetnutzung mit den Ergebnissen. Wo liegst du darüber, wo darunter?</p></div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Anteil an der Online-Zeit</h3><div id="ju-seg"></div></div>
+      <div id="ju"></div>
+      <p class="status" id="ju-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="handel" data-label="Online-Handel" data-yr="Erarbeitung" data-title="Online-Handel" data-sub="Laden oder online?">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Material M1</p>
+    <h2>Online-Handel</h2>
+    <p class="lead">Viele bestellen Waren nur noch im Internet. Algorithmen berechnen Lieferwege, und gesammelte Daten richten Produkte an den Vorlieben der Kunden aus. Vergleiche den Kauf einer Jacke im Laden und online.</p>
+  </div>
+  <div id="sort-handel"></div>
+</section>
+
+<section class="station" id="industrie" data-label="Industrie 4.0" data-yr="Erarbeitung" data-title="Industrie 4.0" data-sub="Die vernetzte Fabrik">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 4 · Material M2</p>
+      <h2>Industrie 4.0</h2>
+      <ul class="facts">
+        <li>Für viele Firmen ist das <b>Internet</b> die zentrale Technologie: Maschinen, Produkte und Lager sind weltweit vernetzt.</li>
+        <li>Während der Produktion werden ständig <b>Daten</b> gesammelt und ausgewertet. So wird effizienter und mit weniger Rohstoffen produziert – das kann <b>nachhaltiges</b> Wirtschaften unterstützen.</li>
+        <li>Risiko: Durch die effizientere Produktion können <b>Arbeitsplätze</b> wegfallen. Gleichzeitig entstehen neue Berufe.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Die smarte Fabrik</h3><div id="fab-mode"></div></div>
+      <svg viewBox="0 0 420 260" class="lap-svg" id="fab">
+        <rect x="10" y="40" width="400" height="200" rx="6" class="lap-case"/>
+        <g data-part="fern"><rect x="25" y="55" width="80" height="50" rx="4" class="lp"/><text x="65" y="85" text-anchor="middle">📱 Steuerung</text></g>
+        <g data-part="kom"><rect x="120" y="55" width="90" height="50" rx="4" class="lp"/><text x="165" y="85" text-anchor="middle">⚙ Produkt ↔ Maschine</text></g>
+        <g data-part="fts"><rect x="225" y="55" width="80" height="50" rx="4" class="lp"/><text x="265" y="85" text-anchor="middle">🚚 FTS</text></g>
+        <g data-part="ar"><rect x="320" y="55" width="75" height="50" rx="4" class="lp"/><text x="357" y="85" text-anchor="middle">🥽 AR</text></g>
+        <g data-part="qual"><rect x="25" y="125" width="110" height="50" rx="4" class="lp"/><text x="80" y="155" text-anchor="middle">📷 Qualität</text></g>
+        <g data-part="track"><rect x="150" y="125" width="110" height="50" rx="4" class="lp"/><text x="205" y="155" text-anchor="middle">📍 Tracking</text></g>
+        <g data-part="sensor"><rect x="275" y="125" width="120" height="50" rx="4" class="lp"/><text x="335" y="155" text-anchor="middle">🌡 Wartungssensoren</text></g>
+        <g data-part="drohne"><rect x="150" y="190" width="120" height="40" rx="4" class="lp"/><text x="210" y="215" text-anchor="middle">🛸 Drohnen</text></g>
+        <text x="210" y="28" text-anchor="middle" style="font-size:14px">🌐 alles über das Internet vernetzt</text>
+      </svg>
+      <div class="box xp-panel" id="fab-info"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Digitaler Wandel</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Digitaler Wandel durch das Internet</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step>Neue Medien (Buchdruck, Telefon, Radio, Fernsehen, Handy, Internet) haben Kommunikation immer schneller und weitreichender gemacht.</li>
+        <li data-step>Die <b>digitale Transformation</b> verändert Kommunikation im privaten Umfeld, in Schule und Beruf und in der ganzen Gesellschaft.</li>
+        <li data-step><b>Online-Handel:</b> bequem, große Auswahl, Preisvergleich – aber kein Anprobieren, Verpackungsmüll, Daten werden gesammelt, Läden in den Städten schließen.</li>
+        <li data-step><b>Industrie 4.0:</b> vernetzte Produktion mit Sensoren, Daten und Robotern; effizienter und rohstoffsparender, aber Arbeitsplätze können wegfallen.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Tabelle</span><p>Stelle Vor- und Nachteile des Online-Handels in einer Tabelle gegenüber.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Digitaler Wandel</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+orderSteps($('#order'), ['📖 Buchdruck (1445)', '📷 Fotografie (um 1839)', '☎ Telefon (1876)', '📻 Radio (1923 in Deutschland)', '📺 Fernsehen (1952 in Deutschland)', '📱 erstes Handy (1983)', '🌐 World Wide Web (1991)', '💬 Instant Messaging auf dem Smartphone (ab 2009)'], {label: 'Zeitstrahl: von alt nach neu'});
+
+/* ================= Internetnutzung ================= */
+(() => {
+  const C = [['Kommunikation', 34], ['Unterhaltung (Musik, Videos)', 30], ['Spiele', 26], ['Informationssuche', 10]];
+  const mine = C.map(c => c[1]);
+  let mode = 'studie';
+  function draw() {
+    $('#ju').innerHTML = C.map(([n, v], i) => `<div class="hbar"><span>${n}</span><div class="hbar-t"><i style="width:${v}%" class="ref"></i>${mode === 'ich' ? `<i style="width:${mine[i]}%" class="me"></i>` : ''}</div><b class="mono">${mode === 'ich' ? mine[i] + ' %' : v + ' %'}</b>${mode === 'ich' ? `<input type="range" min="0" max="100" value="${mine[i]}" data-i="${i}" aria-label="${n}">` : ''}</div>`).join('');
+    const sum = mine.reduce((a, b) => a + b, 0);
+    $('#ju-st').innerHTML = mode === 'ich' ? `Deine Schätzung (blau) neben der Studie (grau). Summe: ${sum} % ${sum !== 100 ? '<span class="bad">– sollte 100 % ergeben</span>' : '✔'}` : 'Etwa ein Drittel der Online-Zeit entfällt auf Kommunikation, ein Drittel auf Unterhaltung, ein Viertel auf Spiele.';
+  }
+  $('#ju').addEventListener('input', e => { if (e.target.dataset.i) { mine[+e.target.dataset.i] = +e.target.value; const v = e.target.closest('.hbar'); $('.me', v).style.width = e.target.value + '%'; $('b', v).textContent = e.target.value + ' %'; const sum = mine.reduce((a, b) => a + b, 0); $('#ju-st').innerHTML = `Deine Schätzung (blau) neben der Studie (grau). Summe: ${sum} % ${sum !== 100 ? '<span class="bad">– sollte 100 % ergeben</span>' : '✔'}`; } });
+  seg($('#ju-seg'), [['studie', 'Studie'], ['ich', 'Meine Schätzung']], v => { mode = v; draw(); }, 'studie');
+})();
+
+sorter($('#sort-handel'), [{id: 'lv', name: 'Laden: Vorteil'}, {id: 'ov', name: 'Online: Vorteil'}, {id: 'on', name: 'Online: Nachteil'}], [
+  {t: 'Jacke anprobieren und anfassen', c: 'lv'}, {t: 'Persönliche Beratung', c: 'lv'}, {t: 'Sofort mitnehmen', c: 'lv'},
+  {t: 'Rund um die Uhr bestellen', c: 'ov'}, {t: 'Große Auswahl und Preisvergleich', c: 'ov'}, {t: 'Lieferung nach Hause', c: 'ov'},
+  {t: 'Viele Rücksendungen und Verpackungsmüll', c: 'on'}, {t: 'Kaufverhalten wird gespeichert', c: 'on'}, {t: 'Läden in der Innenstadt schließen', c: 'on'}
+]);
+
+explorer($('#fab'), $('#fab-info'), [
+  {id: 'fern', n: 'Fernsteuerung', t: 'Fahrzeuge und Maschinen werden aus der Ferne per Tablet oder Smartphone gesteuert und überwacht.'},
+  {id: 'kom', n: 'Produkt und Maschine kommunizieren', t: 'Das Werkstück trägt einen Chip und „sagt“ der Maschine, wie es bearbeitet werden soll.'},
+  {id: 'fts', n: 'Fahrerlose Transportsysteme', t: 'Selbstfahrende Wagen bringen Teile genau dann an die Maschine, wenn sie gebraucht werden.'},
+  {id: 'ar', n: 'AR-unterstützte Wartung', t: 'Eine Datenbrille blendet Reparaturanleitungen direkt ins Sichtfeld ein (Augmented Reality).'},
+  {id: 'qual', n: 'Qualitätskontrolle', t: 'Kameras und KI erkennen fehlerhafte Teile automatisch.'},
+  {id: 'track', n: 'Tracking', t: 'Maschinen und Waren werden ständig geortet – man weiß jederzeit, wo was ist.'},
+  {id: 'sensor', n: 'Wartungssensoren', t: 'Sensoren messen Temperatur und Vibration und melden, bevor eine Maschine kaputtgeht.'},
+  {id: 'drohne', n: 'Inspektion mit Drohnen', t: 'Drohnen prüfen schwer erreichbare Anlagen wie Dächer oder Windräder.'}
+], {modeRoot: $('#fab-mode'), intro: 'Tippe einen Bereich der Fabrik an.', label: 'Industrie 4.0'});
+
+mcQuiz($('#quiz'), [
+  {q: 'Was versteht man unter digitaler Transformation?', a: ['die Veränderung von Alltag, Arbeit und Gesellschaft durch digitale Technik', 'das Reparieren von Computern', 'das Drucken von Büchern', 'das Abschalten des Internets'], ok: 0},
+  {q: 'Welche Erfindung ist die älteste?', a: ['Buchdruck', 'Telefon', 'Radio', 'Handy'], ok: 0},
+  {q: 'Was ist ein Nachteil des Online-Handels?', a: ['viele Rücksendungen und Verpackungsmüll', 'große Auswahl', 'Lieferung nach Hause', 'Einkauf rund um die Uhr'], ok: 0},
+  {q: 'Was gehört zur Industrie 4.0?', a: ['vernetzte Maschinen, die Daten austauschen', 'Fließband ohne Strom', 'Handarbeit ohne Werkzeug', 'Brieftauben'], ok: 0},
+  {q: 'Welches Risiko bringt Industrie 4.0 mit sich?', a: ['Arbeitsplätze können wegfallen.', 'Es wird mehr Rohstoff verbraucht.', 'Maschinen werden langsamer.', 'Es gibt keine Daten mehr.'], ok: 0},
+  {q: 'Wofür nutzen Jugendliche das Internet am meisten?', a: ['Kommunikation und Unterhaltung', 'Online-Banking', 'Steuererklärungen', 'Faxe schicken'], ok: 0}
+]);
+</script>

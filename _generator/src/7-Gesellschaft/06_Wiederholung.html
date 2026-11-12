@@ -1,0 +1,105 @@
+<!--
+title: Wiederholung und Selbsttest
+short: Selbsttest
+time: 1 Unterrichtsstunde
+q: Was kann ich, und was sollte ich noch üben?
+facts: Zusammenfassung als Karteikarten | Trainer T1–T4: digitaler Wandel, Datenschutz, Kommunikation und Risiken, Creative Commons | Großes Quiz und „Ich kann …“-Liste mit Links zurück in die Stunden
+inter: Karteikarten · Paare finden · Online-Handel sortieren · Daten und Cookies · Phishing-Merkmale · Lizenzen prüfen · Quiz · Selbsteinschätzung
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Informatik und Gesellschaft</p>
+      <h1>Wiederholung und Selbsttest<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Digitaler Wandel, personenbezogene Daten, digitale Kommunikation, Risiken und Creative Commons: Prüfe, was du sicher kannst.</p>
+      <div class="controls"><button class="btn primary" data-go="begriffe">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="begriffe" data-label="Begriffe" data-yr="Wiederholen" data-title="Zusammenfassung" data-sub="Fachbegriffe als Karteikarten">
+  <div class="section-head"><p class="eyebrow">Station 1 · Zusammenfassung</p><h2>Fachbegriffe</h2></div>
+  <div id="flip"></div>
+  <h3 class="mt">Paare finden</h3>
+  <div id="match"></div>
+</section>
+
+<section class="station" id="t1" data-label="T1 Wandel" data-yr="Trainer" data-title="T1 Digitaler Wandel" data-sub="Handel und Industrie">
+  <div class="section-head"><p class="eyebrow">Station 2 · Trainer T1</p><h2>Digitaler Wandel</h2></div>
+  <div id="t1-sort"></div>
+</section>
+
+<section class="station" id="t2" data-label="T2 Daten" data-yr="Trainer" data-title="T2 Personenbezogene Daten" data-sub="Datenschutz">
+  <div class="section-head"><p class="eyebrow">Station 3 · Trainer T2</p><h2>Personenbezogene Daten</h2></div>
+  <div id="t2-tf"></div>
+</section>
+
+<section class="station" id="t3" data-label="T3 Risiken" data-yr="Trainer" data-title="T3 Kommunikation und Risiken" data-sub="Phishing, Malware, Netiquette">
+  <div class="section-head"><p class="eyebrow">Station 4 · Trainer T3</p><h2>Kommunikation und Risiken</h2></div>
+  <div id="t3-match"></div>
+</section>
+
+<section class="station" id="t4" data-label="T4 Lizenzen" data-yr="Trainer" data-title="T4 Creative Commons" data-sub="Lizenzen prüfen">
+  <div class="section-head"><p class="eyebrow">Station 5 · Trainer T4</p><h2>Creative Commons</h2><p class="lead">Was ist erlaubt? Sortiere.</p></div>
+  <div id="t4-sort"></div>
+</section>
+
+<section class="station" id="quiz-st" data-label="Quiz" data-yr="Testen" data-title="Großes Quiz" data-sub="10 zufällige Fragen">
+  <div class="section-head"><p class="eyebrow">Station 6 · Quiz</p><h2>Großes Quiz</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<section class="station" id="uebungen" data-label="Ich kann …">
+  <div class="section-head"><p class="eyebrow">Selbsteinschätzung</p><h2>Ich kann …</h2></div>
+  <ol id="sc"></ol>
+</section>
+
+<script>
+const BEGRIFFE = [
+  ['digitale Transformation', 'Veränderung der Gesellschaft durch digitale Technik'], ['Industrie 4.0', 'vernetzte Produktion mit Daten und Sensoren'], ['personenbezogene Daten', 'Angaben, die eine Person erkennbar machen'],
+  ['DSGVO', 'EU-weites Datenschutzgesetz seit 2018'], ['Cookie', 'kleiner Datensatz auf dem eigenen Gerät'], ['Wiki', 'Webseite, die jeder bearbeiten kann'], ['Blog', 'Tagebuch im Internet'],
+  ['Netiquette', 'Verhaltensregeln im Netz'], ['Cybermobbing', 'Beleidigen und Bloßstellen im Internet'], ['Phishing', 'Daten mit gefälschten Nachrichten abgreifen'], ['Trojaner', 'als nützlich getarntes Schadprogramm'],
+  ['Urheberrecht', 'schützt Werke vor geistigem Diebstahl'], ['CC BY', 'Nutzung mit Namensnennung'], ['NC', 'nicht kommerziell']
+];
+flipCards($('#flip'), BEGRIFFE);
+matcher($('#match'), shuffle(BEGRIFFE.slice()).slice(0, 7));
+sorter($('#t1-sort'), [{id: 'c', name: 'Chance'}, {id: 'r', name: 'Risiko'}], [
+  {t: 'Effizientere Produktion mit weniger Rohstoffen', c: 'c'}, {t: 'Einkaufen rund um die Uhr', c: 'c'}, {t: 'Wegfall von Arbeitsplätzen', c: 'r'}, {t: 'Kaufverhalten wird ausgewertet', c: 'r'}, {t: 'Weltweite Kommunikation in Echtzeit', c: 'c'}, {t: 'Mehr Verpackungsmüll durch Rücksendungen', c: 'r'}
+]);
+trueFalse($('#t2-tf'), [
+  {t: 'Die E-Mail-Adresse ist ein personenbezogenes Datum.', ok: true}, {t: 'Die DSGVO gilt in der ganzen EU.', ok: true},
+  {t: 'Marketing-Cookies sind für den Warenkorb notwendig.', ok: false, why: 'Dafür reichen notwendige Cookies.'}, {t: 'Eine Karten-App braucht Zugriff auf den Standort.', ok: true},
+  {t: 'Im Profil sollte man möglichst viele echte Daten angeben.', ok: false, why: 'Nur das Nötigste.'}
+]);
+matcher($('#t3-match'), [['Absender service@musterbnak.example', 'gefälschte Absender-Adresse'], ['„Sofort handeln, sonst Sperrung!“', 'vorgetäuschter Zeitdruck'], ['„Bestätigen Sie Ihre PIN“', 'Abfrage vertraulicher Daten'], ['Wurm', 'verbreitet sich selbst'], ['Ransomware', 'erpresst Lösegeld'], ['IN GROSSBUCHSTABEN', 'verstößt gegen die Netiquette']]);
+sorter($('#t4-sort'), [{id: 'ja', name: 'erlaubt'}, {id: 'nein', name: 'nicht erlaubt'}], [
+  {t: 'CC BY-Foto im Referat mit Namensnennung', c: 'ja'}, {t: 'CC BY-ND-Foto mit Filter bearbeiten', c: 'nein'}, {t: 'CC BY-NC-Bild für Werbung eines Shops', c: 'nein'}, {t: 'CC0-Bild ohne Namen verwenden', c: 'ja'}, {t: 'Foto der Freundin ohne Zustimmung posten', c: 'nein'}, {t: 'CC BY-SA-Bild bearbeiten und unter CC BY-SA teilen', c: 'ja'}
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Was gehört zur Industrie 4.0?', a: ['Maschinen tauschen über das Internet Daten aus.', 'Handarbeit ohne Strom', 'Dampfmaschinen', 'Brieftauben'], ok: 0},
+  {q: 'Seit wann gilt die DSGVO?', a: ['2018', '1991', '2001', '2025'], ok: 0},
+  {q: 'Was ist ein Vorteil von Cookies?', a: ['Der Warenkorb bleibt gespeichert.', 'Sie sind lecker.', 'Sie schützen vor Viren.', 'Sie machen das Internet schneller.'], ok: 0},
+  {q: 'Was zeichnet ein Wiki aus?', a: ['Jeder kann es bearbeiten, alle Versionen werden gespeichert.', 'Nur einer darf schreiben.', 'Es ist ein Messenger.', 'Es hat keine Texte.'], ok: 0},
+  {q: 'Was ist ein Thread?', a: ['ein Gesprächsstrang in einem Forum', 'ein Virus', 'eine E-Mail-Adresse', 'ein Kabel'], ok: 0},
+  {q: 'Welche Straftat liegt vor, wenn jemand wissentlich Lügen über andere verbreitet?', a: ['Verleumdung', 'Phishing', 'Urheberrecht', 'Backup'], ok: 0},
+  {q: 'Welches Zeichen deutet auf Phishing hin?', a: ['Abfrage von PIN und TAN per Mail', 'persönliche Anrede', 'bekannter Absender ohne Links', 'Rechnung, die du erwartet hast'], ok: 0},
+  {q: 'Was macht Spyware?', a: ['Sie spioniert Daten aus.', 'Sie zeigt Werbung.', 'Sie verschlüsselt Daten.', 'Sie macht Backups.'], ok: 0},
+  {q: 'Was bedeutet SA bei Creative Commons?', a: ['Weitergabe unter gleichen Bedingungen', 'sehr alt', 'ohne Namensnennung', 'nur Schulen'], ok: 0},
+  {q: 'Wofür steht TULLU?', a: ['Titel, Urheber, Lizenz, Link, Ursprungsort', 'Text, URL, Lizenz, Logo, Update', 'eine Lizenzart', 'ein Dateiformat'], ok: 0},
+  {q: 'Was ist Cybergrooming?', a: ['Fremde bauen gezielt falsches Vertrauen zu Kindern auf.', 'Pflege von Computern', 'ein Online-Spiel', 'Haare schneiden per Video'], ok: 0}
+], {pick: 10});
+selfCheck($('#sc'), [
+  {t: 'Ich kann beschreiben, wie neue Medien die Kommunikation verändert haben.', href: '01_Digitaler_Wandel.html#medien'},
+  {t: 'Ich kann Vor- und Nachteile des Online-Handels nennen.', href: '01_Digitaler_Wandel.html#handel'},
+  {t: 'Ich kann Chancen und Risiken der Industrie 4.0 erklären.', href: '01_Digitaler_Wandel.html#industrie'},
+  {t: 'Ich kann personenbezogene Daten erkennen und die DSGVO nennen.', href: '02_Personenbezogene_Daten.html#arten'},
+  {t: 'Ich kann Cookies und App-Berechtigungen sinnvoll einstellen.', href: '02_Personenbezogene_Daten.html#cookies'},
+  {t: 'Ich kann Foren, Wikis und Blogs unterscheiden.', href: '03_Digitale_Kommunikation.html#kollab'},
+  {t: 'Ich halte mich an die Netiquette.', href: '03_Digitale_Kommunikation.html#m1'},
+  {t: 'Ich weiß, was ich bei Cybermobbing tun kann.', href: '04_Risiken.html#mobbing'},
+  {t: 'Ich erkenne Phishing-Nachrichten.', href: '04_Risiken.html#phishing'},
+  {t: 'Ich kann Arten von Malware unterscheiden.', href: '04_Risiken.html#m1'},
+  {t: 'Ich kann CC-Lizenzen lesen und Quellen richtig angeben.', href: '05_Creative_Commons.html#cc'}
+]);
+</script>
