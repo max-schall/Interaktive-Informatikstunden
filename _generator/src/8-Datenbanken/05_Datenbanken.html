@@ -1,0 +1,258 @@
+<!--
+title: Bedeutung von Datenbanken
+short: Datenbanken
+time: 2 Unterrichtsstunden
+q: Wie sind Datenbanken aufgebaut – und warum nutzen Unternehmen sie?
+facts: Daten als kostbares Gut: Online-Shops, Behörden, soziale Netzwerke | Redundanz und Konsistenz: Daten nicht mehrfach speichern, keine Widersprüche | Datenbanksystem = Datenbankmanagementsystem + Datenbank | Relationale Datenbanken: Tabelle, Datenfeld (Attribut), Datensatz (Tupel), Attributwert, Primärschlüssel (ID), Fremdschlüssel | Suchanfragen mit SQL | Tabellen, Abfragen, Formulare, Berichte | Mehrbenutzerbetrieb, Zugriffsrechte, Schnittstellen
+inter: Redundanz-Falle beim Umzug · Komponenten eines Datenbanksystems erkunden · Videothek: Primär- und Fremdschlüssel verfolgen · Abfragen zusammenklicken und SQL lesen · M1 Kundendaten prüfen · M2 Bahnticket im Mehrbenutzerbetrieb buchen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Daten und Datenbanken</p>
+      <h1>Datenbanken<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Zugfahrkarten kann man auf der Website, in der App oder am Automaten buchen – und trotzdem wird kein Sitzplatz doppelt vergeben. Dahinter steckt eine <b>Datenbank</b>.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welche Daten gibst du an, wenn du online etwas bestellst?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie sind Datenbanken aufgebaut – und warum nutzen Unternehmen sie?</p></div>
+      <div class="controls"><button class="btn primary" data-go="gut">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="gut" data-label="Redundanz" data-yr="Einstieg" data-title="Daten – ein kostbares Gut" data-sub="Redundanz und Konsistenz">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Daten – ein kostbares Gut</p>
+    <h2>Warum nicht einfach eine große Tabelle?</h2>
+    <p class="lead">Online-Shops, Behörden, soziale Netzwerke und Unternehmen speichern riesige Datenmengen – Name, Adresse, Geburtsdatum, Bestellungen. In einer einzigen Tabelle würden Kundendaten bei jeder Bestellung <b>mehrfach</b> gespeichert. Diese <b>Redundanz</b> führt schnell zu Widersprüchen. Anja Bohn zieht um – probiere es aus.</p>
+  </div>
+  <div class="grid-2">
+    <div class="vis"><div class="vis-head"><h3>Eine Tabelle</h3><button class="btn" id="mv-1">Umzug eintragen</button></div><div class="table-wrap"><table class="cmp db" id="flat"></table></div><p class="status" id="flat-st"></p></div>
+    <div class="vis"><div class="vis-head"><h3>Zwei Tabellen</h3><button class="btn" id="mv-2">Umzug eintragen</button></div><div class="table-wrap"><table class="cmp db" id="kun"></table></div><div class="table-wrap mt"><table class="cmp db" id="bes"></table></div><p class="status" id="rel-st"></p></div>
+  </div>
+</section>
+
+<section class="station" id="dbs" data-label="Datenbanksystem" data-yr="Erarbeitung" data-title="Nutzung von Datenbanken" data-sub="Komponenten und Ziele">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Datenbanksysteme</p>
+    <h2>Wie ein Datenbanksystem arbeitet</h2>
+    <p class="lead">Unternehmen nutzen spezielle <b>Datenbanksysteme</b>. Darin werden Daten erfasst, gespeichert und ausgewertet. Tippe die Bausteine an.</p>
+  </div>
+  <div class="model">
+    <div class="vis"><div class="dbs-fig" id="dbs-fig">
+      <div class="dbs-lbl">Datenbanksystem</div>
+      <div class="dbs-p" data-part="app">Anwender­software</div>
+      <div class="dbs-arrow">⇄</div>
+      <div class="dbs-dbms" data-part="dbms"><b>Datenbankmanagementsystem</b><div class="dbs-in"><span data-part="anf">Anfrage entgegennehmen</span><span class="dbs-arrow">⇄</span><span data-part="zug">Software für Datenzugriff</span></div></div>
+      <div class="dbs-arrow">⇄</div>
+      <div class="dbs-st"><span data-part="db">🛢 Datenbank</span><span data-part="meta">🏷 Metadaten</span></div>
+    </div><div class="controls"><div id="dbs-mode"></div></div></div>
+    <div class="stack"><div class="box xp-panel" id="dbs-panel"></div>
+      <div class="box"><span class="tag info">Ziele von Datenbanken</span><p>Die Daten sollen <b>eindeutig</b> und klar kategorisiert sein, <b>widerspruchsfrei</b> (konsistent) und ohne <b>Redundanzen</b>. Beim Eingeben, Löschen oder Überschreiben dürfen keine Fehler entstehen.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="relational" data-label="Relational" data-yr="Erarbeitung" data-title="Relationale Datenbanken" data-sub="Primär- und Fremdschlüssel">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Relationale Datenbanken</p>
+    <h2>Tabellen in Beziehung</h2>
+    <p class="lead">In einer <b>relationalen Datenbank</b> liegen die Daten in Tabellen, die zueinander in <b>Beziehung</b> (Relation) stehen. Jeder Datensatz bekommt eine eindeutige Nummer, den <b>Primärschlüssel</b> (ID). Steht diese Nummer in einer anderen Tabelle, heißt sie dort <b>Fremdschlüssel</b>. Tippe eine Zeile der Tabelle <b>Ausleihe</b> an.</p>
+  </div>
+  <div class="model">
+    <div class="vis"><div class="table-wrap"><table class="cmp db" id="t-aus"></table></div>
+      <div class="grid-2 mt"><div class="table-wrap"><table class="cmp db" id="t-per"></table></div><div class="table-wrap"><table class="cmp db" id="t-fil"></table></div></div></div>
+    <div class="stack"><p class="status" id="rel-info"></p>
+      <ul class="facts"><li><b>Datenfeld (Attribut):</b> eine Spalte, z. B. F_Titel</li><li><b>Datensatz (Tupel):</b> eine Zeile mit allen Infos zu einem Objekt</li><li><b>Attributwert:</b> ein einzelner Eintrag, z. B. „Drama“</li><li><b>Primärschlüssel:</b> eindeutige ID, für Nutzer meist unsichtbar</li><li><b>Fremdschlüssel:</b> verweist auf den Primärschlüssel einer anderen Tabelle</li></ul></div>
+  </div>
+</section>
+
+<section class="station" id="abfrage" data-label="Abfragen" data-yr="Erarbeitung" data-title="Suchanfragen" data-sub="Filtern und sortieren mit SQL">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Suchanfragen</p>
+    <h2>Fragen an die Datenbank</h2>
+    <p class="lead">In Datenbanksystemen können Daten gezielt <b>gefiltert</b> und <b>sortiert</b> werden. Dafür gibt es eine eigene Sprache: <b>SQL</b> (Structured Query Language). Stelle eine Abfrage zusammen und lies die SQL-Anweisung.</p>
+  </div>
+  <div class="model">
+    <div class="vis"><div class="qb">
+      <label>Tabelle <select id="q-t"><option>Filme</option><option>Personen</option><option>Ausleihe</option></select></label>
+      <label>Bedingung <select id="q-f"></select><select id="q-o"><option>=</option><option>&lt;&gt;</option><option>&lt;</option><option>&lt;=</option><option>&gt;</option><option>&gt;=</option><option value="">(keine)</option></select><input id="q-v" size="9" value="Action"></label>
+      <label>sortiert nach <select id="q-s"></select><select id="q-d"><option value="">aufsteigend</option><option value=" DESC">absteigend</option></select></label></div>
+      <pre class="sql" id="q-sql"></pre><div class="table-wrap"><table class="cmp db" id="q-res"></table></div></div>
+    <div class="stack"><div class="task-card"><header><span class="no">?</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Abfrage-Aufträge</h3></header><ol class="goals" id="q-goals"></ol></div>
+      <h3>Werkzeuge eines Datenbankprogramms</h3><div id="match-w"></div></div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Kunden" data-yr="M1" data-title="Daten in einer Datenbank" data-sub="Konsistent und redundanzfrei?">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1</p>
+    <h2>Kundendaten prüfen</h2>
+    <p class="lead">Ein Versandhandel hat diese Datensätze gespeichert. Tippe Zellen an, die dir auffallen.</p>
+  </div>
+  <div class="table-wrap"><table class="cmp db" id="m1-t"></table></div>
+  <div class="grid-2 mt"><div id="m1-tf"></div>
+    <div class="stack"><div class="task-card"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>ID-Nummern</h3></header><p>Erkläre die Bedeutung der ID-Nummern (letzte Spalte) für die Datenbank.</p><div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Die ID ist der <b>Primärschlüssel</b>. Sie identifiziert jeden Datensatz eindeutig – auch wenn zwei Personen gleich heißen oder (wie Anja und Elena Bohn) dieselbe Adresse haben. Andere Tabellen (z. B. Bestellungen) verweisen über die ID als Fremdschlüssel auf den Kunden, ohne Name und Adresse noch einmal zu speichern.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="m2" data-label="M2 Bahnticket" data-yr="M2" data-title="Bahnticket buchen" data-sub="Mehrbenutzerbetrieb">
+  <div class="section-head">
+    <p class="eyebrow">Station 6 · Material M2</p>
+    <h2>Viele Zugänge – eine Datenbank</h2>
+    <p class="lead">Die Daten liegen auf einem <b>Server</b> in einer zentralen Datenbank. Website, App, Automat und Reisebüro sind <b>Clients</b>, die gleichzeitig zugreifen: <b>Mehrbenutzerbetrieb</b>. Über <b>Schnittstellen</b> tauschen Systeme Daten aus. Buche Plätze für den ICE 517.</p>
+  </div>
+  <div class="model">
+    <div class="vis"><div class="clients" id="cl"></div><div class="srv" id="srv"></div></div>
+    <div class="stack"><p class="status" id="cl-st">Wähle einen Zugang und buche einen Platz.</p>
+      <div class="box"><span class="tag info">Zugriffsrechte</span><p>Mitarbeiter bekommen je nach Aufgabe <b>Zugriffsrechte</b>: Manche sehen nur bestimmte Daten, andere dürfen Daten erfassen und bearbeiten. Daten werden mit Passwort geschützt und oft <b>verschlüsselt</b> auf den Servern gespeichert.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Datenbanken</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Bedeutung von Datenbanken</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step>Ein <b>Datenbanksystem</b> besteht aus dem <b>Datenbankmanagementsystem</b> (nimmt Anfragen entgegen, greift auf Daten zu) und der <b>Datenbank</b> mit Daten und Metadaten.</li>
+        <li data-step>Ziele: Daten eindeutig, <b>konsistent</b> (widerspruchsfrei) und ohne <b>Redundanz</b> (doppelte Speicherung) speichern.</li>
+        <li data-step><b>Relationale Datenbank:</b> Tabellen stehen in Beziehung. Spalte = <b>Datenfeld</b> (Attribut), Zeile = <b>Datensatz</b> (Tupel).</li>
+        <li data-step>Der <b>Primärschlüssel</b> (ID) identifiziert jeden Datensatz eindeutig. Als <b>Fremdschlüssel</b> verweist er aus einer anderen Tabelle darauf.</li>
+        <li data-step>Mit <b>SQL</b> werden Daten abgefragt, gefiltert und sortiert. Mehrere Clients greifen gleichzeitig zu (<b>Mehrbenutzerbetrieb</b>), geregelt durch <b>Zugriffsrechte</b>.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne die Tabellen Personen, Filme und Ausleihe und verbinde jeden Fremdschlüssel mit einem Pfeil mit seinem Primärschlüssel.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Schlüssel verfolgen</h2></div>
+  <div id="ts"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+const DB = {
+  Personen: {key: 'P_Nr', cols: ['P_Nr', 'P_Name'], rows: [[1, 'Michael'], [2, 'Maria'], [3, 'Emil'], [4, 'Julia']]},
+  Filme: {key: 'F_Nr', cols: ['F_Nr', 'F_Titel', 'F_Genre', 'F_FSK'], rows: [[1, 'Reine Nervensache', 'Komödie', 12], [2, 'Das Wunder von Bern', 'Drama', 6], [3, 'Bad Boys', 'Action', 16], [4, 'Rambo – First Blood', 'Action', 16], [5, 'Paddington', 'Komödie', 0]]},
+  Ausleihe: {key: 'A_Nr', cols: ['A_Nr', 'A_Datum', 'P_Nr', 'F_Nr', 'A_Zurück'], rows: [[1, '02.03.2015', 3, 2, 'ja'], [2, '03.03.2015', 1, 3, 'nein'], [3, '05.03.2015', 2, 4, 'ja'], [4, '05.03.2015', 4, 1, 'ja'], [5, '07.03.2015', 2, 5, 'ja'], [6, '08.03.2015', 3, 3, 'nein']]}
+};
+const dbTable = (el, name, rows, o = {}) => { const T = DB[name]; el.innerHTML = `<caption>${name}</caption><thead><tr>${T.cols.map(c => `<th class="${c === T.key ? 'pk' : (o.fk || []).includes(c) ? 'fk' : ''}">${c}</th>`).join('')}</tr></thead><tbody>${(rows || T.rows).map((r, i) => `<tr data-i="${i}" class="${(o.hl || []).includes(r[0]) ? 'on' : ''}">${r.map(v => `<td>${v}</td>`).join('')}</tr>`).join('')}</tbody>`; };
+
+/* ===== Station 1: Redundanz ===== */
+(() => {
+  const F = [['Bohn, Anja', 'Hofweg 6', 'Rucksack'], ['Meiner, David', 'Am Hang 53', 'Zelt'], ['Bohn, Anja', 'Hofweg 6', 'Schlafsack'], ['Bohn, Anja', 'Hofweg 6', 'Isomatte']];
+  let f = F.map(r => r.slice()), k = [[1, 'Bohn, Anja', 'Hofweg 6'], [2, 'Meiner, David', 'Am Hang 53']], moved = [0, 0];
+  const draw = () => {
+    $('#flat').innerHTML = `<thead><tr><th>Kunde</th><th>Adresse</th><th>Ware</th></tr></thead><tbody>${f.map(r => `<tr class="${r[0] === 'Bohn, Anja' && moved[0] && r[1] === 'Hofweg 6' ? 'bad' : ''}">${r.map(v => `<td>${v}</td>`).join('')}</tr>`).join('')}</tbody>`;
+    $('#kun').innerHTML = `<caption>Kunden</caption><thead><tr><th class="pk">K_Nr</th><th>Kunde</th><th>Adresse</th></tr></thead><tbody>${k.map(r => `<tr>${r.map(v => `<td>${v}</td>`).join('')}</tr>`).join('')}</tbody>`;
+    $('#bes').innerHTML = `<caption>Bestellungen</caption><thead><tr><th class="fk">K_Nr</th><th>Ware</th></tr></thead><tbody>${F.map(r => `<tr><td>${r[0] === 'Bohn, Anja' ? 1 : 2}</td><td>${r[2]}</td></tr>`).join('')}</tbody>`;
+  };
+  $('#mv-1').onclick = () => { f[0][1] = 'Seeweg 2'; moved[0] = 1; draw(); $('#flat-st').innerHTML = 'Die Adresse wurde nur im ersten Datensatz geändert. <span class="bad">Jetzt hat Anja zwei verschiedene Adressen – die Daten sind <b>nicht konsistent</b>.</span> Man müsste jede Zeile einzeln suchen und ändern.'; };
+  $('#mv-2').onclick = () => { k[0][2] = 'Seeweg 2'; draw(); $('#rel-st').innerHTML = '<span class="good">Die Adresse steht nur einmal in der Tabelle Kunden – eine Änderung genügt.</span> Die Bestellungen verweisen über die Kundennummer darauf. Keine Redundanz, keine Widersprüche.'; };
+  $('#flat-st').textContent = 'Anjas Adresse steht dreimal in der Tabelle.'; $('#rel-st').textContent = 'Anjas Adresse steht nur einmal in der Tabelle Kunden.';
+  draw();
+})();
+
+/* ===== Station 2: DBS ===== */
+explorer($('#dbs-fig'), $('#dbs-panel'), [
+  {id: 'app', n: 'Anwendersoftware', t: 'Das Programm, mit dem Nutzer arbeiten – z. B. die Website eines Online-Shops oder die Bahn-App. Sie schickt Anfragen an das Datenbankmanagementsystem.'},
+  {id: 'dbms', n: 'Datenbankmanagementsystem (DBMS)', t: 'Verwaltet die Datenbank: nimmt Anfragen entgegen, prüft Zugriffsrechte, liest und schreibt Daten und sorgt dafür, dass keine Fehler entstehen.'},
+  {id: 'anf', n: 'Anfrage entgegennehmen', t: 'Die Anfrage (z. B. eine SQL-Abfrage) wird angenommen und geprüft.'},
+  {id: 'zug', n: 'Software für Datenzugriff', t: 'Greift auf die gespeicherten Daten zu – lesend oder schreibend – und gibt das Ergebnis zurück.'},
+  {id: 'db', n: 'Datenbank', t: 'Hier sind die eigentlichen Daten in Tabellen gespeichert.'},
+  {id: 'meta', n: 'Metadaten', t: 'Daten über die Daten: Welche Tabellen und Datenfelder gibt es, welche Datentypen haben sie, wer darf was?'}
+], {modeRoot: $('#dbs-mode'), intro: 'Tippe einen Baustein des Datenbanksystems an.', label: 'Baustein'});
+
+/* ===== Station 3: Relational ===== */
+(() => {
+  const draw = (i) => {
+    const a = i == null ? null : DB.Ausleihe.rows[i];
+    dbTable($('#t-aus'), 'Ausleihe', null, {fk: ['P_Nr', 'F_Nr'], hl: a ? [a[0]] : []});
+    dbTable($('#t-per'), 'Personen', null, {hl: a ? [a[2]] : []});
+    dbTable($('#t-fil'), 'Filme', null, {hl: a ? [a[3]] : []});
+    if (a) { const p = DB.Personen.rows.find(r => r[0] === a[2]), f = DB.Filme.rows.find(r => r[0] === a[3]);
+      $('#rel-info').innerHTML = `Ausleihe Nr. <b>${a[0]}</b> (Primärschlüssel A_Nr): Fremdschlüssel P_Nr = <b>${a[2]}</b> → Person <b>${p[1]}</b> · Fremdschlüssel F_Nr = <b>${a[3]}</b> → Film <b>„${f[1]}“</b> (${f[2]}, FSK ${f[3]}). Zurückgegeben: ${a[4]}.`; }
+    else $('#rel-info').textContent = 'Tippe eine Zeile der Tabelle Ausleihe an.';
+  };
+  $('#t-aus').addEventListener('click', e => { const tr = e.target.closest('tbody tr'); if (tr) draw(+tr.dataset.i); });
+  draw(null);
+})();
+
+/* ===== Station 4: Abfragen ===== */
+(() => {
+  const goals = [['Alle Actionfilme', r => r.t === 'Filme' && r.n === 2 && r.rows.every(x => x[2] === 'Action')], ['Filme ab 12 Jahren und jünger (FSK ≤ 12), nach Titel sortiert', r => r.t === 'Filme' && r.n === 3 && r.sort === 'F_Titel'], ['Alle Ausleihen, die noch nicht zurückgegeben wurden', r => r.t === 'Ausleihe' && r.n === 2 && r.rows.every(x => x[4] === 'nein')], ['Alle Ausleihen von Emil (P_Nr 3)', r => r.t === 'Ausleihe' && r.n === 2 && r.rows.every(x => x[2] === 3)]];
+  const done = new Set();
+  const fill = () => { const T = DB[$('#q-t').value], f = $('#q-f').value; $('#q-f').innerHTML = T.cols.map(c => `<option>${c}</option>`).join(''); $('#q-s').innerHTML = '<option value="">(keine)</option>' + T.cols.map(c => `<option>${c}</option>`).join(''); if (T.cols.includes(f)) $('#q-f').value = f; };
+  const run = () => {
+    const t = $('#q-t').value, T = DB[t], f = $('#q-f').value, op = $('#q-o').value, raw = $('#q-v').value.trim(), s = $('#q-s').value, d = $('#q-d').value;
+    const ci = T.cols.indexOf(f), num = raw !== '' && isFinite(parseNum(raw)), v = num ? parseNum(raw) : raw;
+    let rows = T.rows.filter(r => !op || sheetCmp(op, typeof r[ci] === 'string' ? r[ci].toLowerCase() : r[ci], typeof v === 'string' ? v.toLowerCase() : v));
+    if (s) { const k = T.cols.indexOf(s); rows = rows.slice().sort((a, b) => (typeof a[k] === 'number' ? a[k] - b[k] : String(a[k]).localeCompare(String(b[k]), 'de')) * (d ? -1 : 1)); }
+    $('#q-sql').innerHTML = `<b>SELECT</b> * <b>FROM</b> ${t}${op ? `\n<b>WHERE</b> ${f} ${op.replace('<', '&lt;').replace('>', '&gt;')} ${num ? v : `'${raw}'`}` : ''}${s ? `\n<b>ORDER BY</b> ${s}${d}` : ''};`;
+    dbTable($('#q-res'), t, rows); $('#q-res caption').textContent = `Ergebnis: ${rows.length} Datensätze`;
+    const r = {t, n: rows.length, rows, sort: s}; goals.forEach((g, i) => { if (g[1](r)) done.add(i); });
+    $('#q-goals').innerHTML = goals.map((g, i) => `<li class="${done.has(i) ? 'ok' : ''}">${g[0]} ${done.has(i) ? '✔' : ''}</li>`).join('');
+  };
+  $('#q-t').onchange = () => { fill(); run(); }; ['#q-f', '#q-o', '#q-s', '#q-d'].forEach(s => $(s).onchange = run); $('#q-v').oninput = run;
+  fill(); $('#q-f').value = 'F_Genre'; run();
+})();
+matcher($('#match-w'), [['Tabellen', 'geben die Struktur der Daten vor und enthalten sie'], ['Abfragen (Query)', 'holen bestimmte Daten aus einer oder mehreren Tabellen'], ['Formulare', 'erleichtern Eingabe, Betrachten und Ändern von Datensätzen'], ['Berichte (Report)', 'stellen ausgewählte Daten ansprechend dar, z. B. zum Drucken']]);
+
+/* ===== M1 ===== */
+(() => {
+  const K = [['Abeck, Leo', 'Farnstraße 14', '89765 Aichling', '02.05.2006', '08675/58586', '0097531'], ['Bohn, Anja', 'Hofweg 6', '89765 Aichling', '18.06.1998', '08675/9876', '0048796'], ['Bohn, Elena', 'Hofweg 6', '89765 Aichling', '22.10.1997', '08675/4589', '0034977'], ['Meiner, David', 'Am Hang 53', '89765 Aichling', '03.03.1965', '08675/12134', '0021846'], ['Ohler, Henry', 'Maiweg 20', '89567 Bergham', '28.11.1986', '08743/23654', '0087423'], ['Yilmaz, Dilara', 'Im Freien 37', '89567 Bergham', '05.04.2004', '08743/11335', '0026194']];
+  const H = ['Name, Vorname', 'Straße', 'PLZ und Ort', 'Geburtsdatum', 'Telefon', 'ID'];
+  const note = {'1,1': 'Anja und Elena Bohn haben dieselbe Adresse – kein Widerspruch: Es sind zwei Personen mit verschiedener ID.', '2,1': 'Gleiche Adresse wie Anja Bohn – kein Fehler, sie wohnen zusammen.', '0,2': 'PLZ und Ort stehen zusammen in einem Feld. Besser getrennt: dann kann man nach Ort filtern.'};
+  $('#m1-t').innerHTML = `<thead><tr>${H.map((h, i) => `<th class="${i === 5 ? 'pk' : ''}">${h}</th>`).join('')}</tr></thead><tbody>${K.map((r, i) => `<tr>${r.map((v, j) => `<td data-k="${i},${j}">${v}</td>`).join('')}</tr>`).join('')}</tbody>`;
+  $('#m1-t').addEventListener('click', e => { const td = e.target.closest('td'); if (!td) return; const [i, j] = td.dataset.k.split(',').map(Number); $$('td', $('#m1-t')).forEach(x => x.classList.remove('on'));
+    td.classList.add('on'); td.title = note[td.dataset.k] || (j === 5 ? 'Primärschlüssel: eindeutig für jeden Datensatz.' : j === 2 ? 'PLZ und Ort in einem Feld – besser getrennt speichern.' : j === 4 ? 'Telefonnummer: Zeichenkette, keine Zahl (führende 0).' : 'Attributwert im Datenfeld „' + H[j] + '“.'); $('#m1-tip').textContent = td.title; });
+  $('#m1-t').insertAdjacentHTML('afterend', '<p class="status" id="m1-tip">Tippe eine Zelle an.</p>');
+  trueFalse($('#m1-tf'), [
+    {t: 'Jede Zeile ist ein Datensatz (Tupel) zu einem Kunden.', ok: true},
+    {t: 'Anja und Elena Bohn sind ein Datensatz doppelt gespeichert (Redundanz).', ok: false, why: 'Es sind zwei Personen mit verschiedenen IDs und Geburtsdaten.'},
+    {t: 'Die Daten sind konsistent: Es gibt keine Widersprüche.', ok: true},
+    {t: 'Alle Daten können widerspruchsfrei ausgewertet werden, z. B. „alle Kunden aus Aichling“.', ok: false, why: 'PLZ und Ort stehen zusammen in einem Feld – zum Filtern müsste man sie trennen.'},
+    {t: 'Die ID muss für jeden Kunden verschieden sein.', ok: true, why: 'Sie ist der Primärschlüssel.'}
+  ]);
+})();
+
+/* ===== M2: Mehrbenutzer ===== */
+(() => {
+  const C = [['💻', 'Website'], ['📱', 'Smartphone-App'], ['🏧', 'Automat'], ['🧑‍💼', 'Reisebüro']], seats = Array(12).fill(null); let lock = null;
+  const draw = () => {
+    $('#cl').innerHTML = C.map(([i, n], k) => `<button class="cl" data-k="${k}"><span>${i}</span><small>${n}</small><em>${seats.filter(s => s === null).length} frei</em></button>`).join('');
+    $('#srv').innerHTML = `<div class="srv-h">🖥 Server · zentrale Datenbank · ICE 517</div><div class="seats">${seats.map((s, i) => `<span class="${s !== null ? 'taken' : ''}${lock === i ? ' lock' : ''}" title="Platz ${i + 1}">${s !== null ? C[s][0] : i + 1}</span>`).join('')}</div>`;
+  };
+  $('#cl').addEventListener('click', e => {
+    const b = e.target.closest('.cl'); if (!b) return; const k = +b.dataset.k, i = seats.indexOf(null);
+    if (i < 0) { $('#cl-st').innerHTML = `<span class="bad">${C[k][1]}: Der Zug ist ausgebucht.</span> Alle Clients sehen sofort denselben Stand.`; return; }
+    lock = i; draw();
+    setTimeout(() => { seats[i] = k; lock = null; draw(); const f = seats.filter(s => s === null).length;
+      $('#cl-st').innerHTML = `${C[k][1]} bucht Platz <b>${i + 1}</b>. Das DBMS <b>sperrt</b> den Platz kurz, bis die Buchung gespeichert ist – so kann kein anderer Client ihn gleichzeitig buchen. Alle Zugänge zeigen jetzt <b>${f} freie Plätze</b>.`; }, 450);
+  });
+  draw();
+})();
+
+/* ===== Übungen ===== */
+taskSet($('#ts'), () => {
+  const a = pick(DB.Ausleihe.rows), p = DB.Personen.rows.find(r => r[0] === a[2]), f = DB.Filme.rows.find(r => r[0] === a[3]);
+  return pick([
+    {key: 'p' + a[0], tag: 'Fremdschlüssel', q: `Ausleihe Nr. ${a[0]} hat P_Nr = ${a[2]} und F_Nr = ${a[3]}.<br>Personen: ${DB.Personen.rows.map(r => r.join(' = ')).join(' · ')}`, fields: [{l: 'Wer hat ausgeliehen?', a: p[1]}]},
+    {key: 'f' + a[0], tag: 'Fremdschlüssel', q: `Ausleihe Nr. ${a[0]} hat F_Nr = ${a[3]}.<br>Filme: ${DB.Filme.rows.map(r => r[0] + ' = ' + r[1]).join(' · ')}`, fields: [{l: 'Welcher Film? (Genre)', a: f[2]}]},
+    {key: 'n' + a[2], tag: 'Abfrage', q: `Ausleihe (A_Nr, P_Nr): ${DB.Ausleihe.rows.map(r => `(${r[0]}, ${r[2]})`).join(' ')}<br>Wie viele Ausleihen hat Person ${a[2]}?`, fields: [{l: 'Anzahl', a: DB.Ausleihe.rows.filter(r => r[2] === a[2]).length}]}
+  ]);
+}, {n: 4});
+mcQuiz($('#quiz'), [
+  {q: 'Was ist Redundanz?', a: ['dieselben Daten werden mehrfach gespeichert', 'Daten sind verschlüsselt', 'Daten werden gelöscht', 'Daten werden sortiert'], ok: 0},
+  {q: 'Daten sind konsistent, wenn …', a: ['sie keine Widersprüche enthalten', 'sie sehr viele sind', 'sie in einer Tabelle stehen', 'sie unverschlüsselt sind'], ok: 0},
+  {q: 'Wie heißt eine Zeile in einer Datenbanktabelle?', a: ['Datensatz (Tupel)', 'Datenfeld', 'Attribut', 'Schlüssel'], ok: 0},
+  {q: 'Wie heißt eine Spalte in einer Datenbanktabelle?', a: ['Datenfeld (Attribut)', 'Datensatz', 'Tupel', 'Bericht'], ok: 0},
+  {q: 'Was macht ein Primärschlüssel?', a: ['identifiziert jeden Datensatz eindeutig', 'verschlüsselt die Daten', 'sortiert die Tabelle', 'löscht doppelte Daten'], ok: 0},
+  {q: 'P_Nr in der Tabelle Ausleihe ist …', a: ['ein Fremdschlüssel', 'ein Primärschlüssel', 'ein Bericht', 'ein Formular'], ok: 0},
+  {q: 'Wofür steht SQL?', a: ['Structured Query Language', 'Simple Quick List', 'Server Quality Level', 'Sorted Query Line'], ok: 0},
+  {q: 'Was bedeutet Mehrbenutzerbetrieb?', a: ['Mehrere Clients greifen gleichzeitig auf die Datenbank zu.', 'Mehrere Datenbanken auf einem Computer.', 'Jeder Nutzer hat eine eigene Kopie.', 'Nur Administratoren dürfen zugreifen.'], ok: 0}
+]);
+</script>

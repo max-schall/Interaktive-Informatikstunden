@@ -1412,10 +1412,109 @@ textarea.code-in{width:100%;min-height:9rem;font-family:var(--f-mono);font-size:
 .rgb-mix{position:relative;height:9rem;margin-bottom:.4rem;background:#000;border-radius:6px;overflow:hidden;isolation:isolate}
 .rgb-mix .c{position:absolute;width:6rem;height:6rem;border-radius:50%;mix-blend-mode:screen}
 .rgb-mix .r{background:#F00;left:calc(50% - 4.5rem);top:.6rem}.rgb-mix .g{background:#0F0;left:calc(50% - 1.5rem);top:.6rem}.rgb-mix .b{background:#00F;left:calc(50% - 3rem);top:2.8rem}
+/* ================= Tabellenkalkulation & Diagramme ================= */
+.sheet{border:1.5px solid var(--edge);border-radius:4px;background:var(--surface);box-shadow:4px 4px 0 var(--edge-shadow);overflow:hidden}
+.sh-bar{display:flex;align-items:center;gap:.4rem;padding:.35rem .5rem;background:var(--surface-2);border-bottom:1.5px solid var(--edge)}
+.sh-ref{font-family:var(--f-mono);font-weight:600;font-size:.82rem;min-width:2.6rem;padding:.15rem .4rem;background:var(--surface);border:1px solid var(--line);border-radius:3px;text-align:center}
+.sh-fx{font-family:var(--f-mono);font-style:italic;color:var(--ink-2);font-size:.82rem}
+.sh-in{flex:1;min-width:0;font-family:var(--f-mono);font-size:.88rem;padding:.25rem .45rem;border:1px solid var(--line);border-radius:3px;background:var(--surface);color:var(--ink)}
+.sh-in:focus{outline:2px solid var(--accent);outline-offset:0}
+.sh-in[readonly]{color:var(--ink-2);background:var(--surface-2)}
+.sh-wrap{overflow-x:auto}
+table.sh{border-collapse:collapse;width:100%;font-size:.86rem;font-variant-numeric:tabular-nums}
+.sh th{background:var(--surface-2);color:var(--ink-2);font-family:var(--f-mono);font-weight:500;font-size:.72rem;padding:.15rem .4rem;border:1px solid var(--line);min-width:4.5rem}
+.sh th.sh-c{min-width:1.8rem;width:1.8rem}
+.sh td{border:1px solid var(--line);padding:.22rem .45rem;height:1.75rem;white-space:nowrap;cursor:cell;max-width:14rem;overflow:hidden;text-overflow:ellipsis}
+.sh td.n{text-align:right}
+.sh td.f{background:color-mix(in srgb,var(--accent) 7%,transparent)}
+.sh td.err{color:var(--bad);font-family:var(--f-mono);font-size:.78rem}
+.sh td.h{font-weight:700;background:var(--surface-2)}
+.sh td.t{font-weight:700;background:color-mix(in srgb,var(--accent) 22%,var(--surface));color:var(--ink)}
+.sh td.hl{background:color-mix(in srgb,#EAB308 25%,var(--surface))}
+.sh td.ref{box-shadow:inset 0 0 0 2px #2563EB;background:color-mix(in srgb,#2563EB 10%,var(--surface))}
+.sh td.sel{box-shadow:inset 0 0 0 2.5px var(--accent)}
+.chart svg{width:100%;height:auto;display:block}
+.chart text{font-family:var(--f-body);fill:var(--ink)}
+.chart .ch-t{font-weight:700;font-size:13px}
+.chart .ch-l{font-size:10.5px;fill:var(--ink-2)}
+.chart .ch-v{font-size:10.5px;font-weight:700}
+.chart .ch-in{font-size:11px;font-weight:700;fill:#fff}
+.chart .ch-bar{fill:var(--accent)}
+.chart .ch-line{fill:none;stroke:var(--accent);stroke-width:2.5}
+.chart .ch-dot{fill:var(--surface);stroke:var(--accent);stroke-width:2.5}
+.chart .ch-g{stroke:var(--line);stroke-dasharray:3 3}
+.chart .ch-ax,.chart .ch-brk{stroke:var(--ink);stroke-width:1.5;fill:none}
+.chart .ch-sl{stroke:var(--surface);stroke-width:1.5}
+.mono-list{font-family:var(--f-mono);font-size:.86rem;line-height:1.7;margin:0}
+.cmp th.hl,.cmp td.hl{background:color-mix(in srgb,var(--accent) 22%,var(--surface))}
+.big-ref{font-family:var(--f-mono);font-size:1.4em;color:var(--accent)}
+.ocard{display:flex;flex-direction:column;gap:.5rem}
+.oc-row{display:flex;flex-direction:column;gap:.1rem;padding:.45rem .6rem;border:1.5px solid var(--edge);border-radius:4px;background:var(--surface)}
+.oc-row span{font-family:var(--f-mono);font-size:.82rem}
+.oc-k{font-family:var(--f-mono);font-size:.68rem !important;text-transform:uppercase;letter-spacing:.05em;color:var(--accent)}
+.fn-build{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;display:flex;flex-wrap:wrap;gap:.15rem;margin:.4rem 0 .8rem}
+.fn-p{font-family:var(--f-mono);font-weight:600;padding:.05rem .3rem;border-radius:3px;background:var(--surface-2)}
+.fn-p.eq{background:var(--ink);color:var(--surface)}.fn-p.nm{background:color-mix(in srgb,var(--accent) 25%,var(--surface))}
+.fn-p.rg{background:color-mix(in srgb,#2563EB 18%,var(--surface))}.fn-p.sp{background:color-mix(in srgb,#EAB308 30%,var(--surface))}
+.goals{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.4rem}
+.goals li{padding:.45rem .7rem;border:1.5px solid var(--line);border-radius:4px;background:var(--surface)}
+.goals li.ok{border-color:var(--good);background:color-mix(in srgb,var(--good) 12%,var(--surface))}
+.ifflow{width:100%;display:block}
+.ifflow line{stroke:var(--ink-2);stroke-width:1.5}
+.ifflow polygon,.ifflow rect{fill:var(--surface-2);stroke:var(--edge);stroke-width:1.5;transition:.2s}
+.ifflow polygon.on,.ifflow rect.on{fill:color-mix(in srgb,var(--accent) 35%,var(--surface))}
+.ifflow text{font-size:11px;fill:var(--ink);pointer-events:none}.ifflow .lb{font-family:var(--f-mono);font-size:10px;fill:var(--ink-2)}
+.nsd-if{border:2px solid var(--edge);background:var(--surface);font-size:.88rem}
+.nsd-q{position:relative;text-align:center;padding:.5rem .4rem 1.4rem;border-bottom:2px solid var(--edge);background:linear-gradient(to top right,transparent calc(50% - 1px),var(--edge) 50%,transparent calc(50% + 1px)) left/50% 100% no-repeat,linear-gradient(to top left,transparent calc(50% - 1px),var(--edge) 50%,transparent calc(50% + 1px)) right/50% 100% no-repeat}
+.nsd-q small{position:absolute;left:.4rem;right:.4rem;bottom:.15rem;display:flex;justify-content:space-between;font-family:var(--f-mono);color:var(--ink-2)}
+.nsd-q span{background:var(--surface);padding:0 .3rem}
+.nsd-b{display:grid;grid-template-columns:1fr 1fr}.nsd-b > div{padding:.5rem;text-align:center;transition:.2s}.nsd-b > div:first-child{border-right:2px solid var(--edge)}
+.nsd-e{padding:.5rem;text-align:center;border-top:2px solid var(--edge)}
+.nsd-if .on:not(.nsd-q){background:color-mix(in srgb,var(--accent) 30%,var(--surface))}
+.wb{font-family:var(--f-mono);font-size:1rem;font-weight:600;padding:.1rem .2rem;border:1.5px solid var(--edge);border-radius:4px;background:color-mix(in srgb,#2563EB 12%,var(--surface));color:var(--ink)}
+.legend3{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.82rem;color:var(--ink-2)}.legend3 b{color:var(--ink);margin-right:.25rem}
+table.db{font-size:.84rem}
+table.db caption{caption-side:top;text-align:left;font-family:var(--f-mono);font-weight:600;font-size:.82rem;padding:.2rem 0;color:var(--accent)}
+table.db th.pk{text-decoration:underline;text-decoration-thickness:2px}
+table.db th.pk::after{content:" 🔑";font-size:.8em}
+table.db th.fk::after{content:" ↗";color:var(--accent)}
+table.db tbody tr{cursor:pointer}
+table.db tr.on td,table.db td.on{background:color-mix(in srgb,var(--accent) 25%,var(--surface))}
+table.db tr.bad td{background:color-mix(in srgb,var(--bad) 18%,var(--surface))}
+.dbs-fig{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;padding:.6rem;background:color-mix(in srgb,#EAB308 12%,var(--surface));border:1.5px solid var(--edge);border-radius:4px}
+.dbs-lbl{width:100%;font-family:var(--f-mono);font-weight:600;font-size:.8rem}
+.dbs-p,.dbs-dbms,.dbs-st span,.dbs-in span[data-part]{border:1.5px solid var(--edge);border-radius:4px;background:var(--surface);padding:.5rem .6rem;font-size:.85rem;text-align:center}
+.dbs-p{flex:0 0 6.5rem}.dbs-dbms{flex:1;min-width:14rem;display:flex;flex-direction:column;gap:.4rem}
+.dbs-in{display:flex;align-items:center;gap:.3rem}.dbs-in span[data-part]{flex:1}
+.dbs-st{display:flex;flex-direction:column;gap:.4rem}
+.dbs-arrow{font-family:var(--f-mono);color:var(--accent);font-weight:700}
+.qb{display:flex;flex-direction:column;gap:.4rem;font-size:.88rem}
+.qb label{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem}
+.qb select,.qb input{font:inherit;font-family:var(--f-mono);font-size:.82rem;padding:.2rem .3rem;border:1.5px solid var(--edge);border-radius:3px;background:var(--surface);color:var(--ink)}
+.sql{margin:.6rem 0;padding:.5rem .7rem;font-family:var(--f-mono);font-size:.86rem;background:var(--bar);color:var(--bar-ink);border-radius:4px;white-space:pre-wrap}
+.sql b{color:var(--led)}
+.clients{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.4rem}
+.cl{display:flex;flex-direction:column;align-items:center;gap:.1rem;padding:.5rem .2rem;border:1.5px solid var(--edge);border-radius:4px;background:var(--surface);cursor:pointer;box-shadow:3px 3px 0 var(--edge-shadow)}
+.cl span{font-size:1.6rem}.cl small{font-size:.75rem}.cl em{font-style:normal;font-family:var(--f-mono);font-size:.72rem;color:var(--accent)}
+.cl:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--edge-shadow)}
+.srv{margin-top:.8rem;border:1.5px solid var(--edge);border-radius:4px;background:var(--surface-2);padding:.5rem}
+.srv-h{font-family:var(--f-mono);font-size:.8rem;font-weight:600;margin-bottom:.4rem}
+.seats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.3rem}
+.seats span{display:grid;place-items:center;height:2rem;border:1.5px solid var(--line);border-radius:6px 6px 2px 2px;background:var(--surface);font-family:var(--f-mono);font-size:.8rem}
+.seats span.taken{background:color-mix(in srgb,var(--accent) 25%,var(--surface));border-color:var(--accent)}
+.seats span.lock{background:#FDE68A;border-color:#CA8A04;color:#111}
+@media (max-width:600px){.clients{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.counters{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:.6rem}
+.cnt{display:flex;flex-direction:column;align-items:center;padding:.7rem .5rem;border:1.5px solid var(--edge);border-radius:4px;background:var(--surface);box-shadow:3px 3px 0 var(--edge-shadow);text-align:center}
+.cnt span{font-size:1.6rem}.cnt b{font-family:var(--f-mono);font-size:1.25rem;color:var(--accent);font-variant-numeric:tabular-nums}.cnt small{font-size:.78rem;color:var(--ink-2)}
+.cnt.t{background:var(--surface-2)}
+.baskets{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.35rem;margin-top:.7rem}
+.baskets span{display:grid;place-items:center;min-height:2.6rem;border:1.5px dashed var(--line);border-radius:6px;font-size:1.2rem;letter-spacing:.1em;opacity:.45;transition:.2s}
+.baskets span.on{opacity:1;border:1.5px solid var(--accent);background:color-mix(in srgb,var(--accent) 14%,var(--surface))}
 
-.ser0{--accent:#0B7A80}.ser1{--accent:#6D28D9}.ser2{--accent:#C2410C}.ser3{--accent:#1D4ED8}.ser4{--accent:#15803D}.ser5{--accent:#BE123C}.ser6{--accent:#0E7490}.ser7{--accent:#4338CA}.ser8{--accent:#B45309}.ser9{--accent:#A21CAF}.ser10{--accent:#047857}.ser11{--accent:#B91C1C}.ser12{--accent:#7C3AED}.ser13{--accent:#0369A1}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .ser0{--accent:#2DD4BF}:root:not([data-theme="light"]) .ser1{--accent:#A78BFA}:root:not([data-theme="light"]) .ser2{--accent:#FB923C}:root:not([data-theme="light"]) .ser3{--accent:#60A5FA}:root:not([data-theme="light"]) .ser4{--accent:#4ADE80}:root:not([data-theme="light"]) .ser5{--accent:#FB7185}:root:not([data-theme="light"]) .ser6{--accent:#22D3EE}:root:not([data-theme="light"]) .ser7{--accent:#818CF8}:root:not([data-theme="light"]) .ser8{--accent:#FBBF24}:root:not([data-theme="light"]) .ser9{--accent:#E879F9}:root:not([data-theme="light"]) .ser10{--accent:#34D399}:root:not([data-theme="light"]) .ser11{--accent:#F87171}:root:not([data-theme="light"]) .ser12{--accent:#C4B5FD}:root:not([data-theme="light"]) .ser13{--accent:#38BDF8}}
-:root[data-theme="dark"] .ser0{--accent:#2DD4BF}:root[data-theme="dark"] .ser1{--accent:#A78BFA}:root[data-theme="dark"] .ser2{--accent:#FB923C}:root[data-theme="dark"] .ser3{--accent:#60A5FA}:root[data-theme="dark"] .ser4{--accent:#4ADE80}:root[data-theme="dark"] .ser5{--accent:#FB7185}:root[data-theme="dark"] .ser6{--accent:#22D3EE}:root[data-theme="dark"] .ser7{--accent:#818CF8}:root[data-theme="dark"] .ser8{--accent:#FBBF24}:root[data-theme="dark"] .ser9{--accent:#E879F9}:root[data-theme="dark"] .ser10{--accent:#34D399}:root[data-theme="dark"] .ser11{--accent:#F87171}:root[data-theme="dark"] .ser12{--accent:#C4B5FD}:root[data-theme="dark"] .ser13{--accent:#38BDF8}
+.ser0{--accent:#0B7A80}.ser1{--accent:#6D28D9}.ser2{--accent:#C2410C}.ser3{--accent:#1D4ED8}.ser4{--accent:#15803D}.ser5{--accent:#BE123C}.ser6{--accent:#0E7490}.ser7{--accent:#4338CA}.ser8{--accent:#B45309}.ser9{--accent:#A21CAF}.ser10{--accent:#047857}.ser11{--accent:#B91C1C}.ser12{--accent:#7C3AED}.ser13{--accent:#0369A1}.ser14{--accent:#4D7C0F}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .ser0{--accent:#2DD4BF}:root:not([data-theme="light"]) .ser1{--accent:#A78BFA}:root:not([data-theme="light"]) .ser2{--accent:#FB923C}:root:not([data-theme="light"]) .ser3{--accent:#60A5FA}:root:not([data-theme="light"]) .ser4{--accent:#4ADE80}:root:not([data-theme="light"]) .ser5{--accent:#FB7185}:root:not([data-theme="light"]) .ser6{--accent:#22D3EE}:root:not([data-theme="light"]) .ser7{--accent:#818CF8}:root:not([data-theme="light"]) .ser8{--accent:#FBBF24}:root:not([data-theme="light"]) .ser9{--accent:#E879F9}:root:not([data-theme="light"]) .ser10{--accent:#34D399}:root:not([data-theme="light"]) .ser11{--accent:#F87171}:root:not([data-theme="light"]) .ser12{--accent:#C4B5FD}:root:not([data-theme="light"]) .ser13{--accent:#38BDF8}:root:not([data-theme="light"]) .ser14{--accent:#A3E635}}
+:root[data-theme="dark"] .ser0{--accent:#2DD4BF}:root[data-theme="dark"] .ser1{--accent:#A78BFA}:root[data-theme="dark"] .ser2{--accent:#FB923C}:root[data-theme="dark"] .ser3{--accent:#60A5FA}:root[data-theme="dark"] .ser4{--accent:#4ADE80}:root[data-theme="dark"] .ser5{--accent:#FB7185}:root[data-theme="dark"] .ser6{--accent:#22D3EE}:root[data-theme="dark"] .ser7{--accent:#818CF8}:root[data-theme="dark"] .ser8{--accent:#FBBF24}:root[data-theme="dark"] .ser9{--accent:#E879F9}:root[data-theme="dark"] .ser10{--accent:#34D399}:root[data-theme="dark"] .ser11{--accent:#F87171}:root[data-theme="dark"] .ser12{--accent:#C4B5FD}:root[data-theme="dark"] .ser13{--accent:#38BDF8}:root[data-theme="dark"] .ser14{--accent:#A3E635}
 .kitap-sub{font-style:italic;font-size:clamp(1rem,1.6vw,1.3rem);color:var(--ink-2);margin:-.2em 0 1.2rem}
 .hero h1 .cur{display:inline-block;width:.55em;height:.95em;background:var(--accent);vertical-align:-.12em;margin-left:.1em;animation:blink 1.1s steps(1) infinite}
 @media (prefers-reduced-motion: reduce){.hero h1 .cur{animation:none}}
@@ -1483,9 +1582,9 @@ textarea.code-in{width:100%;min-height:9rem;font-family:var(--f-mono);font-size:
     </a>
     <a class="grade" href="#klasse-7-8">
       <span class="g-lbl">Klasse</span><span class="g-num">7/8</span>
-      <span class="g-meta">8 Reihen · 60 Stunden</span>
+      <span class="g-meta">9 Reihen · 67 Stunden</span>
       <span class="g-txt">Netze, Codierung, Verschlüsselung, Informatik und Gesellschaft, Algorithmen, Mikrocontroller, maschinelles Lernen und Programmieren mit JavaScript.</span>
-      <span class="g-leds" aria-hidden="true"><i class="ser6" title="Informatiksysteme und Netze"></i><i class="ser7" title="Daten und ihre Codierung"></i><i class="ser8" title="Daten verschlüsseln"></i><i class="ser9" title="Informatik und Gesellschaft"></i><i class="ser10" title="Algorithmen und Problemlösen"></i><i class="ser11" title="Einen Mikrocontroller programmieren"></i><i class="ser12" title="Maschinelles Lernen"></i><i class="ser13" title="Programmieren mit Programmiersprachen"></i></span>
+      <span class="g-leds" aria-hidden="true"><i class="ser6" title="Informatiksysteme und Netze"></i><i class="ser7" title="Daten und ihre Codierung"></i><i class="ser8" title="Daten verschlüsseln"></i><i class="ser9" title="Informatik und Gesellschaft"></i><i class="ser10" title="Algorithmen und Problemlösen"></i><i class="ser11" title="Einen Mikrocontroller programmieren"></i><i class="ser12" title="Maschinelles Lernen"></i><i class="ser13" title="Programmieren mit Programmiersprachen"></i><i class="ser14" title="Daten und Datenbanken"></i></span>
     </a>
     </div>
   </section>
@@ -1677,6 +1776,11 @@ textarea.code-in{width:100%;min-height:9rem;font-family:var(--f-mono);font-size:
         <div class="l-body"><p class="eyebrow">Kapitel 3 · 9 Stunden · ≈ 20 Unterrichtsstunden</p><h2>Programmieren mit Programmiersprachen</h2><p class="l-q">Von Blöcken zum Text: Die Reihe programmiert in JavaScript auf einer Canvas-Zeichenfläche. Schleifen, Variablen, Bedingungen, Arrays und Funktionen werden direkt im Browser ausprobiert. Danach entstehen Animationen, Sortierverfahren werden verglichen und Bilder Pixel für Pixel bearbeitet.</p></div>
         <div class="l-go"><a class="btn primary" href="#klasse-7-8/8-Programmieren">Stunden →</a><a class="btn" href="8-Programmieren/00_Uebersicht.html">Übersicht</a></div>
       </li>
+      <li class="lesson ser14">
+        <div class="l-num">4</div>
+        <div class="l-body"><p class="eyebrow">Kapitel 4 · 7 Stunden · ≈ 10 Unterrichtsstunden</p><h2>Daten und Datenbanken</h2><p class="l-q">Daten sammeln, ordnen und auswerten: Die Reihe arbeitet mit Tabellenkalkulation, Diagrammen und Formeln, nutzt WENN-Funktionen und zeigt, wie Datenbanken mit Tabellen, Datensätzen und Abfragen funktionieren – bis hin zu Big Data.</p></div>
+        <div class="l-go"><a class="btn primary" href="#klasse-7-8/8-Datenbanken">Stunden →</a><a class="btn" href="8-Datenbanken/00_Uebersicht.html">Übersicht</a></div>
+      </li>
     </ol>
   </section>
   <section class="view ser6" data-view="klasse-7-8/7-Informatiksysteme_Netze" hidden>
@@ -1803,12 +1907,27 @@ textarea.code-in{width:100%;min-height:9rem;font-family:var(--f-mono);font-size:
         <li><a class="row" href="8-Programmieren/09_Wiederholung.html"><span class="no">09</span><span class="rt"><b>Wiederholung und Selbsttest</b><small>Was kann ich, und was sollte ich noch üben?</small></span><span class="go">öffnen →</span></a><a class="ws" href="8-Programmieren/09_Wiederholung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
     </ol>
   </section>
+  <section class="view ser14" data-view="klasse-7-8/8-Datenbanken" hidden>
+    <div class="topic-head">
+      <div><p class="eyebrow">Klasse 8 · Kapitel 4</p><h2>Daten und Datenbanken</h2><p>Daten sammeln, ordnen und auswerten: Die Reihe arbeitet mit Tabellenkalkulation, Diagrammen und Formeln, nutzt WENN-Funktionen und zeigt, wie Datenbanken mit Tabellen, Datensätzen und Abfragen funktionieren – bis hin zu Big Data.</p></div>
+      <a class="btn primary" href="8-Datenbanken/00_Uebersicht.html">Übersicht der Reihe →</a>
+    </div>
+    <ol class="rows">
+        <li><a class="row" href="8-Datenbanken/01_Mit_Daten_arbeiten.html"><span class="no">01</span><span class="rt"><b>Mit Daten arbeiten</b><small>Wie werden Daten strukturiert und in einer Tabelle erfasst?</small></span><span class="go">öffnen →</span></a><a class="ws" href="8-Datenbanken/01_Mit_Daten_arbeiten.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="8-Datenbanken/02_Diagramme.html"><span class="no">02</span><span class="rt"><b>Diagramme auswerten und interpretieren</b><small>Welches Diagramm passt zu welchen Daten – und wie erkennt man Manipulation?</small></span><span class="go">öffnen →</span></a><a class="ws" href="8-Datenbanken/02_Diagramme.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="8-Datenbanken/03_Mit_Daten_rechnen.html"><span class="no">03</span><span class="rt"><b>Mit Daten rechnen</b><small>Wie rechnet man in einem Tabellenkalkulationsprogramm mit Formeln und Funktionen?</small></span><span class="go">öffnen →</span></a><a class="ws" href="8-Datenbanken/03_Mit_Daten_rechnen.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="8-Datenbanken/04_Wenn_Funktion.html"><span class="no">04</span><span class="rt"><b>Einfache Wenn-Funktionen nutzen</b><small>Wie trifft ein Tabellenkalkulationsprogramm Entscheidungen?</small></span><span class="go">öffnen →</span></a><a class="ws" href="8-Datenbanken/04_Wenn_Funktion.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="8-Datenbanken/05_Datenbanken.html"><span class="no">05</span><span class="rt"><b>Bedeutung von Datenbanken</b><small>Wie sind Datenbanken aufgebaut – und warum nutzen Unternehmen sie?</small></span><span class="go">öffnen →</span></a><a class="ws" href="8-Datenbanken/05_Datenbanken.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="8-Datenbanken/06_Big_Data.html"><span class="no">06</span><span class="rt"><b>Big Data</b><small>Was ist Big Data – und wie nutzen Unternehmen riesige Datenmengen?</small></span><span class="go">öffnen →</span></a><a class="ws" href="8-Datenbanken/06_Big_Data.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+        <li><a class="row" href="8-Datenbanken/07_Wiederholung.html"><span class="no">07</span><span class="rt"><b>Wiederholung und Selbsttest</b><small>Was kann ich, und was sollte ich noch üben?</small></span><span class="go">öffnen →</span></a><a class="ws" href="8-Datenbanken/07_Wiederholung.pdf" target="_blank" rel="noopener" title="Arbeitsblatt (PDF)">AB</a></li>
+    </ol>
+  </section>
   <footer class="site-foot">KITAP · freie Unterrichtsmaterialien · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></footer>
 </section>
 </main>
 </div>
 <script>
-const T = {"klasse-5-6": "Klasse 5/6", "klasse-5-6/1-Informatiksysteme": "Informatiksysteme nutzen", "klasse-5-6/2-Algorithmen": "Algorithmen und Problemlösen", "klasse-5-6/3-Bilder_Videos": "Bilder und Videos", "klasse-5-6/4-Recherchieren_Praesentieren": "Recherchieren und Präsentieren", "klasse-5-6/5-Textgestaltung": "Textgestaltung", "klasse-5-6/6-Kommunikation": "Kommunikation in der vernetzten Welt", "klasse-7-8": "Klasse 7/8", "klasse-7-8/7-Informatiksysteme_Netze": "Informatiksysteme und Netze", "klasse-7-8/7-Daten_codieren": "Daten und ihre Codierung", "klasse-7-8/7-Verschluesselung": "Daten verschlüsseln", "klasse-7-8/7-Gesellschaft": "Informatik und Gesellschaft", "klasse-7-8/7-Algorithmen": "Algorithmen und Problemlösen", "klasse-7-8/8-Mikrocontroller": "Einen Mikrocontroller programmieren", "klasse-7-8/8-Maschinelles_Lernen": "Maschinelles Lernen", "klasse-7-8/8-Programmieren": "Programmieren mit Programmiersprachen"};
+const T = {"klasse-5-6": "Klasse 5/6", "klasse-5-6/1-Informatiksysteme": "Informatiksysteme nutzen", "klasse-5-6/2-Algorithmen": "Algorithmen und Problemlösen", "klasse-5-6/3-Bilder_Videos": "Bilder und Videos", "klasse-5-6/4-Recherchieren_Praesentieren": "Recherchieren und Präsentieren", "klasse-5-6/5-Textgestaltung": "Textgestaltung", "klasse-5-6/6-Kommunikation": "Kommunikation in der vernetzten Welt", "klasse-7-8": "Klasse 7/8", "klasse-7-8/7-Informatiksysteme_Netze": "Informatiksysteme und Netze", "klasse-7-8/7-Daten_codieren": "Daten und ihre Codierung", "klasse-7-8/7-Verschluesselung": "Daten verschlüsseln", "klasse-7-8/7-Gesellschaft": "Informatik und Gesellschaft", "klasse-7-8/7-Algorithmen": "Algorithmen und Problemlösen", "klasse-7-8/8-Mikrocontroller": "Einen Mikrocontroller programmieren", "klasse-7-8/8-Maschinelles_Lernen": "Maschinelles Lernen", "klasse-7-8/8-Programmieren": "Programmieren mit Programmiersprachen", "klasse-7-8/8-Datenbanken": "Daten und Datenbanken"};
 (() => {
   const views = [...document.querySelectorAll('.view')], crumbs = document.getElementById('crumbs'), home = document.getElementById('home');
   function show() {

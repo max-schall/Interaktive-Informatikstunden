@@ -1,0 +1,140 @@
+<!--
+title: Wiederholung und Selbsttest
+short: Selbsttest
+time: 1 Unterrichtsstunde
+q: Was kann ich, und was sollte ich noch üben?
+facts: Zusammenfassung als Karteikarten | Trainer T1–T4: Funktionen anwenden, Mittelwerte berechnen, Wenn-Funktionen anwenden, Diagramme erstellen | Großes Quiz und „Ich kann …“-Liste mit Links zurück in die Stunden
+inter: Karteikarten · Paare finden · Abschlussfahrt kalkulieren · Temperaturmessung auswerten · Lagerbestand im Burger-Restaurant · Schülersprecherwahl als Diagramm · Quiz · Selbsteinschätzung
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Daten und Datenbanken</p>
+      <h1>Wiederholung und Selbsttest<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Daten erfassen, Diagramme auswerten, mit Formeln und Funktionen rechnen, Wenn-Funktionen, Datenbanken und Big Data: Prüfe, was du sicher kannst.</p>
+      <div class="controls"><button class="btn primary" data-go="begriffe">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="begriffe" data-label="Begriffe" data-yr="Wiederholen" data-title="Zusammenfassung" data-sub="Fachbegriffe als Karteikarten">
+  <div class="section-head"><p class="eyebrow">Station 1 · Zusammenfassung</p><h2>Fachbegriffe</h2></div>
+  <div id="flip"></div>
+  <h3 class="mt">Paare finden</h3>
+  <div id="match"></div>
+</section>
+
+<section class="station" id="t1" data-label="T1 Funktionen" data-yr="Trainer" data-title="T1 Funktionen anwenden" data-sub="Abschlussfahrt">
+  <div class="section-head"><p class="eyebrow">Station 2 · Trainer T1</p><h2>Abschlussfahrt nach Berlin</h2><p class="lead">Die Klasse 10 plant eine Abschlussfahrt. Ermittle die Summe in B7. Kurz vor der Fahrt erhöht der Reiseveranstalter die Preise für Übernachtung und Busfahrt um 15 %: Berechne in Spalte C die neuen Preise und in C9 die Mehrkosten.</p></div>
+  <div class="model"><div id="sh-t1"></div><div class="stack"><ol class="goals" id="g-t1"></ol><div class="controls"><button class="btn" data-reveal="t1a" aria-expanded="false">Lösung</button></div><p class="solution" id="t1a" hidden>B7: <code>=SUMME(B3:B6)</code> → 1.563,00 € · C3: <code>=B3*1,15</code> → 172,50 € · C4: <code>=B4*1,15</code> → 1.129,30 € · C5: <code>=B5</code>, C6: <code>=B6</code> · C7: <code>=SUMME(C3:C6)</code> → 1.732,80 € · C9: <code>=C7-B7</code> → 169,80 € mehr.</p></div></div>
+</section>
+
+<section class="station" id="t2" data-label="T2 Mittelwerte" data-yr="Trainer" data-title="T2 Mittelwerte berechnen" data-sub="Temperaturmessung">
+  <div class="section-head"><p class="eyebrow">Station 3 · Trainer T2</p><h2>Temperaturmessung</h2><p class="lead">An drei Wetterstationen wurde eine Woche lang jeden Tag um 12 Uhr die Temperatur gemessen. Ermittle in Zeile 10 die Mittelwerte. Wähle darunter, welcher Verlauf als Liniendiagramm erscheint.</p></div>
+  <div class="model"><div id="sh-t2"></div><div class="stack"><div class="vis"><div class="controls" style="margin-top:0"><div id="t2-seg"></div></div><div id="ch-t2"></div></div><ol class="goals" id="g-t2"></ol></div></div>
+</section>
+
+<section class="station" id="t3" data-label="T3 Wenn" data-yr="Trainer" data-title="T3 Wenn-Funktionen anwenden" data-sub="Lagerbestand">
+  <div class="section-head"><p class="eyebrow">Station 4 · Trainer T3</p><h2>Burger-Restaurant</h2><p class="lead">Fällt der Bestand einer Ware <b>unter 200</b>, wird sie nachbestellt. Ermittle in Spalte C mit einer WENN-Funktion, ob nachbestellt werden muss („Ja“ oder „Nein“).</p></div>
+  <div class="model"><div id="sh-t3"></div><div class="stack"><ol class="goals" id="g-t3"></ol><div class="controls"><button class="btn" id="t3-copy">C3 nach unten kopieren</button><button class="btn" data-reveal="t3a" aria-expanded="false">Lösung</button></div><p class="solution" id="t3a" hidden><code>=WENN(B3&lt;200;"Ja";"Nein")</code> oder <code>=WENN(B3&gt;=200;"Nein";"Ja")</code>. Nachbestellt werden Burgerbuns, Burgerpattys und Käse.</p></div></div>
+</section>
+
+<section class="station" id="t4" data-label="T4 Diagramme" data-yr="Trainer" data-title="T4 Diagramme erstellen" data-sub="Schülersprecherwahl">
+  <div class="section-head"><p class="eyebrow">Station 5 · Trainer T4</p><h2>Schülersprecherwahl</h2><p class="lead">Berechne in B8 mit der Summenfunktion, wie viele Stimmen abgegeben wurden, und in Spalte C den prozentualen Anteil (z. B. <code>=B3/B$8</code> oder <code>=B3/54</code>). Vergleiche Säulen- und Kreisdiagramm.</p></div>
+  <div class="model"><div class="stack"><div id="sh-t4"></div><ol class="goals" id="g-t4"></ol></div><div class="stack"><div class="vis" id="ch-t4a"></div><div class="vis" id="ch-t4b"></div></div></div>
+</section>
+
+<section class="station" id="quiz-st" data-label="Quiz" data-yr="Testen" data-title="Großes Quiz" data-sub="10 zufällige Fragen">
+  <div class="section-head"><p class="eyebrow">Station 6 · Quiz</p><h2>Großes Quiz</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<section class="station" id="uebungen" data-label="Ich kann …">
+  <div class="section-head"><p class="eyebrow">Selbsteinschätzung</p><h2>Ich kann …</h2></div>
+  <ol id="sc"></ol>
+</section>
+
+<script>
+const BEGRIFFE = [
+  ['Datensatz', 'alle Daten zu einem Objekt, z. B. einem Kunden'], ['Datentyp', 'Ganzzahl, Gleitkommazahl, Wahrheitswert, Zeichenkette'], ['Zelladresse', 'Spaltenbuchstabe + Zeilennummer, z. B. C2'], ['Arbeitsmappe', 'Dokument einer Tabellenkalkulation'],
+  ['Formel', 'Berechnung, beginnt immer mit ='], ['Zellbezug', 'Ergebnis passt sich bei Änderungen automatisch an'], ['Funktion', 'vorgefertigte Formel, z. B. SUMME'], ['Mittelwert', 'Summe aller Werte geteilt durch ihre Anzahl'],
+  ['WENN-Funktion', 'Prüfung; Dann-Wert; Sonst-Wert'], ['Kreisdiagramm', 'zeigt Anteile an einem Ganzen'], ['Redundanz', 'Daten sind mehrfach gespeichert'], ['Konsistenz', 'Daten sind widerspruchsfrei'],
+  ['Primärschlüssel', 'eindeutige ID eines Datensatzes'], ['Fremdschlüssel', 'verweist auf die ID einer anderen Tabelle'], ['SQL', 'Sprache für Suchanfragen in Datenbanken'], ['Big Data', 'riesige, oft unstrukturierte Datenmengen']
+];
+flipCards($('#flip'), BEGRIFFE);
+matcher($('#match'), shuffle(BEGRIFFE.slice()).slice(0, 7));
+const goalList = (el, gs) => el.innerHTML = gs.map(([ok, t]) => `<li class="${ok ? 'ok' : ''}">${t} ${ok ? '✔' : ''}</li>`).join('');
+const near = (a, b) => typeof a === 'number' && Math.abs(a - b) < .01;
+
+/* ===== T1 ===== */
+(() => {
+  const cells = {A1: 'Angebot Abschlussfahrt Berlin', A2: 'Posten', B2: 'Preis', C2: 'neuer Preis', A3: 'Busfahrt', B3: 150, A4: 'Übernachtung Jugendherberge', B4: 982, A5: 'Eintritte', B5: 336, A6: 'Stadtführung', B6: 95, A7: 'Summe', A9: 'Mehrkosten'};
+  const chk = s => goalList($('#g-t1'), [[near(s.get('B7'), 1563) && /SUMME/i.test(s.raw('B7')), 'B7: Summe mit Funktion'], [near(s.get('C3'), 172.5) && near(s.get('C4'), 1129.3), 'C3, C4: um 15 % erhöht'], [near(s.get('C7'), 1732.8), 'C7: neue Summe'], [near(s.get('C9'), 169.8), 'C9: Mehrkosten']]);
+  const sh = sheet($('#sh-t1'), {cols: 3, rows: 9, cells, fmt: {B: 'eur', C: 'eur'}, w: {A: '13rem'}, sel: 'B7', cls: {A1: 't', B1: 't', C1: 't', A2: 'h', B2: 'h', C2: 'h', A7: 'h', A9: 'h'}, lock: ['A1', 'A2', 'B2', 'C2', 'A7', 'A9'], onChange: chk});
+  chk(sh);
+})();
+
+/* ===== T2 ===== */
+(() => {
+  const T = [[23, 28, 17], [21, 25, 16], [22, 27, 16], [24, 27, 20], [24, 28, 21], [21, 24, 17], [23, 25, 17]];
+  const cells = {A1: 'Temperaturmessung', A2: 'Tag', B2: 'Station A', C2: 'Station B', D2: 'Station C', A10: 'Mittelwert'};
+  T.forEach((r, i) => { cells['A' + (i + 3)] = `${i + 1}. Juli`; r.forEach((v, j) => cells['BCD'[j] + (i + 3)] = v); });
+  let col = 'B';
+  const c = chart($('#ch-t2'), {type: 'line', unit: ' °C', min: 10, max: 30, step: 5});
+  const chk = s => { const d = []; for (let r = 3; r <= 9; r++) d.push([String(r - 2), s.get(col + r)]); c.set({data: d, title: `${s.text(col + '2')} – Mittelwert ${typeof s.get(col + '10') === 'number' ? numDE(s.get(col + '10'), 1) + ' °C' : '?'}`});
+    goalList($('#g-t2'), ['B', 'C', 'D'].map((k, j) => [/MITTELWERT/i.test(s.raw(k + '10')) && near(s.get(k + '10'), T.reduce((a, r) => a + r[j], 0) / 7), `${k}10: Mittelwert Station ${'ABC'[j]}`])); };
+  const sh = sheet($('#sh-t2'), {cols: 4, rows: 10, cells, fmt: {B10: 'num', C10: 'num', D10: 'num'}, sel: 'B10', cls: {A1: 't', B1: 't', C1: 't', D1: 't', A2: 'h', B2: 'h', C2: 'h', D2: 'h', A10: 'h', B10: 'hl', C10: 'hl', D10: 'hl'}, lock: ['A1', 'A2', 'B2', 'C2', 'D2', 'A10'], onChange: chk});
+  seg($('#t2-seg'), [['B', 'Station A'], ['C', 'Station B'], ['D', 'Station C']], v => { col = v; chk(sh); });
+})();
+
+/* ===== T3 ===== */
+(() => {
+  const W = [['Burgerbuns', 188], ['Burgerpattys', 199], ['Tomaten', 224], ['Zwiebeln', 215], ['Burgersauce 500 ml', 202], ['Käse', 183]];
+  const cells = {A1: 'Lagerbestand', A2: 'Ware', B2: 'Bestand (in Stück)', C2: 'Nachbestellung'}; W.forEach(([n, b], i) => { cells['A' + (i + 3)] = n; cells['B' + (i + 3)] = b; });
+  const chk = s => { const ok = W.filter(([, b], i) => /WENN/i.test(s.raw('C' + (i + 3))) && String(s.get('C' + (i + 3))).toLowerCase() === (b < 200 ? 'ja' : 'nein')).length;
+    goalList($('#g-t3'), [[/WENN/i.test(s.raw('C3')) && String(s.get('C3')).toLowerCase() === 'ja', 'C3: WENN-Funktion für Burgerbuns'], [ok === W.length, `alle Waren richtig (${ok} / ${W.length})`]]); };
+  const sh = sheet($('#sh-t3'), {cols: 3, rows: 8, cells, sel: 'C3', w: {A: '11rem', B: '8rem', C: '8rem'}, cls: {A1: 't', B1: 't', C1: 't', A2: 'h', B2: 'h', C2: 'h'}, lock: ['A1', 'A2', 'B2', 'C2'], onChange: chk});
+  $('#t3-copy').onclick = () => { const f = sh.raw('C3'); if (!f) return; for (let r = 4; r <= 8; r++) sh.set('C' + r, f.replace(/([A-Z])3(?!\d)/g, '$1' + r)); chk(sh); };
+  chk(sh);
+})();
+
+/* ===== T4 ===== */
+(() => {
+  const K = [['Lina', 8], ['Betys', 12], ['Irida', 11], ['Stefania', 15], ['Ilcan', 8]];
+  const cells = {A1: 'Schülersprecherwahl', A2: 'Kandidat/-in', B2: 'Stimmen', C2: 'Anteil', A8: 'Summe'}; K.forEach(([n, v], i) => { cells['A' + (i + 3)] = n; cells['B' + (i + 3)] = v; });
+  const a = chart($('#ch-t4a'), {type: 'bar', title: 'Stimmen je Kandidat', data: K}), b = chart($('#ch-t4b'), {type: 'pie', title: 'Stimmenverteilung', data: K});
+  const chk = s => { const d = K.map((k, i) => [s.text('A' + (i + 3)), typeof s.get('B' + (i + 3)) === 'number' ? s.get('B' + (i + 3)) : 0]); a.set({data: d}); b.set({data: d});
+    const sum = d.reduce((x, y) => x + y[1], 0), ok = K.filter((k, i) => near(s.get('C' + (i + 3)), d[i][1] / sum)).length;
+    goalList($('#g-t4'), [[/SUMME/i.test(s.raw('B8')) && near(s.get('B8'), sum), `B8: Summe der Stimmen (${sum})`], [ok === K.length, `Spalte C: Anteile (${ok} / ${K.length})`]]); };
+  const sh = sheet($('#sh-t4'), {cols: 3, rows: 8, cells, sel: 'B8', fmt: {C: 'pct'}, w: {A: '8rem'}, cls: {A1: 't', B1: 't', C1: 't', A2: 'h', B2: 'h', C2: 'h', A8: 'h'}, lock: ['A1', 'A2', 'B2', 'C2', 'A8'], onChange: chk});
+  chk(sh);
+})();
+
+mcQuiz($('#quiz'), [
+  {q: 'Welcher Datentyp passt zu „wahr“ oder „falsch“?', a: ['Wahrheitswert', 'Zeichenkette', 'Ganzzahl', 'Gleitkommazahl'], ok: 0},
+  {q: 'Was ist C2?', a: ['eine Zelladresse', 'eine Funktion', 'ein Datentyp', 'ein Diagramm'], ok: 0},
+  {q: 'Womit beginnt jede Berechnung in der Tabellenkalkulation?', a: ['mit =', 'mit +', 'mit #', 'mit dem Funktionsnamen'], ok: 0},
+  {q: 'Was berechnet =SUMME(A1:A3)?', a: ['A1 + A2 + A3', 'A1 + A3', 'A1 · A3', 'den Mittelwert'], ok: 0},
+  {q: 'Was berechnet =SUMME(A1;A3)?', a: ['A1 + A3', 'A1 + A2 + A3', 'A1 − A3', 'nichts, Fehler'], ok: 0},
+  {q: 'Was gibt =WENN(5>3;"ja";"nein") aus?', a: ['ja', 'nein', 'WAHR', '5'], ok: 0},
+  {q: 'Welches Diagramm passt zum Verlauf der Temperatur?', a: ['Liniendiagramm', 'Kreisdiagramm', 'keines', 'Tabelle'], ok: 0},
+  {q: 'Wo muss die Achse eines Säulendiagramms beginnen?', a: ['bei null', 'beim kleinsten Wert', 'beim Mittelwert', 'egal'], ok: 0},
+  {q: 'Was identifiziert einen Datensatz eindeutig?', a: ['der Primärschlüssel', 'der Fremdschlüssel', 'der Name', 'das Datum'], ok: 0},
+  {q: 'Was ist das Ziel einer Datenbank?', a: ['Daten konsistent und ohne Redundanz speichern', 'Daten möglichst oft kopieren', 'Daten bunt darstellen', 'Daten löschen'], ok: 0},
+  {q: 'Wie viel Prozent der Daten bei Big Data sind etwa unstrukturiert?', a: ['80 %', '20 %', '5 %', '100 %'], ok: 0},
+  {q: 'Welches Programm verwaltet eine Datenbank?', a: ['das Datenbankmanagementsystem', 'der Browser', 'das Betriebssystem', 'die Tabellenkalkulation'], ok: 0}
+], {pick: 10});
+selfCheck($('#sc'), [
+  {t: 'Ich kann Datentypen unterscheiden und Daten strukturiert in einer Tabelle erfassen.', href: '01_Mit_Daten_arbeiten.html#typen'},
+  {t: 'Ich kann Zelladressen angeben und Zellen formatieren.', href: '01_Mit_Daten_arbeiten.html#tabelle'},
+  {t: 'Ich kann den passenden Diagrammtyp wählen.', href: '02_Diagramme.html#wahl'},
+  {t: 'Ich kann manipulierte Diagramme erkennen.', href: '02_Diagramme.html#m1'},
+  {t: 'Ich kann Formeln mit Zellbezügen schreiben.', href: '03_Mit_Daten_rechnen.html#formel'},
+  {t: 'Ich kann SUMME und MITTELWERT anwenden.', href: '03_Mit_Daten_rechnen.html#funktionen'},
+  {t: 'Ich kann eine WENN-Funktion aufbauen.', href: '04_Wenn_Funktion.html#logik'},
+  {t: 'Ich kann Redundanz und Konsistenz erklären.', href: '05_Datenbanken.html#gut'},
+  {t: 'Ich kann Primär- und Fremdschlüssel in Tabellen verfolgen.', href: '05_Datenbanken.html#relational'},
+  {t: 'Ich kann strukturierte und unstrukturierte Daten unterscheiden.', href: '06_Big_Data.html#was'}
+]);
+</script>

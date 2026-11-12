@@ -1,0 +1,194 @@
+<!--
+title: Diagramme auswerten und interpretieren
+short: Diagramme
+time: 1–2 Unterrichtsstunden
+q: Welches Diagramm passt zu welchen Daten – und wie erkennt man Manipulation?
+facts: Daten und Information: Informationen werden aus Daten gewonnen und interpretiert | Diagrammtypen: Kreisdiagramm (Anteile am Ganzen), Liniendiagramm (Verlauf), Säulen- und Balkendiagramm (Vergleich) | Diagramme interpretieren: erst beschreiben (Achsen, Beschriftung), dann deuten | Manipulation durch Achsenausschnitt und Skalierung
+inter: Dieselben Daten als Kreis-, Linien- und Säulendiagramm · Passenden Diagrammtyp wählen · M1 Achse manipulieren · M2 Social-Media-Nutzung auswerten · M3 Strommix 2012 und 2022 vergleichen · Eigenes Diagramm aus einer Tabelle
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Daten und Datenbanken</p>
+      <h1>Diagramme auswerten<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Aus einer langen Zahlentabelle liest kaum jemand etwas heraus. Ein <b>Diagramm</b> macht Daten auf einen Blick verständlich – kann aber auch einen <b>falschen Eindruck</b> erwecken.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wo hast du zuletzt ein Diagramm gesehen? Was wollte es zeigen?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Welches Diagramm passt zu welchen Daten – und wie erkennt man Manipulation?</p></div>
+      <div class="controls"><button class="btn primary" data-go="typen">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="typen" data-label="Diagrammtypen" data-yr="Erarbeitung" data-title="Diagrammtypen" data-sub="Kreis, Linie, Säule">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Diagrammtypen</p>
+    <h2>Gleiche Daten – drei Diagramme</h2>
+    <p class="lead">Aus <b>Daten</b> werden <b>Informationen</b> gewonnen, indem man ihnen eine Bedeutung zuspricht. Ein Tabellenkalkulationsprogramm erstellt aus einer Tabelle verschiedene Diagrammtypen. Jeder hat seine Stärken.</p>
+  </div>
+  <div class="model">
+    <div class="vis"><div class="controls" style="margin-top:0"><div id="ty-seg"></div><div id="ds-seg"></div></div><div id="ch-ty"></div></div>
+    <div class="stack"><p class="status" id="ty-st"></p>
+      <ul class="facts"><li><b>Kreisdiagramm:</b> Anteile an einem Ganzen (100 %).</li><li><b>Liniendiagramm:</b> Verlauf über die Zeit.</li><li><b>Säulen-/Balkendiagramm:</b> Werte miteinander vergleichen.</li></ul></div>
+  </div>
+</section>
+
+<section class="station" id="wahl" data-label="Typ wählen" data-yr="Übung" data-title="Diagrammtypen richtig einsetzen" data-sub="Welcher Typ passt?">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Diagrammtypen richtig einsetzen</p>
+    <h2>Welches Diagramm passt?</h2>
+    <p class="lead">Soll zum Beispiel der Anteil der fossilen Energieträger an der Stromerzeugung gezeigt werden, eignet sich ein <b>Kreisdiagramm</b> – ein Liniendiagramm dagegen nicht.</p>
+  </div>
+  <div id="sort-wahl"></div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Manipulation" data-yr="M1" data-title="Diagramme interpretieren" data-sub="Manipulation erkennen">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Material M1</p>
+    <h2>Gleiche Werte – anderer Eindruck</h2>
+    <p class="lead">Eine genaue <b>Beschreibung</b> ist die Voraussetzung für eine gute Interpretation: Was zeigen die Achsen? Säulendiagramme müssen <b>beim Nullpunkt</b> beginnen. Wird nur ein Ausschnitt gezeigt, wirken Unterschiede viel größer. Hier: Anteil der Bevölkerung, der das Internet nutzt.</p>
+  </div>
+  <div class="model">
+    <div class="vis"><div id="ch-m1"></div><label class="slider-row">y-Achse ab <b id="m1-v">0 %</b><input type="range" id="m1-r" min="0" max="80" step="5" value="0"></label><div class="controls"><div id="m1-seg"></div></div></div>
+    <div class="stack"><p class="status" id="m1-st"></p>
+      <div class="task-card"><header><span class="no">M1</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Worauf achten?</h3></header><p>Erkläre, was man bei der Erstellung von Diagrammen beachten muss.</p>
+        <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Säulen- und Balkendiagramme vollständig ab dem Nullpunkt darstellen, Achsen beschriften, eine passende Einteilung der Achse wählen und nur so viele Jahre zeigen, wie für die Aussage nötig sind. Sonst werden die Unterschiede verzerrt und Betrachter bekommen bewusst oder unbewusst einen falschen Eindruck.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="m2" data-label="M2 Social Media" data-yr="M2" data-title="Nutzungsverhalten" data-sub="Diagramme auswerten">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M2</p>
+    <h2>Wer nutzt soziale Netzwerke?</h2>
+    <p class="lead">Im Jahr 2022 gab es weltweit geschätzt 4,6 Milliarden Nutzer von sozialen Netzwerken. Wähle einen Datensatz.</p>
+  </div>
+  <div class="model">
+    <div class="vis"><div class="controls" style="margin-top:0"><div id="m2-seg"></div></div><div id="ch-m2"></div></div>
+    <div class="stack"><div id="m2-tf"></div></div>
+  </div>
+</section>
+
+<section class="station" id="m3" data-label="M3 Strommix" data-yr="M3" data-title="Energieversorgung" data-sub="Zwei Kreisdiagramme vergleichen">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M3</p>
+    <h2>Deutscher Strommix 2012 und 2022</h2>
+    <p class="lead">Zur Stromerzeugung werden verschiedene Energieträger genutzt. Vergleiche die beiden Diagramme. Beachte die Veränderung der Anteile.</p>
+  </div>
+  <div class="grid-2"><div class="vis" id="ch-12"></div><div class="vis" id="ch-22"></div></div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Vergleichen</h3></header><p>Welche Energieträger haben stark zugenommen, welche abgenommen?</p><div class="controls"><button class="btn" data-reveal="m3a" aria-expanded="false">Lösung</button></div><p class="solution" id="m3a" hidden>Stark zugenommen hat Wind (7,4 % → 38,2 %), leicht auch Biomasse (6 % → 7,4 %). Abgenommen haben Kernenergie (16 % → 6,3 %), Braunkohle (26 % → 18,9 %) und Steinkohle (19 % → 11,4 %). Erdgas blieb gleich (11,6 %).</p></div>
+    <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Grenzen</h3></header><p>Was können die Kreisdiagramme gut zeigen – und was nicht?</p><div class="controls"><button class="btn" data-reveal="m3b" aria-expanded="false">Lösung</button></div><p class="solution" id="m3b" hidden>Gut: die Anteile am Ganzen (100 %) in einem Jahr. Nicht: wie viel Strom insgesamt erzeugt wurde und wie sich die Werte zwischen 2012 und 2022 Jahr für Jahr entwickelt haben – dafür eignet sich ein Liniendiagramm.</p></div>
+  </div>
+</section>
+
+<section class="station" id="selbst" data-label="Selbst erstellen" data-yr="Übung" data-title="Diagramm erstellen" data-sub="Aus der Tabelle">
+  <div class="section-head">
+    <p class="eyebrow">Station 6 · Diagramm erstellen</p>
+    <h2>Von der Tabelle zum Diagramm</h2>
+    <p class="lead">Führt eine kurze Umfrage durch: <i>Welches soziale Netzwerk nutzt du am häufigsten?</i> Tragt die Ergebnisse ein – das Diagramm passt sich sofort an.</p>
+  </div>
+  <div class="model">
+    <div id="sh-own"></div>
+    <div class="vis"><div class="controls" style="margin-top:0"><div id="own-seg"></div></div><div id="ch-own"></div></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Diagramme</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Diagramme auswerten und interpretieren</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step>Aus <b>Daten</b> werden <b>Informationen</b> gewonnen, indem man sie interpretiert. Man muss kritisch prüfen, ob genügend Daten vorhanden sind.</li>
+        <li data-step><b>Kreisdiagramm:</b> Anteile am Ganzen · <b>Liniendiagramm:</b> Verlauf · <b>Säulen-/Balkendiagramm:</b> Vergleich von Werten.</li>
+        <li data-step>Interpretieren: zuerst <b>beschreiben</b> (Titel, Achsen, Einheiten), dann <b>deuten</b>.</li>
+        <li data-step><b>Manipulation:</b> Beginnt die Achse nicht bei null oder ist die Einteilung grob bzw. fein gewählt, wirken Unterschiede größer oder kleiner, als sie sind.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne zu den Werten 82 %, 86 %, 89 % ein ehrliches Säulendiagramm (Achse ab 0 %) und ein manipuliertes (Achse ab 80 %).</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Diagramme</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ===== Station 1 ===== */
+(() => {
+  const DS = {
+    sm: {t: 'Wo nutzen die Deutschen Social Media?', d: [['Feierabend', 53], ['Zeitvertreib', 52], ['Fernsehen', 44], ['im Bett', 41], ['Pausen', 30], ['Badezimmer', 24]], u: ' %', good: 'bar', why: {pie: 'Ungeeignet: Die Werte ergeben zusammen nicht 100 % – Mehrfachnennungen waren möglich.', line: 'Ungeeignet: Die Kategorien haben keine zeitliche Reihenfolge, die Linie dazwischen bedeutet nichts.', bar: 'Gut geeignet: Die Säulen lassen sich direkt vergleichen.'}},
+    nu: {t: 'Social-Media-Nutzer weltweit (Mrd.)', d: [['2014', 1.86], ['2016', 2.31], ['2018', 3.2], ['2020', 3.71], ['2022', 4.62]], u: '', good: 'line', why: {pie: 'Ungeeignet: Die Jahre sind keine Teile eines Ganzen.', line: 'Gut geeignet: Der Anstieg über die Zeit ist sofort zu erkennen.', bar: 'Möglich: Die Werte lassen sich vergleichen – den Verlauf zeigt ein Liniendiagramm noch deutlicher.'}},
+    st: {t: 'Strommix 2022', d: [['Wind', 38.2], ['Braunkohle', 18.9], ['Erdgas', 11.6], ['Steinkohle', 11.4], ['Biomasse', 7.4], ['Kernenergie', 6.3], ['Wasser', 3], ['Solar', 2.3], ['Andere', .9]], u: ' %', good: 'pie', why: {pie: 'Gut geeignet: Die Anteile ergeben zusammen 100 %.', line: 'Ungeeignet: Energieträger haben keine Reihenfolge in der Zeit.', bar: 'Möglich: Man kann die Werte vergleichen, sieht aber den Anteil am Ganzen schlechter.'}}
+  };
+  let ds = 'nu', ty = 'line';
+  const c = chart($('#ch-ty'), {});
+  const upd = () => { const D = DS[ds]; c.set({type: ty, data: D.d, unit: D.u, title: D.t, min: 0, max: undefined, step: undefined}); $('#ty-st').innerHTML = (ty === D.good ? '<b class="good">✔</b> ' : '') + D.why[ty]; };
+  seg($('#ty-seg'), [['bar', 'Säulen'], ['line', 'Linie'], ['pie', 'Kreis']], v => { ty = v; upd(); }, 'line');
+  seg($('#ds-seg'), [['nu', 'Nutzer'], ['sm', 'Orte'], ['st', 'Strommix']], v => { ds = v; upd(); }, 'nu');
+})();
+
+sorter($('#sort-wahl'), [{id: 'k', name: 'Kreisdiagramm'}, {id: 'l', name: 'Liniendiagramm'}, {id: 's', name: 'Säulen-/Balkendiagramm'}], [
+  {t: 'Anteile der Parteien bei einer Wahl', c: 'k'}, {t: 'Wie verteilt sich mein Taschengeld?', c: 'k'}, {t: 'Anteil der Energieträger am Strommix', c: 'k'},
+  {t: 'Temperatur im Laufe eines Tages', c: 'l'}, {t: 'Entwicklung der Einwohnerzahl seit 1950', c: 'l'}, {t: 'Kurs einer Aktie im letzten Monat', c: 'l'},
+  {t: 'Körpergröße der Schüler einer Gruppe', c: 's'}, {t: 'Stimmen je Kandidat bei der Klassensprecherwahl', c: 's'}, {t: 'Einwohner der fünf größten Städte', c: 's'}
+]);
+
+/* ===== M1 ===== */
+(() => {
+  const L = [['2014', 55], ['2015', 65], ['2016', 74], ['2017', 78], ['2018', 81], ['2019', 82], ['2020', 86], ['2021', 89]], S = L.slice(5);
+  let min = 0, d = L;
+  const c = chart($('#ch-m1'), {type: 'bar', unit: ' %', title: 'Anteil an der Bevölkerung, der das Internet nutzt'});
+  const upd = () => {
+    const lo = Math.min(...d.map(x => x[1]));
+    min = Math.min(min, lo - 1 > 0 ? Math.floor((lo - 1) / 5) * 5 : 0);
+    $('#m1-r').value = min; $('#m1-v').textContent = min + ' %';
+    c.set({data: d, min, max: 100, step: min ? 5 : 20});
+    const a = d[0][1], b = d[d.length - 1][1], hA = a - min, hB = b - min;
+    $('#m1-st').innerHTML = `Von ${d[0][0]} bis ${d[d.length - 1][0]} steigt der Wert von ${a} % auf ${b} % – das ist das <b>${numDE(b / a, 2)}-Fache</b>. Die letzte Säule ist aber <b>${numDE(hB / hA, 1)}-mal</b> so hoch wie die erste.${min ? ' <span class="bad">Der Achsenausschnitt übertreibt den Anstieg!</span>' : ' <span class="good">Ehrliche Darstellung ab 0 %.</span>'}`;
+  };
+  $('#m1-r').addEventListener('input', e => { min = +e.target.value; upd(); });
+  seg($('#m1-seg'), [['l', '2014–2021'], ['s', 'nur 2019–2021']], v => { d = v === 'l' ? L : S; min = Math.min(min, Math.min(...d.map(x => x[1])) - 5); upd(); }, 'l');
+})();
+
+/* ===== M2 ===== */
+(() => {
+  const D = {
+    a: {type: 'bar', title: 'Anteil der Internetnutzer, die 2022 soziale Netzwerke genutzt haben', unit: ' %', data: [['10–15', 61], ['16–24', 90], ['25–44', 73], ['45–64', 43], ['65+', 18]]},
+    n: {type: 'line', title: 'Social-Media-Nutzer weltweit (in Milliarden)', unit: '', data: [['2014', 1.86], ['2015', 2.08], ['2016', 2.31], ['2017', 2.79], ['2018', 3.2], ['2019', 3.46], ['2020', 3.71], ['2021', 4.2], ['2022', 4.62]]},
+    o: {type: 'hbar', title: 'Wo nutzen die Deutschen Social Media?', unit: ' %', data: [['nach Feierabend', 53], ['Zeitvertreib', 52], ['beim Fernsehen', 44], ['im Bett', 41], ['in Pausen', 30], ['im Badezimmer', 24]], max: 60}
+  };
+  const c = chart($('#ch-m2'), {});
+  seg($('#m2-seg'), [['a', 'Altersgruppen'], ['n', 'Nutzer weltweit'], ['o', 'Orte']], v => c.set(Object.assign({min: 0, max: undefined}, D[v])), 'a');
+  trueFalse($('#m2-tf'), [
+    {t: 'Am häufigsten nutzen die 16- bis 24-Jährigen soziale Netzwerke.', ok: true, why: '90 % der Internetnutzer dieser Gruppe.'},
+    {t: 'Von 2014 bis 2022 hat sich die Zahl der Nutzer weltweit etwa verdoppelt.', ok: true, why: '1,86 → 4,62 Milliarden, sogar etwa das 2,5-Fache.'},
+    {t: 'Die Prozentwerte im Diagramm „Orte“ ergeben zusammen 100 %.', ok: false, why: 'Mehrfachnennungen waren möglich – deshalb wäre ein Kreisdiagramm falsch.'},
+    {t: 'Nur 18 % aller Menschen über 65 nutzen soziale Netzwerke.', ok: false, why: 'Es sind 18 % der Internetnutzer über 65 – nicht aller Menschen. Genau lesen!'}
+  ]);
+})();
+
+/* ===== M3 ===== */
+chart($('#ch-12'), {type: 'pie', title: 'Deutscher Strommix 2012', data: [['Braunkohle', 26], ['Steinkohle', 19], ['Kernenergie', 16], ['Erdgas', 11.6], ['Wind', 7.4], ['Biomasse', 6], ['Solar', 4.5], ['Wasserkraft', 3.4], ['Andere', 6], ['Erdöl', .1]]});
+chart($('#ch-22'), {type: 'pie', title: 'Deutscher Strommix 2022', data: [['Braunkohle', 18.9], ['Steinkohle', 11.4], ['Kernenergie', 6.3], ['Erdgas', 11.6], ['Wind', 38.2], ['Biomasse', 7.4], ['Solar', 2.3], ['Wasserkraft', 3], ['Andere', .6], ['Erdöl', .3]]});
+
+/* ===== Eigenes Diagramm ===== */
+(() => {
+  let ty = 'bar';
+  const c = chart($('#ch-own'), {});
+  const upd = sh => { const d = []; for (let r = 2; r <= 7; r++) { const l = sh.text('A' + r), v = sh.get('B' + r); if (l && typeof v === 'number') d.push([l, v]); } c.set({type: ty, data: d.length ? d : [['–', 0]], title: sh.text('A1') || 'Umfrage', unit: '', min: 0}); };
+  const sh = sheet($('#sh-own'), {cols: 2, rows: 8, w: {A: '9rem'}, cells: {A1: 'Umfrage Klasse 8', A2: 'WhatsApp', B2: 14, A3: 'Instagram', B3: 6, A4: 'TikTok', B4: 5, A5: 'YouTube', B5: 3, A8: 'Summe', B8: '=SUMME(B2:B7)'}, cls: {A1: 't', B1: 't', A8: 'h', B8: 'h'}, lock: ['B8', 'A8'], sel: 'B2', onChange: s => upd(s)});
+  seg($('#own-seg'), [['bar', 'Säulen'], ['pie', 'Kreis'], ['hbar', 'Balken']], v => { ty = v; upd(sh); });
+})();
+
+mcQuiz($('#quiz'), [
+  {q: 'Welches Diagramm zeigt Anteile an einem Ganzen?', a: ['Kreisdiagramm', 'Liniendiagramm', 'Säulendiagramm', 'Streudiagramm'], ok: 0},
+  {q: 'Welches Diagramm zeigt einen Verlauf über die Zeit am besten?', a: ['Liniendiagramm', 'Kreisdiagramm', 'Tabelle', 'Organigramm'], ok: 0},
+  {q: 'Wo muss die Werteachse eines Säulendiagramms beginnen?', a: ['beim Nullpunkt', 'beim kleinsten Wert', 'beim größten Wert', 'egal'], ok: 0},
+  {q: 'Was passiert, wenn die Achse erst bei 80 % beginnt?', a: ['Unterschiede wirken größer, als sie sind.', 'Unterschiede wirken kleiner.', 'Nichts.', 'Das Diagramm wird genauer.'], ok: 0},
+  {q: 'Was macht man beim Interpretieren zuerst?', a: ['das Diagramm genau beschreiben', 'die Meinung sagen', 'die Werte runden', 'ein neues Diagramm zeichnen'], ok: 0},
+  {q: 'Warum passt für „Wo nutzt du Social Media?“ mit Mehrfachnennungen kein Kreisdiagramm?', a: ['Die Werte ergeben nicht 100 %.', 'Es gibt zu wenige Werte.', 'Kreise sind zu klein.', 'Prozente kann man nicht darstellen.'], ok: 0}
+]);
+</script>

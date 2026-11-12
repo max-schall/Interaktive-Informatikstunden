@@ -1,0 +1,185 @@
+<!--
+title: Mit Daten rechnen
+short: Rechnen
+time: 2 Unterrichtsstunden
+q: Wie rechnet man in einem Tabellenkalkulationsprogramm mit Formeln und Funktionen?
+facts: Zellformate: Standard, Zahl, Währung – mit Text kann nicht gerechnet werden | Formeln beginnen mit „=“, mit Zahlen oder Zellbezügen | Vorteil von Zellbezügen: Ergebnisse passen sich automatisch an | Funktionen: SUMME und MITTELWERT, Syntax mit Doppelpunkt (Bereich) und Semikolon (einzelne Zellen) | Arithmetisches Mittel
+inter: Zellformate ausprobieren · Formel mit Zahlen und mit Zellbezug vergleichen · Funktionsaufbau zusammensetzen · M1 Kassenstand der Klasse 10d berechnen · M2 Mittelwerte der Notenliste mit Diagramm · Formeln vorhersagen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Daten und Datenbanken</p>
+      <h1>Mit Daten rechnen<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Mit einem Taschenrechner rechnet man schnell. Ein <b>Tabellenkalkulationsprogramm</b> kann das auch – und rechnet <b>automatisch neu</b>, sobald sich ein Wert ändert.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Die Klasse verkauft Brötchen. Wie behält die Kassenwartin den Überblick über die Einnahmen?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie rechnet man in einem Tabellenkalkulationsprogramm mit Formeln und Funktionen?</p></div>
+      <div class="controls"><button class="btn primary" data-go="formate">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="formate" data-label="Zellformate" data-yr="Erarbeitung" data-title="Zellen formatieren" data-sub="Standard, Zahl, Währung">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Zellen formatieren</p>
+    <h2>Text oder Zahl?</h2>
+    <p class="lead">Viele Programme erkennen, welche Art von Daten eingegeben wird, und weisen eine <b>Formatierung</b> zu. Formate kann man auch über das Kontextmenü „Zellen formatieren“ ändern.</p>
+  </div>
+  <div class="model">
+    <div class="table-wrap"><table class="cmp"><thead><tr><th>Format</th><th>Erklärung</th><th>Beispiel</th><th>Beachte!</th></tr></thead><tbody>
+      <tr><td><b>Standard</b></td><td>Zellinhalt wird genau so dargestellt, wie er eingegeben wurde.</td><td>Rabatt</td><td>Mit Text kann nicht gerechnet werden.</td></tr>
+      <tr><td><b>Zahl</b></td><td>mit/ohne Tausendertrennzeichen und Dezimalstellen</td><td>1.000<br>1,55</td><td>Zum Rechnen muss die Zahl allein in der Zelle stehen.</td></tr>
+      <tr><td><b>Währung</b></td><td>Zahl mit Währungssymbol und Dezimalstellen</td><td>15,25 €</td><td>Ausnahme: mit € kann gerechnet werden.</td></tr></tbody></table></div>
+    <div class="stack"><div id="sh-fmt"></div><p class="status" id="fmt-st"></p></div>
+  </div>
+</section>
+
+<section class="station" id="formel" data-label="Formeln" data-yr="Erarbeitung" data-title="Einfache Berechnungen" data-sub="Zahl oder Zellbezug">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Einfache Berechnungen</p>
+    <h2>Formeln beginnen mit =</h2>
+    <p class="lead">Man wählt die Zelle für das Ergebnis und beginnt die Formel mit einem <b>„=“</b>. Gerechnet wird mit <b>Zahlen</b> oder mit <b>Zellbezügen</b> (B1, B2 …). Ändere den Preis in B2 und beobachte C5 und C6.</p>
+  </div>
+  <div class="model">
+    <div id="sh-f"></div>
+    <div class="stack">
+      <div class="table-wrap"><table class="cmp"><thead><tr><th>Rechenart</th><th>… mit Zahlen</th><th>… mit Zellbezug</th></tr></thead><tbody><tr><td>Subtraktion in C5</td><td><code>=100-50-5,50</code></td><td><code>=C2-C3-C4</code></td></tr></tbody></table></div>
+      <p class="status" id="f-st"></p>
+      <div class="box"><span class="tag info">Vorteil</span><p>Ändern sich die Daten in den Zellen, werden Ergebnisse mit Zellbezug <b>automatisch angepasst</b>. Eine Formel mit festen Zahlen muss man von Hand ändern.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="funktionen" data-label="Funktionen" data-yr="Erarbeitung" data-title="Funktionen nutzen" data-sub="SUMME und MITTELWERT">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Funktionen nutzen</p>
+    <h2>SUMME und MITTELWERT</h2>
+    <p class="lead">Funktionen sind <b>vorgefertigte Formeln</b>. Jede hat eine feste Schreibweise – die <b>Syntax</b>. Ein <b>Doppelpunkt</b> schließt einen Bereich ein: <code>C3:C7</code> heißt C3 bis C7. Einzelne Zellen trennt ein <b>Semikolon</b>: <code>C3;C5</code>. Der <b>Mittelwert</b> (arithmetisches Mittel) ist die Summe aller Werte geteilt durch ihre Anzahl.</p>
+  </div>
+  <div class="model">
+    <div class="stack"><div id="sh-fn"></div>
+      <div class="controls"><span class="note">Formel für C9:</span><div id="fn-seg"></div></div></div>
+    <div class="stack">
+      <div class="vis"><div class="vis-head"><h3>Funktionsaufbau</h3></div><p class="fn-build"><span class="fn-p eq">=</span><span class="fn-p nm" id="fb-n">SUMME</span><span class="fn-p">(</span><span class="fn-p rg" id="fb-a">C3</span><span class="fn-p sp" id="fb-s">:</span><span class="fn-p rg" id="fb-b">C7</span><span class="fn-p">)</span></p>
+        <ul class="facts"><li><span class="fn-p eq">=</span> Formel beginnt</li><li><span class="fn-p nm">NAME</span> der Funktion</li><li><span class="fn-p rg">C3</span> erste und letzte Zelle</li><li><span class="fn-p sp">:</span> Bereich · <span class="fn-p sp">;</span> einzelne Zellen</li></ul></div>
+      <p class="status" id="fn-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Kasse" data-yr="M1" data-title="Mit Funktionen umgehen" data-sub="Kassenstand der 10d">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Kassenstand der Klasse 10d</h2>
+    <p class="lead">Merle ist Kassenwartin. Für die Abschlussfeier fehlt Geld, darum verkauft die Klasse einmal pro Woche Brötchen. Ergänze die grünen Zellen mit Formeln.</p>
+  </div>
+  <div class="model">
+    <div id="sh-m1"></div>
+    <div class="stack">
+      <ol class="goals" id="m1-cl"></ol>
+      <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button><button class="btn" id="m1-fill">Lösung eintragen</button></div>
+      <p class="solution" id="m1a" hidden>B10: <code>=SUMME(B3:B9)</code> → 800,00 € · B13: <code>=B12+B10</code> → 912,00 € · B15: <code>=B13-B14</code> → 121,50 €. Die Klasse hat nach der Feier noch 121,50 € in der Kasse.</p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m2" data-label="M2 Notenschnitt" data-yr="M2" data-title="Mittelwerte berechnen" data-sub="Notenliste">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M2</p>
+    <h2>Notenschnitt der Klassen 10a, 10b und 10c</h2>
+    <p class="lead">Der Schulleiter möchte einen Überblick über die Notenschnitte. Schreibe in B13, C13 und D13 die passende Formel. Das Diagramm zeigt die Mittelwerte. (Beispieldaten)</p>
+  </div>
+  <div class="model">
+    <div id="sh-m2"></div>
+    <div class="stack"><div class="vis" id="ch-m2"></div><p class="status" id="m2-st"></p></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Mit Daten rechnen</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Mit Daten rechnen</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step>Zellen haben ein <b>Format</b> (Standard, Zahl, Währung …). Mit Text kann nicht gerechnet werden.</li>
+        <li data-step>Berechnungen beginnen immer mit <b>„=“</b>. Man rechnet mit Zahlen (<code>=100-50</code>) oder mit <b>Zellbezügen</b> (<code>=C2-C3</code>).</li>
+        <li data-step>Vorteil von Zellbezügen: Ändern sich die Daten, passen sich die Ergebnisse <b>automatisch</b> an.</li>
+        <li data-step><b>Funktionen</b> sind vorgefertigte Formeln mit fester Syntax: <code>=SUMME(C3:C7)</code>, <code>=MITTELWERT(C3:C8)</code>. Doppelpunkt = Bereich, Semikolon = einzelne Zellen.</li>
+        <li data-step><b>Mittelwert</b> = Summe aller Werte : Anzahl der Werte.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Rechnen</span><p>Berechne ohne Computer: <code>=SUMME(A1:A3)</code> und <code>=MITTELWERT(A1:A3)</code> für A1 = 4, A2 = 7, A3 = 10.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Was berechnet die Formel?</h2></div>
+  <div id="ts"></div>
+</section>
+
+<script>
+/* ===== Formate ===== */
+sheet($('#sh-fmt'), {cols: 3, rows: 5, sel: 'C2', w: {A: '7rem'}, fmt: {B: 'eur', C: 'eur'},
+  cells: {A1: 'Ware', B1: 'Preis', C1: 'mit Rabatt', A2: 'Buch', B2: '15,25 €', C2: '=B2-B4', A3: 'Heft', B3: '2 Euro', C3: '=B3-B4', A4: 'Rabatt', B4: '1,50'}, cls: {A1: 'h', B1: 'h', C1: 'h'},
+  onChange: s => $('#fmt-st').innerHTML = statusFmt(s)});
+function statusFmt(s) { return `C2 = ${s.text('C2')} · C3 = ${s.text('C3')}. ` + (String(s.get('C3')).startsWith('#') || (s.get('C3') && s.get('C3').err) ? '<span class="bad">In B3 steht „2 Euro“ – das ist Text, damit kann nicht gerechnet werden.</span> Schreibe <code>2</code> oder <code>2 €</code> in B3.' : '<span class="good">Jetzt kann gerechnet werden.</span>'); }
+$('#fmt-st').innerHTML = 'Tippe C3 an: Warum erscheint <b>#WERT!</b>? Korrigiere B3.';
+
+/* ===== Formeln ===== */
+(() => {
+  const sh = sheet($('#sh-f'), {cols: 3, rows: 6, sel: 'B2', fmt: {C: 'eur'}, w: {A: '8rem'},
+    cells: {A1: 'Posten', B1: 'Preis', C1: 'Betrag', A2: 'Einnahme', B2: 100, C2: '=B2', A3: 'Einkauf', B3: 50, C3: '=B3', A4: 'Servietten', B4: '5,50', C4: '=B4', A5: 'Rest (Zellbezug)', C5: '=C2-C3-C4', A6: 'Rest (Zahlen)', C6: '=100-50-5,50'}, cls: {A1: 'h', B1: 'h', C1: 'h'},
+    onChange: s => upd(s)});
+  function upd(s) { const a = s.get('C5'), b = s.get('C6'); $('#f-st').innerHTML = `C5 <code>=C2-C3-C4</code> → <b>${s.text('C5')}</b> · C6 <code>=100-50-5,50</code> → <b>${s.text('C6')}</b>. ` + (Math.abs(a - b) > 1e-9 ? '<span class="good">Nur die Formel mit Zellbezug hat sich angepasst!</span>' : 'Ändere einen Wert in Spalte B.'); }
+  upd(sh);
+})();
+
+/* ===== Funktionen ===== */
+(() => {
+  const sh = sheet($('#sh-fn'), {cols: 3, rows: 9, sel: 'C9', fmt: {C: 'num'}, cells: {A1: 'Tag', B1: 'Ort', C1: 'Temperatur', A3: 'Mo', B3: 'Bonn', C3: 18, A4: 'Di', B4: 'Bonn', C4: 21, A5: 'Mi', B5: 'Bonn', C5: 17, A6: 'Do', B6: 'Bonn', C6: 22, A7: 'Fr', B7: 'Bonn', C7: 20, A8: 'Sa', B8: 'Bonn', C8: 25, A9: 'Ergebnis', C9: '=SUMME(C3:C7)'}, cls: {A1: 'h', B1: 'h', C1: 'h', A9: 'h'}, lock: ['C9']});
+  const F = {s: ['SUMME', 'C3', ':', 'C7', 'Addiert C3 bis C7: 18 + 21 + 17 + 22 + 20'], m: ['MITTELWERT', 'C3', ':', 'C8', 'Summe von C3 bis C8 geteilt durch 6 Werte'], e: ['SUMME', 'C3', ';', 'C5', 'Addiert nur C3 und C5 – das Semikolon trennt einzelne Zellen'], x: ['MAX', 'C3', ':', 'C8', 'Der größte Wert im Bereich']};
+  seg($('#fn-seg'), [['s', 'SUMME C3:C7'], ['m', 'MITTELWERT C3:C8'], ['e', 'SUMME C3;C5'], ['x', 'MAX']], v => {
+    const [n, a, sp, b, t] = F[v], f = `=${n}(${a}${sp}${b})`; sh.set('C9', f); sh.select('C9');
+    $('#fb-n').textContent = n; $('#fb-a').textContent = a; $('#fb-s').textContent = sp; $('#fb-b').textContent = b;
+    $('#fn-st').innerHTML = `<code>${f}</code> → <b>${sh.text('C9')}</b>. ${t}.`;
+  });
+})();
+
+/* ===== M1 ===== */
+(() => {
+  const W = [124, 110, 100, 116, 118, 120, 112], cells = {A1: 'Kassenstand der Klasse 10d', A2: 'Verkaufswoche', B2: 'Einnahmen', A10: 'Gesamteinnahmen:', A12: 'Kassenstand Mai', B12: 112, A13: 'Kassenstand Juni', A14: 'Kosten Klassenfeier', B14: '790,50', A15: 'Kassenstand Juli'};
+  W.forEach((v, i) => { cells['A' + (i + 3)] = `${i + 1}. Woche`; cells['B' + (i + 3)] = v; });
+  const goals = [['B10', 800, 'Gesamteinnahmen mit SUMME', /SUMME/i], ['B13', 912, 'Kassenstand Juni = Mai + Einnahmen', /B12|B10/i], ['B15', 121.5, 'Kassenstand Juli = Juni − Kosten', /B13/i]];
+  const check = s => { $('#m1-cl').innerHTML = goals.map(([r, v, t, re]) => { const ok = s.raw(r).startsWith('=') && re.test(s.raw(r)) && Math.abs(s.get(r) - v) < 1e-6; return `<li class="${ok ? 'ok' : ''}"><b>${r}</b>: ${t} ${ok ? '✔' : ''}</li>`; }).join(''); };
+  const sh = sheet($('#sh-m1'), {cols: 2, rows: 15, cells, fmt: {B: 'eur'}, w: {A: '11rem', B: '7rem'}, sel: 'B10',
+    cls: {A1: 't', B1: 't', A2: 'h', B2: 'h', A10: 'h', B10: 'hl', A13: 'h', B13: 'hl', A15: 'h', B15: 'hl'}, lock: ['A1', 'A2', 'B2', 'A10', 'A12', 'A13', 'A14', 'A15'], onChange: check});
+  $('#m1-fill').onclick = () => { sh.set('B10', '=SUMME(B3:B9)'); sh.set('B13', '=B12+B10'); sh.set('B15', '=B13-B14'); check(sh); };
+  check(sh);
+})();
+
+/* ===== M2 ===== */
+(() => {
+  const G = [[2, 3, 1], [1, 2, 3], [3, 3, 2], [2, 4, 2], [4, 2, 3], [3, 1, 4], [2, 3, 2], [5, 2, 3], [1, 3, 2], [3, 4, 1]];
+  const cells = {A1: 'Notenliste Schuljahr 2023/2024', A2: 'Schüler', B2: 'Klasse 10a', C2: 'Klasse 10b', D2: 'Klasse 10c', A13: 'Mittelwert'};
+  G.forEach((r, i) => { cells['A' + (i + 3)] = i + 1; r.forEach((g, j) => cells['BCD'[j] + (i + 3)] = g); });
+  const c = chart($('#ch-m2'), {type: 'bar', title: 'Notenschnitt', min: 0, max: 6, step: 1});
+  const upd = s => { const d = ['B', 'C', 'D'].map(k => [s.text(k + '2'), typeof s.get(k + '13') === 'number' ? Math.round(s.get(k + '13') * 100) / 100 : 0]); c.set({data: d});
+    const ok = ['B', 'C', 'D'].filter(k => /MITTELWERT/i.test(s.raw(k + '13'))).length;
+    $('#m2-st').innerHTML = ok === 3 ? `<span class="good">✔ Alle drei Mittelwerte berechnet.</span> Den besten Schnitt hat ${d.slice().sort((a, b) => a[1] - b[1])[0][0]}.` : `Noch ${3 - ok} Mittelwert(e) fehlen. Tipp: <code>=MITTELWERT(B3:B12)</code>`; };
+  const sh = sheet($('#sh-m2'), {cols: 4, rows: 13, cells, sel: 'B13', fmt: {B13: 'num', C13: 'num', D13: 'num'}, cls: {A1: 't', B1: 't', C1: 't', D1: 't', A2: 'h', B2: 'h', C2: 'h', D2: 'h', A13: 'h', B13: 'hl', C13: 'hl', D13: 'hl'}, lock: ['A1', 'A2', 'B2', 'C2', 'D2', 'A13'], onChange: upd});
+  upd(sh);
+})();
+
+/* ===== Übungen ===== */
+taskSet($('#ts'), () => {
+  const v = [randInt(2, 20), randInt(2, 20), randInt(2, 20), randInt(2, 20)], t = randInt(0, 3);
+  const vals = `A1 = ${v[0]}, A2 = ${v[1]}, A3 = ${v[2]}, A4 = ${v[3]}`;
+  const T = [
+    ['=SUMME(A1:A4)', v[0] + v[1] + v[2] + v[3]], ['=SUMME(A1;A4)', v[0] + v[3]],
+    ['=MITTELWERT(A1:A4)', (v[0] + v[1] + v[2] + v[3]) / 4], ['=A1+A2*A3', v[0] + v[1] * v[2]]
+  ][t];
+  return {key: vals + t, tag: 'Formel', q: `${vals}<br>Was steht in der Zelle mit <code>${T[0]}</code>?`, fields: [{l: 'Ergebnis', a: T[1], tol: .01}], hint: t === 1 ? 'Semikolon: nur die beiden genannten Zellen.' : t === 3 ? 'Punkt- vor Strichrechnung!' : 'Doppelpunkt: der ganze Bereich.'};
+}, {n: 4});
+</script>

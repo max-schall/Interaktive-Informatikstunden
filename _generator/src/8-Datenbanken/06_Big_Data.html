@@ -1,0 +1,137 @@
+<!--
+title: Big Data
+short: Big Data
+time: 1 Unterrichtsstunde
+q: Was ist Big Data – und wie nutzen Unternehmen riesige Datenmengen?
+facts: Big Data: Sammelbegriff für Datenmengen, die zu groß für herkömmliche relationale Datenbanken und Analysemethoden sind | Strukturierte Daten (Zeilen, Spalten, etwa 20 %) und unstrukturierte Daten (Bilder, Videos, Texte, E-Mails, etwa 80 %) | Merkmale: Größe, Geschwindigkeit, Vielfalt, Richtigkeit | Nutzen: Muster mit künstlicher Intelligenz erkennen, Kaufverhalten vorhersagen | Chancen und Risiken
+inter: Strukturiert oder unstrukturiert sortieren · Datenzähler: Was passiert in einer Minute? · Die vier Merkmale als Karten · Warenkörbe auswerten: „Wer das kauft, kauft auch …“ · Chancen und Risiken abwägen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Expertenwissen</p>
+      <h1>Big Data<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Jede Suche, jedes Foto, jede Bestellung hinterlässt Daten. Weltweit entstehen jeden Tag so viele, dass klassische Datenbanken nicht mehr ausreichen. Man spricht von <b>Big Data</b>.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welche Daten hast du heute schon erzeugt – ohne es zu merken?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Was ist Big Data – und wie nutzen Unternehmen riesige Datenmengen?</p></div>
+      <div class="controls"><button class="btn primary" data-go="was">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="was" data-label="Strukturiert?" data-yr="Erarbeitung" data-title="Daten und ihre Struktur" data-sub="Strukturiert und unstrukturiert">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Was ist Big Data?</p>
+    <h2>Mit und ohne Struktur</h2>
+    <p class="lead">In einer Datenbank sind Daten <b>strukturiert</b> nach einem vorgefertigten Muster erfasst. Big Data umfasst auch <b>unstrukturierte</b> Daten: Bilder, Videos, Textdokumente. Sie haben kein festes Format – herkömmliche Analysemethoden reichen nicht aus.</p>
+  </div>
+  <div class="grid-2">
+    <div class="box"><span class="tag">strukturiert · etwa 20 %</span><p>Zahlen, Daten und Zeichenketten in Zeilen und Spalten. Benötigen weniger Speicher, sind einfacher zu verwalten und zu schützen.</p></div>
+    <div class="box"><span class="tag info">unstrukturiert · etwa 80 %</span><p>Bilder, Videos, Textdokumente, E-Mails. Benötigen mehr Speicher, sind schwieriger zu verwalten und zu schützen.</p></div>
+  </div>
+  <div id="sort-s" class="mt"></div>
+</section>
+
+<section class="station" id="merkmale" data-label="Merkmale" data-yr="Erarbeitung" data-title="Merkmale von Big Data" data-sub="Größe, Geschwindigkeit, Vielfalt, Richtigkeit">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Merkmale</p>
+    <h2>Vier Merkmale</h2>
+    <p class="lead">Seit du diese Station geöffnet hast, ist im Internet ungefähr Folgendes passiert (Schätzungen):</p>
+  </div>
+  <div class="counters" id="cnt"></div>
+  <div id="flip" class="mt"></div>
+</section>
+
+<section class="station" id="nutzen" data-label="Muster" data-yr="Erarbeitung" data-title="Nutzen von Big Data" data-sub="Muster im Kaufverhalten">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Nutzen von Big Data</p>
+    <h2>Wer das kauft, kauft auch …</h2>
+    <p class="lead">Werkzeuge verknüpfen Daten aus den unterschiedlichsten Quellen. Mithilfe von <b>künstlicher Intelligenz</b> erkennen sie <b>Muster</b>, etwa im Kaufverhalten – und sagen voraus, was Kunden als Nächstes wollen. Hier sind 16 Warenkörbe eines Online-Shops. Wähle ein Produkt.</p>
+  </div>
+  <div class="model">
+    <div class="vis"><div class="chips" id="pr"></div><div class="baskets" id="bk"></div></div>
+    <div class="stack"><div class="vis" id="ch-co"></div><p class="status" id="co-st"></p></div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Big Data" data-yr="M1" data-title="Big Data" data-sub="Chancen und Risiken">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Chance oder Risiko?</h2>
+    <p class="lead">Big Data wird in der Wirtschaft eingesetzt, um Kundenbedürfnisse zu verstehen und neue Geschäftsmöglichkeiten zu entdecken – aber nicht nur dort.</p>
+  </div>
+  <div id="sort-cr"></div>
+  <div class="grid-2 mt">
+    <div class="task-card"><header><span class="no">3</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Unstrukturiert</h3></header><p>Stelle begründete Vermutungen an, weshalb Big Data vor allem unstrukturierte Daten umfasst.</p><div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Die meisten Daten entstehen heute durch Menschen und Geräte: Fotos, Videos, Nachrichten, Sprachaufnahmen, Sensordaten. Sie passen nicht in ein festes Tabellenmuster. Smartphones und soziale Netzwerke erzeugen davon ständig riesige Mengen.</p></div>
+    <div class="task-card"><header><span class="no">4</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Nutzen für Firmen</h3></header><p>Stelle Vermutungen an, wie Firmen Big Data nutzen können.</p><div class="controls"><button class="btn" data-reveal="m1b" aria-expanded="false">Lösung</button></div><p class="solution" id="m1b" hidden>Kaufempfehlungen und personalisierte Werbung, Preise an die Nachfrage anpassen, Lagerbestände vorhersagen, Betrug bei Zahlungen erkennen, Routen für Lieferungen planen, Maschinen warten, bevor sie ausfallen.</p></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Big Data</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Big Data</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step><b>Big Data</b> ist ein Sammelbegriff für sehr große Datenmengen, die kaum noch in einer relationalen Datenbank festgehalten werden können.</li>
+        <li data-step><b>Strukturierte Daten</b> stehen in Zeilen und Spalten (etwa 20 %). <b>Unstrukturierte Daten</b> wie Bilder, Videos und Texte haben kein festes Format (etwa 80 %).</li>
+        <li data-step>Merkmale: <b>Größe</b>, <b>Geschwindigkeit</b>, <b>Vielfalt</b> und <b>Richtigkeit</b> der Daten.</li>
+        <li data-step>Mit <b>künstlicher Intelligenz</b> werden Muster erkannt, z. B. im Kaufverhalten. Chancen und Risiken (Datenschutz!) müssen abgewogen werden.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Beschreiben</span><p>Beschreibe den Unterschied zwischen strukturierten und unstrukturierten Daten an je zwei Beispielen.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Big Data</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+sorter($('#sort-s'), [{id: 's', name: 'strukturiert'}, {id: 'u', name: 'unstrukturiert'}], [
+  {t: 'Kundentabelle eines Shops', c: 's'}, {t: 'Notenliste in der Tabellenkalkulation', c: 's'}, {t: 'Fahrplan-Datenbank der Bahn', c: 's'}, {t: 'Messwerte einer Wetterstation', c: 's'},
+  {t: 'Urlaubsfoto', c: 'u'}, {t: 'Sprachnachricht', c: 'u'}, {t: 'E-Mail mit Anhang', c: 'u'}, {t: 'Video auf einer Plattform', c: 'u'}, {t: 'Kommentar unter einem Post', c: 'u'}
+]);
+
+/* ===== Zähler ===== */
+(() => {
+  const R = [['✉️', 'E-Mails versendet', 200e6 / 60], ['🎬', 'Stunden Video hochgeladen', 72 / 60], ['🐦', 'Kurznachrichten (Tweets)', 400e6 / 86400], ['🖼', 'Bilder geteilt', 1e9 / 86400]];
+  let t0 = 0;
+  const draw = () => { const s = t0 ? (performance.now() - t0) / 1000 : 0; $('#cnt').innerHTML = R.map(([i, n, r]) => `<div class="cnt"><span>${i}</span><b>${Math.floor(r * s).toLocaleString('de-DE')}</b><small>${n}</small></div>`).join('') + `<div class="cnt t"><span>⏱</span><b>${Math.floor(s)} s</b><small>vergangen</small></div>`; };
+  onShow.push(id => { if (id === 'merkmale') t0 = performance.now(); });
+  setInterval(() => { if ($('#merkmale').offsetParent) draw(); }, 250); draw();
+})();
+flipCards($('#flip'), [['📦 Größe', 'riesige Datenmengen: täglich Milliarden Gigabyte, 90 % der heutigen Daten entstanden in den letzten 2 Jahren'], ['⚡ Geschwindigkeit', 'Daten entstehen und müssen in Echtzeit verarbeitet werden'], ['🧩 Vielfalt', 'Zahlen, Texte, Bilder, Videos, Sensordaten – etwa 80 % unstrukturiert'], ['✔ Richtigkeit', 'Nicht alle Daten stimmen. 1 von 3 Unternehmensleitern ist sich nicht sicher, ob die Daten richtig sind.']]);
+
+/* ===== Warenkörbe ===== */
+(() => {
+  const P = {Chips: '🥔', Cola: '🥤', Nudeln: '🍝', Tomatensoße: '🥫', Zahnbürste: '🪥', Zahnpasta: '🦷', Brot: '🍞', Butter: '🧈', Käse: '🧀'};
+  const B = [['Chips', 'Cola'], ['Nudeln', 'Tomatensoße', 'Käse'], ['Zahnbürste', 'Zahnpasta'], ['Brot', 'Butter'], ['Chips', 'Cola', 'Käse'], ['Nudeln', 'Tomatensoße'], ['Brot', 'Butter', 'Käse'], ['Chips', 'Cola'], ['Zahnpasta', 'Zahnbürste', 'Chips'], ['Nudeln', 'Käse'], ['Brot', 'Käse'], ['Cola', 'Chips', 'Nudeln'], ['Tomatensoße', 'Nudeln', 'Brot'], ['Butter', 'Brot'], ['Zahnpasta', 'Cola'], ['Chips', 'Brot']];
+  const c = chart($('#ch-co'), {type: 'hbar', unit: ' %'});
+  seg($('#pr'), Object.keys(P).map(p => [p, P[p] + ' ' + p]), p => {
+    const with_ = B.filter(b => b.includes(p)), cnt = {};
+    with_.forEach(b => b.forEach(x => { if (x !== p) cnt[x] = (cnt[x] || 0) + 1; }));
+    const top = Object.entries(cnt).sort((a, b) => b[1] - a[1]).slice(0, 4);
+    $('#bk').innerHTML = B.map(b => `<span class="${b.includes(p) ? 'on' : ''}">${b.map(x => P[x]).join('')}</span>`).join('');
+    c.set({data: top.map(([x, n]) => [P[x] + ' ' + x, Math.round(n / with_.length * 100)]), max: 100, title: `Kunden mit ${p} kaufen auch …`});
+    $('#co-st').innerHTML = top.length ? `${with_.length} von ${B.length} Warenkörben enthalten ${P[p]} ${p}. In <b>${Math.round(top[0][1] / with_.length * 100)} %</b> davon liegt auch ${P[top[0][0]]} <b>${top[0][0]}</b>. Der Shop empfiehlt also: „Kunden, die ${p} kauften, kauften auch ${top[0][0]}.“ Mit Millionen Warenkörben werden solche Muster sehr zuverlässig.` : '';
+  }, 'Chips');
+})();
+
+sorter($('#sort-cr'), [{id: 'c', name: 'Chance'}, {id: 'r', name: 'Risiko'}], [
+  {t: 'Krankheiten früher erkennen durch Auswertung vieler Patientendaten', c: 'c'}, {t: 'Staus vorhersagen und Verkehr umleiten', c: 'c'}, {t: 'passende Produktempfehlungen', c: 'c'}, {t: 'Betrug bei Kartenzahlungen erkennen', c: 'c'},
+  {t: 'Persönliche Profile ohne Wissen der Nutzer', c: 'r'}, {t: 'gestohlene Daten bei einem Hackerangriff', c: 'r'}, {t: 'falsche Schlüsse aus fehlerhaften Daten', c: 'r'}, {t: 'Manipulation durch gezielte Werbung', c: 'r'}
+]);
+
+mcQuiz($('#quiz'), [
+  {q: 'Was ist Big Data?', a: ['ein Sammelbegriff für sehr große Datenmengen', 'eine besonders große Festplatte', 'ein Tabellenkalkulationsprogramm', 'eine Programmiersprache'], ok: 0},
+  {q: 'Welcher Anteil der Unternehmensdaten ist etwa unstrukturiert?', a: ['80 %', '20 %', '50 %', '100 %'], ok: 0},
+  {q: 'Welches Beispiel ist unstrukturiert?', a: ['ein Video', 'eine Kundentabelle', 'eine Notenliste', 'ein Fahrplan in Spalten'], ok: 0},
+  {q: 'Welches ist kein Merkmal von Big Data?', a: ['Sparsamkeit', 'Größe', 'Geschwindigkeit', 'Vielfalt'], ok: 0},
+  {q: 'Womit erkennen Werkzeuge Muster in Big Data?', a: ['mit künstlicher Intelligenz', 'mit dem Taschenrechner', 'mit einem Kreisdiagramm', 'gar nicht'], ok: 0},
+  {q: 'Warum sind unstrukturierte Daten schwer zu verwalten?', a: ['Sie haben kein vordefiniertes Format.', 'Sie sind immer verschlüsselt.', 'Sie sind sehr klein.', 'Sie bestehen nur aus Zahlen.'], ok: 0}
+]);
+</script>

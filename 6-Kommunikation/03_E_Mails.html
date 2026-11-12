@@ -1412,6 +1412,105 @@ textarea.code-in{width:100%;min-height:9rem;font-family:var(--f-mono);font-size:
 .rgb-mix{position:relative;height:9rem;margin-bottom:.4rem;background:#000;border-radius:6px;overflow:hidden;isolation:isolate}
 .rgb-mix .c{position:absolute;width:6rem;height:6rem;border-radius:50%;mix-blend-mode:screen}
 .rgb-mix .r{background:#F00;left:calc(50% - 4.5rem);top:.6rem}.rgb-mix .g{background:#0F0;left:calc(50% - 1.5rem);top:.6rem}.rgb-mix .b{background:#00F;left:calc(50% - 3rem);top:2.8rem}
+/* ================= Tabellenkalkulation & Diagramme ================= */
+.sheet{border:1.5px solid var(--edge);border-radius:4px;background:var(--surface);box-shadow:4px 4px 0 var(--edge-shadow);overflow:hidden}
+.sh-bar{display:flex;align-items:center;gap:.4rem;padding:.35rem .5rem;background:var(--surface-2);border-bottom:1.5px solid var(--edge)}
+.sh-ref{font-family:var(--f-mono);font-weight:600;font-size:.82rem;min-width:2.6rem;padding:.15rem .4rem;background:var(--surface);border:1px solid var(--line);border-radius:3px;text-align:center}
+.sh-fx{font-family:var(--f-mono);font-style:italic;color:var(--ink-2);font-size:.82rem}
+.sh-in{flex:1;min-width:0;font-family:var(--f-mono);font-size:.88rem;padding:.25rem .45rem;border:1px solid var(--line);border-radius:3px;background:var(--surface);color:var(--ink)}
+.sh-in:focus{outline:2px solid var(--accent);outline-offset:0}
+.sh-in[readonly]{color:var(--ink-2);background:var(--surface-2)}
+.sh-wrap{overflow-x:auto}
+table.sh{border-collapse:collapse;width:100%;font-size:.86rem;font-variant-numeric:tabular-nums}
+.sh th{background:var(--surface-2);color:var(--ink-2);font-family:var(--f-mono);font-weight:500;font-size:.72rem;padding:.15rem .4rem;border:1px solid var(--line);min-width:4.5rem}
+.sh th.sh-c{min-width:1.8rem;width:1.8rem}
+.sh td{border:1px solid var(--line);padding:.22rem .45rem;height:1.75rem;white-space:nowrap;cursor:cell;max-width:14rem;overflow:hidden;text-overflow:ellipsis}
+.sh td.n{text-align:right}
+.sh td.f{background:color-mix(in srgb,var(--accent) 7%,transparent)}
+.sh td.err{color:var(--bad);font-family:var(--f-mono);font-size:.78rem}
+.sh td.h{font-weight:700;background:var(--surface-2)}
+.sh td.t{font-weight:700;background:color-mix(in srgb,var(--accent) 22%,var(--surface));color:var(--ink)}
+.sh td.hl{background:color-mix(in srgb,#EAB308 25%,var(--surface))}
+.sh td.ref{box-shadow:inset 0 0 0 2px #2563EB;background:color-mix(in srgb,#2563EB 10%,var(--surface))}
+.sh td.sel{box-shadow:inset 0 0 0 2.5px var(--accent)}
+.chart svg{width:100%;height:auto;display:block}
+.chart text{font-family:var(--f-body);fill:var(--ink)}
+.chart .ch-t{font-weight:700;font-size:13px}
+.chart .ch-l{font-size:10.5px;fill:var(--ink-2)}
+.chart .ch-v{font-size:10.5px;font-weight:700}
+.chart .ch-in{font-size:11px;font-weight:700;fill:#fff}
+.chart .ch-bar{fill:var(--accent)}
+.chart .ch-line{fill:none;stroke:var(--accent);stroke-width:2.5}
+.chart .ch-dot{fill:var(--surface);stroke:var(--accent);stroke-width:2.5}
+.chart .ch-g{stroke:var(--line);stroke-dasharray:3 3}
+.chart .ch-ax,.chart .ch-brk{stroke:var(--ink);stroke-width:1.5;fill:none}
+.chart .ch-sl{stroke:var(--surface);stroke-width:1.5}
+.mono-list{font-family:var(--f-mono);font-size:.86rem;line-height:1.7;margin:0}
+.cmp th.hl,.cmp td.hl{background:color-mix(in srgb,var(--accent) 22%,var(--surface))}
+.big-ref{font-family:var(--f-mono);font-size:1.4em;color:var(--accent)}
+.ocard{display:flex;flex-direction:column;gap:.5rem}
+.oc-row{display:flex;flex-direction:column;gap:.1rem;padding:.45rem .6rem;border:1.5px solid var(--edge);border-radius:4px;background:var(--surface)}
+.oc-row span{font-family:var(--f-mono);font-size:.82rem}
+.oc-k{font-family:var(--f-mono);font-size:.68rem !important;text-transform:uppercase;letter-spacing:.05em;color:var(--accent)}
+.fn-build{font-family:var(--f-mono);font-size:1.5rem;font-weight:600;display:flex;flex-wrap:wrap;gap:.15rem;margin:.4rem 0 .8rem}
+.fn-p{font-family:var(--f-mono);font-weight:600;padding:.05rem .3rem;border-radius:3px;background:var(--surface-2)}
+.fn-p.eq{background:var(--ink);color:var(--surface)}.fn-p.nm{background:color-mix(in srgb,var(--accent) 25%,var(--surface))}
+.fn-p.rg{background:color-mix(in srgb,#2563EB 18%,var(--surface))}.fn-p.sp{background:color-mix(in srgb,#EAB308 30%,var(--surface))}
+.goals{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.4rem}
+.goals li{padding:.45rem .7rem;border:1.5px solid var(--line);border-radius:4px;background:var(--surface)}
+.goals li.ok{border-color:var(--good);background:color-mix(in srgb,var(--good) 12%,var(--surface))}
+.ifflow{width:100%;display:block}
+.ifflow line{stroke:var(--ink-2);stroke-width:1.5}
+.ifflow polygon,.ifflow rect{fill:var(--surface-2);stroke:var(--edge);stroke-width:1.5;transition:.2s}
+.ifflow polygon.on,.ifflow rect.on{fill:color-mix(in srgb,var(--accent) 35%,var(--surface))}
+.ifflow text{font-size:11px;fill:var(--ink);pointer-events:none}.ifflow .lb{font-family:var(--f-mono);font-size:10px;fill:var(--ink-2)}
+.nsd-if{border:2px solid var(--edge);background:var(--surface);font-size:.88rem}
+.nsd-q{position:relative;text-align:center;padding:.5rem .4rem 1.4rem;border-bottom:2px solid var(--edge);background:linear-gradient(to top right,transparent calc(50% - 1px),var(--edge) 50%,transparent calc(50% + 1px)) left/50% 100% no-repeat,linear-gradient(to top left,transparent calc(50% - 1px),var(--edge) 50%,transparent calc(50% + 1px)) right/50% 100% no-repeat}
+.nsd-q small{position:absolute;left:.4rem;right:.4rem;bottom:.15rem;display:flex;justify-content:space-between;font-family:var(--f-mono);color:var(--ink-2)}
+.nsd-q span{background:var(--surface);padding:0 .3rem}
+.nsd-b{display:grid;grid-template-columns:1fr 1fr}.nsd-b > div{padding:.5rem;text-align:center;transition:.2s}.nsd-b > div:first-child{border-right:2px solid var(--edge)}
+.nsd-e{padding:.5rem;text-align:center;border-top:2px solid var(--edge)}
+.nsd-if .on:not(.nsd-q){background:color-mix(in srgb,var(--accent) 30%,var(--surface))}
+.wb{font-family:var(--f-mono);font-size:1rem;font-weight:600;padding:.1rem .2rem;border:1.5px solid var(--edge);border-radius:4px;background:color-mix(in srgb,#2563EB 12%,var(--surface));color:var(--ink)}
+.legend3{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.82rem;color:var(--ink-2)}.legend3 b{color:var(--ink);margin-right:.25rem}
+table.db{font-size:.84rem}
+table.db caption{caption-side:top;text-align:left;font-family:var(--f-mono);font-weight:600;font-size:.82rem;padding:.2rem 0;color:var(--accent)}
+table.db th.pk{text-decoration:underline;text-decoration-thickness:2px}
+table.db th.pk::after{content:" 🔑";font-size:.8em}
+table.db th.fk::after{content:" ↗";color:var(--accent)}
+table.db tbody tr{cursor:pointer}
+table.db tr.on td,table.db td.on{background:color-mix(in srgb,var(--accent) 25%,var(--surface))}
+table.db tr.bad td{background:color-mix(in srgb,var(--bad) 18%,var(--surface))}
+.dbs-fig{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;padding:.6rem;background:color-mix(in srgb,#EAB308 12%,var(--surface));border:1.5px solid var(--edge);border-radius:4px}
+.dbs-lbl{width:100%;font-family:var(--f-mono);font-weight:600;font-size:.8rem}
+.dbs-p,.dbs-dbms,.dbs-st span,.dbs-in span[data-part]{border:1.5px solid var(--edge);border-radius:4px;background:var(--surface);padding:.5rem .6rem;font-size:.85rem;text-align:center}
+.dbs-p{flex:0 0 6.5rem}.dbs-dbms{flex:1;min-width:14rem;display:flex;flex-direction:column;gap:.4rem}
+.dbs-in{display:flex;align-items:center;gap:.3rem}.dbs-in span[data-part]{flex:1}
+.dbs-st{display:flex;flex-direction:column;gap:.4rem}
+.dbs-arrow{font-family:var(--f-mono);color:var(--accent);font-weight:700}
+.qb{display:flex;flex-direction:column;gap:.4rem;font-size:.88rem}
+.qb label{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem}
+.qb select,.qb input{font:inherit;font-family:var(--f-mono);font-size:.82rem;padding:.2rem .3rem;border:1.5px solid var(--edge);border-radius:3px;background:var(--surface);color:var(--ink)}
+.sql{margin:.6rem 0;padding:.5rem .7rem;font-family:var(--f-mono);font-size:.86rem;background:var(--bar);color:var(--bar-ink);border-radius:4px;white-space:pre-wrap}
+.sql b{color:var(--led)}
+.clients{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.4rem}
+.cl{display:flex;flex-direction:column;align-items:center;gap:.1rem;padding:.5rem .2rem;border:1.5px solid var(--edge);border-radius:4px;background:var(--surface);cursor:pointer;box-shadow:3px 3px 0 var(--edge-shadow)}
+.cl span{font-size:1.6rem}.cl small{font-size:.75rem}.cl em{font-style:normal;font-family:var(--f-mono);font-size:.72rem;color:var(--accent)}
+.cl:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--edge-shadow)}
+.srv{margin-top:.8rem;border:1.5px solid var(--edge);border-radius:4px;background:var(--surface-2);padding:.5rem}
+.srv-h{font-family:var(--f-mono);font-size:.8rem;font-weight:600;margin-bottom:.4rem}
+.seats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.3rem}
+.seats span{display:grid;place-items:center;height:2rem;border:1.5px solid var(--line);border-radius:6px 6px 2px 2px;background:var(--surface);font-family:var(--f-mono);font-size:.8rem}
+.seats span.taken{background:color-mix(in srgb,var(--accent) 25%,var(--surface));border-color:var(--accent)}
+.seats span.lock{background:#FDE68A;border-color:#CA8A04;color:#111}
+@media (max-width:600px){.clients{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.counters{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:.6rem}
+.cnt{display:flex;flex-direction:column;align-items:center;padding:.7rem .5rem;border:1.5px solid var(--edge);border-radius:4px;background:var(--surface);box-shadow:3px 3px 0 var(--edge-shadow);text-align:center}
+.cnt span{font-size:1.6rem}.cnt b{font-family:var(--f-mono);font-size:1.25rem;color:var(--accent);font-variant-numeric:tabular-nums}.cnt small{font-size:.78rem;color:var(--ink-2)}
+.cnt.t{background:var(--surface-2)}
+.baskets{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.35rem;margin-top:.7rem}
+.baskets span{display:grid;place-items:center;min-height:2.6rem;border:1.5px dashed var(--line);border-radius:6px;font-size:1.2rem;letter-spacing:.1em;opacity:.45;transition:.2s}
+.baskets span.on{opacity:1;border:1.5px solid var(--accent);background:color-mix(in srgb,var(--accent) 14%,var(--surface))}
 
 </style>
 </head>
@@ -2675,6 +2774,173 @@ function codeLab(root, o = {}) {
   onShow.push(() => {}); requestAnimationFrame(exec);
   return {exec, set code(c) { ta.value = c; }, get code() { return ta.value; }, Canvas};
 }
+
+/* ---------------- Tabellenkalkulation ----------------
+   sheet(root, {cols, rows, cells: {A1: 'Text', B4: '=SUMME(B1:B3)'}, fmt: {B: 'eur'|'num'|'pct'|'int'}, w: {A: '9rem'},
+                cls: {A1: 'h'}, lock: ['A1', …] | true, sel: 'B4', onChange(api)})
+   Formeln (deutsch): + − * / & ^ %, absolute Bezüge mit $ (B$8), Vergleiche = <> < > <= >=, Bereiche A1:B3, Argumente mit ;
+   Funktionen: SUMME, MITTELWERT, MIN, MAX, ANZAHL, ANZAHL2, ZÄHLENWENN, RUNDEN, WENN, UND, ODER */
+const SHEET_FN = {
+  SUMME: a => a.flat().filter(v => typeof v === 'number').reduce((s, v) => s + v, 0),
+  MITTELWERT: a => { const n = a.flat().filter(v => typeof v === 'number'); if (!n.length) throw '#DIV/0!'; return n.reduce((s, v) => s + v, 0) / n.length; },
+  MIN: a => Math.min(...a.flat().filter(v => typeof v === 'number')), MAX: a => Math.max(...a.flat().filter(v => typeof v === 'number')),
+  ANZAHL: a => a.flat().filter(v => typeof v === 'number').length, ANZAHL2: a => a.flat().filter(v => v !== '').length,
+  'ZÄHLENWENN': ([r, c]) => { const m = String(c).match(/^(<=|>=|<>|<|>|=)?(.*)$/), op = m[1] || '=', x = isFinite(parseNum(m[2])) && m[2] !== '' ? parseNum(m[2]) : m[2].toLowerCase();
+    return [r].flat().filter(v => sheetCmp(op, typeof v === 'string' ? v.toLowerCase() : v, x)).length; },
+  RUNDEN: ([x, n = 0]) => Math.round(x * 10 ** n) / 10 ** n,
+  WENN: ([c, a = true, b = false]) => (c === true || (typeof c === 'number' && c !== 0)) ? a : b,
+  UND: a => a.flat().every(v => v === true), ODER: a => a.flat().some(v => v === true)
+};
+function sheetCmp(op, a, b) { return {'=': a === b, '<>': a !== b, '<': a < b, '>': a > b, '<=': a <= b, '>=': a >= b}[op]; }
+function sheetVal(raw) {
+  const s = String(raw ?? '').trim();
+  if (s === '') return '';
+  const t = s.replace(/\s*[€%]$/, '');
+  if (/^-?\d{1,3}(\.\d{3})+(,\d+)?$/.test(t)) return +t.replace(/\./g, '').replace(',', '.') / (s.endsWith('%') ? 100 : 1);
+  if (/^-?\d+([.,]\d+)?$/.test(t)) return +t.replace(',', '.') / (s.endsWith('%') ? 100 : 1);
+  if (/^\d{1,2}\.\d{1,2}\.\d{4}$/.test(s)) { const [d, m, y] = s.split('.').map(Number); return Math.round((Date.UTC(y, m - 1, d) - Date.UTC(1899, 11, 30)) / 864e5); }
+  return s;
+}
+function sheet(root, o = {}) {
+  const NC = o.cols || 4, NR = o.rows || 8, L = i => String.fromCharCode(65 + i);
+  const raw = {}; Object.entries(o.cells || {}).forEach(([k, v]) => raw[k.toUpperCase()] = String(v));
+  const style = {}; let sel = o.sel || 'A1', cache = {};
+  const locked = r => o.lock === true || (o.lock || []).includes(r);
+  root.classList.add('sheet');
+  root.innerHTML = `<div class="sh-bar"><span class="sh-ref"></span><span class="sh-fx">fx</span><input class="sh-in" spellcheck="false" autocomplete="off" aria-label="Inhalt der markierten Zelle"></div>
+    <div class="sh-wrap"><table class="sh"><thead><tr><th class="sh-c"></th>${[...Array(NC)].map((_, c) => `<th${o.w && o.w[L(c)] ? ` style="min-width:${o.w[L(c)]}"` : ''}>${L(c)}</th>`).join('')}</tr></thead>
+    <tbody>${[...Array(NR)].map((_, r) => `<tr><th class="sh-c">${r + 1}</th>${[...Array(NC)].map((_, c) => `<td data-r="${L(c)}${r + 1}"></td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+  const inp = $('.sh-in', root), td = r => $(`td[data-r="${r}"]`, root);
+  const split = r => { const m = /^([A-Z])(\d+)$/.exec(r); return m ? [m[1].charCodeAt(0) - 65, +m[2] - 1] : null; };
+  function value(ref, stack = []) {
+    ref = ref.toUpperCase();
+    const p = split(ref); if (!p || p[0] >= NC || p[1] >= NR) throw '#BEZUG!';
+    if (ref in cache) return cache[ref];
+    if (stack.includes(ref)) throw '#ZIRKEL!';
+    const s = raw[ref] ?? '';
+    let v;
+    if (s.startsWith('=')) { try { v = evalF(s.slice(1), [...stack, ref]); } catch (e) { v = {err: typeof e === 'string' ? e : '#WERT!'}; } }
+    else v = sheetVal(s);
+    if (v && v.err && stack.length) throw v.err;
+    return cache[ref] = v;
+  }
+  function evalF(src, stack) {
+    const tk = []; const re = /\s*(?:(\d+(?:,\d+)?)|("(?:[^"]*)")|([A-Za-z]\d+:[A-Za-z]\d+)|([A-Za-zÄÖÜäöü][A-Za-zÄÖÜäöü0-9]*)|(<=|>=|<>|[-+*/&=<>();^%]))/y;
+    let m, i = 0; src = src.replace(/\$/g, '').trim();
+    while (i < src.length) { re.lastIndex = i; m = re.exec(src); if (!m) throw '#NAME?'; i = re.lastIndex; tk.push(m[1] ? {n: +m[1].replace(',', '.')} : m[2] ? {s: m[2].slice(1, -1)} : m[3] ? {rg: m[3].toUpperCase()} : m[4] ? {id: m[4].toUpperCase()} : {op: m[5]}); if (/^\s*$/.test(src.slice(i))) break; }
+    let k = 0; const peek = () => tk[k], eat = op => { if (tk[k] && tk[k].op === op) { k++; return true; } return false; };
+    const num = v => { if (v === '') return 0; if (typeof v === 'number') return v; if (typeof v === 'boolean') return +v; throw '#WERT!'; };
+    function cmp() { let a = add(); for (const op of ['<=', '>=', '<>', '=', '<', '>']) if (eat(op)) { const b = add(); return sheetCmp(op, typeof a === 'string' ? a.toLowerCase() : a, typeof b === 'string' ? b.toLowerCase() : b); } return a; }
+    function add() { let a = mul(); for (;;) { if (eat('+')) a = num(a) + num(mul()); else if (eat('-')) a = num(a) - num(mul()); else if (eat('&')) a = String(a) + String(mul()); else return a; } }
+    function mul() { let a = un(); for (;;) { if (eat('*')) a = num(a) * num(un()); else if (eat('/')) { const b = num(un()); if (b === 0) throw '#DIV/0!'; a = num(a) / b; } else return a; } }
+    function un() { if (eat('-')) return -num(un()); if (eat('+')) return num(un()); let v = pr(); if (eat('%')) v = num(v) / 100; if (eat('^')) v = num(v) ** num(un()); return v; }
+    function range(rg) { const [a, b] = rg.split(':').map(split); if (!a || !b) throw '#BEZUG!'; const out = []; for (let c = Math.min(a[0], b[0]); c <= Math.max(a[0], b[0]); c++) for (let r = Math.min(a[1], b[1]); r <= Math.max(a[1], b[1]); r++) out.push(value(L(c) + (r + 1), stack)); return out; }
+    function pr() {
+      const t = tk[k++]; if (!t) throw '#WERT!';
+      if ('n' in t) return t.n; if ('s' in t) return t.s; if (t.rg) return range(t.rg);
+      if (t.op === '(') { const v = cmp(); if (!eat(')')) throw '#WERT!'; return v; }
+      if (t.id) {
+        if (t.id === 'WAHR') return true; if (t.id === 'FALSCH') return false;
+        if (peek() && peek().op === '(') {
+          k++; const f = SHEET_FN[t.id]; if (!f) throw '#NAME?';
+          const args = []; if (!eat(')')) { do { args.push(peek() && (peek().op === ';' || peek().op === ')') ? '' : cmp()); } while (eat(';')); if (!eat(')')) throw '#WERT!'; }
+          return f(args);
+        }
+        if (/^[A-Z]\d+$/.test(t.id)) return value(t.id, stack);
+        throw '#NAME?';
+      }
+      throw '#WERT!';
+    }
+    const v = cmp(); if (k < tk.length) throw '#WERT!';
+    if (Array.isArray(v)) throw '#WERT!';
+    return v;
+  }
+  function show(ref, v) {
+    if (v && v.err) return v.err;
+    if (typeof v === 'boolean') return v ? 'WAHR' : 'FALSCH';
+    if (typeof v !== 'number') return v;
+    const f = (o.fmt || {})[ref] || (o.fmt || {})[ref[0]];
+    if (f === 'eur') return v.toLocaleString('de-DE', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' €';
+    if (f === 'pct') return numDE(v * 100, 1) + ' %';
+    if (f === 'int') return numDE(v, 0);
+    if (f === 'date') { const d = new Date(Date.UTC(1899, 11, 30) + v * 864e5); return d.toLocaleDateString('de-DE', {timeZone: 'UTC', day: '2-digit', month: '2-digit', year: 'numeric'}); }
+    return numDE(v, f === 'num' ? 2 : 4);
+  }
+  function refsOf(s) { if (!s.startsWith('=')) return []; const out = []; s.replace(/\$/g, '').replace(/([A-Za-z])(\d+):([A-Za-z])(\d+)|([A-Za-z])(\d+)/g, (m, a, b, c, d, e, f) => { if (a) { const p = split(a.toUpperCase() + b), q = split(c.toUpperCase() + d); if (p && q) for (let x = Math.min(p[0], q[0]); x <= Math.max(p[0], q[0]); x++) for (let y = Math.min(p[1], q[1]); y <= Math.max(p[1], q[1]); y++) out.push(L(x) + (y + 1)); } else out.push(e.toUpperCase() + f); }); return out; }
+  function paint() {
+    cache = {};
+    $$('td', root).forEach(c => {
+      const r = c.dataset.r, v = value(r), s = raw[r] ?? '';
+      c.textContent = show(r, v);
+      c.className = [(o.cls || {})[r] || '', typeof v === 'number' || typeof v === 'boolean' ? 'n' : '', v && v.err ? 'err' : '', s.startsWith('=') ? 'f' : '', r === sel ? 'sel' : '', locked(r) ? 'lk' : ''].filter(Boolean).join(' ');
+      c.removeAttribute('style'); if (style[r]) Object.assign(c.style, style[r]);
+    });
+    const refs = refsOf(raw[sel] || ''); refs.forEach(r => { const c = td(r); if (c) c.classList.add('ref'); });
+    $('.sh-ref', root).textContent = sel; inp.value = raw[sel] ?? ''; inp.readOnly = locked(sel);
+  }
+  function select(r, focus) { sel = r; paint(); if (focus && !locked(r)) { inp.focus(); inp.select(); } }
+  function commit() { if (locked(sel)) return; const v = inp.value.trim(); if (v === '') delete raw[sel]; else raw[sel] = v; paint(); if (o.onChange) o.onChange(api); }
+  root.addEventListener('click', e => { const c = e.target.closest('td[data-r]'); if (c) select(c.dataset.r, true); });
+  inp.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === 'Tab') { e.preventDefault(); commit(); const [c, r] = split(sel); const nx = e.key === 'Tab' ? L(Math.min(NC - 1, c + 1)) + (r + 1) : L(c) + Math.min(NR, r + 2); select(nx, true); }
+    else if (e.key === 'Escape') { inp.value = raw[sel] ?? ''; inp.blur(); }
+  });
+  inp.addEventListener('blur', () => { if ((raw[sel] ?? '') !== inp.value.trim()) commit(); });
+  const api = {
+    get: r => { cache = {}; return value(r); }, text: r => { cache = {}; return show(r.toUpperCase(), value(r)); }, raw: r => raw[r.toUpperCase()] ?? '',
+    set(r, v) { r = r.toUpperCase(); if (v === '' || v == null) delete raw[r]; else raw[r] = String(v); paint(); },
+    load(cells) { Object.keys(raw).forEach(k => delete raw[k]); Object.entries(cells).forEach(([k, v]) => raw[k.toUpperCase()] = String(v)); Object.keys(style).forEach(k => delete style[k]); paint(); },
+    style(r, st) { style[r.toUpperCase()] = st; paint(); }, select: r => select(r.toUpperCase()),
+    sortRows(r1, r2, col, desc) { const rows = []; for (let r = r1; r <= r2; r++) rows.push([...Array(NC)].map((_, c) => raw[L(c) + r])); const ci = col.charCodeAt(0) - 65; cache = {};
+      const key = row => sheetVal(row[ci]); rows.sort((a, b) => { const x = key(a), y = key(b); const d = typeof x === 'number' && typeof y === 'number' ? x - y : String(x).localeCompare(String(y), 'de'); return desc ? -d : d; });
+      rows.forEach((row, k) => row.forEach((v, c) => { const ref = L(c) + (r1 + k); if (v == null) delete raw[ref]; else raw[ref] = v; })); paint(); },
+    refresh: paint, get sel() { return sel; }
+  };
+  paint();
+  return api;
+}
+
+/* Diagramm als SVG: chart(root, {type: 'bar'|'hbar'|'line'|'pie', data: [[Beschriftung, Wert], …], min, max, unit, title, step}) → {set(o)} */
+const CHART_COLORS = ['#0E7490', '#C2410C', '#65A30D', '#7C3AED', '#CA8A04', '#BE123C', '#2563EB', '#64748B', '#0D9488', '#DB2777', '#78716C', '#9333EA'];
+function chart(root, o = {}) {
+  root.classList.add('chart');
+  function draw() {
+    const W = 420, H = 250, d = o.data || [], u = o.unit || '', fmt = v => numDE(v, 1) + u;
+    let s = o.title ? `<text x="${W / 2}" y="14" text-anchor="middle" class="ch-t">${o.title}</text>` : '';
+    if (o.type === 'pie') {
+      const tot = d.reduce((a, x) => a + x[1], 0) || 1; let a0 = -Math.PI / 2; const cx = 120, cy = 135, r = 95;
+      d.forEach(([l, v], i) => {
+        const a1 = a0 + v / tot * 2 * Math.PI, big = a1 - a0 > Math.PI ? 1 : 0, c = CHART_COLORS[i % 12];
+        s += d.length === 1 ? `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${c}"/>` : `<path d="M${cx},${cy} L${cx + r * Math.cos(a0)},${cy + r * Math.sin(a0)} A${r},${r} 0 ${big} 1 ${cx + r * Math.cos(a1)},${cy + r * Math.sin(a1)} Z" fill="${c}" class="ch-sl"><title>${l}: ${numDE(v / tot * 100, 1)} %</title></path>`;
+        const am = (a0 + a1) / 2; if (v / tot > .06) s += `<text x="${cx + r * .65 * Math.cos(am)}" y="${cy + r * .65 * Math.sin(am) + 4}" text-anchor="middle" class="ch-in">${numDE(v / tot * 100, 0)} %</text>`;
+        s += `<rect x="250" y="${30 + i * 19}" width="11" height="11" fill="${c}"/><text x="267" y="${40 + i * 19}" class="ch-l">${l}</text>`;
+        a0 = a1;
+      });
+    } else if (o.type === 'hbar') {
+      const mx = o.max ?? Math.max(...d.map(x => x[1])) * 1.1, x0 = 150, bw = W - x0 - 50, bh = Math.min(26, (H - 30) / d.length - 6);
+      d.forEach(([l, v], i) => { const y = 24 + i * (bh + 6); s += `<text x="${x0 - 6}" y="${y + bh / 2 + 4}" text-anchor="end" class="ch-l">${l}</text><rect x="${x0}" y="${y}" width="${Math.max(0, v / mx * bw)}" height="${bh}" class="ch-bar"/><text x="${x0 + v / mx * bw + 4}" y="${y + bh / 2 + 4}" class="ch-v">${fmt(v)}</text>`; });
+    } else {
+      const vals = d.map(x => x[1]), mn = o.min ?? 0, mx = o.max ?? Math.max(...vals, mn + 1) * 1.12, x0 = 46, y0 = H - 30, y1 = 26, pw = W - x0 - 10;
+      const Y = v => y0 - (v - mn) / (mx - mn) * (y0 - y1), st = o.step || niceStep((mx - mn) / 5);
+      for (let v = Math.ceil(mn / st) * st; v <= mx + 1e-9; v += st) s += `<line x1="${x0}" x2="${W - 10}" y1="${Y(v)}" y2="${Y(v)}" class="ch-g"/><text x="${x0 - 5}" y="${Y(v) + 4}" text-anchor="end" class="ch-l">${numDE(v, 2)}${u}</text>`;
+      const n = d.length, bw = pw / n;
+      if (o.type === 'line') s += `<polyline points="${d.map(([l, v], i) => `${x0 + bw * (i + .5)},${Y(Math.max(mn, v))}`).join(' ')}" class="ch-line"/>`;
+      d.forEach(([l, v], i) => {
+        const x = x0 + bw * i, cv = Math.max(mn, Math.min(mx, v));
+        if (o.type === 'line') s += `<circle cx="${x + bw / 2}" cy="${Y(cv)}" r="3.5" class="ch-dot"/>`;
+        else s += `<rect x="${x + bw * .15}" y="${Y(cv)}" width="${bw * .7}" height="${Math.max(0, y0 - Y(cv))}" class="ch-bar"/>`;
+        if (o.labels !== false) s += `<text x="${x + bw / 2}" y="${Y(cv) - 5}" text-anchor="middle" class="ch-v">${fmt(v)}</text>`;
+        s += `<text x="${x + bw / 2}" y="${y0 + 15}" text-anchor="middle" class="ch-l">${l}</text>`;
+      });
+      s += `<line x1="${x0}" x2="${x0}" y1="${y1 - 8}" y2="${y0}" class="ch-ax"/><line x1="${x0}" x2="${W - 10}" y1="${y0}" y2="${y0}" class="ch-ax"/>`;
+      if (mn > 0) s += `<path d="M${x0 - 6},${y0 - 10} l12,-4 M${x0 - 6},${y0 - 5} l12,-4" class="ch-brk"/>`;
+    }
+    root.innerHTML = `<svg viewBox="0 0 420 250" role="img" aria-label="${o.title || 'Diagramm'}">${s}</svg>`;
+  }
+  draw();
+  return {set(p) { Object.assign(o, p); draw(); }};
+}
+function niceStep(x) { const p = 10 ** Math.floor(Math.log10(x)), m = x / p; return (m <= 1 ? 1 : m <= 2 ? 2 : m <= 5 ? 5 : 10) * p; }
 
 /* ================================================================ */
 /* ================= Inhalte dieser Stunde ================= */

@@ -1,0 +1,200 @@
+<!--
+title: Einfache Wenn-Funktionen nutzen
+short: Wenn-Funktion
+time: 2 Unterrichtsstunden
+q: Wie trifft ein Tabellenkalkulationsprogramm Entscheidungen?
+facts: Wenn … dann … sonst: Bedingungen wie bei Verzweigungen in Algorithmen | Darstellung als Ablaufplan und Struktogramm | Logik der WENN-Funktion: Prüfung, Dann-Wert, Sonst-Wert – =WENN(A3>=20;"draußen";"drinnen") | Vergleichsoperatoren = <> < > <= >= | Kombination mit SUMME
+inter: Geburtstagsfeier: Bedingung im Ablaufplan und Struktogramm durchlaufen · WENN-Funktion aus drei Teilen bauen · M1 Wahl zum Stadtparlament (ab 16) · M2 Theoretische Fahrprüfung mit SUMME und WENN · M3 Lagerbestand im Supermarkt · Ergebnisse vorhersagen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Daten und Datenbanken</p>
+      <h1>Wenn-Funktionen<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Lina möchte ihren 16. Geburtstag im Garten feiern – aber nur, wenn das Wetter gut ist. Sonst steigt die Party im Partykeller. Kann ein Tabellenkalkulationsprogramm solche <b>Entscheidungen</b> treffen?</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welche Wenn-dann-Entscheidungen triffst du jeden Tag?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie trifft ein Tabellenkalkulationsprogramm Entscheidungen?</p></div>
+      <div class="controls"><button class="btn primary" data-go="bedingung">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="bedingung" data-label="Bedingung" data-yr="Einstieg" data-title="Wenn … dann … sonst" data-sub="Ablaufplan und Struktogramm">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Wenn … dann … sonst</p>
+    <h2>Eine Bedingung entscheidet</h2>
+    <p class="lead"><b>Wenn</b> das Wetter schön genug ist, <b>dann</b> findet die Party im Garten statt, <b>sonst</b> im Partykeller. Auch in Algorithmen werden Verzweigungen von <b>Bedingungen</b> abhängig gemacht. Damit das Programm entscheiden kann, braucht es feste Werte: Ab welcher Temperatur ist das Wetter „schön“? Hier: ab 20 °C.</p>
+  </div>
+  <div class="model">
+    <div class="grid-2">
+      <div class="vis"><div class="vis-head"><h3>Ablaufplan</h3></div><svg viewBox="0 0 240 190" class="ifflow" id="ap">
+        <polygon points="120,8 200,48 120,88 40,48" data-k="q"/><text x="120" y="44" text-anchor="middle">Temperatur</text><text x="120" y="58" text-anchor="middle">≥ 20 °C?</text>
+        <text x="30" y="40" class="lb">ja</text><text x="200" y="40" class="lb">nein</text>
+        <line x1="40" y1="48" x2="40" y2="110"/><line x1="200" y1="48" x2="200" y2="110"/>
+        <rect x="2" y="110" width="104" height="34" rx="3" data-k="y"/><text x="54" y="131" text-anchor="middle">Feier draußen</text>
+        <rect x="134" y="110" width="104" height="34" rx="3" data-k="n"/><text x="186" y="131" text-anchor="middle">Feier drinnen</text>
+        <line x1="54" y1="144" x2="54" y2="162"/><line x1="186" y1="144" x2="186" y2="162"/><line x1="54" y1="162" x2="186" y2="162"/><line x1="120" y1="162" x2="120" y2="168"/>
+        <rect x="70" y="168" width="100" height="20" rx="3" data-k="e"/><text x="120" y="182" text-anchor="middle">aufräumen</text></svg></div>
+      <div class="vis"><div class="vis-head"><h3>Struktogramm</h3></div><div class="nsd-if" id="sg">
+        <div class="nsd-q" data-k="q"><span>Temperatur ≥ 20 °C?</span><small><i>ja</i><i>nein</i></small></div>
+        <div class="nsd-b"><div data-k="y">Feier draußen</div><div data-k="n">Feier drinnen</div></div>
+        <div class="nsd-e" data-k="e">aufräumen</div></div></div>
+    </div>
+    <div class="stack"><label class="slider-row">Temperatur <b id="t-v">18 °C</b><input type="range" id="t-r" min="5" max="35" value="18"></label><p class="status" id="t-st"></p></div>
+  </div>
+</section>
+
+<section class="station" id="logik" data-label="WENN" data-yr="Erarbeitung" data-title="Logik der Wenn-Funktion" data-sub="Prüfung, Dann, Sonst">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Logik der Wenn-Funktion</p>
+    <h2>Drei Teile: Prüfung ; Dann ; Sonst</h2>
+    <p class="lead">Die WENN-Funktion besteht immer aus drei Teilen, getrennt durch Semikolons. Trifft die Bedingung zu, setzt das Programm den <b>Dann-Wert</b> ein, sonst den <b>Sonst-Wert</b>. Texte stehen in Anführungszeichen. Baue die Formel für B2 zusammen.</p>
+  </div>
+  <div class="model">
+    <div class="stack">
+      <div class="vis"><p class="fn-build"><span class="fn-p eq">=</span><span class="fn-p nm">WENN</span><span class="fn-p">(</span><select class="wb" id="w1" aria-label="Prüfung"><option>A2>=20</option><option>A2<20</option><option>A2=20</option><option>B2>=20</option></select><span class="fn-p sp">;</span><select class="wb" id="w2" aria-label="Dann-Wert"><option>"draußen"</option><option>"drinnen"</option><option>draußen</option></select><span class="fn-p sp">;</span><select class="wb" id="w3" aria-label="Sonst-Wert"><option>"drinnen"</option><option>"draußen"</option><option>drinnen</option></select><span class="fn-p">)</span></p>
+        <div class="legend3"><span><b>Prüfung</b> Bedingung mit Vergleich</span><span><b>Dann-Wert</b> wenn wahr</span><span><b>Sonst-Wert</b> wenn falsch</span></div></div>
+      <p class="status" id="w-st"></p>
+      <div class="table-wrap"><table class="cmp"><thead><tr><th>Operator</th><th>=</th><th>&lt;&gt;</th><th>&lt;</th><th>&gt;</th><th>&lt;=</th><th>&gt;=</th></tr></thead><tbody><tr><td>Bedeutung</td><td>gleich</td><td>ungleich</td><td>kleiner</td><td>größer</td><td>kleiner gleich</td><td>größer gleich</td></tr></tbody></table></div>
+    </div>
+    <div id="sh-w"></div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Wahl" data-yr="M1" data-title="Wenn-Funktion" data-sub="Wahl zum Stadtparlament">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Material M1</p>
+    <h2>Wer darf wählen?</h2>
+    <p class="lead">Bei der Kommunalwahl am 24.09.2023 darf teilnehmen, wer mindestens 16 Jahre alt ist. Schreibe in C3 eine WENN-Funktion, die „ja“ oder „nein“ ausgibt, und übertrage sie in die Zeilen darunter.</p>
+  </div>
+  <div class="model">
+    <div id="sh-m1"></div>
+    <div class="stack">
+      <ol class="goals" id="m1-g"></ol>
+      <div class="controls"><button class="btn" id="m1-copy">Formel aus C3 nach unten kopieren</button><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div>
+      <p class="solution" id="m1a" hidden><code>=WENN(B3>=16;"ja";"nein")</code> – beim Kopieren nach unten passt das Programm den Zellbezug automatisch an: in C4 steht <code>B4</code>, in C5 <code>B5</code> … Wahlberechtigt: Felix, Dana, Benja, Ira, Maxi.</p>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Struktogramm</h3></header><p>Stelle die Problemstellung in einem Struktogramm dar.</p><div class="controls"><button class="btn" data-reveal="m1b" aria-expanded="false">Lösung</button></div><p class="solution" id="m1b" hidden>Bedingung: <b>Alter ≥ 16?</b> – ja: „darf wählen“ · nein: „darf nicht wählen“.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m2" data-label="M2 Fahrprüfung" data-yr="M2" data-title="Theoretische Fahrprüfung" data-sub="SUMME und WENN">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M2</p>
+    <h2>Bestanden oder nicht?</h2>
+    <p class="lead">In der Fahrschule werden die Fehlerpunkte der Theorieprüfung (A1-Motorrad) erfasst. Bestanden hat, wer <b>höchstens 10 Fehlerpunkte</b> hat. Ergänze Spalte E (Summe) und F (bestanden?). Bestandene Prüflinge werden grün hervorgehoben.</p>
+  </div>
+  <div class="model">
+    <div id="sh-m2"></div>
+    <div class="stack"><ol class="goals" id="m2-g"></ol>
+      <div class="controls"><button class="btn" id="m2-copy">E3 und F3 nach unten kopieren</button><button class="btn" data-reveal="m2a" aria-expanded="false">Lösung</button></div>
+      <p class="solution" id="m2a" hidden>E3: <code>=SUMME(B3:D3)</code> · F3: <code>=WENN(E3&lt;=10;"Ja";"Nein")</code>. Durchgefallen ist nur Largo (11 Fehlerpunkte). Die Hervorhebung erledigt in echten Programmen die <b>bedingte Formatierung</b>.</p></div>
+  </div>
+</section>
+
+<section class="station" id="m3" data-label="M3 Lager" data-yr="M3" data-title="Lagerbestand im Supermarkt" data-sub="Mehrere Wege">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M3</p>
+    <h2>Automatisch nachbestellen</h2>
+    <p class="lead">Ist der Bestand einer Ware <b>20 oder kleiner</b>, soll in Spalte C „Ja“ erscheinen, sonst „Nein“. Ändere auch Bestände – die Spalte passt sich an.</p>
+  </div>
+  <div class="model">
+    <div id="sh-m3"></div>
+    <div class="stack"><p class="status" id="m3-st"></p>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Mehrere Wege</h3></header><p>Es gibt mehrere Möglichkeiten, die Funktion aufzubauen. Notiere mindestens zwei. Prüfe sie in C3.</p>
+        <div class="controls"><button class="btn" data-reveal="m3a" aria-expanded="false">Lösung</button></div><p class="solution" id="m3a" hidden><code>=WENN(B3&lt;=20;"Ja";"Nein")</code> · <code>=WENN(B3&gt;20;"Nein";"Ja")</code> · <code>=WENN(B3&lt;21;"Ja";"Nein")</code> (bei ganzen Zahlen). Die Bedingung wird umgedreht, dann tauschen Dann- und Sonst-Wert die Plätze.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Wenn-Funktion</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Einfache Wenn-Funktionen</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step>Mit der <b>WENN-Funktion</b> trifft die Tabellenkalkulation Entscheidungen – wie eine Verzweigung im Algorithmus.</li>
+        <li data-step>Aufbau: <code>=WENN(Prüfung;Dann-Wert;Sonst-Wert)</code>, z. B. <code>=WENN(A3&gt;=20;"draußen";"drinnen")</code>.</li>
+        <li data-step>Ist die Bedingung erfüllt, wird der <b>Dann-Wert</b> eingesetzt, sonst der <b>Sonst-Wert</b>. Texte stehen in Anführungszeichen.</li>
+        <li data-step>Vergleichsoperatoren: = &nbsp; &lt;&gt; &nbsp; &lt; &nbsp; &gt; &nbsp; &lt;= &nbsp; &gt;=</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne das Struktogramm zur Geburtstagsfeier und schreibe die passende WENN-Funktion darunter.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Was gibt die WENN-Funktion aus?</h2></div>
+  <div id="ts"></div>
+</section>
+
+<script>
+/* ===== Station 1 ===== */
+(() => {
+  const upd = () => { const t = +$('#t-r').value, y = t >= 20; $('#t-v').textContent = t + ' °C';
+    ['#ap', '#sg'].forEach(s => $$('[data-k]', $(s)).forEach(el => el.classList.toggle('on', el.dataset.k === 'q' || el.dataset.k === 'e' || el.dataset.k === (y ? 'y' : 'n'))));
+    $('#t-st').innerHTML = `${t} °C ≥ 20 °C? <b>${y ? 'ja' : 'nein'}</b> → ${y ? 'Feier <b>draußen</b> im Garten' : 'Feier <b>drinnen</b> im Partykeller'} → danach aufräumen.`; };
+  $('#t-r').addEventListener('input', upd); upd();
+})();
+
+/* ===== Station 2 ===== */
+(() => {
+  const cells = {A1: 'Temperatur in °C', B1: 'Ort der Feier'}; [18, 19, 20, 21, 25, 12].forEach((t, i) => cells['A' + (i + 2)] = t);
+  const sh = sheet($('#sh-w'), {cols: 2, rows: 7, cells, w: {A: '9rem', B: '9rem'}, cls: {A1: 'h', B1: 'h'}, sel: 'B2'});
+  const upd = () => {
+    const p = $('#w1').value, a = $('#w2').value, b = $('#w3').value, f = `=WENN(${p};${a};${b})`;
+    for (let r = 2; r <= 7; r++) sh.set('B' + r, f.replace(/A2/g, 'A' + r).replace(/B2/g, 'B' + r));
+    sh.select('B2');
+    const ok = p === 'A2>=20' && a === '"draußen"' && b === '"drinnen"', alt = p === 'A2<20' && a === '"drinnen"' && b === '"draußen"';
+    const e = sh.get('B2');
+    $('#w-st').innerHTML = `<code>${f.replace(/</g, '&lt;')}</code> ` + (e && e.err ? `→ <span class="bad">${e.err}</span> ${p.startsWith('B2') ? 'Die Zelle bezieht sich auf sich selbst (Zirkelbezug).' : 'Texte müssen in Anführungszeichen stehen, sonst sucht das Programm eine Funktion oder Zelle mit diesem Namen.'}` :
+      ok ? '<span class="good">✔ Richtig! Ab 20 °C draußen.</span>' : alt ? '<span class="good">✔ Auch richtig:</span> umgedrehte Bedingung, vertauschte Werte.' : p === 'A2=20' ? 'Nur bei genau 20 °C draußen – bei 25 °C nicht? Prüfe den Operator.' : 'Die Werte passen nicht zur Bedingung. Prüfe Dann- und Sonst-Wert.');
+  };
+  ['#w1', '#w2', '#w3'].forEach(s => $(s).onchange = upd); upd();
+})();
+
+/* ===== M1 ===== */
+(() => {
+  const P = [['Felix', 16], ['Ezio', 15], ['Dana', 16], ['Benja', 16], ['Ira', 17], ['Maxi', 16], ['Luan', 15]];
+  const cells = {A1: 'Teilnahme Wahl Stadtparlament (24.09.2023)', A2: 'Schüler/-in', B2: 'Alter', C2: 'wahlberechtigt?'};
+  P.forEach(([n, a], i) => { cells['A' + (i + 3)] = n; cells['B' + (i + 3)] = a; });
+  const goal = s => { let ok = 0; P.forEach(([, a], i) => { const v = String(s.get('C' + (i + 3))).toLowerCase(); if (v === (a >= 16 ? 'ja' : 'nein') && /WENN/i.test(s.raw('C' + (i + 3)))) ok++; });
+    $('#m1-g').innerHTML = `<li class="${/WENN/i.test(s.raw('C3')) && String(s.get('C3')).toLowerCase() === 'ja' ? 'ok' : ''}"><b>C3</b>: WENN-Funktion für Felix</li><li class="${ok === P.length ? 'ok' : ''}"><b>C3:C9</b>: alle Zeilen richtig (${ok} / ${P.length})</li>`; };
+  const sh = sheet($('#sh-m1'), {cols: 3, rows: 9, cells, sel: 'C3', w: {A: '8rem', C: '9rem'}, cls: {A1: 't', B1: 't', C1: 't', A2: 'h', B2: 'h', C2: 'h'}, lock: ['A1', 'A2', 'B2', 'C2'], onChange: goal});
+  $('#m1-copy').onclick = () => { const f = sh.raw('C3'); if (!f) return; for (let r = 4; r <= 9; r++) sh.set('C' + r, f.replace(/([A-Z])3(?!\d)/g, '$1' + r)); goal(sh); };
+  goal(sh);
+})();
+
+/* ===== M2 ===== */
+(() => {
+  const P = [['Lou', 0, 0, 0], ['Ira', 1, 1, 2], ['Erin', 0, 1, 1], ['Largo', 4, 3, 4], ['Finn', 0, 3, 0], ['Nayla', 2, 3, 4], ['Nikolas', 1, 0, 0]];
+  const cells = {A1: 'Prüfungsergebnisse der theoretischen Fahrprüfung (Fehlerpunkte)', B2: 'Block A', C2: 'Block B', D2: 'Block C', E2: 'Summe', F2: 'bestanden'};
+  P.forEach((r, i) => r.forEach((v, j) => cells['ABCD'[j] + (i + 3)] = v));
+  const paint = s => { let okE = 0, okF = 0;
+    P.forEach((r, i) => { const R = i + 3, sum = r[1] + r[2] + r[3], e = s.get('E' + R), f = String(s.get('F' + R)).toLowerCase();
+      if (e === sum && /SUMME/i.test(s.raw('E' + R))) okE++; if (f === (sum <= 10 ? 'ja' : 'nein') && /WENN/i.test(s.raw('F' + R))) okF++;
+      const st = f === 'ja' ? {background: 'color-mix(in srgb, #16A34A 22%, transparent)'} : {}; if (JSON.stringify(st) !== (s['_' + R] || '{}')) { s['_' + R] = JSON.stringify(st); s.style('A' + R, st); } });
+    $('#m2-g').innerHTML = `<li class="${okE === 7 ? 'ok' : ''}"><b>Spalte E</b>: Summe der Fehlerpunkte (${okE} / 7)</li><li class="${okF === 7 ? 'ok' : ''}"><b>Spalte F</b>: „Ja“ oder „Nein“ mit WENN (${okF} / 7)</li>`; };
+  const sh = sheet($('#sh-m2'), {cols: 6, rows: 9, cells, sel: 'E3', w: {A: '6rem'}, cls: {A1: 't', B1: 't', C1: 't', D1: 't', E1: 't', F1: 't', B2: 'h', C2: 'h', D2: 'h', E2: 'h', F2: 'h', A2: 'h'}, lock: ['A1', 'B2', 'C2', 'D2', 'E2', 'F2'], onChange: paint});
+  $('#m2-copy').onclick = () => { ['E', 'F'].forEach(c => { const f = sh.raw(c + '3'); if (f) for (let r = 4; r <= 9; r++) sh.set(c + r, f.replace(/([A-Z])3(?!\d)/g, '$1' + r)); }); paint(sh); };
+  paint(sh);
+})();
+
+/* ===== M3 ===== */
+(() => {
+  const W = [['Spaghetti 500 g', 15], ['Dosentomaten 500 g', 19], ['Mehl 1000 g', 20], ['Zucker 1000 g', 27], ['Toilettenpapier', 11], ['Hygienereiniger', 23], ['Tiefkühlpizza', 16]];
+  const cells = {A1: 'Supermarkt Lagerbestand', A2: 'Ware', B2: 'Bestand', C2: 'Nachbestellung', C3: '=WENN(B3<=20;"Ja";"Nein")'};
+  W.forEach(([n, b], i) => { cells['A' + (i + 3)] = n; cells['B' + (i + 3)] = b; if (i) cells['C' + (i + 3)] = `=WENN(B${i + 3}<=20;"Ja";"Nein")`; });
+  const upd = s => { const n = W.map((w, i) => s.text('C' + (i + 3))).filter(v => String(v).toLowerCase() === 'ja').length; $('#m3-st').innerHTML = `Nachbestellt werden <b>${n}</b> von ${W.length} Waren. Formel in C3: <code>${s.raw('C3').replace(/</g, '&lt;')}</code>`; };
+  const sh = sheet($('#sh-m3'), {cols: 3, rows: 9, cells, sel: 'C3', w: {A: '10rem', C: '8rem'}, cls: {A1: 't', B1: 't', C1: 't', A2: 'h', B2: 'h', C2: 'h'}, lock: ['A1', 'A2', 'B2', 'C2'], onChange: upd});
+  upd(sh);
+})();
+
+/* ===== Übungen ===== */
+taskSet($('#ts'), () => {
+  const x = randInt(5, 30), g = randInt(10, 25), op = pick(['>=', '<', '<=', '>', '=', '<>']), [a, b] = pick([['"Ja"', '"Nein"'], ['"draußen"', '"drinnen"'], ['"bestanden"', '"nicht bestanden"'], ['1', '0']]);
+  const c = sheetCmp(op, x, g), out = (c ? a : b).replace(/"/g, '');
+  return {key: `${x}${op}${g}${a}`, tag: 'WENN', q: `In A1 steht <b>${x}</b>.<br><code>=WENN(A1${op.replace('<', '&lt;').replace('>', '&gt;')}${g};${a};${b})</code>`, fields: [{l: 'Ausgabe', a: out}], hint: `Prüfe: Ist ${x} ${op} ${g}? Wenn ja, Dann-Wert, sonst Sonst-Wert.`};
+}, {n: 6});
+</script>

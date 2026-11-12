@@ -95,5 +95,6 @@ SERIES = [
          lead='Daten sammeln, ordnen und auswerten: Die Reihe arbeitet mit Tabellenkalkulation, Diagrammen und Formeln, nutzt WENN-Funktionen und zeigt, wie Datenbanken mit Tabellen, Datensätzen und Abfragen funktionieren – bis hin zu Big Data.',
          links=[('../8-Programmieren/00_Uebersicht.html', '← Kapitel 3')],
          notes=[('Material', 'info', 'Für die Praxisphasen wird ein Tabellenkalkulationsprogramm (Excel, LibreOffice Calc, Numbers oder Google Tabellen) benötigt; die Präsentation enthält eine kleine eingebaute Tabelle.'),
-                ('Formeln', 'info', 'Funktionsnamen und Trennzeichen folgen der deutschen Version (SUMME, MITTELWERT, WENN; Semikolon als Trennzeichen).')]),
+                ('Formeln', 'info', 'Funktionsnamen und Trennzeichen folgen der deutschen Version (SUMME, MITTELWERT, WENN; Semikolon als Trennzeichen).'),
+                ('Beispieldaten', 'info', 'Die eingebaute Tabelle versteht SUMME, MITTELWERT, MIN, MAX, ANZAHL, ZÄHLENWENN, RUNDEN und WENN. Notenliste (Stunde 3), Warenkörbe (Stunde 6) und die Grenze von 10 Fehlerpunkten bei der Fahrprüfung sind für die Aufgaben festgelegte Beispieldaten; die Diagrammwerte stammen aus dem Schulbuch.')]),
 ]

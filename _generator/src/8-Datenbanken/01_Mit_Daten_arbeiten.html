@@ -1,0 +1,198 @@
+<!--
+title: Mit Daten arbeiten
+short: Daten & Tabellen
+time: 1–2 Unterrichtsstunden
+q: Wie werden Daten strukturiert und in einer Tabelle erfasst?
+facts: Struktur von Daten: gleiche Daten immer an derselben Stelle im Datensatz | Datentypen: Ganzzahl, Gleitkommazahl, Wahrheitswert, Zeichenkette | Tabellenkalkulationsprogramm: Arbeitsmappe, Tabellenblatt, Spalten, Zeilen, Zellen, Zelladresse | Objektorientierte Sicht: Klasse Zelle, Objekt, Attribut, Attributwert, Methode
+inter: Datensätze vergleichen · Datentypen sortieren · Zelladressen finden · Zellen gestalten (Attribute ändern) · M1 Kennenlerntermin in einer Tabelle erfassen, zählen und sortieren
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Daten und Datenbanken</p>
+      <h1>Mit Daten arbeiten<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Bei Umfragen, Messungen oder Bestellungen fallen <b>sehr viele Daten</b> an. Damit man mit ihnen arbeiten kann, müssen sie <b>strukturiert</b> erfasst werden – zum Beispiel in einer <b>Tabelle</b>.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Wo begegnen dir im Alltag Tabellen? Was steht in den Spalten, was in den Zeilen?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie werden Daten strukturiert und in einer Tabelle erfasst?</p></div>
+      <div class="controls"><button class="btn primary" data-go="struktur">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="struktur" data-label="Struktur" data-yr="Einstieg" data-title="Struktur von Daten" data-sub="Datensätze">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Struktur von Daten</p>
+    <h2>Ordnung ist alles</h2>
+    <p class="lead">In der Informatik werden Daten gespeichert und aufbereitet. Daten <b>gleicher Art</b> – zum Beispiel die Entfernung einer Stadt zu anderen Städten – stehen in jedem <b>Datensatz</b> immer an <b>derselben Stelle</b>. Nur so weiß ein Programm, wo genau welche Teilinformation steht.</p>
+  </div>
+  <div class="grid-2">
+    <div class="box"><span class="tag">ungeordnet</span><p class="mono-list" id="ung"></p></div>
+    <div class="box"><span class="tag info">strukturiert</span><div class="table-wrap"><table class="cmp" id="str"></table></div></div>
+  </div>
+  <div class="controls mt"><span class="note">Frage an die Daten:</span><div id="fr-seg"></div></div>
+  <p class="status" id="fr-st"></p>
+</section>
+
+<section class="station" id="typen" data-label="Datentypen" data-yr="Erarbeitung" data-title="Datentypen" data-sub="Zahl, Text, wahr/falsch">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Datentypen</p>
+    <h2>Welche Art von Daten?</h2>
+  </div>
+  <div class="grid-2">
+    <ul class="facts">
+      <li><b>Ganzzahl:</b> ganze Zahlen wie 1, 0 oder −7.</li>
+      <li><b>Gleitkommazahl:</b> Zahlen mit Nachkommastellen wie 1,5 oder 3,25 – z. B. für Geldbeträge.</li>
+      <li><b>Wahrheitswert:</b> nur wahr oder falsch – für Entscheidungen in Algorithmen.</li>
+      <li><b>Zeichenkette:</b> eine Folge von Zeichen, die einen Text ergibt – z. B. Adressen oder Nachrichten.</li>
+    </ul>
+    <div class="box"><span class="tag">Tipp</span><p>Achtung bei Postleitzahlen und Telefonnummern: Mit ihnen rechnet man nicht. <b>08675/9876</b> ist eine Zeichenkette – die führende 0 würde bei einer Zahl verschwinden.</p></div>
+  </div>
+  <h3 class="mt">Sortiere die Daten nach ihrem Datentyp</h3>
+  <div id="sort-typ"></div>
+</section>
+
+<section class="station" id="tabelle" data-label="Tabelle" data-yr="Erarbeitung" data-title="Daten in Tabellen erfassen" data-sub="Zellen und Zelladressen">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Tabellenkalkulation</p>
+    <h2>Spalten, Zeilen, Zellen</h2>
+    <p class="lead">Ein <b>Tabellenkalkulationsprogramm</b> kann Daten erfassen, verarbeiten und ausgeben. Ein Dokument heißt <b>Arbeitsmappe</b> und enthält ein oder mehrere <b>Tabellenblätter</b>. Spalten tragen Buchstaben, Zeilen Nummern. Die <b>Zelle</b> ist der Schnittpunkt – ihre <b>Zelladresse</b> ist Buchstabe + Zahl, z. B. <b>C2</b>.</p>
+  </div>
+  <div class="model">
+    <div id="sh-adr"></div>
+    <div class="stack">
+      <div class="box"><span class="tag info">Finde die Zelle</span><p id="adr-q"></p><p class="score" id="adr-sc"></p><div class="controls"><button class="btn" id="adr-new">Neue Zelle</button></div></div>
+      <p class="note">Tippe eine Zelle an: Oben links siehst du ihre Adresse. Du kannst auch eigene Einträge in die Bearbeitungszeile schreiben und mit Enter bestätigen.</p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="objekte" data-label="Objekte" data-yr="Vertiefung" data-title="Tabelle formatieren" data-sub="Klasse, Objekt, Attribut, Methode">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Objekte in der Tabelle</p>
+    <h2>Jede Zelle ist ein Objekt</h2>
+    <p class="lead">Spalten, Zeilen und Zellen sind <b>Objekte</b>. Jedes Objekt besitzt Eigenschaften, die man <b>Attribute</b> nennt. Mit <b>Methoden</b> – meist über Schaltflächen in der Menüleiste oder das Kontextmenü – werden Attributwerte verändert: Hintergrundfarbe, Schriftfarbe, fett …</p>
+  </div>
+  <div class="model">
+    <div><div id="sh-obj"></div>
+      <div class="controls"><span class="note">Methoden:</span>
+        <select class="lab-ex" id="ob-bg" aria-label="Hintergrundfarbe"><option value="">Hintergrund …</option><option value="#FDE68A">gelb</option><option value="#BBF7D0">grün</option><option value="#BFDBFE">blau</option><option value="#FBCFE8">rosa</option><option value="none">keine</option></select>
+        <select class="lab-ex" id="ob-fg" aria-label="Schriftfarbe"><option value="">Schriftfarbe …</option><option value="#B91C1C">rot</option><option value="#1D4ED8">blau</option><option value="#15803D">grün</option><option value="">schwarz</option></select>
+        <button class="btn" id="ob-b"><b>F</b> fett</button><button class="btn" id="ob-c">≡ zentriert</button></div></div>
+    <div class="vis"><div class="vis-head"><h3>Objektkarte</h3></div><div class="ocard" id="ob-card"></div></div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Termin" data-yr="M1" data-title="Mit Daten arbeiten" data-sub="Kennenlerntermin">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1</p>
+    <h2>Wann treffen wir uns?</h2>
+    <p class="lead">Die Schülerzeitung sucht Verstärkung. Die Interessenten haben am schwarzen Brett notiert, wann sie Zeit hätten. Die Zettel sind schon in die Tabelle übertragen. In Zeile 11 zählt die Funktion <code>ZÄHLENWENN</code>, wie viele Kreuze in jeder Spalte stehen.</p>
+  </div>
+  <div class="model">
+    <div id="sh-m1"></div>
+    <div class="stack">
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i></i><i></i></span><h3>Auswerten</h3></header><p>Welcher Wochentag bietet sich an? Trage ein Kreuz für <b>Lea am Dienstag</b> nach (Zelle C10: <code>x</code>) und beobachte die Zählung.</p>
+        <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Montag: 5 Kreuze (Janis, Anton, Noah, Sandra, Malena) · Dienstag: 3 (Noah, Liam, Lea) · Mittwoch: 2 (Luisa, Noah). Der <b>Montag</b> bietet sich an. Die Zählung ändert sich sofort, wenn ein Kreuz dazukommt.</p></div>
+      <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Sortieren</h3></header><p>Sortiere die Daten mit der Sortierfunktion.</p>
+        <div class="controls"><button class="btn" id="m1-sa">Name A → Z</button><button class="btn" id="m1-sm">Montag zuerst</button></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Mit Daten arbeiten</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Mit Daten arbeiten</h3><span>Informatik · Klasse 8</span></div>
+      <ol>
+        <li data-step>Daten gleicher Art stehen in jedem <b>Datensatz</b> an derselben Stelle. So kann ein Programm gezielt auf Teilinformationen zugreifen.</li>
+        <li data-step><b>Datentypen:</b> Ganzzahl (7), Gleitkommazahl (3,25), Wahrheitswert (wahr/falsch), Zeichenkette („Hofweg 6“).</li>
+        <li data-step>Ein <b>Tabellenkalkulationsprogramm</b> erfasst, verarbeitet und gibt Daten aus. Eine <b>Arbeitsmappe</b> enthält Tabellenblätter aus Spalten (A, B, C …) und Zeilen (1, 2, 3 …).</li>
+        <li data-step>Die <b>Zelle</b> ist der Schnittpunkt von Spalte und Zeile. <b>Zelladresse</b> = Spaltenbuchstabe + Zeilennummer, z. B. C2.</li>
+        <li data-step>Zellen sind <b>Objekte</b> der Klasse ZELLE. Ihre <b>Attribute</b> (z. B. Hintergrundfarbe) werden mit <b>Methoden</b> verändert.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne ein Tabellenblatt mit 4 Spalten und 5 Zeilen. Markiere die Zelle C4 und beschrifte Spalte, Zeile und Zelle.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Zelladressen und Datentypen</h2></div>
+  <div id="ts"></div>
+  <h3 class="mt">Quiz</h3>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ===== Station 1: Struktur ===== */
+(() => {
+  const D = [['München', 'Augsburg', 80, 'ja'], ['München', 'Nürnberg', 170, 'ja'], ['München', 'Passau', 190, 'nein'], ['München', 'Lindau', 180, 'nein']];
+  $('#ung').innerHTML = 'Augsburg ist 80 km von München entfernt, ICE: ja · 170 km bis Nürnberg (ICE ja) · Passau: nein, 190 · Lindau – 180 km, kein ICE';
+  const H = ['Start', 'Ziel', 'Entfernung (km)', 'ICE'];
+  const tab = hl => `<thead><tr>${H.map((h, i) => `<th${i === hl ? ' class="hl"' : ''}>${h}</th>`).join('')}</tr></thead><tbody>${D.map(r => `<tr>${r.map((c, i) => `<td${i === hl ? ' class="hl"' : ''}>${c}</td>`).join('')}</tr>`).join('')}</tbody>`;
+  const Q = {e: ['Welche Stadt ist am weitesten entfernt?', 2, 'Passau (190 km) – alle Entfernungen stehen in Spalte 3. Im Fließtext müsste man jede Zahl einzeln suchen.'], i: ['Wohin fährt ein ICE?', 3, 'Nach Augsburg und Nürnberg – die Information steht in jedem Datensatz in der letzten Spalte.'], z: ['Welche Ziele gibt es?', 1, 'Augsburg, Nürnberg, Passau, Lindau – immer in Spalte 2.']};
+  seg($('#fr-seg'), [['e', 'am weitesten?'], ['i', 'mit ICE?'], ['z', 'alle Ziele?']], v => { $('#str').innerHTML = tab(Q[v][1]); $('#fr-st').innerHTML = `<b>${Q[v][0]}</b> ${Q[v][2]}`; });
+})();
+
+sorter($('#sort-typ'), [{id: 'g', name: 'Ganzzahl'}, {id: 'k', name: 'Gleitkommazahl'}, {id: 'w', name: 'Wahrheitswert'}, {id: 'z', name: 'Zeichenkette'}], [
+  {t: 'Anzahl Schüler: 27', c: 'g'}, {t: 'Stockwerk: −1', c: 'g'}, {t: 'Preis: 3,25 €', c: 'k'}, {t: 'Körpergröße: 1,68 m', c: 'k'},
+  {t: 'bezahlt: wahr', c: 'w'}, {t: 'volljährig: falsch', c: 'w'}, {t: 'Name: Arm, Daniela', c: 'z'}, {t: 'Telefon: 08675/9876', c: 'z', why: 'Mit Telefonnummern rechnet man nicht.'}, {t: 'Straße: Hofweg 6', c: 'z'}
+]);
+
+/* ===== Station 3: Zelladressen ===== */
+(() => {
+  let target = '', ok = 0, n = 0;
+  const sh = sheet($('#sh-adr'), {cols: 6, rows: 7, cells: {A1: 'Name', B1: 'Klasse', C1: 'Alter', A2: 'Janis', B2: '8a', C2: 14, A3: 'Luisa', B3: '8b', C3: 13, A4: 'Anton', B4: '8a', C4: 14}, cls: {A1: 'h', B1: 'h', C1: 'h'}, sel: 'C2',
+    onChange: () => {}});
+  const newT = () => { target = 'ABCDEF'[randInt(0, 5)] + randInt(1, 7); $('#adr-q').innerHTML = `Tippe auf die Zelle <b class="big-ref">${target}</b>.`; };
+  $('#sh-adr').addEventListener('click', e => { const c = e.target.closest('td[data-r]'); if (!c || !target) return; n++; if (c.dataset.r === target) { ok++; $('#adr-sc').innerHTML = `<span class="good">Richtig!</span> ${ok} / ${n}`; newT(); } else $('#adr-sc').innerHTML = `<span class="bad">Das ist ${c.dataset.r}.</span> ${ok} / ${n}`; });
+  $('#adr-new').onclick = newT; newT();
+})();
+
+/* ===== Station 4: Objekte ===== */
+(() => {
+  const st = {};
+  const sh = sheet($('#sh-obj'), {cols: 4, rows: 5, lock: true, sel: 'B2', cells: {A1: 'Ware', B1: 'Preis', C1: 'Menge', A2: 'Brötchen', B2: '0,60 €', C2: 40, A3: 'Saft', B3: '1,20 €', C3: 25, A4: 'Obst', B4: '0,50 €', C4: 30}, fmt: {B: 'eur'}});
+  const card = () => { const r = sh.sel, s = st[r] || {};
+    $('#ob-card').innerHTML = `<div class="oc-row"><span class="oc-k">Klasse</span><b>ZELLE</b></div><div class="oc-row"><span class="oc-k">Objekt</span><b>Zelle ${r}</b></div>
+      <div class="oc-row"><span class="oc-k">Attribut → Wert</span><span>Inhalt = „${sh.raw(r)}“</span><span>Hintergrundfarbe = ${s.bgn || 'keine'}</span><span>Schriftfarbe = ${s.fgn || 'schwarz'}</span><span>fett = ${s.fontWeight ? 'wahr' : 'falsch'}</span><span>Ausrichtung = ${s.textAlign ? 'zentriert' : 'Standard'}</span></div>
+      ${s.last ? `<div class="oc-row"><span class="oc-k">Methode</span><code>${s.last}</code></div>` : '<p class="note">Wähle eine Zelle und eine Methode.</p>'}`; };
+  const apply = (k, v, name, m) => { const r = sh.sel, s = st[r] = st[r] || {}; s[k] = v; if (name) s[k === 'background' ? 'bgn' : 'fgn'] = name; s.last = m; const css = {}; ['background', 'color', 'fontWeight', 'textAlign'].forEach(x => { if (s[x]) css[x] = s[x]; }); sh.style(r, css); card(); };
+  $('#sh-obj').addEventListener('click', () => setTimeout(card));
+  $('#ob-bg').onchange = e => { const o = e.target.selectedOptions[0]; if (e.target.value) apply('background', e.target.value === 'none' ? '' : e.target.value, o.text, `setze Hintergrundfarbe(${o.text})`); e.target.value = ''; };
+  $('#ob-fg').onchange = e => { const o = e.target.selectedOptions[0]; apply('color', e.target.value, o.text, `setze Schriftfarbe(${o.text})`); e.target.selectedIndex = 0; };
+  $('#ob-b').onclick = () => { const s = st[sh.sel] || {}; apply('fontWeight', s.fontWeight ? '' : '700', null, `setze fett(${s.fontWeight ? 'falsch' : 'wahr'})`); };
+  $('#ob-c').onclick = () => { const s = st[sh.sel] || {}; apply('textAlign', s.textAlign ? '' : 'center', null, 'zentrieren()'); };
+  card();
+})();
+
+/* ===== M1 ===== */
+(() => {
+  const P = [['Janis', 'x', '', ''], ['Luisa', '', '', 'x'], ['Anton', 'x', '', ''], ['Noah', 'x', 'x', 'x'], ['Sandra', 'x', '', ''], ['Liam', '', 'x', ''], ['Malena', 'x', '', ''], ['Lea', '', '', '']];
+  const cells = {A1: 'Kennenlerntermin', A2: 'Name', B2: 'Montag', C2: 'Dienstag', D2: 'Mittwoch', A11: 'Anzahl', B11: '=ZÄHLENWENN(B3:B10;"x")', C11: '=ZÄHLENWENN(C3:C10;"x")', D11: '=ZÄHLENWENN(D3:D10;"x")'};
+  P.forEach((r, i) => r.forEach((v, j) => { if (v) cells['ABCD'[j] + (i + 3)] = v; }));
+  const sh = sheet($('#sh-m1'), {cols: 4, rows: 11, cells, sel: 'C10', cls: {A1: 't', B1: 't', C1: 't', D1: 't', A2: 'h', B2: 'h', C2: 'h', D2: 'h', A11: 'h', B11: 'h', C11: 'h', D11: 'h'}, lock: ['A1', 'A2', 'B2', 'C2', 'D2', 'A11', 'B11', 'C11', 'D11']});
+  $('#m1-sa').onclick = () => sh.sortRows(3, 10, 'A');
+  $('#m1-sm').onclick = () => sh.sortRows(3, 10, 'B', true);
+})();
+
+/* ===== Übungen ===== */
+taskSet($('#ts'), () => {
+  const c = randInt(0, 7), r = randInt(1, 30), L = 'ABCDEFGH'[c];
+  return pick([
+    {key: 'a' + c + r, tag: 'Zelladresse', q: `Wie lautet die Adresse der Zelle in Spalte <b>${c + 1}</b> und Zeile <b>${r}</b>?`, fields: [{l: 'Adresse', a: L + r}], hint: 'Die 1. Spalte ist A, die 2. Spalte B …'},
+    {key: 'b' + c + r, tag: 'Zelladresse', q: `In welcher Spalte (als Zahl) und Zeile liegt <b>${L}${r}</b>?`, fields: [{l: 'Spalte Nr.', a: c + 1}, {l: 'Zeile', a: r}]},
+    {key: 'n' + c + r, tag: 'Bereich', q: `Wie viele Zellen umfasst der Bereich <b>A1:${L}${Math.min(r, 9)}</b>?`, fields: [{l: 'Zellen', a: (c + 1) * Math.min(r, 9)}], hint: 'Spalten mal Zeilen.'}
+  ]);
+}, {n: 4});
+mcQuiz($('#quiz'), [
+  {q: 'Was ist eine Zelle?', a: ['der Schnittpunkt einer Spalte und einer Zeile', 'eine ganze Spalte', 'ein Tabellenblatt', 'eine Arbeitsmappe'], ok: 0},
+  {q: 'Welcher Datentyp passt zu „3,25 €“?', a: ['Gleitkommazahl', 'Ganzzahl', 'Wahrheitswert', 'Zeichenkette'], ok: 0},
+  {q: 'Welcher Datentyp passt zu einer Postleitzahl wie 08675?', a: ['Zeichenkette', 'Ganzzahl', 'Gleitkommazahl', 'Wahrheitswert'], ok: 0, why: 'Mit ihr wird nicht gerechnet – und die führende 0 muss erhalten bleiben.'},
+  {q: 'Wie heißt ein Dokument in der Tabellenkalkulation?', a: ['Arbeitsmappe', 'Datenbank', 'Formular', 'Folie'], ok: 0},
+  {q: 'Die Hintergrundfarbe einer Zelle ist …', a: ['ein Attribut', 'eine Klasse', 'eine Methode', 'ein Datensatz'], ok: 0},
+  {q: '„setze Hintergrundfarbe“ ist …', a: ['eine Methode', 'ein Attributwert', 'eine Zelladresse', 'ein Datentyp'], ok: 0}
+]);
+</script>
