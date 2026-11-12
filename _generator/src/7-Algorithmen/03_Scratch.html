@@ -1,0 +1,156 @@
+<!--
+title: Die Programmierumgebung Scratch
+short: Scratch
+time: 2 Unterrichtsstunden
+q: Wie ist Scratch aufgebaut – und wie plant man ein eigenes Projekt?
+facts: Visuelle Programmiersprache: Codeblöcke wie Puzzleteile | Programmfenster: Blockpalette, Skriptbereich, Bühne, Figurenliste | Bühne mit Koordinatensystem (Ursprung 0/0, x von −240 bis 240, y von −180 bis 180) | Blockkategorien und Operatorenblöcke | Projektphasen: Idee, Funktionen, Material, Gliederung, Implementieren, Testen
+inter: Programmfenster erkunden · Koordinaten auf der Bühne finden · Kategorien zuordnen · Erstes Skript im Simulator · Projektphasen ordnen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Algorithmen und Problemlösen</p>
+      <h1>Die Programmierumgebung Scratch<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">In <b>Scratch</b> werden Algorithmen zu Programmen – ganz ohne Tippen. Codeblöcke werden wie Puzzleteile zusammengesteckt, und Figuren bewegen sich auf einer Bühne wie in einem Theater.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Was habt ihr in Klasse 5/6 schon mit Scratch programmiert?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie ist Scratch aufgebaut – und wie plant man ein eigenes Projekt?</p></div>
+      <div class="controls"><button class="btn primary" data-go="fenster">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="fenster" data-label="Programmfenster" data-yr="Erarbeitung" data-title="Das Programmfenster" data-sub="Bereiche erkunden">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Das Programmfenster</p>
+    <h2>Eine visuelle Programmiersprache</h2>
+    <p class="lead">Scratch läuft im Browser oder als App. Tippe die Bereiche an oder wechsle zu „Finden“.</p>
+  </div>
+  <div class="model">
+    <svg viewBox="0 0 480 300" class="lap-svg" id="sw">
+      <rect x="5" y="5" width="470" height="290" rx="6" class="lap-case"/>
+      <g data-part="reg"><rect x="12" y="12" width="200" height="26" rx="3" class="lp"/><text x="112" y="30" text-anchor="middle">Code · Kostüme · Klänge</text></g>
+      <g data-part="kat"><rect x="12" y="44" width="34" height="245" rx="3" class="lp" style="fill:#FFF4D6"/><text x="29" y="170" text-anchor="middle" style="font-size:9px" transform="rotate(-90 29 170)">Kategorien</text></g>
+      <g data-part="pal"><rect x="50" y="44" width="110" height="245" rx="3" class="lp"/><text x="105" y="70" text-anchor="middle">Blockpalette</text><rect x="62" y="85" width="80" height="16" rx="4" fill="#4C97FF"/><rect x="62" y="108" width="80" height="16" rx="4" fill="#9966FF"/><rect x="62" y="131" width="80" height="16" rx="4" fill="#FFAB19"/></g>
+      <g data-part="skript"><rect x="165" y="44" width="150" height="245" rx="3" class="lp"/><text x="240" y="70" text-anchor="middle">Skriptbereich</text><rect x="185" y="90" width="90" height="16" rx="8" fill="#FFBF00"/><rect x="185" y="107" width="90" height="16" rx="3" fill="#4C97FF"/></g>
+      <g data-part="buehne"><rect x="320" y="12" width="150" height="120" rx="3" class="lp"/><text x="395" y="78" text-anchor="middle">Bühne 🐈</text></g>
+      <g data-part="fahne"><rect x="322" y="135" width="44" height="18" rx="3" class="lp"/><text x="344" y="148" text-anchor="middle">⚑ ⬣</text></g>
+      <g data-part="figuren"><rect x="320" y="158" width="100" height="131" rx="3" class="lp"/><text x="370" y="225" text-anchor="middle">Figurenliste</text></g>
+      <g data-part="bild"><rect x="424" y="158" width="46" height="131" rx="3" class="lp"/><text x="447" y="225" text-anchor="middle" style="font-size:9px">Bühnen-</text><text x="447" y="237" text-anchor="middle" style="font-size:9px">bild</text></g>
+    </svg>
+    <div class="stack"><div class="vis-head"><div id="sw-mode"></div></div><div class="box xp-panel" id="sw-info"></div></div>
+  </div>
+</section>
+
+<section class="station" id="koordinaten" data-label="Koordinaten" data-yr="Erarbeitung" data-title="Die Bühne" data-sub="Koordinatensystem">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Die Bühne mit Koordinatensystem</p>
+      <h2>Jede Position hat Koordinaten</h2>
+      <ul class="facts">
+        <li>Die Mitte der Bühne ist der <b>Ursprung (0 | 0)</b>.</li>
+        <li>Die <b>x-Achse</b> geht von −240 (links) bis 240 (rechts), die <b>y-Achse</b> von −180 (unten) bis 180 (oben).</li>
+        <li>Mit „gehe zu x: … y: …“ springt eine Figur an eine Position.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Tippe auf: <span class="mono" id="ko-goal"></span></h3><button class="btn" id="ko-new">Neues Ziel</button></div>
+      <div class="ko-stage" id="ko"><span class="ko-x"></span><span class="ko-y"></span><span class="ko-dot" id="ko-dot"></span></div>
+      <p class="status" id="ko-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="bloecke" data-label="Blöcke" data-yr="Erarbeitung" data-title="Blockkategorien" data-sub="Farben und Aufgaben">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Besondere Blöcke in Scratch</p>
+    <h2>Jede Farbe eine Aufgabe</h2>
+    <p class="lead">Die Blöcke sind nach <b>Kategorien</b> sortiert. Mit den grünen <b>Operatoren</b> wird gerechnet und verglichen; in <b>Meine Blöcke</b> kann man eigene Blöcke definieren. Ordne zu.</p>
+  </div>
+  <div id="sort-kat"></div>
+</section>
+
+<section class="station" id="erstes" data-label="Erstes Skript" data-yr="Übung" data-title="Ein erstes Skript" data-sub="Im Simulator">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Ein erstes Skript</p>
+    <h2>Die Katze stellt sich vor</h2>
+    <p class="lead">Klicke auf die grüne Fahne. Ändere dann die Werte in den Blöcken und starte erneut.</p>
+  </div>
+  <div id="s1"></div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Projekt" data-yr="M1" data-title="Eigene Projekte entwickeln" data-sub="Projektphasen">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1</p>
+    <h2>So gelingt ein eigenes Projekt</h2>
+    <p class="lead">Bringe die Phasen der Projektentwicklung in die richtige Reihenfolge.</p>
+  </div>
+  <div id="phasen"></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Scratch</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Die Programmierumgebung Scratch</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step><b>Scratch</b> ist eine visuelle Programmiersprache: Codeblöcke werden wie Puzzleteile zu Skripten zusammengesteckt.</li>
+        <li data-step>Programmfenster: <b>Blockpalette</b> mit Kategorien, <b>Skriptbereich</b>, <b>Bühne</b>, <b>Figurenliste</b>, Bühnenbilder und Registerkarten (Code, Kostüme, Klänge).</li>
+        <li data-step>Die Bühne hat ein <b>Koordinatensystem</b>: Ursprung (0 | 0) in der Mitte, x von −240 bis 240, y von −180 bis 180.</li>
+        <li data-step>Projektphasen: Idee → Funktionen → Material → Gliederung → Implementieren → Testen.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne die Bühne mit Koordinatenkreuz und markiere die Punkte (100 | 50) und (−200 | −100).</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Scratch</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+explorer($('#sw'), $('#sw-info'), [
+  {id: 'reg', n: 'Registerkarten', t: 'Umschalten zwischen Code, Kostümen und Klängen der ausgewählten Figur.'},
+  {id: 'kat', n: 'Kategorien', t: 'Bewegung, Aussehen, Klang, Ereignisse, Steuerung, Fühlen, Operatoren, Variablen, Meine Blöcke.'},
+  {id: 'pal', n: 'Blockpalette', t: 'Alle Codeblöcke der gewählten Kategorie. Sie werden in den Skriptbereich gezogen.'},
+  {id: 'skript', n: 'Skriptbereich', t: 'Hier werden die Blöcke zu Skripten zusammengesteckt – das ist das Programm der Figur.'},
+  {id: 'buehne', n: 'Bühne', t: 'Hier laufen die Programme ab und die Figuren bewegen sich – wie auf einer Theaterbühne.'},
+  {id: 'fahne', n: 'Grüne Fahne und Stopp', t: 'Startet alle Skripte mit „Wenn ⚑ angeklickt wird“ bzw. stoppt alles.'},
+  {id: 'figuren', n: 'Figurenliste', t: 'Alle Figuren des Projekts. Man kann Figuren aus der Bibliothek wählen, zeichnen oder hochladen.'},
+  {id: 'bild', n: 'Bühnenbilder', t: 'Hintergründe für die Bühne – auszuwählen, zu zeichnen oder hochzuladen.'}
+], {modeRoot: $('#sw-mode'), intro: 'Tippe einen Bereich an.', label: 'Bereich'});
+
+/* ================= Koordinaten ================= */
+(() => {
+  let goal;
+  const neu = () => { goal = [randInt(-22, 22) * 10, randInt(-16, 16) * 10]; $('#ko-goal').textContent = `(${goal[0]} | ${goal[1]})`; $('#ko-dot').hidden = true; $('#ko-st').textContent = 'Tippe die Stelle auf der Bühne an.'; };
+  $('#ko').addEventListener('click', e => {
+    const r = $('#ko').getBoundingClientRect(), x = Math.round(((e.clientX - r.left) / r.width * 480 - 240) / 10) * 10, y = Math.round((180 - (e.clientY - r.top) / r.height * 360) / 10) * 10;
+    const d = $('#ko-dot'); d.hidden = false; d.style.left = ((goal[0] + 240) / 480 * 100) + '%'; d.style.top = ((180 - goal[1]) / 360 * 100) + '%';
+    const dist = Math.hypot(x - goal[0], y - goal[1]);
+    $('#ko-st').innerHTML = `Du hast (${x} | ${y}) getippt. ${dist <= 30 ? '<b class="good">Treffer!</b>' : `Daneben – der Punkt ist markiert. Abstand ≈ ${Math.round(dist)}.`}`;
+  });
+  $('#ko-new').onclick = neu; neu();
+})();
+
+sorter($('#sort-kat'), [{id: 'mo', name: 'Bewegung'}, {id: 'lo', name: 'Aussehen'}, {id: 'ct', name: 'Steuerung'}, {id: 'op', name: 'Operatoren'}, {id: 'va', name: 'Variablen'}], [
+  {t: sblock('mo', 'gehe 10er Schritt'), c: 'mo'}, {t: sblock('mo', 'gehe zu x: 0 y: 0'), c: 'mo'}, {t: sblock('lo', 'sage Hallo!'), c: 'lo'}, {t: sblock('lo', 'wechsle zum nächsten Kostüm'), c: 'lo'},
+  {t: sblock('ct', 'wiederhole 10 mal'), c: 'ct'}, {t: sblock('ct', 'falls … dann'), c: 'ct'}, {t: sblock('op', '( ) + ( )'), c: 'op'}, {t: sblock('op', 'Zufallszahl von 1 bis 10'), c: 'op'},
+  {t: sblock('va', 'setze Punkte auf 0'), c: 'va'}, {t: sblock('va', 'ändere Punkte um 1'), c: 'va'}
+]);
+
+scratch($('#s1'), [{op: 'flag'}, {op: 'goto', x: -150, y: 0}, {op: 'say', text: 'Hallo, ich bin Scratchy!', s: 2}, {op: 'glide', s: 1}, {op: 'say', text: 'Ich kann mich bewegen.', s: 2}, {op: 'goto', x: 0, y: 0}, {op: 'think', text: 'Fertig!'}]);
+
+orderSteps($('#phasen'), ['Projektidee: Was soll mein Programm leisten?', 'Funktionen festlegen: Grundfunktionen und Extras', 'Materialien festlegen: Bühnen, Figuren, Klänge', 'Gliederung: Reihenfolge der Funktionen, evtl. Ablaufplan', 'Implementieren: Figuren und Skripte in Scratch umsetzen', 'Testphase: selbst testen und von anderen testen lassen'], {label: 'Projektphasen'});
+
+mcQuiz($('#quiz'), [
+  {q: 'Wo liegt der Ursprung (0 | 0) der Scratch-Bühne?', a: ['in der Mitte', 'oben links', 'unten links', 'oben rechts'], ok: 0},
+  {q: 'Welchen x-Wert hat der rechte Bühnenrand?', a: ['240', '180', '480', '100'], ok: 0},
+  {q: 'Wo werden die Blöcke zu Skripten zusammengesteckt?', a: ['im Skriptbereich', 'auf der Bühne', 'in der Figurenliste', 'in den Klängen'], ok: 0},
+  {q: 'Welche Blöcke rechnen und vergleichen?', a: ['Operatoren (grün)', 'Aussehen (lila)', 'Klang (pink)', 'Ereignisse (gelb)'], ok: 0},
+  {q: 'Was ist die letzte Phase eines Projekts?', a: ['Testen', 'Idee', 'Material festlegen', 'Gliederung'], ok: 0},
+  {q: 'Warum heißt Scratch „visuelle“ Programmiersprache?', a: ['Man programmiert mit grafischen Blöcken statt Text.', 'Man braucht eine Brille.', 'Es zeigt nur Bilder.', 'Es läuft nur auf Fernsehern.'], ok: 0}
+]);
+</script>

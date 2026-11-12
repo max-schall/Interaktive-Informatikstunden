@@ -1,0 +1,128 @@
+<!--
+title: Ein Spiel programmieren und testen
+short: Spiel & Testen
+time: 2–4 Unterrichtsstunden
+q: Wie entsteht ein Spiel – und wie findet man Fehler in Programmen?
+facts: Spieleprogrammierung: Spielidee, Spielregeln, Figuren, Variablen für Punkte und Zeit | Bausteine eines Spiels: Endlosschleife, Bedingungen, Variablen, Zufall | Fehlerarten: Syntaxfehler, Laufzeitfehler, logische Fehler | Testen mit Testfällen: Normalfall, Grenzfall, Fehleingabe; Testprotokoll
+inter: Spiel „Fang die Katze“ spielen und verändern · Spielelemente zuordnen · Eintrittspreis-Programm mit Testfällen prüfen · Fehler im Code finden · Fehlerarten sortieren
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Algorithmen und Problemlösen</p>
+      <h1>Spiel programmieren und testen<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Schleifen, Bedingungen, Variablen und Zufall – mit diesen Bausteinen kannst du ein eigenes Spiel bauen. Und bevor andere es spielen, wird <b>getestet</b>: Kein Programm ist auf Anhieb fehlerfrei.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welches einfache Spiel würdest du gern programmieren?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie entsteht ein Spiel – und wie findet man Fehler in Programmen?</p></div>
+      <div class="controls"><button class="btn primary" data-go="spiel">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="spiel" data-label="Spiel" data-yr="Erarbeitung" data-title="Fang die Katze" data-sub="Ein Spiel im Simulator">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Spieleprogrammierung</p>
+    <h2>Fang die Katze!</h2>
+    <p class="lead">Die Katze springt 20-mal an eine zufällige Stelle. Berührst du sie mit dem Mauszeiger, wenn sie stehen bleibt, gibt es einen Punkt. Ändere die Werte: Wird das Spiel schwerer oder leichter?</p>
+  </div>
+  <div id="s-spiel"></div>
+</section>
+
+<section class="station" id="elemente" data-label="Spielelemente" data-yr="Erarbeitung" data-title="Bausteine eines Spiels" data-sub="Was steckt im Code?">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Bausteine eines Spiels</p>
+    <h2>Was steckt in „Fang die Katze“?</h2>
+  </div>
+  <div id="match"></div>
+  <div class="task-card mt"><header><span class="no">P</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Eigenes Spiel in Scratch</h3></header><p>Plane ein eigenes Spiel nach den Projektphasen: Idee, Regeln, Figuren, Variablen (Punkte, Zeit, Leben), Skripte. Erweitere es Schritt für Schritt: Steuerung mit Pfeiltasten, Hindernisse, Level.</p></div>
+</section>
+
+<section class="station" id="fehler" data-label="Fehlerarten" data-yr="Erarbeitung" data-title="Fehlerarten" data-sub="Syntax, Laufzeit, Logik">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Testen von Programmen</p>
+    <h2>Drei Arten von Fehlern</h2>
+  </div>
+  <div class="cols-3">
+    <div class="box"><span class="tag lim">Syntaxfehler</span><p>Verstoß gegen die Regeln der Programmiersprache, z. B. ein Tippfehler im Befehl. Das Programm startet gar nicht. (In Scratch kaum möglich, weil Blöcke nur passend zusammenpassen.)</p></div>
+    <div class="box"><span class="tag lim">Laufzeitfehler</span><p>Das Programm startet, bricht aber während des Laufs ab oder hängt fest, z. B. Division durch 0 oder eine Endlosschleife.</p></div>
+    <div class="box"><span class="tag lim">Logischer Fehler</span><p>Das Programm läuft, liefert aber <b>falsche Ergebnisse</b>, z. B. &gt; statt ≥. Diese Fehler findet man nur durch gezieltes <b>Testen</b>.</p></div>
+  </div>
+  <h3 class="mt">Welche Fehlerart?</h3>
+  <div id="sort-f"></div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Testfälle" data-yr="M1" data-title="Mit Testfällen prüfen" data-sub="Der Eintrittspreis">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Stimmt der Eintrittspreis?</h2>
+    <p class="lead"><b>Anforderung:</b> Kinder unter 6 Jahren zahlen nichts, Kinder und Jugendliche von 6 bis 17 Jahren zahlen 3 €, Erwachsene ab 18 Jahren 5 €. Teste das Programm mit klugen <b>Testfällen</b>: Normalfälle, <b>Grenzfälle</b> (5, 6, 17, 18) und Fehleingaben (−3, „abc“).</p>
+  </div>
+  <div class="model">
+    <div class="stack">
+      <div id="code"></div>
+      <div class="vis"><div class="vis-head"><h3>Testen</h3></div><div class="ideas-in"><input class="text-in" id="tp-in" value="6" style="max-width:8rem" aria-label="Alter"><button class="btn primary" id="tp-go">Programm ausführen</button></div><p class="status" id="tp-st"></p></div>
+    </div>
+    <div class="stack">
+      <div class="vis"><div class="vis-head"><h3>Testprotokoll</h3><button class="btn" id="tp-clear">Leeren</button></div><div class="table-wrap"><table class="cmp" id="tp"><thead><tr><th>Eingabe</th><th>erwartet</th><th>Ausgabe</th><th>ok?</th></tr></thead><tbody></tbody></table></div></div>
+      <div class="task-card"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Fehler finden</h3></header><p>In welchen Zeilen steckt ein Fehler? Verbessere sie.</p>
+        <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Zeile 3: <code>alter &lt;= 6</code> muss <code>alter &lt; 6</code> heißen – sonst zahlen Sechsjährige nichts. Zeile 5: <code>alter &lt; 17</code> muss <code>alter &lt;= 17</code> (oder <code>&lt; 18</code>) heißen – sonst zahlen 17-Jährige 5 €. Außerdem fehlt eine Prüfung auf ungültige Eingaben (negative Zahlen, Text).</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Spiele und Testen</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Ein Spiel programmieren und testen</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step>Ein Spiel kombiniert <b>Endlosschleifen</b> bzw. Schleifen mit Abbruchbedingung, <b>Bedingungen</b> (z. B. Berührung), <b>Variablen</b> (Punkte, Zeit, Leben) und <b>Zufall</b>.</li>
+        <li data-step><b>Syntaxfehler:</b> Regeln der Sprache verletzt, Programm startet nicht. <b>Laufzeitfehler:</b> Abbruch oder Hängen während des Laufs. <b>Logischer Fehler:</b> falsches Ergebnis.</li>
+        <li data-step>Beim <b>Testen</b> vergleicht man für ausgewählte Eingaben das <b>erwartete</b> mit dem <b>tatsächlichen</b> Ergebnis und hält alles im <b>Testprotokoll</b> fest.</li>
+        <li data-step>Gute Testfälle: <b>Normalfälle</b>, <b>Grenzfälle</b> (genau an den Grenzen) und <b>Fehleingaben</b>.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Tabelle</span><p>Lege ein Testprotokoll mit fünf Testfällen für den Eintrittspreis an.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Testen</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+scratch($('#s-spiel'), [{op: 'flag'}, {op: 'setvar', name: 'Punkte', v: 0}, {op: 'setvar', name: 'Zeit', v: 20}, {op: 'until', cond: {c: 'cmp', a: 'Zeit', op: '=', v: 0}, body: [{op: 'glide', s: 0.4}, {op: 'wait', s: 0.6}, {op: 'if', cond: {c: 'mouse'}, body: [{op: 'changevar', name: 'Punkte', n: 1}, {op: 'sound'}]}, {op: 'changevar', name: 'Zeit', n: -1}]}, {op: 'sayjoin', text: 'Spielende! Punkte: ', name: 'Punkte', s: 3}], {nums: {Punkte: 0, Zeit: 20}});
+matcher($('#match'), [
+  ['Variable „Punkte“', 'speichert den Spielstand'], ['Variable „Zeit“', 'zählt die verbleibenden Runden'], ['wiederhole bis Zeit = 0', 'Spielschleife mit Abbruchbedingung'],
+  ['gleite zu Zufallsposition', 'macht das Spiel unvorhersehbar'], ['falls Mauszeiger berührt', 'prüft, ob gefangen wurde'], ['warte 0,6 Sekunden', 'bestimmt den Schwierigkeitsgrad']
+]);
+sorter($('#sort-f'), [{id: 's', name: 'Syntaxfehler'}, {id: 'l', name: 'Laufzeitfehler'}, {id: 'g', name: 'logischer Fehler'}], [
+  {t: '„gehe 10er Shritt“ – Befehl falsch geschrieben', c: 's'}, {t: 'Klammer vergessen: print("Hallo"', c: 's'},
+  {t: 'Programm teilt durch 0 und bricht ab', c: 'l'}, {t: 'Abbruchbedingung wird nie erfüllt – das Spiel hängt', c: 'l'},
+  {t: 'Rechner gibt 2 + 2 = 5 aus', c: 'g'}, {t: 'Punkte werden abgezogen statt addiert', c: 'g'}, {t: '„&gt; 30“ statt „≥ 30“ – bei genau 30 falsches Ergebnis', c: 'g'}
+]);
+
+/* ================= Eintrittspreis ================= */
+(() => {
+  codeView($('#code'), 'alter = Eingabe()\n\nfalls alter <= 6:\n    preis = 0\nsonst falls alter < 17:\n    preis = 3\nsonst:\n    preis = 5\n\nausgabe(preis + " €")');
+  const prog = a => { const n = parseFloat(String(a).replace(',', '.')); if (!isFinite(n)) return 'NaN €'; return (n <= 6 ? 0 : n < 17 ? 3 : 5) + ' €'; };
+  const soll = a => { const n = parseFloat(String(a).replace(',', '.')); if (!isFinite(n) || n < 0) return 'Fehlermeldung'; return (n < 6 ? 0 : n <= 17 ? 3 : 5) + ' €'; };
+  $('#tp-go').onclick = () => {
+    const a = $('#tp-in').value.trim(); if (!a) return; const out = prog(a), exp = soll(a), ok = out === exp;
+    $('#tp-st').innerHTML = `Ausgabe des Programms: <b>${out}</b>`;
+    $('#tp tbody').insertAdjacentHTML('beforeend', `<tr><td class="mono">${a.replace(/</g, '&lt;')}</td><td>${exp}</td><td class="mono">${out}</td><td>${ok ? '<span class="yes">✔</span>' : '<span class="no">✘ Fehler!</span>'}</td></tr>`);
+  };
+  $('#tp-clear').onclick = () => $('#tp tbody').innerHTML = '';
+})();
+mcQuiz($('#quiz'), [
+  {q: 'Welcher Fehler lässt ein Programm gar nicht erst starten?', a: ['Syntaxfehler', 'logischer Fehler', 'Laufzeitfehler', 'Grenzfehler'], ok: 0},
+  {q: 'Das Programm läuft, rechnet aber falsch. Welche Fehlerart?', a: ['logischer Fehler', 'Syntaxfehler', 'Hardwarefehler', 'kein Fehler'], ok: 0},
+  {q: 'Was ist ein Grenzfall beim Eintrittspreis (ab 18 → 5 €)?', a: ['Alter 18', 'Alter 40', 'Alter 9', 'Alter 70'], ok: 0},
+  {q: 'Was steht in einem Testprotokoll?', a: ['Eingabe, erwartetes und tatsächliches Ergebnis', 'nur der Programmcode', 'die Spielregeln', 'die Highscores'], ok: 0},
+  {q: 'Welche Variable braucht fast jedes Spiel?', a: ['Punkte', 'Bühnenfarbe', 'Dateiname', 'Mausrad'], ok: 0},
+  {q: 'Warum sollte man auch Fehleingaben testen?', a: ['damit das Programm nicht abstürzt oder Unsinn ausgibt', 'weil es Spaß macht', 'weil Nutzer nie Fehler machen', 'um Zeit zu sparen'], ok: 0}
+]);
+</script>

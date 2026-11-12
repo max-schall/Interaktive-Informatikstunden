@@ -1,0 +1,142 @@
+<!--
+title: Werte und Variablen
+short: Variablen
+time: 2 Unterrichtsstunden
+q: Wie speichert ein Programm Werte, die sich während des Ablaufs ändern?
+facts: Variable wie ein beschrifteter Behälter: Name bleibt, Wert ändert sich | Blöcke: setze … auf, ändere … um, Variable anzeigen | Lokale Variablen (für eine Figur) und globale Variablen (für alle Figuren) | Variablen mit Zufallszahlen und Antworten verbinden | Punktezähler, Zahlenraten
+inter: Behälter-Modell: Werte hineinlegen und verändern · Programm Schritt für Schritt nachverfolgen (Trace-Tabelle) · Punktezähler im Simulator · Zahlenraten-Spiel · lokal oder global?
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Algorithmen und Problemlösen</p>
+      <h1>Werte und Variablen<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Ein Spiel muss sich den Punktestand merken, eine Uhr die Zeit, ein Quiz die Antwort. Dafür nutzen Programme <b>Variablen</b> – wie beschriftete Behälter, in denen Werte liegen.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Was muss sich ein Computerspiel während des Spielens alles merken?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie speichert ein Programm Werte, die sich während des Ablaufs ändern?</p></div>
+      <div class="controls"><button class="btn primary" data-go="behaelter">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="behaelter" data-label="Behälter" data-yr="Erarbeitung" data-title="Variable und Wert" data-sub="Das Behälter-Modell">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Variable und Wert</p>
+      <h2>Ein beschrifteter Behälter</h2>
+      <ul class="facts">
+        <li>Ein Programm besteht aus <b>Befehlen</b> und nutzt <b>Daten</b>. Daten bestehen aus Werten, die in <b>Variablen</b> gespeichert werden.</li>
+        <li>Eine Variable ist wie ein <b>Behälter</b>: Sein Inhalt ist der <b>Wert</b>, die Beschriftung ist der <b>Name</b>.</li>
+        <li>Der <b>Wert</b> kann sich während des Programms ändern, der <b>Name</b> bleibt gleich.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Variable „Punkte“</h3></div>
+      <div class="jar"><div class="jar-label">Punkte</div><div class="jar-val" id="jar-v">0</div></div>
+      <div class="controls" style="justify-content:center">
+        <button class="btn" data-j="set0">setze Punkte auf 0</button><button class="btn" data-j="add1">ändere Punkte um 1</button><button class="btn" data-j="add10">ändere Punkte um 10</button><button class="btn" data-j="sub5">ändere Punkte um −5</button>
+      </div>
+      <p class="status" id="jar-st">Wert: 0</p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="trace" data-label="Nachverfolgen" data-yr="Übung" data-title="Werte verfolgen" data-sub="Trace-Tabelle">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Werte verändern</p>
+    <h2>Welchen Wert hat die Variable?</h2>
+    <p class="lead">Gehe das Programm Zeile für Zeile durch und notiere nach jedem Schritt den Wert von <b>a</b> und <b>b</b>. So eine Tabelle heißt <b>Trace-Tabelle</b>.</p>
+  </div>
+  <div class="model">
+    <div class="sb-stack" id="tr-code"></div>
+    <div class="stack"><div class="table-wrap"><table class="cmp" id="tr-tab"></table></div><div id="tr-step"></div></div>
+  </div>
+</section>
+
+<section class="station" id="punkte" data-label="Punktezähler" data-yr="Erarbeitung" data-title="Ein Punktezähler" data-sub="setze und ändere">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Variablen in Scratch</p>
+    <h2>Ein Punktezähler</h2>
+    <p class="lead">Die Katze fängt Mäuse, jede bringt einen Punkt. Am Anfang wird der Wert auf 0 <b>gesetzt</b> (initialisiert), dann bei jedem Fang um 1 <b>geändert</b>. Die Anzeige auf der Bühne zeigt den aktuellen Wert.</p>
+  </div>
+  <div id="s-punkte"></div>
+</section>
+
+<section class="station" id="raten" data-label="Zahlenraten" data-yr="Vertiefung" data-title="Zahlenraten" data-sub="Zufallszahl und Antwort">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Zahlenraten</p>
+    <h2>Errate die Zahl!</h2>
+    <p class="lead">Die Katze denkt sich eine <b>Zufallszahl</b> von 1 bis 20 aus und speichert sie in der Variablen <b>Zahl</b>. Bei jedem Versuch wird <b>Versuche</b> um 1 erhöht. Die Schleife läuft, bis die Antwort stimmt.</p>
+  </div>
+  <div id="s-raten"></div>
+</section>
+
+<section class="station" id="m1" data-label="M1 lokal/global" data-yr="M1" data-title="Lokal oder global?" data-sub="Für wen gilt die Variable?">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 5 · Material M1</p>
+      <h2>Lokale und globale Variablen</h2>
+      <ul class="facts">
+        <li><b>Lokale Variablen</b> gelten nur für eine bestimmte Figur, z. B. ihre eigene Größe oder ihre Lebenspunkte. In Scratch: „nur für diese Figur“.</li>
+        <li><b>Globale Variablen</b> stehen allen Figuren zur Verfügung, z. B. die Bühnenbildnummer oder der Spielstand. In Scratch: „für alle Figuren“.</li>
+        <li>Beim Anlegen einer Variablen legt man fest, ob sie lokal oder global ist.</li>
+      </ul>
+    </div>
+    <div><h3>Sortiere</h3><div id="sort-lg"></div></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Variablen</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Werte und Variablen</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step>Eine <b>Variable</b> ist wie ein beschrifteter Behälter: Sie hat einen <b>Namen</b>, der gleich bleibt, und einen <b>Wert</b>, der sich ändern kann.</li>
+        <li data-step>„<b>setze</b> … auf …“ gibt der Variablen einen Wert (zu Beginn: initialisieren). „<b>ändere</b> … um …“ erhöht oder verringert den Wert.</li>
+        <li data-step>Werte können aus Antworten, Zufallszahlen oder Rechnungen kommen und in Bedingungen verglichen werden.</li>
+        <li data-step><b>Lokale</b> Variablen gelten nur für eine Figur, <b>globale</b> Variablen für alle Figuren.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Trace</span><p>Lege eine Trace-Tabelle für das Programm aus Station 2 an.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Werte berechnen</h2></div>
+  <div id="ts"></div>
+</section>
+
+<script>
+/* ================= Behälter ================= */
+(() => {
+  let v = 0;
+  const A = {set0: [() => 0, 'setze Punkte auf 0'], add1: [x => x + 1, 'ändere Punkte um 1'], add10: [x => x + 10, 'ändere Punkte um 10'], sub5: [x => x - 5, 'ändere Punkte um −5']};
+  $$('[data-j]').forEach(b => b.textContent = A[b.dataset.j][1]);
+  document.addEventListener('click', e => { const b = e.target.closest('[data-j]'); if (!b) return; const old = v; v = A[b.dataset.j][0](v); const el = $('#jar-v'); el.textContent = v; el.classList.remove('pop'); void el.offsetWidth; el.classList.add('pop'); $('#jar-st').innerHTML = `${A[b.dataset.j][1]}: ${old} → <b>${v}</b>. Der Name „Punkte“ bleibt gleich.`; });
+})();
+
+/* ================= Trace ================= */
+(() => {
+  const P = [['setze a auf 3', s => ({...s, a: 3})], ['setze b auf 5', s => ({...s, b: 5})], ['ändere a um b', s => ({...s, a: s.a + s.b})], ['ändere b um −2', s => ({...s, b: s.b - 2})], ['setze a auf b', s => ({...s, a: s.b})], ['ändere a um 10', s => ({...s, a: s.a + 10})]];
+  const states = [{a: '–', b: '–'}]; P.forEach(([, f]) => states.push(f(states[states.length - 1])));
+  $('#tr-code').innerHTML = `<span class="sb hat ev">Wenn ⚑ angeklickt wird</span>` + P.map(([t], i) => `<span class="sb va" data-l="${i}">${t}</span>`).join('');
+  stepper($('#tr-step'), P.length + 1, k => {
+    $$('#tr-code [data-l]').forEach(x => x.classList.toggle('run', +x.dataset.l === k - 1));
+    $('#tr-tab').innerHTML = '<thead><tr><th>Schritt</th><th>Anweisung</th><th>a</th><th>b</th></tr></thead><tbody>' + states.slice(0, k + 1).map((s, i) => `<tr class="${i === k ? 'hl' : ''}"><td>${i}</td><td>${i ? P[i - 1][0] : 'Start'}</td><td class="mono">${s.a}</td><td class="mono">${s.b}</td></tr>`).join('') + '</tbody>';
+  });
+})();
+
+scratch($('#s-punkte'), [{op: 'flag'}, {op: 'setvar', name: 'Punkte', v: 0}, {op: 'repeat', n: 5, body: [{op: 'glide', s: 0.6}, {op: 'say', text: 'Maus gefangen!', s: 0.5}, {op: 'changevar', name: 'Punkte', n: 1}]}, {op: 'sayjoin', text: 'Punkte: ', name: 'Punkte', s: 2}], {nums: {Punkte: 0}});
+scratch($('#s-raten'), [{op: 'flag'}, {op: 'setrand', name: 'Zahl', a: 1, b: 20}, {op: 'setvar', name: 'Versuche', v: 0}, {op: 'until', cond: {c: 'cmp', a: 'Antwort', op: '=', b: 'Zahl'}, body: [{op: 'ask', text: 'Welche Zahl denke ich mir (1–20)?'}, {op: 'changevar', name: 'Versuche', n: 1}, {op: 'if', cond: {c: 'cmp', a: 'Antwort', op: '<', b: 'Zahl'}, body: [{op: 'say', text: 'Größer!', s: 1}]}, {op: 'if', cond: {c: 'cmp', a: 'Antwort', op: '>', b: 'Zahl'}, body: [{op: 'say', text: 'Kleiner!', s: 1}]}]}, {op: 'sayjoin', text: 'Richtig! Versuche: ', name: 'Versuche', s: 3}], {nums: {Zahl: 0, Versuche: 0}});
+sorter($('#sort-lg'), [{id: 'l', name: 'lokal (nur diese Figur)'}, {id: 'g', name: 'global (alle Figuren)'}], [
+  {t: 'Lebenspunkte einer Spielfigur', c: 'l'}, {t: 'Größe der Katze', c: 'l'}, {t: 'Geschwindigkeit eines Gegners', c: 'l'},
+  {t: 'Spielstand / Punkte', c: 'g'}, {t: 'Nummer des Bühnenbilds (Level)', c: 'g'}, {t: 'Verbleibende Spielzeit', c: 'g'}
+]);
+taskSet($('#ts'), () => {
+  const a = randInt(1, 9), b = randInt(2, 6), c = randInt(-5, 5);
+  return {key: `${a}${b}${c}`, tag: 'Trace', q: `<span class="mono" style="font-size:.95rem">setze x auf ${a}<br>wiederhole ${b} mal: ändere x um 2<br>ändere x um ${c}</span>`, fields: [{l: 'x am Ende', a: a + 2 * b + c}], hint: 'Startwert + Anzahl · 2 + letzte Änderung.'};
+}, {n: 4});
+</script>

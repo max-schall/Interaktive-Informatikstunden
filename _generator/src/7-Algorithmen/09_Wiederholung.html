@@ -1,0 +1,111 @@
+<!--
+title: Wiederholung und Selbsttest
+short: Selbsttest
+time: 1–2 Unterrichtsstunden
+q: Was kann ich, und was sollte ich noch üben?
+facts: Zusammenfassung als Karteikarten | Trainer T1–T4: Algorithmen und Darstellung, Schleifen, Verzweigungen und Variablen, Testen | Großes Quiz und „Ich kann …“-Liste mit Links zurück in die Stunden
+inter: Karteikarten · Paare finden · Eigenschaften prüfen · Struktogramm lesen · Schleifen zählen · Trace-Aufgaben · Fehlerarten · Quiz · Selbsteinschätzung
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Algorithmen und Problemlösen</p>
+      <h1>Wiederholung und Selbsttest<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Algorithmen, Ablaufplan und Struktogramm, Scratch, Schleifen, Verzweigungen, Variablen, Abbruchbedingungen und Testen: Prüfe, was du sicher kannst.</p>
+      <div class="controls"><button class="btn primary" data-go="begriffe">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="begriffe" data-label="Begriffe" data-yr="Wiederholen" data-title="Zusammenfassung" data-sub="Fachbegriffe als Karteikarten">
+  <div class="section-head"><p class="eyebrow">Station 1 · Zusammenfassung</p><h2>Fachbegriffe</h2></div>
+  <div id="flip"></div>
+  <h3 class="mt">Paare finden</h3>
+  <div id="match"></div>
+</section>
+
+<section class="station" id="t1" data-label="T1 Algorithmen" data-yr="Trainer" data-title="T1 Algorithmen darstellen" data-sub="Eigenschaften und Struktogramm">
+  <div class="section-head"><p class="eyebrow">Station 2 · Trainer T1</p><h2>Algorithmen und ihre Darstellung</h2></div>
+  <div class="model">
+    <div id="t1-sort"></div>
+    <div class="stack"><div id="t1-ns"></div><div id="t1-ts"></div></div>
+  </div>
+</section>
+
+<section class="station" id="t2" data-label="T2 Schleifen" data-yr="Trainer" data-title="T2 Schleifen" data-sub="Zählen und Abbrechen">
+  <div class="section-head"><p class="eyebrow">Station 3 · Trainer T2</p><h2>Schleifen</h2></div>
+  <div id="t2-ts"></div>
+</section>
+
+<section class="station" id="t3" data-label="T3 Variablen" data-yr="Trainer" data-title="T3 Verzweigungen und Variablen" data-sub="Trace-Aufgaben">
+  <div class="section-head"><p class="eyebrow">Station 4 · Trainer T3</p><h2>Verzweigungen und Variablen</h2></div>
+  <div id="t3-ts"></div>
+</section>
+
+<section class="station" id="t4" data-label="T4 Testen" data-yr="Trainer" data-title="T4 Testen" data-sub="Fehlerarten">
+  <div class="section-head"><p class="eyebrow">Station 5 · Trainer T4</p><h2>Fehler finden</h2></div>
+  <div id="t4-sort"></div>
+</section>
+
+<section class="station" id="quiz-st" data-label="Quiz" data-yr="Testen" data-title="Großes Quiz" data-sub="10 zufällige Fragen">
+  <div class="section-head"><p class="eyebrow">Station 6 · Quiz</p><h2>Großes Quiz</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<section class="station" id="uebungen" data-label="Ich kann …">
+  <div class="section-head"><p class="eyebrow">Selbsteinschätzung</p><h2>Ich kann …</h2></div>
+  <ol id="sc"></ol>
+</section>
+
+<script>
+const BEGRIFFE = [
+  ['Anweisung', 'einzelner Arbeitsschritt'], ['Sequenz', 'Anweisungen in fester Reihenfolge'], ['Algorithmus', 'eindeutige Handlungsvorschrift zur Problemlösung'], ['Endlichkeit', 'der Algorithmus endet'],
+  ['Ablaufplan', 'Flussdiagramm mit Pfeilen'], ['Struktogramm', 'Darstellung mit geschachtelten Blöcken'], ['Zählschleife', 'wiederhole n mal'], ['Endlosschleife', 'wiederhole fortlaufend'],
+  ['Abbruchbedingung', 'wiederhole bis …'], ['Verzweigung', 'falls … dann … sonst'], ['Variable', 'Behälter mit Name und Wert'], ['globale Variable', 'gilt für alle Figuren'],
+  ['logischer Fehler', 'Programm läuft, Ergebnis falsch'], ['Grenzfall', 'Testfall genau an einer Grenze']
+];
+flipCards($('#flip'), BEGRIFFE);
+matcher($('#match'), shuffle(BEGRIFFE.slice()).slice(0, 7));
+sorter($('#t1-sort'), [{id: 'ok', name: 'gute Anweisung'}, {id: 'no', name: 'verletzt eine Bedingung'}], [
+  {t: 'Schlage zwei Eier auf.', c: 'ok'}, {t: 'Gehe 5 Schritte nach vorn.', c: 'ok'}, {t: 'Nimm ein bisschen Zucker.', c: 'no', why: 'nicht eindeutig'}, {t: 'Rühre für immer.', c: 'no', why: 'nicht endlich'}, {t: 'Springe auf den Mond.', c: 'no', why: 'nicht ausführbar'}
+]);
+nsd($('#t1-ns'), [{t: 's', text: 'setze Summe auf 0'}, {t: 'loop', head: 'wiederhole 4-mal', body: [{t: 's', text: 'ändere Summe um 5'}]}, {t: 'if', cond: 'Summe > 15?', yes: [{t: 's', text: 'sage „groß“'}], no: [{t: 's', text: 'sage „klein“'}]}]);
+taskSet($('#t1-ts'), () => ({key: 'x', tag: 'Struktogramm', q: 'Was sagt die Figur am Ende?', fields: [{l: 'Ausgabe', a: ['groß', 'gross']}], hint: '4 · 5 = 20, und 20 > 15.'}), {n: 1, fixed: true});
+taskSet($('#t2-ts'), i => {
+  if (i % 2) { const n = pick([3, 5, 6, 8, 10, 12]); return {key: 'w' + n, tag: 'Vieleck', q: `Ein regelmäßiges ${n}-Eck: Um wie viel Grad dreht sich die Figur?`, fields: [{l: 'Winkel', a: 360 / n, tol: 0.1, unit: '°'}]}; }
+  const a = randInt(2, 8), b = randInt(2, 8); return {key: a + 'x' + b, tag: 'geschachtelt', q: `wiederhole ${a} mal: wiederhole ${b} mal: gehe 10er Schritt`, fields: [{l: 'Schritte insgesamt', a: a * b * 10}], hint: 'außen × innen × 10'};
+}, {n: 4});
+taskSet($('#t3-ts'), i => {
+  const x = randInt(1, 20), lim = randInt(5, 15), d = randInt(2, 5);
+  return {key: `${x}${lim}${d}`, tag: 'Trace', q: `<span class="mono" style="font-size:.92rem">setze x auf ${x}<br>falls x &gt; ${lim} dann: ändere x um −${d}<br>sonst: ändere x um ${d}</span>`, fields: [{l: 'x am Ende', a: x > lim ? x - d : x + d}]};
+}, {n: 4});
+sorter($('#t4-sort'), [{id: 's', name: 'Syntaxfehler'}, {id: 'l', name: 'Laufzeitfehler'}, {id: 'g', name: 'logischer Fehler'}], [
+  {t: 'Befehl falsch geschrieben', c: 's'}, {t: 'Endlosschleife, Programm hängt', c: 'l'}, {t: 'Division durch 0', c: 'l'}, {t: 'Punkte werden doppelt gezählt', c: 'g'}, {t: 'Grenze falsch: &lt; statt ≤', c: 'g'}
+]);
+mcQuiz($('#quiz'), [
+  {q: 'Welche drei Bedingungen muss ein Algorithmus erfüllen?', a: ['Eindeutigkeit, Ausführbarkeit, Endlichkeit', 'Schnelligkeit, Schönheit, Kürze', 'Farbe, Form, Größe', 'Eingabe, Ausgabe, Speicher'], ok: 0},
+  {q: 'Welches Symbol steht im Ablaufplan für eine Entscheidung?', a: ['Raute', 'Kreis', 'Pfeil', 'Rechteck'], ok: 0},
+  {q: 'Wo liegt der Punkt (0 | 0) auf der Scratch-Bühne?', a: ['in der Mitte', 'oben links', 'unten rechts', 'außerhalb'], ok: 0},
+  {q: 'Was ist eine geschachtelte Schleife?', a: ['eine Schleife in einer Schleife', 'eine Schleife ohne Inhalt', 'eine Verzweigung', 'eine Variable'], ok: 0},
+  {q: 'Wann wird der sonst-Zweig ausgeführt?', a: ['wenn die Bedingung falsch ist', 'immer', 'nie', 'wenn die Bedingung wahr ist'], ok: 0},
+  {q: 'Was macht „ändere Punkte um 1“?', a: ['erhöht den Wert von Punkte um 1', 'setzt Punkte auf 1', 'löscht Punkte', 'zeigt Punkte an'], ok: 0},
+  {q: 'Was ist eine lokale Variable?', a: ['gilt nur für eine Figur', 'gilt für alle Figuren', 'gilt nur im Internet', 'eine Konstante'], ok: 0},
+  {q: 'Welche Schleife passt zu „Klopfe, bis jemand öffnet“?', a: ['wiederhole bis …', 'wiederhole 5 mal', 'falls … dann', 'keine'], ok: 0},
+  {q: 'Wie oft läuft eine fußgesteuerte Schleife mindestens?', a: ['einmal', 'nie', 'zweimal', 'zehnmal'], ok: 0},
+  {q: 'Welcher Testfall ist ein Grenzfall für „ab 18 Jahren“?', a: ['18', '30', '10', '50'], ok: 0},
+  {q: 'Was ist ein Laufzeitfehler?', a: ['Das Programm bricht während des Laufs ab oder hängt.', 'Ein Tippfehler im Befehl.', 'Ein falsches Ergebnis.', 'Ein langsamer Computer.'], ok: 0}
+], {pick: 10});
+selfCheck($('#sc'), [
+  {t: 'Ich kann erklären, was ein Algorithmus ist, und seine Eigenschaften prüfen.', href: '01_Algorithmen.html#eigenschaften'},
+  {t: 'Ich kann Algorithmen als Ablaufplan und Struktogramm darstellen.', href: '02_Ablaufplan_Struktogramm.html#struktogramm'},
+  {t: 'Ich kenne das Scratch-Fenster und das Koordinatensystem der Bühne.', href: '03_Scratch.html#koordinaten'},
+  {t: 'Ich kann Zählschleifen, Endlosschleifen und geschachtelte Schleifen nutzen.', href: '04_Wiederholungen.html#geschachtelt'},
+  {t: 'Ich kann bedingte Anweisungen und Verzweigungen mit Alternative programmieren.', href: '05_Verzweigungen.html#sonst'},
+  {t: 'Ich kann Variablen setzen, verändern und in Bedingungen nutzen.', href: '06_Variablen.html#raten'},
+  {t: 'Ich kann den Wert von Variablen mit einer Trace-Tabelle verfolgen.', href: '06_Variablen.html#trace'},
+  {t: 'Ich kann Schleifen mit Abbruchbedingung einsetzen und kopf-/fußgesteuert unterscheiden.', href: '07_Abbruchbedingung.html#m1'},
+  {t: 'Ich kann ein einfaches Spiel planen und programmieren.', href: '08_Spiel_Testen.html#spiel'},
+  {t: 'Ich kann Fehlerarten unterscheiden und mit Testfällen testen.', href: '08_Spiel_Testen.html#m1'}
+]);
+</script>

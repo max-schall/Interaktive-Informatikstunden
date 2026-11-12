@@ -1,0 +1,147 @@
+<!--
+title: Wiederholungen mit Abbruchbedingung
+short: Abbruchbedingung
+time: 2 Unterrichtsstunden
+q: Wie wiederholt man etwas, wenn man vorher nicht weiß, wie oft?
+facts: Bedingte Wiederholung: „wiederhole bis …“, die Anzahl ist vorher unbekannt | Abbruchbedingung wird bei jedem Durchlauf geprüft | Kopfgesteuerte und fußgesteuerte Schleife im Struktogramm | Endlosschleife durch Fehler in der Abbruchbedingung | Mäusejagd: Fühlen-Blöcke
+inter: Treppe steigen und Nagel einschlagen simulieren · Zählschleife oder Abbruchbedingung? sortieren · Katze läuft bis zum Rand · Mäusejagd mit Fangbedingung · kopf- und fußgesteuert vergleichen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Algorithmen und Problemlösen</p>
+      <h1>Wiederholen, bis …<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Beim Treppensteigen weißt du oft nicht, wie viele Stufen es sind. Du steigst einfach so lange, <b>bis</b> du oben bist. Beim Nagel einschlagen hämmerst du, <b>bis</b> er ganz im Holz steckt.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Nenne Tätigkeiten, die du wiederholst, bis ein Ziel erreicht ist.</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie wiederholt man etwas, wenn man vorher nicht weiß, wie oft?</p></div>
+      <div class="controls"><button class="btn primary" data-go="nagel">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="nagel" data-label="Nagel" data-yr="Einstieg" data-title="Wiederhole bis …" data-sub="Der Nagel">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Wiederholung mit Abbruchbedingung</p>
+      <h2>Hämmern, bis der Nagel drin ist</h2>
+      <ul class="facts">
+        <li>Oft ist vorher nicht bekannt, wie oft eine Anweisung wiederholt werden muss.</li>
+        <li>Dann knüpft man die Wiederholung an eine <b>Abbruchbedingung</b>: Die Schleife läuft, <b>bis</b> die Bedingung erfüllt ist.</li>
+        <li>Die Bedingung wird bei <b>jedem Durchlauf</b> geprüft.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Nagel einschlagen</h3><button class="btn" id="ng-new">Neues Brett</button></div>
+      <svg viewBox="0 0 300 200" id="ng" class="nail"></svg>
+      <div class="controls"><button class="btn primary" id="ng-hit">🔨 Schlag</button><button class="btn" id="ng-auto">▶ wiederhole bis Nagel versenkt</button></div>
+      <p class="status" id="ng-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="welche" data-label="Welche Schleife?" data-yr="Übung" data-title="Welche Schleife passt?" data-sub="Anzahl bekannt oder nicht?">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Welche Schleife passt?</p>
+    <h2>Zählschleife oder Abbruchbedingung?</h2>
+    <p class="lead">Ist die Anzahl vorher bekannt, nimmt man eine Zählschleife. Ist sie unbekannt, eine Schleife mit Abbruchbedingung.</p>
+  </div>
+  <div id="sort-sl"></div>
+</section>
+
+<section class="station" id="rand" data-label="Bis zum Rand" data-yr="Erarbeitung" data-title="Wiederhole bis in Scratch" data-sub="Bis der Rand berührt wird">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Abbruchbedingung in Scratch</p>
+    <h2>Laufen, bis der Rand berührt wird</h2>
+    <p class="lead">„<b>wiederhole bis</b> …“ prüft vor jedem Durchlauf die Bedingung. Ändere die Schrittweite: Die Anzahl der Schritte ändert sich, das Programm funktioniert trotzdem.</p>
+  </div>
+  <div id="s-rand"></div>
+</section>
+
+<section class="station" id="jagd" data-label="Mäusejagd" data-yr="Erarbeitung" data-title="Die Mäusejagd" data-sub="Fühlen als Abbruchbedingung">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Projekt: Mäusejagd</p>
+    <h2>Fang die Katze mit der Maus!</h2>
+    <p class="lead">Die Katze läuft so lange durch die Gegend und prallt vom Rand ab, <b>bis</b> sie vom Mauszeiger berührt wird. Dann zählt sie, wie viele Schritte sie geschafft hat. Fahre mit dem Mauszeiger über die Katze!</p>
+  </div>
+  <div id="s-jagd"></div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Kopf/Fuß" data-yr="M1" data-title="Kopf- und fußgesteuert" data-sub="Im Struktogramm">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1</p>
+    <h2>Kopf- oder fußgesteuert?</h2>
+    <p class="lead">Steht die Bedingung im <b>Kopf</b> des Blocks, wird sie <b>vor</b> dem ersten Durchlauf geprüft – die Anweisungen laufen eventuell gar nicht. Steht sie im <b>Fuß</b>, laufen die Anweisungen <b>mindestens einmal</b>, erst dann wird geprüft.</p>
+  </div>
+  <div class="cols-2">
+    <div class="vis"><div class="vis-head"><h3>kopfgesteuert</h3></div><div id="ns-kopf"></div></div>
+    <div class="vis"><div class="vis-head"><h3>fußgesteuert</h3></div><div id="ns-fuss"></div></div>
+  </div>
+  <div class="vis mt">
+    <div class="vis-head"><h3>Simulation: Treppe mit <span id="tr-n"></span> Stufen</h3><div id="tr-seg"></div><button class="btn primary" id="tr-go">▶ Ausführen</button></div>
+    <p class="status" id="tr-st"></p>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Abbruchbedingung</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Wiederholungen mit Abbruchbedingung</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step>Ist die Anzahl der Wiederholungen vorher unbekannt, nutzt man eine Schleife mit <b>Abbruchbedingung</b>: „<b>wiederhole bis</b> …“.</li>
+        <li data-step>Die Bedingung wird bei jedem Durchlauf geprüft. Ist sie erfüllt, endet die Schleife.</li>
+        <li data-step><b>Kopfgesteuert:</b> Prüfung vor dem Durchlauf (evtl. kein Durchlauf). <b>Fußgesteuert:</b> Prüfung nach dem Durchlauf (mindestens ein Durchlauf).</li>
+        <li data-step>Wird die Abbruchbedingung nie erfüllt, entsteht ungewollt eine <b>Endlosschleife</b>.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne ein Struktogramm „Nagel einschlagen“ mit Abbruchbedingung.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Abbruchbedingung</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ================= Nagel ================= */
+(() => {
+  let depth, need, hits, tm;
+  const draw = () => {
+    const nailTop = 40 + depth * 4;
+    $('#ng').innerHTML = `<rect x="20" y="120" width="260" height="60" fill="#B45309" stroke="#78350F" stroke-width="2"/><rect x="20" y="120" width="260" height="8" fill="#D97706"/>
+      <rect x="146" y="${nailTop}" width="8" height="${80}" fill="#9CA3AF" stroke="#4B5563"/><rect x="136" y="${nailTop - 6}" width="28" height="7" rx="2" fill="#6B7280"/>
+      <text x="150" y="196" text-anchor="middle" style="font-family:var(--f-mono);font-size:12px;fill:#fff">${hits} Schläge</text>`;
+  };
+  const neu = () => { clearInterval(tm); depth = 0; hits = 0; need = randInt(5, 11); draw(); $('#ng-st').textContent = 'Wie viele Schläge braucht dieser Nagel? Das weiß man vorher nicht.'; };
+  const hit = () => { if (depth >= 20) return true; hits++; depth = Math.min(20, depth + 20 / need + (Math.random() - .5)); if (depth > 19) depth = 20; draw(); if (depth >= 20) { $('#ng-st').innerHTML = `<b class="good">Versenkt</b> nach ${hits} Schlägen. Abbruchbedingung „Nagel versenkt?“ ist erfüllt.`; return true; } $('#ng-st').textContent = `Schlag ${hits}: Nagel versenkt? nein → weiter`; return false; };
+  $('#ng-hit').onclick = hit;
+  $('#ng-auto').onclick = () => { clearInterval(tm); tm = setInterval(() => { if (hit()) clearInterval(tm); }, RM.matches ? 30 : 400); };
+  $('#ng-new').onclick = neu; neu();
+})();
+
+sorter($('#sort-sl'), [{id: 'z', name: 'Zählschleife (Anzahl bekannt)'}, {id: 'a', name: 'Abbruchbedingung (Anzahl unbekannt)'}], [
+  {t: '20 Liegestütze machen', c: 'z'}, {t: 'Ein Quadrat zeichnen', c: 'z'}, {t: 'Dreimal klatschen', c: 'z'},
+  {t: 'Treppe steigen, bis man oben ist', c: 'a'}, {t: 'Nudeln kochen, bis sie weich sind', c: 'a'}, {t: 'Raten, bis die Zahl stimmt', c: 'a'}, {t: 'Laufen, bis der Rand berührt wird', c: 'a'}
+]);
+scratch($('#s-rand'), [{op: 'flag'}, {op: 'goto', x: -200, y: 0}, {op: 'setvar', name: 'Schritte', v: 0}, {op: 'until', cond: {c: 'edge'}, body: [{op: 'move', n: 20}, {op: 'changevar', name: 'Schritte', n: 1}]}, {op: 'sayjoin', text: 'Rand erreicht nach Schritten: ', name: 'Schritte', s: 3}], {nums: {Schritte: 0}});
+scratch($('#s-jagd'), [{op: 'flag'}, {op: 'setvar', name: 'Schritte', v: 0}, {op: 'until', cond: {c: 'mouse'}, body: [{op: 'move', n: 10}, {op: 'bounce'}, {op: 'changevar', name: 'Schritte', n: 1}]}, {op: 'sound'}, {op: 'sayjoin', text: 'Gefangen nach Schritten: ', name: 'Schritte', s: 3}], {nums: {Schritte: 0}, dir: 60});
+nsd($('#ns-kopf'), [{t: 'loop', head: 'solange nicht oben angekommen', body: [{t: 's', text: 'steige eine Stufe hoch'}]}, {t: 's', text: 'sage „Oben!“'}]);
+nsd($('#ns-fuss'), [{t: 'foot', foot: 'wiederhole bis oben angekommen', body: [{t: 's', text: 'steige eine Stufe hoch'}]}, {t: 's', text: 'sage „Oben!“'}]);
+(() => {
+  let n = 3, mode = 'kopf';
+  seg($('#tr-seg'), [[3, '3 Stufen'], [0, '0 Stufen (schon oben)']], v => { n = +v; $('#tr-n').textContent = n; $('#tr-st').textContent = 'Wähle eine Variante und führe aus.'; }, 3);
+  const run = m => { let s = 0, log = []; if (m === 'kopf') { while (s < n) { s++; log.push('Stufe ' + s); } } else { do { s++; log.push('Stufe ' + s); } while (s < n); } return `${log.length} Durchläufe (${log.join(', ') || '–'})${s > n ? ' – <b class="bad">eine Stufe zu viel, obwohl man schon oben war!</b>' : ''}`; };
+  $('#tr-go').onclick = () => $('#tr-st').innerHTML = `<b>kopfgesteuert:</b> ${run('kopf')}<br><b>fußgesteuert:</b> ${run('fuss')}`;
+})();
+mcQuiz($('#quiz'), [
+  {q: 'Wann nutzt man eine Schleife mit Abbruchbedingung?', a: ['wenn die Anzahl der Wiederholungen vorher unbekannt ist', 'wenn man genau 10-mal wiederholen will', 'nie', 'nur in Rezepten'], ok: 0},
+  {q: 'Wann endet „wiederhole bis Rand berührt“?', a: ['sobald der Rand berührt wird', 'nach 10 Durchläufen', 'nie', 'sofort'], ok: 0},
+  {q: 'Wie oft läuft eine fußgesteuerte Schleife mindestens?', a: ['einmal', 'keinmal', 'zehnmal', 'unendlich oft'], ok: 0},
+  {q: 'Was passiert, wenn die Abbruchbedingung nie erfüllt wird?', a: ['Es entsteht eine Endlosschleife.', 'Das Programm endet sofort.', 'Die Schleife läuft genau einmal.', 'Der Computer schaltet sich aus.'], ok: 0},
+  {q: 'Welches Beispiel braucht eine Abbruchbedingung?', a: ['Nudeln kochen, bis sie weich sind', '10 Sit-ups', 'ein Quadrat zeichnen', 'dreimal klopfen'], ok: 0},
+  {q: 'Wo steht die Bedingung bei einer kopfgesteuerten Schleife?', a: ['oben, vor den Anweisungen', 'unten, nach den Anweisungen', 'gar nicht', 'in der Mitte'], ok: 0}
+]);
+</script>

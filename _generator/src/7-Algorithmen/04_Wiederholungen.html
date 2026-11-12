@@ -1,0 +1,122 @@
+<!--
+title: Wiederholungen und Schleifen
+short: Wiederholungen
+time: 2 Unterrichtsstunden
+q: Wie lassen sich Anweisungen wiederholen, ohne sie mehrfach aufzuschreiben?
+facts: Schleife = wiederholte Anweisungssequenz | Zählschleife: „wiederhole … mal“, Anzahl als Parameter | Endlosschleife: „wiederhole fortlaufend“ | Geschachtelte Schleifen: Gesamtdurchläufe = Produkt | Wiederholungen im Struktogramm
+inter: Code kürzen: Sequenz vs. Schleife · Quadrat und Vielecke zeichnen (Stift) · Endlosschleife mit Kostümwechsel · geschachtelte Schleifen zählen · Struktogramm lesen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Algorithmen und Problemlösen</p>
+      <h1>Wiederholungen und Schleifen<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">„Runter – hoch – runter – hoch!“ Beim Sport wird dieselbe Bewegung immer wieder ausgeführt. Auch in Programmen werden Anweisungen oft wiederholt – mit einer <b>Schleife</b>.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Welche Bewegungen wiederholst du beim Sport? Wie oft?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie lassen sich Anweisungen wiederholen, ohne sie mehrfach aufzuschreiben?</p></div>
+      <div class="controls"><button class="btn primary" data-go="zaehl">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="zaehl" data-label="Zählschleife" data-yr="Erarbeitung" data-title="Die Zählschleife" data-sub="wiederhole … mal">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Wiederholung mit fester Anzahl</p>
+    <h2>Die Zählschleife</h2>
+    <p class="lead">Eine Anweisungssequenz wird so oft wiederholt, wie es das Programm vorgibt. Die Anzahl ist ein <b>Parameter</b>. In Scratch: <b>„wiederhole … mal“</b>. Die Katze zeichnet ein Quadrat – ändere die Zahlen für ein Dreieck (3 mal, 120°) oder Sechseck (6 mal, 60°).</p>
+  </div>
+  <div id="s-quad"></div>
+</section>
+
+<section class="station" id="vergleich" data-label="Kürzer" data-yr="Erarbeitung" data-title="Code kürzen" data-sub="Sequenz oder Schleife">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 2 · Warum Schleifen?</p>
+      <h2>Kürzer, übersichtlicher, flexibler</h2>
+      <ul class="facts">
+        <li>Ohne Schleife müsste man für ein Quadrat 8 Blöcke untereinanderschreiben, für ein 36-Eck 72 Blöcke.</li>
+        <li>Mit Schleife sind es immer nur <b>3 Blöcke</b>. Ändert man die Zahl, ändert sich alles auf einmal.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Wie viele Blöcke?</h3></div>
+      <label class="slider-row">Ecken <input id="vg-n" type="range" min="3" max="36" value="4"><output id="vg-no" class="mono"></output></label>
+      <div class="cols-2" style="gap:.6rem"><div class="box"><span class="tag">ohne Schleife</span><p class="big-num" id="vg-a"></p></div><div class="box"><span class="tag info">mit Schleife</span><p class="big-num">3</p></div></div>
+      <p class="status" id="vg-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="endlos" data-label="Endlosschleife" data-yr="Erarbeitung" data-title="Die Endlosschleife" data-sub="wiederhole fortlaufend">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Endlosschleife</p>
+    <h2>Wiederhole fortlaufend</h2>
+    <p class="lead">Bei einer <b>Endlosschleife</b> werden die Anweisungen immer wieder ausgeführt, bis das Programm gestoppt wird. Typisch für Animationen und Spiele: Die Katze läuft hin und her und wechselt dabei das Kostüm.</p>
+  </div>
+  <div id="s-endlos"></div>
+</section>
+
+<section class="station" id="geschachtelt" data-label="Geschachtelt" data-yr="Vertiefung" data-title="Geschachtelte Schleifen" data-sub="Schleife in der Schleife">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Geschachtelte Schleifen</p>
+    <h2>Schleifen in Schleifen</h2>
+    <p class="lead">Enthält eine Schleife weitere Schleifen, spricht man von einer <b>geschachtelten Schleife</b>. Die innere Schleife läuft bei jedem Durchlauf der äußeren komplett durch: <b>Gesamtdurchläufe = außen × innen</b>. Hier entsteht eine Blüte aus Quadraten.</p>
+  </div>
+  <div id="s-blume"></div>
+  <div class="grid-2 mt">
+    <div class="vis"><div class="vis-head"><h3>Struktogramm</h3></div><div id="ns-blume"></div></div>
+    <div id="ts"></div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Treppe" data-yr="M1" data-title="Eine Treppe zeichnen" data-sub="Selbst programmieren">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1</p>
+    <h2>Programmiere eine Treppe</h2>
+    <p class="lead">Die Katze soll eine Treppe mit 5 Stufen zeichnen. Ergänze die Werte in den Blöcken: Wie oft wird wiederholt, wie weit geht sie, in welche Richtung dreht sie sich?</p>
+  </div>
+  <div id="s-treppe"></div>
+  <div class="task-card mt"><header><span class="no">1</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Lösung</h3></header><p>Welche Werte führen zur Treppe?</p>
+    <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>wiederhole <b>5</b> mal: gehe <b>40</b>er Schritt, drehe ↺ <b>90</b> Grad, gehe <b>40</b>er Schritt, drehe ↻ <b>90</b> Grad. (Die Katze schaut am Anfang nach rechts.)</p></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Wiederholungen</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Wiederholungen und Schleifen</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step>Eine <b>Schleife</b> wiederholt eine Anweisungssequenz. Programme werden kürzer, übersichtlicher und leichter zu ändern.</li>
+        <li data-step><b>Zählschleife</b> („wiederhole n mal“): feste Anzahl von Wiederholungen, die Anzahl ist ein Parameter.</li>
+        <li data-step><b>Endlosschleife</b> („wiederhole fortlaufend“): läuft, bis das Programm gestoppt wird.</li>
+        <li data-step><b>Geschachtelte Schleife:</b> Schleife in einer Schleife. Gesamtdurchläufe = äußere × innere Anzahl. Im Struktogramm: eingerückte, umrahmte Blöcke.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne das Struktogramm für ein Sechseck.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Schleifen</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+scratch($('#s-quad'), [{op: 'flag'}, {op: 'goto', x: -60, y: -60}, {op: 'repeat', n: 4, body: [{op: 'move', n: 120}, {op: 'turnL', n: 90}]}], {pen: true, done: 'Fertig! Winkel × Wiederholungen = 360° ergibt eine geschlossene Figur.'});
+(() => { const upd = () => { const n = +$('#vg-n').value; $('#vg-no').textContent = n; $('#vg-a').textContent = 2 * n; $('#vg-st').innerHTML = `${n}-Eck: ${n} × (gehe + drehe) = <b>${2 * n}</b> Blöcke ohne Schleife. Drehwinkel: 360° : ${n} = <b>${numDE(360 / n, 1)}°</b>`; }; $('#vg-n').oninput = upd; upd(); })();
+scratch($('#s-endlos'), [{op: 'flag'}, {op: 'forever', body: [{op: 'move', n: 15}, {op: 'costume'}, {op: 'bounce'}, {op: 'wait', s: 0.1}]}], {done: 'Gestoppt.'});
+scratch($('#s-blume'), [{op: 'flag'}, {op: 'goto', x: 0, y: 0}, {op: 'repeat', n: 6, body: [{op: 'repeat', n: 4, body: [{op: 'move', n: 70}, {op: 'turn', n: 90}]}, {op: 'turn', n: 60}]}], {pen: true});
+nsd($('#ns-blume'), [{t: 'loop', head: 'wiederhole 6-mal', body: [{t: 'loop', head: 'wiederhole 4-mal', body: [{t: 's', text: 'gehe 70 Schritte'}, {t: 's', text: 'drehe dich um 90°'}]}, {t: 's', text: 'drehe dich um 60°'}]}]);
+taskSet($('#ts'), () => { const a = randInt(2, 10), b = randInt(2, 10); return {key: a + 'x' + b, tag: 'geschachtelt', q: `Äußere Schleife ${a}-mal, innere Schleife ${b}-mal. Wie oft läuft der innere Block?`, fields: [{l: 'Durchläufe', a: a * b}], hint: 'außen × innen'}; }, {n: 3});
+scratch($('#s-treppe'), [{op: 'flag'}, {op: 'goto', x: -150, y: -120}, {op: 'repeat', n: 1, body: [{op: 'move', n: 10}, {op: 'turnL', n: 0}, {op: 'move', n: 10}, {op: 'turn', n: 0}]}], {pen: true, done: 'Sieht es aus wie eine Treppe? Sonst ändere die Werte.'});
+mcQuiz($('#quiz'), [
+  {q: 'Wie heißt eine Schleife mit fester Anzahl von Wiederholungen?', a: ['Zählschleife', 'Endlosschleife', 'Verzweigung', 'Sequenz'], ok: 0},
+  {q: 'Welcher Block erzeugt eine Endlosschleife?', a: ['wiederhole fortlaufend', 'wiederhole 10 mal', 'falls … dann', 'warte 1 Sekunde'], ok: 0},
+  {q: 'Wie oft läuft der innere Block bei 3 × 5 geschachtelten Wiederholungen?', a: ['15-mal', '8-mal', '5-mal', '35-mal'], ok: 0},
+  {q: 'Mit welchem Drehwinkel zeichnet man ein gleichseitiges Dreieck?', a: ['120°', '60°', '90°', '180°'], ok: 0},
+  {q: 'Was ist ein Vorteil von Schleifen?', a: ['Programme werden kürzer und leichter änderbar.', 'Programme werden länger.', 'Programme laufen nie.', 'Man braucht keine Blöcke mehr.'], ok: 0},
+  {q: 'Wo werden Endlosschleifen typischerweise eingesetzt?', a: ['in Spielen und Animationen', 'beim Zählen bis 3', 'nur in Rezepten', 'nirgends'], ok: 0}
+]);
+</script>

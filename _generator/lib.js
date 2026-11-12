@@ -582,13 +582,18 @@ function loopCanvas(cv, station, draw) {
    Blöcke: flag, move n, turn n, turnL n, goto x y, glide s (zu Zufallsposition), say text s, think text, wait s, costume, costume2,
            sound, bounce, show, hide, size n, repeat n body, forever body, until cond body, if cond body, ifelse cond body else, ask text
    Bedingungen: {c:'edge'} Rand berührt · {c:'mouse'} Mauszeiger berührt · {c:'answer', v} Antwort = v · {c:'var', name, v} Variable = v
-   o: {pen: true} zeichnet eine Spur · {vars: {Ampel: ['Rot','Grün']}} Schalter für Variablen · {x, y, dir} Startwerte */
+   o: {pen: true} zeichnet eine Spur · {vars: {Ampel: ['Rot','Grün']}} Schalter für Variablen · {x, y, dir} Startwerte
+   Klasse 7: Variablen mit Zahlen: o.nums {Punkte: 0} (Anzeige auf der Bühne) und Blöcke
+     setvar name v · changevar name n · setrand name a b (Zufallszahl) · setans name (Antwort speichern) · sayvar name s · sayjoin text name s · changex n · changey n
+   Vergleich als Bedingung: {c:'cmp', a:'Punkte'|'Antwort'|'x'|'y', op:'>'|'<'|'=', v} oder statt v eine Variable b:'Zahl' */
 function scratch(root, script, o = {}) {
   const CAT = {flag: 'ev', move: 'mo', turn: 'mo', turnL: 'mo', goto: 'mo', glide: 'mo', bounce: 'mo', say: 'lo', think: 'lo', costume: 'lo', costume2: 'lo', show: 'lo', hide: 'lo', size: 'lo', sound: 'so',
-    wait: 'ct', repeat: 'ct', forever: 'ct', until: 'ct', if: 'ct', ifelse: 'ct', ask: 'se'};
+    wait: 'ct', repeat: 'ct', forever: 'ct', until: 'ct', if: 'ct', ifelse: 'ct', ask: 'se', setvar: 'va', changevar: 'va', setrand: 'va', setans: 'va', sayvar: 'lo', sayjoin: 'lo', changex: 'mo', changey: 'mo'};
   const inp = (b, k, w = 3) => `<input class="sb-v" data-k="${k}" value="${b[k]}" size="${w}" aria-label="${k}">`;
   const cond = c => !c ? '' : c.c === 'edge' ? '<span class="sb-cond se">wird <i>Rand</i> berührt?</span>' : c.c === 'mouse' ? '<span class="sb-cond se">wird <i>Mauszeiger</i> berührt?</span>'
-    : c.c === 'answer' ? `<span class="sb-cond op"><span class="sb-rep se">Antwort</span> = <i>${c.v}</i></span>` : `<span class="sb-cond op"><span class="sb-rep va">${c.name}</span> = <i>${c.v}</i></span>`;
+    : c.c === 'answer' ? `<span class="sb-cond op"><span class="sb-rep se">Antwort</span> = <i>${c.v}</i></span>`
+    : c.c === 'cmp' ? `<span class="sb-cond op"><span class="sb-rep ${c.a === 'Antwort' ? 'se' : c.a === 'x' || c.a === 'y' ? 'mo' : 'va'}">${c.a === 'x' ? 'x-Position' : c.a === 'y' ? 'y-Position' : c.a}</span> ${c.op === '<' ? '&lt;' : c.op === '>' ? '&gt;' : '='} ${c.b ? `<span class="sb-rep va">${c.b}</span>` : `<i>${c.v}</i>`}</span>`
+    : `<span class="sb-cond op"><span class="sb-rep va">${c.name}</span> = <i>${c.v}</i></span>`;
   function html(list, path) {
     return list.map((b, i) => {
       const p = path + i, c = CAT[b.op];
@@ -616,16 +621,26 @@ function scratch(root, script, o = {}) {
         case 'until': return `<div class="sb ${c} cb" data-p="${p}"><div class="sb-h">wiederhole bis ${cond(b.cond)}</div>${body('body')}<div class="sb-f">↻</div></div>`;
         case 'if': return `<div class="sb ${c} cb" data-p="${p}"><div class="sb-h">falls ${cond(b.cond)}, dann</div>${body('body')}<div class="sb-f"></div></div>`;
         case 'ifelse': return `<div class="sb ${c} cb" data-p="${p}"><div class="sb-h">falls ${cond(b.cond)}, dann</div>${body('body')}<div class="sb-m">sonst</div>${body('else')}<div class="sb-f"></div></div>`;
+        case 'setvar': return `<div class="sb ${c}" data-p="${p}">setze <i>${b.name}</i> auf ${inp(b, 'v', 4)}</div>`;
+        case 'changevar': return `<div class="sb ${c}" data-p="${p}">ändere <i>${b.name}</i> um ${inp(b, 'n')}</div>`;
+        case 'setrand': return `<div class="sb ${c}" data-p="${p}">setze <i>${b.name}</i> auf <span class="sb-rep op">Zufallszahl von ${inp(b, 'a', 2)} bis ${inp(b, 'b', 2)}</span></div>`;
+        case 'setans': return `<div class="sb ${c}" data-p="${p}">setze <i>${b.name}</i> auf <span class="sb-rep se">Antwort</span></div>`;
+        case 'sayvar': return `<div class="sb ${c}" data-p="${p}">sage <span class="sb-rep va">${b.name}</span>${b.s != null ? ` für ${inp(b, 's', 2)} Sekunden` : ''}</div>`;
+        case 'sayjoin': return `<div class="sb ${c}" data-p="${p}">sage <span class="sb-rep op">verbinde ${inp(b, 'text', 10)} und <span class="sb-rep va">${b.name}</span></span>${b.s != null ? ` für ${inp(b, 's', 2)} Sekunden` : ''}</div>`;
+        case 'changex': return `<div class="sb ${c}" data-p="${p}">ändere x um ${inp(b, 'n')}</div>`;
+        case 'changey': return `<div class="sb ${c}" data-p="${p}">ändere y um ${inp(b, 'n')}</div>`;
       }
       return '';
     }).join('');
   }
   const vars = o.vars || {};
   const V = Object.fromEntries(Object.entries(vars).map(([k, v]) => [k, v[0]]));
+  const nums = o.nums || {};
+  Object.assign(V, nums);
   root.classList.add('scr');
   root.innerHTML = `<div class="scr-code"><div class="scr-script">${html(script, '')}</div></div>
     <div class="scr-right"><div class="scr-bar"><button class="scr-go" title="Grüne Fahne">⚑</button><button class="scr-stop" title="Stopp">⬣</button><span class="scr-xy mono"></span>
-      ${Object.keys(vars).map(k => `<button class="btn scr-var" data-var="${k}">${k}: <b>${V[k]}</b></button>`).join('')}</div>
+      ${Object.keys(vars).map(k => `<button class="btn scr-var" data-var="${k}">${k}: <b>${V[k]}</b></button>`).join('')}${Object.keys(nums).map(k => `<span class="scr-mon" data-mon="${k}">${k} <b>${V[k]}</b></span>`).join('')}</div>
       <div class="scr-stage"><canvas class="scr-pen"></canvas><div class="scr-sprite"><span class="scr-cat">🐈</span><span class="scr-bubble" hidden></span></div><form class="scr-ask" hidden><span></span><input aria-label="Antwort"><button class="btn primary">✓</button></form></div>
       <p class="status scr-status">Klicke auf die grüne Fahne.</p></div>`;
   const stage = $('.scr-stage', root), spr = $('.scr-sprite', root), cat = $('.scr-cat', root), bub = $('.scr-bubble', root), pen = $('.scr-pen', root), st = $('.scr-status', root);
@@ -640,9 +655,10 @@ function scratch(root, script, o = {}) {
     cat.style.transform = `translate(-50%,-50%) scale(${S.size / 100 * flip}, ${S.size / 100}) rotate(${(S.dir - 90) * flip}deg)${S.cos % 2 ? ' translateY(-6%) rotate(-7deg)' : ''}`;
     spr.style.opacity = S.vis ? 1 : 0;
     $('.scr-xy', root).textContent = `x: ${Math.round(S.x)}  y: ${Math.round(S.y)}  Richtung: ${Math.round(S.dir)}`;
+    Object.keys(nums).forEach(k => { const m = $(`[data-mon="${k}"] b`, root); if (m) m.textContent = V[k]; });
   }
   function reset() {
-    Object.assign(S, {x: o.x ?? 0, y: o.y ?? 0, dir: o.dir ?? 90, cos: 0, size: 100, vis: true});
+    Object.assign(S, {x: o.x ?? 0, y: o.y ?? 0, dir: o.dir ?? 90, cos: 0, size: 100, vis: true}); Object.assign(V, nums);
     bub.hidden = true; const c = pen.getContext('2d'); pen.width = stage.clientWidth; pen.height = stage.clientHeight; c.clearRect(0, 0, pen.width, pen.height); draw();
   }
   function line(x1, y1, x2, y2) {
@@ -655,6 +671,13 @@ function scratch(root, script, o = {}) {
     if (c.c === 'mouse') { const [mx, my] = S.mouse; return Math.hypot(mx - S.x, my - S.y) < 40; }
     if (c.c === 'answer') return String(S.answer).trim().toLowerCase() === String(c.v).toLowerCase();
     if (c.c === 'var') return V[c.name] === c.v;
+    if (c.c === 'cmp') {
+      const a = c.a === 'Antwort' ? S.answer : c.a === 'x' ? S.x : c.a === 'y' ? S.y : V[c.a], cv = c.b ? V[c.b] : c.v, na = parseFloat(String(a).replace(',', '.')), nv = parseFloat(String(cv).replace(',', '.'));
+      const both = isFinite(na) && isFinite(nv);
+      if (c.op === '<') return both ? na < nv : String(a) < String(cv);
+      if (c.op === '>') return both ? na > nv : String(a) > String(cv);
+      return both ? na === nv : String(a).trim().toLowerCase() === String(cv).trim().toLowerCase();
+    }
     return false;
   }
   const num = (el, k, b) => { const v = parseFloat(String(b[k]).replace(',', '.')); return isFinite(v) ? v : 0; };
@@ -672,7 +695,7 @@ function scratch(root, script, o = {}) {
     if (b.body || b.op === 'ask') return Infinity;
     const s = () => num(el, 's', b) * 1000;
     return {move: clamp(Math.abs(num(el, 'n', b)) * 4, 30, 400), turn: 80, turnL: 80, goto: 60, glide: s(), say: b.s != null ? s() : 300, think: b.s != null ? s() : 300,
-      costume: 50, costume2: 120, size: 120, sound: 500, wait: s()}[b.op] || 0;
+      costume: 50, costume2: 120, size: 120, sound: 500, wait: s(), sayvar: b.s != null ? s() : 300, sayjoin: b.s != null ? s() : 300}[b.op] || 0;
   }
   async function exec(list, path, id) {
     for (let i = 0; i < list.length; i++) {
@@ -701,6 +724,13 @@ function scratch(root, script, o = {}) {
           case 'until': for (let k = 0; k < 2000 && id === run && !test(b.cond); k++) { await exec(b.body, p + '.body.', id); await sleep(10); } break;
           case 'if': if (test(b.cond)) await exec(b.body, p + '.body.', id); break;
           case 'ifelse': if (test(b.cond)) await exec(b.body, p + '.body.', id); else await exec(b.else, p + '.else.', id); break;
+          case 'setvar': { const v = parseFloat(String(b.v).replace(',', '.')); V[b.name] = isFinite(v) && String(b.v).trim() !== '' ? v : b.v; draw(); await sleep(60); break; }
+          case 'changevar': V[b.name] = (+V[b.name] || 0) + num(el, 'n', b); draw(); await sleep(60); break;
+          case 'setrand': { const lo = Math.round(num(el, 'a', b)), hi = Math.round(num(el, 'b', b)); V[b.name] = randInt(Math.min(lo, hi), Math.max(lo, hi)); draw(); await sleep(60); break; }
+          case 'setans': { const v = parseFloat(String(S.answer).replace(',', '.')); V[b.name] = isFinite(v) ? v : S.answer; draw(); break; }
+          case 'sayvar': case 'sayjoin': bub.hidden = false; bub.classList.remove('think'); bub.textContent = (b.op === 'sayjoin' ? b.text : '') + V[b.name]; if (b.s != null) { await sleep(num(el, 's', b) * 1000); bub.hidden = true; } else await sleep(300); break;
+          case 'changex': { const n = num(el, 'n', b); await moveTo(clamp(S.x + n, -240, 240), S.y, clamp(Math.abs(n) * 4, 30, 300), id); break; }
+          case 'changey': { const n = num(el, 'n', b); await moveTo(S.x, clamp(S.y + n, -180, 180), clamp(Math.abs(n) * 4, 30, 300), id); break; }
         }
       } finally { el.classList.remove('run'); }
     }
@@ -728,7 +758,7 @@ function scratch(root, script, o = {}) {
   stage.addEventListener('pointerleave', () => S.mouse = [9999, 9999]);
   onShow.push(() => requestAnimationFrame(() => { if (root.offsetParent) { if (!pen.width) reset(); else draw(); } }));
   requestAnimationFrame(reset);
-  return {state: S, reset, draw};
+  return {state: S, reset, draw, vars: V};
 }
 
 /* Statische Scratch-Blöcke (z. B. für Sortieraufgaben): sblock('mo', 'gehe 10 er Schritt') */
@@ -901,4 +931,20 @@ function graphView(svg, nodes, edges, o = {}) {
 function codeView(root, code, hl = []) {
   root.classList.add('codeview');
   root.innerHTML = code.split('\n').map((l, i) => `<span class="cl${hl.includes(i + 1) ? ' hl' : ''}"><i>${i + 1}</i>${l.replace(/&/g, '&amp;').replace(/</g, '&lt;') || ' '}</span>`).join('');
+}
+
+/* Struktogramm (Nassi-Shneiderman). nodes: [{t:'s', text} | {t:'loop', head, body} (kopfgesteuert/Zählschleife)
+   | {t:'foot', foot, body} (fußgesteuert) | {t:'if', cond, yes:[], no:[]} | {t:'forever', body}] */
+function nsd(root, nodes, o = {}) {
+  const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const R = list => list.map(n => {
+    if (n.t === 's') return `<div class="ns-s">${o.html ? n.text : esc(n.text)}</div>`;
+    if (n.t === 'loop') return `<div class="ns-loop"><div class="ns-h">${esc(n.head)}</div><div class="ns-b">${R(n.body)}</div></div>`;
+    if (n.t === 'forever') return `<div class="ns-loop"><div class="ns-h">wiederhole fortlaufend</div><div class="ns-b">${R(n.body)}</div></div>`;
+    if (n.t === 'foot') return `<div class="ns-loop foot"><div class="ns-b">${R(n.body)}</div><div class="ns-h">${esc(n.foot)}</div></div>`;
+    if (n.t === 'if') return `<div class="ns-if"><div class="ns-cond"><svg viewBox="0 0 100 30" preserveAspectRatio="none"><polyline points="0,0 50,30 100,0" fill="none" stroke="currentColor" stroke-width="1.2" vector-effect="non-scaling-stroke"/></svg><span class="c">${esc(n.cond)}</span><span class="y">ja</span><span class="n">nein</span></div><div class="ns-br"><div>${R(n.yes || []) || '<div class="ns-s ns-empty">∅</div>'}</div><div>${R(n.no || []) || '<div class="ns-s ns-empty">∅</div>'}</div></div></div>`;
+    return '';
+  }).join('');
+  root.classList.add('nsd');
+  root.innerHTML = (o.title ? `<div class="ns-title">${esc(o.title)}</div>` : '') + R(nodes);
 }

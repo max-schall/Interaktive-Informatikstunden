@@ -1,0 +1,161 @@
+<!--
+title: Algorithmen darstellen
+short: Darstellung
+time: 2 Unterrichtsstunden
+q: Wie stellt man Algorithmen übersichtlich dar – als Ablaufplan und als Struktogramm?
+facts: Darstellungsformen: Text, Ablaufplan (Flussdiagramm), Struktogramm, Programm | Symbole im Ablaufplan: Start/Ende, Anweisung, Verzweigung (Raute), Pfeile | Struktogramm: Rechteckblöcke für Sequenz, Verzweigung und Wiederholung | Vom Ablaufplan zum Struktogramm
+inter: Symbole zuordnen · Ablaufplan „Einkaufen“ bauen · Ablaufplan Schritt für Schritt durchlaufen · Struktogramm-Bausteine erkunden · Ablaufplan in Struktogramm übersetzen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Algorithmen und Problemlösen</p>
+      <h1>Algorithmen darstellen<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Lange Texte sind unübersichtlich – vor allem, wenn es Entscheidungen und Wiederholungen gibt. Informatikerinnen und Informatiker zeichnen Algorithmen deshalb als <b>Ablaufplan</b> oder <b>Struktogramm</b>.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Du suchst im Supermarkt die Milch. Was tust du, wenn sie nicht im ersten Regal steht?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie stellt man Algorithmen übersichtlich dar – als Ablaufplan und als Struktogramm?</p></div>
+      <div class="controls"><button class="btn primary" data-go="ablaufplan">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="ablaufplan" data-label="Ablaufplan" data-yr="Erarbeitung" data-title="Der Ablaufplan" data-sub="Symbole und Pfeile">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Der Ablaufplan</p>
+      <h2>Ein Flussdiagramm</h2>
+      <ul class="facts">
+        <li>Im <b>Ablaufplan</b> (Flussdiagramm) stehen die Anweisungen in Kästchen. <b>Pfeile</b> geben die Leserichtung an.</li>
+        <li><b>Start</b> und <b>Ende</b> werden als abgerundete Felder dargestellt.</li>
+        <li>Eine <b>Entscheidung</b> steht in einer <b>Raute</b>; aus ihr führen zwei Pfeile (ja/nein).</li>
+        <li>Durchlaufe den Ablaufplan „Milch finden“ Schritt für Schritt.</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Milch finden</h3><div id="ap-seg"></div></div>
+      <svg viewBox="0 0 360 400" class="pap" id="pap"></svg>
+      <div id="ap-step"></div>
+      <p class="status" id="ap-st"></p>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="symbole" data-label="Symbole" data-yr="Übung" data-title="Symbole zuordnen" data-sub="Ablaufplan-Bausteine">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Symbole</p>
+    <h2>Welches Symbol wofür?</h2>
+  </div>
+  <div id="match"></div>
+</section>
+
+<section class="station" id="struktogramm" data-label="Struktogramm" data-yr="Erarbeitung" data-title="Das Struktogramm" data-sub="Blöcke statt Pfeile">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Das Struktogramm</p>
+    <h2>Rechtecke statt Pfeile</h2>
+    <p class="lead">Ein <b>Struktogramm</b> hat eine feste Form: Rechteckige Blöcke stehen untereinander und werden von oben nach unten gelesen. Verzweigungen und Wiederholungen werden <b>ineinander geschachtelt</b> – ohne Pfeile.</p>
+  </div>
+  <div class="cols-3">
+    <div class="stack"><span class="tag">Sequenz</span><div id="ns-seq"></div></div>
+    <div class="stack"><span class="tag">Verzweigung</span><div id="ns-if"></div><p class="note">Kopfzeile mit Bedingung, darunter nebeneinander die Alternativen.</p></div>
+    <div class="stack"><span class="tag">Wiederholung</span><div id="ns-loop"></div><p class="note">Der wiederholte Teil ist eingerückt und vom Rahmen umschlossen.</p></div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Übersetzen" data-yr="M1" data-title="Vom Ablaufplan zum Struktogramm" data-sub="Kaffee kochen">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Vom Ablaufplan zum Struktogramm</h2>
+    <p class="lead">Lisa kocht Kaffee. Ist noch Kaffeepulver da, kocht sie Kaffee; sonst macht sie sich einen Tee. Baue das Struktogramm: Wähle für jedes Feld den passenden Baustein.</p>
+  </div>
+  <div class="model">
+    <div class="stack">
+      <div class="nsd ns-quiz" id="nsq"></div>
+      <div class="controls"><button class="btn primary" id="nsq-check">Prüfen</button><button class="btn" id="nsq-solve">Lösung</button><span class="sort-fb" id="nsq-fb"></span></div>
+    </div>
+    <div class="task-card"><header><span class="no">2</span><span class="lvl"><i class="on"></i><i class="on"></i><i class="on"></i></span><h3>Vergleichen</h3></header><p>Nenne Vor- und Nachteile von Ablaufplan und Struktogramm.</p>
+      <div class="controls"><button class="btn" data-reveal="m1a" aria-expanded="false">Lösung</button></div><p class="solution" id="m1a" hidden>Ablaufplan: anschaulich, Pfeile zeigen den Weg; bei vielen Verzweigungen aber schnell unübersichtlich („Spaghetti“). Struktogramm: feste, kompakte Form, nah an der Programmierung; dafür etwas schwerer zu zeichnen und zu ändern.</p></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Algorithmen darstellen</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Algorithmen darstellen</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step>Algorithmen kann man als Text, <b>Ablaufplan</b>, <b>Struktogramm</b> oder Programm darstellen.</li>
+        <li data-step><b>Ablaufplan:</b> Start/Ende (abgerundet), Anweisung (Rechteck), Entscheidung (Raute mit ja/nein), Pfeile für die Leserichtung.</li>
+        <li data-step><b>Struktogramm:</b> rechteckige Blöcke von oben nach unten; Verzweigung mit Bedingung in der Kopfzeile und Alternativen nebeneinander; Wiederholung mit eingerücktem Block.</li>
+        <li data-step>Vor dem Programmieren hilft es, den Ablauf erst aufzuschreiben und dann als Diagramm darzustellen.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne „Kaffee oder Tee“ einmal als Ablaufplan und einmal als Struktogramm.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Darstellung</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+/* ================= Ablaufplan ================= */
+(() => {
+  const B = {
+    s: ['term', 150, 25, 'Start'], a: ['box', 150, 85, 'Gehe zum Kühlregal'], d: ['dec', 150, 160, 'Milch da?'], b: ['box', 150, 245, 'Nimm die Milch'], c: ['box', 290, 160, 'Frage eine Mitarbeiterin'], e: ['term', 150, 320, 'Ende']
+  };
+  const shape = ([t, x, y, txt], on) => {
+    const cls = on ? 'on' : '';
+    if (t === 'term') return `<g class="${cls}"><rect x="${x - 55}" y="${y - 18}" width="110" height="36" rx="18"/><text x="${x}" y="${y + 5}" text-anchor="middle">${txt}</text></g>`;
+    if (t === 'dec') return `<g class="${cls}"><polygon points="${x},${y - 32} ${x + 70},${y} ${x},${y + 32} ${x - 70},${y}"/><text x="${x}" y="${y + 5}" text-anchor="middle">${txt}</text></g>`;
+    return `<g class="${cls}"><rect x="${x - 70}" y="${y - 18}" width="140" height="36" rx="3"/><text x="${x}" y="${y + 5}" text-anchor="middle" style="font-size:${txt.length > 20 ? 9.5 : 11}px">${txt}</text></g>`;
+  };
+  const ar = (x1, y1, x2, y2, lab, lx, ly) => `<line class="ar" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" marker-end="url(#ah)"/>${lab ? `<text class="lab" x="${lx}" y="${ly}">${lab}</text>` : ''}`;
+  let found = true;
+  const PATH = {ja: ['s', 'a', 'd', 'b', 'e'], nein: ['s', 'a', 'd', 'c', 'd', 'b', 'e']};
+  function draw(on) {
+    $('#pap').innerHTML = `<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="currentColor"/></marker></defs>`
+      + ar(150, 43, 150, 67) + ar(150, 103, 150, 128) + ar(150, 192, 150, 227, 'ja', 156, 214) + `<text class="lab" x="196" y="140">nein</text>`
+      + ar(150, 263, 150, 302) + `<polyline class="ar" points="290,142 290,112 154,112" fill="none" marker-end="url(#ah)"/>`
+      + Object.entries(B).map(([k, b]) => shape(b, k === on)).join('');
+  }
+  let st;
+  const msgs = {s: 'Start.', a: 'Anweisung: Gehe zum Kühlregal.', d: () => found ? 'Entscheidung: Milch da? <b>ja</b> → weiter nach unten.' : 'Entscheidung: Milch da? <b>nein</b> → nach rechts.', b: 'Anweisung: Nimm die Milch.', c: 'Anweisung: Frage eine Mitarbeiterin. Danach zurück zur Entscheidung – jetzt weißt du, wo die Milch steht.', e: 'Ende des Algorithmus.'};
+  function init(v) {
+    found = v === 'ja'; const P = PATH[v];
+    const old = $('#ap-step'), fresh = old.cloneNode(false); old.replaceWith(fresh);
+    st = stepper(fresh, P.length, k => { if (v === 'nein' && k === 4) found = true; else if (v === 'nein' && k < 4) found = false; draw(P[k]); const m = msgs[P[k]]; $('#ap-st').innerHTML = typeof m === 'function' ? m() : m; });
+  }
+  seg($('#ap-seg'), [['ja', 'Milch steht da'], ['nein', 'Milch nicht gefunden']], init, 'ja');
+})();
+
+matcher($('#match'), [
+  ['abgerundetes Feld', 'Start oder Ende'], ['Rechteck', 'Anweisung'], ['Raute', 'Entscheidung (ja/nein)'], ['Pfeil', 'Leserichtung'], ['eingerückter Block im Struktogramm', 'Wiederholung'], ['Dreieck-Kopfzeile im Struktogramm', 'Verzweigung']
+]);
+
+nsd($('#ns-seq'), [{t: 's', text: 'Schlage die Eier auf'}, {t: 's', text: 'Verrühre den Teig'}, {t: 's', text: 'Backe den Pfannkuchen'}]);
+nsd($('#ns-if'), [{t: 'if', cond: 'Ampel grün?', yes: [{t: 's', text: 'Gehe über die Straße'}], no: [{t: 's', text: 'Warte'}]}]);
+nsd($('#ns-loop'), [{t: 'loop', head: 'wiederhole 20-mal', body: [{t: 's', text: 'Gehe runter'}, {t: 's', text: 'Gehe hoch'}]}]);
+
+/* ================= Struktogramm-Puzzle ================= */
+(() => {
+  const OPT = ['Fülle Wasser in die Maschine', 'Kaffeepulver vorhanden?', 'Lege einen Filter ein und fülle Pulver ein', 'Mache einen Tee', 'Schalte die Maschine ein', 'Trinke dein Getränk'];
+  const SOL = {a: 0, c: 1, y1: 2, y2: 4, n1: 3, e: 5};
+  const sel = k => `<select data-k="${k}" aria-label="Feld"><option value="">…</option>${OPT.map((o, i) => `<option value="${i}">${o}</option>`).join('')}</select>`;
+  $('#nsq').innerHTML = `<div class="ns-title">Kaffee oder Tee</div><div class="ns-s">${sel('a')}</div><div class="ns-if"><div class="ns-cond" style="height:4.2rem"><svg viewBox="0 0 100 30" preserveAspectRatio="none"><polyline points="0,0 50,30 100,0" fill="none" stroke="currentColor" stroke-width="1.2" vector-effect="non-scaling-stroke"/></svg><span class="c">${sel('c')}</span><span class="y">ja</span><span class="n">nein</span></div><div class="ns-br"><div><div class="ns-s">${sel('y1')}</div><div class="ns-s">${sel('y2')}</div></div><div><div class="ns-s">${sel('n1')}</div></div></div></div><div class="ns-s">${sel('e')}</div>`;
+  const check = () => { let ok = 0; $$('#nsq select').forEach(s => { const g = +s.value === SOL[s.dataset.k] && s.value !== ''; s.className = s.value ? (g ? 'ok' : 'err') : ''; if (g) ok++; }); $('#nsq-fb').innerHTML = ok === 6 ? '<b class="good">Richtig!</b>' : `${ok} von 6 richtig.`; };
+  $('#nsq-check').onclick = check;
+  $('#nsq-solve').onclick = () => { $$('#nsq select').forEach(s => s.value = SOL[s.dataset.k]); check(); };
+})();
+
+mcQuiz($('#quiz'), [
+  {q: 'Welches Symbol steht im Ablaufplan für eine Entscheidung?', a: ['Raute', 'Kreis', 'Rechteck', 'Stern'], ok: 0},
+  {q: 'Was zeigen die Pfeile im Ablaufplan?', a: ['die Leserichtung', 'die Wichtigkeit', 'Fehler', 'die Zeit'], ok: 0},
+  {q: 'Wie werden im Struktogramm die Alternativen einer Verzweigung angeordnet?', a: ['nebeneinander', 'untereinander', 'diagonal', 'gar nicht'], ok: 0},
+  {q: 'Was steht in der Kopfzeile einer Verzweigung im Struktogramm?', a: ['die Bedingung', 'der Name des Programms', 'das Ende', 'eine Schleife'], ok: 0},
+  {q: 'Wie erkennt man eine Wiederholung im Struktogramm?', a: ['am eingerückten, umrahmten Block', 'an einer Raute', 'an Pfeilen', 'an der Farbe'], ok: 0},
+  {q: 'Was ist ein Nachteil von Ablaufplänen?', a: ['Bei vielen Verzweigungen werden sie unübersichtlich.', 'Sie haben keine Pfeile.', 'Man kann keine Entscheidungen darstellen.', 'Sie sind nur für Computer lesbar.'], ok: 0}
+]);
+</script>

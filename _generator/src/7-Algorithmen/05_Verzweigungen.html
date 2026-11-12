@@ -1,0 +1,123 @@
+<!--
+title: Bedingte Anweisungen und Verzweigungen
+short: Verzweigungen
+time: 2 Unterrichtsstunden
+q: Wie trifft ein Programm Entscheidungen?
+facts: Bedingte Anweisung: Handlung nur, wenn eine Bedingung erfüllt ist („falls … dann“) | Verzweigung mit Alternative: „falls … dann … sonst“ | Bedingungen mit Vergleichen (=, <, >) und Fühlen-Blöcken | Verzweigungen in Ablaufplan, Struktogramm und Scratch
+inter: Alltagsbeispiele sortieren · Ampel-Programm mit Schalter · Rechenquiz mit Antwortprüfung · Temperatur-Entscheidung mit Vergleich · Programm vorhersagen
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Algorithmen und Problemlösen</p>
+      <h1>Bedingungen und Verzweigungen<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">An der Fußgängerampel wartest du bei Rot und gehst bei Grün. Das Umschalten ist die <b>Bedingung</b> für deine Handlung. Auch Programme treffen solche Entscheidungen.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>„Wenn es über 30 °C ist, gehe ich ins Freibad.“ Was machst du, wenn es kälter ist?</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Wie trifft ein Programm Entscheidungen?</p></div>
+      <div class="controls"><button class="btn primary" data-go="alltag">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="alltag" data-label="Im Alltag" data-yr="Einstieg" data-title="Bedingungen im Alltag" data-sub="falls – dann – sonst">
+  <div class="section-head">
+    <p class="eyebrow">Station 1 · Bedingte Anweisungen im Alltag</p>
+    <h2>Mit oder ohne Alternative?</h2>
+  </div>
+  <div class="grid-2">
+    <div class="box"><span class="tag info">Bedingte Anweisung</span><p>Eine Handlung wird <b>nur</b> ausgeführt, wenn die Bedingung erfüllt ist. Sonst passiert nichts.<br><i>„Wenn die Ampel grün ist, gehe über die Straße.“</i></p></div>
+    <div class="box"><span class="tag info">Verzweigung mit Alternative</span><p>Ist die Bedingung nicht erfüllt, wird eine <b>andere</b> Handlung ausgeführt.<br><i>„Wenn das Fahrgeschäft offen ist, fahre damit, sonst gehe zum nächsten.“</i></p></div>
+  </div>
+  <h3 class="mt">Sortiere die Sätze</h3>
+  <div id="sort-bed"></div>
+</section>
+
+<section class="station" id="ampel" data-label="Falls – dann" data-yr="Erarbeitung" data-title="Falls … dann" data-sub="Die Ampel">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Bedingte Anweisung in Scratch</p>
+    <h2>Falls die Ampel grün ist …</h2>
+    <p class="lead">Schalte die Ampel um und starte das Programm. Die Katze geht nur bei Grün los.</p>
+  </div>
+  <div class="model">
+    <div id="s-ampel"></div>
+    <div class="vis"><div class="vis-head"><h3>Struktogramm</h3></div><div id="ns-ampel"></div></div>
+  </div>
+</section>
+
+<section class="station" id="sonst" data-label="Falls – sonst" data-yr="Erarbeitung" data-title="Falls … dann … sonst" data-sub="Das Rechenquiz">
+  <div class="section-head">
+    <p class="eyebrow">Station 3 · Verzweigung mit Alternative</p>
+    <h2>Richtig oder falsch?</h2>
+    <p class="lead">Die Katze fragt nach dem Ergebnis einer Aufgabe. Bei der richtigen Eingabe ist die Bedingung erfüllt, bei jeder anderen nicht – dann wird der <b>sonst</b>-Zweig ausgeführt.</p>
+  </div>
+  <div class="model">
+    <div id="s-quiz"></div>
+    <div class="vis"><div class="vis-head"><h3>Ablaufplan → Struktogramm</h3></div><div id="ns-quiz"></div></div>
+  </div>
+</section>
+
+<section class="station" id="vergleich" data-label="Vergleiche" data-yr="Vertiefung" data-title="Vergleiche als Bedingung" data-sub="&lt;, =, &gt;">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Vergleiche</p>
+    <h2>Ins Freibad oder nicht?</h2>
+    <p class="lead">Mit den grünen <b>Operatoren</b> &lt;, = und &gt; wird verglichen. Gib eine Temperatur ein und beobachte, welcher Zweig ausgeführt wird. Probiere auch genau 30!</p>
+  </div>
+  <div id="s-temp"></div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Vorhersagen" data-yr="M1" data-title="Was passiert?" data-sub="Programme vorhersagen">
+  <div class="section-head">
+    <p class="eyebrow">Station 5 · Material M1</p>
+    <h2>Was sagt die Katze?</h2>
+    <p class="lead">Lies das Struktogramm und sage voraus, was die Katze bei verschiedenen Eingaben sagt.</p>
+  </div>
+  <div class="model">
+    <div id="ns-note"></div>
+    <div id="m1-ts"></div>
+  </div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Verzweigungen</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Bedingte Anweisungen und Verzweigungen</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step>Eine <b>Bedingung</b> ist eine Voraussetzung, die erfüllt (wahr) oder nicht erfüllt (falsch) ist.</li>
+        <li data-step><b>Bedingte Anweisung</b> („falls … dann“): Die Anweisung wird nur ausgeführt, wenn die Bedingung erfüllt ist.</li>
+        <li data-step><b>Verzweigung mit Alternative</b> („falls … dann … sonst“): Ist die Bedingung nicht erfüllt, wird der sonst-Zweig ausgeführt.</li>
+        <li data-step>Bedingungen nutzen Vergleiche (&lt;, =, &gt;) oder Fühlen-Blöcke. Im Struktogramm: Kopfzeile mit Bedingung, ja- und nein-Zweig nebeneinander.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Skizze</span><p>Zeichne das Struktogramm für „Wenn es über 30 °C ist, gehe ich ins Freibad, sonst lese ich ein Buch.“</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Verzweigungen</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+sorter($('#sort-bed'), [{id: 'b', name: 'bedingte Anweisung (ohne sonst)'}, {id: 'v', name: 'Verzweigung mit Alternative'}], [
+  {t: 'Wenn es regnet, nimm einen Schirm mit.', c: 'b'}, {t: 'Wenn die Ampel grün ist, gehe los.', c: 'b'}, {t: 'Wenn ich viel einkaufe, nehme ich einen Einkaufswagen.', c: 'b'},
+  {t: 'Wenn es über 30 °C ist, gehe ins Freibad, sonst lies ein Buch.', c: 'v'}, {t: 'Wenn das Fahrgeschäft offen ist, fahre, sonst gehe weiter.', c: 'v'}, {t: 'Wenn die Antwort richtig ist, lobe, sonst nenne die Lösung.', c: 'v'}
+]);
+scratch($('#s-ampel'), [{op: 'flag'}, {op: 'goto', x: -150, y: 0}, {op: 'if', cond: {c: 'var', name: 'Ampel', v: 'Grün'}, body: [{op: 'say', text: 'Grün – los!', s: 1}, {op: 'move', n: 250}]}], {vars: {Ampel: ['Rot', 'Grün']}, done: 'Fertig. Bei Rot ist die Bedingung nicht erfüllt – die Katze bleibt stehen.'});
+nsd($('#ns-ampel'), [{t: 'if', cond: 'Ampel = Grün?', yes: [{t: 's', text: 'sage „Grün – los!“'}, {t: 's', text: 'gehe 250 Schritte'}], no: []}]);
+scratch($('#s-quiz'), [{op: 'flag'}, {op: 'ask', text: 'Was ist 7 · 8?'}, {op: 'ifelse', cond: {c: 'answer', v: '56'}, body: [{op: 'say', text: 'Richtig, super!', s: 2}, {op: 'sound'}], else: [{op: 'say', text: 'Leider falsch. 7 · 8 = 56', s: 2}]}]);
+nsd($('#ns-quiz'), [{t: 's', text: 'frage „Was ist 7 · 8?“'}, {t: 'if', cond: 'Antwort = 56?', yes: [{t: 's', text: 'sage „Richtig, super!“'}, {t: 's', text: 'spiele Klang'}], no: [{t: 's', text: 'sage „Leider falsch …“'}]}]);
+scratch($('#s-temp'), [{op: 'flag'}, {op: 'ask', text: 'Wie warm ist es heute (°C)?'}, {op: 'setans', name: 'Temperatur'}, {op: 'ifelse', cond: {c: 'cmp', a: 'Temperatur', op: '>', v: 30}, body: [{op: 'say', text: 'Ab ins Freibad! 🏊', s: 2}], else: [{op: 'say', text: 'Dann lese ich ein Buch. 📖', s: 2}]}], {nums: {Temperatur: 0}, done: 'Bei genau 30 ist „Temperatur > 30“ falsch – also sonst-Zweig.'});
+nsd($('#ns-note'), [{t: 's', text: 'frage „Wie viele Punkte hast du?“'}, {t: 'if', cond: 'Antwort > 50?', yes: [{t: 's', text: 'sage „bestanden“'}], no: [{t: 'if', cond: 'Antwort > 40?', yes: [{t: 's', text: 'sage „knapp“'}], no: [{t: 's', text: 'sage „üben“'}]}]}], {title: 'Testauswertung'});
+taskSet($('#m1-ts'), () => { const p = pick([12, 35, 41, 50, 51, 77, 40, 45]); return {key: 'p' + p, tag: `Antwort ${p}`, q: `Eingabe: <b>${p}</b> Punkte`, fields: [{l: 'Die Katze sagt', a: p > 50 ? 'bestanden' : p > 40 ? 'knapp' : 'üben'}], hint: 'Prüfe zuerst die obere Bedingung. Nur wenn sie falsch ist, gehe in den nein-Zweig.'}; }, {n: 4});
+mcQuiz($('#quiz'), [
+  {q: 'Was passiert bei „falls … dann“, wenn die Bedingung falsch ist?', a: ['Die Anweisung wird übersprungen.', 'Das Programm stürzt ab.', 'Der sonst-Zweig läuft.', 'Die Anweisung läuft zweimal.'], ok: 0},
+  {q: 'Wann wird der sonst-Zweig ausgeführt?', a: ['wenn die Bedingung nicht erfüllt ist', 'immer', 'nie', 'wenn die Bedingung erfüllt ist'], ok: 0},
+  {q: 'Ist „Temperatur > 30“ bei 30 °C wahr?', a: ['nein', 'ja', 'manchmal', 'kommt auf den Tag an'], ok: 0},
+  {q: 'Welche Blöcke liefern Vergleiche wie &lt; oder =?', a: ['Operatoren', 'Aussehen', 'Klang', 'Bewegung'], ok: 0},
+  {q: 'Wie werden im Struktogramm die Zweige einer Verzweigung dargestellt?', a: ['ja und nein nebeneinander', 'untereinander', 'als Pfeile', 'gar nicht'], ok: 0},
+  {q: 'Welches ist eine Bedingung?', a: ['Ampel ist grün', 'Gehe 10 Schritte', 'Spiele Klang', 'Warte 1 Sekunde'], ok: 0}
+]);
+</script>

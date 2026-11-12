@@ -1044,6 +1044,209 @@ textarea.mf-body{width:100%;border:0;font:inherit;resize:vertical;color:#111827;
 @media (max-width:700px){.mf-row{grid-template-columns:4rem 1fr}.prob{grid-template-columns:5rem 1fr 2.6rem}}
 .cmp select{font:inherit;font-size:.9rem;padding:.15rem .3rem;border:1.5px solid var(--edge);border-radius:4px;background:var(--surface);color:var(--ink)}.cmp select.ok{border-color:var(--good);background:color-mix(in srgb,var(--good) 15%,var(--surface))}.cmp select.err{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 15%,var(--surface))}
 
+/* ================= Klasse 7/8 ================= */
+.graph .node circle{fill:var(--surface);stroke:var(--edge);stroke-width:1.8}
+.graph .node{cursor:pointer}
+.graph .node:hover circle{stroke:var(--accent)}
+.graph .node.on circle{fill:color-mix(in srgb,var(--accent) 28%,var(--surface));stroke:var(--accent);stroke-width:3}
+.graph .node.done circle{fill:color-mix(in srgb,var(--good) 22%,var(--surface));stroke:var(--good)}
+.graph .node.onpath circle{fill:var(--accent);stroke:var(--edge)}
+.graph .node.onpath text.nm,.graph .node.onpath text.ic{fill:var(--accent-ink)}
+.graph .node.bad circle{fill:color-mix(in srgb,var(--bad) 25%,var(--surface));stroke:var(--bad);stroke-dasharray:4 3}
+.graph text.nm{font-weight:600;font-size:13px}
+.graph text.ic{font-size:17px}
+.graph text.lb{font-size:10px;fill:var(--ink-2)}
+.graph text.sub{font-size:11px;font-weight:700;fill:var(--accent)}
+.graph .edge.dead{stroke-dasharray:5 5;opacity:.35}
+.graph .wt rect{fill:var(--surface-2);stroke:var(--line)}
+.graph .wt text{font-size:11px;font-weight:600}
+.graph .wt.on rect{fill:var(--accent);stroke:var(--accent)}
+.graph .wt.on text{fill:var(--accent-ink)}
+.graph .pkt{fill:#DC2626;stroke:#fff;stroke-width:1}
+.codeview{display:block;font-family:var(--f-mono);font-size:.9rem;line-height:1.55;background:var(--bar);color:var(--bar-ink);border:1.5px solid var(--edge);border-radius:6px;box-shadow:4px 4px 0 var(--edge-shadow);padding:.6rem 0;overflow-x:auto;white-space:pre}
+.codeview .cl{display:block;padding:0 .9rem 0 0}
+.codeview .cl i{display:inline-block;width:2.4rem;text-align:right;margin-right:.8rem;font-style:normal;color:var(--bar-ink-2);opacity:.6;user-select:none}
+.codeview .cl.hl{background:color-mix(in srgb,var(--led) 22%,transparent)}
+.repr{min-height:13rem}
+.repr table.cmp{font-size:.95rem}
+.chart-svg{width:100%;height:auto;display:block}
+.chart-svg text{font-family:var(--f-mono);font-size:11px;fill:var(--ink-2)}
+.chart-svg .ax{stroke:var(--ink-2);stroke-width:1}
+.chart-svg .gl{stroke:var(--line);stroke-width:1;stroke-dasharray:3 3}
+.chart-svg .ln{fill:none;stroke:var(--accent);stroke-width:3}
+.chart-svg .pt{fill:var(--accent);stroke:var(--surface);stroke-width:2}
+.chart-svg .bar{fill:var(--accent)}
+.chart-svg .bar.b2{fill:var(--ink-2)}
+.tree{display:flex;flex-direction:column;align-items:center;gap:.9rem;font-size:.9rem}
+.tree .gen{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center}
+.tree .p{background:var(--surface);border:1.5px solid var(--edge);border-radius:4px;padding:.25rem .6rem;box-shadow:2px 2px 0 var(--edge-shadow);font-family:var(--f-mono);font-size:.8rem}
+.tree .p.couple{border-color:var(--accent)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:.25rem .9rem;margin:0}
+.kv dt{font-family:var(--f-mono);font-weight:600;color:var(--accent)}
+.kv dd{margin:0}
+.ticket{font-family:var(--f-mono);font-size:.85rem;background:#FFFDF5;color:#111;border:1px dashed #999;padding:.8rem 1rem;max-width:20rem;box-shadow:3px 3px 0 rgba(0,0,0,.15);white-space:pre;line-height:1.35}
+.big-num{font-family:var(--f-mono);font-size:clamp(1.6rem,3.6vw,2.4rem);font-weight:600;color:var(--accent)}
+.pill{display:inline-block;font-family:var(--f-mono);font-size:.78rem;padding:.1rem .5rem;border-radius:99px;border:1.5px solid var(--edge);background:var(--surface-2)}
+.pill.ok{background:var(--good);color:#fff;border-color:var(--good)}.pill.err{background:var(--bad);color:#fff;border-color:var(--bad)}
+.layer-stack{display:flex;flex-direction:column;gap:.35rem}
+.layer-stack > div{display:grid;grid-template-columns:9rem 1fr;gap:.8rem;align-items:center;background:var(--surface);border:1.5px solid var(--edge);border-radius:5px;padding:.5rem .8rem;box-shadow:2px 2px 0 var(--edge-shadow)}
+.layer-stack b{font-family:var(--f-mono)}
+.layer-stack > div.on{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 14%,var(--surface))}
+.ip{font-family:var(--f-mono);font-size:clamp(1.2rem,3vw,1.9rem);font-weight:600;letter-spacing:.02em}
+.ip .net{color:var(--accent)}.ip .host{color:var(--a)}
+.browser{background:var(--surface);border:1.5px solid var(--edge);border-radius:6px;box-shadow:4px 4px 0 var(--edge-shadow);overflow:hidden}
+.browser .bar{display:flex;gap:.5rem;align-items:center;background:var(--surface-2);padding:.4rem .6rem;border-bottom:1.5px solid var(--edge)}
+.browser .bar .dots{display:flex;gap:.25rem}.browser .bar .dots i{width:.6rem;height:.6rem;border-radius:50%;background:var(--line)}
+.browser .url{flex:1;font-family:var(--f-mono);font-size:.82rem;background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:.2rem .7rem;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.browser .page{padding:1rem;min-height:9rem;background:#fff;color:#111}
+.browser .page h1{font-family:Georgia,serif;font-size:1.5rem;margin:0 0 .4rem}
+.browser .page a{color:#1D4ED8}
+.url-part{display:inline-block;padding:.15rem .3rem;border-radius:3px;cursor:pointer;border:1.5px solid transparent}
+.url-part:hover,.url-part.on{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 15%,transparent)}
+textarea.code-in{width:100%;min-height:9rem;font-family:var(--f-mono);font-size:.9rem;line-height:1.5;padding:.6rem .8rem;border:1.5px solid var(--edge);border-radius:6px;background:var(--bar);color:var(--bar-ink);resize:vertical;tab-size:2}
+.lap-svg{width:100%;height:auto;display:block}
+.lap-svg text{font-family:var(--f-mono);font-size:12px;font-weight:600;fill:var(--ink);pointer-events:none}
+.lap-case{fill:var(--surface-2);stroke:var(--edge);stroke-width:2}
+.lap-svg .lp{fill:var(--surface);stroke:var(--edge);stroke-width:1.5}
+.lap-svg .lp-board{fill:color-mix(in srgb,var(--good) 18%,var(--surface))}
+.lap-svg .lp.on{fill:color-mix(in srgb,var(--accent) 30%,var(--surface))}
+.pk-stage{min-height:7rem;margin-top:.6rem}
+.pk-row{display:flex;flex-wrap:wrap;gap:.45rem}
+.pk{display:inline-flex;flex-direction:column;font-family:var(--f-mono);font-size:.9rem;background:var(--surface-2);border:1.5px solid var(--edge);border-radius:4px;padding:.3rem .5rem;box-shadow:2px 2px 0 var(--edge-shadow);white-space:pre}
+.pk b{font-size:.7rem;color:var(--accent)}
+.pk.whole{font-family:var(--f-body);font-size:1.05rem;white-space:normal}
+.pk.travel{animation:pkwob 1.2s ease-in-out infinite alternate}
+.pk.travel:nth-child(2n){animation-delay:.3s}.pk.travel:nth-child(3n){animation-delay:.6s}
+@keyframes pkwob{from{transform:translateY(-4px) rotate(-2deg)}to{transform:translateY(4px) rotate(2deg)}}
+@media (prefers-reduced-motion: reduce){.pk.travel{animation:none}}
+.pk.ok{border-color:var(--good)}
+.sync-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.9rem}
+.sync-cloud{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;justify-content:center;padding:.8rem;border:2px dashed var(--accent);border-radius:30px;background:color-mix(in srgb,var(--accent) 8%,var(--surface))}
+.sync-cloud b{font-family:var(--f-mono);margin-right:.5rem}
+.sync-dev{background:var(--surface);border:1.5px solid var(--edge);border-radius:6px;box-shadow:3px 3px 0 var(--edge-shadow);padding:.7rem .8rem}
+.sync-dev b{display:block;font-family:var(--f-mono);margin-bottom:.4rem}
+.sync-dev.off{opacity:.65;background:repeating-linear-gradient(45deg,var(--surface) 0 8px,var(--surface-2) 8px 16px)}
+.sync-dev .controls{margin-top:.5rem}.sync-dev .btn{font-size:.75rem;padding:.3rem .5rem}
+@media (max-width:700px){.sync-grid{grid-template-columns:minmax(0,1fr)}}
+.chat-box{display:flex;flex-direction:column;gap:.5rem;background:var(--surface-2);border:1.5px solid var(--edge);border-radius:6px;padding:.8rem}
+.chat-box .msg{max-width:85%;background:var(--surface);border:1.5px solid var(--edge);border-radius:10px 10px 10px 2px;padding:.45rem .7rem}
+.chat-box .msg.me{align-self:flex-end;border-radius:10px 10px 2px 10px;background:color-mix(in srgb,var(--accent) 14%,var(--surface))}
+.chat-box .msg b{font-family:var(--f-mono);font-size:.75rem;color:var(--accent)}
+.chat-box .msg p{margin:0}
+.braille{display:flex;flex-wrap:wrap;gap:.5rem;margin:.7rem 0}
+.br-w{display:flex;flex-direction:column;align-items:center;gap:.2rem}
+.br-w small{font-family:var(--f-mono);font-size:.8rem;color:var(--ink-2)}
+.br-c{display:grid;grid-template-columns:repeat(2,.8rem);gap:.25rem;padding:.35rem;border:1.5px solid var(--edge);border-radius:4px;background:var(--surface)}
+.br-c i{width:.8rem;height:.8rem;border-radius:50%;border:1.5px solid var(--line)}
+.br-c i.on{background:var(--ink);border-color:var(--ink)}
+.combos{display:flex;flex-wrap:wrap;gap:.3rem;min-height:3rem;margin-top:.6rem}
+.cpu-regs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem}
+.cpu-regs div{background:var(--bar);color:var(--bar-ink);border-radius:5px;padding:.5rem .7rem;display:flex;flex-direction:column}
+.cpu-regs small{font-family:var(--f-mono);font-size:.68rem;color:var(--bar-ink-2);text-transform:uppercase}
+.cpu-regs b{font-family:var(--f-mono);font-size:1.4rem;color:var(--led)}
+.mem td.cell{display:flex;gap:.8rem;align-items:baseline;justify-content:space-between}
+.mem td.cell small{color:var(--ink-2);font-size:.8rem}
+.mem tr.pc th{background:var(--accent);color:var(--accent-ink)}
+.mem tr.hl td{background:color-mix(in srgb,var(--v) 22%,var(--surface))}
+.ascii-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(2.2rem,1fr));gap:3px}
+.ascii-grid button{font-family:var(--f-mono);font-size:1rem;aspect-ratio:1;border:1.5px solid var(--line);border-radius:3px;background:var(--surface);cursor:pointer;padding:0}
+.ascii-grid button:hover{border-color:var(--accent)}
+.ascii-grid button.on{background:var(--accent);color:var(--accent-ink);border-color:var(--edge)}
+.kf-bars{display:flex;flex-direction:column;gap:.4rem;margin:.8rem 0}
+.kf-bars i{display:block;height:1.4rem;border-radius:3px;background:var(--ink-2);transition:width .2s}
+.kf-bars i+i{background:var(--accent)}
+.nibbles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+.nib{display:flex;flex-direction:column;align-items:center;gap:.3rem;padding:.6rem;border:1.5px dashed var(--accent);border-radius:6px}
+.nib-bits{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.25rem;width:100%}
+.nib-bits .pv-b{font-size:1.1rem}
+.nib small{color:var(--ink-2)}
+.clocks{display:flex;gap:1.5rem;align-items:center;justify-content:center;flex-wrap:wrap}
+.clock{width:9rem;height:9rem}
+.digi{font-size:2.4rem;font-weight:600;background:#0B1416;color:#3DF2C4;padding:.4rem .9rem;border-radius:6px;letter-spacing:.06em}
+.bitrow{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:.2rem;margin:.4rem 0}
+.bitrow .pv-b{font-size:1rem;aspect-ratio:1/1.2}
+.bitrow .pv-b.par{outline:2px dashed var(--a);outline-offset:1px}
+.bitrow .pv-b.err{background:var(--bad);color:#fff}
+.sk-wrap{display:grid;grid-template-columns:repeat(var(--c),minmax(0,1.8rem));gap:2px;margin:.6rem 0;background:linear-gradient(90deg,#B45309,#D97706);padding:.4rem;border-radius:4px;width:max-content;max-width:100%;overflow-x:auto}
+.sk-wrap span{font-family:var(--f-mono);font-weight:600;background:#FDF6E3;color:#111;text-align:center;padding:.15rem 0}
+.disc{width:100%;max-width:22rem;display:block;margin:auto;touch-action:none;cursor:grab;user-select:none}
+.disc .outer{fill:var(--surface);stroke:var(--edge);stroke-width:2}
+.disc .inner{fill:color-mix(in srgb,var(--accent) 18%,var(--surface));stroke:var(--edge);stroke-width:2}
+.disc .hub{fill:var(--surface);stroke:var(--edge);stroke-width:1.5}
+.disc .sep{stroke:var(--line);stroke-width:1}
+.disc text{font-family:var(--f-mono);font-weight:600;fill:var(--ink);pointer-events:none}
+.disc text.o{font-size:15px}.disc text.i{font-size:14px;fill:var(--accent)}
+.disc text.k{font-size:26px}
+.disc .ptr{fill:var(--bad)}
+.alpha{overflow-x:auto}
+.alpha div{display:grid;grid-template-columns:4.5rem repeat(26,minmax(1.3rem,1fr));gap:1px;min-width:38rem}
+.alpha b{font-size:.75rem;align-self:center;color:var(--ink-2)}
+.alpha span{text-align:center;background:var(--surface-2);padding:.15rem 0;font-weight:600}
+.alpha span.g{background:var(--accent);color:var(--accent-ink)}
+.vg-steps td{font-family:var(--f-mono);text-align:center;font-weight:600;min-width:2rem}
+.vg-steps td.hl,.vq td.hit{background:var(--accent);color:var(--accent-ink)}
+.vq-wrap{overflow:auto;max-height:28rem}
+.vq{border-collapse:collapse;font-family:var(--f-mono);font-size:.72rem}
+.vq th,.vq td{width:1.35rem;height:1.35rem;text-align:center;border:1px solid var(--line)}
+.vq th{background:var(--ink);color:var(--bg)}
+.vq td{cursor:pointer;background:var(--surface)}
+.vq td.row,.vq td.col{background:color-mix(in srgb,var(--accent) 22%,var(--surface))}
+.fl-grid{display:grid;grid-template-columns:repeat(4,3rem);gap:3px;margin:.8rem auto;width:max-content}
+.fl-grid span{height:3rem;display:grid;place-items:center;font-family:var(--f-mono);font-weight:600;font-size:1.3rem;border:1.5px solid var(--edge);background:var(--surface)}
+.fl-grid span.cover{background:repeating-linear-gradient(45deg,#9CA3AF 0 6px,#D1D5DB 6px 12px)}
+.fl-grid span.hole{background:var(--surface);outline:3px solid var(--accent);outline-offset:-4px}
+.hops{display:flex;align-items:stretch;gap:.3rem;flex-wrap:wrap}
+.hop{flex:1 1 6rem;display:flex;flex-direction:column;gap:.2rem;align-items:center;text-align:center;padding:.5rem .4rem;border:1.5px solid var(--edge);border-radius:6px;background:var(--surface);min-height:7.5rem;transition:background .2s}
+.hop b{font-size:1.5rem}.hop small{font-size:.75rem;color:var(--ink-2)}
+.hop span{font-size:.72rem;word-break:break-all}
+.hop.on{background:color-mix(in srgb,var(--accent) 12%,var(--surface))}
+.hop.leak{background:color-mix(in srgb,var(--bad) 18%,var(--surface));border-color:var(--bad)}
+.hop-ar{align-self:center;font-style:normal;font-family:var(--f-mono);color:var(--ink-2)}
+@media (max-width:700px){.hop-ar{display:none}}
+.actors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem;align-items:start}
+.actor{display:flex;flex-direction:column;align-items:center;gap:.25rem;padding:.6rem .4rem;border:1.5px solid var(--edge);border-radius:6px;background:var(--surface);min-height:8rem}
+.actor > b{font-size:2rem}.actor > span{font-family:var(--f-mono);font-weight:600}
+.actor.on{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 30%,transparent)}
+.actor .inv{display:flex;flex-direction:column;gap:.25rem;align-items:center}
+.actor .pill{font-size:.72rem}
+.wire-msg{grid-column:1/-1;text-align:center;font-family:var(--f-mono);font-weight:600;padding:.4rem;border-top:3px dashed var(--line);color:var(--accent)}
+.hy-steps{margin:0 0 .6rem;padding-left:1.4rem;display:flex;flex-direction:column;gap:.35rem}
+.hy-steps li{padding:.4rem .7rem;border-radius:5px;opacity:.35;transition:opacity .2s}
+.hy-steps li.done{opacity:.8}
+.hy-steps li.on{opacity:1;background:color-mix(in srgb,var(--accent) 16%,var(--surface));border-left:5px solid var(--accent)}
+.bf-list{margin:.4rem 0 0;padding-left:0;list-style:none;columns:2;font-size:.85rem;max-height:20rem;overflow:auto}
+.bf-list li{white-space:pre;padding:.05rem .3rem}
+.bf-list li.hit{background:var(--good);color:#fff;font-weight:700;border-radius:3px}
+.cmp tr.hl td,.cmp tr.hl th{background:color-mix(in srgb,var(--accent) 20%,var(--surface))}
+.hbar{display:grid;grid-template-columns:minmax(8rem,12rem) 1fr 3.5rem;gap:.3rem .6rem;align-items:center;margin:.45rem 0}
+.hbar-t{position:relative;height:1.4rem;background:var(--surface-2);border-radius:3px;overflow:hidden}
+.hbar-t i{position:absolute;left:0;top:0;bottom:0;border-radius:3px}
+.hbar-t i.ref{background:var(--ink-2);opacity:.45}
+.hbar-t i.me{background:var(--accent);top:.35rem;bottom:.35rem}
+.hbar input{grid-column:2/4}
+.lap-svg g[data-part].on rect{fill:color-mix(in srgb,var(--accent) 30%,var(--surface))}
+.checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.35rem}
+.checklist label{display:flex;gap:.4rem;align-items:center;padding:.35rem .55rem;border:1.5px solid var(--line);border-radius:4px;background:var(--surface);cursor:pointer}
+.checklist label.req{background:var(--surface-2)}
+.checklist input{accent-color:var(--accent);width:1.1rem;height:1.1rem}
+.cookie-banner{position:absolute;left:.6rem;right:.6rem;bottom:.6rem;background:#fff;border:2px solid #111;border-radius:6px;padding:.6rem .8rem;box-shadow:0 6px 18px rgba(0,0,0,.25);display:flex;flex-direction:column;gap:.2rem;font-size:.9rem}
+.cookie-banner .btn{font-size:.78rem;padding:.3rem .6rem}
+.cmp select{font:inherit}
+@media (max-width:700px){.checklist{grid-template-columns:minmax(0,1fr)}}
+.wk-hist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.4rem;max-height:20rem;overflow:auto;font-size:.88rem}
+.wk-hist li{padding:.4rem .6rem;border:1.5px solid var(--line);border-radius:4px;background:var(--surface)}
+.wk-hist li.cur{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--surface))}
+.mail-fake{background:#fff;color:#111;border:1.5px solid var(--edge);border-radius:6px;box-shadow:4px 4px 0 var(--edge-shadow);overflow:hidden;font-size:.95rem}
+.mail-fake .mf-h{display:flex;flex-direction:column;gap:.15rem;background:#F3F4F6;padding:.6rem .9rem;border-bottom:1px solid #D1D5DB;font-size:.85rem}
+.mail-fake .mf-b{padding:.8rem .9rem}
+.mail-fake .ph{cursor:pointer;border-radius:3px;transition:background .15s}
+.mail-fake .ph:hover{background:#FEF3C7}
+.mail-fake .ph.found{background:#FECACA;outline:2px solid #DC2626}
+.cc-name{font-size:clamp(1.4rem,3vw,2rem);font-weight:600;color:var(--accent);margin:.6rem 0}
+.sb-rep.va{background:#FF8C1A;color:#fff}.sb-rep.op{background:#59C059;color:#fff}.sb-rep.se{background:#5CB1D6;color:#fff}.sb-rep.mo{background:#4C97FF;color:#fff}
+.scr-mon{display:inline-flex;gap:.35rem;align-items:center;font-family:var(--f-mono);font-size:.78rem;background:var(--surface-2);border:1px solid var(--line);border-radius:4px;padding:.15rem .45rem}
+.scr-mon b{background:#FF8C1A;color:#fff;border-radius:3px;padding:0 .35rem;min-width:1.6rem;text-align:center}
+
 </style>
 </head>
 <body data-next="{&quot;href&quot;: &quot;00_Uebersicht.html&quot;, &quot;label&quot;: &quot;Zur Übersicht&quot;}">
@@ -1740,13 +1943,18 @@ function loopCanvas(cv, station, draw) {
    Blöcke: flag, move n, turn n, turnL n, goto x y, glide s (zu Zufallsposition), say text s, think text, wait s, costume, costume2,
            sound, bounce, show, hide, size n, repeat n body, forever body, until cond body, if cond body, ifelse cond body else, ask text
    Bedingungen: {c:'edge'} Rand berührt · {c:'mouse'} Mauszeiger berührt · {c:'answer', v} Antwort = v · {c:'var', name, v} Variable = v
-   o: {pen: true} zeichnet eine Spur · {vars: {Ampel: ['Rot','Grün']}} Schalter für Variablen · {x, y, dir} Startwerte */
+   o: {pen: true} zeichnet eine Spur · {vars: {Ampel: ['Rot','Grün']}} Schalter für Variablen · {x, y, dir} Startwerte
+   Klasse 7: Variablen mit Zahlen: o.nums {Punkte: 0} (Anzeige auf der Bühne) und Blöcke
+     setvar name v · changevar name n · setrand name a b (Zufallszahl) · setans name (Antwort speichern) · sayvar name s · sayjoin text name s · changex n · changey n
+   Vergleich als Bedingung: {c:'cmp', a:'Punkte'|'Antwort'|'x'|'y', op:'>'|'<'|'=', v} */
 function scratch(root, script, o = {}) {
   const CAT = {flag: 'ev', move: 'mo', turn: 'mo', turnL: 'mo', goto: 'mo', glide: 'mo', bounce: 'mo', say: 'lo', think: 'lo', costume: 'lo', costume2: 'lo', show: 'lo', hide: 'lo', size: 'lo', sound: 'so',
-    wait: 'ct', repeat: 'ct', forever: 'ct', until: 'ct', if: 'ct', ifelse: 'ct', ask: 'se'};
+    wait: 'ct', repeat: 'ct', forever: 'ct', until: 'ct', if: 'ct', ifelse: 'ct', ask: 'se', setvar: 'va', changevar: 'va', setrand: 'va', setans: 'va', sayvar: 'lo', sayjoin: 'lo', changex: 'mo', changey: 'mo'};
   const inp = (b, k, w = 3) => `<input class="sb-v" data-k="${k}" value="${b[k]}" size="${w}" aria-label="${k}">`;
   const cond = c => !c ? '' : c.c === 'edge' ? '<span class="sb-cond se">wird <i>Rand</i> berührt?</span>' : c.c === 'mouse' ? '<span class="sb-cond se">wird <i>Mauszeiger</i> berührt?</span>'
-    : c.c === 'answer' ? `<span class="sb-cond op"><span class="sb-rep se">Antwort</span> = <i>${c.v}</i></span>` : `<span class="sb-cond op"><span class="sb-rep va">${c.name}</span> = <i>${c.v}</i></span>`;
+    : c.c === 'answer' ? `<span class="sb-cond op"><span class="sb-rep se">Antwort</span> = <i>${c.v}</i></span>`
+    : c.c === 'cmp' ? `<span class="sb-cond op"><span class="sb-rep ${c.a === 'Antwort' ? 'se' : c.a === 'x' || c.a === 'y' ? 'mo' : 'va'}">${c.a === 'x' ? 'x-Position' : c.a === 'y' ? 'y-Position' : c.a}</span> ${c.op === '<' ? '&lt;' : c.op === '>' ? '&gt;' : '='} <i>${c.v}</i></span>`
+    : `<span class="sb-cond op"><span class="sb-rep va">${c.name}</span> = <i>${c.v}</i></span>`;
   function html(list, path) {
     return list.map((b, i) => {
       const p = path + i, c = CAT[b.op];
@@ -1774,16 +1982,26 @@ function scratch(root, script, o = {}) {
         case 'until': return `<div class="sb ${c} cb" data-p="${p}"><div class="sb-h">wiederhole bis ${cond(b.cond)}</div>${body('body')}<div class="sb-f">↻</div></div>`;
         case 'if': return `<div class="sb ${c} cb" data-p="${p}"><div class="sb-h">falls ${cond(b.cond)}, dann</div>${body('body')}<div class="sb-f"></div></div>`;
         case 'ifelse': return `<div class="sb ${c} cb" data-p="${p}"><div class="sb-h">falls ${cond(b.cond)}, dann</div>${body('body')}<div class="sb-m">sonst</div>${body('else')}<div class="sb-f"></div></div>`;
+        case 'setvar': return `<div class="sb ${c}" data-p="${p}">setze <i>${b.name}</i> auf ${inp(b, 'v', 4)}</div>`;
+        case 'changevar': return `<div class="sb ${c}" data-p="${p}">ändere <i>${b.name}</i> um ${inp(b, 'n')}</div>`;
+        case 'setrand': return `<div class="sb ${c}" data-p="${p}">setze <i>${b.name}</i> auf <span class="sb-rep op">Zufallszahl von ${inp(b, 'a', 2)} bis ${inp(b, 'b', 2)}</span></div>`;
+        case 'setans': return `<div class="sb ${c}" data-p="${p}">setze <i>${b.name}</i> auf <span class="sb-rep se">Antwort</span></div>`;
+        case 'sayvar': return `<div class="sb ${c}" data-p="${p}">sage <span class="sb-rep va">${b.name}</span>${b.s != null ? ` für ${inp(b, 's', 2)} Sekunden` : ''}</div>`;
+        case 'sayjoin': return `<div class="sb ${c}" data-p="${p}">sage <span class="sb-rep op">verbinde ${inp(b, 'text', 10)} und <span class="sb-rep va">${b.name}</span></span>${b.s != null ? ` für ${inp(b, 's', 2)} Sekunden` : ''}</div>`;
+        case 'changex': return `<div class="sb ${c}" data-p="${p}">ändere x um ${inp(b, 'n')}</div>`;
+        case 'changey': return `<div class="sb ${c}" data-p="${p}">ändere y um ${inp(b, 'n')}</div>`;
       }
       return '';
     }).join('');
   }
   const vars = o.vars || {};
   const V = Object.fromEntries(Object.entries(vars).map(([k, v]) => [k, v[0]]));
+  const nums = o.nums || {};
+  Object.assign(V, nums);
   root.classList.add('scr');
   root.innerHTML = `<div class="scr-code"><div class="scr-script">${html(script, '')}</div></div>
     <div class="scr-right"><div class="scr-bar"><button class="scr-go" title="Grüne Fahne">⚑</button><button class="scr-stop" title="Stopp">⬣</button><span class="scr-xy mono"></span>
-      ${Object.keys(vars).map(k => `<button class="btn scr-var" data-var="${k}">${k}: <b>${V[k]}</b></button>`).join('')}</div>
+      ${Object.keys(vars).map(k => `<button class="btn scr-var" data-var="${k}">${k}: <b>${V[k]}</b></button>`).join('')}${Object.keys(nums).map(k => `<span class="scr-mon" data-mon="${k}">${k} <b>${V[k]}</b></span>`).join('')}</div>
       <div class="scr-stage"><canvas class="scr-pen"></canvas><div class="scr-sprite"><span class="scr-cat">🐈</span><span class="scr-bubble" hidden></span></div><form class="scr-ask" hidden><span></span><input aria-label="Antwort"><button class="btn primary">✓</button></form></div>
       <p class="status scr-status">Klicke auf die grüne Fahne.</p></div>`;
   const stage = $('.scr-stage', root), spr = $('.scr-sprite', root), cat = $('.scr-cat', root), bub = $('.scr-bubble', root), pen = $('.scr-pen', root), st = $('.scr-status', root);
@@ -1798,9 +2016,10 @@ function scratch(root, script, o = {}) {
     cat.style.transform = `translate(-50%,-50%) scale(${S.size / 100 * flip}, ${S.size / 100}) rotate(${(S.dir - 90) * flip}deg)${S.cos % 2 ? ' translateY(-6%) rotate(-7deg)' : ''}`;
     spr.style.opacity = S.vis ? 1 : 0;
     $('.scr-xy', root).textContent = `x: ${Math.round(S.x)}  y: ${Math.round(S.y)}  Richtung: ${Math.round(S.dir)}`;
+    Object.keys(nums).forEach(k => { const m = $(`[data-mon="${k}"] b`, root); if (m) m.textContent = V[k]; });
   }
   function reset() {
-    Object.assign(S, {x: o.x ?? 0, y: o.y ?? 0, dir: o.dir ?? 90, cos: 0, size: 100, vis: true});
+    Object.assign(S, {x: o.x ?? 0, y: o.y ?? 0, dir: o.dir ?? 90, cos: 0, size: 100, vis: true}); Object.assign(V, nums);
     bub.hidden = true; const c = pen.getContext('2d'); pen.width = stage.clientWidth; pen.height = stage.clientHeight; c.clearRect(0, 0, pen.width, pen.height); draw();
   }
   function line(x1, y1, x2, y2) {
@@ -1813,6 +2032,13 @@ function scratch(root, script, o = {}) {
     if (c.c === 'mouse') { const [mx, my] = S.mouse; return Math.hypot(mx - S.x, my - S.y) < 40; }
     if (c.c === 'answer') return String(S.answer).trim().toLowerCase() === String(c.v).toLowerCase();
     if (c.c === 'var') return V[c.name] === c.v;
+    if (c.c === 'cmp') {
+      const a = c.a === 'Antwort' ? S.answer : c.a === 'x' ? S.x : c.a === 'y' ? S.y : V[c.a], na = parseFloat(String(a).replace(',', '.')), nv = parseFloat(String(c.v).replace(',', '.'));
+      const both = isFinite(na) && isFinite(nv);
+      if (c.op === '<') return both ? na < nv : String(a) < String(c.v);
+      if (c.op === '>') return both ? na > nv : String(a) > String(c.v);
+      return both ? na === nv : String(a).trim().toLowerCase() === String(c.v).trim().toLowerCase();
+    }
     return false;
   }
   const num = (el, k, b) => { const v = parseFloat(String(b[k]).replace(',', '.')); return isFinite(v) ? v : 0; };
@@ -1830,7 +2056,7 @@ function scratch(root, script, o = {}) {
     if (b.body || b.op === 'ask') return Infinity;
     const s = () => num(el, 's', b) * 1000;
     return {move: clamp(Math.abs(num(el, 'n', b)) * 4, 30, 400), turn: 80, turnL: 80, goto: 60, glide: s(), say: b.s != null ? s() : 300, think: b.s != null ? s() : 300,
-      costume: 50, costume2: 120, size: 120, sound: 500, wait: s()}[b.op] || 0;
+      costume: 50, costume2: 120, size: 120, sound: 500, wait: s(), sayvar: b.s != null ? s() : 300, sayjoin: b.s != null ? s() : 300}[b.op] || 0;
   }
   async function exec(list, path, id) {
     for (let i = 0; i < list.length; i++) {
@@ -1859,6 +2085,13 @@ function scratch(root, script, o = {}) {
           case 'until': for (let k = 0; k < 2000 && id === run && !test(b.cond); k++) { await exec(b.body, p + '.body.', id); await sleep(10); } break;
           case 'if': if (test(b.cond)) await exec(b.body, p + '.body.', id); break;
           case 'ifelse': if (test(b.cond)) await exec(b.body, p + '.body.', id); else await exec(b.else, p + '.else.', id); break;
+          case 'setvar': { const v = parseFloat(String(b.v).replace(',', '.')); V[b.name] = isFinite(v) && String(b.v).trim() !== '' ? v : b.v; draw(); await sleep(60); break; }
+          case 'changevar': V[b.name] = (+V[b.name] || 0) + num(el, 'n', b); draw(); await sleep(60); break;
+          case 'setrand': { const lo = Math.round(num(el, 'a', b)), hi = Math.round(num(el, 'b', b)); V[b.name] = randInt(Math.min(lo, hi), Math.max(lo, hi)); draw(); await sleep(60); break; }
+          case 'setans': { const v = parseFloat(String(S.answer).replace(',', '.')); V[b.name] = isFinite(v) ? v : S.answer; draw(); break; }
+          case 'sayvar': case 'sayjoin': bub.hidden = false; bub.classList.remove('think'); bub.textContent = (b.op === 'sayjoin' ? b.text : '') + V[b.name]; if (b.s != null) { await sleep(num(el, 's', b) * 1000); bub.hidden = true; } else await sleep(300); break;
+          case 'changex': { const n = num(el, 'n', b); await moveTo(clamp(S.x + n, -240, 240), S.y, clamp(Math.abs(n) * 4, 30, 300), id); break; }
+          case 'changey': { const n = num(el, 'n', b); await moveTo(S.x, clamp(S.y + n, -180, 180), clamp(Math.abs(n) * 4, 30, 300), id); break; }
         }
       } finally { el.classList.remove('run'); }
     }
@@ -1886,7 +2119,7 @@ function scratch(root, script, o = {}) {
   stage.addEventListener('pointerleave', () => S.mouse = [9999, 9999]);
   onShow.push(() => requestAnimationFrame(() => { if (root.offsetParent) { if (!pen.width) reset(); else draw(); } }));
   requestAnimationFrame(reset);
-  return {state: S, reset, draw};
+  return {state: S, reset, draw, vars: V};
 }
 
 /* Statische Scratch-Blöcke (z. B. für Sortieraufgaben): sblock('mo', 'gehe 10 er Schritt') */
@@ -2000,6 +2233,65 @@ function keyboard(root, o = {}) {
     ctl
   };
   return api;
+}
+
+/* ================= Klasse 7/8 ================= */
+/* Graph mit (gewichteten) Kanten für Netzwerke, Routing und kürzeste Wege.
+   nodes: {id: [x, y, name, icon]}, edges: [[a, b, gewicht], …]
+   draw(st): st = {on: [ids], done: [ids], path: [ids], bad: [ids], sub: {id: text}, edgeOn: [[a,b], …], pkt: id}
+   o: {w, h, weights: true, onNode(id), r} */
+function graphView(svg, nodes, edges, o = {}) {
+  const W = o.w || 460, H = o.h || 300, R = o.r || 22;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.classList.add('net-svg', 'graph');
+  const key = (a, b) => [a, b].sort().join('|');
+  function draw(st = {}) {
+    const on = new Set(st.on || []), done = new Set(st.done || []), bad = new Set(st.bad || []);
+    const pe = new Set((st.edgeOn || []).map(([a, b]) => key(a, b)));
+    (st.path || []).forEach((id, i, p) => { if (i) pe.add(key(p[i - 1], id)); });
+    const deadE = new Set((st.deadEdges || []).map(([a, b]) => key(a, b)));
+    let s = '';
+    for (const [a, b, w] of edges) {
+      const [x1, y1] = nodes[a], [x2, y2] = nodes[b], k = key(a, b), dead = bad.has(a) || bad.has(b) || deadE.has(k);
+      s += `<line class="edge${pe.has(k) ? ' on' : ''}${dead ? ' dead' : ''}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`;
+      if (o.weights !== false && w !== undefined) {
+        const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+        s += `<g class="wt${pe.has(k) ? ' on' : ''}"><rect x="${mx - 11}" y="${my - 9}" width="22" height="18" rx="3"/><text x="${mx}" y="${my + 4}" text-anchor="middle">${w}</text></g>`;
+      }
+    }
+    for (const [id, [x, y, name, icon]] of Object.entries(nodes)) {
+      const cls = ['node', on.has(id) && 'on', done.has(id) && 'done', bad.has(id) && 'bad', (st.path || []).includes(id) && 'onpath'].filter(Boolean).join(' ');
+      s += `<g class="${cls}" data-n="${id}" tabindex="0" role="button" aria-label="${name || id}"><circle cx="${x}" cy="${y}" r="${R}"/>`
+        + `<text x="${x}" y="${y + (icon ? 6 : 5)}" text-anchor="middle" class="${icon ? 'ic' : 'nm'}">${icon || name || id}</text>`
+        + (icon && name ? `<text x="${x}" y="${y + R + 14}" text-anchor="middle" class="lb">${name}</text>` : '')
+        + (st.sub && st.sub[id] !== undefined ? `<text x="${x + R - 2}" y="${y - R + 2}" class="sub">${st.sub[id]}</text>` : '') + '</g>';
+    }
+    if (st.pkt && nodes[st.pkt]) { const [x, y] = nodes[st.pkt]; s += `<rect class="pkt" x="${x - 7}" y="${y - R - 12}" width="14" height="10" rx="2"/>`; }
+    svg.innerHTML = s;
+  }
+  if (o.onNode) {
+    svg.addEventListener('click', e => { const g = e.target.closest('[data-n]'); if (g) o.onNode(g.dataset.n); });
+    svg.addEventListener('keydown', e => { const g = e.target.closest('[data-n]'); if (g && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); o.onNode(g.dataset.n); } });
+  }
+  /* kürzester Weg (Dijkstra) – liefert {dist, prev, order} */
+  function dijkstra(src, skip = []) {
+    const dist = {}, prev = {}, seen = new Set(skip), order = [];
+    Object.keys(nodes).forEach(n => dist[n] = Infinity); dist[src] = 0;
+    while (true) {
+      let u = null; for (const n in dist) if (!seen.has(n) && dist[n] < Infinity && (u === null || dist[n] < dist[u])) u = n;
+      if (u === null) break; seen.add(u); order.push(u);
+      for (const [a, b, w] of edges) { const v = a === u ? b : b === u ? a : null; if (v && !seen.has(v) && dist[u] + (w ?? 1) < dist[v]) { dist[v] = dist[u] + (w ?? 1); prev[v] = u; } }
+    }
+    return {dist, prev, order};
+  }
+  function path(src, dst, skip = []) { const {dist, prev} = dijkstra(src, skip); if (dist[dst] === Infinity) return null; const p = [dst]; while (p[0] !== src) p.unshift(prev[p[0]]); return {path: p, cost: dist[dst]}; }
+  draw();
+  return {draw, dijkstra, path};
+}
+
+/* Mini-Fenster mit Code (nur Anzeige), Zeilen werden nummeriert. hl: Zeilennummern zum Hervorheben */
+function codeView(root, code, hl = []) {
+  root.classList.add('codeview');
+  root.innerHTML = code.split('\n').map((l, i) => `<span class="cl${hl.includes(i + 1) ? ' hl' : ''}"><i>${i + 1}</i>${l.replace(/&/g, '&amp;').replace(/</g, '&lt;') || ' '}</span>`).join('');
 }
 
 /* ================================================================ */

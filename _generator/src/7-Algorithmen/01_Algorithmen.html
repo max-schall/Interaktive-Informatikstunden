@@ -1,0 +1,121 @@
+<!--
+title: Algorithmen im Alltag
+short: Algorithmen
+time: 2 Unterrichtsstunden
+q: Was ist ein Algorithmus – und welche Bedingungen muss er erfüllen?
+facts: Anweisung, Sequenz, Ablauf: Rezepte und Anleitungen im Alltag | Algorithmus: eindeutige Handlungsvorschrift zur Lösung eines Problems aus Einzelschritten | Eigenschaften: Eindeutigkeit, Ausführbarkeit, Endlichkeit | Anweisungen im Imperativ, Übersetzung in eine Programmiersprache | Eingabe – Algorithmus – Ausgabe
+inter: Pfannkuchen-Rezept ordnen · Ist das ein Algorithmus? Eigenschaften prüfen · Mensch als Roboter: Anweisungen ausführen · Händewaschen als Befehlsfolge · Labyrinth-Roboter programmieren
+-->
+<section class="station" id="start" data-label="Start">
+  <div class="start">
+    <div class="txt">
+      <p class="eyebrow">Stunde {{N}} · Algorithmen und Problemlösen</p>
+      <h1>Algorithmen im Alltag<span class="cur" aria-hidden="true"></span></h1>
+      <p class="lead">Rezept, Bauanleitung, Wegbeschreibung, Waschmaschinenprogramm: Überall stecken genaue Handlungsanweisungen. Wenn sie präzise genug sind, kann sie sogar ein Computer ausführen.</p>
+      <div class="teaser"><span class="tag info">Einstieg</span><p>Beschreibe, wie man Pfannkuchen macht – für jemanden, der noch nie gekocht hat.</p></div>
+      <div class="teaser"><span class="tag info">Leitfrage</span><p>Was ist ein Algorithmus – und welche Bedingungen muss er erfüllen?</p></div>
+      <div class="controls"><button class="btn primary" data-go="ablauf">Los geht's →</button></div>
+    </div>
+<!--PREVIEW-->
+  </div>
+</section>
+
+<section class="station" id="ablauf" data-label="Ablauf" data-yr="Einstieg" data-title="Anweisungen im Alltag" data-sub="Pfannkuchen machen">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 1 · Anweisungen im Alltag</p>
+      <h2>Ein Rezept ist ein Ablauf</h2>
+      <ul class="facts">
+        <li>Ein einzelner Arbeitsschritt heißt <b>Anweisung</b>.</li>
+        <li>Mehrere Anweisungen, die nacheinander ausgeführt werden, bilden eine <b>Sequenz</b> oder einen <b>Ablauf</b>.</li>
+        <li>Die <b>Reihenfolge</b> ist wichtig: Erst Öl in die Pfanne, dann den Teig!</li>
+      </ul>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Pfannkuchen machen</h3></div>
+      <div id="rezept"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="eigenschaften" data-label="Eigenschaften" data-yr="Erarbeitung" data-title="Was ist ein Algorithmus?" data-sub="Eindeutig, ausführbar, endlich">
+  <div class="section-head">
+    <p class="eyebrow">Station 2 · Algorithmen beschreiben</p>
+    <h2>Drei Bedingungen</h2>
+    <p class="lead">Ein <b>Algorithmus</b> ist eine <b>eindeutige Handlungsvorschrift</b> zur Lösung eines Problems, die aus <b>Einzelschritten</b> besteht. Er beschreibt, wie aus einer <b>Eingabe</b> eine <b>Ausgabe</b> wird.</p>
+  </div>
+  <div class="cols-3">
+    <div class="box"><span class="tag info">Eindeutigkeit</span><p>Jede Anweisung ist klar beschrieben, und die Reihenfolge ist festgelegt. Es gibt keinen Spielraum für Interpretation.</p></div>
+    <div class="box"><span class="tag info">Ausführbarkeit</span><p>Jede Anweisung kann tatsächlich ausgeführt werden. („Schlage die Eier auf“ statt „Gib die Eier hinein“.)</p></div>
+    <div class="box"><span class="tag info">Endlichkeit</span><p>Der Ablauf hat ein Ende und besteht aus endlich vielen Schritten. („Bis der Pfannkuchen goldbraun ist“.)</p></div>
+  </div>
+  <h3 class="mt">Welche Bedingung ist verletzt?</h3>
+  <div id="sort-eig"></div>
+</section>
+
+<section class="station" id="roboter" data-label="Mensch-Roboter" data-yr="Übung" data-title="Ein Mensch als Roboter" data-sub="Wörtlich ausführen">
+  <div class="model">
+    <div class="txt">
+      <p class="eyebrow">Station 3 · Präzise beschreiben</p>
+      <h2>Der Roboter nimmt alles wörtlich</h2>
+      <p>Ein Computer versteht die menschliche Sprache nicht und hat keinen „gesunden Menschenverstand“. Die Anweisungen eines Algorithmus müssen in eine <b>Programmiersprache</b> übersetzt werden. Anweisungen schreibt man im <b>Imperativ</b> (Befehlsform).</p>
+      <div class="task-card"><header><span class="no">A</span><span class="lvl"><i class="on"></i><i class="on"></i><i></i></span><h3>Rollenspiel</h3></header><p>Eine Person ist der Roboter und führt Anweisungen der Klasse <b>wörtlich</b> aus, z. B. „Gehe zur Tafel und schreibe deinen Namen.“ Was geht schief?</p></div>
+    </div>
+    <div class="vis">
+      <div class="vis-head"><h3>Hände waschen</h3></div>
+      <p class="note">Baue die Befehlsfolge im Imperativ. Beginne mit „Halte eine Hand unter den Seifenspender.“</p>
+      <div id="flow"></div>
+    </div>
+  </div>
+</section>
+
+<section class="station" id="m1" data-label="M1 Labyrinth" data-yr="M1" data-title="Ein Roboter im Labyrinth" data-sub="Anweisungen für eine Maschine">
+  <div class="section-head">
+    <p class="eyebrow">Station 4 · Material M1</p>
+    <h2>Ein Roboter im Labyrinth</h2>
+    <p class="lead">Der Roboter versteht nur drei Anweisungen: <b>vor</b>, <b>links drehen</b>, <b>rechts drehen</b>. Schreibe einen Algorithmus, der ihn zum Ziel bringt.</p>
+  </div>
+  <div id="bot"></div>
+</section>
+
+<section class="station" id="merke" data-label="Hefteintrag">
+  <div class="section-head"><p class="eyebrow">Sicherung</p><h2>Hefteintrag: Algorithmen</h2></div>
+  <div class="heft-grid">
+    <div class="heft">
+      <div class="heft-title"><h3>Algorithmen im Alltag</h3><span>Informatik · Klasse 7</span></div>
+      <ol>
+        <li data-step>Eine <b>Anweisung</b> ist ein einzelner Arbeitsschritt. Mehrere Anweisungen in fester Reihenfolge bilden eine <b>Sequenz</b> (Ablauf).</li>
+        <li data-step>Ein <b>Algorithmus</b> ist eine eindeutige Handlungsvorschrift zur Lösung eines Problems aus Einzelschritten. Er macht aus einer Eingabe eine Ausgabe.</li>
+        <li data-step>Bedingungen: <b>Eindeutigkeit</b> (klar, feste Reihenfolge), <b>Ausführbarkeit</b> (jeder Schritt machbar), <b>Endlichkeit</b> (endet nach endlich vielen Schritten).</li>
+        <li data-step>Anweisungen werden im <b>Imperativ</b> formuliert. Damit ein Computer sie ausführen kann, werden sie in eine <b>Programmiersprache</b> übersetzt.</li>
+      </ol>
+      <div class="controls"><button class="btn primary" data-heft-next>Nächster Punkt</button><button class="btn" data-heft-all>Alles zeigen</button></div>
+    </div>
+    <div class="stack"><div class="box"><span class="tag info">Beispiel</span><p>Schreibe einen Algorithmus zum Zähneputzen und prüfe die drei Bedingungen.</p></div></div>
+  </div>
+</section>
+
+<section class="station" id="uebungen" data-label="Übungen">
+  <div class="section-head"><p class="eyebrow">Jetzt seid ihr dran</p><h2>Quiz: Algorithmen</h2></div>
+  <div id="quiz"></div>
+</section>
+
+<script>
+orderSteps($('#rezept'), ['Mehl, Milch und Salz in eine Schüssel geben', 'Eier aufschlagen und dazugeben', 'Alles zu einem glatten Teig verrühren', 'Öl in die Pfanne geben und erhitzen', 'Eine Kelle Teig in die Pfanne geben', 'Wenden, wenn die Unterseite goldbraun ist', 'Pfannkuchen auf einen Teller legen'], {label: 'Dein Rezept'});
+sorter($('#sort-eig'), [{id: 'ein', name: 'nicht eindeutig'}, {id: 'aus', name: 'nicht ausführbar'}, {id: 'end', name: 'nicht endlich'}], [
+  {t: '„Gib etwas Mehl dazu.“', c: 'ein', why: 'Wie viel ist „etwas“?'}, {t: '„Gehe ein Stück geradeaus.“', c: 'ein', why: 'Wie weit?'},
+  {t: '„Gib die Eier mit Schale in den Teig.“', c: 'aus', why: 'So entsteht kein essbarer Teig.'}, {t: '„Fliege zum Supermarkt.“', c: 'aus', why: 'Kann niemand ausführen.'},
+  {t: '„Rühre immer weiter.“', c: 'end', why: 'Wann ist Schluss?'}, {t: '„Zähle alle Zahlen auf.“', c: 'end', why: 'Es gibt unendlich viele.'}
+]);
+flowBuilder($('#flow'), {pool: ['Halte eine Hand unter den Seifenspender.', 'Drücke einmal auf den Spender.', 'Halte die Hände unter das Wasser.', 'Verreibe die Seife 20 Sekunden lang.', 'Spüle die Seife ab.', 'Drehe das Wasser auf.', 'Drehe das Wasser zu.', 'Trockne die Hände ab.'],
+  check: ['Drehe das Wasser auf.', 'Halte die Hände unter das Wasser.', 'Halte eine Hand unter den Seifenspender.', 'Drücke einmal auf den Spender.', 'Verreibe die Seife 20 Sekunden lang.', 'Spüle die Seife ab.', 'Drehe das Wasser zu.', 'Trockne die Hände ab.'], free: false});
+gridBot($('#bot'), ['#########', '#S..#...#', '#.#.#.#.#', '#.#...#.#', '#.#####.#', '#......Z#', '#########']);
+mcQuiz($('#quiz'), [
+  {q: 'Was ist ein Algorithmus?', a: ['eine eindeutige Handlungsvorschrift zur Lösung eines Problems', 'ein Computerspiel', 'eine Programmiersprache', 'ein Bauteil des Computers'], ok: 0},
+  {q: 'Wie nennt man mehrere Anweisungen in fester Reihenfolge?', a: ['Sequenz', 'Variable', 'Schleife', 'Pixel'], ok: 0},
+  {q: '„Gib eine Prise Salz dazu“ – welche Bedingung ist für einen Computer verletzt?', a: ['Eindeutigkeit', 'Endlichkeit', 'keine', 'Ausführbarkeit des Ofens'], ok: 0},
+  {q: 'In welcher Form schreibt man Anweisungen?', a: ['im Imperativ (Befehlsform)', 'als Frage', 'in der Vergangenheit', 'als Gedicht'], ok: 0},
+  {q: 'Was bedeutet Endlichkeit?', a: ['Der Algorithmus endet nach endlich vielen Schritten.', 'Der Algorithmus ist kurz.', 'Der Algorithmus läuft ewig.', 'Der Algorithmus hat keine Eingabe.'], ok: 0},
+  {q: 'Warum braucht ein Computer eine Programmiersprache?', a: ['Er versteht die menschliche Sprache nicht.', 'Weil er sonst überhitzt.', 'Damit er schneller ist.', 'Er braucht keine.'], ok: 0}
+]);
+</script>
